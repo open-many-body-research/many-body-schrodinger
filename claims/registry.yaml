@@ -1,0 +1,366 @@
+# Claims registry: the authoritative status of every result in this repository.
+# Tiers and rules: CONTRIBUTING.md section 1. Validated by tools/validate_registry.py.
+# "P1" below includes paper proofs that were reviewed only by AI agents inside the
+# original pipeline; those reviews do not count toward P2 (CONTRIBUTING.md section 7).
+schema: 1
+claims:
+
+# ---------------------------------------------------------------- S1 foundations
+- id: S1-001
+  sector: S1
+  title: Self-adjointness and ground-energy identification for atoms (all N, real Z)
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  statement: >
+    For every N and real Z, the fermionic N-electron single-nucleus Coulomb operator,
+    defined by its weak-derivative graph on antisymmetric L^2((R^3 x {up,down})^N), is
+    self-adjoint with domain exactly the componentwise-H^2 fermionic vectors. Its
+    variational (H^2), form (H^1) and spectral ground energies coincide at a finite E with
+    -N max(Z,0)^2/2 <= E <= 0. E lies in the spectrum, and the spectrum is real and >= E.
+    The same holds for the scalar (no-symmetry) operator on L^2(R^{3N}).
+  lean:
+    - {module: CoulombSpectralFoundation_v3, decl: TheoremT.Continuum.coulomb_shared_continuum_foundation}
+    - {module: ScalarCoulombFoundation_v1, decl: TheoremT.Continuum.scalar_coulomb_continuum_foundation}
+  card: claims/cards/S1-001.md
+  evidence: [lean/Foundation/CoulombSpectralFoundation_v3.lean, lean/Foundation/ScalarCoulombFoundation_v1.lean, lean/Foundation/ContinuumFoundation_v1.lean]
+  caveats: Atoms only (one nucleus). The spectrum is a project definition (bounded two-sided inverse into the domain). Mathematically this is Kato (1951).
+
+- id: S1-002
+  sector: S1
+  title: No bound state for non-attracting nucleus
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  statement: For N >= 1 and Z <= 0 the ground energy is 0, 0 is in the spectrum, and there is no zero-energy eigenvector.
+  lean:
+    - {module: CoulombUnboundNonpositive_v1, decl: TheoremT.Continuum.nonpositive_charge_zero_spectrum_trivial_kernel}
+  card: claims/cards/S1-002.md
+  evidence: [lean/Foundation/CoulombUnboundNonpositive_v1.lean]
+
+- id: S1-003
+  sector: S1
+  title: Hydrogen ground energy -Z^2/2 with spin, and a kernel-checked certificate checker
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  statement: >
+    For real Z > 0 the one-electron full-spin operator has variational, form and spectral
+    ground energy exactly -Z^2/2, with two linearly independent H^2 eigenvectors. For
+    natural Z, any rational interval accepted by hydrogenExactCertificateCheck encloses the
+    spectral ground energy, and hydrogenExactSolver returns the zero-width interval.
+  lean:
+    - {module: HydrogenSpinGround_v1, decl: TheoremT.Continuum.hydrogen_full_spin_ground}
+    - {module: HydrogenExactSolver_v1, decl: TheoremT.Continuum.hydrogenExactSolver_correct}
+    - {module: HydrogenExactSolver_v1, decl: TheoremT.Continuum.hydrogenExactCertificateCheck_sound}
+  card: claims/cards/S1-003.md
+  evidence: [lean/Foundation/HydrogenSpinGround_v1.lean, lean/Foundation/HydrogenExactSolver_v1.lean]
+  caveats: The "solver" returns the closed form. The content is identifying the eigenpair inside the unbounded operator. No upper bound on multiplicity.
+
+- id: S1-004
+  sector: S1
+  title: Hydrogen rank-one (2s-level) form comparison chain
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  statement: >
+    One-electron hydrogenic form bounds with literal kinetic and Coulomb integrals. On the
+    half-line domain, vectors orthogonal to r e^{-Zr} have radial form >= -Z^2/8. The radial
+    and physical rank-one comparisons q_Z(u) >= -Z^2/8 ||u||^2 - 3Z^2/8 |<g,u>|^2 hold on
+    punctured smooth cores and extend to all weak-H^1 functions. Supporting results: the sharp
+    Poincare inequality on S^2 for C^1 functions, and the kernel of the weak radial ODE.
+  lean:
+    - {module: HalfLineHydrogenComplement_v1, decl: TheoremT.HalfLine.hydrogen_radial_complement}
+    - {module: HalfLineHydrogenRankOne_v1, decl: TheoremT.HalfLine.hydrogen_radial_rank_one}
+    - {module: HalfLineWeakODE_v1, decl: TheoremT.OneDimensional.weak_radial_ode_kernel}
+    - {module: HydrogenSphereC1Limit_v1, decl: TheoremT.HydrogenSphereC1Limit.sphere_poincare_contDiff_one}
+    - {module: HydrogenPhysicalCoreComparison_v1, decl: TheoremT.Continuum.hydrogen_physical_core_rank_one}
+    - {module: PuncturedFormComparisonTransfer_v1, decl: TheoremT.Continuum.punctured_core_rankOne_bound_extends_weakH1}
+  card: claims/cards/S1-004.md
+  evidence: [lean/Foundation/HalfLineHydrogenComplement_v1.lean, lean/Foundation/HydrogenPhysicalCoreComparison_v1.lean]
+
+# ---------------------------------------------------------------- S2 two-electron theory
+- id: S2-001
+  sector: S2
+  title: Abstract rank-one / finite-defect ground branch and continuum Temple enclosure
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  statement: >
+    For the N-electron atomic operator H: suppose beta||x||^2 <= Re<x,Hx> + C|l(x)|^2 on D(H),
+    with l of rank one or rank m, and some unit trial has energy below beta. Then the ground
+    energy is < beta, it is attained, and the ground eigenspace has dimension <= m
+    (rank one: the rest of the spectrum has real part >= beta). If a unit psi also has
+    mean in [L,U], U < beta and ||H psi - mu psi||^2 <= r, then E in [L - r/(beta-U), U].
+    Includes the abstract lemmas partner_gap_transfer and two_hydrogenic_comparisons_combine.
+  conditional_on:
+    - The form comparison (hypothesis hbound); discharged for N=2 in S2-002.
+    - The trial data (mean and residual bounds).
+  lean:
+    - {module: CoulombRankOneBranch_v1, decl: TheoremT.Continuum.coulomb_rankOne_ground_branch}
+    - {module: CoulombRankOneCertificate_v1, decl: TheoremT.Continuum.coulomb_rankOne_directed_spectral_enclosure}
+    - {module: CoulombFiniteDefectGround_v1, decl: TheoremT.Continuum.coulomb_finite_defect_ground}
+    - {module: PartnerGapTransfer_v1, decl: TheoremT.OperatorTheory.partner_gap_transfer}
+    - {module: CommutingProjectionComparison_v1, decl: TheoremT.OperatorTheory.two_hydrogenic_comparisons_combine}
+  card: claims/cards/S2-001.md
+  evidence: [lean/Foundation/CoulombRankOneBranch_v1.lean, lean/Foundation/CoulombRankOneCertificate_v1.lean]
+  caveats: Temple (1928) and Kato (1949) in unbounded form. Standard mathematics, formalized.
+
+- id: S2-002
+  sector: S2
+  title: Two-electron ground state exists, is nondegenerate, and is separated from the rest of the spectrum by -5Z^2/8 (includes helium)
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  depends_on: [S2-001]
+  statement: >
+    For real Z > 0 the two-electron fermionic operator satisfies
+    Re<x,Hx> >= -5Z^2/8 ||x||^2 - 3Z^2/8 |<s,x>|^2 (s is the hydrogenic singlet). If 9Z^2 > 32,
+    the ground energy is < -5Z^2/8 and attained, the ground eigenspace is one complex line,
+    and every other spectral point has real part >= -5Z^2/8. For helium (Z = 2) this gives
+    E_He < -5/2 with the rest of the spectrum at real part >= -5/2.
+  lean:
+    - {module: TwoElectronOperatorComparison_v1, decl: TheoremT.Continuum.twoElectron_operator_rank_one}
+    - {module: HydrogenProductTrialEnergy_v1, decl: TheoremT.Continuum.hydrogenProductTrial_strict}
+    - {module: TwoElectronPhysicalGroundBranch_v1, decl: TheoremT.Continuum.twoElectron_physical_ground_branch}
+    - {module: TwoElectronPhysicalGroundBranch_v1, decl: TheoremT.Continuum.helium_physical_ground_branch}
+    - {module: TwoElectronGroundMultiplicity_v1, decl: TheoremT.Continuum.twoElectron_ground_eigenspace_line}
+  card: claims/cards/S2-002.md
+  evidence: [lean/Foundation/TwoElectronPhysicalGroundBranch_v1.lean, lean/Foundation/TwoElectronGroundMultiplicity_v1.lean]
+  caveats: Classical intermediate-problem separator (Bazley). The 9Z^2 > 32 range comes from a crude repulsion bound (open problem S2.4).
+
+- id: S2-003
+  sector: S2
+  title: Two-electron Temple enclosure with the physical separator proved
+  tier: L
+  status: foundation
+  provenance: v1.0-foundation
+  depends_on: [S2-002]
+  statement: >
+    For real Z > 0: a unit H^2 two-electron trial with mean in [L,U], U < -5Z^2/8 and squared
+    residual <= r gives L - r/(-5Z^2/8 - U) <= E <= U for the spectral ground energy.
+  conditional_on:
+    - The trial's mean and residual bounds are hypotheses. No trial is instantiated in Lean (open problem S2.3).
+  lean:
+    - {module: TwoElectronPhysicalCertificate_v1, decl: TheoremT.Continuum.twoElectron_physical_directed_spectral_enclosure}
+  card: claims/cards/S2-003.md
+  evidence: [lean/Foundation/TwoElectronPhysicalCertificate_v1.lean]
+
+- id: S2-004
+  sector: S2
+  title: Rank-one separator for integer Z >= 2 (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: For integer Z >= 2, H_Z >= -Z^2 P_0 - (5Z^2/8)(I - P_0), so sigma(H_Z) is {E_Z} together with a subset of [-5Z^2/8, infinity), and E_Z is simple.
+  evidence: [archive/v1.0-research-notes/reports/TWO_ELECTRON_THEOREM.md, archive/v1.0-research-notes/helium_research/lower_bounds.md]
+  caveats: Superseded in Lean by S2-002 for 9Z^2 > 32.
+
+- id: S2-005
+  sector: S2
+  title: Separator for real Z > (20+5 sqrt 10)/24 via the Z - 5/16 trial (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: For real Z > Z* = (20+5 sqrt 10)/24 ~ 1.492, the trial alpha = Z - 5/16 has mean -(Z-5/16)^2 < -5Z^2/8, with margin (96Z^2-160Z+25)/256.
+  evidence: [archive/v1.0-research-notes/continuation/paper/TWO_ELECTRON_PHYSICAL_COMPARISON_v1.md]
+
+- id: S2-006
+  sector: S2
+  title: Variance-minimization selection counterexample (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: There are a bounded self-adjoint operator and nested rational spaces with exponentially small ground residual for which every exact global variance minimizer is the non-ground state.
+  evidence: [archive/v1.0-research-notes/reports/TWO_ELECTRON_THEOREM.md]
+
+- id: S2-007
+  sector: S2
+  title: Fixed-shift selection and computability of E_Z (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: Minimizing the regularized ||(H - sigma) phi||^2 with a fixed shift sigma below the spectrum selects the ground branch. On a graph-dense core the Temple loop terminates for every p, so E_Z is computable (no cost bound).
+  evidence: [archive/v1.0-research-notes/reports/TWO_ELECTRON_THEOREM.md, archive/v1.0-research-notes/audit-v1/computation/COMPUTATION_SPECTRAL_AUDIT_v1.md]
+
+- id: S2-008
+  sector: S2
+  title: Theorem T (polynomial-bit certified two-electron ground energy)
+  tier: O
+  status: active
+  provenance: v1.0-foundation
+  statement: For fixed Z >= 2, a deterministic algorithm outputs rationals l <= E_Z <= u with u - l <= 2^-p in C_Z (p+1)^d bit operations for some fixed d.
+  evidence: [sectors/S2-two-electron-theory/README.md, errata/ERRATUM-001-theorem-t-not-proved.md]
+  caveats: A pre-publication report labeled this PROVEN. That label is withdrawn (ERRATUM-001).
+
+# ---------------------------------------------------------------- S3 certified computation
+- id: S3-001
+  sector: S3
+  title: Helium ground energy in [-2.903725202862, -2.903724370072] Ha (Hylleraas order 20)
+  tier: C
+  status: foundation
+  provenance: v1.0-foundation
+  depends_on: [S2-002, S2-003]
+  statement: >
+    -1451862601431/500000000000 <= E_He <= -362965546259/125000000000 (width 8.3279e-7 Ha),
+    from a 946-coefficient rational Hylleraas trial, exact continuum moments <Phi,Phi>,
+    <Phi,H Phi>, ||H Phi||^2, 512- and 768-bit outward-rounded intervals for log 2 and pi^2,
+    and the separator beta = -5/2.
+  conditional_on:
+    - The closed-form Hylleraas moment formulas and trial membership in D(H) (paper, P1; spot-checked on over 3000 exact identities by independent_audit.py).
+  card: claims/cards/S3-001.md
+  evidence: [certificates/helium-ground-state/check_trial.py, certificates/helium-ground-state/trial_residual_20.json, certificates/helium-ground-state/certificate_residual_20_768.json, certificates/helium-ground-state/independent_audit.py, certificates/helium-ground-state/THEORY.md]
+
+- id: S3-002
+  sector: S3
+  title: Helium ground energy to width 8.19e-9 Ha (dyadic dictionary E10)
+  tier: C
+  status: foundation
+  provenance: v1.0-foundation
+  depends_on: [S2-002, S2-003]
+  statement: >
+    -2.903724385192751581540207 <= E_He <= -2.903724377006065467379698 (width 8.1867e-9 Ha),
+    from 336 functions e^{-alpha(r1+r2)} poly(r1,r2,r12) with alpha in {2, 4, 8, 16, 32, 64}
+    (alpha = 2^{j+1}, j = 0..5) and rational coefficients. The moments are recomputed exactly
+    from the dictionary, the finite-pencil check uses 1024-bit interval LDL, and beta = -5/2.
+  conditional_on:
+    - Same moment formulas as S3-001 (paper, P1).
+  card: claims/cards/S3-002.md
+  evidence: [certificates/helium-dyadic-dictionary/certify.py, certificates/helium-dyadic-dictionary/run.py, certificates/helium-dyadic-dictionary/screen_E_10.json, certificates/helium-dyadic-dictionary/certificate_E_10_1024.json]
+  caveats: Precision is far behind non-rigorous literature values (~1e-20). What's new is an open, exact, standard-library pipeline.
+
+- id: S3-003
+  sector: S3
+  title: H2 separator beta = -91/50 at R = 1.4 bohr (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: In the exchange-symmetric, inversion-even spatial sector at R = 1.4, H >= -(66/25) P - (91/50)(I - P). The physical ground state lies in this sector.
+  evidence: [archive/v1.0-research-notes/h2/separator.md, archive/v1.0-research-notes/h2/separator_alternative.md]
+  caveats: Weak. beta - m ~ 0.068 Ha, whereas the true gap in this sector is several tenths of a hartree.
+
+- id: S3-004
+  sector: S3
+  title: H2 enclosure [-2.64, -1.88847] Ha at R = 1.4 bohr
+  tier: X
+  status: withdrawn
+  provenance: v1.0-foundation
+  statement: The lower endpoint equals the a-priori bound -66/25. The actual Temple lower bound was about -7.68, so the enclosure carries no information.
+  erratum: errata/ERRATUM-002-h2-enclosure-trivial.md
+  evidence: [archive/v1.0-research-notes/reports/H2_CERTIFICATION.md]
+
+# ---------------------------------------------------------------- S4 three electrons
+- id: S4-001
+  sector: S4
+  title: Lithium enclosure of width ~2.84 Ha
+  tier: X
+  status: withdrawn
+  provenance: v1.0-foundation
+  statement: -81/8 <= E(Li) <= -7.28893. The bounds are the noninteracting energy and a single-determinant variational mean. Trivial as an enclosure.
+  erratum: errata/ERRATUM-003-trivial-results.md
+  evidence: [archive/v1.0-research-notes/audit-v1/lithium/LITHIUM_MILESTONE_v1.md]
+
+- id: S4-002
+  sector: S4
+  title: Lithium ground state is not a spin quartet (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: The noninteracting quartet energy (>= -6.75 Ha) exceeds a variational doublet upper bound, so the lithium ground state has total spin 1/2.
+  evidence: [archive/v1.0-research-notes/audit-v1/lithium/LITHIUM_MILESTONE_v1.md]
+
+# ---------------------------------------------------------------- S5 arbitrary N
+- id: S5-001
+  sector: S5
+  title: Gap-free box localization bounds (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: min{lambda_N(R), E_{N-1} - NZ/R} - N pi^2/(8R^2) <= E_N <= min{lambda_N(R), E_{N-1}}, where lambda_N(R) is the fermionic Dirichlet energy in a box of size R.
+  evidence: [archive/v1.0-research-notes/audit-v1/arbitrary_n/GAP_FREE_COMPUTABILITY_v1.md]
+
+- id: S5-002
+  sector: S5
+  title: Computability of atomic and molecular ground energies with explicit exponential cost (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: For atoms (N,Z) the ground energy is computable to 2^-p in 2^{O_{N,Z}(p)} bit operations. For rational molecules the bound is 2^{O((N+1)(p+N+L+1))}.
+  evidence: [archive/v1.0-research-notes/continuation/computation-box/BOX_SOLVER_v1.md, archive/v1.0-research-notes/continuation/computation-box/MOLECULAR_COMPUTABILITY_v1.md, archive/v1.0-research-notes/continuation/computation-box/LOCAL_GRID_AND_BIT_COST_v2.md]
+  caveats: Computability itself is folklore. No non-trivial width has been executed.
+
+- id: S5-003
+  sector: S5
+  title: Executed box enclosures and the separated two-center fast class
+  tier: X
+  status: withdrawn
+  provenance: v1.0-foundation
+  statement: Box enclosures of width 0.24 to 12 Ha (H, He, Li, H2+, HeH), and a fast class whose admissible inputs depend on the requested precision. Both are true but carry no chemical or algorithmic content.
+  erratum: errata/ERRATUM-003-trivial-results.md
+  evidence: [archive/v1.0-research-notes/continuation/computation-box/SEPARATED_TWO_CENTER_FAST_v1.md]
+
+# ---------------------------------------------------------------- S6 molecules
+- id: S6-001
+  sector: S6
+  title: Physical energy bracket for any geometry (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: -N (sum_A Z_A)^2 / 2 <= E_N <= 0 for N electrons and any fixed nuclear configuration (square completion plus dilation).
+  evidence: [archive/v1.0-research-notes/nogo/physical_scales.md]
+  caveats: Standard. Proved in Lean for atoms inside S1-001.
+
+# ---------------------------------------------------------------- S7 complexity
+- id: S7-001
+  sector: S7
+  title: QMA-hardness for bound point-nucleus Coulomb molecules in the continuum
+  tier: O
+  status: active
+  provenance: v1.0-foundation
+  statement: A polynomial-time reduction from 2-local Hamiltonians to non-magnetic point-nucleus Coulomb molecules, with inverse-polynomial gap and ionization margin.
+  evidence: [archive/v1.0-research-notes/nogo/hardness_status.md]
+
+- id: S7-002
+  sector: S7
+  title: '"Sharp no-go" for gap-limited transfer'
+  tier: X
+  status: withdrawn
+  provenance: v1.0-foundation
+  statement: Presented as a sharp no-go theorem, but it is a rearrangement of E >= a - eta <=> eta >= a - E.
+  erratum: errata/ERRATUM-003-trivial-results.md
+  evidence: [archive/v1.0-research-notes/reports/NOGO_AND_PIVOT.md]
+
+# ---------------------------------------------------------------- S8 regularity and approximation
+- id: S8-001
+  sector: S8
+  title: Weighted analyticity of the helium ground state at the triple collision (paper; needs human review)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: >
+    For fixed Z >= 2 the extracted remainder R_Z = e^{ZS - u/2} psi_Z - kappa_Z psi_Z(0) q log(r^2+s^2)
+    obeys |d^nu (R_Z - psi_Z(0))| <= C A^{|nu|} nu! S^{1-|nu|} near the triple-collision vertex,
+    in half-perimetric coordinates.
+  evidence: [archive/v1.0-research-notes/rwa_proof/RWA_THEOREM.md, archive/v1.0-research-notes/rwa_proof/UNIFORM_ANALYTIC_AUDIT.md, archive/v1.0-research-notes/audit-v1/analytic/ANALYTIC_AUDIT_v1.md, archive/v1.0-research-notes/continuation/audits/ACTUAL_EIGENFUNCTION_RWA_AND_APPROXIMATION_v1.md]
+  caveats: If correct, it goes beyond the published C^{1,1} regularity at the triple point. Only AI agents have reviewed it. Open problem S8.1.
+
+- id: S8-002
+  sector: S8
+  title: H^2 approximation rate exp(-c n^{1/3}) for helium by an explicit dyadic dictionary (paper; needs human review)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  depends_on: [S8-001]
+  statement: For fixed Z >= 2 the dictionary V_n = sum_{j <= n/2} e^{-Z 2^j (r+s)} P^sym_{n-2j}(r,s,u) contains v with ||psi_Z - v||_{H^2} <= C exp(-c n^{1/3}).
+  evidence: [archive/v1.0-research-notes/continuation/audits/OPEN_APPROXIMATION_LEMMA_ADVERSARIAL_REVIEW_v1.md, archive/v1.0-research-notes/continuation/audits/ENDPOINT_ONE_THIRD_v3.md]
+  caveats: Existence only. There is no coefficient-selection algorithm and no explicit constants.
+
+- id: S8-003
+  sector: S8
+  title: Fixed-exponent Hylleraas residual obstruction, "Theorem C" (paper)
+  tier: P1
+  status: foundation
+  provenance: v1.0-foundation
+  statement: For fixed Z >= 2 and a fixed finite exponent set, the best normalized residual in e^{-a(r+s)} poly_n(r,s,u) spaces is >= c (n+1)^{-72}. Hence a p-bit Temple width needs n >~ 2^{p/144}.
+  evidence: [archive/v1.0-research-notes/reports/TWO_ELECTRON_THEOREM.md]
+  caveats: Qualitatively expected from Fock's logarithm. The exponent 72 is an artifact of the proof.

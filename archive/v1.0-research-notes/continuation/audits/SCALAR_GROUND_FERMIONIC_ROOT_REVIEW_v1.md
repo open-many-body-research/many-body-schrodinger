@@ -1,0 +1,11 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Independent root review of scalar-to-fermionic ground comparison
+
+PASS as a conditional paper theorem, not a Lean theorem. Reviewed the complete final SCALAR_GROUND_FERMIONIC_COMPARISON_v1.md, SHA-256 605b1a0261a74f00d4181c193ffe8515b6a5ee8f4e41eeefcf6b3c02e59fd841.
+
+The actual scalar self-adjoint realization, finite attained spectral bottom and scalar simplicity are explicit premises. The full fermionic foundation does not by itself remove those scalar premises. Under them, the modulus lies in H1 and minimizes the nonnegative shifted form. Real and imaginary variations give the weak eigen equation. Actual Hardy multiplication then gives V|g| in L2, hence the weak Laplacian is in L2; the Fourier-domain theorem returns to actual H2. There is no unproved form-to-operator jump.
+
+Simplicity, nonnegativity and unit norm force rotations and exchange to fix the representative. Componentwise scalar lower bounds and the actual singlet eigenvector give equality with the fermionic spectral bottom. The coefficients of every fermionic ground eigenvector form an antisymmetric two-spin tensor, which is one-dimensional. For an arbitrary orthogonal fermionic vector, the scalar ground projections form the same tensor and its total projection is zero, so all component projections vanish. The scalar complement bound therefore transfers with unchanged constant, including spatially antisymmetric components. No ionization threshold substitutes for the complement.
+
+No error was found in the exact argument. Strict positivity, scalar attainment, scalar simplicity and the physical scalar comparison are not proved in this paper. No three-electron uniqueness inference is justified. Historical artifacts remain unchanged; freeze commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660 and tag theorem-t-proof-freeze-2026-09-09.

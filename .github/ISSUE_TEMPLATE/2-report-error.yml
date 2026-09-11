@@ -1,0 +1,37 @@
+name: Report an error
+description: A merged claim, proof, certificate, or definition is wrong, vacuous, or overstated.
+title: "[error] <claim ID>: "
+labels: ["error-report"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID(s) affected
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: Point to the exact step, line, definition, or certificate entry.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Counterexample, failing check, missing hypothesis, or reference.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "Fatal: the claim is false"
+        - "Gap: the proof or check is incomplete"
+        - "Overstated: the statement card claims more than the evidence"
+        - "Definitional: the formal objects are not the physical ones"
+        - "Minor: typo or presentation"
+    validations:
+      required: true

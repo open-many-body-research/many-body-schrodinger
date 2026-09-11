@@ -1,0 +1,31 @@
+name: Claim a problem
+description: Announce that you are working on an open problem, so others can coordinate.
+title: "[claim] S?.?: "
+labels: ["claim"]
+body:
+  - type: input
+    id: problem
+    attributes:
+      label: Problem ID
+      description: From the sector README, e.g. S3.2
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Target evidence tier
+      options: ["L (Lean)", "C (certified computation)", "P1/P2 (paper proof)", "N (numerics)"]
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Planned approach
+      description: Enough detail for others to see whether it duplicates their work.
+    validations:
+      required: true
+  - type: input
+    id: eta
+    attributes:
+      label: Expected first update
+      description: Claims lapse after 60 days without activity.

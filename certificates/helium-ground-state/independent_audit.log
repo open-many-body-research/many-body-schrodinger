@@ -1,0 +1,36 @@
+Independent helium algebra audit: exact rational comparisons
+No stored large trial integration; no certificate mutation
+Python: 3.9.6 (default, Apr 17 2026, 18:15:52)  [Clang 21.0.0 (clang-2100.1.1.101)]
+Source SHA256: hylleraas.py 26c90c2f90d97a1e989dc2241ca3a3a9130fc10900341bd1ebc6cfab0829d00a
+Source SHA256: check_trial.py 2e4aba8fbfb4d273c363e0d1300b01da0ac2677c1f1e5b76db0d9077b5ec3bb2
+Source SHA256: THEORY.md 96139858b625109b7176367abd5e4e2721d2661164bb66f46e3309cf051f94f3
+Source SHA256: independent_audit.py fa8b6b5fdebd8eaccb3af4e2d43b4c7b51c43dc828937a24a14bf33cba1cfd64
+Source SHA256: certified_interval.py e024bd7a917d777e89331eb3471c92ca7e57c8dd67cdf954ad207336d1f98f17
+PASS 1029 nonnegative moment equalities from perimetric coordinates
+PASS 729 exact single-negative moment equalities (Laplace/beta integrals)
+PASS 54 double-negative moments inside positive-series enclosures
+PASS 1500 Hamiltonian-action identities by six-variable Cartesian jets
+PASS 108 energy bilinear forms by independent gradient/perimetric route
+PASS 3 full-space normalization identities checking the common 8*pi^2 factor
+PASS log2 constants lie in an independent alternating-harmonic enclosure
+PASS 20 directed decimal endpoint checks, including negative values
+PASS hardened rational-field parsing: float/bool/nonfinite rejection and exact inputs
+PASS saved final-arithmetic replay: certificate_10_512.json bits 512 width 0.000055796713 LEGACY: no saved trial SHA256
+Certificate SHA256: certificate_10_512.json 237ee6d095848a76396d28e5f6ec63284947d76c35b2076da0cbdad8a44ae0b1
+PASS saved final-arithmetic replay: certificate_6_512.json bits 512 width 0.000482410615 LEGACY: no saved trial SHA256
+Certificate SHA256: certificate_6_512.json 2e7349cbd9ea3656ccf2d5795956914fa4206614127709626bd5631b7d0e0c41
+PASS saved final-arithmetic replay: certificate_residual_10_512.json bits 512 width 0.000025013843 LEGACY: no saved trial SHA256
+Certificate SHA256: certificate_residual_10_512.json f4565b2012f6b75e0b7bfdbe70140408894eb1834fc762f06db12ff8390f6542
+PASS saved final-arithmetic replay: certificate_residual_14_512.json bits 512 width 0.000005022108 LEGACY: no saved trial SHA256
+Certificate SHA256: certificate_residual_14_512.json d1e83fbb3dcc4f06678081657603928427d0617c52c0d9a47099f3c0cc3c71fc
+PASS saved final-arithmetic replay: certificate_residual_20_512.json bits 512 width 0.000000832790 verified trial SHA256, no certificate timing metadata
+Certificate SHA256: certificate_residual_20_512.json 043d8e8c7cb7166cf6bd7d2da9e9c8b174f2e528666fc6396a12f6c872994b8a
+PASS saved final-arithmetic replay: certificate_residual_20_768.json bits 768 width 0.000000832790 verified trial SHA256, no certificate timing metadata
+Certificate SHA256: certificate_residual_20_768.json d37edcdb3a90dd9c130d96c64c58c6dd6bd0ba9c375d3d3348d882b0f7324ff8
+PASS saved final-arithmetic replay: certificate_residual_8_512.json bits 512 width 0.000068704044 LEGACY: no saved trial SHA256
+Certificate SHA256: certificate_residual_8_512.json 647a1843f5e8aed8a60260b3ba1a1dd0cebd34a1a1c0b0e351956e57d260076f
+PASS all stored trial rational fields, canonical indices and coefficient counts
+Saved certificate coverage: 7 total, 2 hardened-schema certificates, 5 legacy certificates explicitly labelled
+AUDIT PASS: no certificate-breaking discrepancy found in checked algebra
+Paper dependencies remain: continuum weak derivatives/domain, integration identities,
+hydrogenic spectral/min-max comparison, and Temple inequality. This is not a Lean proof.

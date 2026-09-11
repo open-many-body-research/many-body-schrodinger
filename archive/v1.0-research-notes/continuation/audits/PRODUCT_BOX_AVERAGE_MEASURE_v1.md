@@ -1,0 +1,14 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+ISSUE ID: R24-PRODUCT-BOX-AVERAGE-MEASURE-v1
+DISCOVERY DATE: 2026-09-11
+FROZEN FILE: rwa_proof/THEOREM_T_COMPOSITION.md
+FROZEN SHA-256: 1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da
+LINE / THEOREM: R24 finite rectangular pointwise-estimate prerequisite; no frozen theorem modified
+SEVERITY: NOTE
+DESCRIPTION: For arbitrary finite coordinate index type and positive side lengths, proves that the product of actual normalized interval measures is the inverse product side length times Lebesgue volume restricted to the same closed product box. The actual box volume is the positive real product of side lengths. Actual restricted-volume MemLp at exponent two yields the normalized average norm bound V^(-1/2) times the square root of the restricted integral of the norm squared. Both ENNReal norm and box-indicator ENNReal norm forms are proved. No function-dependent constant is selected; the box volume precedes the function. No weak derivative, PDE regularity, or all-order claim is made.
+DOWNSTREAM DEPENDENCIES: The genuine derivative-family tensor FTC theorem may now use a uniform restricted-volume L2 estimate in place of a uniform normalized average estimate. Weak-representative density and derivative-family construction remain separate obligations.
+PROPOSED CORRECTION: Add this normalization and Cauchy-Schwarz module outside the frozen snapshot. Frozen commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09, manifest THEOREM_T_FREEZE_2026-09-09_212604/FREEZE_MANIFEST.json.
+CORRECTION FILE: THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductBoxAverageMeasure_v1.lean
+CORRECTION SHA-256: 70e9e06771a3b40342eaffd4abf7d0e08883ceeee9c4698afcc550a1fda93cbb
+STATUS: Compiler PASS, approved strict v7 PASS for all eight declarations; full expanded statements and productBoxVolume definition read. Independent exact-source review by /root/finite_affine_jets found no defect in rectangle measure normalization, positive product volume, inverse square-root factor, finite MemLp measure scaling, or indicator direction. Receipt THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000230_630893Z/receipt.json, SHA-256 9be6cd5000fedd5a193e745f699570fcfaff275f251bed8664286f9745ec869b. Standard foundational axioms only, no printer diagnostics, unchanged source and object. Pinned cached dependencies reused without a source rebuild. Original T02 remains unverified.

@@ -1,0 +1,11 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Actual weak Grushin output identification
+
+Fully formalized result: actual global weak H² jets on R⁴×R^m determine a locally integrable principal expression P_c(e). Against every real compact smooth test φ, its pairing equals the actual splitGrushin(c,basis,0) test operator paired with the input f. Polynomial coefficients depend only on y, so two actual weak integrations by parts in each spectator direction produce no coefficient derivatives. Compact input support is not assumed for this identification.
+
+If a supplied L² h satisfies the same weak PDE, P_c(e)=h almost everywhere. The local version proves equality almost everywhere on any open Ω from tests supported in Ω. For a compactly supported weak H² f, the previously proved compact Grushin estimates therefore hold with the actual output norm ||h||² on the right, with constants 16c and 3/2 unchanged. All first and ordered second jets are genuine compact-test weak derivatives. No supplied PDE-output identification, density theorem, or approximation convergence is assumed as a separate premise.
+
+Two new modules and nine declarations pass the exact expanded-statement and axiom audit 20260910T171233_107222Z; only standard propext, Classical.choice and Quot.sound. These modules reuse pinned Lean/Mathlib and previously compiled project objects and are outside the v18 source-rebuild snapshot. This remains an estimate for inputs already in weak H², not joint H² gain from a general weak Grushin equation. Weak local regularity, factorial analyticity, and full Theorem T remain separate obligations.
+
+Frozen provenance: commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09, RWA_REPORT.md SHA-256 2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066. New continuation files only.

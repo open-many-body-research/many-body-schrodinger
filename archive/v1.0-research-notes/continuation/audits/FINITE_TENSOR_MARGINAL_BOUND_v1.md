@@ -1,0 +1,14 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+ISSUE ID: R24-FINITE-TENSOR-MARGINAL-v1
+DISCOVERY DATE: 2026-09-10
+FROZEN FILE: rwa_proof/THEOREM_T_COMPOSITION.md
+FROZEN SHA-256: 1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da
+LINE / THEOREM: R24 pointwise-estimate prerequisite; no frozen theorem modified
+SEVERITY: NOTE
+DESCRIPTION: Proves finite tensorization of actual singleton marginal inequalities for a measurable ENNReal-valued family indexed by coordinate subsets. For any finite processed coordinate set s, F(empty)(x) is bounded by the powerset sum of the product of coordinate weights times the actual s-marginal of the corresponding family entry. Specialization to all coordinates gives the actual product-measure integrals. A uniform integral bound B yields the coefficient product_i(1+L_i) times B. Measures are sigma-finite; a probability hypothesis is neither assumed nor needed. The coordinate premise remains explicit and must be obtained from the separate interval FTC theorem. Arbitrary ENNReal weights are allowed; applications establishing a finite real constant must provide finite weights. No PDE regularity or all-order derivative claim is made.
+DOWNSTREAM DEPENDENCIES: Product-box pointwise construction from genuine coordinate derivatives; later Cauchy-Schwarz and weak-density steps remain separate.
+PROPOSED CORRECTION: Add the new reusable tensor module without altering the frozen original. Frozen commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09, manifest THEOREM_T_FREEZE_2026-09-09_212604/FREEZE_MANIFEST.json.
+CORRECTION FILE: THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FiniteTensorMarginalBound_v1.lean
+CORRECTION SHA-256: 226416351a76486fce22478e77254333d96e5364c6aaf9b34bec5319dcb79ed5
+STATUS: Compiler PASS, strict approved v7 PASS for all six declarations; full expanded statement log and coefficient definition read. Independent source review by /root/finite_affine_jets found no defect in singleton composition, subset induction, weights, or quantifier order. Receipt THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235616_159761Z/receipt.json, SHA-256 5eb5a3833c79cfd717cc05bfb8a397166feeb2e1e66eab09e9f6e9842cef38b9. Standard foundational axioms only, no printer diagnostics, unchanged source/object. Pinned cached dependencies reused without a source rebuild. Original T02 remains unverified.

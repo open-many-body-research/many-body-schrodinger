@@ -1,0 +1,11 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Parent-agent review of the explicit weak H12 initialization
+
+Date: 2026-09-09. This is a record of an independent parent-agent mathematical review transmitted to the proof author, not a Lean verification. Reviewed final theorem: `GRUSHIN_H12_WEAK_INITIALIZATION_v1.md`, SHA-256 `ba8d2c6a07c4c875f11402ca867ea52976911e29f4a93ab4bd8e8412fd503812`. The only changes after the parent read the argument were explicit separation of the mollification parameter μ from the physical scale ε and links to this review/provenance.
+
+The parent reported reading the complete H12 argument and frozen U2–U4. The checked items were the oscillator constant 3/2 from the cross term −8c|ξ|²||v||²; cutoff gradient and Laplacian constants; exact commutation under t-only mollification; preliminary joint H² from the weak y-elliptic estimate applied also to first t derivatives; the finite tangential and y-recovery induction including odd orders; source derivative budget eleven; the count 50388; and the physical normalized-coordinate amplitude bounds in nuclear and pair charts. No flaw was found in those checks.
+
+The exact frozen operator source is `THEOREM_T_FREEZE_2026-09-09_212604/rwa_proof/UNIFORM_ANALYTIC_AUDIT.md`, SHA-256 `5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c`, commit `166f43f2f0178f92d8c4d1dde209ef0eeaefa660`, tag `theorem-t-proof-freeze-2026-09-09`.
+
+The review supports the paper-level finite initialization only. Full G1 remains unresolved here: weak KS transformation, physical regularity inputs, all-order factorial induction, quantitative descent and boundary compatibility retain their separate status. The parent directed the program to continue with the exact all-order recurrence and weighted localization indices after this checkpoint.

@@ -1,0 +1,29 @@
+name: Propose an open problem
+description: Suggest a new, precisely checkable problem for a sector.
+title: "[problem] "
+labels: ["problem-proposal"]
+body:
+  - type: input
+    id: sector
+    attributes:
+      label: Sector
+      description: S1 to S9, see docs/sectors.md
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Precise statement
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Checkable deliverable
+      description: What artifact would settle it, and at which evidence tier?
+    validations:
+      required: true
+  - type: textarea
+    id: known
+    attributes:
+      label: Known results and references

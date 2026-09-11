@@ -1,0 +1,13 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Physical finite weak order-twelve initialization
+
+For fixed real Z and E, the formal result treats the actual scalar two-electron Coulomb graph and a continuous representative g equal almost everywhere to its L2 input. Assume g is L-Lipschitz on the radius-R ball, and 0 < epsilon <= min(1,R/4). For the normalized difference (g(epsilon x)-g(0))/epsilon, both the electron-zero nuclear KS pullback and the pair KS pullback have genuine coordinate weak derivatives through total order twelve on the physical inverse image of the box with widths 1/128 and center (0,t0), for every unit spectator center t0.
+
+Three coefficient/quad bounds KT >= 1, KY >= 1 and QY >= 0 are selected on a fixed compact annulus before t0, g, L, R and epsilon. Each squared integral is bounded by (L^2+|g(0)|^2) times the explicit finite recurrence ksH12MixedBudget c 96 14016 KT KY QY, with c=4 for the nuclear chart and c=1 for the pair chart. Its ingredients are exactly twelve spectator stages and five spatial stages. The inner/outer cutoff gap is 1/4352, and the total 34 gaps takes width 1/64 to 1/128.
+
+The numeric constants 96 and 14016 bound the first and second derivatives of the actual Real.smoothTransition. Actual source and coefficient weak words, their finite budgets, and every gain are derived by the imported formal chain. No solution jet, gain conclusion, or commutator output is assumed.
+
+A further theorem supplies an actual family indexed by all 50388 seven-variable multiindices of total order at most twelve, with zero member equal to the pullback, the individual squared L2 bounds, summed bound 50388 times that budget, and all compact-test integration-by-parts identities. The conclusion is a genuine finite coordinate weak reserve; no separate conventional Sobolev-space norm identification, all-order analyticity, factorial estimate, algorithm or full Theorem T is asserted.
+
+Evidence: exact Lean 4.34.0-rc2 source compilation and joint strict v6 expanded-statement/axiom audit. Existing pinned dependencies and continuation object caches were reused; this was not an isolated source rebuild. The scalar graph and local Lipschitz hypotheses remain conditional inputs.

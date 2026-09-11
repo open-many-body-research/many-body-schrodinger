@@ -1,0 +1,15 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Actual finite differentiated weak Grushin equations
+
+For an open Ω in R⁴×R³, let P_c=−Δ_Y−c|y|²Δ_T, with c>0. Assume B:Ω→R and s:Ω→C are smooth, and f is locally L² and satisfies (P_c+B)f=s against every real smooth compactly supported test in Ω. Choose positive interior rectangular widths strictly smaller than outer widths, with the closed outer rectangle contained in Ω.
+
+For each finite order m, the final Lean theorem constructs one natural multiindex family F_(α,β), with F_(0,0)=f, genuine weak coordinate shifts and a finite common L² square bound through total order m+2 on the interior rectangle. For every total order at most m, that same representative satisfies an actual weak (P_c+B) equation, and both compact-test integrands are integrable. No derivative of f is an input to this final theorem.
+
+Let w be the canonical coordinate word of (α,β), D_v=F_(countY(v),countT(v)), and T_v=Σ_j D_(v++[t_j,t_j]). The right side is the ordinary word derivative D_w s minus Σ_(a,b) (D_a B)D_b, plus c Σ_(a,b) (D_a |y|²)T_b, where both sums run over every proper ordered split of w, retaining repetitions. The proof derives the negative Y-Laplacian equation, differentiates that constant-coefficient equation in actual weak form, and restores the spectator trace. Proved weak permutation on the open region identifies the required appended second spectator derivatives.
+
+The first finite calculus theorem explicitly takes genuine finite jet families; the raw-data theorem discharges these premises using the earlier finite local regularity theorem. Source and coefficient smoothness are local. The result does not choose a common family across all m, prove a uniform-order or factorial bound, supply a classical smooth representative, or implement an algorithm. The closed natural-index quadratic formula and the quantitative factorial recurrence remain separate obligations.
+
+Evidence: LocalSmoothWeakGrushinDifferentiatedEquations_v1.lean and WeakGrushinMixedMultiIndexEquation_v1.lean compile; strict v7 audit 20260910T233534_933052Z covers all three declarations with full expanded statements and only propext, Classical.choice, Quot.sound. The supporting word PDE/trace audit 20260910T233051_871777Z covers eight declarations. The exact counted-family audit 20260910T232823_808530Z covers fifteen declarations. Pinned dependency object caches were reused. These new modules are outside the earlier isolated v20 source rebuild; no additional rebuild was performed.
+
+Frozen reference: commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09. The frozen RWA_REPORT.md SHA-256 is 2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066. Full Theorem T remains unverified.

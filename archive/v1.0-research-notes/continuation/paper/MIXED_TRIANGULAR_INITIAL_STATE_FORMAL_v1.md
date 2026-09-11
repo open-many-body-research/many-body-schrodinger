@@ -1,0 +1,13 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Actual initial mixed triangular derivative state
+
+`LocalMixedWordCompatibility_v1` and `MixedTriangularState_v1` establish a formal prerequisite for the reduced R01/H12 recovery. Given the already genuine finite spectator state through total order m, they construct an ordered mixed family F(a,b) through Y order two and total order m. Each representative belongs to L2 on the stated region with the same squared norm budget W. The first and second Y entries are the previously constructed gain witnesses; each component is bounded by its aggregate norm, so no dimension factor is introduced.
+
+The canonical convention is F(a,b)=D_Y^a D_T^b f, with each list head the outer derivative. The functions are not identified merely by notation: every Y-prefix chain is a local weak derivative identity. Induction using the previously verified weak mixed swap constructs all spectator chains of F(a,b), including the two tangential derivatives needed when |a|+|b|+2≤m. No derivative compatibility is an extra premise in the conversion theorem.
+
+Evidence: both source modules compile in the declared pinned Lean environment; strict v5 audit 20260910T210345_979680Z covers five declarations, with complete expanded statements and only propext, Classical.choice and Quot.sound. The source definition was also read to verify that its packaged proposition contains genuine weak identities and L2 membership. Existing object caches were reused; these modules are outside the earlier 671-target source rebuild snapshot, and no new source rebuild was run.
+
+This is the initial S1 reserve, conditional on the already formalized spectator state. It does not yet construct the five subsequent Y-recovery levels, the differentiated variable-coefficient right sides, their aggregate bounds, or a completed H12 constant. It proves neither factorial analytic regularity nor the global approximation lemma or full Theorem T.
+
+Frozen provenance: commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09; frozen report THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md, SHA-256 2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066. Frozen artifacts and all prior PASS source bytes remain unchanged.

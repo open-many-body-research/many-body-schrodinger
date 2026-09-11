@@ -1,0 +1,11 @@
+> **Archived research note (v1.0 foundation).** Written during AI-assisted exploratory work before publication. Labels such as "PROVEN", "independently reviewed" or "sealed" in this file are the original authors' and are **not** evidence tiers. The authoritative status of every claim is in [`claims/registry.yaml`](../../../../claims/registry.yaml) and [`STATUS.md`](../../../../STATUS.md). File paths refer to the private workspace layout.
+
+# Actual scaled KS spectator words
+
+For a real coefficient b smooth on an open product region, define D_empty b=b and D_(j::w)b=D_tj(D_w b). The formal tuple uses the same outer-first order. The proved identity is D_w b(p)=D^|w|b(p)[t_j1,...,t_jk]. Each spectator direction has norm one in the ordinary product maximum norm, so |D_w b(p)|≤‖D^|w|b(p)‖, with no additional dimension, length, or factorial factor.
+
+For every fixed complex amplitude z, F_w=(D_w b)z is locally L² and has genuine weak derivative D_tj F_w=F_(j::w), tested against all real smooth compact tests in the region. This follows from integration by parts for the constant amplitude and the previously verified local product rule. On a measurable finite-volume region S where |D_w b|≤M, the actual integral satisfies ∫S‖F_w‖²≤M²‖z‖² volume(S).
+
+Applied to the physical nuclear and pair KS patches, the actual coefficients are b_epsilon=nuclearKSPotential(i,Z,epsilon E) or pairKSPotential(Z,epsilon E), and P_epsilon=epsilon b_epsilon. For every compact K inside the relevant coefficient patch and finite reserve m, a common M≥1 is chosen before epsilon∈[0,1], the ordered word, amplitude a0 and region S. Every coefficient word of length≤m is bounded by M on K. The actual normalized-difference source words are F_w=(D_w b_epsilon)(-a0); all weak links hold on the physical patch, and on measurable S⊆K their region budget is M²‖a0‖² volume(S). Finite volume is derived from compact containment.
+
+Evidence: four final Lean modules and ten declarations passed strict expanded-statement and axiom audits. Only propext, Classical.choice and Quot.sound occur. This is finite-order coefficient/source data, not a factorial estimate, a smoothness assumption on the unknown solution, an executable coefficient algorithm, or full Theorem T. The physical spectator coordinate subtype is retained, without pretending it is definitionally Fin 3.
