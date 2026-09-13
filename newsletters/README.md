@@ -6,7 +6,7 @@ Each edition explains research progress, notable merged and open PRs, relevant c
 
 ## Editions
 
-No editions have been published yet. The automation adds newest editions first here after preparing them through the repository's publication workflow.
+- [2026-09-13 — Foundation publication and contribution workflow](2026-09-13.md)
 
 ## Editorial and publication rules
 
