@@ -28,6 +28,23 @@
 
 ## Disclosure
 
-- [ ] AI tools produced substantive content in this PR (describe which parts)
+### Human contribution credit
+
+<!-- List all human contributors. Each accepted PR has one credit; proposed splits must total 100%. Maintainers record agreed attribution only after merge. See contributions/README.md. -->
+
+| GitHub handle | Work performed | Proposed share |
+|---|---|---|
+| | | |
+
+- **Primary category:** <!-- research / review / documentation / infrastructure -->
+
+### AI usage (required for every contributor)
+
+<!-- For each human, state used / none / unknown. If used, give a row per substantive tool. Model/version may be "not recorded"; never guess. Include AI review as well as implementation. No private prompts or credentials. -->
+
+| Human handle | AI assistance: used / none / unknown | Provider | Tool/product | Model/version or not recorded | Role and scope |
+|---|---|---|---|---|---|
+| | | | | | |
+
 - [ ] All commits are signed off (`git commit -s`, DCO)
 - [ ] No personal paths, hostnames, credentials, or copyrighted full-text papers

@@ -2,6 +2,8 @@
 
 This repository collects results about the electronic many-body Schrödinger equation. Anyone can fork it, open issues, and send pull requests. Only maintainers can merge to `main`. Every merged result carries an **evidence tier**, and the tier is what makes it usable by other people.
 
+New here? Follow the [getting-started guide](docs/getting-started.md). AI assistants must also read [AGENTS.md](AGENTS.md). Contribution credit and model disclosure are explained in the [attribution policy](contributions/README.md).
+
 The rules are strict for one reason: if an unverified claim gets into the record, everything built on it becomes unreliable. A claim here is only worth as much as its evidence.
 
 ---
@@ -81,6 +83,7 @@ A reviewer who can't check item 4 from the card can't approve the PR.
 AI tools are allowed and were used heavily to build the v1.0 foundation. They're also the main reason these rules exist. AI systems produce fluent, confident, and sometimes vacuous or wrong mathematics, so:
 
 - Say so in the PR template if AI tools produced substantive content.
+- For each human contributor, explicitly select `used`, `none`, or `unknown` for AI assistance. If used, name the provider, tool, model/version when known, and the work it did. Use `null` for an unrecorded model; never guess from writing style. Disclose all substantive tools, including implementations, reviews, and proof searches. Do not upload private prompts, personal paths, or credentials.
 - An AI-generated paper proof is P1 until two humans review it, just like any other proof.
 - An AI-generated Lean proof is fine, because the kernel checks it. The statement card, though, must be written or checked by a human.
 - Theorem counts don't matter. Fifty scalar lemmas are not a result. Group work by what it establishes about the physical problem.
@@ -99,6 +102,7 @@ The problem is split into **sectors** (see [`docs/sectors.md`](docs/sectors.md))
 
 ## 9. Pull request checklist
 
+- [ ] Human contributors and their proposed credit split are listed, with an explicit AI-use declaration for each (including no AI use).
 - [ ] One logical result per PR.
 - [ ] Every commit is signed off (`git commit -s`) under the [Developer Certificate of Origin](https://developercertificate.org/). This certifies that you have the right to submit the work under this repository's licenses.
 - [ ] `claims/registry.yaml` has been updated, and `python3 tools/validate_registry.py` passes.
@@ -112,3 +116,7 @@ The problem is split into **sectors** (see [`docs/sectors.md`](docs/sectors.md))
 - **Text, proofs, and documentation** are licensed under [CC BY 4.0](LICENSE-DOCS).
 
 By contributing, you agree that your contribution is licensed under the same terms.
+
+## 11. Recording contribution credit
+
+After a PR merges, a maintainer records its agreed attribution in `contributions/records/` in a follow-up PR and regenerates `CONTRIBUTORS.md`. Pending work earns no accepted-PR credit. Corrections add a superseding record, preserving the earlier record. Percentages never change ownership, approval rights, evidence tiers, or licensing. See the [complete policy and record format](contributions/README.md).

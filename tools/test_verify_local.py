@@ -60,7 +60,8 @@ class LocalVerificationTests(unittest.TestCase):
                 return exit_code, receipt, [call.args[-1] for call in status.call_args_list]
 
     def test_failure_stops_pipeline_and_never_reports_success(self):
-        code, receipt, states = self.run_fake([0, 0, 0, 1])
+        build_index = [name for name, *_ in runner.pipeline("full")].index("lean-build")
+        code, receipt, states = self.run_fake([0] * build_index + [1])
         self.assertEqual(code, 1)
         self.assertEqual(receipt["result"], "failure")
         self.assertEqual(states, ["pending", "failure"])
@@ -73,7 +74,7 @@ class LocalVerificationTests(unittest.TestCase):
         self.assertEqual(states, ["pending", "error"])
 
     def test_status_upload_failure_cannot_exit_successfully(self):
-        code, receipt, states = self.run_fake([0] * 6, fail_status=True)
+        code, receipt, states = self.run_fake([0] * len(runner.pipeline("full")), fail_status=True)
         self.assertEqual(code, 1)
         self.assertEqual(receipt["result"], "success")
         self.assertEqual(receipt["github_status"], "not_reported")

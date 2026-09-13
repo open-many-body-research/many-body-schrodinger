@@ -13,7 +13,7 @@ python3 tools/verify_local.py --trusted-checkout --mode quick
 python3 tools/verify_local.py --trusted-checkout --mode full
 ```
 
-The full run checks the foundation source hashes, registry, generated status page, Lean source policy, complete Lean build, every registry-listed tier-L declaration's axioms, all published certificates, and the independent algebra audit. A quick run omits the build/axiom audit and uses two reduced certificate checks; it cannot satisfy the full verification requirement.
+The full run checks the foundation source hashes, registry, generated status page, contribution records and generated dashboard, verification-tool tests, Lean source policy, complete Lean build, every registry-listed tier-L declaration's axioms, all published certificates, and the independent algebra audit. A quick run omits the build/axiom audit and uses two reduced certificate checks; it cannot satisfy the full verification requirement.
 
 Each run writes `.local-ci/<timestamp>-<commit>/summary.json` and individual logs. Receipts bind the outcome to the Git commit/tree and log hashes. These files are ignored by Git. Review logs for private paths or host information before sharing them; the runner never uploads logs automatically.
 
@@ -28,7 +28,9 @@ python3 tools/verify_local.py --trusted-checkout --mode full \
 
 The commit must already exist on GitHub. The runner reports pending, then success, failure, or error using the `local/verify` commit status. Quick runs use a separate `local/quick` status. Only the commit identifier, status name, and generic outcome are sent. A dirty checkout, changed commit, failed step, or missing dependency cannot produce a success status. If status reporting fails, the local receipt records that failure and the command exits unsuccessfully.
 
-The required `local/verify` branch protection status is configured separately on GitHub. A maintainer also checks each contributor's DCO sign-off and approves the result's statement card and mathematical meaning. A status is a maintainer's verification report, not cryptographic proof of execution or a substitute for review.
+The required `local/verify` branch protection status is configured separately on GitHub. A maintainer also checks each contributor's DCO sign-off, credit allocation, AI disclosure, and the result's statement card and mathematical meaning. DCO and the truth of attribution are manual review items. For ledger changes, also run `python3 tools/contributions.py --check --base origin/main --verify-github` against a refreshed, reviewed base to check preservation and source PR merge evidence. A status is a maintainer's verification report, not cryptographic proof of execution or a substitute for review.
+
+The clean-checkout guard covers tracked files and untracked files that are not ignored. It does not audit ignored dependency caches or the host runtime. Review pinned dependencies and use a trusted environment. Administrators retain the PR-only exception described in [governance](../GOVERNANCE.md); ordinary contributors cannot use it.
 
 ## Handling contributions
 
