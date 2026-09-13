@@ -70,6 +70,8 @@ def pipeline(mode: str):
     steps = [("registry", [py, "-B", "tools/validate_registry.py"], ROOT),
              ("status-page", [py, "-B", "tools/render_status.py", "--check"], ROOT),
              ("lean-policy", [py, "-B", "tools/lean_policy.py"], ROOT)]
+    steps += [("contributions", [py, "-B", "tools/contributions.py", "--check"], ROOT),
+              ("tool-tests", [py, "-B", "-m", "unittest", "discover", "-s", "tools", "-p", "test_*.py"], ROOT)]
     if mode == "full":
         steps += [("lean-build", ["lake", "build"], ROOT / "lean"),
                   ("axiom-audit", [py, "-B", "tools/axiom_audit.py"], ROOT)]

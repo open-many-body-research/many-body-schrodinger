@@ -11,7 +11,7 @@ Physics and chemistry already have excellent *numbers* for small atoms and molec
 - theorems checked by a proof assistant, and
 - energy intervals that are *guaranteed* to contain the true answer.
 
-This repository only records results at that standard. Every result carries an **evidence tier**, and only machine-checked Lean proofs (**L**), exact-arithmetic certificates (**C**) and independently reviewed proofs (**P2**) count as established.
+This repository distinguishes established results from proposals, numerical evidence, open problems, and withdrawals. Every result carries an **evidence tier**. Machine-checked Lean proofs (**L**), exact-arithmetic certificates (**C**) and independently reviewed proofs (**P2**) count as established only within their stated scope and dependencies; conditional certificates retain their listed assumptions.
 
 > **What this is not.** It is not a solution of the many-body problem, and it does not claim an efficient algorithm. The research program's target theorem ("Theorem T": polynomial-cost certified ground energies for two-electron atoms) is **open**. An earlier internal report claimed it was proved; that claim is withdrawn in [ERRATUM-001](errata/ERRATUM-001-theorem-t-not-proved.md).
 
@@ -66,7 +66,9 @@ GitHub Actions is disabled. Our [local verification runner](docs/local-verificat
 
 ## Contributing
 
-Anyone can fork this repository and open pull requests. Only maintainers can merge, and nothing merges without a passing `local/verify` status and a code-owner review. The rules, in short (full version in **[CONTRIBUTING.md](CONTRIBUTING.md)**):
+Start with the **[new contributor guide](docs/getting-started.md)**. LLM-assisted contributors should also read **[AGENTS.md](AGENTS.md)**. See the **[contribution dashboard](CONTRIBUTORS.md)** for recorded contribution shares and disclosed AI tools; these shares measure recorded accepted PR credit, not scientific importance or progress toward solving the problem.
+
+Anyone can fork this repository and open pull requests. Only authorized maintainers can merge. Ordinary merges require a passing `local/verify` status and a code-owner review; the owner retains the administrative exception described in [GOVERNANCE.md](GOVERNANCE.md). The rules, in short (full version in **[CONTRIBUTING.md](CONTRIBUTING.md)**):
 
 1. **Claim a problem.** Open a *Claim a problem* issue for a sector problem so that work isn't duplicated.
 2. **Bring evidence that matches your tier:**
@@ -91,6 +93,7 @@ reviews/       review records (P1 → P2)
 errata/        corrections and withdrawals
 archive/       the v1.0 research notes (context, not authority)
 tools/         local verification runner and checks
+contributions/ accepted contribution records and attribution policy
 ```
 
 ## Provenance
