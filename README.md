@@ -82,6 +82,8 @@ AI assistance is allowed, and it was used heavily to build v1.0. It must be disc
 
 ## Repository map
 
+Read the [weekly research newsletter](newsletters/README.md) for dated summaries of progress, notable contributions, releases, and open work.
+
 ```
 claims/        registry.yaml (authoritative status) and statement cards
 lean/          Lean 4 library: 817 modules, v1.0 foundation
@@ -94,6 +96,7 @@ errata/        corrections and withdrawals
 archive/       the v1.0 research notes (context, not authority)
 tools/         local verification runner and checks
 contributions/ accepted contribution records and attribution policy
+newsletters/   weekly research digests and their source links
 ```
 
 ## Provenance
