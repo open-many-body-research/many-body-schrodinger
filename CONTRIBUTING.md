@@ -12,8 +12,8 @@ Every result in [`claims/registry.yaml`](claims/registry.yaml) has exactly one t
 
 | Tier | Name | What counts as evidence | Can other results depend on it? |
 |---|---|---|---|
-| **L** | Lean-verified | Lean 4 source that builds in CI against the pinned Mathlib. No `sorry` or `admit`, no new `axiom`s, and none of the other forbidden constructs in §3. `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. Plus a reviewed **statement card** (§4). | Yes, including other L results. |
-| **C** | Certified computation | An exact or interval-arithmetic certificate (rationals, dyadics, or outward-rounded intervals). It needs a separate **checker** that recomputes it from the published inputs, and CI must run that checker. Floating-point results never count as certificates. The mathematical reduction from the certificate to the claim must be at tier L or P2, or be listed under `conditional_on`. In that case the claim is reported as *conditional*. | Yes. |
+| **L** | Lean-verified | Lean 4 source that builds under local verification against the pinned Mathlib. No `sorry` or `admit`, no new `axiom`s, and none of the other forbidden constructs in §3. `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. Plus a reviewed **statement card** (§4). | Yes, including other L results. |
+| **C** | Certified computation | An exact or interval-arithmetic certificate (rationals, dyadics, or outward-rounded intervals). It needs a separate **checker** that recomputes it from the published inputs, and the maintainer local verifier must run that checker. Floating-point results never count as certificates. The mathematical reduction from the certificate to the claim must be at tier L or P2, or be listed under `conditional_on`. In that case the claim is reported as *conditional*. | Yes. |
 | **P2** | Reviewed paper proof | A complete human-readable proof in `proposals/` plus **two independent review records** in `reviews/`. Reviewers must not be the author and must not be listed as the author's co-authors. | Yes, but anything depending on it can be at most P2. |
 | **P1** | Unreviewed paper proof | A complete written proof that hasn't had two independent reviews yet. | No. It's a proposal. |
 | **N** | Numerical evidence | Reproducible floating-point computations: the script, pinned environment, raw output, and hardware notes. | No. It's evidence, not proof. |
@@ -35,13 +35,13 @@ Tags are protected and can't be moved or deleted.
 ## 3. Rules for Lean contributions (tier L)
 
 - **Toolchain.** Use the versions pinned in `lean/lean-toolchain` and `lean/lake-manifest.json`. Toolchain bumps are separate maintainer-only PRs.
-- **Forbidden in `lean/`.** CI enforces all of these (`tools/lean_policy.py`):
+- **Forbidden in `lean/`.** Local verification enforces all of these (`tools/lean_policy.py`):
   - `sorry` and `admit`
   - `axiom` declarations
   - `native_decide`, `implemented_by`, `@[extern]`, `unsafe`
   - `debug.skipKernelTC` and any `set_option` that weakens kernel checking
   - `opaque` constants that stand in for real mathematics
-- **Axiom audit.** Every declaration listed under a tier-L claim is checked with `#print axioms` in CI (`tools/axiom_audit.py`). The only allowed axioms are `propext`, `Classical.choice`, and `Quot.sound`.
+- **Axiom audit.** Every declaration listed under a tier-L claim is checked with `#print axioms` during local verification (`tools/axiom_audit.py`). The only allowed axioms are `propext`, `Classical.choice`, and `Quot.sound`.
 - **Definitions matter more than proofs.** A Lean proof only shows that the *stated* theorem follows. If the Hamiltonian, domain, or spin space is defined wrong, the proof is worthless. So:
   - **Trusted definitions.** These live in `lean/Foundation/`: `ContinuumFoundation_v1` (spaces, antisymmetry, potential, weak derivatives, $H^1$ and $H^2$), `CoulombOperatorCore_v2` (the operator), `CoulombH1Form_v1` (the form), `UnboundedResolvent_v2` (spectrum), and `CoulombSpectralFoundation_v3` (the ground energies). Any new `lean/ManyBody/Spec/` directory is trusted too.
   - **Reuse, don't redefine.** A new theorem should import these definitions rather than define its own copy of "the Hamiltonian".
@@ -65,7 +65,7 @@ A reviewer who can't check item 4 from the card can't approve the PR.
 
 - **Exact arithmetic only.** Use rationals, integers, dyadic intervals with explicit outward rounding, or a verified interval library. Floating point may be used to *find* a certificate but never to *check* one.
 - **Separate checker.** The checker lives in `certificates/<name>/check*.py` (or a Lean program). It reads only the published inputs and must not import the code that produced the certificate. Anything else, including search and optimization scripts, is untrusted.
-- **CI runs it.** Every certificate has a CI job. If a full check takes more than 30 minutes, add a reduced check that runs on every PR, and run the full check on the scheduled workflow.
+- **Local verification runs it.** Every certificate needs a full reproducible check. A reduced check may support development, but maintainers run the full check before reporting `local/verify` success. See [local verification](docs/local-verification.md).
 - **Record hashes.** Record the SHA-256 of every input and output file in the certificate's `MANIFEST.json`.
 - **Anonymize.** Leave out hostnames, usernames, and absolute paths from certificate metadata.
 

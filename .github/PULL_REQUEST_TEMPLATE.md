@@ -10,7 +10,7 @@
 
 - [ ] Statement card at `claims/cards/<ID>.md` (required for L, C, P2)
 - [ ] Lean: builds, and `tools/lean_policy.py` and `tools/axiom_audit.py` pass
-- [ ] Certificate: separate checker, exact arithmetic, CI job, MANIFEST with SHA-256
+- [ ] Certificate: separate checker, exact arithmetic, local verification receipt, MANIFEST with SHA-256
 - [ ] Paper proof: complete, with precise external references
 - [ ] Numerics: script, pinned environment, raw output
 

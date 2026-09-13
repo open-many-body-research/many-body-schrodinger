@@ -16,7 +16,7 @@ Nobody gets write access to `main` just by contributing. People earn it through 
 These settings are enforced by GitHub repository rulesets, not by trust.
 
 - **No direct pushes.** All changes arrive by pull request.
-- **Reviews.** Every pull request needs at least one approving review from a code owner. That approval is dismissed if new commits are pushed afterwards. Changes to the trusted definitions (`lean/**/Spec/**`), CI, tools, or governance files need maintainer approval.
+- **Reviews.** Every pull request needs at least one approving review from a code owner. That approval is dismissed if new commits are pushed afterwards. Changes to the trusted definitions (`lean/**/Spec/**`), verification infrastructure, tools, or governance files need maintainer approval.
 - **Required checks.** A PR must pass these before it can merge:
   - the Lean build
   - the Lean policy scan
@@ -31,7 +31,7 @@ These settings are enforced by GitHub repository rulesets, not by trust.
 ## Promoting a claim
 
 1. The author opens a PR that adds the claim with the tier its evidence supports.
-2. CI checks everything that can be checked by machine.
+2. Maintainers run the local verifier on the reviewed commit and record its machine-check results as `local/verify`. GitHub Actions is disabled.
 3. A code owner checks the part that can't: the **statement card**, especially whether the definitions are faithful and whether all premises are listed.
 4. For P2 claims, the two review records must come from people independent of the author.
 5. If the PR raises a sector's "current best", a maintainer updates the sector README and the changelog.
@@ -52,4 +52,4 @@ These settings are enforced by GitHub repository rulesets, not by trust.
 
 ## Changing these rules
 
-Only maintainers can change governance, contribution rules, or CI policy, through a PR that stays open for public comment for at least 7 days. Rules can be tightened immediately, but loosening them always needs the comment period.
+Only maintainers can change governance, contribution rules, or verification policy, through a PR that stays open for public comment for at least 7 days. Rules can be tightened immediately, but loosening them always needs the comment period.
