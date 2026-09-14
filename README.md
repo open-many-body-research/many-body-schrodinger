@@ -2,10 +2,10 @@
 
 **A verified, shared record of rigorous progress on the electronic many-body Schrödinger equation, set up so that people can split up the problem, work on different pieces, and build on each other's results.**
 
-$$
-H_N=\sum_{i=1}^{N}\Big(-\tfrac12\Delta_{i}-\sum_{k}\frac{Z_k}{|x_i-R_k|}\Big)+\sum_{i<j}\frac{1}{|x_i-x_j|}
+```math
+H_N=\sum_{i=1}^{N}\Big(-\tfrac{1}{2}\Delta_{i}-\sum_{k}\frac{Z_k}{|x_i-R_k|}\Big)+\sum_{i\lt j}\frac{1}{|x_i-x_j|}
 \quad\text{on antisymmetric } L^2\big((\mathbb R^3\times\{\uparrow,\downarrow\})^N\big)
-$$
+```
 
 Physics and chemistry already have excellent *numbers* for small atoms and molecules. What they lack are **verified** results:
 - theorems checked by a proof assistant, and
@@ -21,10 +21,10 @@ This repository distinguishes established results from proposals, numerical evid
 
 | | Result | Tier |
 |---|---|---|
-| **Operator theory** | For **every** electron number $N$ and nuclear charge $Z$, the atomic Coulomb Hamiltonian with spin and Fermi statistics is self-adjoint on exactly $H^2$. Its variational, form and spectral ground energies coincide, and the common value $E$ lies in $[-N\max(Z,0)^2/2,\ 0]$. This is Kato's theorem (1951), now **formalized in Lean 4 / Mathlib**. | [L](claims/cards/S1-001.md) |
-| **Hydrogen** | The ground energy is exactly $-Z^2/2$, identified inside the unbounded continuum operator. | [L](claims/cards/S1-003.md) |
-| **Two electrons** | For $9Z^2>32$ (helium included): the ground state exists and is nondegenerate, $E < -5Z^2/8$, and every other spectral point has real part $\ge -5Z^2/8$. Temple's enclosure is proved for the actual operator. | [L](claims/cards/S2-002.md) |
-| **Helium energy** | $E_\text{He}\in[-2.903724385192751581540207,\ -2.903724377006065467379698]$ Ha, width $8.2\times10^{-9}$. Exact rational arithmetic, standard-library Python, reproduced by exact local verification. | [C](claims/cards/S3-002.md)* |
+| **Operator theory** | For **every** electron number $`N`$ and nuclear charge $`Z`$, the atomic Coulomb Hamiltonian with spin and Fermi statistics is self-adjoint on exactly $`H^2`$. Its variational, form and spectral ground energies coincide, and the common value $`E`$ lies in $`[-N\max(Z,0)^2/2,\ 0]`$. This is Kato's theorem (1951), now **formalized in Lean 4 / Mathlib**. | [L](claims/cards/S1-001.md) |
+| **Hydrogen** | The ground energy is exactly $`-Z^2/2`$, identified inside the unbounded continuum operator. | [L](claims/cards/S1-003.md) |
+| **Two electrons** | For $`9Z^2>32`$ (helium included): the ground state exists and is nondegenerate, $`E < -5Z^2/8`$, and every other spectral point has real part $`\ge -5Z^2/8`$. Temple's enclosure is proved for the actual operator. | [L](claims/cards/S2-002.md) |
+| **Helium energy** | $`E_\text{He}\in[-2.903724385192751581540207,\ -2.903724377006065467379698]`$ Ha, width $`8.2\times10^{-9}`$. Exact rational arithmetic, standard-library Python, reproduced by exact local verification. | [C](claims/cards/S3-002.md)* |
 
 \* The helium certificate relies on the Lean separator and Temple step plus closed-form moment formulas that are proved on paper (tier P1) and spot-checked on more than 3,000 exact identities. See the card.
 
