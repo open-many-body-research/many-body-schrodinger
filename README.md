@@ -3,7 +3,7 @@
 **A verified, shared record of rigorous progress on the electronic many-body Schrödinger equation, set up so that people can split up the problem, work on different pieces, and build on each other's results.**
 
 ```math
-H_N=\sum_{i=1}^{N}\Big(-\tfrac12\Delta_{i}-\sum_{k}\frac{Z_k}{|x_i-R_k|}\Big)+\sum_{i<j}\frac{1}{|x_i-x_j|}
+H_N=\sum_{i=1}^{N}\Big(-\tfrac{1}{2}\Delta_{i}-\sum_{k}\frac{Z_k}{|x_i-R_k|}\Big)+\sum_{i\lt j}\frac{1}{|x_i-x_j|}
 \quad\text{on antisymmetric } L^2\big((\mathbb R^3\times\{\uparrow,\downarrow\})^N\big)
 ```
 

@@ -5,7 +5,7 @@
 We take the nonrelativistic, clamped-nucleus (Born–Oppenheimer) electronic Hamiltonian in atomic units (ħ = mₑ = e = 1, energies in hartree):
 
 ```math
-H_N \;=\; \sum_{i=1}^{N}\Big(-\tfrac12\Delta_{x_i} \;-\; \sum_{k=1}^{M}\frac{Z_k}{|x_i-R_k|}\Big) \;+\; \sum_{1\le i<j\le N}\frac{1}{|x_i-x_j|}.
+H_N \;=\; \sum_{i=1}^{N}\Big(-\tfrac{1}{2}\Delta_{x_i} \;-\; \sum_{k=1}^{M}\frac{Z_k}{|x_i-R_k|}\Big) \;+\; \sum_{1\le i\lt j\le N}\frac{1}{|x_i-x_j|}.
 ```
 
 - **Particles.** There are $`N`$ electrons at positions $`x_i\in\mathbb R^3`$, and $`M`$ fixed nuclei with charges $`Z_k>0`$ at positions $`R_k`$.
