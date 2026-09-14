@@ -1,6 +1,6 @@
 # S7: Complexity
 
-**Scope.** How hard is it, in the worst case, to compute ground energies to a given precision? This covers hardness, whether fixed-$N$ cases are tractable, and how finite-basis results relate to the continuum.
+**Scope.** How hard is it, in the worst case, to compute ground energies to a given precision? This covers hardness, whether fixed-$`N`$ cases are tractable, and how finite-basis results relate to the continuum.
 
 ## Known (literature, not claims of this repository)
 - **Local Hamiltonians.** The 2-local Hamiltonian problem is QMA-complete (Kempe–Kitaev–Regev 2006).
@@ -20,4 +20,4 @@
 | ID | Problem | Deliverable | Status |
 |---|---|---|---|
 | S7.1 | **Continuum hardness** | A polynomial-time reduction from 2-local Hamiltonians to non-magnetic point-nucleus Coulomb molecules, with inverse-polynomial gap and ionization margin, or a structural obstruction to one | open |
-| S7.2 | **Fixed-$N$ complexity** | For fixed $N$, place certified $p$-bit ground-energy computation in a complexity class (e.g. polynomial in $p$). Theorem T is the case $N=2$. | open |
+| S7.2 | **Fixed-$`N`$ complexity** | For fixed $`N`$, place certified $`p`$-bit ground-energy computation in a complexity class (e.g. polynomial in $`p`$). Theorem T is the case $`N=2`$. | open |
