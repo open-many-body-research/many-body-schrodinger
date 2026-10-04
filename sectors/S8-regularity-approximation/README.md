@@ -337,3 +337,9 @@ Independent AI applicability review passed; human statement review and exact com
 [S8-035](../../claims/cards/S8-035.md) The same actual normalized two-electron ground and genuine weak first and ordered second derivatives admit concrete smooth normalized compact approximants at every positive tolerance, with simultaneous physical H2 defect, actual Coulomb graph residual and absolute Rayleigh pairing error bounded by that tolerance. A single eventual concrete mollifier index controls all 43 components.
 The selected-state constants and eventual mollifier index are existential. The radius formula is explicit in those constants. Symmetry of the new approximants, finite dictionaries, computable coefficients, effective solver and full rung are not asserted.
 Independent AI applicability review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: preserve actual ground symmetries under radial physical compact truncation
+
+[S8-034](../../claims/cards/S8-034.md) For charge at least2, one actual normalized scalar Coulomb ground with original weak derivative families admits literal norm-radial compact truncations preserving actual exchange, reality and simultaneous O3 invariance. Each positive admissible decay rate has one constant before all real radii at least1, controlling both the true combined H2 defect and actual scalar Hamiltonian graph residual at the original ground energy.
+The new cutoff is the explicit inner-product-space radial bump, not an inferred symmetry of the old generic choice. Compact states are not asserted normalized, smooth or eigenfunctions. Constants are existential; finite dictionaries, effective solver and full rung remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.

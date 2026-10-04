@@ -1552,3 +1552,45 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The selected-state constants and eventual mollifier index are existential. The radius formula is explicit in those constants. Symmetry of the new approximants, finite dictionaries, computable coefficients, effective solver and full rung are not asserted.
+
+- id: S8-034
+  sector: S8
+  title: Preserve actual ground symmetries under radial physical compact truncation (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-022, S8-024, S8-028]
+  statement: >
+    For charge at least2, one actual normalized scalar Coulomb ground with original weak derivative families admits literal norm-radial compact truncations preserving actual exchange, reality and simultaneous O3 invariance. Each positive admissible decay rate has one constant before all real radii at least1, controlling both the true combined H2 defect and actual scalar Hamiltonian graph residual at the original ground energy.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - Positive decay rate with its square strictly below Z squared over112 and R at least1.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactCutoff, decl: ManyBody.S8.physicalRadialCompactCutoffBase_contDiff}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactCutoff, decl: ManyBody.S8.physicalRadialCompactCutoff_tsupport_subset}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactCutoff, decl: ManyBody.S8.physicalRadialCompactCutoff_isometry}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactCutoff, decl: ManyBody.S8.physicalRadialCompactCutoff_derivative_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactCutoff, decl: ManyBody.S8.physicalRadialCompactCutoffSecond_zero_inner}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactFirst_weakPartial}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactSecond_weakPartial}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactH2DefectNorm_le}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactState_isometry}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactState_permutation}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactState_rotation}
+    - {module: ManyBody.S8.Internal.PhysicalRadialCompactH2Truncation, decl: ManyBody.S8.physicalRadialCompactState_real}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.physical_radial_compact_H2_truncation_of_tail}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.scalar_eigen_radial_compact_H2_exponential_truncation}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.twoElectron_ground_radial_compact_H2_exponential_truncation_of_graph}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_radial_compact_H2_exponential_truncation}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.scalar_eigen_radial_compact_residual_le_H2}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.physical_radial_compact_H2_data_mono}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.scalar_eigen_radial_compact_Hamiltonian_exponential_residual}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.twoElectron_ground_radial_compact_Hamiltonian_exponential_residual_of_graph}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_radial_compact_Hamiltonian_exponential_residual}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.physical_radial_compact_residual_data_symmetric}
+    - {module: ManyBody.S8.CoulombRadialCompactApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_radial_symmetric_compact_approximation}
+  card: claims/cards/S8-034.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalRadialCompactCutoff.lean, lean/ManyBody/S8/Internal/PhysicalRadialCompactH2Truncation.lean, lean/ManyBody/S8/CoulombRadialCompactApproximation.lean, claims/cards/S8-034.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The new cutoff is the explicit inner-product-space radial bump, not an inferred symmetry of the old generic choice. Compact states are not asserted normalized, smooth or eigenfunctions. Constants are existential; finite dictionaries, effective solver and full rung remain open.

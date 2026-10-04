@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 40 |
+| **L** | Lean-verified | 41 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -113,6 +113,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-032](claims/cards/S8-032.md) | Bound genuine real distance derivatives of original collision profiles (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact rate, threshold or half-polydisc and selected-scale conditions in the card |
 | [S8-033](claims/cards/S8-033.md) | Derive actual distance Taylor sums and geometric truncation errors (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact selected scales, polydisc or tolerance and rate conditions in the card |
 | [S8-035](claims/cards/S8-035.md) | Construct smooth normalized compact physical ground approximants (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact selected tolerance and rate conditions in the card |
+| [S8-034](claims/cards/S8-034.md) | Preserve actual ground symmetries under radial physical compact truncation (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; Positive decay rate with its square strictly below Z squared over112 and R at least1 |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
