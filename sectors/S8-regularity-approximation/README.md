@@ -121,3 +121,22 @@ explicit original spin-state norm bound. A proved mixed second coefficient
 bound is 128|Z|/27+8192/1331. The cutoffs and geometric constant precede
 charge, energy and state. Human review is pending. This finite fixed-chart
 budget does not provide full H12 or factorial estimates.
+
+
+## Recovered later checkpoint and new norm uniformity
+
+The [latest recovery checkpoint](../../recovery/rung2-latest-2026-10-04/CURRENT_CHECKPOINT_v1.md)
+restores the original local H12, factorial, pointwise and analytic-descent chain,
+its actual mixed derivative estimates and within-chart compatibility, plus
+scalar-ground decay and axis/distance components. The finite-stage submissions
+above describe their own narrower conclusions. Recovery does not promote an
+accepted claim or establish the remaining global approximation and solver steps.
+
+[S8-014](../../claims/cards/S8-014.md) supplies a common local Lipschitz coefficient
+before every physical eigenstate at fixed electron count, charge, energy and
+configuration-ball radius. The actual graph constructs a shared full-spin
+representative, with component Lipschitz constants bounded by that coefficient
+times the original spin-state norm. The coefficient follows from uniform
+boundedness on the closed physical eigenspace; it is existential and has no
+numerical algorithm. The fixed radius 1 is available before the state. Human
+statement review is pending, and the full rung remains open.

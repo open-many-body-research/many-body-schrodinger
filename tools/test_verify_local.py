@@ -20,6 +20,14 @@ class LocalVerificationTests(unittest.TestCase):
         self.assertTrue({"lean-build", "axiom-audit"}.issubset(full))
         self.assertTrue({"lean-build", "axiom-audit"}.isdisjoint(quick))
 
+    def test_recovery_failure_stops_before_build_and_never_reports_success(self):
+        index = [name for name, *_ in runner.pipeline("full")].index("rung2-requested-manifest")
+        code, receipt, states = self.run_fake([0] * index + [1])
+        self.assertEqual(code, 1)
+        self.assertEqual(receipt["result"], "failure")
+        self.assertEqual(states, ["pending", "failure"])
+        self.assertEqual(receipt["steps"][-1]["name"], "rung2-requested-manifest")
+
     def test_dirty_or_changed_checkout_rejected(self):
         for values in [("changed", ""), ("head", " M tools/check.py")]:
             with patch.object(runner, "git", side_effect=values):
@@ -44,12 +52,14 @@ class LocalVerificationTests(unittest.TestCase):
                 runner.verify_foundation()
 
     def run_fake(self, codes, fail_status=False):
+        tested_pipeline = runner.pipeline("full")
         with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stdout(io.StringIO()):
             root = Path(tmp)
             with patch.object(runner, "ROOT", root), \
                  patch.object(runner, "git", return_value="a" * 40), \
                  patch.object(runner, "assert_checkout"), \
                  patch.object(runner, "verify_foundation", return_value=817), \
+                 patch.object(runner, "pipeline", return_value=tested_pipeline), \
                  patch.object(runner, "run_step", side_effect=codes), \
                  patch.object(runner, "post_status") as status, \
                  patch("sys.argv", ["verify_local.py", "--trusted-checkout", "--report-status", "org/repo"]):
