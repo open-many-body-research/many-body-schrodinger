@@ -19,11 +19,13 @@ python3 tools/verify_rung2_latest.py \
   --packages lean/.lake/packages --jobs 6
 ```
 
-See [local verification](../../docs/local-verification.md) for obtaining the third-party dependencies. All nine revisions are recorded in [dependency-pins.json](dependency-pins.json); Mathlib is `d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9`. The latest wrapper uses the same recovery runner and the original declaration-discovery helper, with this manifest as its input.
+See [local verification](../../docs/local-verification.md) for obtaining the third-party dependencies. All nine revisions are recorded in [dependency-pins.json](dependency-pins.json); Mathlib is `d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9`. The latest wrapper uses the versioned recovery runner and the original declaration-discovery helper, with this manifest as its input.
 
-Every local module is compiled from its exact source into a new, initially empty output directory. `LEAN_PATH` contains only the fresh local output and the pinned third-party library artifacts. No historical foundation/continuation project objects or incremental snapshots are imported. The official Lean compiler/core and third-party compiled library artifacts are reused; Lean and Mathlib themselves are not rebuilt from source.
+The default run compiles every local module from its exact source into a new, initially empty output directory. `LEAN_PATH` contains only the fresh local output and the pinned third-party library artifacts. No historical foundation/continuation project objects or incremental snapshots are imported. The official Lean compiler/core and third-party compiled library artifacts are reused; Lean and Mathlib themselves are not rebuilt from source.
 
 The runner performs complete expanded-statement and axiom audits of all 2,205 public declarations in all 542 recovered modules. It checks report completeness and rejects nonstandard axioms, printer omissions/fallbacks, forbidden verification shortcuts, missing imports, source changes and checkout changes. Each run records its exact tested commit/tree, pins, commands and source/object/log hashes under a new `.local-ci/rung2-.../` directory. The ordinary repository full suite is separate from this clean source-closure replay.
+
+An optional `--prior-run /path/to/successful-initial-run` extends a successful earlier run of the preserved initial verifier. It checks the compiler binary, dependency pins, source/object/build-log/audit hashes and commit ancestry, inventories all inherited generated artifacts, and rechecks those objects after the extension. Only the additional modules and declarations are compiled/audited again. Such a run is explicitly recorded as a cumulative source rebuild, with both tested commits; it does not claim a single empty-cache invocation or reuse historical development objects.
 
 ## Current mathematical checkpoint
 
