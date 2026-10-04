@@ -1,0 +1,82 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260911T000412_508790Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000412_508790Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000412_508790Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 63.005264416,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "b702e9276be71d7048ecc9aab62b2a8b8dbcd164c075afd5f40e11cad32adc39",
+  "audit_log_sha256": "712372076de9acdcb2459fc0acdf08816221928392fe924240fe87d83db6de30",
+  "module_records": [
+    {
+      "module": "FactorialMonomialBudgetBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialMonomialBudgetBound_v1.lean",
+      "source_sha256": "ca7ad583eac24c0fbeea760e0251c0e91a61629bbe69d94a04bfed304221b703",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FactorialMonomialBudgetBound_v1.olean",
+      "object_sha256": "6a3c551d1a9a514b7c92ca109f0730f7b8148f1d633ecbe9412c124a8b44616d",
+      "declarations": [
+        "factorial_monomial_region_budget_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "FactorialProfileFiniteBudgetBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialProfileFiniteBudgetBound_v1.lean",
+      "source_sha256": "01c51fba09195228df06c0bd96000481bdfc581d356ce4bd879c331cd6a82a3c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FactorialProfileFiniteBudgetBound_v1.olean",
+      "object_sha256": "71054a9b4225352e38f341bab9bee1860d3bacbd38455e80333f6ba19ab85531",
+      "declarations": [
+        "factorial_shifted_total_le_of_cost",
+        "factorial_profile_bound_of_region_budgets",
+        "factorial_profile_bound_on_subregion_of_budgets"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "FactorialR9BaseProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialR9BaseProfile_v1.lean",
+      "source_sha256": "4cb896f7f80e12364d46b62b2d2e3199aeec30d04bdb02686a5826e5ee1a218d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FactorialR9BaseProfile_v1.olean",
+      "object_sha256": "85e67e8052cd4098bc3c5cc35b47e8f9dfb25dc4444b3d5e4a45e435e779203f",
+      "declarations": [
+        "factorial_profile_bound_of_weak_finite_budget",
+        "factorial_R9_base_profile_of_H12"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.factorial_monomial_region_budget_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_shifted_total_le_of_cost: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_profile_bound_of_region_budgets: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_profile_bound_on_subregion_of_budgets: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_profile_bound_of_weak_finite_budget: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_R9_base_profile_of_H12: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.factorial_monomial_region_budget_bound",
+    "TheoremT.Continuum.WeakGrushin.factorial_shifted_total_le_of_cost",
+    "TheoremT.Continuum.WeakGrushin.factorial_profile_bound_of_region_budgets",
+    "TheoremT.Continuum.WeakGrushin.factorial_profile_bound_on_subregion_of_budgets",
+    "TheoremT.Continuum.WeakGrushin.factorial_profile_bound_of_weak_finite_budget",
+    "TheoremT.Continuum.WeakGrushin.factorial_R9_base_profile_of_H12"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

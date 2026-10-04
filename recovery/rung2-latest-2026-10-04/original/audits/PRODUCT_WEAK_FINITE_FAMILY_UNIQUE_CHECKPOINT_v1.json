@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-09-10T23:54:26.215399+00:00",
+  "evidence": "Lean kernel-checked local weak derivative uniqueness and norm-budget invariance",
+  "result": "Two finite actual weak derivative word families on an open domain with the same zero-order function almost everywhere agree almost everywhere at every available order. The natural mixed Y/T multiindex version and restricted L2 budget invariance are proved.",
+  "semantic_review": "Read all expanded types and axiom reports. Both families must have genuine local weak derivative chains; no derivative identity or equality of positive-order terms is assumed. No common all-order family or computable selection is asserted.",
+  "audit_receipt": "audits/formal_semantics/20260910T234911_790447Z/receipt.json",
+  "audit_receipt_sha256": "999efff7d65566a0e711bf21f672f4cddd2ac73de65ce8725a083655a8715164",
+  "modules": [
+    {
+      "module": "ProductWeakFiniteFamilyUnique_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductWeakFiniteFamilyUnique_v1.lean",
+      "source_sha256": "84a29afde6cd275334742836cb9e2cdd6f585d50f9ac6171f34677e989ed2adf",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductWeakFiniteFamilyUnique_v1.olean",
+      "object_sha256": "49b889598a53ff2a31818fc28b5991af73f0c35c9a74df5634bfec2a8b967094",
+      "declarations": [
+        "product_local_weak_word_families_unique",
+        "product_mixed_multiIndex_weak_families_unique",
+        "RegionL2Budget.congr_ae"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.WeakGrushin.product_local_weak_word_families_unique: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.product_mixed_multiIndex_weak_families_unique: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.RegionL2Budget.congr_ae: [propext, Classical.choice, Quot.sound]"
+  ],
+  "cache": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "rebuild_scope": "Outside the prior isolated v20 rebuild; no new source rebuild.",
+  "preservation": "All prior artifacts and PASS bytes preserved."
+}

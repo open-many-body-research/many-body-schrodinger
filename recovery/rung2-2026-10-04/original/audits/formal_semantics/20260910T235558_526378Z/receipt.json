@@ -1,0 +1,91 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260910T235558_526378Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235558_526378Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235558_526378Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 17.439021375,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "945a2a805387ad370b91a19a897957dc187bd72dcf1809d4b0e9c1917b5d2128",
+  "audit_log_sha256": "41f9dff34065c2250c50d3bb19b72677254ae1d9861a828d4cfd766fa9acda8e",
+  "module_records": [
+    {
+      "module": "IntervalPointwiseFTC_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IntervalPointwiseFTC_v1.lean",
+      "source_sha256": "a71a56a6503fe8fa74a437e4ee6b55e99fb530ba6a1364b578fc455e96f6967d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IntervalPointwiseFTC_v1.olean",
+      "object_sha256": "83bfb47ef1c93b407bc113e6d94c7d718119aabfcaf0c3c966bb286854b12b0f",
+      "declarations": [
+        "interval_norm_sub_le_derivative_integral",
+        "interval_pointwise_norm_mul_length_le",
+        "interval_pointwise_norm_le_average_derivative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "IntervalPointwiseL2_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IntervalPointwiseL2_v1.lean",
+      "source_sha256": "558303ab714c4d6ed61a1caaa283c7711a56af03e9199081760db49c1f913493",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IntervalPointwiseL2_v1.olean",
+      "object_sha256": "82791ee6e7cc26683444851c83820b4291425a7f02079afebd66c72278d23ba8",
+      "declarations": [
+        "finite_measure_integral_norm_le_sqrt",
+        "interval_integral_norm_le_sqrt",
+        "interval_pointwise_norm_le_L2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "IntervalPointwiseAverage_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IntervalPointwiseAverage_v1.lean",
+      "source_sha256": "5d4d76f69fe26cc8ad0e9c936ea4ac909278eb6ca96eee92a80e0f962897a6f3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IntervalPointwiseAverage_v1.olean",
+      "object_sha256": "910c887cc5f14796813fda1a95a841f5b3bcf31f1e91177bab6e5f5e313b73fd",
+      "declarations": [
+        "intervalAverageMeasure",
+        "intervalAverageMeasure_univ",
+        "interval_pointwise_enorm_le_average_derivative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.interval_norm_sub_le_derivative_integral: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.interval_pointwise_norm_mul_length_le: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.interval_pointwise_norm_le_average_derivative: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.finite_measure_integral_norm_le_sqrt: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.interval_integral_norm_le_sqrt: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.interval_pointwise_norm_le_L2: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.intervalAverageMeasure: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.intervalAverageMeasure_univ: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.interval_pointwise_enorm_le_average_derivative: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.interval_norm_sub_le_derivative_integral",
+    "TheoremT.Continuum.interval_pointwise_norm_mul_length_le",
+    "TheoremT.Continuum.interval_pointwise_norm_le_average_derivative",
+    "TheoremT.Continuum.finite_measure_integral_norm_le_sqrt",
+    "TheoremT.Continuum.interval_integral_norm_le_sqrt",
+    "TheoremT.Continuum.interval_pointwise_norm_le_L2",
+    "TheoremT.Continuum.intervalAverageMeasure",
+    "TheoremT.Continuum.intervalAverageMeasure_univ",
+    "TheoremT.Continuum.interval_pointwise_enorm_le_average_derivative"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

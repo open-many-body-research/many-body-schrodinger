@@ -1,0 +1,98 @@
+TheoremT.Continuum.physicalComplexAxisSlice : (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) →
+  Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex
+TheoremT.Continuum.physicalComplexAxisSliceCLM : @ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _
+  (@RingHom.id.{0} Complex _) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) _ _
+  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _ _ _ _
+TheoremT.Continuum.physicalComplexAxisSliceCLM_apply : ∀ (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex),
+  @Eq.{1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) _ _
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _ _
+        _ _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex)
+      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) =>
+        Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+      _ TheoremT.Continuum.physicalComplexAxisSliceCLM z)
+    (TheoremT.Continuum.physicalComplexAxisSlice z)
+TheoremT.Continuum.physicalComplexAxisSlice_left : ∀ (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex),
+  @Eq.{1} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+    (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      TheoremT.Continuum.physicalComplexAxisSlice z
+        (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i))
+    (@Matrix.vecCons.{0} Complex (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+      (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+      (@Matrix.vecCons.{0} Complex (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+        (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _))
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+          (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+          (@Matrix.vecEmpty.{0} Complex))))
+TheoremT.Continuum.physicalComplexAxisSlice_right : ∀ (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex),
+  @Eq.{1} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+    (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      TheoremT.Continuum.physicalComplexAxisSlice z
+        (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i))
+    (@Matrix.vecCons.{0} Complex (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _)
+      (@Matrix.vecCons.{0} Complex (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+        (@OfNat.ofNat.{0} Complex (nat_lit 0) _)
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+          (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))
+          (@Matrix.vecEmpty.{0} Complex))))
+TheoremT.Continuum.physicalComplexAxisSlice_right_norm : ∀ (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex),
+  @Eq.{1} Real
+    (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      TheoremT.Continuum.physicalComplexAxisSlice z
+        (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i))
+    (@Norm.norm.{0} Complex _ (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _)))
+TheoremT.Continuum.physicalComplexAxisSlice_norm : ∀ (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex),
+  @Eq.{1} Real
+    (@Norm.norm.{0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+      (TheoremT.Continuum.physicalComplexAxisSlice z))
+    (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) _ z)
+TheoremT.Continuum.physicalComplexAxisSlice_domain_iff : ∀ (D S : Real)
+  (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex),
+  Iff
+    (And
+      (@LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+          (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            TheoremT.Continuum.physicalComplexAxisSlice z
+              (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                i)))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+      (@LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+          (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            TheoremT.Continuum.physicalComplexAxisSlice z
+              (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                i)))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (And
+      (@LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+          (@Norm.norm.{0} (Fin (Nat.succ (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))) → Complex) _
+            (@Matrix.vecCons.{0} Complex (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+              (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+              (@Matrix.vecCons.{0} Complex (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+                (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _))
+                (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+                  (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+                  (@Matrix.vecEmpty.{0} Complex))))))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+      (@LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+          (@Norm.norm.{0} Complex _ (z (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+'TheoremT.Continuum.physicalComplexAxisSlice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSliceCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSliceCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSlice_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSlice_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSlice_right_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSlice_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalComplexAxisSlice_domain_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,97 @@
+{
+  "status": "PASS_ACTUAL_SCALAR_COULOMB_ALL_CHART_WEAK_FACTORIAL_BOUND",
+  "utc": "2026-09-11T00:55:32.981714+00:00",
+  "evidence_category": "Fully formalized regularity implication for the actual scalar Coulomb eigen-graph and an explicitly supplied continuous local Lipschitz representative.",
+  "exact_result": "For fixed real Z,E, there exist C_H,M,A >= 1 before every scalar eigenfunction, continuous AE representative g, local Lipschitz data L,R, positive eps <= min(1,R/4), nuclear chart i and unit center, with one coherent true weak derivative family of each literal normalized KS pullback and actual finite weighted local profiles N_r <= 12*C*A*(F0+498*sqrt(W))*(3072*C*A)^r*r! on half-width1/256 boxes. Here C=commonKSBoxFactorialConstant M, F0=M*norm(g0)*sqrt(V), W=(L^2+norm(g0)^2)*C_H; derivative chains and all finite budgets hold on1/128 boxes. Nuclear c=4 and pair c=1 are combined by the same C.",
+  "mathematical_change": "Discharges actual coefficient, source, equation and H12 hypotheses of the generic local factorial theorem with the same physical solution and the same canonical coordinates. No unknown-solution factorial premise remains in this scalar endpoint.",
+  "source": {
+    "path": "lean/CoulombKSPhysicalFactorial_v1.lean",
+    "sha256": "6ac3778eacc8f4c796982d6610627c7c24832ec435358bdb7fa83ef3f78e0f0a"
+  },
+  "build": {
+    "path": "logs/development/CoulombKSPhysicalFactorial_v1-20260911T005024_779845Z.json",
+    "sha256": "f488d73fbfb6d4aee2ef96a7cb655cb4252257fd53c0baaf4d306b857f1af186"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T005122_137599Z/receipt.json",
+    "sha256": "ebb46b57984208ee74f1a3b1e5c9d50004f46ba03127d631cf56007912096315"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T005122_137599Z/ExpandedStatements_v8.log",
+    "sha256": "208d069bd22c3fd54350d7416fcebde0bdb3cf577a41150466790670489386cd"
+  },
+  "literal_definition_print": {
+    "source": {
+      "path": "lean/PhysicalKSFactorialDefinitionAudit_v1.lean",
+      "sha256": "9feeeaaef11a6417dcadad467029cac50412ad3c9f4a02c696efe6b108b24996"
+    },
+    "build": {
+      "path": "logs/development/PhysicalKSFactorialDefinitionAudit_v1-20260911T005200_558362Z.json",
+      "sha256": "f64ec22e73d3af77b7219e163d093e8c3f61027fd59383fef7764bdb3759ff62"
+    },
+    "log": {
+      "path": "logs/development/PhysicalKSFactorialDefinitionAudit_v1-20260911T005200_558362Z.log",
+      "sha256": "f60f7c882c11ce6bdc165acadd1f87f3a53facf62c07e7bc75f085433dc03b13"
+    },
+    "scope": "Supplemental print of both exact definition bodies with pp.all=true, pp.proofs=true, pp.instances=false; all output read, no printer fallback/ellipsis/error. Not a replacement for strict source/declaration audit."
+  },
+  "review": {
+    "path": "audits/COULOMB_KS_PHYSICAL_FACTORIAL_COUPLING_REVIEW_v1_20260911T005133Z.json",
+    "sha256": "5ba6a6bf1a726894629095b3f2af8f1b05e3aae3eb2ea9c028f4b8d794c6ae3b"
+  },
+  "manuscript": {
+    "path": "audits/COULOMB_KS_PHYSICAL_FACTORIAL_v1.md",
+    "sha256": "18cbb661cb8afcda6fd9485c417caea99964dbca39086d01be300f2c84f3bebd"
+  },
+  "consumed_checkpoints": [
+    {
+      "path": "audits/KS_COMMON_PHYSICAL_FACTORIAL_BUDGETS_CHECKPOINT_v1.json",
+      "sha256": "7221faf59e8ba8ebdf59ba0e846c169195ac6291b05ef547f69777efbcb4229c"
+    },
+    {
+      "path": "audits/COULOMB_KS_PHYSICAL_BOX_EQUATION_CHECKPOINT_v1.json",
+      "sha256": "3c0fb3dfd5c580aa24d5052b7cc93b6518651d3cf7db7cbaf95717693cc479ae"
+    },
+    {
+      "path": "audits/PHYSICAL_SPECTATOR_WEAK_HK_TRANSPORT_CHECKPOINT_v1.json",
+      "sha256": "fcc74066d7c2b7fb0a53fc48f67e86b1f5f4acd8c4d37ad04667727edbe84ac5"
+    },
+    {
+      "path": "audits/COULOMB_KS_PHYSICAL_H12_ALL_CHECKPOINT_v1.json",
+      "sha256": "0129c189ee8708444ab13b885c22f7286e398db13429f4f22c3a7f31c87c2326"
+    }
+  ],
+  "direct_common_dependencies": [
+    {
+      "path": "lean/CoulombKSPhysicalH12Common_v1.lean",
+      "sha256": "aa95262116a34e80b594921d409f3c47150ed78b56c23aaae9b5f449b4b81dea"
+    },
+    {
+      "path": "lean/LocalWeakGrushinCommonKSBoxFactorial_v1.lean",
+      "sha256": "61369d63f165bcac84b4c6f92c34e1d4a24729f6e578e1ff2f6f71e0b183ca53"
+    },
+    {
+      "path": "lean/LocalWeakGrushinFixedBoxFactorial_v1.lean",
+      "sha256": "67a9702cbdc9790dc2270dad93dfe77651b7a188795ea979d18c62ddf498a2d7"
+    }
+  ],
+  "manual_review": "Complete target source, immediate composition source statements/proofs, all299 expanded final-type/axiom log lines and full literal-definition print output read. Exact actual direction maps and parameter quantifiers checked. Independent focused review found no invalidating defect.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache": "Pinned development dependencies and previously compiled continuation objects reused. Outside isolated source rebuild v20. No new rebuild or remote job was run.",
+  "limits": [
+    "The scalar graph, continuous AE representative and local Lipschitz condition are explicit inputs; this unit does not construct eigenfunctions or their representatives.",
+    "The result is actual weak weighted L2 factorial regularity. Classical pointwise derivatives, smooth/analytic representatives, KS descent and global approximation are separate.",
+    "No spin or ground-state instantiation, certified numerical output, solver termination, complexity or Theorem T completion is claimed by this unit."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Full-spin and physical ground-state coupling, followed by weak-to-pointwise derivative bounds and quantitative KS descent."
+}

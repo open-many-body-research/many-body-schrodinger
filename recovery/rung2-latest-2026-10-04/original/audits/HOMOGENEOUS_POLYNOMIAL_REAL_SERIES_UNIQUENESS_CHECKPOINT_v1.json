@@ -1,0 +1,77 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_ALL_FINAL_SOURCES_EXPANDED_STATEMENTS_AND_AXIOMS_READ",
+  "created_utc": "2026-09-11T03:52:26.354979+00:00",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "module_records": [
+    {
+      "module": "FormalMultilinearDiagonalUniqueness_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FormalMultilinearDiagonalUniqueness_v1.lean",
+      "source_sha256": "542ec2bd047c65bea94100b4604a86d86adc9d3350ff1075d0fb77866913cddb",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FormalMultilinearDiagonalUniqueness_v1.olean",
+      "object_sha256": "1f91575ea0ca22723b8447c85dab0ea671e2f4c800f67f91d153c4d3d2cb65bf",
+      "declarations": [
+        "formalMultilinear_diagonal_eq_of_eventually"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousPolynomialSeriesRealUniqueness_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialSeriesRealUniqueness_v1.lean",
+      "source_sha256": "758d97afed9e2df3752f524f1f4c53e9fb2937bf71cf0be8292bef930c772c82",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousPolynomialSeriesRealUniqueness_v1.olean",
+      "object_sha256": "66708cca26535dae3fd8727a87c63e73b66d2c1b16582cc0eb2a58f632dfdb8e",
+      "declarations": [
+        "realHomogeneousPolynomialSeriesSum",
+        "realHomogeneousPolynomialMultilinearSeries",
+        "realHomogeneousPolynomialMultilinearSeries_diagonal",
+        "realHomogeneousPolynomialMultilinearSeries_hasFPowerSeriesAt",
+        "homogeneous_polynomial_series_real_linear_invariant_of_eventually",
+        "homogeneous_polynomial_series_real_linear_invariant_of_hasSum"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compiler_receipts": [
+    {
+      "module": "FormalMultilinearDiagonalUniqueness_v1",
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FormalMultilinearDiagonalUniqueness_v1-20260911T034414_106534Z.json",
+      "sha256": "24b5ddbe54363e0ca204b05f5e74e0724066816916c7edb0b20f1c3bf2cc72af"
+    },
+    {
+      "module": "HomogeneousPolynomialSeriesRealUniqueness_v1",
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/HomogeneousPolynomialSeriesRealUniqueness_v1-20260911T034946_096652Z.json",
+      "sha256": "926403441c3d06d198d42b2e034d0aa666d320348bb3c61349c04e19d73bb36c"
+    }
+  ],
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035017_352789Z/receipt.json",
+  "strict_receipt_sha256": "14705f060868690484e976e9239f28903ec85afe48576921e888f378e6af5aa4",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035017_352789Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "30feabbfc418dcd1f80137115a76017c7dbbb697f28b7add29225ed86ea93291",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "evidence_category": "Kernel-compiled general conditional mathematical implication with explicit homogeneous/geometric/HasSum/local-symmetry inputs; no physical coefficient symmetry is assumed.",
+  "exact_result": "A geometrically coefficient-bounded actual homogeneous complex polynomial series admits its literal real restriction power series; eventual equality of its actual sum after any real continuous linear map fixing the origin forces equality of every homogeneous polynomial evaluation everywhere. An explicit eventual HasSum to F and eventual F composed with L equals F suffices.",
+  "mathematical_scope": [
+    "Only diagonal coefficients are compared; nonsymmetric multilinear representatives are not asserted equal.",
+    "Positive radius follows from (B+1)^-1, including B=0.",
+    "The finite coordinate type may be empty and degree zero is included.",
+    "Multilinear representatives are selected noncomputably using Classical.choice; no executable algorithm claimed.",
+    "No PDE regularity, physical rotation identity, spectral result, or full Theorem T conclusion is supplied."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "isolated_source_rebuild_claimed": false,
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next_obligation": "Compose literal planar block rotation and spectator coefficient extraction with actual physical axis-series HasSum and root-proved local rotation invariance."
+}

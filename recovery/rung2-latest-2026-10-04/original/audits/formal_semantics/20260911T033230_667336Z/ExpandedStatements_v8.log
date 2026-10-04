@@ -1,0 +1,180 @@
+TheoremT.Continuum.physicalAxisRotationLinear : (θ : Real) →
+  @LinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position TheoremT.Continuum.Position
+    _ _ _ _
+TheoremT.Continuum.physicalAxisRotationLinear_norm : ∀ (θ : Real) (X : TheoremT.Continuum.Position),
+  @Eq.{1} Real
+    (@Norm.norm.{0} TheoremT.Continuum.Position _
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position
+          TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (x : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+        (TheoremT.Continuum.physicalAxisRotationLinear θ) X))
+    (@Norm.norm.{0} TheoremT.Continuum.Position _ X)
+TheoremT.Continuum.physicalAxisRotationLinear_neg_apply : ∀ (θ : Real) (X : TheoremT.Continuum.Position),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position
+        TheoremT.Continuum.Position _ _ _ _)
+      TheoremT.Continuum.Position (fun (x : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+      (TheoremT.Continuum.physicalAxisRotationLinear (@Neg.neg.{0} Real _ θ))
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position
+          TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (x : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+        (TheoremT.Continuum.physicalAxisRotationLinear θ) X))
+    X
+TheoremT.Continuum.physicalAxisRotation : (θ : Real) →
+  @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+    TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _
+TheoremT.Continuum.physicalAxisRotation_apply : ∀ (θ : Real) (X : TheoremT.Continuum.Position),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+      TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+      (TheoremT.Continuum.physicalAxisRotation θ) X)
+    (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (Fin (Nat.succ (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))) → Real)
+      (@Matrix.vecCons.{0} Real (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+        (@HSub.hSub.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real
+            ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+            Real _ (Real.cos θ)
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _)))
+          (@HMul.hMul.{0, 0, 0} Real
+            ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+            Real _ (Real.sin θ)
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))))
+        (@Matrix.vecCons.{0} Real (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real
+              ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+              Real _ (Real.sin θ)
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _)))
+            (@HMul.hMul.{0, 0, 0} Real
+              ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+              Real _ (Real.cos θ)
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))))
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _))
+            (@Matrix.vecEmpty.{0} Real)))))
+TheoremT.Continuum.physicalAxisRotation_apply_zero : ∀ (θ : Real) (X : TheoremT.Continuum.Position),
+  @Eq.{1}
+    ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+        (TheoremT.Continuum.physicalAxisRotation θ) X)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+        Real _ (Real.cos θ)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _)))
+      (@HMul.hMul.{0, 0, 0} Real
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+        Real _ (Real.sin θ)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))))
+TheoremT.Continuum.physicalAxisRotation_apply_one : ∀ (θ : Real) (X : TheoremT.Continuum.Position),
+  @Eq.{1}
+    ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+        (TheoremT.Continuum.physicalAxisRotation θ) X)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+        Real _ (Real.sin θ)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _)))
+      (@HMul.hMul.{0, 0, 0} Real
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+        Real _ (Real.cos θ)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))))
+TheoremT.Continuum.physicalAxisRotation_apply_two : ∀ (θ : Real) (X : TheoremT.Continuum.Position),
+  @Eq.{1}
+    ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _))
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+        (TheoremT.Continuum.physicalAxisRotation θ) X)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _))
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      X (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _))
+TheoremT.Continuum.physicalAxisRotation_axis : ∀ (θ s : Real),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+      TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _
+      (TheoremT.Continuum.physicalAxisRotation θ)
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) s (@Matrix.vecEmpty.{0} Real))))))
+    (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (Fin (Nat.succ (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))) → Real)
+      (@Matrix.vecCons.{0} Real (Nat.succ (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+        (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+        (@Matrix.vecCons.{0} Real (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _)) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) s (@Matrix.vecEmpty.{0} Real)))))
+'TheoremT.Continuum.physicalAxisRotationLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotationLinear_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotationLinear_neg_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotation_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotation_apply_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotation_apply_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotation_apply_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalAxisRotation_axis' depends on axioms: [propext, Classical.choice, Quot.sound]

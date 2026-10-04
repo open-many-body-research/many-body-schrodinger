@@ -1,0 +1,1051 @@
+{
+  "scope": "Python-only narrow lexical extension and auditor AST invariance; no Lean compiler or strict audit run",
+  "test_script_sha256": "c24b85dd9dea0820ced108af6213e7979f335d2c450630b658987b4933fccb97",
+  "baseline_test_source_sha256": "3fb89df352f6ebb7c69be7bf175dd966f5bdf1ac59e48094dfc388c1ab57b98f",
+  "old_helper_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "new_helper_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "old_auditor_sha256": "a1594fb26fecb7be25e97448b1db53881bf5a449e4b8c6413bad028c3e554119",
+  "new_auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "cases": [
+    {
+      "group": "baseline",
+      "case": "plain",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "nested_doc",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "line_comment",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "ordinary_literal",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "multiline_literal",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "raw_zero",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "raw_hash",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "char_slash",
+      "expected_names_or_reject": [
+        "c",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "char_quote",
+      "expected_names_or_reject": [
+        "c",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "prime_identifier",
+      "expected_names_or_reject": [
+        "t'"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t'"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t'"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "same_line_attribute",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "nested_multiline_attribute",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "comment_attribute",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "noncomputable",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "qualified",
+      "expected_names_or_reject": [
+        "A.t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "A.t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "A.t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unterminated_comment",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unterminated Lean block comment"
+      },
+      "new": {
+        "rejected": "unterminated Lean block comment"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unterminated_raw",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unterminated Lean raw string"
+      },
+      "new": {
+        "rejected": "unterminated Lean raw string"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unterminated_ordinary",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unterminated Lean string"
+      },
+      "new": {
+        "rejected": "unterminated Lean string"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unterminated_attribute",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unterminated Lean attribute"
+      },
+      "new": {
+        "rejected": "unterminated Lean attribute"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "private",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "new": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unsafe",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "new": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unicode_name",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "new": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "quoted_name",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "new": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "interpolated_string",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "interpolated/custom string syntax is unsupported"
+      },
+      "new": {
+        "rejected": "interpolated/custom string syntax is unsupported"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "syntax_quote",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "new": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "universe_suffix",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "absolute/invalid declaration names are unsupported"
+      },
+      "new": {
+        "rejected": "absolute/invalid declaration names are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "extra_namespace_unicode",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported namespace name"
+      },
+      "new": {
+        "rejected": "unsupported namespace name"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "declaration_after_namespace",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "declaration outside the supported namespace scope"
+      },
+      "new": {
+        "rejected": "declaration outside the supported namespace scope"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "unused_axiom",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "opaque_declaration",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "structure_declaration",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "inductive_declaration",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "instance_declaration",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "syntax_declaration",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "baseline",
+      "case": "run_elab_command",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "tsum",
+      "expected_names_or_reject": [
+        "s",
+        "after_sum"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "after_sum"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "tprod",
+      "expected_names_or_reject": [
+        "p",
+        "after_product"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "p",
+          "after_product"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "tsum_filter",
+      "expected_names_or_reject": [
+        "s",
+        "after_sum"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "after_sum"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "tprod_filter",
+      "expected_names_or_reject": [
+        "p",
+        "after_product"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "p",
+          "after_product"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "punctuation",
+      "expected_names_or_reject": [
+        "s",
+        "p"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "p"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "newline_binder",
+      "expected_names_or_reject": [
+        "s",
+        "after_sum"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "after_sum"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "primed_binders",
+      "expected_names_or_reject": [
+        "s'",
+        "after_sum'"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s'",
+          "after_sum'"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "symbol_chars",
+      "expected_names_or_reject": [
+        "c",
+        "d",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "d",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "d",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "symbol_comments",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "symbol_string",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "symbol_raw_string",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "old": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "symbol_escaped_char",
+      "expected_names_or_reject": [
+        "c",
+        "s"
+      ],
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "s"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "standalone_prime",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "unknown_integral_prime",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "unknown_inf_prime",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "unknown_sum_symbol_prime",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "malformed_character",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "malformed_extra_sum_prime",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported repeated prime after infinite sum/product token"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "malformed_extra_product_prime",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported repeated prime after infinite sum/product token"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "axiom_after_token",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "private_after_token",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported declaration context/name at source lines [3]"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "notation_after_token",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "macro_after_token",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "quoted_name_after_token",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "group": "prime_extension",
+      "case": "outside_namespace_after_token",
+      "expected_names_or_reject": null,
+      "old": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "new": {
+        "rejected": "declaration outside the supported namespace scope"
+      },
+      "pass": true
+    }
+  ],
+  "literal_position_checks": [
+    {
+      "source": "\u2211' n, f n",
+      "masked": "\u2211' n, f n",
+      "pass": true
+    },
+    {
+      "source": "\u220f'[L] n, f n",
+      "masked": "\u220f'[L] n, f n",
+      "pass": true
+    },
+    {
+      "source": "'\u2211'",
+      "masked": "   ",
+      "pass": true
+    },
+    {
+      "source": "'\u220f'",
+      "masked": "   ",
+      "pass": true
+    },
+    {
+      "source": "'\\''",
+      "masked": "    ",
+      "pass": true
+    }
+  ],
+  "auditor_executable_ast_unchanged_except_versioned_names": true,
+  "actual_module": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesUniformTranslationBound_v1.lean",
+    "source_sha256": "3fea11d14c340071a487c54854aee1242f6f5f9f98dbe5e81c2c65124c5441af",
+    "old": {
+      "rejected": "unsupported apostrophe/character-literal syntax"
+    },
+    "new": {
+      "namespace": "TheoremT.Continuum",
+      "names": [
+        "powerSeriesTranslationMajorant",
+        "powerSeries_changeOrigin_uniform_nnnorm",
+        "powerSeries_changeOrigin_uniform_norm",
+        "powerSeries_changeOrigin_uniform_geometric_bound"
+      ]
+    },
+    "manually_expected_exact_four": [
+      "powerSeriesTranslationMajorant",
+      "powerSeries_changeOrigin_uniform_nnnorm",
+      "powerSeries_changeOrigin_uniform_norm",
+      "powerSeries_changeOrigin_uniform_geometric_bound"
+    ],
+    "successful_compile_receipts": [
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PowerSeriesUniformTranslationBound_v1-20260910T215509_662685Z.json",
+        "sha256": "29a431353f5da3661b602908c0fab85836af4f8d0562e0a11c7905f2abacd229"
+      }
+    ]
+  },
+  "pinned_notation_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean",
+    "sha256": "cc1db462f485d0013f9ef8d5149fd14ba207c1bedda8eaf5112eccfe1ec808ae",
+    "notation_lines": [
+      {
+        "line": 152,
+        "text": "notation3 \"\u220f'[\" L \"]\" (...)\", \"r:67:(scoped f => tprod f L) => r"
+      },
+      {
+        "line": 154,
+        "text": "notation3 \"\u2211'[\" L \"]\" (...)\", \"r:67:(scoped f => tsum f L) => r"
+      },
+      {
+        "line": 158,
+        "text": "notation3 \"\u220f' \"(...)\", \"r:67:(scoped f => tprod f (unconditional _)) => r"
+      },
+      {
+        "line": 160,
+        "text": "notation3 \"\u2211' \"(...)\", \"r:67:(scoped f => tsum f (unconditional _)) => r"
+      }
+    ]
+  },
+  "diff": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/AUDIT_FINAL_STATEMENTS_V7_DIFF_v1_20260910T221031_486993Z.patch",
+    "sha256": "2228b6435d2fe859edd0a2493bbac3fb04c09cdebdf36850ea5bc1fce1eafcd1"
+  },
+  "all_pass": true
+}

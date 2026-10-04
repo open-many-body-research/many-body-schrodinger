@@ -1,0 +1,76 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260910T232233_509789Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232233_509789Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232233_509789Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.425780708,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "d92c4bf8791250e01e302abb1dd7c79e08c233c1d05a3a3942810f8c2da71225",
+  "audit_log_sha256": "c6c1776c9eb9e9db0147f2a39fc162ad9cac2bf6b1047dfcd3dd084fc293fd01",
+  "module_records": [
+    {
+      "module": "GrushinFactorialMonomialBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialMonomialBound_v1.lean",
+      "source_sha256": "2f12270e031c934748225cd9a90cbbe234f5fe03365a925eb885b2cba0233939",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialMonomialBound_v1.olean",
+      "object_sha256": "9bd050a0ec4aabdb300aea4e69c1f90afd4c1517a989c34628266a813ad1d05c",
+      "declarations": [
+        "factorialOuterRadialOrder",
+        "factorialYMonomial_continuous",
+        "factorialYMonomial_abs_le",
+        "factorialYMonomial_radial_bound",
+        "factorialOuterRadialOrder_le",
+        "factorial_outer_monomial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFactorialOuterAssembly_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialOuterAssembly_v1.lean",
+      "source_sha256": "dc995bb85d9c19e5a39089d809f7e2a2b7b8fee3f653a5a77ddafb144afc9540",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialOuterAssembly_v1.olean",
+      "object_sha256": "c8ded6092451977b8b9783191ba3a3c9d49a1b773197a5f8b38893559e56c3f6",
+      "declarations": [
+        "factorial_outer_component_L2",
+        "factorial_outer_L2_assembly"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.factorialOuterRadialOrder: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialYMonomial_continuous: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialYMonomial_abs_le: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialYMonomial_radial_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialOuterRadialOrder_le: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_outer_monomial_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_outer_component_L2: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_outer_L2_assembly: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.factorialOuterRadialOrder",
+    "TheoremT.Continuum.WeakGrushin.factorialYMonomial_continuous",
+    "TheoremT.Continuum.WeakGrushin.factorialYMonomial_abs_le",
+    "TheoremT.Continuum.WeakGrushin.factorialYMonomial_radial_bound",
+    "TheoremT.Continuum.WeakGrushin.factorialOuterRadialOrder_le",
+    "TheoremT.Continuum.WeakGrushin.factorial_outer_monomial_bound",
+    "TheoremT.Continuum.WeakGrushin.factorial_outer_component_L2",
+    "TheoremT.Continuum.WeakGrushin.factorial_outer_L2_assembly"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

@@ -1,0 +1,162 @@
+{
+  "reviewer": "/root/ks_coefficient_transport",
+  "utc": "2026-09-11T02:53:38.387291+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_ACTUAL_KS_TAYLOR_DESCENT_IDENTITY",
+  "scope": "Independent review of the root-authored final composition source, exact defining predicate body, final expanded statements and transitive axiom reports. Read immediate series/reconstruction definitions and consumed their existing focused reviews. No source edits or compiler/audit reruns.",
+  "target": {
+    "source": {
+      "path": "lean/PhysicalKSTaylorAnalyticDescentIdentity_v1.lean",
+      "sha256": "a0749c5a47a38fba0d50d04fcf284902b9e27a0cb702c1fb62b17e8da9fc4e5a"
+    },
+    "object": {
+      "path": "lean/build/PhysicalKSTaylorAnalyticDescentIdentity_v1.olean",
+      "sha256": "91c538b78824b89febbdc5e783a55ca47e02da78e4902b285084af562ca54903"
+    },
+    "declarations": [
+      "PhysicalKSAnalyticDescentIdentityOnTaylorBall",
+      "physicalKSAnalyticDescent_identity_of_balanced_odd_zero",
+      "nuclearKSPhysicalAnalyticDescent_identity",
+      "pairKSPhysicalAnalyticDescent_identity"
+    ]
+  },
+  "build_receipt": {
+    "path": "logs/development/PhysicalKSTaylorAnalyticDescentIdentity_v1-20260911T024918_174564Z.json",
+    "sha256": "5d2b60eb22e68bf27dfb14585714809b72236a5c989c267d9203e22f7825b134"
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T025006_095754Z/receipt.json",
+    "sha256": "0cc4ac85730b6861f3f19ada01e0bc0cb3289a40a639b510087287c994215ff8"
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T025006_095754Z/ExpandedStatements_v8.lean",
+    "sha256": "5c43bf7749f04c8f4a89b22941bc840b95eddfb2f18e61e02df9c31bff8bc598"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T025006_095754Z/ExpandedStatements_v8.log",
+    "sha256": "1e23aed36426c3b01d8b928780a7adb6a0d1f1ff0144d62ba5e9dc19a4e8eccf"
+  },
+  "literal_predicate_body": "def PhysicalKSAnalyticDescentIdentityOnTaylorBall\n    (f : Space (Fin 3) \u2192 \u2102) (t0 : Position) (M A : \u211d) : Prop :=\n  \u2203 r : \u211d\u22650, 0<r \u2227 (r : \u211d)=min (1/1024) (7*physicalKSPointwiseRate M A)\u207b\u00b9 \u2227\n    \u2200 q \u2208 Metric.eball (0 : Space (Fin 3)) (r : \u211d\u22650\u221e),\n      (32*(7*physicalKSPointwiseRate M A)^2)*\u2016fun i : Fin 3 => (ksMap q.1 i : \u2102)\u2016<1 \u2192\n      (7*physicalKSPointwiseRate M A)*\u2016fun i : Fin 3 => (q.2 i : \u2102)\u2016<1 \u2192\n      f ((0,t0)+q) =\n        physicalKSAnalyticDescentA f t0\n          (Sum.elim (fun i => (ksMap q.1 i : \u2102)) (fun i => (q.2 i : \u2102))) +\n        (\u2016q.1\u2016^2 : \u211d)*physicalKSAnalyticDescentB f t0\n          (Sum.elim (fun i => (ksMap q.1 i : \u2102)) (fun i => (q.2 i : \u2102)))",
+  "inspection": {
+    "complete_final_source_and_predicate_body_read": true,
+    "complete_expanded_log_read": true,
+    "expanded_log_lines": 183,
+    "all_four_axiom_reports_read": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "printer_omissions": 0,
+    "current_source_and_object_match_receipt": true
+  },
+  "checks": [
+    {
+      "topic": "Exact domain and quantifiers",
+      "result": "The defining predicate chooses a positive NNReal r equal to min(1/1024,(7*rate)^(-1)) before all increments. For every q in the actual real product-norm eball it additionally requires D*norm(cast(KS q.Y))sup<1 and S*norm(cast(q.T))sup<1, where S=7*rate and D=32*S^2. These are explicit hypotheses, so the result is on an intersection, not on the entire Taylor ball with no further restriction. No boundary equality, global domain, or KS surjectivity is claimed."
+    },
+    {
+      "topic": "Exact physical sum before deletion",
+      "result": "The proof obtains the actual product-index HasSum from physicalKSTaylorSpectatorFamily_hasSum_real_ball, at the same center (0,t0) and increment q. Its upstream proof first proves absolute summability of the literal extracted coefficient family, then finite homogeneous regrouping into the original joint Taylor polynomials, then agreement of the literal complex Taylor sum with f(x+q). No reconstruction or equality-to-f premise is assumed. The existing focused reconstruction review was read instead of repeating a broad dependency audit."
+    },
+    {
+      "topic": "Odd Y degree only",
+      "result": "The odd-zero premise in the generic theorem concerns physicalKSTaylorSpectatorFamily at Y order 2*m+1 for every spectator multiindex. The zero polynomial gives a zero evaluated term after multiplication by the same spectator monomial. hasSum_even_first_coordinate therefore restricts only the Y-degree index. Odd total Taylor degree with even Y degree remains present, including a linear spectator term."
+    },
+    {
+      "topic": "Unconditional reindex and equality direction",
+      "result": "The consumed reindex lemma preserves the same unconditional HasSum value f((0,t0)+q). The final proof reverses heven.tsum_eq to get f equal to the exact even-family tsum, then composes with the physical descent tsum equality. No use of an undefined tsum to infer convergence, conditional-series rearrangement, or changed center occurs."
+    },
+    {
+      "topic": "Literal A and B",
+      "result": "physicalKSAnalyticDescentA is the homogeneous spectator sum of descentA applied to the actual even family at center (0,t0). B is the sum of descentB at even-family index n+1; the complete original index-zero B slice is proved zero before its successor reindex. The finite physical term identity uses the same inverse spinor map and balanced polynomial descent. The factor is the real scalar norm(q.Y)^2 embedded in Complex, exactly as in the target predicate."
+    },
+    {
+      "topic": "Two different norms",
+      "result": "The Taylor domain uses the maximum of Euclidean Y and Euclidean spectator norms. The descended complex polydisc radii are chosen to be the finite Pi sup norms of cast(KS q.Y) and cast(q.T), and norm_le_pi_norm gives each component bound. The proof never identifies the Euclidean norms with those coordinate sup norms."
+    },
+    {
+      "topic": "Coefficient and convergence budgets",
+      "result": "The same actual even coefficient family supplies homogeneous degree 2*m, balanced support, and per-coefficient bound amplitude*S^(2*m)*S^(sum gamma). Amplitude nonnegativity follows from the advertised A>=1,F0>=0, and S positivity is derived from the actual rate lemma. The existing D=32*S^2 majorant controls both A and shifted B; no proposed D=2*S^2 improvement is silently used."
+    },
+    {
+      "topic": "Conditional generic theorem versus actual charts",
+      "result": "The generic theorem correctly retains explicit balanced-support and odd-zero assumptions. The nuclear corollary covers every i:Fin2 and derives both from the actual nuclear pullback pointwise data, using the same inverse physicalSpectatorReindexAt i and literal Finsupp functional adapter. The pair corollary consistently uses pairKSLift and inverse index-zero reindex. Neither physical corollary assumes the intended polynomial invariance, zero coefficient, or descent identity."
+    }
+  ],
+  "immediate_sources_read": [
+    {
+      "path": "lean/PhysicalKSTaylorAnalyticDescentData_v1.lean",
+      "sha256": "2bb9ce5591ec6f3537f18a92aed28526ec2a462704724d481ec7055f5170308f"
+    },
+    {
+      "path": "lean/PhysicalKSTaylorSpectatorReconstruction_v1.lean",
+      "sha256": "c42a1e136d814cd8b2eb6303ca368969e462f92dbd2548954c7360f9f5a087b6"
+    },
+    {
+      "path": "lean/PhysicalKSTaylorSpectatorSeries_v1.lean",
+      "sha256": "995fbf6613e7bca80e5cb292cf099f79e02e291849445c2623589b067a86f7be"
+    },
+    {
+      "path": "lean/PhysicalKSComplexTaylorExtension_v1.lean",
+      "sha256": "77d801dd429b57c50f6cfee5cb4831a3372eb563e154b48c4d1d22b6cf8de295"
+    },
+    {
+      "path": "lean/SpectatorPolynomialSeriesReindex_v1.lean",
+      "sha256": "8b90fd749f39e46c0b6de4e618bcf9c806437f739cbdd370c1e62e1fa79b52f4"
+    },
+    {
+      "path": "lean/KSRealSpectatorSeriesDescent_v1.lean",
+      "sha256": "02cbbdd08d995810d34ee7e548b716b219ffbdd2217bba32aa3174e4164bfd80"
+    },
+    {
+      "path": "lean/KSRealSpectatorSeriesData_v1.lean",
+      "sha256": "ae03a15cb8d04c82869b1f67b1c624ce2aa09ee75688ae3ba115a28f42f8df9e"
+    },
+    {
+      "path": "lean/PhysicalKSTaylorOddSpectator_v1.lean",
+      "sha256": "977b1facd26315f61fa4c39609bb21fbc29cc6a17b188fd912473a1b35619951"
+    },
+    {
+      "path": "lean/EvenFirstCoordinateHasSum_v1.lean",
+      "sha256": "0d1dc10ee29695cfe83934a4bf8b926d5d41b8b17ed2ae97948fcbd2f45218f5"
+    }
+  ],
+  "consumed_independent_reviews": [
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_RECONSTRUCTION_FOCUSED_REVIEW_v1.json",
+      "sha256": "31885aa41c415120378554c9c68ada873670247660964cdf6507e49f512eb4c8"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_COMPLEX_TAYLOR_EXTENSION_FOCUSED_REVIEW_v1.json",
+      "sha256": "aa2a8302764248555f9394b4513313d3a8e34144a7e889bb6973b2ece2d2b7e0"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_ODD_Y_POLYNOMIAL_REVIEW_v1_20260911T024517Z.json",
+      "sha256": "b749a60a59f8512a953f98691a32a4bbdfaca7c988bfa1005a903d9ce1c38486"
+    },
+    {
+      "path": "audits/EVEN_FIRST_COORDINATE_HASSUM_REVIEW_v1_20260911T024747Z.json",
+      "sha256": "6b6bcb0fbc2ca6804ed2e24a81830ee7ccaa59cd19e3632e61705253004667b1"
+    }
+  ],
+  "independence": "The target composition is authored by root, not this reviewer. This reviewer authored the immediate odd-Y and even-index helper modules; their independent reviews by transport_review are explicitly consumed, and this record does not claim an independent self-review of those modules.",
+  "invalidating_findings": [],
+  "limitations": [
+    "This source proves a local identity for actual KS pullbacks under explicit pointwise-data premises; it does not itself compose all Coulomb operator/eigenfunction hypotheses.",
+    "The predicate is an identity on the Taylor/convergence intersection. Physical-coordinate descent using KS surjectivity and a stated physical-domain radius is a separate obligation.",
+    "Analyticity of the literal A/B sums is supplied by the imported separately proved data module; this target adds the actual function identity.",
+    "No global H2 approximation, dictionary tail, certified rational algorithm, operational bit complexity, full R04, rung 2 or Theorem T claim follows from this source alone.",
+    "Series and derivative-polynomial definitions are noncomputable mathematical objects, not executable coefficients or a solver.",
+    "Pinned dependency and continuation objects were reused; this focused review is not an isolated source rebuild."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; prior source and evidence bytes preserved."
+  }
+}

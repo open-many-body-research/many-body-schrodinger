@@ -1,0 +1,169 @@
+{
+  "review_kind": "independent_focused_physical_joint_Taylor_circle_invariance_review",
+  "version": 1,
+  "timestamp_utc": "2026-09-11T02:24:45.548597+00:00",
+  "reviewer": "/root/fixed_box_review",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_THE_STATED_ACTUAL_JOINT_TAYLOR_POLYNOMIAL_INVARIANCE",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "operation": "New review only; no target or prior evidence edits, recompilation, or strict rerun."
+  },
+  "target": {
+    "source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorCircleInvariance_v1.lean",
+      "sha256": "7ff7601905007e38d04147595f0b7799534579762fb4ed63bd1202543ec16513"
+    },
+    "object": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorCircleInvariance_v1.olean",
+      "sha256": "41cba11bcd863c8ff12d86d76e9f3d3835f4174226616c03ad5d46a4a1028b06"
+    },
+    "complete_final_source_read": true,
+    "declarations": [
+      "TheoremT.Continuum.physicalKSTaylorPolynomial_invariant_at_center",
+      "TheoremT.Continuum.nuclearKSPhysicalTaylorPolynomial_circle_invariant",
+      "TheoremT.Continuum.pairKSPhysicalTaylorPolynomial_circle_invariant"
+    ]
+  },
+  "strict_audit": {
+    "receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021848_183350Z/receipt.json",
+      "sha256": "a226fe44f80f4b3227ca9f7c85d1a8f2b6afb6660bb82912b18e81c03d9523fb"
+    },
+    "expanded_log": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021848_183350Z/ExpandedStatements_v8.log",
+      "sha256": "926add29c3850eed0f34983e8b92dd8dba83dd38d2d96a79cfdc97829998c38e"
+    },
+    "audit_source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021848_183350Z/ExpandedStatements_v8.lean",
+      "sha256": "ba5720983aaaa2212fc917734938758a10939f5db491f8e3b2c46e19fd7c2808"
+    },
+    "complete_expanded_statements_and_axiom_footer_read": true,
+    "exit_code": 0,
+    "declaration_count": 3,
+    "axiom_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": [],
+    "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+    "hashes_rechecked_at_sealing": true
+  },
+  "reused_focused_reviews": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_TAYLOR_AND_LOCAL_FINITE_DESCENT_FOCUSED_REVIEW_v1.json",
+      "sha256": "dd66201dbe8ad75f3e48abf5dc1032a5f4a484969816c578f62c911413dc9104"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/POWER_SERIES_FIXED_POINT_INVARIANCE_ROOT_REVIEW_v1.json",
+      "sha256": "2a5b6ef643918c6a8088d734aafc79d9370797268a41adc919d6ff2d3daea8fd"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/POWER_SERIES_FIXED_POINT_INVARIANCE_CHECKPOINT_v1.json",
+      "sha256": "a1f250364cf6cbc7c6fc7d86658c461cdd136f715ffada43dd8d9893eafa2838"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_CIRCLE_CLM_PHYSICAL_INVARIANCE_REVIEW_v1_20260911T021553Z.json",
+      "sha256": "05489059c73df3a6ce89bc5193eb367edf830b71cceb8e997955c82cf2d12b19"
+    }
+  ],
+  "immediate_dependency_read_scope": [
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSCircleContinuousLinear_v1.lean",
+        "sha256": "f091aa5d6f0dbe7508af4f9467c5fbe7c704c82c683819bf7b4af853222c5e6b"
+      },
+      "scope": "Complete source read, literal real-linear and continuous four-space circle action and unchanged-spectator product action."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSPhysicalCircleInvariance_v1.lean",
+        "sha256": "e7905f6875aa351f5505c254cee52fdcd7e371201c3fa5746c110de0ee05e86e"
+      },
+      "scope": "Complete source read, actual two nuclear indices and pair lift with inverse physical reindexing."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorReindexAll_v1.lean",
+        "sha256": "f3ab3ed8b2f75b10692c4db3596ae55293836484c2e4f51160c8fe9c40e0c83c"
+      },
+      "scope": "Complete source read, selected index consistency and inverse map leaves KS input unchanged."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearKSLift_v1.lean",
+        "sha256": "f9ab3f7770c7e5358cf3f214c1d1f0b4d519d970673d5b7d9b7030cdf3bec275"
+      },
+      "scope": "Exact lift definition and selected-position identity read."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairKSLift_v1.lean",
+        "sha256": "52456ae6e1072cae6c5cf3bfc5269b2bb0e177994c50818be6cdd1cb661751c7"
+      },
+      "scope": "Exact lift definition, physical first/second positions, and relative coordinate read."
+    }
+  ],
+  "checks": [
+    {
+      "id": "ACTUAL-SERIES",
+      "result": "PASS",
+      "analysis": "The common-radius theorem is applied to the same f and actual pointwise-data predicate. The center (0,t0) lies in the closed inner box without any nonzero or unit-center assumption. Its derivative factorial Frechet series therefore is an actual convergent power series of f at that same center."
+    },
+    {
+      "id": "ACTUAL-POLYNOMIAL",
+      "result": "PASS",
+      "analysis": "The polynomial is the literal physicalKSTaylorPolynomial of f at (0,t0), constructed from factorialFrechetSeries and the seven actual coordinate directions. Its exact evaluation theorem identifies evaluation at product components y with the diagonal series coefficient evaluated on repeated y. Both sides use the same polynomial and center, without selecting replacement coefficients."
+    },
+    {
+      "id": "FIXED-CENTER",
+      "result": "PASS",
+      "analysis": "The generic statement correctly requires L(0,t0)=(0,t0) and local f composed with L equals f. The fixed-point diagonal uniqueness theorem then compares coefficients for increments Ly and y. This proves diagonal equality only, which is exactly what polynomial evaluation needs; no off-diagonal multilinear uniqueness or hidden symmetry assumption is used."
+    },
+    {
+      "id": "PHYSICAL-CIRCLE",
+      "result": "PASS",
+      "analysis": "ksCircleProductCLM applies the literal simultaneous two-plane real circle action on the four KS coordinates and the identity on the spectator. It fixes (0,t0) for every a,b and t0. The separate hypothesis a squared plus b squared equals one supplies actual KS-map invariance."
+    },
+    {
+      "id": "NUCLEAR-ALL-INDICES",
+      "result": "PASS",
+      "analysis": "For every i : Fin 2, inverse physicalSpectatorReindexAt i leaves the KS coordinate unchanged and reindexes only the other electron spectator. The same index i appears in nuclearKSLift and the inverse reindexing. Exact invariance of the full lifted configuration implies invariance for the same arbitrary g, and Eventually.of_forall supplies the required local equality."
+    },
+    {
+      "id": "LITERAL-PAIR",
+      "result": "PASS",
+      "analysis": "The pair statement uses pairKSLift with inverse index-zero physical reindexing. Pair positions remain center plus or minus KS(y)/2, so unchanged KS(y) and unchanged spectator give equality of the full configuration. No alternative pair-coordinate scaling is introduced."
+    },
+    {
+      "id": "NO-CIRCULAR-INVARIANCE",
+      "result": "PASS",
+      "analysis": "The physical statements assume pointwise analytic/factorial data for the actual pullback, A at least one, F0 nonnegative, and a unit real circle phase. They do not assume invariance of a Taylor polynomial or its coefficients. That invariance is the conclusion, derived from the exact global identity of the physical pullback function."
+    },
+    {
+      "id": "ALL-DEGREES-AND-ZERO",
+      "result": "PASS",
+      "analysis": "Degree k and increment y are arbitrary, including k=0, zero increment, and the KS collision fiber. Global equality of polynomial evaluations follows from local analytic equality by diagonal power-series uniqueness. The local analyticity hypothesis is not incorrectly extended to a global convergence claim."
+    },
+    {
+      "id": "TRUST-AND-LIMITS",
+      "result": "PASS",
+      "analysis": "The only added elaboration controls are maximum heartbeats and recursion depth; they do not add a mathematical premise or trust mechanism. Exact final statements compile with only the standard three reported axioms. Prior cached dependencies are disclosed."
+    }
+  ],
+  "reviewer_independence_note": "This reviewer authored the generic diagonal/fixed-point power-series helpers; their independent mathematical source, expanded-statement and axiom review was performed by /root and is separately bound above. The present consumer and physical-action constructions were authored by other agents and independently reviewed here.",
+  "invalidating_findings": [],
+  "limits": [
+    "The actual polynomial is still joint in four KS and three spectator coordinates. This record does not assert a decomposition into separate spectator degrees or a completed finite physical descent of those joint coefficients.",
+    "The physical wrappers retain explicit PhysicalKSBoxPointwiseData hypotheses. Prior physical spin and ground-state results supply such analytic data, but no new closed theorem composing every ground-state premise is claimed in this source.",
+    "No infinite analytic descent, all-order descended-series convergence, original dictionary approximation, continuum residual solver, or full Theorem T is established by these three statements.",
+    "This focused review does not repeat the broad continuum foundation audit and is not an isolated dependency-source rebuild."
+  ]
+}

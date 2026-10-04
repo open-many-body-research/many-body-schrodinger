@@ -1,0 +1,86 @@
+{
+  "schema": "focused-source-and-expanded-semantic-review-v1",
+  "timestamp_utc": "2026-09-11T01:21:29.971315+00:00",
+  "status": "PASS_NO_DEFECT_FOUND",
+  "reviewer": "/root/weak_pointwise_limit/fixed_box_geometry",
+  "category": "Independent focused source and expanded-statement review of explicit common physical KS power-series radius; no new compiler run by reviewer.",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxAnalyticRadius_v1.lean",
+    "sha256": "c6b0ce006f72bddb92fbec7e54387c451dba0e613d7eb334a3d5f6bc4bc1cb8a"
+  },
+  "strict_audit_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011939_422759Z/receipt.json",
+    "sha256": "af0f6f252ce3ca422bd770beb6f253857655b385de29c99e1e57e6dc8c75b447"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011939_422759Z/ExpandedStatements_v8.log",
+    "sha256": "1dd8608ef4d099a9fccf8d9419efeee5ec0dc08f64f237270bb23849ecf5bca2"
+  },
+  "review_scope": {
+    "entire_final_source_read": true,
+    "entire_expanded_log_read": true,
+    "expanded_log_line_count": 71,
+    "all_3_declarations_and_axiom_reports_read": true,
+    "source_hash_matches_compiled_receipt": true,
+    "foundational_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "printer_failure_or_ellipsis_count": 0
+  },
+  "previous_pointwise_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_POINTWISE_FACTORIAL_FOCUSED_REVIEW_v1.json",
+    "sha256": "45acf4d2180852d63b1149bc8cd92a8519f31458b6e64cbb403e16fc4ab1a5c6"
+  },
+  "focused_dependencies_read": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateFactorialAnalytic_v1.lean",
+      "sha256": "aa1d4ae446e4556be731530323eca436750ff29a7a9e1da6e4f3426ff5b7989e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateFrechetBound_v1.lean",
+      "sha256": "3beb8f1e7e1f203202726a754c2dc74b52e58f2f487ebb481110fde5542d3fa2"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialFrechetAnalytic_v1.lean",
+      "sha256": "e1ddb1499a6187d6688c06a66e63622a8f2dde3684e901cc9520d14af808c3c0"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalPointwise_v1.lean",
+      "sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534"
+    }
+  ],
+  "checks": [
+    {
+      "id": "actual_product_norm",
+      "finding": "physical_boxCoordinate_abs_le_norm bounds each coordinate first by its actual Euclidean block norm and then by the actual product norm. No false equality of Euclidean and coordinate maximum norms, and no unprovided isometry instance, is used."
+    },
+    {
+      "id": "closed_inner_to_open_outer",
+      "finding": "For x in the closed physical rectangle of half-width1/1024, a point p in the actual product-norm open ball of radius1/1024 satisfies |coordinate(p-z)| <= |coordinate(p-x)|+|coordinate(x-z)| < 1/1024+1/1024 = 1/512. This is valid also at the inner rectangle boundary because the ball condition is strict."
+    },
+    {
+      "id": "radius_and_series",
+      "finding": "The common radius theorem uses the actual derived smoothness and coordinate-word estimate in PhysicalKSBoxPointwiseData. The generic operator bound costs factor7 in the exponential rate. Combined with the proved interior margin, this yields a positive r whose real value is exactly min(1/1024,(7*physicalKSPointwiseRate M A)^(-1)). The output is HasFPowerSeriesOnBall of the literal factorialFrechetSeries of the same f, centered at every point of the smaller closed rectangle."
+    },
+    {
+      "id": "uniformity_and_antecedents",
+      "finding": "The radius equality contains M and A through physicalKSPointwiseRate, but no t0, base f, F0, W, derivative order or chosen x. The full radius output is conditional on PhysicalKSBoxPointwiseData and A>=1,F0>=0; that data package was proved for the actual scalar-Coulomb lifted fields in the preceding module. Its redundant AnalyticOnNhd member is not used in the radius proof: only hdata.1 and hdata.2.2 are passed onward. Hence no asserted common radius is assumed."
+    }
+  ],
+  "defects_found": [],
+  "limitations": [
+    "This is a common local lifted Taylor radius on the smaller closed rectangle, not a KS descent theorem, global physical approximation theorem or certified numerical algorithm.",
+    "Universal physical constants and graph/representative hypotheses are inherited by applying the preceding all-chart theorem; this radius helper itself accepts its explicit pointwise data package.",
+    "Pinned object caches were used by the observed compiler and audit; no source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_original_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_original_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "source_changes": "None; new review file only."
+  }
+}

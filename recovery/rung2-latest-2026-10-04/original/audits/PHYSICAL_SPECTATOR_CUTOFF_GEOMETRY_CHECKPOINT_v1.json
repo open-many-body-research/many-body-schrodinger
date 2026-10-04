@@ -1,0 +1,201 @@
+{
+  "utc": "2026-09-10T21:07:19.033824+00:00",
+  "status": "FORMAL_EXACT_SELECTED_ZERO_SPECTATOR_CUTOFF_GEOMETRY",
+  "scope": "N=2, selected i=0, actual SpectatorCoordinate(0:Fin2). Does not yet cover i=1.",
+  "modules": [
+    {
+      "module": "PhysicalSpectatorReindex_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorReindex_v1.lean",
+        "sha256": "68473a2129254e851179e6edeb4d69f43e74e96b0abf23c20393a2694db5217e",
+        "bytes": 3203
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorReindex_v1.olean",
+        "sha256": "6824f463e919980b96073676b4ea41d81aa795bf8efe07bb3ad71b1b69fb1a29",
+        "bytes": 95248
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorReindex_v1-20260910T205925_271072Z.json",
+        "sha256": "2f56aecdee2421e845f756f27a4941a341d6e7ba718789d8d46591635c49d4db",
+        "bytes": 1765
+      },
+      "declarations": [
+        "physicalSpectatorReindex",
+        "physicalSpectatorReindex_apply",
+        "physicalSpectatorReindex_symm_apply",
+        "physicalSpectatorReindex_yDir",
+        "physicalSpectatorReindex_tDir",
+        "physicalSpectatorReindex_symm_yDir",
+        "physicalSpectatorReindex_symm_tDir",
+        "physicalSpectatorCoordinate_card",
+        "physicalSpectatorReindex_contDiff",
+        "physicalSpectatorReindex_symm_contDiff",
+        "physicalSpectatorHomeomorph",
+        "physicalSpectatorHomeomorph_apply",
+        "physicalSpectatorHomeomorph_symm_apply"
+      ]
+    },
+    {
+      "module": "PhysicalSpectatorCutoffTransport_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorCutoffTransport_v1.lean",
+        "sha256": "ca7e8e6f825cfce03ed8a4d49573483073896d13cc127e0871155ff3b0ebbdfb",
+        "bytes": 3918
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorCutoffTransport_v1.olean",
+        "sha256": "fce5165e01d282b2b705c64a06fb74f399b6d40db3994e1b73af142dc8123808",
+        "bytes": 143184
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorCutoffTransport_v1-20260910T210207_201071Z.json",
+        "sha256": "1fab25f466b7aa88619f7c7e4b99093e0ba36e1a75117fd359c2fafa5ddb8eae",
+        "bytes": 1787
+      },
+      "declarations": [
+        "physicalSpectatorReindex_cutoff_test",
+        "physicalSpectatorReindex_cutoff_first",
+        "physicalSpectatorReindex_cutoff_second",
+        "physicalSpectatorReindex_combinedCutoffScalar",
+        "physicalSpectatorReindex_cutoffGradientWeight",
+        "physicalSpectatorReindex_grushinCutoffWeight"
+      ]
+    },
+    {
+      "module": "PhysicalSpectatorStepGeometry_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorStepGeometry_v1.lean",
+        "sha256": "5cfed05b36988dcd8e63d82322bd5ea2efd42408ab08db9e853e1415493882ee",
+        "bytes": 2072
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorStepGeometry_v1.olean",
+        "sha256": "5e2cb6e2813007985188484813ca9110e020094acd236f4c178550060cae20c6",
+        "bytes": 143808
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorStepGeometry_v1-20260910T210259_725681Z.json",
+        "sha256": "e2e20ab6fc32f644ebf350eb3ed7c4cb647f898e7bd1de5c065012b95f4e50c7",
+        "bytes": 1787
+      },
+      "declarations": [
+        "SpectatorStepGeometry.pullback_physicalSpectatorReindex"
+      ]
+    },
+    {
+      "module": "PhysicalSpectatorH12Geometry_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorH12Geometry_v1.lean",
+        "sha256": "a7ef6bad070ed7d23a98bca993758112aebd978d98b5840aad298b956a5f4545",
+        "bytes": 2557
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorH12Geometry_v1.olean",
+        "sha256": "17ea260e12b8e822870e95165dcb5933ad93f4955da5c4dab305e3612ae16b72",
+        "bytes": 102168
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorH12Geometry_v1-20260910T210353_527011Z.json",
+        "sha256": "a5a121471a8d4704f02bf9587ec6301a625aecfe5708f4a6b6cd8ac2c616a3ac",
+        "bytes": 1777
+      },
+      "declarations": [
+        "h12_spectatorStepGeometry",
+        "physical_h12_spectatorStepGeometry"
+      ]
+    }
+  ],
+  "module_count": 4,
+  "declaration_count": 22,
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T205946_839758Z/receipt.json",
+        "sha256": "bdadc461b8e180395ac74f287845fd44e99030e10ebbc7f7cf0a73060807556a",
+        "bytes": 5812
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T205946_839758Z/ExpandedStatements_v5.lean",
+        "sha256": "7ebcbbb4c87e8937fa97bdf6027583a64b7d64f22f29dbff85d3c28d7a22daca",
+        "bytes": 2142
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T205946_839758Z/ExpandedStatements_v5.log",
+        "sha256": "5d1f2c5fce4f72d1481298401fde85bdc79f9e228cc33e702b662d82de843de9",
+        "bytes": 27507
+      },
+      "declarations": 13
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T210409_115263Z/receipt.json",
+        "sha256": "60d451ead330ad8e42d803abd85f1255ce5fdceb8a7b912d684c97683aaf389a",
+        "bytes": 6946
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T210409_115263Z/ExpandedStatements_v5.lean",
+        "sha256": "6e39887457f020ec00b7be69dbc4e3389ac09b4902d88b9d443f9c50205668a4",
+        "bytes": 2083
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T210409_115263Z/ExpandedStatements_v5.log",
+        "sha256": "e2266f04c14b4e796bb74619b4647818089acce480e42652d9fc1139463e1a83",
+        "bytes": 58484
+      },
+      "declarations": 9
+    }
+  ],
+  "focused_review": {
+    "path": "audits/PHYSICAL_SPECTATOR_GEOMETRY_FOCUSED_REVIEW_v1.json",
+    "sha256": "fa8c1b925d81b524e046834a578d06d0eabb65e62fd420444951bd69ed3b6146",
+    "bytes": 10574
+  },
+  "manuscript": {
+    "path": "paper/PHYSICAL_SPECTATOR_CUTOFF_GEOMETRY_v1.md",
+    "sha256": "71e73bf786c1346339008456fd02e5930d7a2e0e7da6a232331beb3a484046d4",
+    "bytes": 3125
+  },
+  "reindex_checkpoint": {
+    "path": "audits/PHYSICAL_SPECTATOR_REINDEX_CHECKPOINT_v1.json",
+    "sha256": "f37ea2ae53fd50f8db68b19ee3c51d6946b6ae7ae81e6209b55ad79e0487b616",
+    "bytes": 6186
+  },
+  "actual_imported_cutoff_data": {
+    "path": "lean/GrushinH12CutoffData_v1.lean",
+    "sha256": "27ed7f121cfcbb285ed7acd00a7074555879ae0ffee26744ad29d86a517d270c",
+    "bytes": 4528
+  },
+  "actual_imported_geometry_definition": {
+    "path": "lean/SpectatorIterationGeometry_v1.lean",
+    "sha256": "b6754bd6c3cdb9082f00d9cad4d20280de2403eafa3edd753ce2c047afc17a68",
+    "bytes": 1594
+  },
+  "exact_results": [
+    "Actual product linear isometry/homeomorphism idY times pairCenterEquiv, direction and inverse-direction equalities, actual index equivalence/cardinality3.",
+    "Smooth/compact pullback with exact tsupport preimage; first and ordered-second derivative chain rules.",
+    "Exact combinedCutoffScalar, cutoffGradientWeight and grushinCutoffWeight pullback equalities for arbitrary real c.",
+    "SpectatorStepGeometry preimage transport with unchanged M,A,B,D,Q.",
+    "Actual H12 Fin3 assembler and physical-preimage corollary with M=D=1, A=scalarBound, B=Q=weightBound."
+  ],
+  "hypotheses": "The H12 assembler retains c>=0, positive delta, two-gap width inequalities, global actual smoothTransition first/second derivative bounds C1/C2, and explicit y-radius bound S.",
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development objects reused; no isolated source rebuild.",
+  "limitations": [
+    "Selected electron i=0 only in physical corollary.",
+    "No physical PDE or integral transport asserted.",
+    "No physical coefficient-patch box inclusion or regularity conclusion in this geometry unit.",
+    "No numerical values for transition derivative constants supplied."
+  ],
+  "next": "New generic i:Fin2 coordinate equivalence using its unique other electron, then parameterized cutoff/geometry transport; retain all i0 sources. Root separately owns physical box/patch inclusion.",
+  "frozen_provenance": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/UNIFORM_ANALYTIC_AUDIT.md",
+    "sha256": "5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c"
+  }
+}

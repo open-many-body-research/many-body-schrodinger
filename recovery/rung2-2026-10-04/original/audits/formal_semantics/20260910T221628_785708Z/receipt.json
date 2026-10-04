@@ -1,0 +1,70 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260910T221628_785708Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T221628_785708Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T221628_785708Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 17.652856708,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "658286000bd14032e98696c0110253668e0755499f46b4d5170d189102d1f70b",
+  "audit_log_sha256": "3033bdbc5d037d2226dea5ea5a0970bbc43d384f753eb661b618f44873a6ddfd",
+  "module_records": [
+    {
+      "module": "PowerSeriesUniformTranslationBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesUniformTranslationBound_v1.lean",
+      "source_sha256": "3fea11d14c340071a487c54854aee1242f6f5f9f98dbe5e81c2c65124c5441af",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PowerSeriesUniformTranslationBound_v1.olean",
+      "object_sha256": "cb677ef0e7ea5aa3a573c33e2523ffd30a31215b8ad0e81a6bfc897b6f32292a",
+      "declarations": [
+        "powerSeriesTranslationMajorant",
+        "powerSeries_changeOrigin_uniform_nnnorm",
+        "powerSeries_changeOrigin_uniform_norm",
+        "powerSeries_changeOrigin_uniform_geometric_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSScaledFactorialWordBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSScaledFactorialWordBounds_v1.lean",
+      "source_sha256": "417bf12ef06920e03121d6206d6d8d93c76c3db4a5620de5f3ea4c841e99befb",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSScaledFactorialWordBounds_v1.olean",
+      "object_sha256": "adc3b181e989739945ae946757b37e6fd50d715ea00b9be21760083952acd128",
+      "declarations": [
+        "nuclearKS_uniform_factorial_word_bounds",
+        "pairKS_uniform_factorial_word_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.powerSeriesTranslationMajorant: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.powerSeries_changeOrigin_uniform_nnnorm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.powerSeries_changeOrigin_uniform_norm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.powerSeries_changeOrigin_uniform_geometric_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.nuclearKS_uniform_factorial_word_bounds: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.pairKS_uniform_factorial_word_bounds: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.powerSeriesTranslationMajorant",
+    "TheoremT.Continuum.powerSeries_changeOrigin_uniform_nnnorm",
+    "TheoremT.Continuum.powerSeries_changeOrigin_uniform_norm",
+    "TheoremT.Continuum.powerSeries_changeOrigin_uniform_geometric_bound",
+    "TheoremT.Continuum.nuclearKS_uniform_factorial_word_bounds",
+    "TheoremT.Continuum.pairKS_uniform_factorial_word_bounds"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

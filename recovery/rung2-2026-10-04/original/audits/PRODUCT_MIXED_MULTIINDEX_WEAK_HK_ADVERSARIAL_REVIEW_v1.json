@@ -1,0 +1,125 @@
+{
+  "schema": "focused-mathematical-adversarial-review-v1",
+  "timestamp_utc": "2026-09-10T22:06:26.271233+00:00",
+  "reviewer": "/root/partial_convolution_recovery/partial_pde_commutation_plan",
+  "category": "Focused mathematical and semantic source/statement review; not a substitute for kernel verification.",
+  "verdict": "No concrete mathematical or hypothesis mismatch found within the examined scope.",
+  "main_result": {
+    "conversion": "On an open seven-dimensional product region, an actual ProductCoordinateWeakHk family yields ProductMixedMultiIndexWeakHk at the same finite order and same per-derivative squared L2 budget.",
+    "indices": "Alpha : Fin 4 -> Nat counts the four Y coordinate derivatives; beta : Fin 3 -> Nat counts the three T coordinate derivatives. The sum of their entries is the actual coordinate word length.",
+    "witness": "F(alpha,beta) = D(mixedMultiIndexWord alpha beta), with F(0,0)=f, genuine region L2 membership through total order m, and bundled Y/T weak derivative identities to F(alpha+single_i(1),beta) and F(alpha,beta+single_j(1)) below total order m.",
+    "raw_corollary": "For c>0, local smooth real B and local smooth arbitrary complex s, a raw locally L2 complex solution of the sole compact-test equation (-Delta_Y-c*norm(Y)^2*Delta_T+B)f=s has this finite natural-multiindex family on every supplied strictly nested positive-width box whose outer closed box lies in the open domain.",
+    "quantifiers": "For every finite m there exist W>=0 and a family F. The result does not quantify a single common all-order family or order-independent W."
+  },
+  "checks": [
+    "The canonical word is inherited from the pre-existing Fin 7 representation. The new mixedMultiIndex is the exact pullback of Sum.elim alpha beta along sevenCoordinateEquiv, with proved separate Y/T counts and exact total length. No coordinate multiplicity is discarded.",
+    "Each canonical single-coordinate shift is proved by equality of literal list element counts. The shift theorem orientation is shifted canonical word Perm prefixed old canonical word; the final derivative proof correctly uses its symmetry.",
+    "The permutation proof commutes only smooth test derivatives. Their transposed recursive word convention is respected in the nil, cons and adjacent-swap steps. Permutation preserves word length, so the (-1)^length weak integration-by-parts sign remains unchanged.",
+    "Actual region L2 budgets establish local integrability of the difference of representatives and integrability of both compact test products before integral_sub. Equality against all smooth compact tests then gives local almost-everywhere equality on an open domain.",
+    "The final derivative transfer uses congr_ae_local with the first representative unchanged and the derivative representative replaced by the locally AE-equal canonical shifted word. No pointwise equality or pointwise mixed-derivative commutation is asserted.",
+    "The strict old-order bound total<m is exactly sufficient to access the prefixed derivative word at length<=m. There is no request for a derivative at m+1. Every natural multiindex of total order<=m receives the same inherited per-word budget.",
+    "At m=0, the zero-index canonical word is empty, and the weak derivative shift premises are false. The output is the original L2-only zero-order package, not an unsupported differentiability claim.",
+    "The raw local PDE corollary supplies the open inner box and invokes the already reviewed raw finite regularity theorem. No source-chain, solution-derivative, positive-order PDE or cutoff-stage premise has been added to its final hypotheses."
+  ],
+  "findings": [],
+  "scope_limits": [
+    "These files provide genuine ordinary natural-multiindex weak derivative identities in the explicitly defined predicate. They do not prove an equivalence to a separate Mathlib or conventional packaged Sobolev space.",
+    "W bounds each squared derivative norm separately. A summed Hm norm would require an additional finite-count factor or separate aggregate theorem; it is not bounded by W in these statements.",
+    "No common all-order representative family, Sobolev embedding, smooth representative, factorial or analytic estimate, explicit rate, spectral conclusion, executable solver or complexity claim is established by this conversion.",
+    "The conversion is seven-dimensional (four Y and three T coordinates). The supporting permutation theorem is generic in finite spectator index, but the canonical mixed multiindices and final raw corollary are Fin 3.",
+    "No compiler was run by this reviewer. Parent/child successful exact-source compilations and approved v6 audit receipts were inspected. They reuse pinned dependency/prior objects and do not constitute an isolated dependency source rebuild.",
+    "The prior raw Grushin finite regularity chain and old local weak-calculus foundations were not broadly re-audited here. The exact newly used definitions/interfaces and the previously sealed focused raw-wrapper review are recorded."
+  ],
+  "sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MixedMultiIndexWord_v1.lean",
+      "sha256": "474a6da893d9e945858a456d43edf0f8d1e57c3d6f3ec4e38a7ce523559ecc7d",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakWordPermutation_v1.lean",
+      "sha256": "dd70c19bf37a4ed0606ca58f7d7ea6a0f880ab0563fbe531c1ac5d85287cf55a",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductMixedMultiIndexWeakHk_v1.lean",
+      "sha256": "eb93f618aa70a6f8e7219a894867a63ee3c82a8115ffbb652bdcdc0d32c9251d",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoordinateMultiIndexWord_v1.lean",
+      "sha256": "0b7e4f740b40fdd778235bc151eb9ddf6793736e50a2c384f4b5cd50dacd57da",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakHk_v1.lean",
+      "sha256": "f45d9e11f8e49a85db9c3890fe734bcde364ac463b4507dba60c74a7e7db4d10",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakWordTests_v1.lean",
+      "sha256": "aabac0f0f027e6a6e844a8311af3fb0e8b540a48d3282a50e5fa17f71ade7531",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalProductDirectionalWeakUnique_v1.lean",
+      "sha256": "202f4efc1f500a58162863118c1f52c0e237836e8b1f5b13e552a76481491a1f",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalSmoothWeakGrushinFiniteRegularity_v1.lean",
+      "sha256": "0653128d4d9d99231e00d9270b0eee59150e465e8e43d01cca3d7240f06d05b8",
+      "review_scope": "Full final source read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalProductDirectionalWeakLinear_v1.lean",
+      "sha256": "ea2c717e420785d522f39db58499bedf8df2b1ca61b06b379ee0bd1405482ade",
+      "review_scope": "Exact ProductLocalWeakDirectional.congr_ae_local proof, lines 81-114."
+    }
+  ],
+  "expanded_statement_audits": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215313_027304Z/receipt.json",
+      "sha256": "c62235687b9ef3faed34f72a98c034bf9b687588cc550bcdf18787d8a2455975",
+      "review_scope": "Full receipt inspected, final source/object hashes match, complete standard axiom reports and no printer errors."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215313_027304Z/ExpandedStatements_v6.log",
+      "sha256": "593641552f9a8cb897d2efc059b9a50a71512e98278c8b381dc77c3e3eebe817",
+      "review_scope": "Full expanded statements and every axiom report read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220346_563352Z/receipt.json",
+      "sha256": "c7e5ccaf7e7bbc817985718a3d4a4aedf8d90e7640b4733c7642c14f26a2c412",
+      "review_scope": "Full receipt inspected, final source/object hashes match, complete standard axiom reports and no printer errors."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220346_563352Z/ExpandedStatements_v6.log",
+      "sha256": "2989ee8aaa4d5af6616de1c54f2ef9d61a59b13696e7665b2d502319bc1e7e27",
+      "review_scope": "Full expanded statements and every axiom report read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220448_670891Z/receipt.json",
+      "sha256": "6e9b7f4ba412697ae01ccea595df19b969ca137ac53981b2141cce4c1749b669",
+      "review_scope": "Full receipt inspected, final source/object hashes match, complete standard axiom reports and no printer errors."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220448_670891Z/ExpandedStatements_v6.log",
+      "sha256": "8f3fafbbd9903c26482e5276ad60c7ab9d43335fdec72ca26da281938b34eb5b",
+      "review_scope": "Full expanded statements and every axiom report read."
+    }
+  ],
+  "independent_child_review": {
+    "reviewer": "/root/partial_convolution_recovery/partial_pde_commutation_plan/cutoff_common_bounds_plan",
+    "scope": "Independent full-source check of parent-authored final multiindex family, weak permutation and direct raw local corollary after writing the pure canonical combinatorial helper.",
+    "verdict": "No concrete issue; literal index counts, shift orientation, finite-order bounds, actual test integrability, local AE replacement and m=0 are correct. No solution derivative input in raw PDE corollary.",
+    "final_family_sha256": "eb93f618aa70a6f8e7219a894867a63ee3c82a8115ffbb652bdcdc0d32c9251d",
+    "weak_permutation_sha256": "dd70c19bf37a4ed0606ca58f7d7ea6a0f880ab0563fbe531c1ac5d85287cf55a",
+    "independence_disclosure": "Child authored MixedMultiIndexWord_v1; this reviewer independently read its complete final source and expanded statements. Parent authored weak permutation/final family; both reviewers checked those."
+  },
+  "prior_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/LOCAL_SMOOTH_WEAK_GRUSHIN_FINITE_REGULARITY_ADVERSARIAL_REVIEW_v1.json",
+    "sha256": "d447ec87bedfedcaa0e9ffbdde48e46b13263969a8e7ed3b7dbf5406c54c7229",
+    "review_scope": "Exact raw PDE finite regularity source, geometry, source construction, coefficients and final expanded-statement review reused."
+  }
+}

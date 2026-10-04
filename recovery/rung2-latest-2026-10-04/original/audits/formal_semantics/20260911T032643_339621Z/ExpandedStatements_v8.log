@@ -1,0 +1,186 @@
+TheoremT.Continuum.position_nuclearKSPhysicalCoordinates : ∀ (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (X T : TheoremT.Continuum.Position),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (TheoremT.Continuum.nuclearKSPhysicalCoordinates i X T) j)
+    (@ite.{1} TheoremT.Continuum.Position (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) j i) _ X T)
+TheoremT.Continuum.position_pairKSPhysicalCoordinates_zero : ∀ (X T : TheoremT.Continuum.Position),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (TheoremT.Continuum.pairKSPhysicalCoordinates X T)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+    (@HAdd.hAdd.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _ T
+      (@HSMul.hSMul.{0, 0, 0} Real TheoremT.Continuum.Position TheoremT.Continuum.Position _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+        X))
+TheoremT.Continuum.position_pairKSPhysicalCoordinates_one : ∀ (X T : TheoremT.Continuum.Position),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (TheoremT.Continuum.pairKSPhysicalCoordinates X T)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+    (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _ T
+      (@HSMul.hSMul.{0, 0, 0} Real TheoremT.Continuum.Position TheoremT.Continuum.Position _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+        X))
+TheoremT.Continuum.configurationRotation_nuclearKSPhysicalCoordinates : ∀
+  (R :
+    @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+      TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (X T : TheoremT.Continuum.Position),
+  @Eq.{1} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _)
+      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (fun (a : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      _ (TheoremT.Continuum.configurationRotation (@OfNat.ofNat.{0} Nat (nat_lit 2) _) R)
+      (TheoremT.Continuum.nuclearKSPhysicalCoordinates i X T))
+    (TheoremT.Continuum.nuclearKSPhysicalCoordinates i
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R X)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R T))
+TheoremT.Continuum.configurationRotation_pairKSPhysicalCoordinates : ∀
+  (R :
+    @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+      TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+  (X T : TheoremT.Continuum.Position),
+  @Eq.{1} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _)
+      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (fun (a : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      _ (TheoremT.Continuum.configurationRotation (@OfNat.ofNat.{0} Nat (nat_lit 2) _) R)
+      (TheoremT.Continuum.pairKSPhysicalCoordinates X T))
+    (TheoremT.Continuum.pairKSPhysicalCoordinates
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R X)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R T))
+@TheoremT.Continuum.originScaledDifference_configurationRotation : ∀ {N : Nat}
+  (g : TheoremT.Continuum.Configuration N → Complex)
+  (R :
+    @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+      TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+  (hg :
+    ∀ (x : TheoremT.Continuum.Configuration N),
+      @Eq.{1} Complex
+        (g
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+              (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ _ _ _)
+            (TheoremT.Continuum.Configuration N)
+            (fun (a : TheoremT.Continuum.Configuration N) => TheoremT.Continuum.Configuration N) _
+            (TheoremT.Continuum.configurationRotation N R) x))
+        (g x))
+  (ε : Real) (x : TheoremT.Continuum.Configuration N),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.originScaledDifference.{0} (TheoremT.Continuum.Configuration N) _ _ g ε
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ _ _ _)
+        (TheoremT.Continuum.Configuration N)
+        (fun (a : TheoremT.Continuum.Configuration N) => TheoremT.Continuum.Configuration N) _
+        (TheoremT.Continuum.configurationRotation N R) x))
+    (@TheoremT.Continuum.originScaledDifference.{0} (TheoremT.Continuum.Configuration N) _ _ g ε x)
+TheoremT.Continuum.originScaledDifference_nuclearKSPhysicalCoordinates_rotation : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (R :
+    @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+      TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+  (hg :
+    ∀ (x : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+      @Eq.{1} Complex
+        (g
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _)
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (fun (a : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            _ (TheoremT.Continuum.configurationRotation (@OfNat.ofNat.{0} Nat (nat_lit 2) _) R) x))
+        (g x))
+  (ε : Real) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (X T : TheoremT.Continuum.Position),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.originScaledDifference.{0}
+      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ g ε
+      (TheoremT.Continuum.nuclearKSPhysicalCoordinates i
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+          TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R X)
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+          TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R T)))
+    (@TheoremT.Continuum.originScaledDifference.{0}
+      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ g ε
+      (TheoremT.Continuum.nuclearKSPhysicalCoordinates i X T))
+TheoremT.Continuum.originScaledDifference_pairKSPhysicalCoordinates_rotation : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (R :
+    @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+      TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+  (hg :
+    ∀ (x : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+      @Eq.{1} Complex
+        (g
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _)
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (fun (a : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            _ (TheoremT.Continuum.configurationRotation (@OfNat.ofNat.{0} Nat (nat_lit 2) _) R) x))
+        (g x))
+  (ε : Real) (X T : TheoremT.Continuum.Position),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.originScaledDifference.{0}
+      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ g ε
+      (TheoremT.Continuum.pairKSPhysicalCoordinates
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+          TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R X)
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+          TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R T)))
+    (@TheoremT.Continuum.originScaledDifference.{0}
+      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ g ε
+      (TheoremT.Continuum.pairKSPhysicalCoordinates X T))
+'TheoremT.Continuum.position_nuclearKSPhysicalCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.position_pairKSPhysicalCoordinates_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.position_pairKSPhysicalCoordinates_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.configurationRotation_nuclearKSPhysicalCoordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.configurationRotation_pairKSPhysicalCoordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.originScaledDifference_configurationRotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.originScaledDifference_nuclearKSPhysicalCoordinates_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.originScaledDifference_pairKSPhysicalCoordinates_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

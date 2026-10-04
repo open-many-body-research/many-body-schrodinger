@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "timestamp_utc": "2026-09-10T23:29:22.546264+00:00",
+  "evidence_category": "fully formal finite indexing conversion, conditional on explicitly supplied genuine natural weak jets",
+  "exact_result": "For D(w)=F(Ycount(w),Tcount(w)), D(empty)=F(0,0); D(canonical(alpha,beta))=F(alpha,beta) pointwise; natural jets through m give unchanged per-member L2 budgets and actual coordinate weak derivative chains through m. Appending two identical spectator letters gives exactly F(Ycount(w),Tcount(w)+single(j,2)).",
+  "declarations": 15,
+  "strict_audit": {
+    "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232823_808530Z/receipt.json",
+    "receipt_sha256": "fb3bb17ec84c16be7853253783a1f11efa65cffd77b271e546d87d8f44b6efb5",
+    "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+    "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+    "axiom_report_complete": true,
+    "unexpected_axioms": [],
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": []
+  },
+  "modules": [
+    {
+      "module": "ProductMixedMultiIndexWordFamily_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductMixedMultiIndexWordFamily_v1.lean",
+      "source_sha256": "4f9276e77c30ec5d9156d6dc0091793cfe8fa1018dd43f5077ad0949554b5174",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductMixedMultiIndexWordFamily_v1.olean",
+      "object_sha256": "df16e8c6d3f875f02a5b720a88335de7b33c24127166606ea2a1f14db3e66fe7",
+      "declarations": [
+        "factorialWordYCount_nil",
+        "factorialWordTCount_nil",
+        "factorialWordYCount_cons_y",
+        "factorialWordTCount_cons_y",
+        "factorialWordYCount_cons_t",
+        "factorialWordTCount_cons_t",
+        "factorialWordYCount_mixedMultiIndexWord",
+        "factorialWordTCount_mixedMultiIndexWord",
+        "mixedMultiIndexWordFamily",
+        "mixedMultiIndexWordFamily_nil",
+        "mixedMultiIndexWordFamily_canonical",
+        "mixedMultiIndexWordFamily_budget",
+        "mixedMultiIndexWordFamily_localD",
+        "mixedMultiIndexWeakHk_coordinateWeakHk",
+        "mixedMultiIndexWordFamily_append_tt"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "focused_statement_review": [
+    "Read all final expanded statements and all 15 axiom reports. Only propext, Classical.choice and Quot.sound occur.",
+    "The family is literal raw-function indexing by seven coordinate counts; canonical and appended-TT identities are pointwise, not inferred from almost-everywhere commutation.",
+    "The local derivative theorem explicitly consumes genuine Y and T weak derivative shifts below m. It does not construct solution regularity or assume its final coordinate-word conclusion.",
+    "Count conservation identifies sum(alpha)+sum(beta) with word length, so no order or budget is lost. The TT formula records precisely two spectator increments.",
+    "Natural-to-coordinate conversion does not require an open set because it reindexes the supplied weak identities directly; no weak derivative uniqueness lemma is used.",
+    "The m=0 case has only the empty-word budget and no derivative obligations; the statements preserve this case."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "rebuild_scope": "This new module is outside the prior isolated source rebuild v20 (817 targets). No new dependency source rebuild was attempted in this bounded subtask, as instructed by the parent.",
+  "limitations": [
+    "This finite conversion does not establish existence of natural jets from raw PDE data by itself; that input can be supplied by the separately sealed raw finite regularity theorem.",
+    "No differentiated PDE, commutator identity, factorial growth estimate, common all-order witness or computational algorithm is claimed by this module."
+  ],
+  "next_obligation": "Parent composes this exact counted family with the actual differentiated coordinate-word Grushin equation and matches the sealed potential/principal norm formulas.",
+  "frozen_provenance": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "report": "THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md",
+    "report_sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066"
+  },
+  "preservation": "New source and new checkpoint only. All prior PASS sources and records preserved."
+}

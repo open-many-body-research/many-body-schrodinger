@@ -1,0 +1,54 @@
+{
+  "status": "PASS_UNCONDITIONAL_EVEN_FIRST_COORDINATE_HASSUM_REINDEXING",
+  "utc": "2026-09-11T02:49:24.843136+00:00",
+  "evidence_category": "Fully formalized generic infinite-sum implication with actual unconditional HasSum and exact odd-zero hypotheses.",
+  "target": {
+    "source": {
+      "path": "lean/EvenFirstCoordinateHasSum_v1.lean",
+      "sha256": "0d1dc10ee29695cfe83934a4bf8b926d5d41b8b17ed2ae97948fcbd2f45218f5"
+    },
+    "object": {
+      "path": "lean/build/EvenFirstCoordinateHasSum_v1.olean",
+      "sha256": "ce2341d06249f585f105e1dd78e5e75012edf30870072278a6a2608e06637076"
+    },
+    "declarations": [
+      "hasSum_even_first_coordinate_iff",
+      "hasSum_even_first_coordinate"
+    ]
+  },
+  "build": {
+    "path": "logs/development/EvenFirstCoordinateHasSum_v1-20260911T024525_216822Z.json",
+    "sha256": "c0b70ae969cf4172c266d0b578724cc61677c71b8e384039bc5b6a680486c2b1"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T024556_803494Z/receipt.json",
+    "sha256": "1c3c8e52353ee3e4c252b952d16b02bb870c5a4294a5305db1e0a67511131540"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T024556_803494Z/ExpandedStatements_v8.log",
+    "sha256": "ed1031458a672ef0613d89a79d46a96951439bfbc77a86614cfcab16c8cd0000"
+  },
+  "independent_review": {
+    "path": "audits/EVEN_FIRST_COORDINATE_HASSUM_REVIEW_v1_20260911T024747Z.json",
+    "sha256": "6b6bcb0fbc2ca6804ed2e24a81830ee7ccaa59cd19e3632e61705253004667b1"
+  },
+  "exact_statement": "For arbitrary kappa,E with AddCommMonoid E and TopologicalSpace E, if every f(2*m+1,gamma)=0 then HasSum(fun q=>f(2*q.1,q.2)) a iff HasSum f a. Both sums use the unconditional filter.",
+  "manual_check": "Complete final proof source, all expanded statements and axiom reports, strict receipt, pinned immediate injective reindex proof and independent review read. Only standard three axioms and no omissions.",
+  "environment": "First draft used an unavailable Mathlib.Tactic.Omega module import. Replaced with existing pinned Mathlib.Tactic; actual proof then compiled unchanged. Reused pinned objects, no rebuild.",
+  "limitations": [
+    "This generic zero-term reindexing theorem does not prove summability or absolute convergence of any physical coefficient series.",
+    "It does not itself instantiate the odd-Y physical polynomial vanishing theorem; that composition remains a separate consumer.",
+    "No ordered conditionally convergent series rearrangement is claimed.",
+    "Existing pinned dependency objects were reused by the consumed compiler and strict audit; no isolated dependency-source rebuild was performed."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; prior source and evidence bytes preserved."
+  },
+  "next": "Root applies this exact helper to the actual extracted physical Taylor double series and the sealed odd-Y polynomial zero identities."
+}

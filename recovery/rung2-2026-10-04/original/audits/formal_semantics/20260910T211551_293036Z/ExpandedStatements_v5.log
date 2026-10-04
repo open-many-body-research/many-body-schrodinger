@@ -1,0 +1,81 @@
+@TheoremT.Continuum.directionalWordProduct_region_L2_bound.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} (hΩ : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ Ω)
+  {B : Prod.{u_1, u_2} Y T → Real}
+  (hB :
+    @ContDiffOn.{0, max u_1 u_2, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {m : Nat} (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex)
+  (hG :
+    ∀ (q : List.{0} ι),
+      @LE.le.{0} Nat _ (@List.length.{0} ι q) m →
+        @MeasureTheory.MemLp.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _ _ (G q)
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.Measure.restrict.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) Ω))
+  (w : List.{0} ι) (hw : @LE.le.{0} Nat _ (@List.length.{0} ι w) m) {K W : Real}
+  (hCoeff :
+    ∀ (q : List.{0} ι),
+      @LE.le.{0} Nat _ (@List.length.{0} ι q) m →
+        ∀ (p : Prod.{u_1, u_2} Y T),
+          @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ Ω
+              p →
+            @LE.le.{0} Real _
+              (@abs.{0} Real _ _ (@TheoremT.Continuum.directionalWordDeriv.{u_1, u_2} Y T _ _ _ _ ι dirs B q p)) K)
+  (hBudget :
+    ∀ (q : List.{0} ι),
+      @LE.le.{0} Nat _ (@List.length.{0} ι q) m →
+        @LE.le.{0} Real _
+          (@MeasureTheory.integral.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Real _ _
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+            (@MeasureTheory.Measure.restrict.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) Ω)
+            fun (p : Prod.{u_1, u_2} Y T) =>
+            @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (G q p))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          W),
+  And
+    (@MeasureTheory.MemLp.{max u_2 u_1, 0} (Prod.{u_1, u_2} Y T) Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _ _
+      (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G w)
+      (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) Ω))
+    (And
+      (@MeasureTheory.Integrable.{0, max u_1 u_2} Real _ _ (Prod.{u_1, u_2} Y T)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+        (fun (p : Prod.{u_1, u_2} Y T) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _
+              (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G w p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@MeasureTheory.Measure.restrict.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) Ω))
+      (@LE.le.{0} Real _
+        (@MeasureTheory.integral.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Real _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+          (@MeasureTheory.Measure.restrict.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) Ω)
+          fun (p : Prod.{u_1, u_2} Y T) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _
+              (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G w p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@List.length.{0} ι w))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ K (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          W)))
+'TheoremT.Continuum.directionalWordProduct_region_L2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

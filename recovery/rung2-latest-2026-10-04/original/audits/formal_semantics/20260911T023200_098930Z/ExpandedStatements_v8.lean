@@ -1,0 +1,33 @@
+import PhysicalKSTaylorSpectatorCoefficients_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient
+#check @TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient_coeff
+#check @TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient_homogeneous
+#check @TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient_coefficientL1
+#check @TheoremT.Continuum.nuclearKSPhysicalTaylorSpectatorCoefficient_circle_invariant
+#check @TheoremT.Continuum.pairKSPhysicalTaylorSpectatorCoefficient_circle_invariant
+#check @TheoremT.Continuum.nuclearKSPhysicalTaylorSpectatorCoefficient_balanced_support
+#check @TheoremT.Continuum.pairKSPhysicalTaylorSpectatorCoefficient_balanced_support
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient
+#print axioms TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient_coeff
+#print axioms TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient_homogeneous
+#print axioms TheoremT.Continuum.physicalKSTaylorSpectatorCoefficient_coefficientL1
+#print axioms TheoremT.Continuum.nuclearKSPhysicalTaylorSpectatorCoefficient_circle_invariant
+#print axioms TheoremT.Continuum.pairKSPhysicalTaylorSpectatorCoefficient_circle_invariant
+#print axioms TheoremT.Continuum.nuclearKSPhysicalTaylorSpectatorCoefficient_balanced_support
+#print axioms TheoremT.Continuum.pairKSPhysicalTaylorSpectatorCoefficient_balanced_support

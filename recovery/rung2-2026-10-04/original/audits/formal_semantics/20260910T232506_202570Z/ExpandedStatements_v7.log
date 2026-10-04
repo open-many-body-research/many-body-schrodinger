@@ -1,0 +1,68 @@
+TheoremT.Continuum.grushin_first_two_le_geometric_sum : ∀ (A : Real) (r : Nat) (d : Nat → Real)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) r)
+  (hd : ∀ (q : Nat), @LE.le.{0} Nat _ q r → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (d q)),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (d (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (d (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+    (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        (d
+          (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+            (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) j)))
+TheoremT.Continuum.grushin_recurrence_power_coefficient_le : ∀ (C A : Real)
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A) (j : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) C)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) C) A)
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+TheoremT.Continuum.grushin_recurrence_coefficient_absorption : ∀ (C A S : Real) (r : Nat) (d : Nat → Real)
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) r)
+  (hd : ∀ (q : Nat), @LE.le.{0} Nat _ q r → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (d q)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@HPow.hPow.{0, 0, 0} Real Nat Real _ A r))
+            (d (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (d (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+          @HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            (d
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+                (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) j)))))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) C) A)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+      (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+        @HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) C) A)
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          (d
+            (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) j))))
+'TheoremT.Continuum.grushin_first_two_le_geometric_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_recurrence_power_coefficient_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_recurrence_coefficient_absorption' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

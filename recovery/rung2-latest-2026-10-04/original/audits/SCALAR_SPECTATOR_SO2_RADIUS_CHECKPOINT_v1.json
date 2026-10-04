@@ -1,0 +1,103 @@
+{
+  "status": "PASS_SCALAR_SPECTATOR_SERIES_AND_EXACT_SO2_RADII",
+  "created_utc": "2026-09-11T03:29:30.845843+00:00",
+  "evidence_category": "Fully formalized conditional polynomial-series component",
+  "strongest_exact_result": "For literal coefficients c(m,gamma) with norm<=M D^m S^sum(gamma), M,D,S>=0, the actual unconditional scalar/spectator power series is complex analytic on D|w|<1 and S||s||<1 and converges absolutely and uniformly on every smaller closed product polydisc, with bound M/((1-Dr)(1-Sh)^d). Specializing coefficient norm<=M(h^-1)^(2m+sum(gamma)), h>0, gives the exact domain |w|<h^2 and ||s||<h; with two spectator variables the half-polyradii bound is 8M.",
+  "modules": [
+    {
+      "module": "ScalarSpectatorGeometricSeries_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ScalarSpectatorGeometricSeries_v1.lean",
+      "source_sha256": "446c45cafa4ed98c25ec7b25a6662a4225072fed223348fd0e3e38b5ee070c30",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ScalarSpectatorGeometricSeries_v1.olean",
+      "object_sha256": "e076511e554ef44831092c9a398f0a1c8967593f66edb283daa30c1e852b1602",
+      "declarations": [
+        "scalarSpectatorPolynomialFamily",
+        "scalarSpectatorPolynomialFamily_isHomogeneous",
+        "scalarSpectatorPolynomialFamily_coeffL1_le",
+        "scalarSpectatorTerm",
+        "scalarSpectatorSum",
+        "scalarSpectatorTerm_eq",
+        "scalarSpectatorSum_eq",
+        "scalar_spectator_sum_analytic",
+        "scalar_spectator_series_closed_polydiscs"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SO2DescendedSeriesRadius_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SO2DescendedSeriesRadius_v1.lean",
+      "source_sha256": "a5c456cbe9cd8bae34adea798e188261497a9dfc500213d9a61cd89137221149",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SO2DescendedSeriesRadius_v1.olean",
+      "object_sha256": "c6f44ccc744d02fd1093b67800335611d1f9d768d6ab6138998cecceb7e0476c",
+      "declarations": [
+        "so2_descended_coefficient_rate",
+        "so2_descended_series_analytic",
+        "so2_descended_series_half_polyradii"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T032347_175154Z/receipt.json",
+        "sha256": "49a611259d2c565059f6136c87d6846f7f85e502b224b5a56591531e64c1e1d5"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T032347_175154Z/ExpandedStatements_v8.log",
+        "sha256": "1857b63441dc01b0ef70c35a857d8f857c11f9d6789e18880be2bcf98c128a13"
+      },
+      "axioms": [
+        "TheoremT.Continuum.scalarSpectatorPolynomialFamily: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.scalarSpectatorPolynomialFamily_isHomogeneous: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.scalarSpectatorPolynomialFamily_coeffL1_le: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.scalarSpectatorTerm: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.scalarSpectatorSum: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.scalarSpectatorTerm_eq: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.scalarSpectatorSum_eq: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.scalar_spectator_sum_analytic: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.scalar_spectator_series_closed_polydiscs: [propext, Classical.choice, Quot.sound]"
+      ]
+    },
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T032519_305843Z/receipt.json",
+        "sha256": "098bfd44654de7835f5bf204139e9fabfd9b4ec31857e1cc3c461f7bca3290b6"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T032519_305843Z/ExpandedStatements_v8.log",
+        "sha256": "6f12d2a523bf54fc065f39d74ebbe8c795c6397c01eb175b17ed47b7af5da285"
+      },
+      "axioms": [
+        "TheoremT.Continuum.so2_descended_coefficient_rate: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.so2_descended_series_analytic: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.so2_descended_series_half_polyradii: [propext, Classical.choice, Quot.sound]"
+      ]
+    }
+  ],
+  "declaration_count": 12,
+  "independent_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/SCALAR_SPECTATOR_SO2_RADIUS_FOCUSED_REVIEW_v1.json",
+    "sha256": "afd43716cf82c1101d2550757a2936b33f7bfa7488826efd49a2801884fb9444"
+  },
+  "review": "Final source bodies and all complete expanded statements and axioms read by author and independent reviewer. No source/object discrepancy or mathematical defect found.",
+  "mathematical_change": "Literal auxiliary C(c)*X_0^m polynomial families transfer the already proved polynomial-series analyticity without changing coefficients or adding an exponential factor; separate domains remain exact.",
+  "limits": [
+    "The invariant Cartesian coefficient extraction is a separate finite polynomial result, being coupled next.",
+    "Actual physical Taylor representation, rotational invariance and Cauchy coefficient bounds are not assumed discharged by these generic series lemmas.",
+    "The strong M bound on the full domain awaits actual axis evaluation; only the explicit geometric norm bound and 8M half-polyradii are claimed here.",
+    "No executable infinite-series implementation, full Theorem T, or complexity claim."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "next_active": "SO2 actual all-order polynomial series descent, zero odd terms, actual physical-series identification and strong bound M by axis square-root evaluation.",
+  "preservation": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da"
+  }
+}

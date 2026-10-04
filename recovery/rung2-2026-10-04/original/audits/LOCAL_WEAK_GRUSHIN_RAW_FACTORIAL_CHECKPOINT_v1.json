@@ -1,0 +1,116 @@
+{
+  "created_utc": "2026-09-11T00:32:27.098765+00:00",
+  "status": "PASS_RAW_WEAK_GRUSHIN_WEIGHTED_L2_FACTORIAL_BOUND",
+  "evidence_category": "Kernel-checked local PDE regularity theorem with quantitative actual weighted L2 factorial bound",
+  "exact_result": "Let Pc=-DeltaY-c|Y|\u00b2DeltaT on real Y4 x T3, c>0. On open Omega, assume f locallyL2 solves (Pc+potential)f=src in genuine compact-test sense, potential/src smooth, a centered-Y closed outer rectangle lies inside Omega, and an inner rectangle has the actual H12(f) squared budget W. Fix analytic coefficient bounds M A^k k!, actual source squared L2 word budgets (F0 A^k k!)\u00b2, A>=1,M,F0>=0. With 0<rho<=1 below both inner half-widths and actual smooth-transition C1,C2 bounds, there exists one genuine all-order mixed weak derivative family F with F00=f, finite budgets and actual coordinate derivative identities. For every r, all498 shifted weighted fields on the rho-shrunk inner box are MemLp and the literal finite maximum profile satisfies N_r(rho)<=6B(F0+H0)*(6B/rho)^r*r!.",
+  "constants": {
+    "C": "factorialProfileRecurrenceConstant(c,bY,rho,C1,C2,M), fully explicit and audited in R18 checkpoint",
+    "B": "2*C*A",
+    "H0": "498*max(1,2*bY)^2*sqrt(W)"
+  },
+  "quantifier_review": "The common derivative family and all constants precede every derivative order. No finite/all-order solution family, localized estimate, recurrence, solution factorial norm bound or smooth representative is a hypothesis. The only finite solution regularity input is genuine H12. Higher finite regularity follows from the original equation.",
+  "mathematical_change": "Discharged qualitative all-order-family premises and the quantitative recurrence: the bound now follows from raw local weak PDE data plus one finite H12 initialization. The elementary exponential-series conversion proves true factorial growth with constants6B, including order0 and zero amplitude.",
+  "not_claimed": [
+    "pointwise or classical analytic representative",
+    "uniform physical all-chart instantiation (active transport task)",
+    "KS quantitative descent",
+    "global H2 trial approximation",
+    "algorithm correctness or bit complexity",
+    "full Theorem T"
+  ],
+  "module_records": [
+    {
+      "module": "LocalWeakGrushinRawProfileBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakGrushinRawProfileBound_v1.lean",
+      "source_sha256": "caf9204af808d9daa36381ad73d26294353bffd59a0ff1774da9228a455c4691",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakGrushinRawProfileBound_v1.olean",
+      "object_sha256": "c9c1316c7377347c07555efbbb3d82c0d1af799541f3dfdaf293f3b698c57100",
+      "declarations": [
+        "local_weak_grushin_raw_profile_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "LocalWeakGrushinRawFactorialBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakGrushinRawFactorialBound_v1.lean",
+      "source_sha256": "c3da0e64c31a877288cf9c4c162b39043fe78bfde1850079c9224deb59372a59",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakGrushinRawFactorialBound_v1.olean",
+      "object_sha256": "8b2f160b5d2d16599afca58640130202e893bdf8b048fd0e1ce4b933ca8706ae",
+      "declarations": [
+        "local_weak_grushin_raw_factorial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260911T002727_778375Z/receipt.json",
+        "sha256": "3644cf5f0daed033ba7c3e43366774cacc25912c570548999c5913391d27bdcb"
+      },
+      "expanded_statements_and_axioms": {
+        "path": "audits/formal_semantics/20260911T002727_778375Z/ExpandedStatements_v7.log",
+        "sha256": "c6e8ca9c2d7980ec5a3b207f706e28417a64217cd0e828c4d9a512b1748429a1"
+      }
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260911T002923_856302Z/receipt.json",
+        "sha256": "748d6abe099596b07b3e2f1cc4273d69fb152fa73e52e33dde5f29b015798a0f"
+      },
+      "expanded_statements_and_axioms": {
+        "path": "audits/formal_semantics/20260911T002923_856302Z/ExpandedStatements_v7.log",
+        "sha256": "e6f7ada10d46e13956ee797871c1040ccdb4e4ef7b0287a112ba81e4df6c3eac"
+      }
+    }
+  ],
+  "root_review": "Root read both full source files, all expanded raw-profile statement/axiom lines, and the complete exact diff to the factorial expanded log (only expected name/conclusion changes). The elementary successor proof and actual R23 source were also read.",
+  "independent_reviews": [
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_RAW_PROFILE_INDEPENDENT_REVIEW_v1.json",
+      "sha256": "2dc73cbfdd5081bea64f310e152048a8682f8130b19730bf7d73748e721038fe"
+    },
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_RAW_FACTORIAL_FOCUSED_REVIEW_v1.json",
+      "sha256": "b3db865cf326bb5e0ad49b10b0927ea047f09c5917ccbb8b5cab640632317fc7"
+    }
+  ],
+  "dependency_checkpoints": [
+    {
+      "path": "audits/GRUSHIN_ACTUAL_PROFILE_RECURRENCE_CHECKPOINT_v1.json",
+      "sha256": "997447c04a71617a827b06662a71d7902b333f4f49e896fbe750f96f61be5715"
+    },
+    {
+      "path": "audits/GRUSHIN_ACTUAL_PROFILE_R23_CHECKPOINT_v1.json",
+      "sha256": "9b290a5871da4d0689cae67c059aba7179fb3b49ea3369891d671e317adea10f"
+    },
+    {
+      "path": "audits/GRUSHIN_SUCCESSOR_POWER_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "170448c85c70ebc5256535b016cbfe5957cd47f33eaed7a9d54e82d574865c45"
+    },
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_ALL_ORDER_EQUATIONS_CHECKPOINT_v1.json",
+      "sha256": "d8b27d63c9044892484b1a9b92c6c6e9e2925641062286232e6e89c3a8659cf5"
+    },
+    {
+      "path": "audits/FACTORIAL_R9_BASE_PROFILE_CHECKPOINT_v1.json",
+      "sha256": "8f77ccb5197fe386fc1f8478825db8e6aaa9efeda620824322fd79ab8119b120"
+    }
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development dependencies reused; source modules outside isolated rebuildv20. No additional trust mechanism or new source rebuild.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

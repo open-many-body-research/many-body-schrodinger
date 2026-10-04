@@ -1,0 +1,114 @@
+{
+  "created_utc": "2026-09-11T02:55:04.932357+00:00",
+  "status": "PASS_ACTUAL_KS_ANALYTIC_A_B_AND_PULLBACK_IDENTITY",
+  "evidence_category": "Kernel-checked actual chart Taylor series descent under the previously established physical pointwise data",
+  "exact_result": "For either actual nuclear chart and the actual pair chart, literal A and B series made from extracted actual even-Y Taylor coefficients are jointly complex analytic where D*norm(X_sup)<1 and S*norm(t_sup)<1, S=7*rate,D=32*S^2. On the intersection of those convergence conditions with the real product Taylor ball of radius r=min(1/1024,S^-1), the original physical KS base f((0,t0)+q) equals A(KS(q.Y),q.T)+norm(q.Y)^2*B(KS(q.Y),q.T). Both balance and odd-Y vanishing are supplied in the actual chart wrappers.",
+  "mathematical_change": "Composed literal coefficient extraction, circle symmetry, even-Y reindexing, justified double-series regrouping and finite KS descent. The A/B functions are now identified with the actual physical base, not an unspecified prescribed family.",
+  "modules": [
+    {
+      "module": "PhysicalKSTaylorAnalyticDescentData_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorAnalyticDescentData_v1.lean",
+      "source_sha256": "2bb9ce5591ec6f3537f18a92aed28526ec2a462704724d481ec7055f5170308f",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorAnalyticDescentData_v1.olean",
+      "object_sha256": "e03565085e93c6509753cba808e445cecc2f37635ba7dd95e9c8d03a5b2eca9c",
+      "declarations": [
+        "physicalKSTaylorEvenSpectatorFamily",
+        "physicalKSAnalyticDescentA",
+        "physicalKSAnalyticDescentB",
+        "physicalKSTaylorEvenSpectatorFamily_homogeneous",
+        "physicalKSTaylorEvenSpectatorFamily_coeff_bound",
+        "physicalKSAnalyticDescent_analytic_of_balanced",
+        "nuclearKSPhysicalAnalyticDescent_analytic",
+        "pairKSPhysicalAnalyticDescent_analytic"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSTaylorAnalyticDescentIdentity_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorAnalyticDescentIdentity_v1.lean",
+      "source_sha256": "a0749c5a47a38fba0d50d04fcf284902b9e27a0cb702c1fb62b17e8da9fc4e5a",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorAnalyticDescentIdentity_v1.olean",
+      "object_sha256": "91c538b78824b89febbdc5e783a55ca47e02da78e4902b285084af562ca54903",
+      "declarations": [
+        "PhysicalKSAnalyticDescentIdentityOnTaylorBall",
+        "physicalKSAnalyticDescent_identity_of_balanced_odd_zero",
+        "nuclearKSPhysicalAnalyticDescent_identity",
+        "pairKSPhysicalAnalyticDescent_identity"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipts": [
+    {
+      "path": "audits/formal_semantics/20260911T024648_858404Z/receipt.json",
+      "sha256": "e707e13ebeb2d93d36990eb611cb5e8975af4dabd66cb67a94f813e1ad458097"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T025006_095754Z/receipt.json",
+      "sha256": "0cc4ac85730b6861f3f19ada01e0bc0cb3289a40a639b510087287c994215ff8"
+    }
+  ],
+  "expanded": [
+    {
+      "path": "audits/formal_semantics/20260911T024648_858404Z/ExpandedStatements_v8.log",
+      "sha256": "cc50cdc3022149a9e0f1745f13f25f7241c55e663aa94b7147cfb8012ebab658"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T025006_095754Z/ExpandedStatements_v8.log",
+      "sha256": "1e23aed36426c3b01d8b928780a7adb6a0d1f1ff0144d62ba5e9dc19a4e8eccf"
+    }
+  ],
+  "root_review": "Full final source, exact predicate body, all twelve expanded statements and axiom blocks, and both full independent reviews read.",
+  "independent_reviews": [
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_ANALYTIC_DESCENT_DATA_FOCUSED_REVIEW_v1.json",
+      "sha256": "cba87c77abe5f74b29c5d459c39f1fdc8b01cce208228ace4dcfe008a040b41e"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_ANALYTIC_DESCENT_IDENTITY_FOCUSED_REVIEW_v1.json",
+      "sha256": "05acc5a18b6750dd3e268d0a6142747ad5b20f00fad698034e6667c127cc2d4b"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_RECONSTRUCTION_CHECKPOINT_v1.json",
+      "sha256": "eb2826eb27675760de4ddbf4fdd83fd47b90ac8ccaccfbf7d271f60e76fa0973"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_ODD_Y_POLYNOMIAL_CHECKPOINT_v1.json",
+      "sha256": "0163594e0b9dd032a58a780d7c4ceed12cdf6526b7e73c2e48507912b69a441e"
+    },
+    {
+      "path": "audits/EVEN_FIRST_COORDINATE_HASSUM_CHECKPOINT_v1.json",
+      "sha256": "7a56f2e7f8cb19e21066d12a88fd95a04cf58bd463b1090c9cc538e3c446c4ef"
+    },
+    {
+      "path": "audits/KS_REAL_SPECTATOR_SERIES_DESCENT_CHECKPOINT_v1.json",
+      "sha256": "6473920122c87249291ffaba58b9e653907856a2747edeefc027f9cea9e7a1a5"
+    }
+  ],
+  "limitations": [
+    "The final chart corollaries retain explicit actual pointwise-data premises; those are supplied by existing actual eigenfunction theorems upstream.",
+    "Generic intermediate implications visibly retain balance and odd-zero assumptions; the physical chart corollaries prove these assumptions.",
+    "The pullback identity domain is an explicit intersection, not the entire Taylor ball without the two convergence conditions.",
+    "Physical-coordinate surjectivity transfer, mixed derivative estimates, germ uniqueness and compatibility remain separate obligations.",
+    "No global H2 approximation, rational coefficient algorithm, solver, certified energy interval or bit-complexity conclusion.",
+    "The optional direct-L1 improvement D=2*S^2 remains a separate proposed version."
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development dependency objects reused; new targets outside isolated source rebuild v20.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

@@ -1,0 +1,368 @@
+@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct : {κ : Type} →
+  [inst : Fintype.{0} κ] →
+    [DecidableEq.{1} κ] →
+      (B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real) →
+        (F :
+            List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+              List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex) →
+          (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) →
+            (b : List.{0} κ) → (p : @TheoremT.Continuum.WeakGrushin.Space κ _) → Complex
+@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_nil : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real)
+  (F :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (b : List.{0} κ) (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct κ _ _ B F
+      (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) b p)
+    (@TheoremT.Continuum.WeakGrushin.spectatorWordProduct κ _ _ B
+      (F (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))) b p)
+@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_locallyL2 : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {r m : Nat}
+  (F :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hF :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @TheoremT.Continuum.ProductLocallyL2On.{0, 0}
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _
+            _ _ _ _ _ _ _ (F a b) Ω)
+  (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+  (ha : @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r)
+  (hab :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+        (@List.length.{0} κ b))
+      m),
+  @TheoremT.Continuum.ProductLocallyL2On.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+    (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _ _ _ _ _
+    (@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct κ _ _ B F a b) Ω
+@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_localY : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {r m : Nat}
+  (F :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hY :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LT.lt.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _
+            _ _ _ _ _ _ _ Ω (F a b) (F (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) i a) b)
+            (@TheoremT.Continuum.WeakGrushin.yDir κ _ i))
+  (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+  (ha : @LT.lt.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r)
+  (hab :
+    @LT.lt.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+        (@List.length.{0} κ b))
+      m),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _ _
+    _ _ _ Ω (@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct κ _ _ B F a b)
+    (@TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct κ _ _ B F
+      (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) i a) b)
+    (@TheoremT.Continuum.WeakGrushin.yDir κ _ i)
+@TheoremT.Continuum.WeakGrushin.mixedYEquationSource : {κ : Type} →
+  [inst : Fintype.{0} κ] →
+    [DecidableEq.{1} κ] →
+      (c : Real) →
+        (B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real) →
+          (F S :
+              List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+                List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex) →
+            (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) →
+              (b : List.{0} κ) → (p : @TheoremT.Continuum.WeakGrushin.Space κ _) → Complex
+@TheoremT.Continuum.WeakGrushin.mixedYEquationSource_locallyL2 : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real) {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {r m : Nat}
+  (F S :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hF :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @TheoremT.Continuum.ProductLocallyL2On.{0, 0}
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _
+            _ _ _ _ _ _ _ (F a b) Ω)
+  (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+  (ha : @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r)
+  (hab :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+          (@List.length.{0} κ b))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      m)
+  (hS :
+    @TheoremT.Continuum.ProductLocallyL2On.{0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _
+      _ _ _ _ (S a b) Ω),
+  @TheoremT.Continuum.ProductLocallyL2On.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+    (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _ _ _ _ _
+    (@TheoremT.Continuum.WeakGrushin.mixedYEquationSource κ _ _ c B F S a b) Ω
+@TheoremT.Continuum.WeakGrushin.mixedYEquationSource_localY : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real) {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {r m : Nat}
+  (F S :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hY :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LT.lt.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _
+            _ _ _ _ _ _ _ Ω (F a b) (F (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) i a) b)
+            (@TheoremT.Continuum.WeakGrushin.yDir κ _ i))
+  (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+  (ha : @LT.lt.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r)
+  (hab :
+    @LT.lt.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+          (@List.length.{0} κ b))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      m)
+  (hS :
+    @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _
+      _ _ _ _ Ω (S a b) (S (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) i a) b)
+      (@TheoremT.Continuum.WeakGrushin.yDir κ _ i)),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _ _
+    _ _ _ Ω (@TheoremT.Continuum.WeakGrushin.mixedYEquationSource κ _ _ c B F S a b)
+    (@TheoremT.Continuum.WeakGrushin.mixedYEquationSource κ _ _ c B F S
+      (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) i a) b)
+    (@TheoremT.Continuum.WeakGrushin.yDir κ _ i)
+@TheoremT.Continuum.WeakGrushin.mixed_triangular_y_gain_step : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {χ η : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hχ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) χ)
+  (hcχ : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ χ)
+  (hη :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) η)
+  (hcη : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ η)
+  (hηΩ :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+      (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ η) Ω)
+  {V : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hV : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ V)
+  (hχV :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+      (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ χ) V)
+  (hη1 :
+    ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ V p →
+        @Eq.{1} Real (η p) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (M A L D Q : Real) (hL0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) L)
+  (hD0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hQ0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Q)
+  (hM : ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _), @LE.le.{0} Real _ (@abs.{0} Real _ _ (χ p)) M)
+  (hA :
+    ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+          (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ χ) p →
+        @LE.le.{0} Real _
+          (@abs.{0} Real _ _
+            (@TheoremT.Continuum.WeakGrushin.combinedCutoffScalar κ _ _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) χ p))
+          A)
+  (hL :
+    ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+          (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ χ) p →
+        @LE.le.{0} Real _
+          (@TheoremT.Continuum.WeakGrushin.cutoffGradientWeight κ _ _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) χ p) L)
+  (hD :
+    ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @LE.le.{0} Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ (η p) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) D)
+  (hQ :
+    ∀
+      (p :
+        Prod.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real κ)),
+      @LE.le.{0} Real _
+        (@TheoremT.Continuum.grushinCutoffWeight (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ _ _ _ _
+          (@OfNat.ofNat.{0} Real (nat_lit 0) _) η p)
+        Q)
+  {O : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hO : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ O)
+  (hOΩ : @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ O Ω)
+  (hχ1 :
+    ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ O p →
+        @Eq.{1} Real (χ p) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  {r m : Nat} (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 1) _) r) (W R : Real)
+  (F H :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hF :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @TheoremT.Continuum.WeakGrushin.RegionL2Budget κ _ (F a b) Ω W)
+  (hY :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LT.lt.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _
+            _ _ _ _ _ _ _ Ω (F a b) (F (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) i a) b)
+            (@TheoremT.Continuum.WeakGrushin.yDir κ _ i))
+  (hT :
+    ∀ (b : List.{0} κ) (j : κ),
+      @LT.lt.{0} Nat _ (@List.length.{0} κ b) m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _
+          _ _ _ _ _ _ Ω (F (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) b)
+          (F (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (@List.cons.{0} κ j b))
+          (@TheoremT.Continuum.WeakGrushin.tDir κ _ _ j))
+  (hH :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LE.le.{0} Nat _ r
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) →
+          @LE.le.{0} Nat _
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                  (@List.length.{0} κ b))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              m →
+            @TheoremT.Continuum.WeakGrushin.RegionL2Budget κ _ (H a b) Ω R)
+  (hP :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LE.le.{0} Nat _ r
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) →
+          @LE.le.{0} Nat _
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                  (@List.length.{0} κ b))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              m →
+            ∀ (φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real),
+              @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+                  (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+                @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ →
+                  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+                      (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ) Ω →
+                    @Eq.{1} Complex
+                      (@MeasureTheory.integral.{0, 0}
+                        (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+                        fun (p : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                        @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                          (@TheoremT.Continuum.splitGrushin.{0, 0} (EuclideanSpace.{0, 0} Real κ) _ _ κ _
+                            (@OfNat.ofNat.{0} Real (nat_lit 0) _) (@TheoremT.Continuum.oscillatorBasis.{0} κ _)
+                            (fun (x : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                              @OfNat.ofNat.{0} Real (nat_lit 0) _)
+                            φ p)
+                          (F a b p))
+                      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                          _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+                        @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p) (H a b p))),
+  @TheoremT.Continuum.WeakGrushin.MixedTriangularState κ _ _ O
+    (F (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (@List.nil.{0} κ))
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) m
+    (@Max.max.{0} Real _ W
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ A (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 16) _) L)
+                (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ D (@OfNat.ofNat.{0} Real (nat_lit 2) _)) Q)))
+            W)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ M (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _) L) D))
+            R))))
+'TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_nil' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_locallyL2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_localY' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYEquationSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYEquationSource_locallyL2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYEquationSource_localY' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixed_triangular_y_gain_step' depends on axioms: [propext, Classical.choice, Quot.sound]

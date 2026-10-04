@@ -1,0 +1,101 @@
+TheoremT.Continuum.WeakGrushin.finiteGrushinGap : (aY aT bY bT : Real) → (n : Nat) → Real
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_pos : ∀ {aY aT bY bT : Real} (n : Nat) (hy : @LT.lt.{0} Real _ bY aY)
+  (ht : @LT.lt.{0} Real _ bT aT),
+  @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n)
+TheoremT.Continuum.WeakGrushin.finiteGrushinGap_scaled : ∀ (aY aT bY bT : Real) (n : Nat),
+  @Eq.{1} Real
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ n) (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+    (@Min.min.{0} Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY bY) (@HSub.hSub.{0, 0, 0} Real Real Real _ aT bT))
+TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_margin : ∀ (aY aT bY bT : Real) (n : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ n) (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ aY bY)
+TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_margin : ∀ (aY aT bY bT : Real) (n : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ n) (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ aT bT)
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_strict : ∀ {aY aT bY bT : Real} (n : Nat)
+  (hy : @LT.lt.{0} Real _ bY aY) (ht : @LT.lt.{0} Real _ bT aT),
+  @LT.lt.{0} Real _ bY
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ aY
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n)))
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_strict : ∀ {aY aT bY bT : Real} (n : Nat)
+  (hy : @LT.lt.{0} Real _ bY aY) (ht : @LT.lt.{0} Real _ bT aT),
+  @LT.lt.{0} Real _ bT
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ aT
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n)))
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_consumed_nonneg : ∀ {aY aT bY bT : Real} (n : Nat)
+  (hy : @LT.lt.{0} Real _ bY aY) (ht : @LT.lt.{0} Real _ bT aT),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_consumed_le : ∀ {aY aT bY bT : Real} (n : Nat)
+  (hby : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) bY) (hy : @LT.lt.{0} Real _ bY aY)
+  (ht : @LT.lt.{0} Real _ bT aT),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+    aY
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_consumed_le : ∀ {aY aT bY bT : Real} (n : Nat)
+  (hbt : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) bT) (hy : @LT.lt.{0} Real _ bY aY)
+  (ht : @LT.lt.{0} Real _ bT aT),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+    aT
+@TheoremT.Continuum.WeakGrushin.finiteGrushinGap_consumed_bounds : ∀ {aY aT bY bT : Real} (n : Nat)
+  (hby : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) bY)
+  (hbt : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) bT) (hy : @LT.lt.{0} Real _ bY aY)
+  (ht : @LT.lt.{0} Real _ bT aT),
+  And
+    (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n)))
+    (And
+      (@LE.le.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+          (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+        aY)
+      (@LE.le.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n))
+          (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n))
+        aT))
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_consumed_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_consumed_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_consumed_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinGap_consumed_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

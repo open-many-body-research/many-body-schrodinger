@@ -1,0 +1,53 @@
+--- THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011606_894610Z/ExpandedStatements_v8.log [statements only]
++++ THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T012232_239943Z/ExpandedStatements_v8.log [pointwise statements only]
+@@ -1,4 +1,4 @@
+-TheoremT.Continuum.coulomb_spin_physical_factorial_representative : ∀ (Z E : Real),
++TheoremT.Continuum.coulomb_spin_physical_pointwise_representative : ∀ (Z E : Real),
+   @Exists.{1} Real fun (C_H : Real) =>
+     @Exists.{1} Real fun (M : Real) =>
+       @Exists.{1} Real fun (A : Real) =>
+@@ -234,7 +234,7 @@
+                                                   (t0 : TheoremT.Continuum.Position),
+                                                   @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ t0)
+                                                       (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                    TheoremT.Continuum.PhysicalKSBoxFactorialData
++                                                    TheoremT.Continuum.PhysicalKSBoxPointwiseData
+                                                       (@Function.comp.{1, 1, 1}
+                                                         (@TheoremT.Continuum.WeakGrushin.Space
+                                                           (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+@@ -298,7 +298,7 @@
+                                                   (t0 : TheoremT.Continuum.Position),
+                                                   @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ t0)
+                                                       (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                    TheoremT.Continuum.PhysicalKSBoxFactorialData
++                                                    TheoremT.Continuum.PhysicalKSBoxPointwiseData
+                                                       (@Function.comp.{1, 1, 1}
+                                                         (@TheoremT.Continuum.WeakGrushin.Space
+                                                           (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+@@ -357,7 +357,7 @@
+                                                                 _)))))
+                                                       t0 M A (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+                                                       (TheoremT.Continuum.spinOriginH12Budget C_H L u)))))))))))))
+-TheoremT.Continuum.twoElectron_physical_ground_factorial : ∀ (Z : Real)
++TheoremT.Continuum.twoElectron_physical_ground_pointwise : ∀ (Z : Real)
+   (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+   (hsep :
+     @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+@@ -1757,7 +1757,7 @@
+                                                                           (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                             t0)
+                                                                           (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                        TheoremT.Continuum.PhysicalKSBoxFactorialData
++                                                                        TheoremT.Continuum.PhysicalKSBoxPointwiseData
+                                                                           (@Function.comp.{1, 1, 1}
+                                                                             (@TheoremT.Continuum.WeakGrushin.Space
+                                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+@@ -1847,7 +1847,7 @@
+                                                                           (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                             t0)
+                                                                           (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                        TheoremT.Continuum.PhysicalKSBoxFactorialData
++                                                                        TheoremT.Continuum.PhysicalKSBoxPointwiseData
+                                                                           (@Function.comp.{1, 1, 1}
+                                                                             (@TheoremT.Continuum.WeakGrushin.Space
+                                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))

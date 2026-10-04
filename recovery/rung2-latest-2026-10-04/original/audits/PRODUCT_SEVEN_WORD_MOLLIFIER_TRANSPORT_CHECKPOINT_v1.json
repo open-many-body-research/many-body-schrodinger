@@ -1,0 +1,223 @@
+{
+  "schema": "proof-checkpoint-v1",
+  "timestamp_utc": "2026-09-11T00:51:42.058820+00:00",
+  "status": "PASS_KERNEL_COMPILE_STRICT_V7_SOURCE_AND_EXPANDED_STATEMENT_REVIEW",
+  "author": "/root/weak_pointwise_limit/word_mollifier_transport",
+  "evidence_category": "Fully formalized infrastructure, conditional on actual weak coordinate family hypotheses",
+  "frozen_reference": {
+    "relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "strongest_results": [
+    "Literal Fin7 coordinate space is continuously linearly equivalent to the actual Euclidean4 x Euclidean3 product, preserves its product Lebesgue measure, and carries coordinate basis directions exactly to the physical productCoordinateDirection.",
+    "Actual product mollifiers and every word derivative pull back to smooth Fin7 functions. Their explicit Lp representatives converge strongly after restriction to any set. Genuine global weak words through m+7 give continuous representatives through m on any nondegenerate closed coordinate box.",
+    "One compact cutoff of an actual local all-order weak family has a single global L2 family for every literal ordered Leibniz word, satisfying every global weak directional identity.",
+    "Every literal cutoff word equals the original raw word field on an open plateau where the cutoff is one. No regularity of raw fields is assumed by this algebraic identity."
+  ],
+  "declaration_count": 19,
+  "module_records": [
+    {
+      "module": "ProductSevenCoordinateTransport_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductSevenCoordinateTransport_v1.lean",
+      "source_sha256": "c0abb61b81432163f4290b0fae67244aaf8e5bbd409a3b5e7c852a321610c86e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductSevenCoordinateTransport_v1.olean",
+      "object_sha256": "e7b3e06802bacb39654b092e717e61ebcd87a19dbf5cf1b62cc784327fbb0f0a",
+      "declarations": [
+        "sevenToProduct",
+        "sevenToProduct_measurePreserving",
+        "sevenToProduct_direction",
+        "sevenToProduct_word_chain"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductSevenMollifierLimits_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductSevenMollifierLimits_v1.lean",
+      "source_sha256": "122ee7a8634f0e92e306b1798f776a18997791ccf12091b3ac05c5ae8d82b486",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductSevenMollifierLimits_v1.olean",
+      "object_sha256": "ab2d93b080e701121813dd6193738dce2ae60a1fee90e4a41a5ac73d89a53350",
+      "declarations": [
+        "sevenProductL2Pullback",
+        "sevenRestrictL2",
+        "productSevenMollifier",
+        "productSevenWordLimit",
+        "productSevenMollifiedWordLp",
+        "productSevenMollifier_contDiff",
+        "productSevenWordLimit_ae",
+        "productSevenMollifiedWordLp_ae",
+        "productSevenMollifiedWordLp_tendsto",
+        "product_weak_words7_continuous_representatives"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductCompactAllWeakWords_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCompactAllWeakWords_v1.lean",
+      "source_sha256": "fb5405ab255839cae6fc11d9cc49827bdae0be4294f83985544bb4e463f24ba0",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCompactAllWeakWords_v1.olean",
+      "object_sha256": "44c51d97e0c0314b7d4972c904bf6fe9a1d0bbe1ad88c4e04c567d1d9f79fec3",
+      "declarations": [
+        "product_compact_local_all_weak_words_global",
+        "product_compact_cutoff_all_weak_word_family"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductCutoffWordPlateau_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCutoffWordPlateau_v1.lean",
+      "source_sha256": "e82ad686e19bad7c7bfeefead80f1a84d24d5d30ad25430061a3db5d03fe214d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCutoffWordPlateau_v1.olean",
+      "object_sha256": "b284ce3fbb3cef44f65bebf0b99a175aae7be0a69acf02f3ab7a63cc292cdb9c",
+      "declarations": [
+        "directionalWordDeriv_constant_open",
+        "directionalWordProduct_plateau",
+        "directionalWordProduct_plateau_restrict_ae"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipts": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004724_936569Z/receipt.json",
+      "sha256": "92dcc6d1128b3bcb2955ea8418e496b5e3ffc0daf34547a41620a0af9af998b2"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004941_562485Z/receipt.json",
+      "sha256": "3ea57b6d22dd0fd0e7eb73b59e22860696d40dab2513775b7b853f5b4de5839f"
+    }
+  ],
+  "review": {
+    "author_read_complete_sources": true,
+    "author_read_complete_expanded_logs": true,
+    "semantic_findings": [
+      "No auto-implicit arbitrary coordinate direction map: physical map is an explicit resolved definition.",
+      "Measure transport uses exact Haar/pi volume-preserving equivalences, not norm-isometry of the ordinary product.",
+      "Derivative identification requires true weak shifts; the unconditional Lp convergence theorem alone supplies no derivative interpretation.",
+      "All-order globalization provides noncomputable Lp representatives, not an executable algorithm."
+    ],
+    "independent_review": "Not yet separately performed for these four new modules; parent may append a separate review record."
+  },
+  "dependency_checkpoints": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_WEAK_WORD_MOLLIFICATION_CHECKPOINT_v1.json",
+      "sha256": "d064bcc6ea0010711fc7532404bd3142a90ccf62e3f5b25e89410139478d4ffa"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_COMPACT_WEAK_WORD_GLOBAL_CHECKPOINT_v1.json",
+      "sha256": "a25fc642632c32cd3e6330462794692be773c1560bff028a645aab8da8a57708"
+    }
+  ],
+  "cache_disclosure": "Pinned Lean/compiler/library and existing continuation object caches reused. No isolated source rebuild of these new modules performed.",
+  "remaining": [
+    "Local weak-to-smooth representative composition, with actual plateau and box data, is owned by parent.",
+    "Actual uniform factorial solution estimates, KS descent, global H2 approximation and full Theorem T remain separate obligations."
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004724_936569Z/receipt.json",
+      "sha256": "92dcc6d1128b3bcb2955ea8418e496b5e3ffc0daf34547a41620a0af9af998b2"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004724_936569Z/ExpandedStatements_v7.lean",
+      "sha256": "09406106764ac07a1a5d4fb0d4618281e01a0c7b9e3fdc200d87c3cb185622da"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004724_936569Z/ExpandedStatements_v7.log",
+      "sha256": "9815d84182d837b8c19ffb2f8a888b0991e1f194614b3bb9caf61f0aba205d87"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004724_936569Z/ExpandedStatements_v7.olean",
+      "sha256": "35a4b2de6cd69932748909b954f1ee0ca34f79b6d5cea6529b6a8ad6b7064d5c"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004941_562485Z/receipt.json",
+      "sha256": "3ea57b6d22dd0fd0e7eb73b59e22860696d40dab2513775b7b853f5b4de5839f"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004941_562485Z/ExpandedStatements_v7.lean",
+      "sha256": "d2bc1926ec59c4f8990c7f169708dcc0985cec63a4135cc81b8af8cf823db0e1"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004941_562485Z/ExpandedStatements_v7.log",
+      "sha256": "07b0d5f949f8e9f90c2032f1ffd0f4ca21639e66cc4378150ce37f4a41d78802"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T004941_562485Z/ExpandedStatements_v7.olean",
+      "sha256": "a6129b636450f71e4b0c55f7dbfe1033ce648595360681e14178db9b74a5583f"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductSevenCoordinateTransport_v1.lean",
+      "sha256": "c0abb61b81432163f4290b0fae67244aaf8e5bbd409a3b5e7c852a321610c86e"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductSevenCoordinateTransport_v1.olean",
+      "sha256": "e7b3e06802bacb39654b092e717e61ebcd87a19dbf5cf1b62cc784327fbb0f0a"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductSevenCoordinateTransport_v1-20260911T004601_978541Z.json",
+      "sha256": "41f93df6bd9966f84cbeda3b42bf28c3f202ec1865802d94761b2f9f4a7cc44d"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductSevenCoordinateTransport_v1-20260911T004601_978541Z.log",
+      "sha256": "db72a88ac98e37e211144c811017f6c1d1f2f280a0acf48b007b597a70a9b69e"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductSevenMollifierLimits_v1.lean",
+      "sha256": "122ee7a8634f0e92e306b1798f776a18997791ccf12091b3ac05c5ae8d82b486"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductSevenMollifierLimits_v1.olean",
+      "sha256": "ab2d93b080e701121813dd6193738dce2ae60a1fee90e4a41a5ac73d89a53350"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductSevenMollifierLimits_v1-20260911T004643_035292Z.json",
+      "sha256": "e93a8b30219816e2c320bfcc64e27b0d5586833259fa42762138e8d24ed06a19"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductSevenMollifierLimits_v1-20260911T004643_035292Z.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCompactAllWeakWords_v1.lean",
+      "sha256": "fb5405ab255839cae6fc11d9cc49827bdae0be4294f83985544bb4e463f24ba0"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCompactAllWeakWords_v1.olean",
+      "sha256": "44c51d97e0c0314b7d4972c904bf6fe9a1d0bbe1ad88c4e04c567d1d9f79fec3"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCompactAllWeakWords_v1-20260911T004657_791766Z.json",
+      "sha256": "d0c1577448509e651fd1d349d4f3d64bf4a3b32a7353c46c053d45d466cfb229"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCompactAllWeakWords_v1-20260911T004657_791766Z.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCutoffWordPlateau_v1.lean",
+      "sha256": "e82ad686e19bad7c7bfeefead80f1a84d24d5d30ad25430061a3db5d03fe214d"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCutoffWordPlateau_v1.olean",
+      "sha256": "b284ce3fbb3cef44f65bebf0b99a175aae7be0a69acf02f3ab7a63cc292cdb9c"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCutoffWordPlateau_v1-20260911T004919_290457Z.json",
+      "sha256": "57dd1c9eae8fb3f2f78458b07e926e239fcb2233b1f7019aab51c41469375487"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCutoffWordPlateau_v1-20260911T004919_290457Z.log",
+      "sha256": "807e529d01f7be765451254af0aef4f8a427ee984d46fdfebdc4cf09b9ed86a9"
+    }
+  ]
+}

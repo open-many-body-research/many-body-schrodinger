@@ -1,0 +1,79 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T011745_657701Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011745_657701Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011745_657701Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.516386542,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "c41673d32857cd0bec36f1dbe7d96dcf31b1de838fd290b7755df467aea3ee63",
+  "audit_log_sha256": "ba2bbde4c94f8733ce701fee5e4b91f10613c4a298b8c7c756ea511259ebc568",
+  "module_records": [
+    {
+      "module": "PhysicalKSBoxPointwiseFactorial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxPointwiseFactorial_v1.lean",
+      "source_sha256": "ab9611be060253c3582b2936613ac082c8dfa9d8ddc9c4c4e739d9bc96806ba9",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSBoxPointwiseFactorial_v1.olean",
+      "object_sha256": "82f6d290de4e89c681d1e1c855a181b253140cd5780f2b5f2a7773e666e8071f",
+      "declarations": [
+        "physicalKSPointwiseRate",
+        "physicalKSPointwiseAmplitude",
+        "physicalKSPointwiseRate_pos",
+        "physicalKSPointwiseAmplitude_nonneg",
+        "physicalKSBoxFactorialData_smooth_pointwise",
+        "physicalKSBoxFactorialData_analytic"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "CoulombKSPhysicalPointwise_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalPointwise_v1.lean",
+      "source_sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoulombKSPhysicalPointwise_v1.olean",
+      "object_sha256": "e02779ee7d6e666571e16c8065379e3431c34e87c4ca34d09ddddf41a58b7ab5",
+      "declarations": [
+        "PhysicalKSBoxPointwiseData",
+        "physicalKSBoxFactorialData_to_pointwise",
+        "scalar_coulomb_all_physical_box_pointwise"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.physicalKSPointwiseRate: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSPointwiseAmplitude: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSPointwiseRate_pos: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSPointwiseAmplitude_nonneg: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_smooth_pointwise: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_analytic: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.PhysicalKSBoxPointwiseData: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_to_pointwise: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.scalar_coulomb_all_physical_box_pointwise: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.physicalKSPointwiseRate",
+    "TheoremT.Continuum.physicalKSPointwiseAmplitude",
+    "TheoremT.Continuum.physicalKSPointwiseRate_pos",
+    "TheoremT.Continuum.physicalKSPointwiseAmplitude_nonneg",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_smooth_pointwise",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_analytic",
+    "TheoremT.Continuum.PhysicalKSBoxPointwiseData",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_to_pointwise",
+    "TheoremT.Continuum.scalar_coulomb_all_physical_box_pointwise"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

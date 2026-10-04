@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-09-11T02:28:58.930441+00:00",
+  "status": "PASS_ACTUAL_PHYSICAL_KS_COMPLEX_TAYLOR_EXTENSION",
+  "evidence_category": "Kernel-checked complex extension of the actual physical derivative series under the previously established pointwise data",
+  "exact_result": "For each center in the physical open rectangle, the literal sum of the actual joint seven-coordinate Taylor polynomials is complex analytic on 7*rate*supnorm(z)<1 and has norm at most amplitude/(1-7*rate*r) on each closed complex polydisc of radius r with 7*rate*r<1. For centers in the smaller closed rectangle it agrees with the same physical base f(x+y) on the common real product-norm ball r0=min(1/1024,(7*rate)^-1).",
+  "mathematical_change": "Constructed rather than assumed the joint holomorphic extension of the actual KS base. The coefficients and literal sum are the previously proved actual real derivative polynomials.",
+  "modules": [
+    {
+      "module": "PhysicalKSComplexTaylorExtension_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSComplexTaylorExtension_v1.lean",
+      "source_sha256": "77d801dd429b57c50f6cfee5cb4831a3372eb563e154b48c4d1d22b6cf8de295",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSComplexTaylorExtension_v1.olean",
+      "object_sha256": "94395b059c21b2cf8808731d65e30edd0df352be61145004a89e8ca8f8f24138",
+      "declarations": [
+        "physicalKSComplexTaylorExtension",
+        "physicalKSComplexTaylorExtension_analytic",
+        "physicalKSComplexTaylorExtension_norm_bound",
+        "physicalKSComplexTaylorExtension_agrees_on_real_ball"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T022446_215067Z/receipt.json",
+    "sha256": "ebf145391bceecbf3c5ba9c53bcbea2026ac6e13331f42896f9d4bf20fda8c9c"
+  },
+  "expanded": {
+    "path": "audits/formal_semantics/20260911T022446_215067Z/ExpandedStatements_v8.log",
+    "sha256": "d695c6dfff4f87e9cf24864acee884fa52ac856fcba5ed5c3dd1d748b69beab3"
+  },
+  "root_review": "Complete final source and all four expanded statements/axiom reports read.",
+  "independent_review": {
+    "path": "audits/PHYSICAL_KS_COMPLEX_TAYLOR_EXTENSION_FOCUSED_REVIEW_v1.json",
+    "sha256": "aa2a8302764248555f9394b4513313d3a8e34144a7e889bb6973b2ece2d2b7e0"
+  },
+  "dependencies": [
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_AND_LOCAL_FINITE_DESCENT_CHECKPOINT_v1.json",
+      "sha256": "ba017b187f114901829640eeab7abc16e21d6e446d36359adff8cad9b4d443fc"
+    },
+    {
+      "path": "audits/POLYNOMIAL_SERIES_COMPLEX_ANALYTIC_CHECKPOINT_v1.json",
+      "sha256": "46bf5bfdcd76a0ca45c27a41bb3ee4945c0953a5bb0d134849e013263dd3678a"
+    }
+  ],
+  "limitations": [
+    "PhysicalKSBoxPointwiseData remains an explicit premise here; the actual physical ground/eigenfunction chain previously proves it.",
+    "The complex variable z is a coordinate increment at the real center x. Complex coordinate sup norm and real product of Euclidean block norms are distinct and used on their stated domains.",
+    "No joint physical analytic-plus-distance descent, uniqueness of such germs, boundary compatibility, global H2 approximation, solver or bit-complexity conclusion.",
+    "Constants are explicit expressions in the existing existential physical budgets; they are not evaluated computable parameters.",
+    "This construction is noncomputable mathematics, not an executable rational procedure."
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development objects reused; outside isolated source rebuild v20.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

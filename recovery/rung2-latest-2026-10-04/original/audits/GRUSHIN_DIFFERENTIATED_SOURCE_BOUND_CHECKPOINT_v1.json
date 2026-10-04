@@ -1,0 +1,45 @@
+{
+  "timestamp_utc": "2026-09-10T23:45:45.504291+00:00",
+  "evidence": "Lean kernel-checked actual-source norm composition, conditional on displayed lower-order norm bounds",
+  "result": "The actual canonical differentiated source equals its ordinary smooth source derivative minus the actual potential proper-split term plus the exact indexed quadratic principal error. It has an L2 representative bounded by S0 + M*sum_{j=1}^r choose(r,j) A^j j! N(r-j) + 6|c| r N(r-1) + 3|c| r(r-1) N(r-2).",
+  "semantic_review": "All 613 lines of expanded final types and all standard axiom reports read. Actual source derivative representation, actual coefficient word bounds, and actual lower shifted outer L2 representatives/norm bounds remain explicit. No scalar recurrence or its solution is assumed in place of a PDE estimate.",
+  "limitations": "This theorem supplies the forcing-side bound. Applying the compact maximal graph estimate with the correct cutoff commutators and closing the factorial recurrence remain open composition obligations.",
+  "audit_receipt": "audits/formal_semantics/20260910T234409_526943Z/receipt.json",
+  "audit_receipt_sha256": "6a148f09837509c5111d4af9ffc8a0699fbb31211316c312c6f015d3fa252103",
+  "modules": [
+    {
+      "module": "GrushinActualPrincipalCommutatorBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinActualPrincipalCommutatorBound_v1.lean",
+      "source_sha256": "7b3bdf853b1221064baa578bdc797ef71e1cc9e784c898f1539b434fcd6b77fc",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinActualPrincipalCommutatorBound_v1.olean",
+      "object_sha256": "d9bc0f8831e37f76b2648657b5d0f95c2d5f72885016e3bd5cb08fb515d7f571",
+      "declarations": [
+        "mixedMultiIndexGrushinSource_closed",
+        "factorial_actual_principal_commutator_L2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinDifferentiatedSourceBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinDifferentiatedSourceBound_v1.lean",
+      "source_sha256": "74c21599fe7589bb65b20a7b0671e01ce275ee17743c0a58341383e364229b2e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinDifferentiatedSourceBound_v1.olean",
+      "object_sha256": "a660b1432a5c73bce88eca293238ee705bc7335fc606af065e93c9320b7126de",
+      "declarations": [
+        "factorial_differentiated_source_L2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.WeakGrushin.mixedMultiIndexGrushinSource_closed: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_actual_principal_commutator_L2: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_differentiated_source_L2: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "cache": "Pinned caches reused; outside prior isolated v20, no new source rebuild.",
+  "preservation": "All PASS source bytes and all failed logs preserved."
+}

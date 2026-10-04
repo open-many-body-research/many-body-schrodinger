@@ -1,0 +1,105 @@
+{
+  "status": "PASS_NO_DEFECT_FOUND",
+  "created_utc": "2026-09-11T00:00:06.580176+00:00",
+  "review_kind": "Independent bounded source, definition and final expanded-statement review; no recompile or audit rerun.",
+  "module": "ProductMixedAllOrderWeakFamily_v1",
+  "source": {
+    "path": "lean/ProductMixedAllOrderWeakFamily_v1.lean",
+    "sha256": "bdf748915caec078bebcb38ca9da682f29b3ac16135aa4c1b6b4170d063dcc2c",
+    "bytes": 4876
+  },
+  "object": {
+    "path": "lean/build/ProductMixedAllOrderWeakFamily_v1.olean",
+    "sha256": "e1fc8371ea328b6a49e07d700bfb276c997e82dab136f4d526eba91216bf9bbf",
+    "bytes": 205944
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260910T235714_696365Z/receipt.json",
+    "sha256": "04481defdd6e31b61e3784e53e00119ac5256a23ec33c0756ad65bc4e6bdeb85",
+    "bytes": 3719
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260910T235714_696365Z/ExpandedStatements_v7.lean",
+    "sha256": "181fd0634a11664bfa048d85041f0bd6708a4a08d5bc15b5baee87cb5a6908a5",
+    "bytes": 891
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260910T235714_696365Z/ExpandedStatements_v7.log",
+    "sha256": "7bbb56205ef34e9e6138e2180860f57dc70b4c914efd3aa1aa30dc82a1d307aa",
+    "bytes": 13727
+  },
+  "expanded_object": {
+    "path": "audits/formal_semantics/20260910T235714_696365Z/ExpandedStatements_v7.olean",
+    "sha256": "c4bf1b3d9fe090918ac069adb622886952e4be029c382a560547c0d481dab311",
+    "bytes": 1424
+  },
+  "declarations": [
+    "TheoremT.Continuum.WeakGrushin.product_mixed_allOrder_weak_family",
+    "TheoremT.Continuum.WeakGrushin.local_smooth_weak_grushin_allOrder_family"
+  ],
+  "direct_semantic_sources_read": [
+    {
+      "path": "lean/ProductWeakFiniteFamilyUnique_v1.lean",
+      "sha256": "84a29afde6cd275334742836cb9e2cdd6f585d50f9ac6171f34677e989ed2adf",
+      "bytes": 3473
+    },
+    {
+      "path": "lean/ProductMixedMultiIndexWeakHk_v1.lean",
+      "sha256": "eb93f618aa70a6f8e7219a894867a63ee3c82a8115ffbb652bdcdc0d32c9251d",
+      "bytes": 3301
+    },
+    {
+      "path": "lean/SpectatorIterationState_v1.lean",
+      "sha256": "79442716cfa5067a3a6b4306f334ceca0f60c99c914dd915a82397b05412206d",
+      "bytes": 3302
+    },
+    {
+      "path": "lean/LocalProductDirectionalWeakAlgebra_v1.lean",
+      "sha256": "722ef2cd2a1ed0ac6ec401857b9469627cd575570198263d3ad8a9566aa5fc18",
+      "bytes": 4456
+    },
+    {
+      "path": "lean/LocalProductDirectionalWeakLinear_v1.lean",
+      "sha256": "ea2c717e420785d522f39db58499bedf8df2b1ca61b06b379ee0bd1405482ade",
+      "bytes": 5179
+    }
+  ],
+  "exact_quantifier_check": "The conclusion is exists one F, with F(0,0)=f, and (for every finite m there exists W_m>=0 bounding every multiindex of total order<=m), together with all Y and T successor weak identities. F is outside and before every m, alpha, beta and direction quantifier. W is inside the m quantifier.",
+  "findings": [
+    "Classical choice first selects a finite witness family G_m and budget W_m for each natural m. The actual single family is F(alpha,beta)=G_(ord alpha beta)(alpha,beta), so it does not change when a later finite target m is queried.",
+    "For ord(alpha,beta)<=m, hmatch applies finite-family uniqueness at depth ord(alpha,beta) to G_m and G_ord. The zero families agree exactly with the same raw f; all required shifts are available strictly below that finite depth. No conclusion about derivatives of unavailable orders is used.",
+    "F(0,0)=f holds as exact equality of global function representatives because ord(0,0)=0 and G_0(0,0)=f. Agreement between positive-order representatives is only local almost everywhere.",
+    "For each finite m, the budget W_m is retained unchanged. G_m(alpha,beta)=F(alpha,beta) locally almost everywhere converts to equality under volume.restrict Omega using measurability from openness, then RegionL2Budget.congr_ae transfers actual MemLp 2 membership and the integral of the squared norm.",
+    "Each successor raises the literal total multiindex order by one. Both fields in a desired weak identity are compared to the same witness G_(ord+1); congr_ae_local transfers the genuine weak derivative identity. No differentiability of a representative at every point is inferred.",
+    "ProductLocalWeakDirectional contains local L2 membership for both fields plus the compact smooth test identity. Its test_integrable lemma derives integrability of both displayed test products. The relation is not a purely algebraic assertion about default nonintegrable integrals.",
+    "The raw-PDE corollary applies the already supplied finite-order regularity theorem for each m on the same fixed rectangularOpenBox a bY bT. The outer open domain, closed-box inclusion, positive inner widths, strict reserves, positive c, smooth coefficient/source, raw local L2 function and exact weak equation remain explicit input assumptions.",
+    "The expanded first statement explicitly retains hreg (finite genuine Hk family existence at every m); this is a conditional compatibility implication. The second statement supplies hreg from the finite raw-PDE theorem. No solution derivative, solution smoothness or factorial norm bound is an input to that second statement.",
+    "There is no common-in-m norm budget, monotonicity of the chosen budgets, factorial growth estimate, pointwise smooth representative, global-outside-domain derivative claim or executable-selection claim. The file itself discloses its use of classical choice."
+  ],
+  "independent_dependency_review": {
+    "reviewer": "product_converse subagent; read-only bounded review reported through collaboration messages",
+    "result": "No defect found in finite word/multiindex uniqueness. Same-open-domain local AE predecessor replacement and genuine derivative uniqueness inductively identify every finite order; canonical words preserve counts and length. Budgets transfer unchanged.",
+    "additional_scope_limit": "If finite families were defined on different domains, explicit restriction to a common open set would be required. The reviewed all-order theorem uses one fixed domain, including in its raw-PDE corollary.",
+    "source_binding": {
+      "path": "lean/ProductWeakFiniteFamilyUnique_v1.lean",
+      "sha256": "84a29afde6cd275334742836cb9e2cdd6f585d50f9ac6171f34677e989ed2adf",
+      "bytes": 3473
+    }
+  },
+  "checks": {
+    "current_source_object_match_strict_receipt": true,
+    "exact_ordered_two_expanded_statements": true,
+    "exact_ordered_two_axiom_reports": true,
+    "only_standard_foundational_axioms": true,
+    "zero_printer_failures_and_ellipses": true,
+    "root_source_hash_unchanged": true
+  },
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing strict audit used official pinned Lean 4.34.0-rc2 and pinned dependency objects. This review performed no compilation, auditor run or source rebuild.",
+  "preservation": "All mathematical sources, objects and prior audit records read only. Only this new focused review receipt was created.",
+  "next": "The same family may now be used in a separately proved all-order differentiated weak PDE statement. Quantitative weighted recurrence, factorial budgets and smooth representatives remain separate obligations."
+}
