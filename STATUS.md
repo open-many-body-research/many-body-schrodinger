@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 47 |
+| **L** | Lean-verified | 48 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -120,6 +120,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-039](claims/cards/S8-039.md) | Approximate actual physical collision profiles by rational distance polynomials (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact selected scales and closed inner distance boxes in the card |
 | [S8-040](claims/cards/S8-040.md) | Prove smooth compact density in the actual scalar Coulomb graph (submitted; pending review) | **L** | The original actual two-electron scalar Coulomb graph pair, at any real charge; Positive requested approximation tolerance |
 | [S8-042](claims/cards/S8-042.md) | Construct genuine radial smoothing and normalized symmetric smooth ground approximants (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; Positive decay rate with a squared below Z squared over112 and positive requested tolerance |
+| [S8-044](claims/cards/S8-044.md) | Approximate every normalized symmetric scalar graph state by genuine smooth compact states (submitted; pending review) | **L** | Any real charge and an actual original norm-one scalar Coulomb graph pair; Explicit original exchange invariance, AE reality and simultaneous O3 invariance; positive requested tolerance |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

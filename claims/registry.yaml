@@ -1770,3 +1770,28 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The kernel is the literal radial cutoff divided by its actual positive integral. No symmetry of a classically chosen old mollifier is inferred. Constants and sufficiently late index are existential; no finite dictionary, effective coefficient selection, solver termination or full rung is claimed.
+
+- id: S8-044
+  sector: S8
+  title: Approximate every normalized symmetric scalar graph state by genuine smooth compact states (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-040, S8-042, S8-030]
+  statement: >
+    Every actual normalized scalar Coulomb graph pair at any real charge, with explicit original exchange, reality and simultaneous O3 symmetry, admits norm-one smooth compact approximants preserving these symmetries both in the actual physical L2 class and pointwise on the literal smooth representative. Genuine original first and ordered second weak derivatives precede every tolerance; one cutoff radius and every sufficiently late actual radial-kernel index control the true43component H2 defect, actual graph difference and absolute Rayleigh pairing difference by that tolerance.
+  conditional_on:
+    - Any real charge and an actual original norm-one scalar Coulomb graph pair.
+    - Explicit original exchange invariance, AE reality and simultaneous O3 invariance; positive requested tolerance.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalRadialGraphCore, decl: ManyBody.S8.physical_radial_compact_H2_defect_arbitrarily_small}
+    - {module: ManyBody.S8.Internal.PhysicalRadialGraphCore, decl: ManyBody.S8.physical_radial_smooth_compact_H2_approximation}
+    - {module: ManyBody.S8.Internal.PhysicalRadialGraphCore, decl: ManyBody.S8.normalized_physical_pair_rayleigh_difference}
+    - {module: ManyBody.S8.Internal.PhysicalRadialGraphCore, decl: ManyBody.S8.physical_radial_normalized_smooth_symmetries}
+    - {module: ManyBody.S8.CoulombNormalizedSymmetricGraphApproximation, decl: ManyBody.S8.scalar_graph_normalized_radial_symmetric_smooth_approximation}
+    - {module: ManyBody.S8.CoulombNormalizedSymmetricGraphApproximation, decl: ManyBody.S8.twoElectron_normalized_symmetric_scalar_graph_smooth_approximation}
+  card: claims/cards/S8-044.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalRadialGraphCore.lean, lean/ManyBody/S8/CoulombNormalizedSymmetricGraphApproximation.lean, claims/cards/S8-044.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    No eigenvalue, charge lower bound, spectral gap, decay or approximation premise is used. Radius and sufficiently late index are existential; no symmetry of the graph image, rational dictionary, effective selection, solver termination or full rung is claimed.
