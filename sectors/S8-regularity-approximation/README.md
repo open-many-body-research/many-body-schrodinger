@@ -98,3 +98,15 @@ its integrability and removability are proved. Every isolated physical pair
 collision away from the nucleus is represented by a transverse-zero chart
 point. This qualitative result is pending human review and does not supply
 H12, simultaneous-collision coverage or factorial estimates.
+
+
+## Submitted continuation: full joint nuclear KS H3
+
+[S8-009](../../claims/cards/S8-009.md) proves all ordered third weak L2
+derivatives of every smooth compact cutoff of the physical nuclear KS
+pullback, for every electron number and selected index. The same cutoff output
+has genuine arbitrary-direction first, second and third derivative families.
+The actual Y commutator and spectator recurrences supply the new derivatives;
+the physical theorem assumes only the original graph and representative.
+The selected nuclear collision is included on the existing patch. Human review
+is pending; this qualitative result does not supply H12 or factorial budgets.
