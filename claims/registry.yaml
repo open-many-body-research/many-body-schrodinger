@@ -1736,3 +1736,37 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     This is actual metric graph approximation; no separately defined abstract operator core predicate is asserted. Radius and mollifier index are existential. Approximants are not asserted normalized, real or symmetric for arbitrary states. Effective rate, finite dictionary, solver and full rung remain open.
+
+- id: S8-042
+  sector: S8
+  title: Construct genuine radial smoothing and normalized symmetric smooth ground approximants (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-034, S8-035, S8-038]
+  statement: >
+    The same actual normalized scalar Coulomb ground and original weak derivatives admit norm-one smooth compact approximants preserving actual exchange, reality and simultaneous O3 invariance both as physical L2 classes and at every point of the literal smooth representatives. One constant before every positive tolerance supplies the cutoff radius, and every sufficiently late index of a literal normalized radial kernel controls the true43component H2 defect, actual scalar graph residual and absolute Rayleigh pairing error by the tolerance. Actual kernel mass, convergence, covariance and weak and classical convolution derivatives are derived.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - Positive decay rate with a squared below Z squared over112 and positive requested tolerance.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollifier, decl: ManyBody.S8.physicalRadialMollifierKernel_integral}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollifier, decl: ManyBody.S8.physicalRadialMollifierKernel_isometry}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollifier, decl: ManyBody.S8.physicalRadialMollify_ae_tendsto}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollifier, decl: ManyBody.S8.physicalRadialMollifyLp_tendsto}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollification, decl: ManyBody.S8.physicalRadialMollifyLp_isometry}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollification, decl: ManyBody.S8.physicalRadialMollify_real}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollification, decl: ManyBody.S8.physical_radial_H2_mollification_components_eventually}
+    - {module: ManyBody.S8.Internal.PhysicalRadialMollification, decl: ManyBody.S8.physical_radial_smooth_mollification_data}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.physical_normalized_radial_smooth_compact_approximation_of_residual_family}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.scalar_eigen_normalized_radial_smooth_compact_exponential_approximation}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.twoElectron_ground_normalized_radial_smooth_compact_exponential_approximation_of_graph}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_normalized_radial_smooth_compact_exponential_approximation}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.physical_normalized_radial_smooth_data_symmetric}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.twoElectron_ground_normalized_radial_symmetric_smooth_approximation_of_graph}
+    - {module: ManyBody.S8.CoulombNormalizedRadialSmoothApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_normalized_radial_symmetric_smooth_approximation}
+  card: claims/cards/S8-042.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalRadialMollifier.lean, lean/ManyBody/S8/Internal/PhysicalRadialMollification.lean, lean/ManyBody/S8/CoulombNormalizedRadialSmoothApproximation.lean, claims/cards/S8-042.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The kernel is the literal radial cutoff divided by its actual positive integral. No symmetry of a classically chosen old mollifier is inferred. Constants and sufficiently late index are existential; no finite dictionary, effective coefficient selection, solver termination or full rung is claimed.
