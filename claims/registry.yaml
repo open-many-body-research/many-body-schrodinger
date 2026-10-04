@@ -1625,3 +1625,28 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     Only real arguments and directions are asserted real. No arbitrary complex-direction or nonsymmetric power-series coefficient reality is claimed. Selected original scales remain; coupled polynomial derivative errors, rational coefficients, global approximation and full rung are separate obligations.
+
+- id: S8-037
+  sector: S8
+  title: Couple actual distance Taylor polynomial gradient and Hessian errors (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-033]
+  statement: >
+    For the same actual normalized physical ground and original nuclear and pair A,B,H profiles, every literal finite canonical Taylor polynomial has genuine iterated derivative equal to the correctly shifted Taylor truncation of the corresponding actual derivative field. On the actual quarter polydiscs this gives simultaneous geometric value, gradient and Hessian errors for that one polynomial in true multilinear operator norms, while retaining all original physical and spectral facts.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact original selected scale and quarter polydisc conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.ComplexTaylorPolynomialDerivatives, decl: ManyBody.S8.complexTaylorPolynomial_iteratedFDeriv}
+    - {module: ManyBody.S8.Internal.ComplexTaylorPolynomialDerivatives, decl: ManyBody.S8.actual_taylor_data_coupled}
+    - {module: ManyBody.S8.Internal.ComplexTaylorPolynomialDerivatives, decl: ManyBody.S8.coupled_taylor_joint_value_gradient_hessian_error}
+    - {module: ManyBody.S8.AmbientDistanceCoupledTaylorTruncation, decl: ManyBody.S8.nuclear_ambient_distance_coupled_taylor_data}
+    - {module: ManyBody.S8.AmbientDistanceCoupledTaylorTruncation, decl: ManyBody.S8.pair_ambient_distance_coupled_taylor_data}
+    - {module: ManyBody.S8.AmbientDistanceCoupledTaylorTruncation, decl: ManyBody.S8.twoElectron_scalar_ground_ambient_distance_coupled_taylor_truncation}
+  card: claims/cards/S8-037.md
+  evidence: [lean/ManyBody/S8/Internal/ComplexTaylorPolynomialDerivatives.lean, lean/ManyBody/S8/AmbientDistanceCoupledTaylorTruncation.lean, claims/cards/S8-037.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Errors are in independent complex ambient distance coordinates. Physical Cartesian pullback H2 integration, rational or effective coefficient choice, global approximation and full rung are separate obligations.
