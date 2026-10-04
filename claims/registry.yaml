@@ -425,3 +425,41 @@ claims:
     review and acceptance. No input derivative is assumed, but this does not give
     mixed Y/T or second T derivatives, full joint H2, H12, physical chart coefficient
     bounds, factorial estimates, or all of Rung 2.
+
+- id: S8-005
+  sector: S8
+  title: Physical two-electron nuclear KS initialization and coefficient bounds (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-004]
+  statement: >
+    For the actual two-electron nuclear KS chart centered at a spectator position
+    of norm r, 0 < r <= 1, the coefficient norm is at most
+    (26/3)|Z| + 8/11 + |E|/2. For each smooth compact cutoff inside this chart,
+    K and C >= 0 are fixed before Z, E and the physical spin eigenfunction.
+    The actual Hamiltonian graph supplies one physical representative, local L2
+    input and the homogeneous transformed equation; every spin component has
+    actual cutoff first Y/T and ordered second YY weak L2 jets with the
+    S8-004 squared norm estimates at c = 4. A genuine selected collision
+    belongs to the chart and admits a smooth compact plateau cutoff.
+  conditional_on:
+    - The actual Coulomb spin Hamiltonian eigenfunction graph.
+    - A positive radius at most one, center norm equal to that radius, and the displayed smooth compact cutoff support.
+  lean:
+    - {module: ManyBody.S8.NuclearChartInitialization, decl: ManyBody.S8.two_electron_nuclear_chart_initialization}
+    - {module: ManyBody.S8.NuclearChartScaledInitialization, decl: ManyBody.S8.two_electron_scaled_nuclear_chart_initialization}
+    - {module: ManyBody.S8.Internal.NuclearPhysicalInitialization, decl: ManyBody.S8.scalar_nuclear_bounded_cutoff_gain}
+    - {module: ManyBody.S8.Internal.NuclearChartBounds, decl: ManyBody.S8.nuclearChartOpen_subset_coefficientPatch}
+    - {module: ManyBody.S8.Internal.NuclearChartBounds, decl: ManyBody.S8.nuclearKSPotential_norm_le_of_mem_nuclearChartOpen}
+    - {module: ManyBody.S8.Internal.NuclearChartScaling, decl: ManyBody.S8.nuclearChartScaledOpen_subset_coefficientPatch}
+    - {module: ManyBody.S8.Internal.NuclearChartScaling, decl: ManyBody.S8.nuclearKSPotential_uniform_norm_le_of_mem_nuclearChartScaledOpen}
+    - {module: ManyBody.S8.Internal.NuclearChartCutoff, decl: ManyBody.S8.nuclearChartScaledOpen_exists_collision_point}
+    - {module: ManyBody.S8.Internal.NuclearChartCutoff, decl: ManyBody.S8.nuclearChartScaledOpen_exists_collision_plateau}
+  card: claims/cards/S8-005.md
+  evidence: [lean/ManyBody/S8/NuclearChartInitialization.lean, lean/ManyBody/S8/NuclearChartScaledInitialization.lean, lean/ManyBody/S8/Internal/NuclearChartBounds.lean, lean/ManyBody/S8/Internal/NuclearChartScaling.lean, lean/ManyBody/S8/Internal/NuclearChartCutoff.lean, lean/ManyBody/S8/Internal/NuclearPhysicalInitialization.lean, claims/cards/S8-005.md]
+  caveats: >
+    Proposed tier-L topic-branch submission pending human statement-card review.
+    Only the coefficient bound is uniform in r; K, C and cutoff derivative
+    budgets may depend on the radius and center. This claim supplies no mixed
+    or second spectator jets, joint H2, H12, factorial bounds, or full Rung 2.
