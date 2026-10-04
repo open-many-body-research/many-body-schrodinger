@@ -1710,3 +1710,29 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     Selection is existential and no effective coefficient or order algorithm is claimed. These errors are in independent real distance coordinates; physical H2 pullback, global finite dictionaries, solver and full rung remain separate.
+
+- id: S8-040
+  sector: S8
+  title: Prove smooth compact density in the actual scalar Coulomb graph (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-024, S8-028, S8-030, S8-035]
+  statement: >
+    For every real charge and arbitrary actual scalar Coulomb graph pair f,h, genuine original weak derivative families are selected before every positive tolerance. A smooth compact physical representative supplies one approximating state with genuine weak and classical first and all ordered second derivative families, combined43component H2 defect and actual graph output difference each bounded by that tolerance. True L2 exterior convergence, finite component truncation, smoothing and actual graph output existence are proved without a ground, eigenvalue or weighted decay input.
+  conditional_on:
+    - The original actual two-electron scalar Coulomb graph pair, at any real charge.
+    - Positive requested approximation tolerance.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalH2GraphCore, decl: ManyBody.S8.physical_exterior_L2_norm_tendsto_zero}
+    - {module: ManyBody.S8.Internal.PhysicalH2GraphCore, decl: ManyBody.S8.physical_H2_exterior_components_eventually}
+    - {module: ManyBody.S8.Internal.PhysicalH2GraphCore, decl: ManyBody.S8.physical_compact_H2_defect_arbitrarily_small}
+    - {module: ManyBody.S8.Internal.PhysicalH2GraphCore, decl: ManyBody.S8.physical_smooth_compact_H2_approximation}
+    - {module: ManyBody.S8.CoulombSmoothCompactGraphDensity, decl: ManyBody.S8.scalar_graph_difference_le_physicalH2}
+    - {module: ManyBody.S8.CoulombSmoothCompactGraphDensity, decl: ManyBody.S8.scalar_Coulomb_smooth_compact_H2_graph_approximation}
+    - {module: ManyBody.S8.CoulombSmoothCompactGraphDensity, decl: ManyBody.S8.twoElectron_scalar_Coulomb_smooth_compact_graph_density}
+  card: claims/cards/S8-040.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalH2GraphCore.lean, lean/ManyBody/S8/CoulombSmoothCompactGraphDensity.lean, claims/cards/S8-040.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    This is actual metric graph approximation; no separately defined abstract operator core predicate is asserted. Radius and mollifier index are existential. Approximants are not asserted normalized, real or symmetric for arbitrary states. Effective rate, finite dictionary, solver and full rung remain open.
