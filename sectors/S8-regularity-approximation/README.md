@@ -85,3 +85,16 @@ bounds use $`b=r(26|Z|/3+8/11+r|E|/2)`$ and the original Moser amplitude.
 These geometric witnesses are radius-independent for that fixed rescaled
 cutoff. They do not supply full joint H2 budgets or a shrinking-cutoff family.
 H12 and factorial estimates remain open; human statement review is pending.
+
+
+## Submitted continuation: actual isolated-pair KS H2
+
+[S8-008](../../claims/cards/S8-008.md) proves genuine local joint weak H2
+for the original two-electron physical eigenfunction on its actual pair KS
+patch, including the selected pair collision and excluding nuclear collisions.
+The orthogonal Hadamard reconstruction derives both original positions,
+principal c=4 and cleared repulsion constant 8/sqrt(2). The actual equation,
+its integrability and removability are proved. Every isolated physical pair
+collision away from the nucleus is represented by a transverse-zero chart
+point. This qualitative result is pending human review and does not supply
+H12, simultaneous-collision coverage or factorial estimates.
