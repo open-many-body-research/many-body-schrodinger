@@ -754,3 +754,184 @@ claims:
     compatibility, noncollision analytic estimate, global approximation, solver
     or full Rung 2 follows. The finite center family is existential, with no
     executable center-selection algorithm.
+
+- id: S8-011
+  sector: S8
+  title: Physical ground analytic descent at the exact-product charge threshold (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S2-010]
+  statement: >
+    The exact-product charge condition Z>(20+5*sqrt(10))/24 supplies an actual
+    normalized two-electron fermionic continuum ground state, its spectral bottom
+    and weak H2 spatial singlet, plus a common physical spin representative with
+    actual nuclear and original coefficient-1 pair pointwise factorial and
+    analytic-plus-distance data. The actual Z=3/2 endpoint is instantiated.
+    The recovered physical H12/factorial/analytic chain is composed with the
+    newly proved exact product separator, retaining all original operator and
+    representative identities.
+  conditional_on:
+    - The displayed strict exact-product charge separator; or the stronger charge-only threshold.
+    - Positive scales at most min(1,R/4), where the physical representative supplies R>0.
+    - Unit spectator centers and the exact recovered physical reconstruction neighborhoods.
+  lean:
+    - {module: ManyBody.S8.ExactProductGroundPointwise, decl: ManyBody.S8.exactProduct_physical_ground_pointwise}
+    - {module: ManyBody.S8.ExactProductGroundAnalyticDescent, decl: ManyBody.S8.exactProduct_physical_ground_analytic_descent}
+    - {module: ManyBody.S8.ExactProductGroundAnalyticDescent, decl: ManyBody.S8.exactProduct_physical_ground_analytic_descent_above_threshold}
+    - {module: ManyBody.S8.ExactProductGroundAnalyticDescent, decl: ManyBody.S8.exactProduct_three_halves_physical_analytic_descent}
+  card: claims/cards/S8-011.md
+  evidence: [lean/ManyBody/S8/ExactProductGroundPointwise.lean, lean/ManyBody/S8/ExactProductGroundAnalyticDescent.lean, claims/cards/S8-011.md]
+  caveats: >
+    Proposed evidence pending human review and acceptance of the sealed recovery
+    dependency. Local physical chart data only, with representative-dependent L/R
+    budgets in this endpoint. No ambient distance-germ reconstruction, complete
+    collision coverage, global approximation, solver or full Rung 2 is concluded.
+
+- id: S8-012
+  sector: S8
+  title: Original-norm physical mixed derivatives and lower-charge ground data (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-011, S8-015]
+  statement: >
+    At fixed charge and energy, the original full-spin eigenfunction graph
+    supplies one representative and actual nuclear/pair analytic derivative
+    data with constants before every state, fixed physical Lipschitz ball1 and
+    every positive scale at most1/4. Literal complex and real canonical coordinate
+    mixed derivatives have recovered rates24D/24S and alpha!beta! bounds, with
+    amplitude linear in the original state norm. The exact-product ground
+    separator yields the same data with base budgets for an actual normalized
+    ground state at every Z>(20+5*sqrt(10))/24, including Z=3/2, retaining the
+    spectral bottom and actual weak H2 spatial singlet.
+  conditional_on:
+    - The original two-electron full-spin eigenfunction graph in the universal endpoint.
+    - The strict exact-product charge separator, or charge-only threshold, in the actual ground endpoint.
+    - Positive scales at most1/4, unit physical spectator centers and the original quarter-polydisc/reconstruction domains.
+  lean:
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormAnalyticDerivative, decl: ManyBody.S8.physicalKSDescentDerivativeBudget_original_norm}
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormAnalyticDerivative, decl: ManyBody.S8.physicalKSBoxAnalyticDerivativeData_to_original_norm}
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormAnalyticDerivative, decl: ManyBody.S8.coulomb_spin_physical_original_norm_analytic_derivative}
+    - {module: ManyBody.S8.ExactProductGroundOriginalNormAnalyticDerivative, decl: ManyBody.S8.exactProduct_physical_ground_original_norm_analytic_derivative}
+    - {module: ManyBody.S8.ExactProductGroundOriginalNormAnalyticDerivative, decl: ManyBody.S8.exactProduct_physical_ground_original_norm_analytic_derivative_above_threshold}
+    - {module: ManyBody.S8.ExactProductGroundOriginalNormAnalyticDerivative, decl: ManyBody.S8.exactProduct_three_halves_physical_original_norm_analytic_derivative}
+  card: claims/cards/S8-012.md
+  evidence: [lean/ManyBody/S8/CoulombSpinPhysicalOriginalNormAnalyticDerivative.lean, lean/ManyBody/S8/ExactProductGroundOriginalNormAnalyticDerivative.lean, claims/cards/S8-012.md]
+  caveats: >
+    Proposed evidence pending human review and sealed recovery acceptance.
+    Constants are non-effective, with no numerical coefficient algorithm.
+    Mixed bounds use Pi-coordinate iterated derivatives, not Euclidean operator
+    norms; factor24 is retained. No ambient distance germ, collision-stratum
+    transition, full global approximation, solver or complete rung is concluded.
+
+- id: S8-013
+  sector: S8
+  title: Actual unscaled physical collision germs and cross-scale compatibility (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-015]
+  statement: >
+    The original two-electron spin eigenfunction graph supplies one physical
+    representative with common constants before the state, fixed ball1 and
+    all positive scales at most1/4. Literal descended A/B functions return to
+    the unscaled representative through the genuine nuclear and coefficient-1
+    pair coordinate maps. They are real analytic at every admissible selected
+    collision point and represent the actual original function as A+||X||B.
+    At a shared original collision point, every pair of admissible scales and
+    spectator centers in the same selected coordinate map yields separately
+    equal A/B real germs and every ordered real Frechet jet.
+  conditional_on:
+    - The original physical two-electron spin eigenfunction graph in the strongest endpoint.
+    - Positive scales at most1/4 and unit spectator centers, with the displayed actual overlap domains.
+    - One fixed selected nuclear index or original pair coordinate map for germ/jet comparison.
+  lean:
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.physical_descent_literal_unscaled_collision_germ}
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.physical_descent_original_overlap_germ_unique}
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.physical_original_collision_germs_of_descent}
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.nuclear_physical_original_collision_germs}
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.pair_physical_original_collision_germs}
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.coulomb_spin_physical_original_norm_collision_germs}
+    - {module: ManyBody.S8.PhysicalAnalyticDescentOriginalGerms, decl: ManyBody.S8.physical_descent_original_overlap_jets_unique}
+  card: claims/cards/S8-013.md
+  evidence: [lean/ManyBody/S8/PhysicalAnalyticDescentOriginalGerms.lean, lean/ManyBody/S8/Internal/AnalyticDistanceGermUniqueness.lean, lean/ManyBody/S8/Internal/PhysicalCollisionGermRescaling.lean, lean/ManyBody/S8/Internal/PhysicalCollisionCoordinateScaling.lean, lean/ManyBody/S8/Internal/PhysicalAnalyticDescentGermBridge.lean, lean/ManyBody/S8/Internal/PhysicalComplexCoordinates.lean, claims/cards/S8-013.md]
+  caveats: >
+    Proposed evidence pending human statement review and recovery acceptance.
+    Separate real germ/jet compatibility is collision-centered and within one
+    physical coordinate map. No complex off-real-slice equality, quantitative
+    unscaled derivative budget, inter-index/chart-type or collision-stratum
+    transition, triple-origin coverage, global approximation or full rung follows.
+
+- id: S8-015
+  sector: S8
+  title: Original-state physical factorial and pointwise budgets on fixed scales (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-014]
+  statement: >
+    At fixed real charge and energy, common constants precede every original
+    two-electron full-spin eigenfunction. The actual graph constructs one
+    representative with physical AE, permutation, Moser and norm-linear
+    Lipschitz bounds on the fixed ball1. Every nuclear and original pair chart,
+    spin component, unit spectator center and positive scale at most1/4 has
+    genuine recovered factorial and pointwise data with source budget linear
+    and H12 initialization budget quadratic in the original spin-state norm.
+    The actual factorial/pointwise amplitudes factor exactly as a common
+    amplitude times that norm, giving literal pointwise word bounds.
+  conditional_on:
+    - The original physical two-electron full-spin Coulomb eigenfunction graph.
+    - Positive scales at most1/4, unit spectator centers and the original fixed chart domains.
+  lean:
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormFactorial, decl: ManyBody.S8.physicalKSFactorialAmplitude_original_norm}
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormFactorial, decl: ManyBody.S8.physicalKSPointwiseAmplitude_original_norm}
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormFactorial, decl: ManyBody.S8.physicalKSBoxPointwiseData_original_norm_word_bound}
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormFactorial, decl: ManyBody.S8.coulomb_spin_physical_original_norm_factorial}
+    - {module: ManyBody.S8.CoulombSpinPhysicalOriginalNormFactorial, decl: ManyBody.S8.coulomb_spin_physical_original_norm_pointwise}
+  card: claims/cards/S8-015.md
+  evidence: [lean/ManyBody/S8/CoulombSpinPhysicalOriginalNormFactorial.lean, lean/ManyBody/S8/Internal/PhysicalSpinOriginNormBudgets.lean, claims/cards/S8-015.md]
+  caveats: >
+    Proposed evidence pending human review and sealed recovery acceptance.
+    Constants are existential and non-effective. The H12 budget is consumed
+    inside the actual factorial initialization; this endpoint does not separately
+    return an H12 witness. Jets are of actual lifted KS functions, not unlifted
+    cusp smoothness. No full collision/global approximation/solver rung is closed.
+
+- id: S8-017
+  sector: S8
+  title: Actual analytic applicability on finite physical annular collision charts (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-013, S8-015, S8-016]
+  statement: >
+    For fixed charge and energy, common physical constants, a positive relative
+    width and one finite center family precede every original spin eigenstate.
+    The actual geometric family covers all positive radii. For every radius
+    at most1/4, both selected nuclear and original pair neighborhoods admit
+    literal unscaled real-analytic A/B functions at every physical point, with
+    exact original representative identity A+||X||B. Genuine nuclear scale rho
+    and coefficient-1 pair scale rho/sqrt(2), actual coordinate reconstruction
+    and both recovered radial/spectator domain bounds are derived.
+  conditional_on:
+    - The original two-electron physical full-spin Coulomb eigenfunction graph.
+    - Positive physical radius at most1/4 for analytic applicability.
+    - Membership in the displayed finite selected-collision neighborhoods.
+  lean:
+    - {module: ManyBody.S8.CoulombSpinFiniteAnnularAnalyticCover, decl: ManyBody.S8.coulomb_spin_finite_annular_collision_analytic_applicability}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.physical_descent_literal_physical_point}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.physical_descent_unscaled_physical_point}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.originalNuclearPhysicalCoordinatesCLM_reconstruct}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.originalPairPhysicalCoordinatesCLM_reconstruct}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.nuclear_annular_analytic_reconstruction_of_pointwise}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.pair_annular_analytic_reconstruction_of_pointwise}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularAnalyticApplicability, decl: ManyBody.S8.exists_annular_analytic_width}
+  card: claims/cards/S8-017.md
+  evidence: [lean/ManyBody/S8/CoulombSpinFiniteAnnularAnalyticCover.lean, lean/ManyBody/S8/Internal/PhysicalAnnularAnalyticApplicability.lean, claims/cards/S8-017.md]
+  caveats: >
+    Proposed evidence pending human review and recovery acceptance. Analytic
+    applicability is on the selected nuclear/pair neighborhoods, not the covered
+    collision-free bulk. Triple origin and exterior analytic control are excluded.
+    No quantitative unscaled derivative, ambient distance transition, global
+    approximation, solver or full Rung 2 follows. Common constants are non-effective.

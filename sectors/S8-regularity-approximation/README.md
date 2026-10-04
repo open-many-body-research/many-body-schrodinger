@@ -152,3 +152,33 @@ are explicit. At relative widths at most 1/16, each selected-collision
 neighborhood excludes the remaining physical singularities. This is a geometric
 cover: the triple origin and analytic applicability remain separate obligations.
 The finite centers are existential; human statement review remains pending.
+
+
+## Submitted recovered-source consumers: fixed geometry and original physical norms
+
+[S8-011](../../claims/cards/S8-011.md) extends the actual physical ground
+pointwise/analytic endpoint to the exact-product threshold and Z=3/2.
+[S8-015](../../claims/cards/S8-015.md) chooses common constants before every
+physical spin eigenstate, fixes ballradius1 and all scales through1/4, and
+bounds the genuine physical factorial/pointwise amplitudes by the original
+state norm. [S8-012](../../claims/cards/S8-012.md) adds actual complex/real
+mixed derivative data with the recovered factor24; its normalized lower-charge
+ground endpoint has the common base budgets. [S8-013](../../claims/cards/S8-013.md)
+returns literal analytic-plus-distance germs to the original unscaled physical
+function and proves separate real germ/jet compatibility across admissible
+scales and centers in one fixed physical collision coordinate map.
+
+These consumers depend on the sealed recovered proof archive and preserve its
+source bytes, original c=1 pair convention and exact domains. The common norm
+constants are non-effective. Full committed verification and human acceptance
+remain separate from focused kernel checks. Ambient distance germs, complete
+collision/exterior applicability, global approximation and solver obligations
+remain open.
+
+
+[S8-017](../../claims/cards/S8-017.md) additionally chooses a common positive
+width and finite physical centers before every state and proves actual analytic
+applicability on all selected nuclear/pair neighborhoods for radii through1/4.
+It reconstructs the original physical representative at every neighborhood
+point; the restored pair uses scale rho/sqrt(2). The covered collision-free bulk,
+triple origin and exterior still need separate analytic estimates.
