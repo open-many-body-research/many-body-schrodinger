@@ -1847,3 +1847,33 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The offset can depend on state, scale and chart and is existential; no uniform acrossscales offset or algorithm for physical budgets and coefficient extraction is proved. Taylor coefficients are not asserted rational. This gives local linear ordergrowth with no rounding bitcost, composed physical H2 error, global atlas, triplecollision, solver or full rung conclusion.
+
+- id: S8-043
+  sector: S8
+  title: Preserve actual collision parity and reconstruction in rational distance approximants (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-039, S8-036, S8-026, S8-023]
+  statement: >
+    The same actual normalized Coulomb ground admits finite rational A and B distance polynomials globally even in the selected nuclear or pair distance. Their one reconstructed polynomial PH=PA+qjPB, with a proved finite rational monomial dictionary, approximates the actual original H while PA and PB approximate the actual A and B in true real value, gradient and Hessian operatornorms uniformly on the closed inner distance box. Original profile analyticity, parity and reconstruction are derived from that same graph witness.
+  conditional_on:
+    - Real charge at least2 and the same original actual normalized physical ground witness.
+    - Every admissible positive original nuclear or pair scale and requested positive real C2 tolerance.
+  lean:
+    - {module: ManyBody.S8.Internal.RationalDistanceParity, decl: ManyBody.S8.real_reflected_derivative_difference_le}
+    - {module: ManyBody.S8.Internal.RationalDistanceParity, decl: ManyBody.S8.reflected_rational_distance_polynomial_average}
+    - {module: ManyBody.S8.Internal.RationalDistanceParity, decl: ManyBody.S8.reflected_rational_distance_polynomial_even}
+    - {module: ManyBody.S8.Internal.RationalDistanceParity, decl: ManyBody.S8.rational_even_distance_polynomial_uniform_C2}
+    - {module: ManyBody.S8.Internal.CoordinateProductDerivativeBounds, decl: ManyBody.S8.real_distance_coordinate_second_zero}
+    - {module: ManyBody.S8.Internal.CoordinateProductDerivativeBounds, decl: ManyBody.S8.real_coordinate_product_C2_bound}
+    - {module: ManyBody.S8.Internal.RationalCollisionStructure, decl: ManyBody.S8.rational_collision_polynomial_finite_dictionary}
+    - {module: ManyBody.S8.Internal.RationalCollisionStructure, decl: ManyBody.S8.rational_collision_structure_C2}
+    - {module: ManyBody.S8.AmbientStructuredRationalDistanceApproximation, decl: ManyBody.S8.nuclear_structured_rational_distance_C2_data}
+    - {module: ManyBody.S8.AmbientStructuredRationalDistanceApproximation, decl: ManyBody.S8.pair_structured_rational_distance_C2_data}
+    - {module: ManyBody.S8.AmbientStructuredRationalDistanceApproximation, decl: ManyBody.S8.twoElectron_scalar_ground_structured_rational_distance_C2_approximation}
+  card: claims/cards/S8-043.md
+  evidence: [lean/ManyBody/S8/Internal/RationalDistanceParity.lean, lean/ManyBody/S8/Internal/CoordinateProductDerivativeBounds.lean, lean/ManyBody/S8/Internal/RationalCollisionStructure.lean, lean/ManyBody/S8/AmbientStructuredRationalDistanceApproximation.lean, claims/cards/S8-043.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The exact selected coordinate is zero for nuclear and two for pair charts and the original inner radius is epsilon delta over8. Polynomial selection is existential. No composed physical H2 error, degree or cardinality rate, computable coefficient choice, global dictionary, solver or full rung is asserted.
