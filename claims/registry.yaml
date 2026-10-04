@@ -1594,3 +1594,34 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The new cutoff is the explicit inner-product-space radial bump, not an inferred symmetry of the old generic choice. Compact states are not asserted normalized, smooth or eigenfunctions. Constants are existential; finite dictionaries, effective solver and full rung remain open.
+
+- id: S8-036
+  sector: S8
+  title: Derive actual ambient profile reality and canonical real Taylor coefficients (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-032, S8-033]
+  statement: >
+    The same actual normalized physical ground and nuclear and pair collision profiles are real throughout the full real distance slices. Genuine feasible physical triangle values, real analytic continuation and actual parity derive separate A,B,H reality including the collision axis. Every ordered real derivative jet has zero imaginary part, and the unchanged canonical complex Taylor coefficients and finite value polynomials are real on actual real increments. All original ground and derivative-budget facts and the actual Taylor sums and errors are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact original selected scale and real polydisc conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.AmbientProfileReality, decl: ManyBody.S8.ambient_real_profile_analytic}
+    - {module: ManyBody.S8.Internal.AmbientProfileReality, decl: ManyBody.S8.analytic_real_profile_real_of_germ}
+    - {module: ManyBody.S8.Internal.AmbientProfileReality, decl: ManyBody.S8.analytic_real_profile_derivative_real}
+    - {module: ManyBody.S8.Internal.AmbientProfileReality, decl: ManyBody.S8.analytic_real_even_profiles_real}
+    - {module: ManyBody.S8.Internal.AmbientProfileReality, decl: ManyBody.S8.analytic_ambient_real_taylor_coefficient}
+    - {module: ManyBody.S8.Internal.AmbientProfileReality, decl: ManyBody.S8.ambient_profile_reality_data_of_real_values}
+    - {module: ManyBody.S8.AmbientProfileRealness, decl: ManyBody.S8.ambient_profile_real_of_feasible}
+    - {module: ManyBody.S8.AmbientProfileRealness, decl: ManyBody.S8.nuclear_real_polydisc_feasible}
+    - {module: ManyBody.S8.AmbientProfileRealness, decl: ManyBody.S8.pair_real_polydisc_feasible}
+    - {module: ManyBody.S8.AmbientProfileRealness, decl: ManyBody.S8.nuclear_ambient_profile_reality}
+    - {module: ManyBody.S8.AmbientProfileRealness, decl: ManyBody.S8.pair_ambient_profile_reality}
+    - {module: ManyBody.S8.AmbientProfileRealness, decl: ManyBody.S8.twoElectron_scalar_ground_ambient_real_profiles_and_taylor_data}
+  card: claims/cards/S8-036.md
+  evidence: [lean/ManyBody/S8/Internal/AmbientProfileReality.lean, lean/ManyBody/S8/AmbientProfileRealness.lean, claims/cards/S8-036.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Only real arguments and directions are asserted real. No arbitrary complex-direction or nonsymmetric power-series coefficient reality is claimed. Selected original scales remain; coupled polynomial derivative errors, rational coefficients, global approximation and full rung are separate obligations.
