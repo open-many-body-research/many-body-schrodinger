@@ -1393,3 +1393,36 @@ claims:
     The norm is the actual complex Fin3 Pi norm. Selected-state L,R and
     amplitude are retained. No norm-uniform all-state upgrade, real-distance
     transport, global approximation, computable prefactor or full rung is claimed.
+
+- id: S8-031
+  sector: S8
+  title: Identify actual complex nuclear profiles across indices and scales (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-026]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness
+    has equal original nuclear A,B and H functions throughout the common full
+    complex distance domains at arbitrary nuclear indices and admissible scales
+    sharing a positive collision-distance point. The literal exchanged physical
+    configuration and actual ground exchange law derive real values, then
+    analytic continuation and genuine profile parity derive whole-domain
+    separate coefficient equality, every complex germ and all ordered jets.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.nuclear_physical_coordinates_exchange}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.exchange_invariant_nuclear_coordinates}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.nuclear_ambient_index_and_scale_compatibility}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.nuclear_ambient_index_and_scale_profile_jets}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_index_coefficient_compatibility}
+  card: claims/cards/S8-031.md
+  evidence: [lean/ManyBody/S8/NuclearAmbientIndexCompatibility.lean, claims\cards\S8-031.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Local q records selected nuclear radius, spectator radius and pair distance.
+    Equality is not an input premise. Original selected-state scales and physical
+    facts are retained. Collision-type transitions, triple origin, a global
+    atlas, dictionary approximation and the full rung remain open.

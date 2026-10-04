@@ -304,3 +304,10 @@ Human statement review and full committed verification remain pending.
 [S8-029](../../claims/cards/S8-029.md) proves that for charge at least2, the same actual normalized scalar ground witness has genuine all-order complex Frechet operator norms and ordered distance coordinate-word factorial budgets for literal original nuclear A,B and H, for both selected indices at all admissible scales and every half-polydisc point. Actual bounded holomorphic profiles discharge derivative estimates. A,H carry epsilon times epsilon^(-n) and u0 only at order zero, while B carries epsilon^(-n). All original physical and spectral facts are retained.
 The norm is the actual complex Fin3 Pi norm. Selected-state L,R and amplitude are retained. No norm-uniform all-state upgrade, real-distance transport, global approximation, computable prefactor or full rung is claimed.
 Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: identify actual complex nuclear profiles across indices and scales
+
+[S8-031](../../claims/cards/S8-031.md) proves that for charge at least2, the same actual normalized scalar ground witness has equal original nuclear A,B and H functions throughout the common full complex distance domains at arbitrary nuclear indices and admissible scales sharing a positive collision-distance point. The literal exchanged physical configuration and actual ground exchange law derive real values, then analytic continuation and genuine profile parity derive whole-domain separate coefficient equality, every complex germ and all ordered jets.
+Local q records selected nuclear radius, spectator radius and pair distance. Equality is not an input premise. Original selected-state scales and physical facts are retained. Collision-type transitions, triple origin, a global atlas, dictionary approximation and the full rung remain open.
+Human statement review and full committed verification remain pending.
