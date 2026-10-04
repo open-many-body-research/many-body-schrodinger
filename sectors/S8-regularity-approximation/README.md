@@ -331,3 +331,9 @@ Human statement review and full committed verification remain pending.
 [S8-033](../../claims/cards/S8-033.md) Actual complex distance profiles of the same normalized physical ground have canonical derivative-coefficient Taylor sums, explicit geometric value remainder, and genuine operator-norm Taylor remainders for every derivative field on the stated quarter polydiscs. All nuclear indices and admissible scales are retained.
 The derivative-field polynomials are stated separately; no coupling as derivatives of one value polynomial, effective coefficients, global atlas or full rung is claimed.
 Independent AI applicability review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: construct smooth normalized compact physical ground approximants
+
+[S8-035](../../claims/cards/S8-035.md) The same actual normalized two-electron ground and genuine weak first and ordered second derivatives admit concrete smooth normalized compact approximants at every positive tolerance, with simultaneous physical H2 defect, actual Coulomb graph residual and absolute Rayleigh pairing error bounded by that tolerance. A single eventual concrete mollifier index controls all 43 components.
+The selected-state constants and eventual mollifier index are existential. The radius formula is explicit in those constants. Symmetry of the new approximants, finite dictionaries, computable coefficients, effective solver and full rung are not asserted.
+Independent AI applicability review passed; human statement review and exact committed full verification remain pending.

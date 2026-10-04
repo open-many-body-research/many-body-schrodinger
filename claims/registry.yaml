@@ -1524,3 +1524,31 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The derivative-field polynomials are stated separately; no coupling as derivatives of one value polynomial, effective coefficients, global atlas or full rung is claimed.
+
+- id: S8-035
+  sector: S8
+  title: Construct smooth normalized compact physical ground approximants (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-030]
+  statement: >
+    The same actual normalized two-electron ground and genuine weak first and ordered second derivatives admit concrete smooth normalized compact approximants at every positive tolerance, with simultaneous physical H2 defect, actual Coulomb graph residual and absolute Rayleigh pairing error bounded by that tolerance. A single eventual concrete mollifier index controls all 43 components.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact selected tolerance and rate conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalSmoothH2Mollification, decl: ManyBody.S8.physical_H2_mollification_components_eventually}
+    - {module: ManyBody.S8.Internal.PhysicalSmoothH2Mollification, decl: ManyBody.S8.physical_smooth_mollification_data}
+    - {module: ManyBody.S8.Internal.PhysicalSmoothH2Mollification, decl: ManyBody.S8.physical_smoothSecond_const_smul}
+    - {module: ManyBody.S8.Internal.PhysicalSmoothH2Mollification, decl: ManyBody.S8.scalar_eigen_H2_graph_residual_le}
+    - {module: ManyBody.S8.CoulombNormalizedSmoothCompactApproximation, decl: ManyBody.S8.physicalSmoothCutoffRadius_tail}
+    - {module: ManyBody.S8.CoulombNormalizedSmoothCompactApproximation, decl: ManyBody.S8.physical_normalized_smooth_compact_approximation_of_residual_family}
+    - {module: ManyBody.S8.CoulombNormalizedSmoothCompactApproximation, decl: ManyBody.S8.scalar_eigen_normalized_smooth_compact_exponential_approximation}
+    - {module: ManyBody.S8.CoulombNormalizedSmoothCompactApproximation, decl: ManyBody.S8.twoElectron_ground_normalized_smooth_compact_exponential_approximation_of_graph}
+    - {module: ManyBody.S8.CoulombNormalizedSmoothCompactApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_normalized_smooth_compact_exponential_approximation}
+  card: claims/cards/S8-035.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalSmoothH2Mollification.lean, lean/ManyBody/S8/CoulombNormalizedSmoothCompactApproximation.lean, claims/cards/S8-035.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The selected-state constants and eventual mollifier index are existential. The radius formula is explicit in those constants. Symmetry of the new approximants, finite dictionaries, computable coefficients, effective solver and full rung are not asserted.
