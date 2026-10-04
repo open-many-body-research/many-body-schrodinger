@@ -1,0 +1,32 @@
+import FormalMultilinearDiagonalUniqueness_v1
+import HomogeneousPolynomialSeriesRealUniqueness_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.formalMultilinear_diagonal_eq_of_eventually
+#check @TheoremT.Continuum.realHomogeneousPolynomialSeriesSum
+#check @TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries
+#check @TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_diagonal
+#check @TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_hasFPowerSeriesAt
+#check @TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_eventually
+#check @TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_hasSum
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.formalMultilinear_diagonal_eq_of_eventually
+#print axioms TheoremT.Continuum.realHomogeneousPolynomialSeriesSum
+#print axioms TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries
+#print axioms TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_diagonal
+#print axioms TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_hasFPowerSeriesAt
+#print axioms TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_eventually
+#print axioms TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_hasSum

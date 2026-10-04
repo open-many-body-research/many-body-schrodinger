@@ -1,0 +1,134 @@
+{
+  "timestamp_utc": "2026-09-11T00:11:02.782363+00:00",
+  "evidence": "Lean kernel-checked actual operator-output estimate conditional on lower actual weighted norms and source/coefficient bounds",
+  "strongest_theorem": "TheoremT.Continuum.WeakGrushin.factorial_mixed_cutoff_output_bound",
+  "obligations_discharged": [
+    "Actual local H2 reconstruction from coordinate first and diagonal second weak derivatives",
+    "Actual global compact cutoff jets from raw local data",
+    "Actual global principal output and signed cutoff source identity",
+    "Natural mixed derivative application using only original zero-order PDE",
+    "Restricted source norm transfer to global output",
+    "Exact R13, potential and quadratic source norm composition"
+  ],
+  "semantic_review": "All final expanded outputs read: 1021, 1184 and 1247 lines; exact hypotheses and original-only PDE checked, standard axioms only. No derivative norm bound for the conclusion or cutoff identity is assumed.",
+  "remaining": "Actual inner plateau outer-norm comparison and compact maximal estimate composition, then scalar recurrence closure. No factorial regularity or Theorem T claimed here.",
+  "modules": [
+    {
+      "module": "ProductLocalDiagonalWeakH2_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductLocalDiagonalWeakH2_v1.lean",
+      "source_sha256": "8971a9a9b5487b38e3bd7ef69c4a0543328b1908cf8f73213ebb1618ebb55db2",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductLocalDiagonalWeakH2_v1.olean",
+      "object_sha256": "7d0e8764f674688e100e6838a5d594965f9d0765991ef4482028cd36239b21d9",
+      "declarations": [
+        "ProductLocalWeakDirectional.second_same_test",
+        "product_local_weakH2_of_diagonal_jets"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "WeakGrushinRawLocalCutoff_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinRawLocalCutoff_v1.lean",
+      "source_sha256": "2a21491a4d441e2f66001f03671fc903606b27b01c3b321eadb77cf725ddb161",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakGrushinRawLocalCutoff_v1.olean",
+      "object_sha256": "215ef4f4dd9951128fafdde7c66aeab32d3e2358bcc3cbb8a25b9893bc33e280",
+      "declarations": [
+        "principal_ae_eq_of_raw_local_output",
+        "rawGrushinCutoffError_zero_off",
+        "raw_local_weakH2_grushin_cutoff"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "WeakGrushinMixedCutoffEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinMixedCutoffEquation_v1.lean",
+      "source_sha256": "6ff2a06b18fa61d9b982c7e6178dcba7e6b70d598535d22ed78052a8b60a3d41",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakGrushinMixedCutoffEquation_v1.olean",
+      "object_sha256": "b7ac1fea05637fa6d110c939ed2a5f293ef9a5473662c2b3b4543760426922bd",
+      "declarations": [
+        "mixed_family_local_weakH2",
+        "weak_grushin_mixed_cutoff_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RestrictedL2OutputNorm_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RestrictedL2OutputNorm_v1.lean",
+      "source_sha256": "e6351267648cd7e4d179ca9d3ad8ec340e2be47c8b87b740d98d4c6cb2975231",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RestrictedL2OutputNorm_v1.olean",
+      "object_sha256": "04c3c449e11bc550fe771a4636c36460f5ec6ca23aeb0aab6517598698057357",
+      "declarations": [
+        "restrictedL2Extension_norm",
+        "supported_output_norm_le_restricted",
+        "restricted_cutoff_output_norm"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinMixedCutoffOutputBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinMixedCutoffOutputBound_v1.lean",
+      "source_sha256": "071caabd2446b80bf29d66aeb28b7947ac4c7977cc06c1cd725dbb06708350ad",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinMixedCutoffOutputBound_v1.olean",
+      "object_sha256": "ddafefc44254934bef7b7694ea9219c90b0fc41f6fa1f3a87a1c7d7f67285cab",
+      "declarations": [
+        "factorial_mixed_cutoff_output_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "declarations": 11,
+  "audit_receipts": [
+    {
+      "path": "audits/formal_semantics/20260910T235955_052057Z/receipt.json",
+      "sha256": "9ef38587f3238bc19d48b618728190a3b822bc524c52f81e4fc8e92860c730b8"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T000709_878774Z/receipt.json",
+      "sha256": "28e21d2d2497fd82fd6cfd7cb8316e2144295ad2118ca32c1959dd066f74a667"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T000910_889898Z/receipt.json",
+      "sha256": "3a7e651612cde7eaf2acf3ce63548b12776a26143c752c21519d4bb05fc78b4c"
+    }
+  ],
+  "dependency_checkpoints": [
+    {
+      "path": "audits/GRUSHIN_DIFFERENTIATED_SOURCE_BOUND_CHECKPOINT_v1.json",
+      "sha256": "d259f867de16aea055156cc77a9fa969995c7861440cb357dd4e88eff54896d9"
+    },
+    {
+      "path": "audits/WEAK_GRUSHIN_MIXED_CUTOFF_EQUATION_CHECKPOINT_v1.json",
+      "sha256": "4e6d15e5eb17820038cc84c4238b87c0228c34122ff5a760f2640637e790d424"
+    },
+    {
+      "path": "audits/WEAK_GRUSHIN_RAW_LOCAL_CUTOFF_CHECKPOINT_v1.json",
+      "sha256": "ed46dae1fce0b439785de691cec7ff0ca6b2f4929078e0c7261116e730cc1963"
+    }
+  ],
+  "manuscript": {
+    "path": "paper/GRUSHIN_MIXED_CUTOFF_OUTPUT_FORMAL_v1.md",
+    "sha256": "83f528705fd4c06aacb01d13ac6f8584b8648ee3f5a5a0020f663ce50027e199"
+  },
+  "paper_reference": {
+    "path": "audits/GRUSHIN_FACTORIAL_RECURRENCE_v1.md",
+    "sha256": "5aac0a379715bda90c7eb12ff2c8af2b5c6aba2434828735a96c608c45668594",
+    "reviewed_sections": "R13 through R18; actual smooth cutoff constants retained"
+  },
+  "cache": "Pinned cached dependencies reused; no new isolated rebuild. New source lies outside prior isolated v20.",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_report": "THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md",
+    "frozen_report_sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "all_prior_and_passed_bytes_preserved": true
+  }
+}

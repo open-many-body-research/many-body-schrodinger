@@ -1,0 +1,85 @@
+@TheoremT.Continuum.realTaylorCoordinatePolynomial.{u_1,
+    u_2} : {σ : Type u_1} →
+  {E : Type u_2} →
+    [Fintype.{u_1} σ] →
+      [inst : NormedAddCommGroup.{u_2} E] →
+        [@NormedSpace.{0, u_2} Real E _ _] →
+          (dirs : σ → E) → (f : E → Complex) → (x : E) → (k : Nat) → @MvPolynomial.{u_1, 0} σ Complex _
+@TheoremT.Continuum.realTaylorCoordinatePolynomial_homogeneous.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] (dirs : σ → E) (f : E → Complex) (x : E) (k : Nat),
+  @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _
+    (@TheoremT.Continuum.realTaylorCoordinatePolynomial.{u_1, u_2} σ E _ _ _ dirs f x k) k
+@TheoremT.Continuum.realTaylorCoordinatePolynomial_eval.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] (dirs : σ → E) (coord : E → σ → Real)
+  (hreconstruct :
+    ∀ (y : E),
+      @Eq.{u_2 + 1} E
+        (@Finset.sum.{u_1, u_2} σ E _ (@Finset.univ.{u_1} σ _) fun (j : σ) =>
+          @HSMul.hSMul.{0, u_2, u_2} Real E E _ (coord y j) (dirs j))
+        y)
+  (f : E → Complex) (x y : E) (k : Nat),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (j : σ) => Complex.ofReal (coord y j))
+      (@TheoremT.Continuum.realTaylorCoordinatePolynomial.{u_1, u_2} σ E _ _ _ dirs f x k))
+    (@DFunLike.coe.{u_2 + 1, u_2 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _)
+      ((i : Fin k) → E) (fun (x : (i : Fin k) → E) => Complex) _
+      (@TheoremT.Continuum.factorialFrechetSeries.{u_2, 0} E Complex _ _ _ _ f x k) fun (x : Fin k) => y)
+@TheoremT.Continuum.polynomialCoeffL1_realTaylorCoordinatePolynomial.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] (dirs : σ → E) (f : E → Complex) (x : E) (k : Nat) {M A : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+  (hbound :
+    ∀ (w : Fin k → σ),
+      @LE.le.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@DFunLike.coe.{u_2 + 1, u_2 + 1, 1}
+            (@ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _)
+            ((i : Fin k) → E) (fun (x : (i : Fin k) → E) => Complex) _
+            (@iteratedFDeriv.{0, u_2, 0} Real _ E _ _ Complex _ _ k f x) fun (i : Fin k) => dirs (w i)))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+          (@Nat.cast.{0} Real _ (Nat.factorial k)))),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@TheoremT.Continuum.realTaylorCoordinatePolynomial.{u_1, u_2} σ E _ _ _ dirs f x k))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (@Fintype.card.{u_1} σ _)) A) k))
+@TheoremT.Continuum.realTaylorCoordinatePolynomial_hasSum.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] (dirs : σ → E) (coord : E → σ → Real)
+  (hreconstruct :
+    ∀ (y : E),
+      @Eq.{u_2 + 1} E
+        (@Finset.sum.{u_1, u_2} σ E _ (@Finset.univ.{u_1} σ _) fun (j : σ) =>
+          @HSMul.hSMul.{0, u_2, u_2} Real E E _ (coord y j) (dirs j))
+        y)
+  (f : E → Complex) (x : E) {r : ENNReal}
+  (hseries :
+    @HasFPowerSeriesOnBall.{0, u_2, 0} Real E Complex _ _ _ _ _ f
+      (@TheoremT.Continuum.factorialFrechetSeries.{u_2, 0} E Complex _ _ _ _ f x) x r)
+  {y : E}
+  (hy :
+    @Membership.mem.{u_2, u_2} E (Set.{u_2} E) _ (@Metric.eball.{u_2} E _ (@OfNat.ofNat.{u_2} E (nat_lit 0) _) r) y),
+  @HasSum.{0, 0} Complex Nat _ _
+    (fun (k : Nat) =>
+      @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (j : σ) => Complex.ofReal (coord y j))
+        (@TheoremT.Continuum.realTaylorCoordinatePolynomial.{u_1, u_2} σ E _ _ _ dirs f x k))
+    (f (@HAdd.hAdd.{u_2, u_2, u_2} E E E _ x y)) (SummationFilter.unconditional.{0} Nat)
+'TheoremT.Continuum.realTaylorCoordinatePolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.realTaylorCoordinatePolynomial_homogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realTaylorCoordinatePolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_realTaylorCoordinatePolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realTaylorCoordinatePolynomial_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]

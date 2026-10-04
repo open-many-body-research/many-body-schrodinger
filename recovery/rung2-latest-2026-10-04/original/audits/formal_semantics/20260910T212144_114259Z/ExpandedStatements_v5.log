@@ -1,0 +1,251 @@
+@TheoremT.Continuum.WeakGrushin.complex_finite_family_L2_bound.{u_1,
+    u_2} : ∀ {X : Type u_1} {I : Type u_2} [inst : MeasurableSpace.{u_1} X] [inst_1 : Fintype.{u_2} I]
+  {μ : @MeasureTheory.Measure.{u_1} X _} (f : I → X → Complex)
+  (hf : ∀ (i : I), @MeasureTheory.MemLp.{u_1, 0} X Complex inst _ _ (f i) (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ)
+  (W : I → Real)
+  (hBudget :
+    ∀ (i : I),
+      @LE.le.{0} Real _
+        (@MeasureTheory.integral.{u_1, 0} X Real _ _ inst μ fun (p : X) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (f i p)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (W i)),
+  And
+    (@MeasureTheory.MemLp.{u_1, 0} X Complex inst _ _
+      (fun (p : X) => @Finset.sum.{u_2, 0} I Complex _ (@Finset.univ.{u_2} I _) fun (i : I) => f i p)
+      (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ)
+    (And
+      (@MeasureTheory.Integrable.{0, u_1} Real _ _ X inst
+        (fun (p : X) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _ (@Finset.sum.{u_2, 0} I Complex _ (@Finset.univ.{u_2} I _) fun (i : I) => f i p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        μ)
+      (@LE.le.{0} Real _
+        (@MeasureTheory.integral.{u_1, 0} X Real _ _ inst μ fun (p : X) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _ (@Finset.sum.{u_2, 0} I Complex _ (@Finset.univ.{u_2} I _) fun (i : I) => f i p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (@Fintype.card.{u_2} I _))
+          (@Finset.sum.{u_2, 0} I Real _ (@Finset.univ.{u_2} I _) fun (i : I) => W i))))
+@TheoremT.Continuum.WeakGrushin.mixedYEquationSource_region_L2_bound : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real) {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {r m : Nat}
+  (F S :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+      List.{0} κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hF :
+    ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r →
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+              (@List.length.{0} κ b))
+            m →
+          @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+            (F a b) (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω))
+  (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ)
+  (ha : @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) r)
+  (hab :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+          (@List.length.{0} κ b))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      m)
+  (hS :
+    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _ (S a b)
+      (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω))
+  {K Q W H : Real}
+  (hCoeff :
+    ∀ (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+          (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) →
+        @LE.le.{0} Nat _ (@List.length.{0} κ tb) (@List.length.{0} κ b) →
+          ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+            @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ Ω p →
+              @LE.le.{0} Real _
+                (@abs.{0} Real _ _
+                  (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                    (EuclideanSpace.{0, 0} Real κ) _ _ _ _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                    (@TheoremT.Continuum.WeakGrushin.yDir κ _)
+                    (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv κ _ _ B tb) ya p))
+                K)
+  (hQuad :
+    ∀ (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+          (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) →
+        ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+          @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ Ω p →
+            @LE.le.{0} Real _
+              (@abs.{0} Real _ _
+                (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ)
+                  _ _ _ _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (@TheoremT.Continuum.WeakGrushin.yDir κ _)
+                  (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+                    @HPow.hPow.{0, 0, 0} Real Nat Real _
+                      (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+                        (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                          (EuclideanSpace.{0, 0} Real κ) p))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  ya p))
+              Q)
+  (hBudget :
+    ∀ (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya) r →
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+              (@List.length.{0} κ tb))
+            m →
+          @LE.le.{0} Real _
+            (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+              (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω)
+              fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+              @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (F ya tb p))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            W)
+  (hSource :
+    @LE.le.{0} Real _
+      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (S a b p)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      H),
+  And
+    (@MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+      (@TheoremT.Continuum.WeakGrushin.mixedYEquationSource κ _ _ c B F S a b) (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω))
+    (And
+      (@MeasureTheory.Integrable.{0, 0} Real _ _ (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.WeakGrushin.mixedYEquationSource κ _ _ c B F S a b p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω))
+      (@LE.le.{0} Real _
+        (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+          (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) Ω)
+          fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.WeakGrushin.mixedYEquationSource κ _ _ c B F S a b p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) H)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                        (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a) (@List.length.{0} κ b)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ K (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              W))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ c (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                      (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Nat.cast.{0} Real _ (@Fintype.card.{0} κ _))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ Q (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            W))))
+@TheoremT.Continuum.WeakGrushin.mixedYEquationSource_budget_le_uniform : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (b : List.{0} κ) {m : Nat}
+  (hab :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+          (@List.length.{0} κ b))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      m)
+  (c K Q W H : Real) (hW : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) W),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) H)
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                    (@List.length.{0} κ b)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ K (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          W))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ c (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                  (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Nat.cast.{0} Real _ (@Fintype.card.{0} κ _))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ Q (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        W))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) H)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) m)
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ K (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ c (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Nat.cast.{0} Real _ (@Fintype.card.{0} κ _))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ Q (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+        W))
+'TheoremT.Continuum.WeakGrushin.complex_finite_family_L2_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYEquationSource_region_L2_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYEquationSource_budget_le_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

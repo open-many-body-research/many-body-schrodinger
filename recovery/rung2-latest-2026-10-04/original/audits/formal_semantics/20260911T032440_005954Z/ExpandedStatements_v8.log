@@ -1,0 +1,172 @@
+@TheoremT.Continuum.physicalKSPhysicalSpectatorRadius_rate_bound : ∀ {M A : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A) (T : TheoremT.Continuum.Position)
+  (hT :
+    @LT.lt.{0} Real _ (@Norm.norm.{0} TheoremT.Continuum.Position _ T)
+      (TheoremT.Continuum.physicalKSPhysicalSpectatorRadius M A)),
+  @LT.lt.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+        (TheoremT.Continuum.physicalKSPointwiseRate M A))
+      (@Norm.norm.{0} TheoremT.Continuum.Position _ T))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.physicalKSAnalyticDescent_isometry_invariant_of_slice : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {g : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex} {t0 : TheoremT.Continuum.Position}
+  {M A : Real} (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (h0 : TheoremT.Continuum.PhysicalKSAnalyticDescentOnPhysicalNeighborhood f g t0 M A) (T : TheoremT.Continuum.Position)
+  (hT :
+    @LT.lt.{0} Real _ (@Norm.norm.{0} TheoremT.Continuum.Position _ T)
+      (TheoremT.Continuum.physicalKSPhysicalSpectatorRadius M A))
+  (ha :
+    And
+      (@AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+        (fun (X : TheoremT.Continuum.Position) =>
+          TheoremT.Continuum.physicalKSAnalyticDescentA f t0
+            (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+              Complex
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                Complex.ofReal
+                  (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                    X j))
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              Complex.ofReal
+                (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  T j)))
+        (@Metric.ball.{0} TheoremT.Continuum.Position _ (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _)
+          (@Inv.inv.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+                  (TheoremT.Continuum.physicalKSPointwiseRate M A))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+      (@AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+        (fun (X : TheoremT.Continuum.Position) =>
+          TheoremT.Continuum.physicalKSAnalyticDescentB f t0
+            (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+              Complex
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                Complex.ofReal
+                  (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                    X j))
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              Complex.ofReal
+                (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  T j)))
+        (@Metric.ball.{0} TheoremT.Continuum.Position _ (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _)
+          (@Inv.inv.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+                  (TheoremT.Continuum.physicalKSPointwiseRate M A))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))))
+  (R :
+    @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+      TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+  (hinv :
+    ∀ (X : TheoremT.Continuum.Position),
+      @Membership.mem.{0, 0} TheoremT.Continuum.Position (Set.{0} TheoremT.Continuum.Position) _
+          (@Metric.ball.{0} TheoremT.Continuum.Position _ (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _)
+            (TheoremT.Continuum.physicalKSPhysicalSpatialRadius M A))
+          X →
+        @Eq.{1} Complex
+          (g
+            (@DFunLike.coe.{1, 1, 1}
+              (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+                TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+              TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R X)
+            (@HAdd.hAdd.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+              t0 T))
+          (g X
+            (@HAdd.hAdd.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+              t0 T)))
+  (X : TheoremT.Continuum.Position)
+  (hX :
+    @LT.lt.{0} Real _ (@Norm.norm.{0} TheoremT.Continuum.Position _ X)
+      (TheoremT.Continuum.physicalKSPhysicalSpatialRadius M A)),
+  And
+    (@Eq.{1} Complex
+      (TheoremT.Continuum.physicalKSAnalyticDescentA f t0
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          Complex
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                (@DFunLike.coe.{1, 1, 1}
+                  (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+                    TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+                  TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R
+                  X)
+                j))
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              T j)))
+      (TheoremT.Continuum.physicalKSAnalyticDescentA f t0
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          Complex
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X j))
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              T j))))
+    (@Eq.{1} Complex
+      (TheoremT.Continuum.physicalKSAnalyticDescentB f t0
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          Complex
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                (@DFunLike.coe.{1, 1, 1}
+                  (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+                    TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+                  TheoremT.Continuum.Position (fun (a : TheoremT.Continuum.Position) => TheoremT.Continuum.Position) _ R
+                  X)
+                j))
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              T j)))
+      (TheoremT.Continuum.physicalKSAnalyticDescentB f t0
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          Complex
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X j))
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              T j))))
+'TheoremT.Continuum.physicalKSPhysicalSpectatorRadius_rate_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSAnalyticDescent_isometry_invariant_of_slice' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

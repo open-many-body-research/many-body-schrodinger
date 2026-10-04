@@ -1,0 +1,89 @@
+{
+  "status": "PASS, strict v7, full expanded statement and focused independent source review complete",
+  "timestamp_utc": "2026-09-10T23:57:50.434971+00:00",
+  "module": "FiniteTensorMarginalBound_v1",
+  "source_sha256": "226416351a76486fce22478e77254333d96e5364c6aaf9b34bec5319dcb79ed5",
+  "object_sha256": "f037a7abb50bfc4425cada1605276c7ee92bff96df68dd3e60be46d107d3863b",
+  "frozen_reference": {
+    "relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "manifest": "THEOREM_T_FREEZE_2026-09-09_212604/FREEZE_MANIFEST.json"
+  },
+  "audit_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235616_159761Z/receipt.json",
+  "audit_receipt_sha256": "5eb5a3833c79cfd717cc05bfb8a397166feeb2e1e66eab09e9f6e9842cef38b9",
+  "independent_source_reviewer": "/root/finite_affine_jets",
+  "independent_review_result": "No defect found in exact source: a is a subset of processed s so new i is absent from a; actual lmarginal monotonicity and measurable linearity; powerset insertion counts each subset once; coefficient precedes F, arbitrary ENNReal weights allowed. No derivative estimate assumed beyond the explicit coordinate premise.",
+  "direct_dependencies": [
+    {
+      "module": "Mathlib.MeasureTheory.Integral.Marginal",
+      "source": "formal/.lake/packages/mathlib/Mathlib/MeasureTheory/Integral/Marginal.lean",
+      "source_sha256": "ed65ad316cebed9d781603f96e6e6d3508fc8b580b8fa731e33215fc1ecd11ed",
+      "object": "formal/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/MeasureTheory/Integral/Marginal.olean",
+      "object_sha256": "3af97d9eed7d2be06f2aa45c6cf174bb97dfae5dce5dd7a10a6606742946a4e6"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+      "source": "formal/.lake/packages/mathlib/Mathlib/Algebra/BigOperators/Group/Finset/Powerset.lean",
+      "source_sha256": "83ef256b00eaabc046b2d245e2adc8c1576f7ab1aa25321266acbd7fdf864470",
+      "object": "formal/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset/Powerset.olean",
+      "object_sha256": "ef48c6e94a1e687e30cd1b7eb923703218f48035b6339c1024a9c1014273ee31"
+    },
+    {
+      "module": "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "source": "formal/.lake/packages/mathlib/Mathlib/Algebra/BigOperators/Ring/Finset.lean",
+      "source_sha256": "3260deb025880a9c56b258bc0d9c53106aab2452599141b1e1c8f5bb0f589aa3",
+      "object": "formal/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Ring/Finset.olean",
+      "object_sha256": "41d1b78006dec55714d25c21aa087eb8f053db8d123e0eb8260b410311b57d05"
+    }
+  ],
+  "cache_disclosure": "Existing pinned library object cache reused; this is not a source dependency rebuild.",
+  "original_T02_status": "unverified; no all-order solution regularity claimed",
+  "artifacts": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FiniteTensorMarginalBound_v1.lean",
+      "sha256": "226416351a76486fce22478e77254333d96e5364c6aaf9b34bec5319dcb79ed5"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FiniteTensorMarginalBound_v1.olean",
+      "sha256": "f037a7abb50bfc4425cada1605276c7ee92bff96df68dd3e60be46d107d3863b"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/FINITE_TENSOR_MARGINAL_BOUND_v1.md",
+      "sha256": "7c05ea3edee7eb78459b23036033b3969272755606e60e04c270690a4a208ca7"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235616_159761Z/ExpandedStatements_v7.lean",
+      "sha256": "c1291c603b449417ce7494bcbb0900d140ec8002ea2350180e14abae187c47c8"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235616_159761Z/ExpandedStatements_v7.log",
+      "sha256": "bf099b0602add6f1ba853e61858426530b7a02111a802f77802e73136635f330"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235616_159761Z/ExpandedStatements_v7.olean",
+      "sha256": "aec6cf7d0e45eda4d6f88263d24363b2e23f311aaa438e91521a7211b0240ef3"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235616_159761Z/receipt.json",
+      "sha256": "5eb5a3833c79cfd717cc05bfb8a397166feeb2e1e66eab09e9f6e9842cef38b9"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FiniteTensorMarginalBound_v1-20260910T235513_272093Z.json",
+      "sha256": "53a30456e142b7cd6ff6e2a52d7a7981c0f177beeb8532c8e120ed83de1a36ff"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FiniteTensorMarginalBound_v1-20260910T235513_272093Z.log",
+      "sha256": "dcc6f10ef1ea8ab5b6b530284cf67cbace41b34633ef6dca4f5e7dd25c0eb4ce"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FiniteTensorMarginalBound_v1-20260910T235538_441610Z.json",
+      "sha256": "93809530ccffb779724688fbdcc2a8daf103f6ac2bc7d68bb2e9fdb30ed52609"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FiniteTensorMarginalBound_v1-20260910T235538_441610Z.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

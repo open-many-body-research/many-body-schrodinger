@@ -1,0 +1,93 @@
+{
+  "schema": "formal-unit-checkpoint-v1",
+  "created_utc": "2026-09-10T23:26:13.616728+00:00",
+  "status": "PASS",
+  "evidence_category": "Fully formalized scalar coefficient-absorption inequality with explicit nonnegative-sequence hypotheses",
+  "module_records": [
+    {
+      "module": "GrushinRecurrenceCoefficientAbsorption_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinRecurrenceCoefficientAbsorption_v1.lean",
+      "source_sha256": "4de38985ad0fcfbb4549513e7137a7b385fd044223309cc4289d83556108dd7d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinRecurrenceCoefficientAbsorption_v1.olean",
+      "object_sha256": "53da08c9b47967df11110e9e251a50f89df8853e14f40f51eaee5178658c48ed",
+      "declarations": [
+        "grushin_first_two_le_geometric_sum",
+        "grushin_recurrence_power_coefficient_le",
+        "grushin_recurrence_coefficient_absorption"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compile_receipt": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/GrushinRecurrenceCoefficientAbsorption_v1-20260910T232434_902176Z.json",
+    "sha256": "f3b2e1afe931ff2210e7fd1d9efb774ec7d6fa58910a72be330dd677bcf261af"
+  },
+  "compile_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/GrushinRecurrenceCoefficientAbsorption_v1-20260910T232434_902176Z.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "strict_receipt": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232506_202570Z/receipt.json",
+    "sha256": "35ba721fc6b6623ca7ca7dd24bc5870bce7ec4ad825c3b2674450f0b980bcc1a"
+  },
+  "audit_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232506_202570Z/ExpandedStatements_v7.lean",
+    "sha256": "77e66cbd17c5ccf9672bddb46013decd0a9470c3ed42b6309fbf4c82ac5c8c7a"
+  },
+  "audit_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232506_202570Z/ExpandedStatements_v7.log",
+    "sha256": "757561ed8268fda1295cfe851ff483c6ddb915285f883a7593348ecda5f1f52a"
+  },
+  "audit_object": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232506_202570Z/ExpandedStatements_v7.olean",
+    "sha256": "c56b91191153aec410cbaf2925559333a851c27e58d3100187f8bdf616121371"
+  },
+  "declarations": [
+    "TheoremT.Continuum.grushin_first_two_le_geometric_sum",
+    "TheoremT.Continuum.grushin_recurrence_power_coefficient_le",
+    "TheoremT.Continuum.grushin_recurrence_coefficient_absorption"
+  ],
+  "axiom_reports": {
+    "TheoremT.Continuum.grushin_first_two_le_geometric_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TheoremT.Continuum.grushin_recurrence_power_coefficient_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TheoremT.Continuum.grushin_recurrence_coefficient_absorption": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "trusted_axioms_allowed": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "root_auditor_approval": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/AUDIT_FINAL_STATEMENTS_V7_ROOT_REVIEW_v1.json",
+    "sha256": "681bfa9eaec81ec3db015e1e23a4e73618893d59b5fe65c2f185e5efefba0fb1"
+  },
+  "checks": {
+    "current_source_and_object_match": true,
+    "ordered_expanded_statements_complete": true,
+    "ordered_standard_axiom_reports_complete": true,
+    "zero_printer_errors_and_ellipses": true
+  },
+  "exact_main_statement": "For C,A>=1, S>=0, natural r>=2 and d(q)>=0 for every q<=r, with B=2*C*A: C*(S*A^r+d(r-1)+d(r-2)+sum(j<r) A^(j+1)*d(r-1-j)) <= S*B^(r+1)+sum(j<r) B^(j+1)*d(r-1-j).",
+  "proof_points": [
+    "The j=0 and j=1 terms give d(r-1)+d(r-2)<=A*d(r-1)+A^2*d(r-2), which is bounded by the full sum using r>=2 and nonnegative remaining terms.",
+    "Since 2C>=1 and j+1 is positive, 2C*A^(j+1)<=(2CA)^(j+1). Multiplication by each nonnegative d term and summation preserve the inequality.",
+    "B>=C and B>=A imply C*A^r<=B^(r+1); S>=0 preserves this source comparison."
+  ],
+  "scope": "Pure finite real algebra and order. No assumed normalized recurrence, scalar majorant, differential estimate, derivative identity, executable solver or complexity claim. This supplies a premise for a separate normalization composition.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "preservation": "All prior PASS artifacts remain unchanged. Only this new draft was edited before successful compilation; failed elaboration logs remain separate. Final source/object and strict records are unchanged."
+}

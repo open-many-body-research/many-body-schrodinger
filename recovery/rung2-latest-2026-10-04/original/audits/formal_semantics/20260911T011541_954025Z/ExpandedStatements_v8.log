@@ -1,0 +1,28 @@
+TheoremT.Continuum.WeakGrushin.factorial_add_le_two_pow : ∀ (k r : Nat),
+  @LE.le.{0} Real _ (@Nat.cast.{0} Real _ (Nat.factorial (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k r)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k r))
+        (@Nat.cast.{0} Real _ (Nat.factorial k)))
+      (@Nat.cast.{0} Real _ (Nat.factorial r)))
+@TheoremT.Continuum.WeakGrushin.factorial_reserve_absorption : ∀ {D B : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B) (k r : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ B (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k r)))
+      (@Nat.cast.{0} Real _ (Nat.factorial (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k r))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B) r))
+          (@Nat.cast.{0} Real _ (Nat.factorial r)))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+'TheoremT.Continuum.WeakGrushin.factorial_add_le_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorial_reserve_absorption' depends on axioms: [propext, Classical.choice, Quot.sound]

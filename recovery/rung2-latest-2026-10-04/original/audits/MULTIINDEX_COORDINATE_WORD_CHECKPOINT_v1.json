@@ -1,0 +1,86 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "created_utc": "2026-09-11T02:56:35.198763+00:00",
+  "module_records": [
+    {
+      "module": "MultiindexCoordinateWord_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MultiindexCoordinateWord_v1.lean",
+      "source_sha256": "97ebd808362b7aa8f009a27fc9b5470d11b89ceb582f3873edbaa9570a4c2abe",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MultiindexCoordinateWord_v1.olean",
+      "object_sha256": "bdbf156152c327e2b50347a1050bd9f7d142360dd780574face8e0ca9cecaee5",
+      "declarations": [
+        "multiindex_coordinate_word_exists",
+        "multiindexCoordinateWord",
+        "multiindexCoordinateWord_prod"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/MultiindexCoordinateWord_v1-20260911T025341_924282Z.json",
+      "compiler_receipt_sha256": "19ffcb12a42ee0d2f3ebd9c983585356fb828444a09d487f2ff112ecde4bb62e"
+    },
+    {
+      "module": "MultiindexCoordinateWordCount_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MultiindexCoordinateWordCount_v1.lean",
+      "source_sha256": "e69bdedf8b75818cb9399f73c9359f71d8448d3fb06b20fbfd295b2c125b08ea",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MultiindexCoordinateWordCount_v1.olean",
+      "object_sha256": "91b1357e5d800593a22b29df0aa79e71bda115d6a1a5473083573453b71f51d3",
+      "declarations": [
+        "multiindexCoordinateWord_count"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/MultiindexCoordinateWordCount_v1-20260911T025500_758372Z.json",
+      "compiler_receipt_sha256": "bf282e35df40b0fa019fe448eb68fc1417e8c96f56981a5f5e2e3a85f3aa84a1"
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025357_924491Z/receipt.json",
+      "receipt_sha256": "dd90cbf28bbe166bed13488a64550ab090b5a26052c69934644c7bade6590aff",
+      "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025357_924491Z/ExpandedStatements_v8.log",
+      "expanded_log_sha256": "384206065bd2d47b497a0329e57b51a1b67efaf6e063b9705c18516021442b68"
+    },
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025527_784877Z/receipt.json",
+      "receipt_sha256": "4d26e4579c7ba3268abf2f89bb8cbcdf86cd52f1310c12ff752a743feed72254",
+      "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025527_784877Z/ExpandedStatements_v8.log",
+      "expanded_log_sha256": "bdc9da68daaf2e715349c951bfb4812d9a1cc29a46f0ef38256723f537f3d6cf"
+    }
+  ],
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "For actual alpha : iota -> Nat on a finite coordinate type, multiindexCoordinateWord alpha is a fixed word indexed by Fin(sum_i alpha_i).",
+    "For every real weight, product_j weight(word_j) equals product_i weight_i^(alpha_i).",
+    "With DecidableEq iota for the literal finite filter, the number of j with word_j=i equals alpha_i for every coordinate i."
+  ],
+  "proof": "The existence theorem converts the actual exponent function through Finsupp.equivFunOnFinite.symm and invokes the proved monomial_exponent_word_exists at M=Real. Finsupp full sum/product identities restore zero entries. Classical.choose fixes a representative. The occurrence-count theorem applies the exact product identity to weight two at one coordinate and one elsewhere; equality of the resulting powers of two implies equality of the actual filter cardinality and exponent.",
+  "semantic_checks": [
+    "The length is the literal sum of the actual finite multiindex; no arbitrary length or assumed count enters the result.",
+    "The count of each coordinate is proved, so the chosen word has the advertised multiplicities, beyond merely satisfying a norm bound.",
+    "Empty coordinates and the zero multiindex produce zero length; the product identity uses empty products equal to one. Zero weights and zero exponents are included.",
+    "The count theorem explicitly carries DecidableEq iota to form the finite equality filter; in the intended Fin 3 + Fin d instance this is the ordinary available equality instance."
+  ],
+  "choice_disclosure": "The fixed word uses Classical.choose, has no advertised intrinsic ordering, and is not an executable word-generation algorithm. No bit complexity is claimed.",
+  "review_disclosure": "The author read both complete final sources, all four complete expanded declarations and all axiom reports, and both complete strict receipts. This is an author checkpoint, not an independent review.",
+  "development": "Both modules passed initial compilation and first strict audits. A deprecated Real import warning is retained in the immutable first module. All owned compiler/auditor jobs are terminal.",
+  "limits": [
+    "No derivative operator is defined in these modules; the coordinate derivative consumer is a separate obligation.",
+    "No permutation invariance of iterated derivatives or physical KS identification is asserted here.",
+    "These are prerequisites for the corrected derivative-rate route, not a proof of the exact original D6 estimate.",
+    "Pinned caches reused; no isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New continuation sources and checkpoint; all PASS and historical artifact bytes preserved."
+  }
+}

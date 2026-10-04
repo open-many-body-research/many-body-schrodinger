@@ -1,0 +1,77 @@
+{
+  "status": "PASS_REAL_PAIR_DISTANCE_TRANSVERSE_SIGN_AND_RECONSTRUCTION_ALGEBRA",
+  "created_utc": "2026-09-11T04:10:28.138264+00:00",
+  "evidence_category": "Fully formalized scalar real identities and triangle-input sign theorem.",
+  "source": {
+    "path": "lean/PairDistanceRealAlgebra_v1.lean",
+    "sha256": "ed6beb9ecfff56951e981a0d20fe59238293f87614470f3631472192051bc12c",
+    "bytes": 2692
+  },
+  "object": {
+    "path": "lean/build/PairDistanceRealAlgebra_v1.olean",
+    "sha256": "538557fcb7da371c45699532fe1530e8fe7155020f10f44f49e13289088f39c5",
+    "bytes": 528472
+  },
+  "build_receipt": {
+    "path": "logs/development/PairDistanceRealAlgebra_v1-20260911T040739_077219Z.json",
+    "sha256": "5d3f6816cba2f96099906570b9414e667b0646dd9d34e68f4f3ebf224e7c62de",
+    "bytes": 1762
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T040755_823905Z/receipt.json",
+    "sha256": "4009cbfb88e8e710d42ef3aa464db57fcd13726d448fc35c73e717bc720b32df",
+    "bytes": 4467
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T040755_823905Z/ExpandedStatements_v8.lean",
+    "sha256": "9c1c29ae66b86d27a19a9aa2fd64bd3af27552dcb24bff5abadf4183fa2dde3c",
+    "bytes": 1344
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T040755_823905Z/ExpandedStatements_v8.log",
+    "sha256": "e762f22688946aac6d38311f8fdfd09e6b475dd0ccb5a5c09c0257d15b1ab853",
+    "bytes": 12156
+  },
+  "expanded_object": {
+    "path": "audits/formal_semantics/20260911T040755_823905Z/ExpandedStatements_v8.olean",
+    "sha256": "adf54ffb48439bf3ccad2129962b597065130a7d2b497d8b2f9e57fa66d75e20",
+    "bytes": 1416
+  },
+  "declarations": [
+    "TheoremT.Continuum.pair_distance_heron_factorization",
+    "TheoremT.Continuum.pair_distance_heron_nonneg",
+    "TheoremT.Continuum.pair_distance_axis_real_quotient_identity",
+    "TheoremT.Continuum.pair_distance_real_transverse_nonneg",
+    "TheoremT.Continuum.pair_distance_real_radius_identities",
+    "TheoremT.Continuum.pair_distance_real_reconstruction"
+  ],
+  "exact_results": [
+    "The exact polynomial factorization 4*q*u^2-(r^2-s^2)^2=((r+s)^2-u^2)*(u^2-(r-s)^2), with q=(r^2+s^2)/2-u^2/4, holds for all real r,s,u.",
+    "For nonnegative r,s,u with abs(r-s)<=u<=r+s, both factors on the right are nonnegative.",
+    "If tau>0 and tau^2=q, the literal z=(r^2-s^2)/(2*tau) satisfies w=u^2-z^2>=0. Separate q>0 input is unnecessary because it follows from these tau premises.",
+    "For any tau!=0 with tau^2=q, tau^2+u^2/4+tau*z=r^2 and tau^2+u^2/4-tau*z=s^2.",
+    "Under the same last two premises, w/4+(tau+z/2)^2=r^2, w/4+(tau-z/2)^2=s^2, and w+z^2=u^2."
+  ],
+  "proof_summary": "The sign proof squares the true triangle inequalities, applies the exact factorization, uses the literal quotient identity tau*z=(r^2-s^2)/2, and cancels the strictly positive factor 4*tau^2. Radius and reconstruction statements are ring equalities after the same justified quotient cancellation.",
+  "verification": "All six final source declarations compile; entire strict v8 expanded statement and axiom output read. Exactly the standard three foundational axioms occur, with no source placeholders, printer failures, ellipses or source/object mutation. Two retained unused-hypothesis lints are harmless: r>=0 and s>=0 are redundant in the Heron sign proof.",
+  "independent_review": "A separate common_constants_check agent read all proof bodies and reported no mathematical defect; its immutable focused review sidecar is supplemental and will be linked by the consuming checkpoint when finalized.",
+  "scope_limits": [
+    "No square root is selected here; tau is an arbitrary supplied nonzero/positive real satisfying its explicit polynomial square relation.",
+    "Only scalar square identities are proved here. A physical Position representative, actual norms, real/complex branch agreement, and wavefunction-value composition are separate obligations.",
+    "Degenerate triangle boundaries are permitted. The tau=0 case is excluded where division by tau is used."
+  ],
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned Lean 4.34.0-rc2 and Mathlib dependency objects reused; no isolated source rebuild performed.",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "historical_target_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "historical_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "policy": "All prior frozen and PASS artifacts preserved. Only new continuation source and verification records created."
+  },
+  "next": "Apply these exact scalar results to the actual positive real square root and constructed Position representative, then derive actual physical distance and wavefunction identities."
+}

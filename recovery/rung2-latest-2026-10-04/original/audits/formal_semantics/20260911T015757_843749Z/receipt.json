@@ -1,0 +1,72 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T015757_843749Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015757_843749Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015757_843749Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 7.8124795,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "cb8702a68717763de7ac2e3e45cf8448f3ad5d7aa694cd8a46155a346128c381",
+  "audit_log_sha256": "7cdcc7597710d5505f6f7789e980efac36f896b704aea0bf12f3fae5273da056",
+  "module_records": [
+    {
+      "module": "ComplexPolynomialRealSlice_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ComplexPolynomialRealSlice_v1.lean",
+      "source_sha256": "0f2f3188770b32a6fd8b6daeb1c12f335186cb147b3c02eaf8ce570d9ddf093e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ComplexPolynomialRealSlice_v1.olean",
+      "object_sha256": "edfaf964eb494fa2e5486266e9477aa22aa0d1a341bf7ba4121936398e085f67",
+      "declarations": [
+        "complexPolynomial_eq_of_real_eval_eq"
+      ],
+      "forbidden_source_tokens": [
+        "admit"
+      ],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSSpinorForwardPolynomial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpinorForwardPolynomial_v1.lean",
+      "source_sha256": "a1ea194860fc8aec8c75141f14cf26f6d153ecef356643cac8ec2250869790ae",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSSpinorForwardPolynomial_v1.olean",
+      "object_sha256": "584e2fc522fa8c3a783cd724963aeef738156ea5001623c5c2219de8fc4cd262",
+      "declarations": [
+        "ksSpinorForwardPolynomial",
+        "ksSpinorPolynomialToReal",
+        "ksSpinorForwardPolynomial_physical_eval",
+        "ksSpinorPolynomialToReal_physical_eval",
+        "ksPolynomialCircleAction_physical_eval"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.complexPolynomial_eq_of_real_eval_eq: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpinorForwardPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpinorPolynomialToReal: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpinorForwardPolynomial_physical_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpinorPolynomialToReal_physical_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksPolynomialCircleAction_physical_eval: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.complexPolynomial_eq_of_real_eval_eq",
+    "TheoremT.Continuum.ksSpinorForwardPolynomial",
+    "TheoremT.Continuum.ksSpinorPolynomialToReal",
+    "TheoremT.Continuum.ksSpinorForwardPolynomial_physical_eval",
+    "TheoremT.Continuum.ksSpinorPolynomialToReal_physical_eval",
+    "TheoremT.Continuum.ksPolynomialCircleAction_physical_eval"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

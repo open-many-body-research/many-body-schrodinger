@@ -1,0 +1,63 @@
+{
+  "timestamp_utc": "2026-09-11T00:20:21.161900+00:00",
+  "status": "FORMAL_ACTUAL_INNER_WEIGHTED_NORM_COMPARISON",
+  "modules": 3,
+  "declarations": 4,
+  "exact_result": "Actual inner weighted norm of a shifted genuine weak family is at most 498*S^2*(4*R^2+2*R+2+2/c)*||H|| for a genuine compact weak H2 cutoff with actual Grushin output H and a plateau on the inner open region.",
+  "sources": {
+    "WeakFactorialLocalFamilyMatch_v1.lean": "e16a9fb982c59d5f2c1ae413108e8268e4444296c66b3358b16cd76c3094d37b",
+    "WeakFactorialLocalOuterBound_v1.lean": "83f467df8588b1dc123f46da952df3939bbfa4c6e6488a90eec2cb9abc858b46",
+    "WeakFactorialPlateauOuterBound_v1.lean": "b85609eae24fa4a8daa56ea49a9352e9dbec7300dcf28c6073fb7680d3548c58"
+  },
+  "objects": {
+    "WeakFactorialLocalFamilyMatch_v1.olean": "9c2afa7282f0fbc82a6e0f0c16efe672f5089109269a77e17ea0945e4191d061",
+    "WeakFactorialLocalOuterBound_v1.olean": "46702c866be5d02f339b2cf52707d73d7bd11fe8952948a0b98e7081eb5a6bef",
+    "WeakFactorialPlateauOuterBound_v1.olean": "d512f4a3a66366fded4a19d109ad01f52f0393c538a4840a97338e6e9f9a6d28"
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T001802_240890Z/receipt.json",
+    "sha256": "427f0406d65663b0a721fadb5dc4e3b747e6a8d783f2112be751d5634f5efa82"
+  },
+  "independent_review": {
+    "path": "audits/WEAK_FACTORIAL_PLATEAU_OUTER_BOUND_REVIEW_v1.json",
+    "sha256": "344759ad942302af8d27a9eb24668160aaaa9ab56e73af0eaad39824f15e75d1"
+  },
+  "manuscript": {
+    "path": "paper/WEAK_FACTORIAL_PLATEAU_OUTER_BOUND_FORMAL_v1.md",
+    "sha256": "9b3bcdfb612196e0a31ec883e47bda5e0a90f5306dc1638887af6114e3264439"
+  },
+  "dependency_checkpoints": [
+    {
+      "path": "audits/LP_SUBMEASURE_REPRESENTATIVE_BOUND_CHECKPOINT_v1.json",
+      "sha256": "48d21e776c290d0fd33d2dd165ae4ce2d29c530365a2750c8387fb31d7c0f19d"
+    },
+    {
+      "path": "audits/COMPACT_WEAK_FACTORIAL_OUTER_GRAPH_CHECKPOINT_v1.json",
+      "sha256": "1dfbb028b157e993319dd84b2dbfc21a5c2e4af868e360955329da942501e11b"
+    },
+    {
+      "path": "audits/COMPACT_WEAK_GRUSHIN_OUTER_MAXIMAL_CHECKPOINT_v1.json",
+      "sha256": "8999f50f49acc23b27a9a5d09e5358435a7718c5b4cd2dbc472d95dfa60b46b0"
+    }
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "environment": "Lean 4.34.0-rc2; approved strict v7; pinned dependency objects reused, no isolated source rebuild.",
+  "remaining_application_inputs": [
+    "Actual global compact cutoff H2 jets and output PDE",
+    "Genuine shifted natural local weak chains through order two",
+    "Open inner plateau and actual slab/radial support bounds"
+  ],
+  "next": "Compose actual mixed cutoff source/profile output with this comparison and finite profile maximum for R18.",
+  "preserved_failed_attempt": "One failed definitional unfolding in the final wrapper; successful theorem statement unchanged.",
+  "frozen": {
+    "path": "RWA_REPORT.md",
+    "sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "snapshot": "THEOREM_T_FREEZE_2026-09-09_212604/"
+  }
+}

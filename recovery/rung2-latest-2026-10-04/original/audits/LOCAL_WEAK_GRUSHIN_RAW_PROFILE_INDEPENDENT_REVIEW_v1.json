@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-09-11T00:28:49.284784+00:00",
+  "status": "NO_DEFECT_FOUND_IN_RAW_PDE_PROFILE_ENDPOINT",
+  "reviewer": "compact_h2_density independent exact source and complete final expanded-statement review",
+  "source": {
+    "path": "lean/LocalWeakGrushinRawProfileBound_v1.lean",
+    "sha256": "caf9204af808d9daa36381ad73d26294353bffd59a0ff1774da9228a455c4691"
+  },
+  "existing_receipt": {
+    "path": "audits/formal_semantics/20260911T002727_778375Z/receipt.json",
+    "sha256": "3644cf5f0daed033ba7c3e43366774cacc25912c570548999c5913391d27bdcb"
+  },
+  "full_log_sha256": "c6e8ca9c2d7980ec5a3b207f706e28417a64217cd0e828c4d9a512b1748429a1",
+  "findings": [
+    "Nested boxes are valid: rho>0, rho<bY,bT and bY<aY,bT<aT ensure positive inner and outer widths; the closed outer box lies in the original open PDE domain.",
+    "One actual raw derivative family F is constructed before all finite orders and all final r. All higher weak jets and qualitative finite budgets are conclusions from local_smooth_weak_grushin_allOrder_family applied to the original weak equation and raw local L2 solution.",
+    "F00=f is an exact function equality. It transfers the original weak equation and the supplied H12 budget. Existing local weak-family uniqueness transfers that budget to the independently constructed F, so no assumed cross-family norm identification is hidden.",
+    "Analytic bounds apply to known potential/source data on the intermediate box. Both use the actual qualified physical productCoordinateDirection. No source is set to zero.",
+    "The final formula uses bY and rho, not the larger aY, in the recurrence and base constants. All constants are fixed before r.",
+    "The conclusion is actual weighted L2 membership plus the displayed finite profile inequality on the rho-shrunk intermediate box. It does not claim a pointwise estimate, classical smooth representative or global weak derivatives outside that box.",
+    "No hreg, all-order solution norm hypothesis, supplied recurrence, supplied monotonicity or supplied base-profile bound remains among the theorem inputs. One genuine finite H12 budget remains explicit, and its exact definition supplies ordinary weak derivatives through order twelve.",
+    "The complete final type and standard-only axiom report match the source; no printer errors."
+  ],
+  "scope": [
+    "This formal endpoint still assumes analytic coefficient/source budgets and one finite H12 budget. Their physical verification/composition remains separate.",
+    "The bound is exactly 2*B*(F0+H0)*(2*B*(r+1)/rho)^r with C the defined recurrence constant, H0=498*max(1,2*bY)^2*sqrt(W), B=2*C*A.",
+    "No physical pointwise KS descent, approximation theorem, full Theorem T or executable solver is established by this endpoint."
+  ],
+  "actions": "Read-only root-source review; no edits, rebuild or repeat audit."
+}

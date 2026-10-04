@@ -1,0 +1,180 @@
+{
+  "status": "PASS_EXPLICIT_CORRECTED_JOINT_MIXED_FACTORIAL_BOUNDS",
+  "created_utc": "2026-09-11T03:04:34.514721+00:00",
+  "evidence_category": "Fully formalized conditional actual polynomial-series and prescribed KS-family theorem",
+  "strongest_exact_result": "For actual homogeneous A_m,gamma with coefficient L1 <= M D^m S^sum(gamma), M>=0,D>0,S>0, the actual complex mixed multiindex derivative of the original pair-index sum obeys 2^(d+1) M [4(3+d)D]^sum(alpha) [4(3+d)S]^sum(beta) (product alpha_i!)(product beta_i!) whenever D norm(X)<=1/4 and S norm(s)<=1/4. The multiindex derivative is actual iterated Frechet differentiation on a fixed finite word whose coordinate occurrence counts equal the supplied exponents. For prescribed KS input with source coefficient bound M b^(2m)S^sum(gamma), output A/B satisfy this with D=32b^2, and B has the extra amplitude factor D.",
+  "modules": [
+    {
+      "module": "HomogeneousSpectatorSeriesDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorSeriesDerivative_v1.lean",
+      "source_sha256": "bcc1438c88ee86675073f76d348014d4476a470982fe29521ceda24d581fcdb1",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorSeriesDerivative_v1.olean",
+      "object_sha256": "b31b82cdcc66f8d16caac5149d0db5a973224f1327381e82fcd0ca20fccac7d5",
+      "declarations": [
+        "polynomialCoeffL1_groupedHomogeneousSpectatorPolynomial_coarse",
+        "homogeneousSpectatorSum_eventuallyEq_grouped",
+        "homogeneous_spectator_series_quarter_domain_factorial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousSpectatorNormalizedDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorNormalizedDerivative_v1.lean",
+      "source_sha256": "c4ed48a7d3c7371555203bc87fd7f1f96fc78457a9fede84a36023a32eed0d0e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorNormalizedDerivative_v1.olean",
+      "object_sha256": "e68bbe504cc27f60220852de5b1afe84200197c32e1720afb40e894e06b7f0b9",
+      "declarations": [
+        "homogeneousSpectatorSum_normalized_eq",
+        "polynomialCoeffL1_normalizedHomogeneousSpectatorFamily",
+        "spectatorScalingMap_norm_le_of_blocks",
+        "homogeneous_spectator_normalized_quarter_domain_factorial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousSpectatorCoordinateDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorCoordinateDerivative_v1.lean",
+      "source_sha256": "bc449453df04844584d4750b40258b33e604bdd46532b7bb1852d21c9c0ace86",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorCoordinateDerivative_v1.olean",
+      "object_sha256": "6b54f8b336e71bb18d62f5a6849709c30bdc8419de5d1a90c023bd3ab16ecc79",
+      "declarations": [
+        "homogeneous_spectator_coordinate_word_factorial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousSpectatorMultiindexDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorMultiindexDerivative_v1.lean",
+      "source_sha256": "81b77d7e8689fb4e149ead2efa5e88506cae11ab678a6a527871af52634bf293",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorMultiindexDerivative_v1.olean",
+      "object_sha256": "8dc4b77ea306fee645d58458f9ae8237d7e3f8cdc896f1f38577273692c1587d",
+      "declarations": [
+        "complexMultiindexDeriv",
+        "homogeneous_spectator_multiindex_factorial_bound",
+        "homogeneous_spectator_mixed_multiindex_factorial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSRealSpectatorSeriesDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRealSpectatorSeriesDerivative_v1.lean",
+      "source_sha256": "bf14f868ed0dde2984002d144ed7b3fe8d6267c601ecde427cf02d3de56e8d2f",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSRealSpectatorSeriesDerivative_v1.olean",
+      "object_sha256": "29163bdddbd6bd8d1d97c3af714b12a50b1c72f106ba1e1ad6e0e2fd9a1bce29",
+      "declarations": [
+        "ks_real_spectator_series_mixed_factorial_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024836_849706Z/receipt.json",
+        "sha256": "c1099772a39923f0b0c33974284453fc48a040f5a57fac3bbefac498b40f9da4"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024836_849706Z/ExpandedStatements_v8.log",
+        "sha256": "3aeaf4f054cf6f169a1cf05d46d10a2970c72ee11ccc43f7718e58423a553487"
+      },
+      "declaration_count": 3,
+      "axioms": [
+        "TheoremT.Continuum.polynomialCoeffL1_groupedHomogeneousSpectatorPolynomial_coarse: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.homogeneousSpectatorSum_eventuallyEq_grouped: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.homogeneous_spectator_series_quarter_domain_factorial_bound: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    },
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024954_786530Z/receipt.json",
+        "sha256": "058eb13d1ef04aab2af1920c064afefbc86bb09fd2a3e54882ecf0636643e9ad"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024954_786530Z/ExpandedStatements_v8.log",
+        "sha256": "64cb3ce37aa3ba7d708dcb47a0922d33f927c86a608f297d755c4373fa4b4019"
+      },
+      "declaration_count": 4,
+      "axioms": [
+        "TheoremT.Continuum.homogeneousSpectatorSum_normalized_eq: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.polynomialCoeffL1_normalizedHomogeneousSpectatorFamily: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.spectatorScalingMap_norm_le_of_blocks: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.homogeneous_spectator_normalized_quarter_domain_factorial_bound: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    },
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025859_823277Z/receipt.json",
+        "sha256": "7ff12ca316036e3ed82fbba3a226685b5259371f3958322ae90d49258a783709"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025859_823277Z/ExpandedStatements_v8.log",
+        "sha256": "f30c9eef758a3a2f4b6003877c57b5bca536fd4b6101f6ae0dbe5e19e46347df"
+      },
+      "declaration_count": 5,
+      "axioms": [
+        "TheoremT.Continuum.homogeneous_spectator_coordinate_word_factorial_bound: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.complexMultiindexDeriv: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.homogeneous_spectator_multiindex_factorial_bound: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.homogeneous_spectator_mixed_multiindex_factorial_bound: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.ks_real_spectator_series_mixed_factorial_bounds: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    }
+  ],
+  "declaration_count": 12,
+  "dependencies_and_independent_review": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_MIXED_DERIVATIVE_FOCUSED_REVIEW_v1.json",
+      "sha256": "7eececdc2aeb4bba01c4d5420f1e5b4efd60d12494e5631418c795f9d4eaa3e2"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_SERIES_DERIVATIVE_FOCUSED_REVIEW_v1.json",
+      "sha256": "f003400c3a26ce9f292b71958924f8811aa53a848c5f4cb0b8ad695edffd7b29"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_JOINT_ANALYTIC_CHECKPOINT_v1.json",
+      "sha256": "1ba2900ba9e7c6a498031dfec33e24d3f91b2442cd0d18aab108b2b8ce47d65d"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/SPECTATOR_SCALING_DERIVATIVE_WORD_CHECKPOINT_v1.json",
+      "sha256": "fa395a02a176024dc0d9b8744a536dea925d7733f79370b8b19d272dac7f36e3"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/MULTIINDEX_FACTORIAL_DIMENSION_BOUND_CHECKPOINT_v1.json",
+      "sha256": "7e7c2603a28f25b531a7d08fe97e4e268b66968073369475a0f7e468e277408c"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/MULTIINDEX_COORDINATE_WORD_CHECKPOINT_v1.json",
+      "sha256": "0e5a957fc05ea72f4714feb4f31c787d628d26a7e62327bbef7c150658611e39"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_REAL_SPECTATOR_SERIES_DESCENT_CHECKPOINT_v1.json",
+      "sha256": "6473920122c87249291ffaba58b9e653907856a2747edeefc027f9cea9e7a1a5"
+    }
+  ],
+  "mathematical_change": "The exact binomial total-degree count is coarsened only for the derivative bound. Literal inverse block normalization and the local continuous-linear chain rule retain D/S separately for every coordinate direction. The finite multinomial theorem then converts total factorial to true coordinate factorial products with explicit dimension loss.",
+  "review": "All final primary source bodies, twelve complete expanded declarations and axioms read by author. Independent focused review covers the same primary statements and direct linear-scaling/multiindex prerequisites. Final source/object hashes rechecked.",
+  "limits": [
+    "The original sharper D6 constant is not established by this corrected bound. The separate full analyticity radius remains proved and unchanged.",
+    "The quantitative derivative theorem requires positive D,S; the earlier analyticity and convergence theorems also cover zero rates.",
+    "No physical input identification, real restriction, numerical solver or complexity claim is made by these modules. Physical input and real derivative consumers are active next.",
+    "A finite word is selected with Classical.choose; no executable enumeration or numerical output is claimed."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "next_active": "Actual physical nuclear/pair A/B derivative bounds and exact transfer to real-coordinate derivatives.",
+  "preservation": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

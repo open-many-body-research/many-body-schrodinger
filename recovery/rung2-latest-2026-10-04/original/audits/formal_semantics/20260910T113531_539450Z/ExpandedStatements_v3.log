@@ -1,0 +1,129 @@
+@TheoremT.Continuum.scalar_coulomb_nuclear_KS_pullback_regular : ∀ {N : Nat}
+  (hN : @LT.lt.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 0) _) N) {Z E : Real}
+  {f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          _)
+        _ (TheoremT.Continuum.SpatialL2 N) x}
+  (hg :
+    TheoremT.Continuum.scalarHamiltonianGraph N Z f
+      (@HSMul.hSMul.{0, 0, 0} Complex
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              _)
+            _ (TheoremT.Continuum.SpatialL2 N) x)
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              _)
+            _ (TheoremT.Continuum.SpatialL2 N) x)
+        _ (Complex.ofReal E) f)),
+  @Exists.{1} (TheoremT.Continuum.Configuration N → Complex) fun (u : TheoremT.Continuum.Configuration N → Complex) =>
+    And (@LocallyLipschitz.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _ u)
+      (And
+        (@Filter.EventuallyEq.{0, 0} (TheoremT.Continuum.Configuration N) Complex
+          (@MeasureTheory.ae.{0, 0} (TheoremT.Continuum.Configuration N)
+            (@MeasureTheory.Measure.{0} (TheoremT.Continuum.Configuration N) _) _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (TheoremT.Continuum.Configuration N) Complex _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _) _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (TheoremT.Continuum.Configuration N) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (TheoremT.Continuum.Configuration N) _) _
+                    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                  x)
+              f))
+          u)
+        (∀ (i : Fin N),
+          And
+            (@LocallyLipschitz.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Complex _ _
+              (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace N i) (TheoremT.Continuum.Configuration N)
+                Complex u (@TheoremT.Continuum.nuclearKSLift N i)))
+            (And
+              (∀ (q : @TheoremT.Continuum.NuclearKSSpace N i),
+                @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (u (@TheoremT.Continuum.nuclearKSLift N i q)))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.coulombMoserBoundCoefficient N Z E)
+                    (@Norm.norm.{0}
+                      (@Subtype.{1}
+                        (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                        fun
+                          (x :
+                            @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                              (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+                        @Membership.mem.{0, 0}
+                          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                          (@AddSubgroup.{0}
+                            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                              (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                            _)
+                          _ (TheoremT.Continuum.SpatialL2 N) x)
+                      _ f)))
+              (And
+                (@MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _) _ _
+                  (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace N i)
+                    (TheoremT.Continuum.Configuration N) Complex u (@TheoremT.Continuum.nuclearKSLift N i))
+                  (@Top.top.{0} ENNReal _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _))
+                (∀ (S : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)),
+                  @IsCompact.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _ S →
+                    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _) _ _
+                      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace N i)
+                        (TheoremT.Continuum.Configuration N) Complex u (@TheoremT.Continuum.nuclearKSLift N i))
+                      (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.Measure.restrict.{0} (@TheoremT.Continuum.NuclearKSSpace N i)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _) S))))))
+'TheoremT.Continuum.scalar_coulomb_nuclear_KS_pullback_regular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

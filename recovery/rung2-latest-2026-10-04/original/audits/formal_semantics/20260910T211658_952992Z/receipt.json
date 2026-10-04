@@ -1,0 +1,87 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "ca3fa65e7331f8b46f82edbee9091a6f8c442c03321052a43ab1923d96b414d6",
+  "timestamp_utc": "20260910T211658_952992Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211658_952992Z/ExpandedStatements_v5.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211658_952992Z/ExpandedStatements_v5.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 4.431466792,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "f75b3cc9c22189af1b5ce81ef5edc83e0621fb2fb1d3bf685b9ec6e9d2f81e09",
+  "audit_log_sha256": "55c9f2a5796b76d56aff805e4c127402089d1d947da9f2aa484da3b5f11809d8",
+  "module_records": [
+    {
+      "module": "MixedPotentialWordProduct_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MixedPotentialWordProduct_v1.lean",
+      "source_sha256": "fa61d7f63f5140c6a69d5d38235784562ca1d40a8ef0058c22beffe8a781e57e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MixedPotentialWordProduct_v1.olean",
+      "object_sha256": "316cdc0564e3e858997a79f50786c298079fdeece70ca0f9961d20cc4746cd49",
+      "declarations": [
+        "mixedPotentialWordProduct",
+        "mixedPotentialWordProduct_nil",
+        "mixedPotentialWordProduct_locallyL2",
+        "mixedPotentialWordProduct_localY"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "MixedYEquationSource_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MixedYEquationSource_v1.lean",
+      "source_sha256": "8f445b599b14c3a79100808edc2289c5f9d9bddcaf17106c649d51c98851be5e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MixedYEquationSource_v1.olean",
+      "object_sha256": "2bc55bee56a3e4e28d8fa89df04e3f4f429f3e40d9a36fcee791f9e91ab40848",
+      "declarations": [
+        "mixedYEquationSource",
+        "mixedYEquationSource_locallyL2",
+        "mixedYEquationSource_localY"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "MixedTriangularYGainStep_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MixedTriangularYGainStep_v1.lean",
+      "source_sha256": "02dcddb4851e94d0791458ce655d7d5c37c07773d91e8d1445ae13aa7ab9fc88",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MixedTriangularYGainStep_v1.olean",
+      "object_sha256": "f2986a61c9f134ca387e698efc2d7f4292eb11989f8978cbe78916d630dc435e",
+      "declarations": [
+        "mixed_triangular_y_gain_step"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_nil: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_locallyL2: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_localY: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedYEquationSource: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedYEquationSource_locallyL2: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedYEquationSource_localY: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixed_triangular_y_gain_step: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct",
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_nil",
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_locallyL2",
+    "TheoremT.Continuum.WeakGrushin.mixedPotentialWordProduct_localY",
+    "TheoremT.Continuum.WeakGrushin.mixedYEquationSource",
+    "TheoremT.Continuum.WeakGrushin.mixedYEquationSource_locallyL2",
+    "TheoremT.Continuum.WeakGrushin.mixedYEquationSource_localY",
+    "TheoremT.Continuum.WeakGrushin.mixed_triangular_y_gain_step"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0
+}

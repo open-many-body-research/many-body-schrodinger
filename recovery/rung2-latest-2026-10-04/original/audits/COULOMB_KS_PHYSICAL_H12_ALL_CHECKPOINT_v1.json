@@ -1,0 +1,79 @@
+{
+  "timestamp_utc": "2026-09-10T21:59:48.407424+00:00",
+  "status": "FORMAL_BOTH_NUCLEAR_PHYSICAL_SCALAR_H12_INITIALIZATION",
+  "modules": 3,
+  "declarations": 12,
+  "sources": {
+    "CoulombKSPhysicalH12DataAll_v1.lean": "4d590c6dc6786a16ffea80283e14778a1067588418d964266492a8006175c672",
+    "CoulombKSPhysicalH12All_v1.lean": "c7f344e27dd2a3afd2b2e99783f599a716d31bb349136df0068cd4c98b899c3c",
+    "CoulombKSPhysicalH12MultiIndexAll_v1.lean": "a31272408f50efb410485aabb57b4dcc3604a96ae5e97ef9c4d31364fdd3975f"
+  },
+  "objects": {
+    "CoulombKSPhysicalH12DataAll_v1.olean": "954d1952b8a3d6e1067041738dfa13faff2988d9f769acd7560371d9a5aa06f9",
+    "CoulombKSPhysicalH12All_v1.olean": "a18314a9be8c3aeb0a6420178b7e088991f3ca96430e9db42d82d32a0ea66b43",
+    "CoulombKSPhysicalH12MultiIndexAll_v1.olean": "e179347451668789df0c71ac00a401f623ec997d89517b77c283a0692d4f2c52"
+  },
+  "receipt": {
+    "path": "audits/formal_semantics/20260910T215819_576309Z/receipt.json",
+    "sha256": "4f05be1c48817eba77103be0088f5abd54d66736ad815ee74165e376e178da31"
+  },
+  "review": {
+    "path": "audits/COULOMB_KS_PHYSICAL_H12_ALL_REVIEW_v1.md",
+    "sha256": "ee1d2da613a8f63ded02a72d0be50b6c6b877934a4314836344671808ad32618"
+  },
+  "manuscript": {
+    "path": "paper/COULOMB_KS_PHYSICAL_H12_ALL_FORMAL_v1.md",
+    "sha256": "3763a6fa1ae08bf62d2bad7470a3a973df4f8d2968a7810b84ea4c009782b7e5"
+  },
+  "dependency_evidence": [
+    {
+      "path": "audits/COULOMB_KS_PHYSICAL_H12_CHECKPOINT_v1.json",
+      "sha256": "9b3301a305ad5e1765d1b5dac3f813c26236c037c2c9b27b7d843424bc2fab73"
+    },
+    {
+      "path": "lean/KSCommonAnnulusPatchAll_v1.lean",
+      "sha256": "ce02a19d02b30cf0fb0a444e311667a45c5ac113f0f327a4f147b051b7c2d1fe"
+    },
+    {
+      "path": "lean/PhysicalCoordinateMultiIndexWeakH12_v1.lean",
+      "sha256": "bd416ea4f53c844d5762bde60e05ef2c0a03b16cc9f716d0b89472cf5b360ec9"
+    }
+  ],
+  "exact_result": "For either selected nuclear electron, actual scalar graph plus continuous AE locally Lipschitz representative gives physical coordinate weak H12 and actual 50388-member multiindex family with summed squared L2 bound, uniform in unit center and allowed scale.",
+  "constants": "KT,KY,QY may depend on fixed i,Z,E; selected before t0,f,g,L,R,epsilon. The explicit recurrence uses actual volume(K_i). Numeric cutoff derivative bounds are 96 and 14016.",
+  "hypotheses_retained": [
+    "actual scalar Coulomb eigen-graph",
+    "continuous AE representative",
+    "local Lipschitz bound",
+    "0<epsilon<=min(1,R/4)"
+  ],
+  "discharged": [
+    "all selected nuclear chart domains",
+    "center-independent fixed-annulus coefficient scope",
+    "actual product-volume budgets",
+    "exact physical T12/Y5 schedule",
+    "numeric-cutoff physical multiindex extraction"
+  ],
+  "not_claimed": [
+    "same constants across both i",
+    "construction of eigenfunction or Lipschitz bound",
+    "all-order/factorial bound",
+    "executable numerical coefficient bound",
+    "full Theorem T",
+    "novelty"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "environment": "Lean4.34.0-rc2; exact compilation and joint strict v6 audit passed; pinned object caches reused, no isolated source rebuild.",
+  "next": "Root integrates finite common amplitude/spin data and continues reduced R01/R02 factorial frontier.",
+  "frozen": {
+    "path": "RWA_REPORT.md",
+    "sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "snapshot": "THEOREM_T_FREEZE_2026-09-09_212604/"
+  }
+}

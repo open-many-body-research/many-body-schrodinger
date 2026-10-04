@@ -1,0 +1,82 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T013412_666154Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013412_666154Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013412_666154Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 19.288143249999997,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "10aa6be9813d67a51477d60deca37e48eb9cae3fc7068f847796e073e43d1e1f",
+  "audit_log_sha256": "3a4a5548c1a25456b8a91194c22a676dadf610f7d2c880132b99eb06318b42d3",
+  "module_records": [
+    {
+      "module": "KSBalancedMonomialPairingSize_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedMonomialPairingSize_v1.lean",
+      "source_sha256": "43cab31e58ecda8bf85f4b2df3ff4b0d39ad051b15950628941ef38fcda6f7aa",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSBalancedMonomialPairingSize_v1.olean",
+      "object_sha256": "9c6b28ed3d620d7ae85b834aacd61cdd9d4b50653efadc94d309fcb2a045cdb4",
+      "declarations": [
+        "ksBalancedMonomialPairing_total",
+        "ksBalancedMonomialPairing_four_total",
+        "ksBalancedMonomialPairing_entry_le_total"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSBalancedDescentPolynomial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedDescentPolynomial_v1.lean",
+      "source_sha256": "655996be637e67e501b3abbf5d750e8fe83e97c4df351ff62747a7fbf1401557",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSBalancedDescentPolynomial_v1.olean",
+      "object_sha256": "1a37068a05fea7a1bf5da57d7aab4b3116ee1d3ffb889ae29bd6114ef90fb023",
+      "declarations": [
+        "ksDescentQuadraticPolynomial",
+        "ksDescentQuadraticPolynomial_homogeneous",
+        "ksDescentQuadraticPolynomial_eval",
+        "ksBalancedDescentPolynomial",
+        "ksBalancedDescentPolynomial_homogeneous",
+        "ksBalancedDescentPolynomial_eval",
+        "ksSpinor_balanced_descent_polynomial"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.ksBalancedMonomialPairing_total: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksBalancedMonomialPairing_four_total: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksBalancedMonomialPairing_entry_le_total: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksDescentQuadraticPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksDescentQuadraticPolynomial_homogeneous: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksDescentQuadraticPolynomial_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksBalancedDescentPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksBalancedDescentPolynomial_homogeneous: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksBalancedDescentPolynomial_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpinor_balanced_descent_polynomial: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.ksBalancedMonomialPairing_total",
+    "TheoremT.Continuum.ksBalancedMonomialPairing_four_total",
+    "TheoremT.Continuum.ksBalancedMonomialPairing_entry_le_total",
+    "TheoremT.Continuum.ksDescentQuadraticPolynomial",
+    "TheoremT.Continuum.ksDescentQuadraticPolynomial_homogeneous",
+    "TheoremT.Continuum.ksDescentQuadraticPolynomial_eval",
+    "TheoremT.Continuum.ksBalancedDescentPolynomial",
+    "TheoremT.Continuum.ksBalancedDescentPolynomial_homogeneous",
+    "TheoremT.Continuum.ksBalancedDescentPolynomial_eval",
+    "TheoremT.Continuum.ksSpinor_balanced_descent_polynomial"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

@@ -1,0 +1,25 @@
+@TheoremT.Continuum.multiindex_coordinate_word_exists.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] (α : ι → Nat),
+  @Exists.{u_1 + 1} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i) → ι)
+    fun (w : Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i) → ι) =>
+    ∀ (weight : ι → Real),
+      @Eq.{1} Real
+        (@Finset.prod.{0, 0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) Real _
+          (@Finset.univ.{0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) _)
+          fun (j : Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) => weight (w j))
+        (@Finset.prod.{u_1, 0} ι Real _ (@Finset.univ.{u_1} ι _) fun (i : ι) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _ (weight i) (α i))
+@TheoremT.Continuum.multiindexCoordinateWord.{u_1} : {ι : Type u_1} →
+  [inst : Fintype.{u_1} ι] →
+    (α : ι → Nat) → Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i) → ι
+@TheoremT.Continuum.multiindexCoordinateWord_prod.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] (α : ι → Nat)
+  (weight : ι → Real),
+  @Eq.{1} Real
+    (@Finset.prod.{0, 0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) Real _
+      (@Finset.univ.{0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) _)
+      fun (j : Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) =>
+      weight (@TheoremT.Continuum.multiindexCoordinateWord.{u_1} ι _ α j))
+    (@Finset.prod.{u_1, 0} ι Real _ (@Finset.univ.{u_1} ι _) fun (i : ι) =>
+      @HPow.hPow.{0, 0, 0} Real Nat Real _ (weight i) (α i))
+'TheoremT.Continuum.multiindex_coordinate_word_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.multiindexCoordinateWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.multiindexCoordinateWord_prod' depends on axioms: [propext, Classical.choice, Quot.sound]

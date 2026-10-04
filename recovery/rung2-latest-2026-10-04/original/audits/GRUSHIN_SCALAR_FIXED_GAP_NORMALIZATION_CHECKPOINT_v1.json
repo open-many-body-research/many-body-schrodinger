@@ -1,0 +1,389 @@
+{
+  "status": "PASS_CONDITIONAL_SCALAR_R18_R23",
+  "created_utc": "2026-09-10T23:35:15.539691+00:00",
+  "evidence_category": "Fully formalized conditional scalar implication; no actual PDE recurrence is supplied.",
+  "module_count": 6,
+  "declaration_count": 25,
+  "module_records": [
+    {
+      "module": "GrushinScaledFallingFactorial_v1",
+      "source": {
+        "path": "lean/GrushinScaledFallingFactorial_v1.lean",
+        "sha256": "a5b99d1bfe16207cb0b24b768e6869941f04abe342da1ced04ece060cfd1031d",
+        "bytes": 3066
+      },
+      "object": {
+        "path": "lean/build/GrushinScaledFallingFactorial_v1.olean",
+        "sha256": "c6cda3e1e2bf83e270967fc0aebdc7a89f8333210814e92ca39d83c5bbe07565",
+        "bytes": 71520
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinScaledFallingFactorial_v1-20260910T232020_678776Z.json",
+        "sha256": "793674b0d4807bdbf5427c15911dfdc16453186a5a4c680860dd2e3bea1517bf",
+        "bytes": 1780
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinScaledFallingFactorial_v1-20260910T232020_678776Z.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "declarations": [
+        "grushin_factorial_ratio_eq_descFactorial",
+        "grushin_normalization_scale_nonneg",
+        "grushin_normalization_scale_pos",
+        "grushin_normalization_scale_le_one",
+        "grushin_normalization_scale_bounds",
+        "grushin_scaled_falling_factorial_le_rho_pow",
+        "grushin_scaled_falling_factorial_le_one",
+        "grushin_scaled_factorial_le_one"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T232044_707536Z/receipt.json",
+        "sha256": "22e44f9fe4632324afdd031a872e02f12949fb499b61ea4c4f139ddffd55beb9",
+        "bytes": 4941
+      }
+    },
+    {
+      "module": "GrushinRecurrenceCoefficientAbsorption_v1",
+      "source": {
+        "path": "lean/GrushinRecurrenceCoefficientAbsorption_v1.lean",
+        "sha256": "4de38985ad0fcfbb4549513e7137a7b385fd044223309cc4289d83556108dd7d",
+        "bytes": 3969
+      },
+      "object": {
+        "path": "lean/build/GrushinRecurrenceCoefficientAbsorption_v1.olean",
+        "sha256": "53da08c9b47967df11110e9e251a50f89df8853e14f40f51eaee5178658c48ed",
+        "bytes": 244080
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinRecurrenceCoefficientAbsorption_v1-20260910T232434_902176Z.json",
+        "sha256": "f3b2e1afe931ff2210e7fd1d9efb774ec7d6fa58910a72be330dd677bcf261af",
+        "bytes": 1813
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinRecurrenceCoefficientAbsorption_v1-20260910T232434_902176Z.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "declarations": [
+        "grushin_first_two_le_geometric_sum",
+        "grushin_recurrence_power_coefficient_le",
+        "grushin_recurrence_coefficient_absorption"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T232506_202570Z/receipt.json",
+        "sha256": "35ba721fc6b6623ca7ca7dd24bc5870bce7ec4ad825c3b2674450f0b980bcc1a",
+        "bytes": 3924
+      }
+    },
+    {
+      "module": "GrushinFactorialAmplitudeMajorant_v1",
+      "source": {
+        "path": "lean/GrushinFactorialAmplitudeMajorant_v1.lean",
+        "sha256": "2e19ba9dcae1b7f67d2d98570ac0bb2b53fc2c7f8e66f2acd5cc7779cb0ab392",
+        "bytes": 2019
+      },
+      "object": {
+        "path": "lean/build/GrushinFactorialAmplitudeMajorant_v1.olean",
+        "sha256": "1a4c1d36efae141458ddac81d513aeabd70c2c7d42d08a1e3127bf89e40a4706",
+        "bytes": 238592
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinFactorialAmplitudeMajorant_v1-20260910T231845_176194Z.json",
+        "sha256": "4e9789ea7e0ca0ca0f1b0a247cdabd4383d8ddbb1b295b4b0738b55afa4f7b8c",
+        "bytes": 1792
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinFactorialAmplitudeMajorant_v1-20260910T231845_176194Z.log",
+        "sha256": "6883ab47f08df8851aa6b296af64b34f9b6315f1873d60b608d15d8d80b1b06d",
+        "bytes": 115
+      },
+      "declarations": [
+        "factorial_majorant_amplitude_bound"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T232115_291948Z/receipt.json",
+        "sha256": "a2111d9b2ac3d616f180eb65e27609f4b45456de7ac8dd2960d03352d7c1b8a9",
+        "bytes": 3446
+      }
+    },
+    {
+      "module": "GrushinScalarGridNormalization_v1",
+      "source": {
+        "path": "lean/GrushinScalarGridNormalization_v1.lean",
+        "sha256": "446831edb3ef282e290ed0441b9afccecbc49bef9f803a40c3109dcd99187bb5",
+        "bytes": 5666
+      },
+      "object": {
+        "path": "lean/build/GrushinScalarGridNormalization_v1.olean",
+        "sha256": "18fdac31c4852f7a6304b48d987a2b1c0e6d54579258ccf448335157763f5d5b",
+        "bytes": 308544
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinScalarGridNormalization_v1-20260910T232317_386925Z.json",
+        "sha256": "f1bcee4f5d3d1647cd58382c0a7d83f975d0af47200908a8ef38b4cb6c11c832",
+        "bytes": 1790
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinScalarGridNormalization_v1-20260910T232317_386925Z.log",
+        "sha256": "e6a26f83e6eb0d9c8bf066db1129b9b2ea501fa614b12eaf907721e7bbe1bb88",
+        "bytes": 221
+      },
+      "declarations": [
+        "grushinGridNorm",
+        "grushin_grid_time_bounds",
+        "grushin_gridNorm_nonneg",
+        "grushin_gridNorm_base",
+        "grushin_grid_lower_norm_le",
+        "grushin_inverse_gap_term_le",
+        "grushin_scaled_source_le",
+        "grushin_scaled_factorial_term_le"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/receipt.json",
+        "sha256": "b15317a181a19a3c87d7cca6581b293a0fe6792e1e02b657b074c4152e2c99c5",
+        "bytes": 7168
+      }
+    },
+    {
+      "module": "GrushinScalarFixedGapRecurrence_v1",
+      "source": {
+        "path": "lean/GrushinScalarFixedGapRecurrence_v1.lean",
+        "sha256": "1f6c3e1afb7a9ecf39a0cca6760654bdab1df5b7588a6c1a1bdb4bfd4ac63eae",
+        "bytes": 3689
+      },
+      "object": {
+        "path": "lean/build/GrushinScalarFixedGapRecurrence_v1.olean",
+        "sha256": "34a859a433c69c3348239105481d2a2fc9fd56707946bab505d1b5f24fcdcffc",
+        "bytes": 274648
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinScalarFixedGapRecurrence_v1-20260910T232451_872335Z.json",
+        "sha256": "b3569125df5e1dc8b40d4cefc8bf2fe1e9f69ddfba4777647d113b2442ef3739",
+        "bytes": 1786
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinScalarFixedGapRecurrence_v1-20260910T232451_872335Z.log",
+        "sha256": "695bdda38007d33fb554912f01fb4a8e6067716bd6f2893dceb1caa9e814d9da",
+        "bytes": 119
+      },
+      "declarations": [
+        "GrushinScalarFixedGapRecurrence",
+        "grushin_grid_recurrence_from_fixed_gap"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/receipt.json",
+        "sha256": "b15317a181a19a3c87d7cca6581b293a0fe6792e1e02b657b074c4152e2c99c5",
+        "bytes": 7168
+      }
+    },
+    {
+      "module": "GrushinScalarFixedGapBound_v1",
+      "source": {
+        "path": "lean/GrushinScalarFixedGapBound_v1.lean",
+        "sha256": "22af09caa63fd0d8229ce76dd707d705022522687c92e6b3697277eea3b18b6a",
+        "bytes": 4101
+      },
+      "object": {
+        "path": "lean/build/GrushinScalarFixedGapBound_v1.olean",
+        "sha256": "78d6dae52e2e4d2612de78087f99f7eab145ec9db340d5c3ece5aed4a9f93bf7",
+        "bytes": 248760
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinScalarFixedGapBound_v1-20260910T233140_787073Z.json",
+        "sha256": "4761cf2bea9fd66d9276823c8274238d7c4189ae76c5965b0c4b953e15e7ca8a",
+        "bytes": 1771
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinScalarFixedGapBound_v1-20260910T233140_787073Z.log",
+        "sha256": "f37a29ae327bbe9b6e18f6e82af204c853e62443af33f4cdcc77ae8ff64b1464",
+        "bytes": 221
+      },
+      "declarations": [
+        "grushin_scalar_fixed_gap_grid_bound",
+        "grushin_scalar_fixed_gap_bound",
+        "grushin_scalar_fixed_gap_zero"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/receipt.json",
+        "sha256": "b15317a181a19a3c87d7cca6581b293a0fe6792e1e02b657b074c4152e2c99c5",
+        "bytes": 7168
+      }
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T232044_707536Z/receipt.json",
+        "sha256": "22e44f9fe4632324afdd031a872e02f12949fb499b61ea4c4f139ddffd55beb9",
+        "bytes": 4941
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T232044_707536Z/ExpandedStatements_v7.lean",
+        "sha256": "6d81de5bcca660ff608ae01addaabb3be34da4b3dbba8a63ac7595492726df6e",
+        "bytes": 1636
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T232044_707536Z/ExpandedStatements_v7.log",
+        "sha256": "608b7a7a9cef4930538b4d0e8c3fd65533e43306269c7d4ce7536d02b2c62b6e",
+        "bytes": 4718
+      },
+      "object": {
+        "path": "audits/formal_semantics/20260910T232044_707536Z/ExpandedStatements_v7.olean",
+        "sha256": "efd0df99d719338aef619c226e2e92df87fb1a0bc5fd620ff23e1bfd311eebe8",
+        "bytes": 1424
+      },
+      "declaration_count": 8
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T232506_202570Z/receipt.json",
+        "sha256": "35ba721fc6b6623ca7ca7dd24bc5870bce7ec4ad825c3b2674450f0b980bcc1a",
+        "bytes": 3924
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T232506_202570Z/ExpandedStatements_v7.lean",
+        "sha256": "77e66cbd17c5ccf9672bddb46013decd0a9470c3ed42b6309fbf4c82ac5c8c7a",
+        "bytes": 991
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T232506_202570Z/ExpandedStatements_v7.log",
+        "sha256": "757561ed8268fda1295cfe851ff483c6ddb915285f883a7593348ecda5f1f52a",
+        "bytes": 4433
+      },
+      "object": {
+        "path": "audits/formal_semantics/20260910T232506_202570Z/ExpandedStatements_v7.olean",
+        "sha256": "c56b91191153aec410cbaf2925559333a851c27e58d3100187f8bdf616121371",
+        "bytes": 1432
+      },
+      "declaration_count": 3
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T232115_291948Z/receipt.json",
+        "sha256": "a2111d9b2ac3d616f180eb65e27609f4b45456de7ac8dd2960d03352d7c1b8a9",
+        "bytes": 3446
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T232115_291948Z/ExpandedStatements_v7.lean",
+        "sha256": "daf463c93c01801e72b730e313835e7b6d7590202d098ae930371f4de94fd2fe",
+        "bytes": 702
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T232115_291948Z/ExpandedStatements_v7.log",
+        "sha256": "9af3240fee95e92adad129d69fec02b8723896eab35f4a10a71e00090b375dc9",
+        "bytes": 1662
+      },
+      "object": {
+        "path": "audits/formal_semantics/20260910T232115_291948Z/ExpandedStatements_v7.olean",
+        "sha256": "958666e9f9ba51da01680754d5e655fa60c948f96e888e16ccc8a053c27765bf",
+        "bytes": 1424
+      },
+      "declaration_count": 1
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/receipt.json",
+        "sha256": "b15317a181a19a3c87d7cca6581b293a0fe6792e1e02b657b074c4152e2c99c5",
+        "bytes": 7168
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/ExpandedStatements_v7.lean",
+        "sha256": "17e59e3274e11fe2e1872ef96143a5513fa7a7c0512963208cc6a53cceb5fe1d",
+        "bytes": 2164
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/ExpandedStatements_v7.log",
+        "sha256": "6bb1e70052c6c07937949cc1307b1e873e43670acc4abee4902b8e065db26818",
+        "bytes": 15977
+      },
+      "object": {
+        "path": "audits/formal_semantics/20260910T233159_121084Z/ExpandedStatements_v7.olean",
+        "sha256": "ddc1ca083027e9ea710ed4c88412983a59ca9cbf934d2a6eac535f95e1bf019a",
+        "bytes": 1688
+      },
+      "declaration_count": 13
+    }
+  ],
+  "exact_main_statement": "For N:Nat->Real->Real, 0<rho<=1, C,A>=1, F,H0>=0, N nonnegative on [0,rho], nonincreasing in gap s, N_q(s)<=H0 for q<=8, and the explicit raw fixed-gap recurrence R18 for every r>=9 and admissible s,e: with B=2*C*A and S=F+H0, N_r(rho)<=2*B*S*(2*B*(r+1)/rho)^r for every r. If S=0 then every N_r(rho)=0.",
+  "root_declarations": [
+    "TheoremT.Continuum.grushin_scalar_fixed_gap_grid_bound",
+    "TheoremT.Continuum.grushin_scalar_fixed_gap_bound",
+    "TheoremT.Continuum.grushin_scalar_fixed_gap_zero"
+  ],
+  "discharged": [
+    "Exact scaled falling-factorial and source estimates.",
+    "Raw R18 plus gap monotonicity implies the finite grid recurrence.",
+    "Base orders 0 through 8 imply finite-majorant base.",
+    "Explicit coefficient absorption with B=2CA.",
+    "Finite amplitude majorant and exact endpoint R23, including S=0."
+  ],
+  "not_discharged": [
+    "Identification of N_r(s) with actual weighted Grushin derivative norms.",
+    "Derivation of R18 and the initial H0 from the actual PDE.",
+    "Pointwise embedding and physical analytic approximation.",
+    "Executable solver, interval certificates, termination or bit complexity."
+  ],
+  "focused_review": {
+    "path": "audits/GRUSHIN_SCALAR_FIXED_GAP_NORMALIZATION_FOCUSED_REVIEW_v1.json",
+    "sha256": "9e369881f82c4993a44ae6b43daa7095939e0a72faa469c97b90e2811a247f37",
+    "bytes": 7567
+  },
+  "paper": {
+    "path": "paper/GRUSHIN_SCALAR_FIXED_GAP_NORMALIZATION_v1.md",
+    "sha256": "447c9404e93d17953d887d2321f053a8e637c88e15ec947a6b6e955fdc949f85",
+    "bytes": 3539
+  },
+  "paper_recurrence_reference": {
+    "path": "audits/GRUSHIN_FACTORIAL_RECURRENCE_v1.md",
+    "sha256": "5aac0a379715bda90c7eb12ff2c8af2b5c6aba2434828735a96c608c45668594",
+    "bytes": 21220
+  },
+  "inherited_finite_majorant_checkpoint": {
+    "path": "audits/GRUSHIN_FACTORIAL_FINITE_MAJORANT_CHECKPOINT_v1.json",
+    "sha256": "02d644afed62f1c71516ca76028db78209343c8768e2f3d29875e36c04bc89d2",
+    "bytes": 2200
+  },
+  "child_checkpoints": [
+    {
+      "path": "audits/GRUSHIN_SCALED_FALLING_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "ebabfc99b997c301ca302a5a97262ff022453c3d1f3a2c3ab6c41d882c7449fe",
+      "bytes": 6669
+    },
+    {
+      "path": "audits/GRUSHIN_RECURRENCE_COEFFICIENT_ABSORPTION_CHECKPOINT_v1.json",
+      "sha256": "6c5ec05090861b03ece6e8ae8a27804337efe9a9de2c8b15061465943fc2e66f",
+      "bytes": 5455
+    }
+  ],
+  "auditor": {
+    "path": "audits/audit_final_statements_v7.py",
+    "sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+    "bytes": 7896
+  },
+  "discovery_helper": {
+    "path": "audits/lean_declaration_discovery_v2.py",
+    "sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+    "bytes": 7741
+  },
+  "auditor_root_review": {
+    "path": "audits/AUDIT_FINAL_STATEMENTS_V7_ROOT_REVIEW_v1.json",
+    "sha256": "681bfa9eaec81ec3db015e1e23a4e73618893d59b5fe65c2f185e5efefba0fb1",
+    "bytes": 2401
+  },
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Official pinned Lean 4.34.0-rc2; existing pinned library and prior continuation object caches reused. No isolated source rebuild was run for this unit.",
+  "preservation": "All frozen, prior PASS and sealed source/evidence bytes preserved. Failed draft compile logs remain separate. Current source/object hashes checked against strict receipts.",
+  "frozen_provenance": {
+    "path": "THEOREM_T_FREEZE_2026-09-09_212604/rwa_proof/UNIFORM_ANALYTIC_AUDIT.md",
+    "sha256": "5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Compose with separately established actual weighted norm nonnegativity, shrinking-box monotonicity, low-order bound and fixed-gap PDE recurrence. Do not treat the explicit scalar recurrence premise as discharged by this result.",
+  "process_state": "All six module compilation sessions and four strict audit sessions completed and consumed; no active job in this unit."
+}
