@@ -318,3 +318,10 @@ Human statement review and full committed verification remain pending.
 [S8-030](../../claims/cards/S8-030.md) For charge at least2, the same actual normalized scalar ground state and its genuine first and ordered second weak derivatives admit literal norm-one compact H2 approximants. Each a>0 with a^2<Z^2/112 has one finite C before every R at least max1(2C/a). The raw cutoff norm is at least1/2. Full actual H2 defect, true scalar Coulomb graph eigenvalue residual and absolute actual Rayleigh pairing error are all bounded by C*exp(-a*R), with literal compact AE support and genuine weak derivative and defect families.
 The threshold is explicit in the existential selected-state/rate constant, which is not computably extracted. The original ground retains realness, exchange and O3 symmetry; those symmetries of the normalized cutoff are not asserted. Smoothness, finite dictionaries, effective solver and full rung remain open.
 Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: bound genuine real distance derivatives of original collision profiles
+
+[S8-032](../../claims/cards/S8-032.md) For charge at least2, the same actual normalized scalar ground witness and original nuclear and pair A,B,H profiles have genuine all-order real Frechet operator and ordered distance-coordinate-word factorial budgets. The literal complex profiles are composed with the actual coordinatewise real cast. A proved norm-preserving cast and exact iterated derivative restriction transport the actual complex estimates, with the exact original epsilon powers and u0 term only at order zero. All physical ground facts are retained.
+The real domain is the actual Fin3 Pi maximum norm with complex values. This is a derivative bound in independent ambient distance coordinates; physical Cartesian transport or profile realness is not asserted. Selected original scales/amplitudes remain. Global approximation and full rung remain open.
+Human statement review and full committed verification remain pending.

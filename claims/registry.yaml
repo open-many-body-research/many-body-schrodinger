@@ -1462,3 +1462,40 @@ claims:
     which is not computably extracted. The original ground retains realness,
     exchange and O3 symmetry; those symmetries of the normalized cutoff are not
     asserted. Smoothness, finite dictionaries, effective solver and full rung remain open.
+
+- id: S8-032
+  sector: S8
+  title: Bound genuine real distance derivatives of original collision profiles (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-025, S8-029]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness and
+    original nuclear and pair A,B,H profiles have genuine all-order real Frechet
+    operator and ordered distance-coordinate-word factorial budgets. The literal
+    complex profiles are composed with the actual coordinatewise real cast.
+    A proved norm-preserving cast and exact iterated derivative restriction
+    transport the actual complex estimates, with the exact original epsilon
+    powers and u0 term only at order zero. All physical ground facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact rate, threshold or half-polydisc and selected-scale conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambient_real_iteratedFDeriv_complex_restriction}
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambient_real_iteratedFDeriv_norm_le_complex}
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambient_real_iteratedFDeriv_coordinate_word}
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambientRealDistanceWordDerivative_norm_le}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_real_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_real_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_real_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_real_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.twoElectron_scalar_ground_real_ambient_distance_derivative_budgets}
+  card: claims/cards/S8-032.md
+  evidence: [lean/ManyBody/S8/Internal/AmbientRealDerivativeTransport.lean, lean/ManyBody/S8/RealAmbientDistanceDerivativeBudgets.lean, claims\cards\S8-032.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The real domain is the actual Fin3 Pi maximum norm with complex values.
+    This is a derivative bound in independent ambient distance coordinates;
+    physical Cartesian transport or profile realness is not asserted. Selected
+    original scales/amplitudes remain. Global approximation and full rung remain open.
