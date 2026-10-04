@@ -23,3 +23,19 @@
 | S8.3 | **Explicit constants for S8-002** | Numerical $`C, c`$, or a lower bound refuting the rate | open |
 | S8.4 | **Check a claimed misprint** | The notes ([`ISSUE_KS_SOURCE_DEGREE_v2.md`](../../archive/v1.0-research-notes/continuation/audits/ISSUE_KS_SOURCE_DEGREE_v2.md)) claim that one coefficient bound in arXiv:0806.1004v1 (eq. 4.41) is false as literally stated, and that the headline theorem is unaffected. Check it against the published journal version *before* anyone asserts it publicly, and contact the authors if it holds up. | open |
 | S8.5 | **Statement cards for the regularity modules** | Cards for the decay and regularity Lean modules, with a definitions audit | open |
+
+## Submitted continuation: homogeneous Grushin initialization
+
+[S8-004](../../claims/cards/S8-004.md) submits a kernel-checked one-step estimate
+for the existing homogeneous weak Grushin equation. A supplied continuous
+potential bound $`|B| \le b`$ on a compact region converts the potential-weighted
+input norm to an ordinary local $`L^2`$ norm. The compact region and base constant
+are fixed before the potential, its bound and the solution. The output gives
+actual first Y/T and ordered second YY weak derivatives of the cutoff, with
+explicit factors in $`b`$ and no input derivative premise.
+
+This is submitted evidence pending human maintainer statement review. Full joint
+$`H^2`$, $`H^{12}`$, all-order factorial bounds, and physical Coulomb-chart
+coefficient estimates remain separate tasks. This prerequisite does not close
+all of Rung 2 or Theorem T. The new source is
+[`ManyBody/S8/HomogeneousGrushinOneStep.lean`](../../lean/ManyBody/S8/HomogeneousGrushinOneStep.lean).

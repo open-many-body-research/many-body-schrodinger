@@ -395,3 +395,33 @@ claims:
   statement: For fixed Z >= 2 and a fixed finite exponent set, the best normalized residual in e^{-a(r+s)} poly_n(r,s,u) spaces is >= c (n+1)^{-72}. Hence a p-bit Temple width needs n >~ 2^{p/144}.
   evidence: [archive/v1.0-research-notes/reports/TWO_ELECTRON_THEOREM.md]
   caveats: Qualitatively expected from Fock's logarithm. The exponent 72 is an artifact of the proof.
+
+- id: S8-004
+  sector: S8
+  title: Homogeneous local Grushin one-step initialization (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-03
+  statement: >
+    For a positive Grushin coefficient c, an open product region and a smooth real
+    compact cutoff, there are a compact K and C >= 0 chosen before the potential
+    bound b, real potential B and complex locally-L2 solution f. If b >= 0,
+    B is continuous and bounded in norm by b on K, and f solves the actual
+    homogeneous weak splitGrushin equation, the cutoff chi f has actual L2 first
+    Y/T and ordered second YY weak derivatives. Writing F = integral_K |f|^2,
+    their squared norm sums are bounded respectively by C(11/4 + 3b^2/4)F,
+    C(1+b^2)F/(16c), and (3/2)C(1+b^2)F.
+  conditional_on:
+    - The displayed homogeneous weak equation and local L2 membership of f.
+    - Continuity of B and the supplied coefficient bound |B| <= b on K.
+    - Positive c and the displayed smooth compact cutoff inside an open region.
+  lean:
+    - {module: ManyBody.S8.HomogeneousGrushinOneStep, decl: ManyBody.S8.local_bounded_potential_sq_integral_le}
+    - {module: ManyBody.S8.HomogeneousGrushinOneStep, decl: ManyBody.S8.local_weak_grushin_homogeneous_cutoff_gain}
+  card: claims/cards/S8-004.md
+  evidence: [lean/ManyBody/S8/HomogeneousGrushinOneStep.lean, lean/Foundation/LocalWeakGrushinPotentialGain_v1.lean, claims/cards/S8-004.md]
+  caveats: >
+    Proposed tier-L entry on a topic branch, pending human maintainer statement-card
+    review and acceptance. No input derivative is assumed, but this does not give
+    mixed Y/T or second T derivatives, full joint H2, H12, physical chart coefficient
+    bounds, factorial estimates, or all of Rung 2.
