@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 59 |
+| **L** | Lean-verified | 60 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -132,6 +132,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-051](claims/cards/S8-051.md) | Bound literal dyadic Taylor integer numerators for the actual original collision profiles (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground witness for every charge Z at least2 and each fixed admissible original nuclear or pair distance chart; Common natural chart offsets k,k0 precede every Taylor order, denominator exponent, profile choice and monomial index; the integer is the literal unreduced dyadic floor numerator |
 | [S8-052](claims/cards/S8-052.md) | Approximate actual physical isolated-collision charts in H2 with finite dyadic rational dictionaries (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground witness for every real charge Z at least2 and every admissible original positive scale; Any actual smooth compact cutoff whose entire support maps into the closed inner eighth nuclear-index-zero or coefficientone electronpair distance chart |
 | [S8-054](claims/cards/S8-054.md) | Derive actual Coulomb graph-error rates for the same local dyadic distance dictionaries (submitted; pending review) | **L** | The entire same actual normalized two-electron scalar Coulomb ground witness at each real charge Z at least2 and every admissible positive original scale; Any genuine smooth compact cutoff supported in the closed inner eighth nuclear-index-zero or coefficientone electronpair distance chart; each cutoff constant and chart offset precedes every precision |
+| [S8-053](claims/cards/S8-053.md) | Derive genuine dyadic physical H2 approximation at the second nuclear collision (submitted; pending review) | **L** | The same entire original normalized scalar Coulomb ground witness of the actual dyadic physicalH2 theorem at every charge Z at least2 and each admissible positive original scale; Any smooth compact cutoff whose full support lies in the closed inner eighth nuclear-index-one chart in its actual selected radius order; original exchange invariance is derived from the same ground witness |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
