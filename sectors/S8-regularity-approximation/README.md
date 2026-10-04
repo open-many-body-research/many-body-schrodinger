@@ -121,3 +121,24 @@ explicit original spin-state norm bound. A proved mixed second coefficient
 bound is 128|Z|/27+8192/1331. The cutoffs and geometric constant precede
 charge, energy and state. Human review is pending. This finite fixed-chart
 budget does not provide full H12 or factorial estimates.
+
+
+## Submitted continuation: physical norm and collision-chart prerequisites
+
+[S8-014](../../claims/cards/S8-014.md) supplies a common local Lipschitz coefficient
+before every physical eigenstate at fixed electron count, charge, energy and
+configuration-ball radius. The actual graph constructs a shared full-spin
+representative, with component Lipschitz constants bounded by that coefficient
+times the original spin-state norm. The coefficient follows from uniform
+boundedness on the closed physical eigenspace; it is existential and has no
+numerical algorithm. The fixed radius1 is available before the state.
+
+[S8-016](../../claims/cards/S8-016.md) proves one finite unit physical-center
+family before every positive radius, covering all nonzero two-electron physical
+configurations by scaled collision-free, nuclear and original half-sum pair
+neighborhoods. The pair normalization1/sqrt(2) and the exclusion of remaining
+collisions for relative widths at most1/16 are explicit. This is geometric
+coverage; analytic applicability and the triple origin need separate proofs.
+
+Both statements are submitted for human statement review. They import only
+frozen Foundation and pinned Mathlib and do not close the full rung.
