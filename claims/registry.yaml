@@ -193,6 +193,37 @@ claims:
   evidence: [sectors/S2-two-electron-theory/README.md, errata/ERRATUM-001-theorem-t-not-proved.md]
   caveats: A pre-publication report labeled this PROVEN. That label is withdrawn (ERRATUM-001).
 
+- id: S2-009
+  sector: S2
+  title: Screened uncertainty extends the physical two-electron ground branch (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-03
+  depends_on: [S1-001, S1-003, S2-001, S2-002]
+  statement: >
+    For every real Z > (2 sqrt(2) + sqrt(5))/3, the actual spinful fermionic
+    two-electron Coulomb ground energy satisfies E_Z <= -(Z - sqrt(2)/4)^2 < -5Z^2/8.
+    It is attained by a normalized domain eigenvector, its eigenspace is one complex
+    line, its orthogonal complement has Rayleigh numerator at least -5Z^2/8 times
+    the squared norm, and every other spectral point has real part >= -5Z^2/8.
+    At Z = 7/4 these conclusions hold although the foundation condition 32 < 9Z^2 fails.
+  lean:
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.normalizedHydrogen_nuclearMoment}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screenedHydrogen_formValue}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.hydrogenProductTrial_scaled_energy}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.hydrogenProductRepulsion_upper}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screenedTrial_energy_upper}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_charge_conditions}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_ground_branch}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_ground_branch_above_threshold}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_ground_branch_seven_fourths}
+  card: claims/cards/S2-009.md
+  evidence: [lean/ManyBody/S2/ScreenedGroundBranch.lean, claims/cards/S2-009.md]
+  caveats: >
+    Proposed tier-L entry on a topic branch, pending human maintainer statement-card review
+    and acceptance. This uses the proved uncertainty bound, not the exact 5 alpha/8
+    repulsion moment; the full S2.4 threshold and Theorem T remain open.
+
 # ---------------------------------------------------------------- S3 certified computation
 - id: S3-001
   sector: S3

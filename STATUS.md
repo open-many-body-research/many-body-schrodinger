@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 7 |
+| **L** | Lean-verified | 8 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -35,6 +35,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | S2-006 | Variance-minimization selection counterexample (paper) | **P1** | none |
 | S2-007 | Fixed-shift selection and computability of E_Z (paper) | **P1** | none |
 | S2-008 | Theorem T (polynomial-bit certified two-electron ground energy) | **O** | none |
+| [S2-009](claims/cards/S2-009.md) | Screened uncertainty extends the physical two-electron ground branch (submitted; pending review) | **L** | none |
 
 ## S3: [Certified energy intervals](sectors/S3-certified-computation/README.md)
 
