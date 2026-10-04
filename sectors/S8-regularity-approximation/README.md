@@ -110,3 +110,14 @@ The actual Y commutator and spectator recurrences supply the new derivatives;
 the physical theorem assumes only the original graph and representative.
 The selected nuclear collision is included on the existing patch. Human review
 is pending; this qualitative result does not supply H12 or factorial budgets.
+
+
+## Submitted continuation: second spectator original-state budgets
+
+[S8-010](../../claims/cards/S8-010.md) derives the next finite spectator
+stage from the original physical graph. Two nested plateaus supply actual
+second spectator derivatives; their inner Y/T/YY squared norm sums obey one
+explicit original spin-state norm bound. A proved mixed second coefficient
+bound is 128|Z|/27+8192/1331. The cutoffs and geometric constant precede
+charge, energy and state. Human review is pending. This finite fixed-chart
+budget does not provide full H12 or factorial estimates.

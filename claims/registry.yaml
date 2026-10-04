@@ -656,3 +656,35 @@ claims:
     Proposed tier-L submission pending human statement review. Qualitative H3;
     no H12 or all-order regularity, finite uniform budgets, factorial estimate,
     pair/intersection coverage, full Rung 2 or Theorem T is concluded.
+
+- id: S8-010
+  sector: S8
+  title: Finite second spectator budgets in the original physical state norm (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-007, S8-009]
+  statement: >
+    For the fixed two-electron nuclear chart and every smooth compact inner
+    cutoff, two outer plateau cutoffs and one nonnegative geometric D are
+    chosen before charge, energy and original spin-state eigenfunction.
+    Genuine successive first and second spectator derivatives are constructed,
+    and their inner Y/T/YY squared norm sums are bounded by
+    D*(1+b0^2+b1^2+b2^2)^3*MoserCoeff(2,Z,E)^2*||psi||^2,
+    with b2=(128/27)|Z|+8192/1331. The literal coefficient mixed second
+    derivative bound and the actual differentiated source are proved; no
+    transformed PDE, derivative or derivative-norm budget is a physical input.
+  conditional_on:
+    - The original two-electron Coulomb spin eigenfunction graph.
+    - Unit spectator center and displayed compact smooth cutoff inside the actual nuclear chart.
+  lean:
+    - {module: ManyBody.S8.NuclearChartSecondSpectatorNormBudget, decl: ManyBody.S8.two_electron_nuclear_chart_second_spectator_original_norm_budget}
+    - {module: ManyBody.S8.Internal.NuclearChartSecondDerivativeBounds, decl: ManyBody.S8.inv_norm_second_directional_le}
+    - {module: ManyBody.S8.Internal.NuclearChartSecondDerivativeBounds, decl: ManyBody.S8.nuclearKSPotential_second_spectator_abs_le_of_mem_nuclearChartOpen}
+  card: claims/cards/S8-010.md
+  evidence: [lean/ManyBody/S8/NuclearChartSecondSpectatorNormBudget.lean, lean/ManyBody/S8/Internal/NuclearChartSecondDerivativeBounds.lean, claims/cards/S8-010.md]
+  caveats: >
+    Proposed tier-L submission pending human review. The derivatives are of
+    the explicitly nested cutoff functions. Fixed-chart finite budgets do not
+    give full joint H12 norm bounds, shrinking-cutoff or all-order factorial
+    estimates, complete collision coverage, full Rung 2 or Theorem T.
