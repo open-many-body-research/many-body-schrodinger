@@ -194,8 +194,9 @@ exactly returned to the original state. A proved O(3) orbit bridge includes
 collinear and zero selected positions. Both nuclear indices and every
 admissible positive scale of the same representative are retained. This
 uses the recovered selected-state L,R and u0 budgets; quantitative norm
-uniformity is a separate result. Human statement review and full committed
-verification are pending. Pair/triple collision reconstruction, ambient germ
+uniformity is a separate result. Original committed full verification passed
+at head3f71054c7be8 (see the card); recovery acceptance, resulting integration
+verification and human statement review remain pending. Pair/triple collision reconstruction, ambient germ
 compatibility and the full rung remain open.
 
 
@@ -209,7 +210,9 @@ canonical configuration distances and degenerate-safe physical orbit identity
 are derived. The new functions reconstruct the actual normalized origin
 difference at every admissible scale; original unscaled coefficients are a
 separate extension. Both nuclear collisions and the triple origin are
-excluded. Human statement review and full committed verification are pending.
+excluded. Original committed full verification passed at head3f71054c7be8
+(see the card); recovery acceptance, resulting integration verification and
+human statement review remain pending.
 
 
 ## Submitted continuation: original annular mixed derivative budgets
