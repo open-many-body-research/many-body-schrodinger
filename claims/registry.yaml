@@ -1216,3 +1216,38 @@ claims:
     is existential. Smoothness, an eigenfunction law for the truncated state,
     finite dictionary approximation, computable radius, bit complexity and
     the complete Rung2 endpoint remain open.
+
+- id: S8-025
+  sector: S8
+  title: Bound actual pair ambient distance derivatives at all orders (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-023]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness and
+    original pair distance reconstruction have genuine all-order complex Frechet
+    operator norm and ordered distance coordinate-word factorial budgets on the
+    half polydisc. Actual holomorphic boundedness yields rate(2exp1/delta)^n*n!
+    without an input derivative or coefficient estimate. Original positive
+    scaling gives epsilon times epsilon^(-n) for A and H, with u0 only at order
+    zero, and epsilon^(-n) for B. All original physical ground facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original selected state positive scale range.
+    - Every point in the half of the explicit full pair distance polydisc.
+  lean:
+    - {module: ManyBody.S8.Internal.HolomorphicBallDerivativeBounds, decl: ManyBody.S8.holomorphic_fderiv_ball_bound}
+    - {module: ManyBody.S8.Internal.HolomorphicBallDerivativeBounds, decl: ManyBody.S8.real_nat_pow_le_exp_factorial}
+    - {module: ManyBody.S8.Internal.HolomorphicBallDerivativeBounds, decl: ManyBody.S8.holomorphic_iteratedFDeriv_half_ball_bound}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.holomorphic_constant_add_half_ball_bound}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.twoElectron_scalar_ground_pair_ambient_distance_derivative_budgets}
+  card: claims/cards/S8-025.md
+  evidence: [lean/ManyBody/S8/Internal/HolomorphicBallDerivativeBounds.lean, lean/ManyBody/S8/PairAmbientDistanceDerivativeBudgets.lean, claims/cards/S8-025.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The derivative norm uses the actual complex Fin3 Pi max norm. Bounds use the
+    selected state original L,R and amplitude; no all-state norm-uniform upgrade
+    is claimed. Nuclear distances, collision transitions, triple origin, global
+    dictionary approximation, effective solver and the full rung remain open.

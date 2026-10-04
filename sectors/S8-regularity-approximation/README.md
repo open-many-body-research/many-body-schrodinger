@@ -262,3 +262,13 @@ applies to the displayed AE representative, and the cutoff state need not
 be smooth or an eigenfunction. Finite dictionary approximation, computable
 prefactors and the complete rung remain open. Human statement review and
 full committed verification are pending.
+
+
+## Submitted continuation: actual pair ambient distance derivatives
+
+[S8-025](../../claims/cards/S8-025.md) derives all-order factorial operator
+norms and literal ordered distance-word bounds from the actual bounded
+holomorphic pair A/B/H profiles at Z>=2. The half-polydisc radius and exact
+original epsilon powers are explicit; only order zero retains u0. The
+complex Fin3 Pi norm and selected-state L,R budgets are retained. Human
+statement review and full committed verification remain pending.
