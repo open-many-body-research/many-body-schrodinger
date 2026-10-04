@@ -7,6 +7,7 @@ Each edition explains research progress, notable merged and open PRs, relevant c
 ## Editions
 
 - [2026-09-13 — Foundation publication and contribution workflow](2026-09-13.md)
+- [2026-09-27 — A quiet week in the public record](2026-09-27.md)
 
 ## Editorial and publication rules
 
