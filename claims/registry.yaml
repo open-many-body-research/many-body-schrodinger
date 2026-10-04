@@ -585,3 +585,36 @@ claims:
     may depend on the fixed rescaled cutoff and center. No radius-independent
     unscaled derivative norms, shrinking-cutoff hierarchy, full joint H2 norm
     budget, H12, factorial bound, full Rung 2 or Theorem T is concluded.
+
+- id: S8-008
+  sector: S8
+  title: Actual two-electron pair KS local joint H2 and isolated-collision coverage (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-006]
+  statement: >
+    The original physical two-electron scalar eigenfunction graph, continuous
+    representative and physical AE equality imply genuine ProductLocalWeakH2On
+    of the actual pair KS pullback on the patch excluding both original nuclear
+    collisions. The spin graph supplies one representative before all components
+    and cutoffs, retaining its permutation law and Moser amplitude bound.
+    Orthogonal Hadamard geometry derives principal c=4, physical pair distance
+    sqrt(2)*|Y|^2 and cleared repulsion constant 8/sqrt(2). Integrability and the
+    actual weak equation across Y=0 are proved. Every isolated physical pair
+    collision away from the nucleus is covered by the actual lift with Y=0.
+  conditional_on:
+    - The original two-electron scalar or spin Coulomb eigenfunction graph.
+    - Continuous representative and physical AE equality in the scalar theorem; constructed in the spin theorem.
+    - Compact smooth cutoffs inside the actual pair coefficient patch, excluding both nuclear collisions.
+  lean:
+    - {module: ManyBody.S8.PairKSInitialization, decl: ManyBody.S8.scalar_coulomb_pair_KS_local_weakH2}
+    - {module: ManyBody.S8.PairKSInitialization, decl: ManyBody.S8.coulomb_spin_pair_KS_local_weakH2}
+    - {module: ManyBody.S8.Internal.PairKSGeometry, decl: ManyBody.S8.pairKSLift_covers_isolated_pair_collision}
+    - {module: ManyBody.S8.Internal.PairKSEquation, decl: ManyBody.S8.scalar_coulomb_pair_KS_weak}
+  card: claims/cards/S8-008.md
+  evidence: [lean/ManyBody/S8/PairKSInitialization.lean, lean/ManyBody/S8/Internal/PairKSGeometry.lean, lean/ManyBody/S8/Internal/PairKSLaplacian.lean, lean/ManyBody/S8/Internal/PairKSEquation.lean, lean/ManyBody/S8/Internal/PairKSCutoffGain.lean, claims/cards/S8-008.md]
+  caveats: >
+    Proposed tier-L submission pending human review. Qualitative joint H2 only;
+    no quantitative uniform budgets, H12, simultaneous-collision or higher-N
+    coverage, factorial estimates, full Rung 2 or Theorem T is concluded.
