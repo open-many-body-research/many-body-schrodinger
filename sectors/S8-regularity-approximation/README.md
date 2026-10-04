@@ -39,3 +39,19 @@ $`H^2`$, $`H^{12}`$, all-order factorial bounds, and physical Coulomb-chart
 coefficient estimates remain separate tasks. This prerequisite does not close
 all of Rung 2 or Theorem T. The new source is
 [`ManyBody/S8/HomogeneousGrushinOneStep.lean`](../../lean/ManyBody/S8/HomogeneousGrushinOneStep.lean).
+
+## Submitted continuation: actual nuclear-chart initialization
+
+[S8-005](../../claims/cards/S8-005.md) derives the bounded-potential input from
+actual two-electron Coulomb geometry and the physical Hamiltonian graph. On
+positive-radius nuclear KS charts with radius at most one, the coefficient is
+bounded by $`26|Z|/3+8/11+|E|/2`$. The selected nuclear collision belongs to the
+chart, and smooth compact plateau cutoffs exist around it. The output gives
+first Y/T and ordered YY weak derivatives of a physical representative with
+explicit local norm factors. The base compact set and constant precede the
+charge, energy and eigenfunction. Their dependence on chart scale remains;
+the uniform statement concerns the coefficient bound only.
+
+This topic-branch result is pending human maintainer review. The accepted
+current-best table is unchanged. H12, factorial estimates, and all of Rung 2
+remain open.
