@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 23 |
+| **L** | Lean-verified | 25 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -96,6 +96,8 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-013](claims/cards/S8-013.md) | Actual unscaled physical collision germs and cross-scale compatibility (submitted; pending review) | **L** | The original physical two-electron spin eigenfunction graph in the strongest endpoint; Positive scales at most1/4 and unit spectator centers, with the displayed actual overlap domains; One fixed selected nuclear index or original pair coordinate map for germ/jet comparison |
 | [S8-015](claims/cards/S8-015.md) | Original-state physical factorial and pointwise budgets on fixed scales (submitted; pending review) | **L** | The original physical two-electron full-spin Coulomb eigenfunction graph; Positive scales at most1/4, unit spectator centers and the original fixed chart domains |
 | [S8-017](claims/cards/S8-017.md) | Actual analytic applicability on finite physical annular collision charts (submitted; pending review) | **L** | The original two-electron physical full-spin Coulomb eigenfunction graph; Positive physical radius at most1/4 for analytic applicability; Membership in the displayed finite selected-collision neighborhoods |
+| [S8-018](claims/cards/S8-018.md) | Actual scalar ground ambient nuclear distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; Positive scales bounded by the selected original representative's min1(R/4); The explicit isolated nuclear distance polydisc, with other singularities excluded |
+| [S8-019](claims/cards/S8-019.md) | Actual scalar ground ambient pair distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; Positive scales bounded by the selected original representative's min1(R/4); The explicit isolated pair distance polydisc, with both nuclear collisions excluded |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

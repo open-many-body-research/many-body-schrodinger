@@ -182,3 +182,31 @@ applicability on all selected nuclear/pair neighborhoods for radii through1/4.
 It reconstructs the original physical representative at every neighborhood
 point; the restored pair uses scale rho/sqrt(2). The covered collision-free bulk,
 triple origin and exterior still need separate analytic estimates.
+
+
+## Submitted continuation: actual ambient nuclear distance reconstruction
+
+[S8-018](../../claims/cards/S8-018.md) reconstructs the actual normalized
+scalar Coulomb ground function at charge at least2 on a full complex polydisc
+in the three physical distances near each selected nuclear collision. The
+literal bounded SO(2) descent is composed with rational axis coordinates and
+exactly returned to the original state. A proved O(3) orbit bridge includes
+collinear and zero selected positions. Both nuclear indices and every
+admissible positive scale of the same representative are retained. This
+uses the recovered selected-state L,R and u0 budgets; quantitative norm
+uniformity is a separate result. Human statement review and full committed
+verification are pending. Pair/triple collision reconstruction, ambient germ
+compatibility and the full rung remain open.
+
+
+## Submitted continuation: actual ambient pair distance reconstruction
+
+[S8-019](../../claims/cards/S8-019.md) proves bounded holomorphic A/B
+functions of three independent complex distances near an isolated pair
+collision, from the same actual normalized scalar ground witness at Z>=2.
+The principal complex square-root branch and its full-polydisc domain, actual
+canonical configuration distances and degenerate-safe physical orbit identity
+are derived. The new functions reconstruct the actual normalized origin
+difference at every admissible scale; original unscaled coefficients are a
+separate extension. Both nuclear collisions and the triple origin are
+excluded. Human statement review and full committed verification are pending.
