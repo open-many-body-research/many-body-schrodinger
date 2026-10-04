@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 16 |
+| **L** | Lean-verified | 23 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -89,6 +89,13 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-008](claims/cards/S8-008.md) | Actual two-electron pair KS local joint H2 and isolated-collision coverage (submitted; pending review) | **L** | The original two-electron scalar or spin Coulomb eigenfunction graph; Continuous representative and physical AE equality in the scalar theorem; constructed in the spin theorem; Compact smooth cutoffs inside the actual pair coefficient patch, excluding both nuclear collisions |
 | [S8-009](claims/cards/S8-009.md) | Full joint local weak H3 on physical nuclear KS patches (submitted; pending review) | **L** | The original scalar or spin Coulomb eigenfunction graph; Continuous representative and physical AE identity in the scalar theorem; constructed in the spin theorem; Compact smooth cutoffs inside the actual nuclear coefficient patch, with other singularities excluded |
 | [S8-010](claims/cards/S8-010.md) | Finite second spectator budgets in the original physical state norm (submitted; pending review) | **L** | The original two-electron Coulomb spin eigenfunction graph; Unit spectator center and displayed compact smooth cutoff inside the actual nuclear chart |
+| [S8-014](claims/cards/S8-014.md) | Physical eigenstate Lipschitz bounds in the original norm (submitted; pending review) | **L** | Positive electron number and fixed real charge, energy and configuration-ball radius; The original physical scalar or full-spin Coulomb eigenfunction graph; Only the scalar compatibility theorem assumes a continuous AE representative |
+| [S8-016](claims/cards/S8-016.md) | One finite physical collision-chart family at every nonzero radius (submitted; pending review) | **L** | Positive relative neighborhood width; width at most 1/16 for the other-collision exclusions; Positive radius or nonzero original configuration for the scaled cover |
+| [S8-011](claims/cards/S8-011.md) | Physical ground analytic descent at the exact-product charge threshold (submitted; pending review) | **L** | The displayed strict exact-product charge separator; or the stronger charge-only threshold; Positive scales at most min(1,R/4), where the physical representative supplies R>0; Unit spectator centers and the exact recovered physical reconstruction neighborhoods |
+| [S8-012](claims/cards/S8-012.md) | Original-norm physical mixed derivatives and lower-charge ground data (submitted; pending review) | **L** | The original two-electron full-spin eigenfunction graph in the universal endpoint; The strict exact-product charge separator, or charge-only threshold, in the actual ground endpoint; Positive scales at most1/4, unit physical spectator centers and the original quarter-polydisc/reconstruction domains |
+| [S8-013](claims/cards/S8-013.md) | Actual unscaled physical collision germs and cross-scale compatibility (submitted; pending review) | **L** | The original physical two-electron spin eigenfunction graph in the strongest endpoint; Positive scales at most1/4 and unit spectator centers, with the displayed actual overlap domains; One fixed selected nuclear index or original pair coordinate map for germ/jet comparison |
+| [S8-015](claims/cards/S8-015.md) | Original-state physical factorial and pointwise budgets on fixed scales (submitted; pending review) | **L** | The original physical two-electron full-spin Coulomb eigenfunction graph; Positive scales at most1/4, unit spectator centers and the original fixed chart domains |
+| [S8-017](claims/cards/S8-017.md) | Actual analytic applicability on finite physical annular collision charts (submitted; pending review) | **L** | The original two-electron physical full-spin Coulomb eigenfunction graph; Positive physical radius at most1/4 for analytic applicability; Membership in the displayed finite selected-collision neighborhoods |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

@@ -121,3 +121,64 @@ explicit original spin-state norm bound. A proved mixed second coefficient
 bound is 128|Z|/27+8192/1331. The cutoffs and geometric constant precede
 charge, energy and state. Human review is pending. This finite fixed-chart
 budget does not provide full H12 or factorial estimates.
+
+
+## Recovered later checkpoint and new norm uniformity
+
+The [latest recovery checkpoint](../../recovery/rung2-latest-2026-10-04/CURRENT_CHECKPOINT_v1.md)
+restores the original local H12, factorial, pointwise and analytic-descent chain,
+its actual mixed derivative estimates and within-chart compatibility, plus
+scalar-ground decay and axis/distance components. The finite-stage submissions
+above describe their own narrower conclusions. Recovery does not promote an
+accepted claim or establish the remaining global approximation and solver steps.
+
+[S8-014](../../claims/cards/S8-014.md) supplies a common local Lipschitz coefficient
+before every physical eigenstate at fixed electron count, charge, energy and
+configuration-ball radius. The actual graph constructs a shared full-spin
+representative, with component Lipschitz constants bounded by that coefficient
+times the original spin-state norm. The coefficient follows from uniform
+boundedness on the closed physical eigenspace; it is existential and has no
+numerical algorithm. The fixed radius 1 is available before the state. Human
+statement review is pending, and the full rung remains open.
+
+
+## Submitted continuation: one finite collision-chart family at all radii
+
+[S8-016](../../claims/cards/S8-016.md) proves a finite physical unit-center
+family before every radius, covering the entire punctured two-electron
+configuration space by scaled collision-free, nuclear and pair neighborhoods.
+The original half-sum pair center and its inverse-square-root-of-two normalization
+are explicit. At relative widths at most 1/16, each selected-collision
+neighborhood excludes the remaining physical singularities. This is a geometric
+cover: the triple origin and analytic applicability remain separate obligations.
+The finite centers are existential; human statement review remains pending.
+
+
+## Submitted recovered-source consumers: fixed geometry and original physical norms
+
+[S8-011](../../claims/cards/S8-011.md) extends the actual physical ground
+pointwise/analytic endpoint to the exact-product threshold and Z=3/2.
+[S8-015](../../claims/cards/S8-015.md) chooses common constants before every
+physical spin eigenstate, fixes ballradius1 and all scales through1/4, and
+bounds the genuine physical factorial/pointwise amplitudes by the original
+state norm. [S8-012](../../claims/cards/S8-012.md) adds actual complex/real
+mixed derivative data with the recovered factor24; its normalized lower-charge
+ground endpoint has the common base budgets. [S8-013](../../claims/cards/S8-013.md)
+returns literal analytic-plus-distance germs to the original unscaled physical
+function and proves separate real germ/jet compatibility across admissible
+scales and centers in one fixed physical collision coordinate map.
+
+These consumers depend on the sealed recovered proof archive and preserve its
+source bytes, original c=1 pair convention and exact domains. The common norm
+constants are non-effective. Full committed verification and human acceptance
+remain separate from focused kernel checks. Ambient distance germs, complete
+collision/exterior applicability, global approximation and solver obligations
+remain open.
+
+
+[S8-017](../../claims/cards/S8-017.md) additionally chooses a common positive
+width and finite physical centers before every state and proves actual analytic
+applicability on all selected nuclear/pair neighborhoods for radii through1/4.
+It reconstructs the original physical representative at every neighborhood
+point; the restored pair uses scale rho/sqrt(2). The covered collision-free bulk,
+triple origin and exterior still need separate analytic estimates.
