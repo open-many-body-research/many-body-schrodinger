@@ -250,3 +250,15 @@ epsilon on A and no extra epsilon on B. Both use Z>=2 and the selected
 state's original positive scale range. Separate coefficient compatibility,
 collision-type transitions, triple origin and a global atlas remain open.
 Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: compact physical H2 truncation
+
+[S8-024](../../claims/cards/S8-024.md) constructs literal compact truncations
+of the actual scalar ground graph at Z>=2. Genuine first and all ordered
+second product-rule weak derivatives have combined H2 defect at most
+C*exp(-a*R), for a^2<Z^2/112, with C before every R>=1. Compact support
+applies to the displayed AE representative, and the cutoff state need not
+be smooth or an eigenfunction. Finite dictionary approximation, computable
+prefactors and the complete rung remain open. Human statement review and
+full committed verification are pending.

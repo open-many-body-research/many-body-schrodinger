@@ -1177,3 +1177,42 @@ claims:
     upgrade, ambient derivative budget or cross-scale coefficient compatibility
     is asserted. Both nuclear collisions and the triple origin are excluded.
     Global approximation, solver termination and the full rung remain open.
+
+- id: S8-024
+  sector: S8
+  title: Genuine compact physical H2 truncation with exponential error (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-022]
+  statement: >
+    For every charge at least2, the same actual normalized scalar two-electron
+    Coulomb ground state and its genuine first and ordered second weak
+    derivatives admit literal compact cutoff truncations. At every positive
+    exponent with a^2<Z^2/112, a finite prefactor precedes every real radius
+    R at least1 and bounds the combined 43-component H2 defect by C*exp(-a*R).
+    Genuine product-rule derivatives, weak laws for the defect, and compact
+    support of the supplied literal AE representative inside ball2R are proved.
+  conditional_on:
+    - Real charge at least2, the discharged physical exponential decay range.
+    - Positive exponent with a^2<Z^2/112 and every real radius at least1.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalCompactCutoff, decl: ManyBody.S8.physicalCompactCutoff_tsupport_subset}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCutoff, decl: ManyBody.S8.physicalCompactCutoff_derivative_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCutoff, decl: ManyBody.S8.physicalCompactCutoffSecond_zero_inner}
+    - {module: ManyBody.S8.Internal.PhysicalCompactH2Truncation, decl: ManyBody.S8.physicalCompactFirst_weakPartial}
+    - {module: ManyBody.S8.Internal.PhysicalCompactH2Truncation, decl: ManyBody.S8.physicalCompactSecond_weakPartial}
+    - {module: ManyBody.S8.Internal.PhysicalCompactH2Truncation, decl: ManyBody.S8.physicalCompactH2DefectNorm_le}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.physical_compact_H2_truncation_of_tail}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.scalar_eigen_compact_H2_exponential_truncation}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.twoElectron_ground_compact_H2_exponential_truncation_of_graph}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.twoElectron_physical_ground_with_compact_H2_exponential_truncation}
+  card: claims/cards/S8-024.md
+  evidence: [lean/ManyBody/S8/CoulombCompactH2Truncation.lean, lean/ManyBody/S8/Internal/PhysicalCompactCutoff.lean, lean/ManyBody/S8/Internal/PhysicalCompactH2Truncation.lean, claims/cards/S8-024.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The cutoff state is H2, with literal compact AE representative; arbitrary
+    selected Lp representatives need not have compact support. The prefactor
+    is existential. Smoothness, an eigenfunction law for the truncated state,
+    finite dictionary approximation, computable radius, bit complexity and
+    the complete Rung2 endpoint remain open.

@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 29 |
+| **L** | Lean-verified | 30 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -102,6 +102,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-022](claims/cards/S8-022.md) | Genuine global polynomial moments of physical H2 components (submitted; pending review) | **L** | Real charge at least2, the discharged recovered physical decay range; Each explicitly quantified positive exponential rate with a^2<Z^2/112 |
 | [S8-021](claims/cards/S8-021.md) | Literal complex nuclear distance overlap compatibility (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; The same selected nuclear index and explicit positive-scale common-domain conditions |
 | [S8-023](claims/cards/S8-023.md) | Actual original scalar ground pair distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; The selected original representative's admissible positive scales and isolated pair distance polydisc |
+| [S8-024](claims/cards/S8-024.md) | Genuine compact physical H2 truncation with exponential error (submitted; pending review) | **L** | Real charge at least2, the discharged physical exponential decay range; Positive exponent with a^2<Z^2/112 and every real radius at least1 |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
