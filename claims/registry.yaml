@@ -1925,3 +1925,29 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     Actual ground decay and approximation bounds are derived, with no exponential approximation premise. The prefactor remains existential and no algorithm finds or evaluates the original state. This cutoff is not asserted smooth, a finite dictionary or computable representation; no coefficient bitcost, solver or full rung follows.
+
+- id: S8-047
+  sector: S8
+  title: Round genuine distance Taylor coefficients with explicit dyadic C2 error rates (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-039, S8-043, S8-048]
+  statement: >
+    Literal rational floor rounding at denominator two to the powerb approximates the same actual finite polynomial in real value, gradient and Hessian operatornorms with an explicit support and radius budget. The true canonical real Taylor dictionary supplies degree belowN and cardinality at mostN cubed, deriving the bound16 N cubed G to the powerN times onehalf to the powerb. On the actual radius two box, b=p+4+7N gives rounding error at most onehalf to the powerp.
+  conditional_on:
+    - Every actual finite real distance polynomial and literal canonical real Taylor dictionary; its exact support and coefficients precede every denominator exponent.
+    - Actual evaluation norm lies in the advertised finite radius; the explicit p plus4 plus7N denominator schedule applies on norm at most2.
+  lean:
+    - {module: ManyBody.S8.Internal.DyadicDistanceRounding, decl: ManyBody.S8.dyadicDistanceCoefficient_error}
+    - {module: ManyBody.S8.Internal.DyadicDistanceRounding, decl: ManyBody.S8.realDistanceMonomial_explicit_C2_bound}
+    - {module: ManyBody.S8.Internal.DyadicDistanceRounding, decl: ManyBody.S8.dyadic_realDistancePolynomial_uniform_C2}
+    - {module: ManyBody.S8.DyadicDistanceCoefficientApproximation, decl: ManyBody.S8.realTaylorDistanceDictionary_rounding_budget_le}
+    - {module: ManyBody.S8.DyadicDistanceCoefficientApproximation, decl: ManyBody.S8.realTaylor_dyadic_rounding_uniform_C2}
+    - {module: ManyBody.S8.DyadicDistanceCoefficientApproximation, decl: ManyBody.S8.realTaylor_dyadic_rounding_centered_C2}
+    - {module: ManyBody.S8.DyadicDistanceCoefficientApproximation, decl: ManyBody.S8.realTaylor_dyadic_rounding_explicit_bits_C2}
+  card: claims/cards/S8-047.md
+  evidence: [lean/ManyBody/S8/Internal/DyadicDistanceRounding.lean, lean/ManyBody/S8/DyadicDistanceCoefficientApproximation.lean, claims/cards/S8-047.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The denominator exponent is not total coefficient encoding size; integer numerators depend on the original real coefficients. No algorithm evaluates arbitrary original coefficients or their floors, no analytic truncation order or total original profile error is supplied here, and no solver, physical H2 approximation or full rung is claimed.
