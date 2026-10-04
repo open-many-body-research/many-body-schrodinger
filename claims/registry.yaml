@@ -2061,3 +2061,30 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     Offsets depend on the original state, chart and scale and are existential. The bound concerns the actual raw grid numerator, not a substituted reduced rational representation. No algorithm accesses arbitrary real Taylor coefficients or selects offsets, and no global dictionary, solver termination, effective bit-operation theorem or full Rung2 or TheoremT is claimed.
+
+- id: S8-052
+  sector: S8
+  title: Approximate actual physical isolated-collision charts in H2 with finite dyadic rational dictionaries (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-041, S8-050]
+  statement: >
+    The same complete original physical ground witness admits genuine43-component physical H2 approximation by one literal dyadic rational distance polynomial in each nuclear-index-zero or electronpair chart. One cutoff constant and chart offset precede every precision p. The actual canonical support has order N=2p+m+4 and at most N cubed monomials; literal floor coefficients use denominator exponent15p+7m+33. Genuine real-to-complex derivative transport and regularized weakH2 closure derive actual first and ordered second weak classes of the literal cutoff error, with each component and combined H2 norm bounded by its explicit compact-budget constant times onehalf to the power p.
+  conditional_on:
+    - The same actual normalized two-electron scalar Coulomb ground witness for every real charge Z at least2 and every admissible original positive scale.
+    - Any actual smooth compact cutoff whose entire support maps into the closed inner eighth nuclear-index-zero or coefficientone electronpair distance chart.
+  lean:
+    - {module: ManyBody.S8.Internal.RealDistanceComplexError, decl: ManyBody.S8.real_distance_complex_error_contDiffOn}
+    - {module: ManyBody.S8.Internal.RealDistanceComplexError, decl: ManyBody.S8.real_distance_complex_error_iterated_norm}
+    - {module: ManyBody.S8.Internal.RealDistanceComplexError, decl: ManyBody.S8.real_distance_complex_error_C2_bounds}
+    - {module: ManyBody.S8.PhysicalDistanceDyadicH2Approximation, decl: ManyBody.S8.actual_physical_distance_dyadic_H2_approximation}
+    - {module: ManyBody.S8.PhysicalDistanceDyadicH2Approximation, decl: ManyBody.S8.physical_distance_dyadic_actual_H2_error_small}
+    - {module: ManyBody.S8.PhysicalDistanceDyadicH2Approximation, decl: ManyBody.S8.actual_nuclear_distance_dyadic_H2_approximation}
+    - {module: ManyBody.S8.PhysicalDistanceDyadicH2Approximation, decl: ManyBody.S8.actual_pair_distance_dyadic_H2_approximation}
+    - {module: ManyBody.S8.PhysicalDistanceDyadicH2Approximation, decl: ManyBody.S8.twoElectron_scalar_ground_physical_distance_dyadic_H2_approximation}
+  card: claims/cards/S8-052.md
+  evidence: [lean/ManyBody/S8/Internal/RealDistanceComplexError.lean, lean/ManyBody/S8/PhysicalDistanceDyadicH2Approximation.lean, claims/cards/S8-052.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The result is local to the specified isolated charts and real compact cutoffs. Constants and offsets are existential and no original coefficient oracle is proved. Global atlas gluing, bulk and triplecollision coverage, full global approximation rates, solver termination, bit-operation cost and full Rung2 or TheoremT remain open.
