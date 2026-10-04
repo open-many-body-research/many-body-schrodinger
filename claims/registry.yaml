@@ -543,3 +543,45 @@ claims:
     are excluded. Joint H2 is qualitative. The explicit first spectator budgets
     use local norms of constructed outputs. No H12, uniform H2 constants,
     factorial estimate, analyticity, full collision coverage, or full Rung 2 is claimed.
+
+- id: S8-007
+  sector: S8
+  title: Original-state spectator budgets and actual rescaled nuclear KS initialization (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-005, S8-006]
+  statement: >
+    On the fixed two-electron nuclear chart, actual first spectator and inner
+    TY/TT/TYY squared norm sums have a finite explicit budget in the original
+    spin-state norm. All geometric witnesses precede charge, energy and state;
+    no derivative-norm input is assumed. Positive anisotropic KS dilation
+    transports the actual physical weak equation and integrability with
+    coefficient r*B(Z,rE). For one fixed unit-chart cutoff, K and C precede
+    every positive radius, charge, energy and state, and actual rescaled first
+    Y/T and ordered second YY norms obey the displayed original-state budgets
+    with b=r*(26|Z|/3+8/11+r|E|/2).
+  conditional_on:
+    - The original Coulomb eigenfunction graph and displayed smooth compact cutoff geometry.
+    - Continuous physical representative and physical AE equality only in the scalar weak-equation theorem; derived for the spin theorem.
+    - Positive radius in the scaling and rescaled initialization statements.
+  lean:
+    - {module: ManyBody.S8.NuclearChartSpectatorNormBudget, decl: ManyBody.S8.two_electron_nuclear_chart_spectator_original_norm_budget}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSLift_anisotropicScale}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSPotential_anisotropicScale}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSCoefficientPatch_anisotropicScale_iff}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSPotential_rescaled_spectator_abs_le}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearChartScaledOpen_anisotropicScale_iff}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSPotential_rescaled_norm_le}
+    - {module: ManyBody.S8.Internal.NuclearKSGrushinScaling, decl: ManyBody.S8.splitGrushin_physical_nuclear_anisotropicScale}
+    - {module: ManyBody.S8.Internal.NuclearKSMeasureScaling, decl: ManyBody.S8.nuclearKSAnisotropicEquiv_integral_transport}
+    - {module: ManyBody.S8.NuclearKSScaledEquation, decl: ManyBody.S8.weak_grushin_nuclear_anisotropicScale}
+    - {module: ManyBody.S8.NuclearKSScaledEquation, decl: ManyBody.S8.scalar_coulomb_nuclear_KS_scaled_weak}
+    - {module: ManyBody.S8.NuclearKSRescaledInitialization, decl: ManyBody.S8.two_electron_rescaled_nuclear_chart_original_norm_initialization}
+  card: claims/cards/S8-007.md
+  evidence: [lean/ManyBody/S8/NuclearChartSpectatorNormBudget.lean, lean/ManyBody/S8/Internal/NuclearKSAnisotropicScaling.lean, lean/ManyBody/S8/Internal/NuclearKSGrushinScaling.lean, lean/ManyBody/S8/Internal/NuclearKSMeasureScaling.lean, lean/ManyBody/S8/NuclearKSScaledEquation.lean, lean/ManyBody/S8/NuclearKSRescaledInitialization.lean, claims/cards/S8-007.md]
+  caveats: >
+    Proposed tier-L submission pending human statement-card review. Constants
+    may depend on the fixed rescaled cutoff and center. No radius-independent
+    unscaled derivative norms, shrinking-cutoff hierarchy, full joint H2 norm
+    budget, H12, factorial bound, full Rung 2 or Theorem T is concluded.

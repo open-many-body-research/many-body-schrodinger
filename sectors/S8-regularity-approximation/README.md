@@ -71,3 +71,17 @@ forcing budget using $`|D_T B|\le8|Z|/9+128/121`$.
 This submitted evidence is pending human maintainer statement review. It proves
 qualitative joint H2, while H12 initialization, uniform finite-order budgets,
 all-order factorial estimates and Rung 2 remain open.
+
+
+## Submitted continuation: original-state budgets and actual rescaling
+
+[S8-007](../../claims/cards/S8-007.md) closes the local norm inputs in the
+first spectator bootstrap by explicit original spin-state budgets. It also
+proves the actual anisotropically rescaled physical weak equation, including
+integrability and the necessary coefficient $`r B(Z,rE)`$. On one fixed
+unit-chart cutoff, the compact set and gain constant precede every positive
+radius, charge, energy and state; the rescaled first Y/T and YY squared norm
+bounds use $`b=r(26|Z|/3+8/11+r|E|/2)`$ and the original Moser amplitude.
+These geometric witnesses are radius-independent for that fixed rescaled
+cutoff. They do not supply full joint H2 budgets or a shrinking-cutoff family.
+H12 and factorial estimates remain open; human statement review is pending.
