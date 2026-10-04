@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 8 |
+| **L** | Lean-verified | 9 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -81,6 +81,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | S8-001 | Weighted analyticity of the helium ground state at the triple collision (paper; needs human review) | **P1** | none |
 | S8-002 | H^2 approximation rate exp(-c n^{1/3}) for helium by an explicit dyadic dictionary (paper; needs human review) | **P1** | none |
 | S8-003 | Fixed-exponent Hylleraas residual obstruction, "Theorem C" (paper) | **P1** | none |
+| [S8-004](claims/cards/S8-004.md) | Homogeneous local Grushin one-step initialization (submitted; pending review) | **L** | The displayed homogeneous weak equation and local L2 membership of f; Continuity of B and the supplied coefficient bound /B/ <= b on K; Positive c and the displayed smooth compact cutoff inside an open region |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
