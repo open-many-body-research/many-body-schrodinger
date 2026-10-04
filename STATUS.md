@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 52 |
+| **L** | Lean-verified | 53 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -125,6 +125,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-045](claims/cards/S8-045.md) | Bound actual collision Taylor orders linearly in requested dyadic precision (submitted; pending review) | **L** | Real charge at least2 and the same original actual normalized scalar Coulomb ground and physical graph range; Each selected original chart has a positive admissible scale; one offset is selected perchart before all requested precision |
 | [S8-043](claims/cards/S8-043.md) | Preserve actual collision parity and reconstruction in rational distance approximants (submitted; pending review) | **L** | Real charge at least2 and the same original actual normalized physical ground witness; Every admissible positive original nuclear or pair scale and requested positive real C2 tolerance |
 | [S8-048](claims/cards/S8-048.md) | Bound actual dyadic collision distance dictionaries by a cubic monomial count (submitted; pending review) | **L** | Real charge at least2 and the same actual original ground, graph, spectral and reconstructed distance profiles; One fixed offset per selected admissible original collision chart precedes all requested precision |
+| [S8-049](claims/cards/S8-049.md) | Choose linear physical cutoff radii for dyadic normalized Coulomb approximation errors (submitted; pending review) | **L** | Real charge at least2 and the actual original normalized symmetric scalar Coulomb ground graph with genuine weak first and ordered second derivatives; Positive actual decay rate whose square is below Z squared over112; one original nonnegative prefactor before every precision |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
