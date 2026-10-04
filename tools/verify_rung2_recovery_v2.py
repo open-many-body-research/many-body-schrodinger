@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Hash-check and rebuild the recovered local import closure in an empty directory.
 
-Only pinned third-party library artifacts and the official Lean runtime are reused.
-No foundation or continuation project objects enter LEAN_PATH.
+The default run reuses only pinned third-party libraries and the official Lean runtime.
+An optional extension accepts only a fully checked earlier source-generated run.
+No historical development project objects enter LEAN_PATH.
 """
 from __future__ import annotations
 import argparse
@@ -166,6 +167,7 @@ def main():
             reports = axiom_reports((out / row["log"]).read_text())
             assert set(reports) == set(row["declarations"]) and all(not (a - ALLOWED) for a in reports.values())
             inherited_audits[row["module"]] = dict(row, execution_kind="inherited_from_verified_source_run", original_tested_commit=parent["tested_commit"])
+        assert set(inherited_audits) == {n for n in inherited if modules[n]["kind"] == "recovered_continuation"}, "Inherited continuation audits are incomplete"
         summary["reused_source_generated_module_count"] = len(inherited)
         summary["prior_source_run"] = {"tested_commit": parent["tested_commit"], "tested_tree": parent["tested_tree"],
             "summary_sha256": sha(prior / "summary.json"), "original_manifest_sha256": parent["manifest_sha256"],
