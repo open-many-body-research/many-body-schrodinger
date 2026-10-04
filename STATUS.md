@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 7 |
+| **L** | Lean-verified | 18 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -35,6 +35,8 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | S2-006 | Variance-minimization selection counterexample (paper) | **P1** | none |
 | S2-007 | Fixed-shift selection and computability of E_Z (paper) | **P1** | none |
 | S2-008 | Theorem T (polynomial-bit certified two-electron ground energy) | **O** | none |
+| [S2-009](claims/cards/S2-009.md) | Screened uncertainty extends the physical two-electron ground branch (submitted; pending review) | **L** | none |
+| [S2-010](claims/cards/S2-010.md) | Exact product repulsion and sharpened physical ground branch (submitted; pending review) | **L** | Positive alpha in the exact physical moment theorem; The displayed strict charge threshold in the above-threshold ground theorem |
 
 ## S3: [Certified energy intervals](sectors/S3-certified-computation/README.md)
 
@@ -80,6 +82,15 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | S8-001 | Weighted analyticity of the helium ground state at the triple collision (paper; needs human review) | **P1** | none |
 | S8-002 | H^2 approximation rate exp(-c n^{1/3}) for helium by an explicit dyadic dictionary (paper; needs human review) | **P1** | none |
 | S8-003 | Fixed-exponent Hylleraas residual obstruction, "Theorem C" (paper) | **P1** | none |
+| [S8-004](claims/cards/S8-004.md) | Homogeneous local Grushin one-step initialization (submitted; pending review) | **L** | The displayed homogeneous weak equation and local L2 membership of f; Continuity of B and the supplied coefficient bound /B/ <= b on K; Positive c and the displayed smooth compact cutoff inside an open region |
+| [S8-005](claims/cards/S8-005.md) | Physical two-electron nuclear KS initialization and coefficient bounds (submitted; pending review) | **L** | The actual Coulomb spin Hamiltonian eigenfunction graph; A positive radius at most one, center norm equal to that radius, and the displayed smooth compact cutoff support |
+| [S8-006](claims/cards/S8-006.md) | Genuine joint local weak H2 on physical nuclear KS patches (submitted; pending review) | **L** | The actual scalar or spin Coulomb Hamiltonian eigenfunction graph; A continuous physical representative and physical AE equality in the scalar theorem; both are constructed in the spin theorem; Smooth compact cutoffs inside the actual nuclear coefficient patch; remaining nucleus and pair collisions are excluded by that patch |
+| [S8-007](claims/cards/S8-007.md) | Original-state spectator budgets and actual rescaled nuclear KS initialization (submitted; pending review) | **L** | The original Coulomb eigenfunction graph and displayed smooth compact cutoff geometry; Continuous physical representative and physical AE equality only in the scalar weak-equation theorem; derived for the spin theorem; Positive radius in the scaling and rescaled initialization statements |
+| [S8-008](claims/cards/S8-008.md) | Actual two-electron pair KS local joint H2 and isolated-collision coverage (submitted; pending review) | **L** | The original two-electron scalar or spin Coulomb eigenfunction graph; Continuous representative and physical AE equality in the scalar theorem; constructed in the spin theorem; Compact smooth cutoffs inside the actual pair coefficient patch, excluding both nuclear collisions |
+| [S8-009](claims/cards/S8-009.md) | Full joint local weak H3 on physical nuclear KS patches (submitted; pending review) | **L** | The original scalar or spin Coulomb eigenfunction graph; Continuous representative and physical AE identity in the scalar theorem; constructed in the spin theorem; Compact smooth cutoffs inside the actual nuclear coefficient patch, with other singularities excluded |
+| [S8-010](claims/cards/S8-010.md) | Finite second spectator budgets in the original physical state norm (submitted; pending review) | **L** | The original two-electron Coulomb spin eigenfunction graph; Unit spectator center and displayed compact smooth cutoff inside the actual nuclear chart |
+| [S8-014](claims/cards/S8-014.md) | Physical eigenstate Lipschitz bounds in the original norm (submitted; pending review) | **L** | Positive electron number and fixed real charge, energy and configuration-ball radius; The original physical scalar or full-spin Coulomb eigenfunction graph; Only the scalar compatibility theorem assumes a continuous AE representative |
+| [S8-016](claims/cards/S8-016.md) | One finite physical collision-chart family at every nonzero radius (submitted; pending review) | **L** | Positive relative neighborhood width; width at most 1/16 for the other-collision exclusions; Positive radius or nonzero original configuration for the scaled cover |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

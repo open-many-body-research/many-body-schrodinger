@@ -193,6 +193,74 @@ claims:
   evidence: [sectors/S2-two-electron-theory/README.md, errata/ERRATUM-001-theorem-t-not-proved.md]
   caveats: A pre-publication report labeled this PROVEN. That label is withdrawn (ERRATUM-001).
 
+- id: S2-009
+  sector: S2
+  title: Screened uncertainty extends the physical two-electron ground branch (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-03
+  depends_on: [S1-001, S1-003, S2-001, S2-002]
+  statement: >
+    For every real Z > (2 sqrt(2) + sqrt(5))/3, the actual spinful fermionic
+    two-electron Coulomb ground energy satisfies E_Z <= -(Z - sqrt(2)/4)^2 < -5Z^2/8.
+    It is attained by a normalized domain eigenvector, its eigenspace is one complex
+    line, its orthogonal complement has Rayleigh numerator at least -5Z^2/8 times
+    the squared norm, and every other spectral point has real part >= -5Z^2/8.
+    At Z = 7/4 these conclusions hold although the foundation condition 32 < 9Z^2 fails.
+  lean:
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.normalizedHydrogen_nuclearMoment}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screenedHydrogen_formValue}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.hydrogenProductTrial_scaled_energy}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.hydrogenProductRepulsion_upper}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screenedTrial_energy_upper}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_charge_conditions}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_ground_branch}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_ground_branch_above_threshold}
+    - {module: ManyBody.S2.ScreenedGroundBranch, decl: ManyBody.S2.screened_ground_branch_seven_fourths}
+  card: claims/cards/S2-009.md
+  evidence: [lean/ManyBody/S2/ScreenedGroundBranch.lean, claims/cards/S2-009.md]
+  caveats: >
+    Proposed tier-L entry on a topic branch, pending human maintainer statement-card review
+    and acceptance. This uses the proved uncertainty bound, not the exact 5 alpha/8
+    repulsion moment; the full S2.4 threshold and Theorem T remain open.
+
+- id: S2-010
+  sector: S2
+  title: Exact product repulsion and sharpened physical ground branch (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S1-001, S1-003, S2-001, S2-002, S2-009]
+  statement: >
+    The actual normalized hydrogen product has Coulomb repulsion exactly
+    5 alpha / 8 for every alpha > 0, with physical density transport and true
+    product integrability proved. The actual normalized singlet with
+    alpha = Z - 5/16 has exact trial energy -(Z - 5/16)^2. For real
+    Z > (20 + 5 sqrt(10))/24, the physical ground branch is attained and simple,
+    E <= -(Z - 5/16)^2 < -5Z^2/8, and the complement and remaining unbounded
+    spectrum obey the same separator. The explicit charge 3/2 is included.
+  conditional_on:
+    - Positive alpha in the exact physical moment theorem.
+    - The displayed strict charge threshold in the above-threshold ground theorem.
+  lean:
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.hydrogenProductRepulsion_exact}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProductTrial_energy}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_charge_conditions}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_ground_branch}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_ground_branch_above_threshold}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_three_halves_ground_energy}
+    - {module: ManyBody.S2.Internal.HydrogenProductDensity, decl: ManyBody.S2.hydrogenProductRepulsion_density_integrable}
+    - {module: ManyBody.S2.Internal.HydrogenProductDensity, decl: ManyBody.S2.hydrogenProductRepulsion_eq_double_integral}
+    - {module: ManyBody.S2.Internal.RadialCoulombNewton, decl: ManyBody.S2.Internal.Cylindrical.integral_radial_coulomb}
+  card: claims/cards/S2-010.md
+  evidence: [lean/ManyBody/S2/HydrogenProductRepulsionExact.lean, lean/ManyBody/S2/Internal/HydrogenProductDensity.lean, lean/ManyBody/S2/Internal/CylindricalIntegration.lean, lean/ManyBody/S2/Internal/CylindricalRadiusSubstitution.lean, lean/ManyBody/S2/Internal/CoulombHeightIntegral.lean, lean/ManyBody/S2/Internal/CylindricalCoulombReduction.lean, lean/ManyBody/S2/Internal/CoulombWedgeIntegration.lean, lean/ManyBody/S2/Internal/RadialCoulombNewton.lean, lean/ManyBody/S2/Internal/ExponentialRadialMoments.lean, claims/cards/S2-010.md]
+  caveats: >
+    Proposed tier-L topic-branch submission pending human statement-card review.
+    Supplies the S2.4 Lean deliverable; historical S2-005 remains P1 until
+    maintainer acceptance. The threshold is strict; lower charges and the endpoint
+    are not covered. This is not a sharp energy enclosure, S2.3, full Rung 2,
+    or Theorem T.
+
 # ---------------------------------------------------------------- S3 certified computation
 - id: S3-001
   sector: S3
@@ -364,3 +432,325 @@ claims:
   statement: For fixed Z >= 2 and a fixed finite exponent set, the best normalized residual in e^{-a(r+s)} poly_n(r,s,u) spaces is >= c (n+1)^{-72}. Hence a p-bit Temple width needs n >~ 2^{p/144}.
   evidence: [archive/v1.0-research-notes/reports/TWO_ELECTRON_THEOREM.md]
   caveats: Qualitatively expected from Fock's logarithm. The exponent 72 is an artifact of the proof.
+
+- id: S8-004
+  sector: S8
+  title: Homogeneous local Grushin one-step initialization (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-03
+  statement: >
+    For a positive Grushin coefficient c, an open product region and a smooth real
+    compact cutoff, there are a compact K and C >= 0 chosen before the potential
+    bound b, real potential B and complex locally-L2 solution f. If b >= 0,
+    B is continuous and bounded in norm by b on K, and f solves the actual
+    homogeneous weak splitGrushin equation, the cutoff chi f has actual L2 first
+    Y/T and ordered second YY weak derivatives. Writing F = integral_K |f|^2,
+    their squared norm sums are bounded respectively by C(11/4 + 3b^2/4)F,
+    C(1+b^2)F/(16c), and (3/2)C(1+b^2)F.
+  conditional_on:
+    - The displayed homogeneous weak equation and local L2 membership of f.
+    - Continuity of B and the supplied coefficient bound |B| <= b on K.
+    - Positive c and the displayed smooth compact cutoff inside an open region.
+  lean:
+    - {module: ManyBody.S8.HomogeneousGrushinOneStep, decl: ManyBody.S8.local_bounded_potential_sq_integral_le}
+    - {module: ManyBody.S8.HomogeneousGrushinOneStep, decl: ManyBody.S8.local_weak_grushin_homogeneous_cutoff_gain}
+  card: claims/cards/S8-004.md
+  evidence: [lean/ManyBody/S8/HomogeneousGrushinOneStep.lean, lean/Foundation/LocalWeakGrushinPotentialGain_v1.lean, claims/cards/S8-004.md]
+  caveats: >
+    Proposed tier-L entry on a topic branch, pending human maintainer statement-card
+    review and acceptance. No input derivative is assumed, but this does not give
+    mixed Y/T or second T derivatives, full joint H2, H12, physical chart coefficient
+    bounds, factorial estimates, or all of Rung 2.
+
+- id: S8-005
+  sector: S8
+  title: Physical two-electron nuclear KS initialization and coefficient bounds (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-004]
+  statement: >
+    For the actual two-electron nuclear KS chart centered at a spectator position
+    of norm r, 0 < r <= 1, the coefficient norm is at most
+    (26/3)|Z| + 8/11 + |E|/2. For each smooth compact cutoff inside this chart,
+    K and C >= 0 are fixed before Z, E and the physical spin eigenfunction.
+    The actual Hamiltonian graph supplies one physical representative, local L2
+    input and the homogeneous transformed equation; every spin component has
+    actual cutoff first Y/T and ordered second YY weak L2 jets with the
+    S8-004 squared norm estimates at c = 4. A genuine selected collision
+    belongs to the chart and admits a smooth compact plateau cutoff.
+  conditional_on:
+    - The actual Coulomb spin Hamiltonian eigenfunction graph.
+    - A positive radius at most one, center norm equal to that radius, and the displayed smooth compact cutoff support.
+  lean:
+    - {module: ManyBody.S8.NuclearChartInitialization, decl: ManyBody.S8.two_electron_nuclear_chart_initialization}
+    - {module: ManyBody.S8.NuclearChartScaledInitialization, decl: ManyBody.S8.two_electron_scaled_nuclear_chart_initialization}
+    - {module: ManyBody.S8.Internal.NuclearPhysicalInitialization, decl: ManyBody.S8.scalar_nuclear_bounded_cutoff_gain}
+    - {module: ManyBody.S8.Internal.NuclearChartBounds, decl: ManyBody.S8.nuclearChartOpen_subset_coefficientPatch}
+    - {module: ManyBody.S8.Internal.NuclearChartBounds, decl: ManyBody.S8.nuclearKSPotential_norm_le_of_mem_nuclearChartOpen}
+    - {module: ManyBody.S8.Internal.NuclearChartScaling, decl: ManyBody.S8.nuclearChartScaledOpen_subset_coefficientPatch}
+    - {module: ManyBody.S8.Internal.NuclearChartScaling, decl: ManyBody.S8.nuclearKSPotential_uniform_norm_le_of_mem_nuclearChartScaledOpen}
+    - {module: ManyBody.S8.Internal.NuclearChartCutoff, decl: ManyBody.S8.nuclearChartScaledOpen_exists_collision_point}
+    - {module: ManyBody.S8.Internal.NuclearChartCutoff, decl: ManyBody.S8.nuclearChartScaledOpen_exists_collision_plateau}
+  card: claims/cards/S8-005.md
+  evidence: [lean/ManyBody/S8/NuclearChartInitialization.lean, lean/ManyBody/S8/NuclearChartScaledInitialization.lean, lean/ManyBody/S8/Internal/NuclearChartBounds.lean, lean/ManyBody/S8/Internal/NuclearChartScaling.lean, lean/ManyBody/S8/Internal/NuclearChartCutoff.lean, lean/ManyBody/S8/Internal/NuclearPhysicalInitialization.lean, claims/cards/S8-005.md]
+  caveats: >
+    Proposed tier-L topic-branch submission pending human statement-card review.
+    Only the coefficient bound is uniform in r; K, C and cutoff derivative
+    budgets may depend on the radius and center. This claim supplies no mixed
+    or second spectator jets, joint H2, H12, factorial bounds, or full Rung 2.
+
+- id: S8-006
+  sector: S8
+  title: Genuine joint local weak H2 on physical nuclear KS patches (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-005]
+  statement: >
+    For every electron count and selected nucleus, a scalar Coulomb eigenfunction
+    graph and continuous physical representative imply the existing
+    ProductLocalWeakH2On predicate for its actual nuclear KS pullback on the
+    coefficient patch. A spin eigenfunction graph supplies one physical locally
+    Lipschitz representative before all spin components, nuclear charts and
+    cutoffs, preserving its AE identity, permutation law and amplitude bound.
+    Every compact smooth cutoff has all arbitrary-direction ordered second weak
+    L2 jets, including mixed and second spectator derivatives. On the fixed
+    two-electron chart, the first spectator bootstrap is also proved from the
+    physical graph, with actual principal forcing integral M <= 2b1^2 A + 2b0^2 F,
+    where b0 = (26/3)|Z| + 8/11 + |E|/2 and b1 = (8/9)|Z| + 128/121.
+  conditional_on:
+    - The actual scalar or spin Coulomb Hamiltonian eigenfunction graph.
+    - A continuous physical representative and physical AE equality in the scalar theorem; both are constructed in the spin theorem.
+    - Smooth compact cutoffs inside the actual nuclear coefficient patch; remaining nucleus and pair collisions are excluded by that patch.
+  lean:
+    - {module: ManyBody.S8.Internal.JointWeakH2Initialization, decl: ManyBody.S8.local_homogeneous_grushin_joint_cutoff_h2}
+    - {module: ManyBody.S8.Internal.JointWeakH2Initialization, decl: ManyBody.S8.scalar_coulomb_nuclear_KS_local_weakH2}
+    - {module: ManyBody.S8.Internal.JointWeakH2Initialization, decl: ManyBody.S8.coulomb_spin_nuclear_KS_local_weakH2}
+    - {module: ManyBody.S8.Internal.SpectatorBootstrap, decl: ManyBody.S8.weak_grushin_homogeneous_spectator_equation}
+    - {module: ManyBody.S8.Internal.SpectatorBootstrap, decl: ManyBody.S8.local_weak_grushin_spectator_cutoff_gain}
+    - {module: ManyBody.S8.Internal.PhysicalPlateauEquation, decl: ManyBody.S8.scalar_nuclear_output_on_plateau}
+    - {module: ManyBody.S8.Internal.NuclearChartDerivativeBounds, decl: ManyBody.S8.nuclearKSPotential_spectator_abs_le_of_mem_nuclearChartOpen}
+    - {module: ManyBody.S8.Internal.SpectatorForcingBudget, decl: ManyBody.S8.bounded_spectator_forcing_integral_le}
+    - {module: ManyBody.S8.Internal.SpectatorForcingBudget, decl: ManyBody.S8.nuclear_chart_spectator_forcing_integral_le}
+    - {module: ManyBody.S8.NuclearChartSpectatorBootstrap, decl: ManyBody.S8.two_electron_nuclear_chart_spectator_bootstrap}
+  card: claims/cards/S8-006.md
+  evidence: [lean/ManyBody/S8/Internal/JointWeakH2Initialization.lean, lean/ManyBody/S8/Internal/SpectatorBootstrap.lean, lean/ManyBody/S8/Internal/PhysicalPlateauEquation.lean, lean/ManyBody/S8/Internal/NuclearChartDerivativeBounds.lean, lean/ManyBody/S8/Internal/SpectatorForcingBudget.lean, lean/ManyBody/S8/NuclearChartSpectatorBootstrap.lean, claims/cards/S8-006.md]
+  caveats: >
+    Proposed tier-L topic-branch submission pending human statement-card review.
+    The selected nuclear collision is included; simultaneous remaining singularities
+    are excluded. Joint H2 is qualitative. The explicit first spectator budgets
+    use local norms of constructed outputs. No H12, uniform H2 constants,
+    factorial estimate, analyticity, full collision coverage, or full Rung 2 is claimed.
+
+- id: S8-007
+  sector: S8
+  title: Original-state spectator budgets and actual rescaled nuclear KS initialization (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-005, S8-006]
+  statement: >
+    On the fixed two-electron nuclear chart, actual first spectator and inner
+    TY/TT/TYY squared norm sums have a finite explicit budget in the original
+    spin-state norm. All geometric witnesses precede charge, energy and state;
+    no derivative-norm input is assumed. Positive anisotropic KS dilation
+    transports the actual physical weak equation and integrability with
+    coefficient r*B(Z,rE). For one fixed unit-chart cutoff, K and C precede
+    every positive radius, charge, energy and state, and actual rescaled first
+    Y/T and ordered second YY norms obey the displayed original-state budgets
+    with b=r*(26|Z|/3+8/11+r|E|/2).
+  conditional_on:
+    - The original Coulomb eigenfunction graph and displayed smooth compact cutoff geometry.
+    - Continuous physical representative and physical AE equality only in the scalar weak-equation theorem; derived for the spin theorem.
+    - Positive radius in the scaling and rescaled initialization statements.
+  lean:
+    - {module: ManyBody.S8.NuclearChartSpectatorNormBudget, decl: ManyBody.S8.two_electron_nuclear_chart_spectator_original_norm_budget}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSLift_anisotropicScale}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSPotential_anisotropicScale}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSCoefficientPatch_anisotropicScale_iff}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSPotential_rescaled_spectator_abs_le}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearChartScaledOpen_anisotropicScale_iff}
+    - {module: ManyBody.S8.Internal.NuclearKSAnisotropicScaling, decl: ManyBody.S8.nuclearKSPotential_rescaled_norm_le}
+    - {module: ManyBody.S8.Internal.NuclearKSGrushinScaling, decl: ManyBody.S8.splitGrushin_physical_nuclear_anisotropicScale}
+    - {module: ManyBody.S8.Internal.NuclearKSMeasureScaling, decl: ManyBody.S8.nuclearKSAnisotropicEquiv_integral_transport}
+    - {module: ManyBody.S8.NuclearKSScaledEquation, decl: ManyBody.S8.weak_grushin_nuclear_anisotropicScale}
+    - {module: ManyBody.S8.NuclearKSScaledEquation, decl: ManyBody.S8.scalar_coulomb_nuclear_KS_scaled_weak}
+    - {module: ManyBody.S8.NuclearKSRescaledInitialization, decl: ManyBody.S8.two_electron_rescaled_nuclear_chart_original_norm_initialization}
+  card: claims/cards/S8-007.md
+  evidence: [lean/ManyBody/S8/NuclearChartSpectatorNormBudget.lean, lean/ManyBody/S8/Internal/NuclearKSAnisotropicScaling.lean, lean/ManyBody/S8/Internal/NuclearKSGrushinScaling.lean, lean/ManyBody/S8/Internal/NuclearKSMeasureScaling.lean, lean/ManyBody/S8/NuclearKSScaledEquation.lean, lean/ManyBody/S8/NuclearKSRescaledInitialization.lean, claims/cards/S8-007.md]
+  caveats: >
+    Proposed tier-L submission pending human statement-card review. Constants
+    may depend on the fixed rescaled cutoff and center. No radius-independent
+    unscaled derivative norms, shrinking-cutoff hierarchy, full joint H2 norm
+    budget, H12, factorial bound, full Rung 2 or Theorem T is concluded.
+
+- id: S8-008
+  sector: S8
+  title: Actual two-electron pair KS local joint H2 and isolated-collision coverage (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-006]
+  statement: >
+    The original physical two-electron scalar eigenfunction graph, continuous
+    representative and physical AE equality imply genuine ProductLocalWeakH2On
+    of the actual pair KS pullback on the patch excluding both original nuclear
+    collisions. The spin graph supplies one representative before all components
+    and cutoffs, retaining its permutation law and Moser amplitude bound.
+    Orthogonal Hadamard geometry derives principal c=4, physical pair distance
+    sqrt(2)*|Y|^2 and cleared repulsion constant 8/sqrt(2). Integrability and the
+    actual weak equation across Y=0 are proved. Every isolated physical pair
+    collision away from the nucleus is covered by the actual lift with Y=0.
+  conditional_on:
+    - The original two-electron scalar or spin Coulomb eigenfunction graph.
+    - Continuous representative and physical AE equality in the scalar theorem; constructed in the spin theorem.
+    - Compact smooth cutoffs inside the actual pair coefficient patch, excluding both nuclear collisions.
+  lean:
+    - {module: ManyBody.S8.PairKSInitialization, decl: ManyBody.S8.scalar_coulomb_pair_KS_local_weakH2}
+    - {module: ManyBody.S8.PairKSInitialization, decl: ManyBody.S8.coulomb_spin_pair_KS_local_weakH2}
+    - {module: ManyBody.S8.Internal.PairKSGeometry, decl: ManyBody.S8.pairKSLift_covers_isolated_pair_collision}
+    - {module: ManyBody.S8.Internal.PairKSEquation, decl: ManyBody.S8.scalar_coulomb_pair_KS_weak}
+  card: claims/cards/S8-008.md
+  evidence: [lean/ManyBody/S8/PairKSInitialization.lean, lean/ManyBody/S8/Internal/PairKSGeometry.lean, lean/ManyBody/S8/Internal/PairKSLaplacian.lean, lean/ManyBody/S8/Internal/PairKSEquation.lean, lean/ManyBody/S8/Internal/PairKSCutoffGain.lean, claims/cards/S8-008.md]
+  caveats: >
+    Proposed tier-L submission pending human review. Qualitative joint H2 only;
+    no quantitative uniform budgets, H12, simultaneous-collision or higher-N
+    coverage, factorial estimates, full Rung 2 or Theorem T is concluded.
+
+- id: S8-009
+  sector: S8
+  title: Full joint local weak H3 on physical nuclear KS patches (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-006]
+  statement: >
+    For every electron number and selected index, the original scalar Coulomb
+    eigenfunction graph with a continuous physical representative and physical
+    AE identity yields ProductLocalWeakH3On of the actual nuclear KS pullback.
+    For positive electron number, the spin graph supplies one representative
+    before all components, nuclear charts and cutoffs, retaining physical AE,
+    permutation and Moser bounds. Every cutoff has the same output U and genuine
+    ordered arbitrary-direction first, second and third weak L2 witness families.
+    Actual spectator and Y differentiated equations and all input derivatives
+    are derived; no transformed PDE or third derivative is a physical premise.
+  conditional_on:
+    - The original scalar or spin Coulomb eigenfunction graph.
+    - Continuous representative and physical AE identity in the scalar theorem; constructed in the spin theorem.
+    - Compact smooth cutoffs inside the actual nuclear coefficient patch, with other singularities excluded.
+  lean:
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.product_local_weakH3_of_first_local_weakH2}
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.local_homogeneous_grushin_joint_h3}
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.scalar_coulomb_nuclear_KS_local_weakH3}
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.coulomb_spin_nuclear_KS_local_weakH3}
+    - {module: ManyBody.S8.Internal.HigherSpectatorRegularity, decl: ManyBody.S8.weak_grushin_inhomogeneous_spectator_equation}
+    - {module: ManyBody.S8.Internal.HigherSpectatorRegularity, decl: ManyBody.S8.homogeneous_grushin_first_spectator_local_h2}
+    - {module: ManyBody.S8.Internal.GrushinYCommutator, decl: ManyBody.S8.weak_grushin_homogeneous_y_equation}
+    - {module: ManyBody.S8.Internal.HigherYRegularity, decl: ManyBody.S8.homogeneous_grushin_first_y_local_h2}
+    - {module: ManyBody.S8.Internal.HigherDirectionalRegularity, decl: ManyBody.S8.homogeneous_grushin_first_direction_local_h2}
+  card: claims/cards/S8-009.md
+  evidence: [lean/ManyBody/S8/Internal/JointWeakH3Initialization.lean, lean/ManyBody/S8/Internal/HigherSpectatorRegularity.lean, lean/ManyBody/S8/Internal/GrushinYCommutator.lean, lean/ManyBody/S8/Internal/WeakProductLocalCompatibility.lean, lean/ManyBody/S8/Internal/HigherYRegularity.lean, lean/ManyBody/S8/Internal/HigherDirectionalRegularity.lean, claims/cards/S8-009.md]
+  caveats: >
+    Proposed tier-L submission pending human statement review. Qualitative H3;
+    no H12 or all-order regularity, finite uniform budgets, factorial estimate,
+    pair/intersection coverage, full Rung 2 or Theorem T is concluded.
+
+- id: S8-010
+  sector: S8
+  title: Finite second spectator budgets in the original physical state norm (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-007, S8-009]
+  statement: >
+    For the fixed two-electron nuclear chart and every smooth compact inner
+    cutoff, two outer plateau cutoffs and one nonnegative geometric D are
+    chosen before charge, energy and original spin-state eigenfunction.
+    Genuine successive first and second spectator derivatives are constructed,
+    and their inner Y/T/YY squared norm sums are bounded by
+    D*(1+b0^2+b1^2+b2^2)^3*MoserCoeff(2,Z,E)^2*||psi||^2,
+    with b2=(128/27)|Z|+8192/1331. The literal coefficient mixed second
+    derivative bound and the actual differentiated source are proved; no
+    transformed PDE, derivative or derivative-norm budget is a physical input.
+  conditional_on:
+    - The original two-electron Coulomb spin eigenfunction graph.
+    - Unit spectator center and displayed compact smooth cutoff inside the actual nuclear chart.
+  lean:
+    - {module: ManyBody.S8.NuclearChartSecondSpectatorNormBudget, decl: ManyBody.S8.two_electron_nuclear_chart_second_spectator_original_norm_budget}
+    - {module: ManyBody.S8.Internal.NuclearChartSecondDerivativeBounds, decl: ManyBody.S8.inv_norm_second_directional_le}
+    - {module: ManyBody.S8.Internal.NuclearChartSecondDerivativeBounds, decl: ManyBody.S8.nuclearKSPotential_second_spectator_abs_le_of_mem_nuclearChartOpen}
+  card: claims/cards/S8-010.md
+  evidence: [lean/ManyBody/S8/NuclearChartSecondSpectatorNormBudget.lean, lean/ManyBody/S8/Internal/NuclearChartSecondDerivativeBounds.lean, claims/cards/S8-010.md]
+  caveats: >
+    Proposed tier-L submission pending human review. The derivatives are of
+    the explicitly nested cutoff functions. Fixed-chart finite budgets do not
+    give full joint H12 norm bounds, shrinking-cutoff or all-order factorial
+    estimates, complete collision coverage, full Rung 2 or Theorem T.
+
+- id: S8-014
+  sector: S8
+  title: Physical eigenstate Lipschitz bounds in the original norm (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S1-001]
+  statement: >
+    For each positive electron count and fixed real charge, energy and ball
+    radius, one finite nonnegative constant precedes every original physical
+    spin-state eigenfunction. The actual graph supplies one globally locally
+    Lipschitz representative with physical AE identity, permutation law and
+    full-spin Moser bound. Every component has Lipschitz constant on the closed
+    physical configuration ball bounded by that constant times the original
+    spin-state norm. The scalar bound transfers to any continuous AE representative.
+  conditional_on:
+    - Positive electron number and fixed real charge, energy and configuration-ball radius.
+    - The original physical scalar or full-spin Coulomb eigenfunction graph.
+    - Only the scalar compatibility theorem assumes a continuous AE representative.
+  lean:
+    - {module: ManyBody.S8.PhysicalEigenstateLipschitzNormBound, decl: ManyBody.S8.coulomb_spin_local_lipschitz_original_norm_bound}
+    - {module: ManyBody.S8.PhysicalEigenstateLipschitzNormBound, decl: ManyBody.S8.scalar_coulomb_local_lipschitz_original_norm_bound}
+    - {module: ManyBody.S8.PhysicalEigenstateLipschitzNormBound, decl: ManyBody.S8.scalar_coulomb_continuous_lipschitz_original_norm_bound}
+  card: claims/cards/S8-014.md
+  evidence: [lean/ManyBody/S8/PhysicalEigenstateLipschitzNormBound.lean, claims/cards/S8-014.md]
+  caveats: >
+    Proposed tier-L evidence pending human statement review. The common constant
+    is existential and non-effective, from Banach-Steinhaus on the closed
+    physical eigenspace. No numerical algorithm, charge/energy/radius uniformity,
+    factorial estimate, global approximation, solver correctness or full Rung 2
+    is concluded by this statement.
+
+- id: S8-016
+  sector: S8
+  title: One finite physical collision-chart family at every nonzero radius (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  statement: >
+    Every positive relative width has one finite set of unit physical spectator
+    centers covering the actual two-electron unit configuration sphere by the
+    collision-free set, both nuclear neighborhoods and the original half-sum
+    pair neighborhood. The same finite family precedes every positive radius
+    and covers every nonzero physical configuration after literal norm scaling.
+    At widths at most 1/16, nuclear neighborhoods exclude the other nucleus and
+    pair collision, and pair neighborhoods exclude both nuclei.
+  conditional_on:
+    - Positive relative neighborhood width; width at most 1/16 for the other-collision exclusions.
+    - Positive radius or nonzero original configuration for the scaled cover.
+  lean:
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.configuration_two_position_norm_sq}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_unit_annulus_covered}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_unit_annulus_finite_physical_chart_cover}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.annularNuclearNeighborhood_avoids_other_collisions}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.annularPairNeighborhood_avoids_nuclear_collisions}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_all_radii_finite_physical_chart_cover}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_punctured_configuration_finite_physical_chart_cover}
+  card: claims/cards/S8-016.md
+  evidence: [lean/ManyBody/S8/Internal/TwoElectronAnnularCollisionCover.lean, claims/cards/S8-016.md]
+  caveats: >
+    Proposed tier-L geometry pending human statement review. Triple origin is
+    excluded. No analytic applicability, derivative budgets, chart/stratum
+    compatibility, noncollision analytic estimate, global approximation, solver
+    or full Rung 2 follows. The finite center family is existential, with no
+    executable center-selection algorithm.

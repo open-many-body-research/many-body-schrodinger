@@ -42,3 +42,32 @@ Even if it were finished, $`C_Z`$ would not be explicit and the exponent would n
 ## Where to look
 - **Lean:** `lean/Foundation/CoulombRankOneBranch_v1.lean`, `CoulombRankOneCertificate_v1.lean`, `TwoElectronPhysicalGroundBranch_v1.lean`, `TwoElectronGroundMultiplicity_v1.lean`, `TwoElectronPhysicalCertificate_v1.lean`.
 - **Research notes:** [`archive/v1.0-research-notes/`](../../archive/v1.0-research-notes/). Relevant files are `TWO_ELECTRON_THEOREM.md`, `RWA_REPORT.md` (historical; it contains the withdrawn "PROVEN" claim) and `continuation/paper/TWO_ELECTRON_PHYSICAL_COMPARISON_v1.md`.
+
+## Submitted continuation: screened ground branch
+
+[S2-009](../../claims/cards/S2-009.md) submits a kernel-checked extension of the
+physical ground branch to real $`Z > (2\sqrt{2}+\sqrt{5})/3 \approx 1.688`$.
+Its screened hydrogen product gives $`E_Z \le -(Z-\sqrt{2}/4)^2 < -5Z^2/8`$,
+with attainment, a one-dimensional complex ground eigenspace, and the same
+rest-spectrum separator. The explicit charge $`Z=7/4`$ is included although the
+foundation strict-trial condition fails there.
+
+This is submitted evidence pending human maintainer statement review. It is
+partial progress on S2.4 using the existing uncertainty bound. The exact-repulsion
+threshold of S2-005 and Theorem T remain open; the accepted foundation entries
+above are preserved. The new source is
+[`ManyBody/S2/ScreenedGroundBranch.lean`](../../lean/ManyBody/S2/ScreenedGroundBranch.lean).
+
+
+## Submitted continuation: exact product repulsion closes the S2.4 deliverable
+
+[S2-010](../../claims/cards/S2-010.md) proves the actual hydrogen-product
+repulsion $`5\alpha/8`$, its genuine Coulomb integrability and the optimized
+physical singlet energy $`-(Z-5/16)^2`$. It constructs the normalized simple
+ground branch and the same complement/rest-spectrum separator for every real
+$`Z>(20+5\sqrt{10})/24\approx1.49214`$. In particular, $`Z=3/2`$ is included,
+with $`E\le-361/256<-45/32`$, beyond the prior uncertainty estimate.
+
+This supplies S2.4's requested Lean theorem, pending human maintainer statement
+review and acceptance. The existing S2-005 paper tier and accepted current-best
+table are preserved. Rung 2 and Theorem T remain open.
