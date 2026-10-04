@@ -355,3 +355,9 @@ Independent AI source/card/artifact review passed; human statement review and ex
 [S8-037](../../claims/cards/S8-037.md) For the same actual normalized physical ground and original nuclear and pair A,B,H profiles, every literal finite canonical Taylor polynomial has genuine iterated derivative equal to the correctly shifted Taylor truncation of the corresponding actual derivative field. On the actual quarter polydiscs this gives simultaneous geometric value, gradient and Hessian errors for that one polynomial in true multilinear operator norms, while retaining all original physical and spectral facts.
 Errors are in independent complex ambient distance coordinates. Physical Cartesian pullback H2 integration, rational or effective coefficient choice, global approximation and full rung are separate obligations.
 Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: normalize radial compact physical approximants while preserving ground symmetries
+
+[S8-038](../../claims/cards/S8-038.md) The same actual normalized scalar Coulomb ground and original genuine weak derivative families admit norm-one radial compact H2 approximants preserving actual exchange, reality and simultaneous full O3 invariance. For each positive admissible decay rate one nonnegative constant precedes every real radius beyond the explicit normalization threshold and controls the true combined H2 defect, actual scalar Hamiltonian graph residual and absolute Rayleigh pairing error exponentially.
+The radius threshold is explicit in the existential selected-state/rate constant. Smoothness, finite dictionaries, computable constants or coefficient selection, solver termination and full rung remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.

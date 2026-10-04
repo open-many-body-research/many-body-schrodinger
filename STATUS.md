@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 43 |
+| **L** | Lean-verified | 44 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -116,6 +116,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-034](claims/cards/S8-034.md) | Preserve actual ground symmetries under radial physical compact truncation (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; Positive decay rate with its square strictly below Z squared over112 and R at least1 |
 | [S8-036](claims/cards/S8-036.md) | Derive actual ambient profile reality and canonical real Taylor coefficients (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact original selected scale and real polydisc conditions in the card |
 | [S8-037](claims/cards/S8-037.md) | Couple actual distance Taylor polynomial gradient and Hessian errors (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact original selected scale and quarter polydisc conditions in the card |
+| [S8-038](claims/cards/S8-038.md) | Normalize radial compact physical approximants while preserving ground symmetries (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; Positive decay rate with a squared below Z squared over112 and R at least max1(2C/a) |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
