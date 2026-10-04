@@ -57,3 +57,17 @@ partial progress on S2.4 using the existing uncertainty bound. The exact-repulsi
 threshold of S2-005 and Theorem T remain open; the accepted foundation entries
 above are preserved. The new source is
 [`ManyBody/S2/ScreenedGroundBranch.lean`](../../lean/ManyBody/S2/ScreenedGroundBranch.lean).
+
+
+## Submitted continuation: exact product repulsion closes the S2.4 deliverable
+
+[S2-010](../../claims/cards/S2-010.md) proves the actual hydrogen-product
+repulsion $`5\alpha/8`$, its genuine Coulomb integrability and the optimized
+physical singlet energy $`-(Z-5/16)^2`$. It constructs the normalized simple
+ground branch and the same complement/rest-spectrum separator for every real
+$`Z>(20+5\sqrt{10})/24\approx1.49214`$. In particular, $`Z=3/2`$ is included,
+with $`E\le-361/256<-45/32`$, beyond the prior uncertainty estimate.
+
+This supplies S2.4's requested Lean theorem, pending human maintainer statement
+review and acceptance. The existing S2-005 paper tier and accepted current-best
+table are preserved. Rung 2 and Theorem T remain open.
