@@ -1795,3 +1795,28 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     No eigenvalue, charge lower bound, spectral gap, decay or approximation premise is used. Radius and sufficiently late index are existential; no symmetry of the graph image, rational dictionary, effective selection, solver termination or full rung is claimed.
+
+- id: S8-046
+  sector: S8
+  title: Preserve actual Coulomb graph image symmetries in normalized smooth approximation (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-044]
+  statement: >
+    Actual scalar Coulomb graph covariance and output uniqueness transport every original permutation, reality and simultaneous orthogonal symmetry to the original graph output. For every real charge, the same actual normalized symmetric smooth compact two-electron approximants have actual graph outputs with exchange, AE reality and fullO3 symmetry, retaining the true43component H2, originalstate, graph difference and absolute Rayleigh difference bounds at every positive tolerance.
+  conditional_on:
+    - Every finite electron count and real charge for actual scalar graph covariance; original input symmetry is explicit.
+    - For the two-electron approximation endpoint the actual original graph input has normone, exchange invariance, AE reality and simultaneous O3 invariance.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalScalarGraphImageSymmetry, decl: ManyBody.S8.physical_scalar_graph_output_permutation}
+    - {module: ManyBody.S8.Internal.PhysicalScalarGraphImageSymmetry, decl: ManyBody.S8.physical_scalar_graph_output_real}
+    - {module: ManyBody.S8.Internal.PhysicalScalarGraphImageSymmetry, decl: ManyBody.S8.physical_scalar_graph_output_rotation}
+    - {module: ManyBody.S8.Internal.PhysicalScalarGraphImageSymmetry, decl: ManyBody.S8.physical_twoElectron_scalar_graph_output_symmetries}
+    - {module: ManyBody.S8.CoulombSymmetricGraphImageApproximation, decl: ManyBody.S8.physical_normalized_radial_smooth_graph_output_symmetry}
+    - {module: ManyBody.S8.CoulombSymmetricGraphImageApproximation, decl: ManyBody.S8.twoElectron_normalized_symmetric_scalar_graph_image_smooth_approximation}
+  card: claims/cards/S8-046.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalScalarGraphImageSymmetry.lean, lean/ManyBody/S8/CoulombSymmetricGraphImageApproximation.lean, claims/cards/S8-046.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Output symmetry is derived from the actual input and graph, with no eigenvalue, gap, decay, outputsymmetry or approximationexistence premise. No smooth compact representative of the graph output, rational dictionary, effective selection, solver or full rung is asserted.
