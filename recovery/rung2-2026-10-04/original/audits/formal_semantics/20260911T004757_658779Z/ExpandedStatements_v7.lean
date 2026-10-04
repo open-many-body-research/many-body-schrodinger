@@ -1,0 +1,35 @@
+import SmoothWordBoxFiniteRepresentative_v1
+import SmoothWordBoxAllOrderRepresentative_v1
+import TensorBoxLimitPointwiseBound_v1
+import SmoothWordBoxQuantitativeRepresentative_v1
+import SmoothWordBoxFiniteQuantitative_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.smooth_words7_finite_representatives_of_L2_limits
+#check @TheoremT.Continuum.compatible_coordinate_words7_eq
+#check @TheoremT.Continuum.smooth_words7_allOrder_representative_of_L2_limits
+#check @TheoremT.Continuum.tensor_box7_pointwise_bound_of_L2_limits
+#check @TheoremT.Continuum.smooth_words7_quantitative_representative_of_L2_limits
+#check @TheoremT.Continuum.compatible_finite_coordinate_words7_eq
+#check @TheoremT.Continuum.smooth_words7_finite_quantitative_representative_of_L2_limits
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.smooth_words7_finite_representatives_of_L2_limits
+#print axioms TheoremT.Continuum.compatible_coordinate_words7_eq
+#print axioms TheoremT.Continuum.smooth_words7_allOrder_representative_of_L2_limits
+#print axioms TheoremT.Continuum.tensor_box7_pointwise_bound_of_L2_limits
+#print axioms TheoremT.Continuum.smooth_words7_quantitative_representative_of_L2_limits
+#print axioms TheoremT.Continuum.compatible_finite_coordinate_words7_eq
+#print axioms TheoremT.Continuum.smooth_words7_finite_quantitative_representative_of_L2_limits

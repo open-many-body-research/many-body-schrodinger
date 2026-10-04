@@ -1,0 +1,160 @@
+@TheoremT.Continuum.WeakGrushin.product_mixed_finite_budget_transfer_of_local_ae : ∀
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex} {m : Nat}
+  {W : Real} (hf : TheoremT.Continuum.WeakGrushin.ProductMixedMultiIndexWeakHk Ω f m W)
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (hF0 :
+    @Filter.Eventually.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _ Ω p →
+          @Eq.{1} Complex
+            (F (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _) p)
+            (f p))
+      (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          _)
+        _ _
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)))
+  (hFY :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α k)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+          m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω (F α β)
+          (F
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+              α
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            β)
+          (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+  (hFT :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β k))
+          m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω (F α β)
+          (F α
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+              β
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hab :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+      m),
+  @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ (F α β) Ω W
+@TheoremT.Continuum.WeakGrushin.product_mixed_finite_budget_transfer : ∀
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex} {m : Nat}
+  {W : Real} (hf : TheoremT.Continuum.WeakGrushin.ProductMixedMultiIndexWeakHk Ω f m W)
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (hF0 :
+    @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+      (F (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+      f)
+  (hFY :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α k)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+          m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω (F α β)
+          (F
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+              α
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            β)
+          (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+  (hFT :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β k))
+          m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω (F α β)
+          (F α
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+              β
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hab :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+      m),
+  @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ (F α β) Ω W
+'TheoremT.Continuum.WeakGrushin.product_mixed_finite_budget_transfer_of_local_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.product_mixed_finite_budget_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,43 @@
+TheoremT.Continuum.factorial_majorant_finite_convolution : ∀ (B : Real) (r : Nat),
+  @Eq.{1} Real
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+        @HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B)
+            (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+TheoremT.Continuum.factorial_majorant_sequence_bound : ∀ (B : Real)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) B) (n0 : Nat) (d : Nat → Real)
+  (hinit : ∀ (r : Nat), @LT.lt.{0} Nat _ r n0 → @LE.le.{0} Real _ (d r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hstep :
+    ∀ (r : Nat),
+      @LE.le.{0} Nat _ n0 r →
+        @LE.le.{0} Real _ (d r)
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+              @HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+                (d
+                  (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+                    (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) j)))))
+  (r : Nat),
+  @LE.le.{0} Real _ (d r)
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B)
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+'TheoremT.Continuum.factorial_majorant_finite_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.factorial_majorant_sequence_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

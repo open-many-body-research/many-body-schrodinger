@@ -1,0 +1,87 @@
+{
+  "status": "PASS_EXACT_FINITE_SPECTATOR_EXTRACTION_AND_REAL_CIRCLE_TRANSFER",
+  "utc": "2026-09-11T02:34:04.390859+00:00",
+  "evidence_category": "Fully formalized finite polynomial algebra; circle transfer is conditional on literal real joint polynomial invariance.",
+  "exact_results": [
+    "Literal spectator regrouping through the pinned sumRingEquiv yields genuine Fin4 polynomials P_gamma whose alpha coefficient equals exactly the original joint coefficient P.coeff(sumElim alpha gamma).",
+    "The finite sum over the actual outer spectator support reconstructs the joint evaluation for all complex Y and spectator inputs.",
+    "If P is total-homogeneous n, P_gamma is Y-homogeneous n\u2212gamma.degree; it is zero if gamma.degree>n.",
+    "For every fixed gamma, the entire coefficient L1 of P_gamma is at most L1(P), by injection into the original support.",
+    "Equality of joint evaluations for all real spectator values implies equality of each extracted coefficient-polynomial evaluation. Actual real product-circle invariance therefore yields circle invariance and balanced spinor support of the same P_gamma."
+  ],
+  "sources": [
+    {
+      "path": "lean/KSSpectatorCoefficientPolynomial_v1.lean",
+      "sha256": "98d5a9912b114a40cf747db0390d44831c05ccc534d70fd8fea2592a7b23bcda"
+    },
+    {
+      "path": "lean/KSSpectatorCoefficientInvariance_v1.lean",
+      "sha256": "155b6ab192d6bb426a447bbbcd487440d86f2d9475a84eba525d9837e73287c7"
+    }
+  ],
+  "builds": [
+    {
+      "path": "logs/development/KSSpectatorCoefficientPolynomial_v1-20260911T022738_896487Z.json",
+      "sha256": "d3e3e13326e74557be85a23748ea2f4691eebb12972c5a933cd0d7561b3846f9"
+    },
+    {
+      "path": "logs/development/KSSpectatorCoefficientInvariance_v1-20260911T022829_206495Z.json",
+      "sha256": "b5a0a8a5194005cbd63c52b912f19716e486188e6a25e692277511ca6ecbb7e4"
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T022910_280758Z/receipt.json",
+    "sha256": "f7dbb74597deb6bfc7b1bbb480a4fca5846b6d9cabe8e8e0b991a78e97907777"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T022910_280758Z/ExpandedStatements_v8.log",
+    "sha256": "32e38649fd2c32a3cb93563102272b3edc0e3d596d812f087e9c2e8a662fc924"
+  },
+  "independent_review": {
+    "path": "audits/KS_SPECTATOR_COEFFICIENT_EXTRACTION_INVARIANCE_REVIEW_v1_20260911T023303Z.json",
+    "sha256": "aa7bbeb546375f6da98ee9ad22d837dbd33bb45b5ea3401e5d64078ae3fd4819"
+  },
+  "generic_helper": {
+    "source": {
+      "path": "lean/MvPolynomialSumCoefficient_v1.lean",
+      "sha256": "895d59f96d9abcc00060b27c5ce9d31c4719d4a30d7dd42f1c04fa47305c93b9"
+    },
+    "build": {
+      "path": "logs/development/MvPolynomialSumCoefficient_v1-20260911T022605_244337Z.json",
+      "sha256": "9baf5e16eafa9ea4ce8bfaa83d247d8741e790601445e0844135ae0ff9740481"
+    },
+    "strict": {
+      "path": "audits/formal_semantics/20260911T022626_096627Z/receipt.json",
+      "sha256": "7a921123c5366ed619b3d8e3513cbb1eaefe762a638183a8a1ba15217ced7ea5"
+    },
+    "expanded_log": {
+      "path": "audits/formal_semantics/20260911T022626_096627Z/ExpandedStatements_v8.log",
+      "sha256": "d41d9e0e44043a2deca368e69281e3d4007d175c0cabe0ba96f9a5a612cc45d2"
+    },
+    "independent_review": {
+      "path": "audits/MV_POLYNOMIAL_SUM_COEFFICIENT_REVIEW_v1.json",
+      "sha256": "2070cec8bb8f02279203167f8f26cf6ec7c2a3120c9790ad3efd3180913cd2f1"
+    }
+  },
+  "manual_check": "Complete final source/proof bodies, all17 target and2 helper expanded statements/axiom reports, full strict receipts and independent reviews read. No nonstandard mathematical axiom or hidden complex-invariance premise.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "mathematical_caution": "A linear spectator monomial has odd total degree but extracts to a constant Y polynomial. Only the remaining Y degree is relevant to circle parity; no odd-total-degree vanishing is asserted.",
+  "limitations": [
+    "Finite polynomial decomposition only; infinite Taylor/spectator regrouping remains separate.",
+    "The per-gamma L1 domination is not yet a summed identity over all gamma.",
+    "Complex polynomial definitions are mathematical noncomputable objects; no executable rational implementation or complexity result.",
+    "Pinned dependency cache reused; no isolated source rebuild."
+  ],
+  "environment": "The generic helper initially stalled in ambient Homebrew Python before Lean started. Root stopped only that idle process. The unchanged selected v1 compiled on its first actual Lean run with /usr/bin/python3 login:false; separately preserved v2 is unselected and unaudited.",
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Seal the already compiled/audited physical Taylor coefficient consumer, then parent composes with the analytic spectator-series descent."
+}

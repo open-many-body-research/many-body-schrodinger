@@ -1,0 +1,47 @@
+@TheoremT.Continuum.spectatorGeometricWeight : {d : Nat} → (q : Fin d → Real) → (γ : Fin d → Nat) → Real
+@TheoremT.Continuum.spectatorGeometricWeight_nonneg : ∀ {d : Nat} (q : Fin d → Real)
+  (h0 : ∀ (i : Fin d), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (q i)) (γ : Fin d → Nat),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (@TheoremT.Continuum.spectatorGeometricWeight d q γ)
+TheoremT.Continuum.spectator_geometric_hasSum : ∀ (d : Nat) (q : Fin d → Real)
+  (h0 : ∀ (i : Fin d), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (q i))
+  (h1 : ∀ (i : Fin d), @LT.lt.{0} Real _ (q i) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @HasSum.{0, 0} Real (Fin d → Nat) _ _ (@TheoremT.Continuum.spectatorGeometricWeight d q)
+    (@Finset.prod.{0, 0} (Fin d) Real _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+      @Inv.inv.{0} Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (q i)))
+    (SummationFilter.unconditional.{0} (Fin d → Nat))
+@TheoremT.Continuum.spectator_geometric_summable : ∀ {d : Nat} (q : Fin d → Real)
+  (h0 : ∀ (i : Fin d), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (q i))
+  (h1 : ∀ (i : Fin d), @LT.lt.{0} Real _ (q i) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @Summable.{0, 0} Real (Fin d → Nat) _ _ (@TheoremT.Continuum.spectatorGeometricWeight d q)
+    (SummationFilter.unconditional.{0} (Fin d → Nat))
+@TheoremT.Continuum.spectator_geometric_tsum : ∀ {d : Nat} (q : Fin d → Real)
+  (h0 : ∀ (i : Fin d), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (q i))
+  (h1 : ∀ (i : Fin d), @LT.lt.{0} Real _ (q i) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @Eq.{1} Real
+    (@tsum.{0, 0} Real (Fin d → Nat) _ _ (fun (γ : Fin d → Nat) => @TheoremT.Continuum.spectatorGeometricWeight d q γ)
+      (SummationFilter.unconditional.{0} (Fin d → Nat)))
+    (@Finset.prod.{0, 0} (Fin d) Real _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+      @Inv.inv.{0} Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (q i)))
+@TheoremT.Continuum.spectator_geometric_tsum_uniform_bound : ∀ {d : Nat} (q : Fin d → Real)
+  (h0 : ∀ (i : Fin d), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (q i)) {s : Real}
+  (hs : @LT.lt.{0} Real _ s (@OfNat.ofNat.{0} Real (nat_lit 1) _)) (hqs : ∀ (i : Fin d), @LE.le.{0} Real _ (q i) s),
+  @LE.le.{0} Real _
+    (@tsum.{0, 0} Real (Fin d → Nat) _ _ (fun (γ : Fin d → Nat) => @TheoremT.Continuum.spectatorGeometricWeight d q γ)
+      (SummationFilter.unconditional.{0} (Fin d → Nat)))
+    (@Inv.inv.{0} Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) s) d))
+TheoremT.Continuum.spectator_geometric_tsum_dimension_zero : ∀ (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 0) _) → Real),
+  @Eq.{1} Real
+    (@tsum.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 0) _) → Nat) _ _
+      (fun (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 0) _) → Nat) =>
+        @TheoremT.Continuum.spectatorGeometricWeight (@OfNat.ofNat.{0} Nat (nat_lit 0) _) q γ)
+      (SummationFilter.unconditional.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 0) _) → Nat)))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+'TheoremT.Continuum.spectatorGeometricWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorGeometricWeight_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_geometric_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_geometric_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_geometric_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_geometric_tsum_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_geometric_tsum_dimension_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

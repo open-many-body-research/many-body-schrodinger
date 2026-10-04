@@ -1,0 +1,146 @@
+{
+  "schema": "focused-mathematical-review-v1",
+  "created_utc": "2026-09-10T21:12:15.280641+00:00",
+  "status": "PASS_NO_CONCRETE_DEFECT_FOUND",
+  "reviewer": "/root/test_extension_recovery/product_converse",
+  "scope": "Exact extension of the physical spectator map/cutoff/step geometry to either selected electron i:Fin2. This focused integration review does not repeat the prior H12 coefficient proof or any PDE audit.",
+  "independence": "Reviewer authored the generalized map and independently inspected both parent generalized transport modules.",
+  "module_count": 3,
+  "declaration_count": 28,
+  "module_records": [
+    {
+      "module": "PhysicalSpectatorReindexAll_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorReindexAll_v1.lean",
+      "source_sha256": "f3ab3ed8b2f75b10692c4db3596ae55293836484c2e4f51160c8fe9c40e0c83c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalSpectatorReindexAll_v1.olean",
+      "object_sha256": "0893bdf4bb886e9b2227b72fb11f14caacefb43c549410373f6eb7f1ffcb40a9",
+      "declarations": [
+        "twoElectronSpectatorCoordinateEquiv",
+        "twoElectronSpectatorPositionEquiv",
+        "twoElectronSpectatorPositionEquiv_apply",
+        "twoElectronSpectatorPositionEquiv_symm_apply",
+        "twoElectronSpectatorPositionEquiv_basis",
+        "twoElectronSpectatorCoordinate_card",
+        "physicalSpectatorReindexAt",
+        "physicalSpectatorReindexAt_apply",
+        "physicalSpectatorReindexAt_symm_apply",
+        "physicalSpectatorReindexAt_yDir",
+        "physicalSpectatorReindexAt_tDir",
+        "physicalSpectatorReindexAt_symm_yDir",
+        "physicalSpectatorReindexAt_symm_tDir",
+        "physicalSpectatorReindexAt_contDiff",
+        "physicalSpectatorReindexAt_symm_contDiff",
+        "physicalSpectatorHomeomorphAt",
+        "physicalSpectatorHomeomorphAt_apply",
+        "physicalSpectatorHomeomorphAt_symm_apply",
+        "twoElectronSpectatorPositionEquiv_zero",
+        "physicalSpectatorReindexAt_zero"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalSpectatorCutoffTransportAll_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorCutoffTransportAll_v1.lean",
+      "source_sha256": "ec76c24dbfb8979d141ca1d13da07e89c2fd21504635a55f0dc24eb1c8821107",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalSpectatorCutoffTransportAll_v1.olean",
+      "object_sha256": "edab5aabb2431f113ccbd23302f441a135f6107044c2e33e005cbf101cf0f807",
+      "declarations": [
+        "physicalSpectatorReindexAt_cutoff_test",
+        "physicalSpectatorReindexAt_cutoff_first",
+        "physicalSpectatorReindexAt_cutoff_second",
+        "physicalSpectatorReindexAt_combinedCutoffScalar",
+        "physicalSpectatorReindexAt_cutoffGradientWeight",
+        "physicalSpectatorReindexAt_grushinCutoffWeight"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalSpectatorStepGeometryAll_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorStepGeometryAll_v1.lean",
+      "source_sha256": "31579fa594b41a28d6cbf0de7c25df71ed0114a02383aa20fae30633f7109726",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalSpectatorStepGeometryAll_v1.olean",
+      "object_sha256": "f34925c16bb0945c0074ab6f26144a7b87ad96669305bdb0e515cdec05e3229f",
+      "declarations": [
+        "SpectatorStepGeometry.pullback_physicalSpectatorReindexAt",
+        "physical_h12_spectatorStepGeometryAt"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipts": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211001_588213Z/receipt.json",
+      "sha256": "be6d925b49f94e4deeb3ca3b925d620bbb5c9dade20d0d511da4045e528a3af7",
+      "audit_source": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211001_588213Z/ExpandedStatements_v5.lean",
+        "sha256": "8cee10ea5753bc66b8fb992432854bc5bf9ef3fd88958c7b65d701c4fd8b0e27"
+      },
+      "audit_log": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211001_588213Z/ExpandedStatements_v5.log",
+        "sha256": "984f6bf690c04762b9f02def50713df794aa6e00eb7bb97bde503b9f53d2cc4f"
+      },
+      "audit_object": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211001_588213Z/ExpandedStatements_v5.olean",
+        "sha256": "b728ac154d00b7f0fd16eedf9f21a4b86c595c89b142c606bd4724f373a4e7e9"
+      },
+      "declaration_count": 20,
+      "ordered_expanded_statements_and_standard_axioms_match": true
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211054_697360Z/receipt.json",
+      "sha256": "a9b03c3ccc5a57d8381273fc2da67dead47df977a4b172a303396133bc3286ef",
+      "audit_source": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211054_697360Z/ExpandedStatements_v5.lean",
+        "sha256": "5c021f7183ebdbaaa1fe4f994f5927fc4aa3bb4daf38b2e70da835b67d2fe903"
+      },
+      "audit_log": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211054_697360Z/ExpandedStatements_v5.log",
+        "sha256": "e40052994b4f9d648e97b4f5be60b6063f08994bc3a4339545085a4609a8784e"
+      },
+      "audit_object": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T211054_697360Z/ExpandedStatements_v5.olean",
+        "sha256": "46e037095a39246d2e0e28b7b57ef55f0f1fe7d75e19b48fdea77428c2150ec8"
+      },
+      "declaration_count": 8,
+      "ordered_expanded_statements_and_standard_axioms_match": true
+    }
+  ],
+  "checks": [
+    "Each source space is WeakGrushin.Space (SpectatorCoordinate i), with the same explicit i used in physicalSpectatorReindexAt, the coordinate equivalence, every direction, every preimage, and both cutoffs. There is no implicit substitution of selected index zero.",
+    "The actual coordinate equivalence projects to the spatial coordinate and reconstructs the other electron i.rev. Both inverse laws are proved; cardinality three is a consequence, not a replacement for the equivalence.",
+    "First and ordered-second Frechet derivative transport uses the actual continuous linear isometry. All yDir directions are fixed; each tDir is mapped through twoElectronSpectatorCoordinateEquiv i.",
+    "Both scalar and gradient spectator sums are reindexed explicitly using the same equivalence sum_comp theorem. The y-coordinate radius is unchanged, yielding exact coefficient equalities without a dimension or norm-conversion loss.",
+    "The generic SpectatorStepGeometry pullback uses exact preimages of all three regions and proves open/support/plateau and numerical coefficient obligations. M,A,B,D,Q are unchanged.",
+    "physical_h12_spectatorStepGeometryAt applies the already proved Fin3 H12 assembler, then the generic pullback at the supplied i. It retains the actual smoothTransition derivative-bound hypotheses, independent spatial/spectator widths, delta gaps, c>=0 and the stated y-radius bound.",
+    "physicalSpectatorReindexAt_zero is an exact equality to the sealed old physicalSpectatorReindex. Consequently the index-zero formulas and preimage geometry agree; the new generalization adds the missing selected-index-one case without changing historical files.",
+    "All three current source/object pairs match their strict receipts; all twenty-eight expanded statements and standard-three axiom reports occur in exact order with no printer ellipses."
+  ],
+  "limitations": [
+    "The physical coordinate identification is restricted to N=2 and either selected electron, not arbitrary N.",
+    "No inclusion of the transported rectangular boxes into a nuclear or pair coefficient patch is proved here; such patch geometry must be supplied separately.",
+    "This unit transports cutoff coefficients and geometry only. It proves no PDE/integral transport, H1/H2 gain, scheduled analytic iteration or approximation theorem."
+  ],
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Declared strict audits reuse pinned Lean/Mathlib and prior continuation objects. The review performed no recompile or isolated source rebuild.",
+  "prior_links": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_SPECTATOR_REINDEX_ALL_CHECKPOINT_v1.json",
+      "sha256": "13fd9ed30b58eaa073ada26638f0ff3280423dabf9cccad035bd1c5c5badecac"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_SPECTATOR_GEOMETRY_FOCUSED_REVIEW_v1.json",
+      "sha256": "fa8c1b925d81b524e046834a578d06d0eabb65e62fd420444951bd69ed3b6146"
+    }
+  ],
+  "preservation": "All existing artifacts remained unchanged. This review file was created exclusively."
+}

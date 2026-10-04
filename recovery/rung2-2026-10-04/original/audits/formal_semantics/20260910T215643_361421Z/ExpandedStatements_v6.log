@@ -1,0 +1,45 @@
+@TheoremT.Continuum.analyticOnNhd_compact_factorial_bound_nhds.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] [@CompleteSpace.{u_2} F _] {K : Set.{u_1} E} (hK : @IsCompact.{u_1} E _ K)
+  {f : E → F} (hf : @AnalyticOnNhd.{0, u_1, u_2} Real E F _ _ _ _ _ f K),
+  @Exists.{u_1 + 1} (Set.{u_1} E) fun (U : Set.{u_1} E) =>
+    And (@Membership.mem.{u_1, u_1} (Set.{u_1} E) (Filter.{u_1} E) _ (@nhdsSet.{u_1} E _ K) U)
+      (@Exists.{1} Real fun (C : Real) =>
+        @Exists.{1} Real fun (A : Real) =>
+          And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+            (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+              (∀ (y : E),
+                @Membership.mem.{u_1, u_1} E (Set.{u_1} E) _ U y →
+                  ∀ (k : Nat),
+                    @LE.le.{0} Real _
+                      (@Norm.norm.{max u_2 u_1}
+                        (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _
+                          _)
+                        _ (@iteratedFDeriv.{0, u_1, u_2} Real _ E _ _ F _ _ k f y))
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                        (@Nat.cast.{0} Real _ (Nat.factorial k))))))
+@TheoremT.Continuum.analyticOnNhd_compact_factorial_bound.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] [@CompleteSpace.{u_2} F _] {K : Set.{u_1} E} (hK : @IsCompact.{u_1} E _ K)
+  {f : E → F} (hf : @AnalyticOnNhd.{0, u_1, u_2} Real E F _ _ _ _ _ f K),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (x : E),
+            @Membership.mem.{u_1, u_1} E (Set.{u_1} E) _ K x →
+              ∀ (k : Nat),
+                @LE.le.{0} Real _
+                  (@Norm.norm.{max u_2 u_1}
+                    (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _
+                    (@iteratedFDeriv.{0, u_1, u_2} Real _ E _ _ F _ _ k f x))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                    (@Nat.cast.{0} Real _ (Nat.factorial k)))))
+'TheoremT.Continuum.analyticOnNhd_compact_factorial_bound_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.analyticOnNhd_compact_factorial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

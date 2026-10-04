@@ -1,0 +1,146 @@
+{
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "utc": "2026-09-11T02:45:17.126601+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_ODD_Y_DEGREE_VANISHING",
+  "scope": "Independent bounded full-source and statement review of KSBalancedOddPolynomial_v1 and PhysicalKSTaylorOddSpectator_v1. Only new review files created; no source edits, builds or broad audits.",
+  "targets": [
+    {
+      "module": "KSBalancedOddPolynomial_v1",
+      "source": {
+        "path": "lean/KSBalancedOddPolynomial_v1.lean",
+        "sha256": "40edeab26b5e760fa6f1b293da62ecefb3614139246622f946d72d27daf8cbb9"
+      },
+      "object": {
+        "path": "lean/build/KSBalancedOddPolynomial_v1.olean",
+        "sha256": "ab4646e76045ebd6d0946e3910ced39e66e082b76f52f1bfde9a4212fcaea1f2"
+      },
+      "declarations": [
+        "ksBalancedPolynomial_odd_eq_zero",
+        "ksRealPolynomialToSpinor_injective",
+        "ksRealPolynomial_odd_eq_zero_of_balanced"
+      ]
+    },
+    {
+      "module": "PhysicalKSTaylorOddSpectator_v1",
+      "source": {
+        "path": "lean/PhysicalKSTaylorOddSpectator_v1.lean",
+        "sha256": "977b1facd26315f61fa4c39609bb21fbc29cc6a17b188fd912473a1b35619951"
+      },
+      "object": {
+        "path": "lean/build/PhysicalKSTaylorOddSpectator_v1.olean",
+        "sha256": "5dbecff6cb4cbca492eaf55c01ddd8dc17981381d6efec4c3903722c7fd4fe38"
+      },
+      "declarations": [
+        "nuclearKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero",
+        "pairKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero"
+      ]
+    }
+  ],
+  "build_receipts": [
+    {
+      "path": "logs/development/KSBalancedOddPolynomial_v1-20260911T024219_262172Z.json",
+      "sha256": "28bb3969e8df9d19214dad478ce15df8803216147d0645d2efd5d0105a6c57f5"
+    },
+    {
+      "path": "logs/development/PhysicalKSTaylorOddSpectator_v1-20260911T024241_885300Z.json",
+      "sha256": "a9c67a421d9658c9e2d2f665493935cb792593a125a74e90d9f10805482b2ad1"
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T024310_036611Z/receipt.json",
+    "sha256": "01862c9665b0729759e168277fdd154c174bb7d91507b240ddea3e1d511c5792"
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T024310_036611Z/ExpandedStatements_v8.lean",
+    "sha256": "ae5292a0bb315abe7295c2f8d558a09dd08515165e2685db8c9a24c073731f3b"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T024310_036611Z/ExpandedStatements_v8.log",
+    "sha256": "0d37dfbb76b82eb443001490514375d58088a87dad6872459e5d75ef31fb8f2b"
+  },
+  "inspection": {
+    "complete_final_sources_and_proofs_read": true,
+    "complete_strict_receipt_read": true,
+    "complete_expanded_statements_and_axiom_reports_read": true,
+    "expanded_log_lines": 209,
+    "declaration_count": 5,
+    "current_source_and_object_hashes_match": true,
+    "autoImplicit": false,
+    "unexpected_mathematical_binders": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "printer_omissions": 0
+  },
+  "checks": [
+    {
+      "topic": "Balanced support parity",
+      "result": "For each hypothetical nonzero coefficient, support membership supplies d0+d1=d2+d3 and homogeneity supplies degree(d)=2*m+1. Finsupp degree on Fin 4 is exactly d0+d1+d2+d3, hence even. Natural-number arithmetic makes these premises inconsistent, so every coefficient is zero. This proof concerns only four spinor variables, includes m=0, and is valid for the zero polynomial."
+    },
+    {
+      "topic": "Actual inverse substitution injective",
+      "result": "Equality of ksRealPolynomialToSpinor P and ksRealPolynomialToSpinor Q implies equality at every actual spinor tuple (z1,z2,conj z1,conj z2). The previously proved physical evaluation identity converts this to equality of P,Q at every real four-tuple, covered by WithLp.toLp 2. The actual infinite real-grid polynomial equality theorem then gives P=Q in the complex polynomial ring. No complex openness of the real slice, analytic continuation hypothesis, or nonzero assumption is introduced."
+    },
+    {
+      "topic": "Original-coordinate odd vanishing",
+      "result": "The literal inverse spinor generators are homogeneous degree one, so the consumed substitution theorem preserves homogeneous degree 2*m+1. The first theorem makes the transformed polynomial zero. Injectivity and the exact eval\u2082_zero identity imply the original polynomial is zero. Final draft repair from generic map_zero to eval\u2082_zero changes no mathematical premise or target."
+    },
+    {
+      "topic": "Physical nuclear and pair composition",
+      "result": "The nuclear corollary covers every i:Fin 2 and preserves the same g, nuclearKSLift i and inverse physicalSpectatorReindexAt i in hdata and conclusion. The pair corollary keeps pairKSLift and inverse index-zero reindex. Both use the collision-fiber center (0,t0), all m:Nat and every spectator multiindex gamma. They combine previously established homogeneity and balanced support for the exact same physicalKSTaylorSpectatorCoefficient."
+    },
+    {
+      "topic": "Degree indexing and spectator edge case",
+      "result": "The physical polynomial has Y degree 2*m+1 and comes from total Taylor order (2*m+1)+gamma.degree. Gamma is unrestricted; no odd-total-degree conclusion occurs. A purely linear spectator contribution has Y degree zero, remains outside the odd-Y theorem, and is compatible with these results."
+    },
+    {
+      "topic": "Hypotheses and evidence scope",
+      "result": "PhysicalKSBoxPointwiseData for the actual pullback, A>=1 and F0>=0 remain explicit. There is no fresh assumption of balanced support or polynomial circle invariance in the physical corollaries; those are derived by the consumed physical Taylor theorem. The three generic declarations contain only their advertised polynomial hypotheses, and all five strict axiom reports use the standard three foundations."
+    }
+  ],
+  "immediate_sources_read": [
+    {
+      "artifact": {
+        "path": "lean/KSRealPolynomialToSpinor_v1.lean",
+        "sha256": "cd2ca53d1c4e6f6124617e73b98bd5b927fb61105b926c497bfd4beb7ee5737d"
+      },
+      "scope": "Full source; literal inverse substitution, actual physical evaluation and degree preservation."
+    },
+    {
+      "artifact": {
+        "path": "lean/KSSpinorPolynomialRealSlice_v1.lean",
+        "sha256": "5055b88c9b1c46ef27a46777388453d7d5b817e423f4e8dfb05e30c56c3785d2"
+      },
+      "scope": "Full source; real-slice equalities and actual circle invariance to balanced support."
+    }
+  ],
+  "consumed_reviews": [
+    {
+      "path": "audits/KS_SPINOR_REAL_SLICE_POLYNOMIAL_BRIDGE_REVIEW_v1_20260911T020355Z.json",
+      "sha256": "3e11ee1ae6c22a5ef9e5435d36b54814cce51bcf3c02f418642996882ecec9b7"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_COEFFICIENTS_REVIEW_v1_20260911T023541Z.json",
+      "sha256": "2f8c30bf7db1703f9ec0e14d352777fd8958c657bb20aaa0f4cb41784c3da9c7"
+    }
+  ],
+  "invalidating_findings": [],
+  "limitations": [
+    "Oddness concerns Y degree in four coordinates only; the source does not say that odd total seven-variable Taylor terms vanish.",
+    "The physical result retains the actual pointwise-data premise and does not itself close all continuum PDE, spin or ground-state hypotheses.",
+    "These are exact finite-polynomial zero identities. No even-index HasSum reindexing, infinite-series descent, common descended radius or global chart compatibility is established here.",
+    "The original real-coordinate polynomial has complex coefficients. The zero conclusion is literal equality in MvPolynomial (Fin 4) Complex, not just pointwise vanishing.",
+    "Existing pinned dependency objects were reused by the consumed compiler and strict audit; this is not an isolated source rebuild."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; prior successful source and evidence bytes preserved."
+  }
+}

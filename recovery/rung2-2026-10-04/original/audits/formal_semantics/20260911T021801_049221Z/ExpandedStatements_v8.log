@@ -1,0 +1,44 @@
+@TheoremT.Continuum.formalMultilinearSeries_radius_binomial_geometric.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) (d : Nat) {M D R : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hR : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) R)
+  (hDR : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D R) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@Nat.cast.{0} Real _ (Nat.choose (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n d) d)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @LE.le.{0} ENNReal _ (ENNReal.ofReal R) (@FormalMultilinearSeries.radius.{0, u_1, 0} Complex E Complex _ _ _ _ _ p)
+@TheoremT.Continuum.formalMultilinearSeries_analyticOnNhd_binomial_geometric.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) (d : Nat) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@Nat.cast.{0} Real _ (Nat.choose (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n d) d)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @AnalyticOnNhd.{0, u_1, 0} Complex E Complex _ _ _ _ _
+    (@FormalMultilinearSeries.sum.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _ p)
+    (@Set.ofPred.{u_1} E fun (x : E) =>
+      @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+'TheoremT.Continuum.formalMultilinearSeries_radius_binomial_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_analyticOnNhd_binomial_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

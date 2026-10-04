@@ -1,0 +1,1025 @@
+TheoremT.Continuum.WeakGrushin.factorialShiftedWeightedField : (D :
+    TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily) →
+  (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+    (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+      (m : TheoremT.Continuum.WeakGrushin.FactorialOuterIndex) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex
+TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm : (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily) →
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) →
+    (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) → (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) → Real
+TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp : (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily) →
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) → (r : Nat) → Prop
+TheoremT.Continuum.WeakGrushin.factorialLocalProfile : (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily) →
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) → (r : Nat) → Real
+TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_nonneg : ∀
+  (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+  (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D Ω a b)
+TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_le_profile : ∀
+  (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) (r : Nat)
+  (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hab : @LE.le.{0} Nat _ (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost a b) r),
+  @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D Ω a b)
+    (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r)
+TheoremT.Continuum.WeakGrushin.factorialLocalProfile_nonneg : ∀
+  (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) (r : Nat),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r)
+TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_order : ∀
+  (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) {r q : Nat}
+  (hrq : @LE.le.{0} Nat _ r q),
+  @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r)
+    (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω q)
+@TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.mono_order : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r q : Nat}
+  (h : TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω q) (hrq : @LE.le.{0} Nat _ r q),
+  TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω r
+@TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.restrict : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω O : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  (h : TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω r)
+  (hO :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _ O Ω),
+  TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D O r
+@TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_mono_domain : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω O : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  (h : TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω r)
+  (hO : @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _ O Ω)
+  (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hab : @LE.le.{0} Nat _ (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost a b) r),
+  @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D O a b)
+    (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D Ω a b)
+@TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_domain : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω O : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  (h : TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω r)
+  (hO :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _ O Ω),
+  @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D O r)
+    (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r)
+TheoremT.Continuum.WeakGrushin.factorial_shifted_outer_norm_eq_local : ∀
+  (D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+  (W :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        TheoremT.Continuum.WeakGrushin.FactorialOuterIndex →
+          @Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              x)
+  (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hW :
+    @TheoremT.Continuum.WeakGrushin.FactorialShiftedOuterL2Rep
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        Ω)
+      D W a b),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.WeakGrushin.factorialOuterNorm.{0}
+      (@Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω))
+          x)
+      _ (W a b))
+    (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D Ω a b)
+@TheoremT.Continuum.WeakGrushin.factorialLocalProfile_representatives : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  (h : TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω r),
+  @Exists.{1}
+    ((Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        TheoremT.Continuum.WeakGrushin.FactorialOuterIndex →
+          @Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              x)
+    fun
+      (W :
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+            TheoremT.Continuum.WeakGrushin.FactorialOuterIndex →
+              @Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        Ω)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        Ω))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω))
+                  x) =>
+    ∀ (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+      @LE.le.{0} Nat _ (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost a b) r →
+        And
+          (@TheoremT.Continuum.WeakGrushin.FactorialShiftedOuterL2Rep
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω)
+            D W a b)
+          (And
+            (@Eq.{1} Real
+              (@TheoremT.Continuum.WeakGrushin.factorialOuterNorm.{0}
+                (@Subtype.{1}
+                  (@MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω))
+                  fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                        (@MeasureTheory.Measure.restrict.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          Ω)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        Ω))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                        (@MeasureTheory.Measure.restrict.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          Ω))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.Measure.restrict.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        Ω))
+                    x)
+                _ (W a b))
+              (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D Ω a b))
+            (@LE.le.{0} Real _
+              (@TheoremT.Continuum.WeakGrushin.factorialOuterNorm.{0}
+                (@Subtype.{1}
+                  (@MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω))
+                  fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                        (@MeasureTheory.Measure.restrict.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          Ω)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        Ω))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                        (@MeasureTheory.Measure.restrict.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                          Ω))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.Measure.restrict.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                        Ω))
+                    x)
+                _ (W a b))
+              (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r)))
+@TheoremT.Continuum.WeakGrushin.factorialLocalProfile_unweighted_L2 : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  (h : TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω r) (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hab : @LE.le.{0} Nat _ (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost a b) r),
+  @Exists.{1}
+    (@Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+        (@MeasureTheory.Measure.restrict.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          Ω))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        x)
+    fun
+      (U :
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            x) =>
+    And
+      (@Filter.EventuallyEq.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        Complex
+        (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@MeasureTheory.Measure.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          _ _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        (@MeasureTheory.AEEqFun.cast.{0, 0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω)
+          _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                x)
+            U))
+        (D a b))
+      (@LE.le.{0} Real _
+        (@Norm.norm.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              x)
+          _ U)
+        (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r))
+@TheoremT.Continuum.WeakGrushin.factorialLocalProfile_lower_unweighted_L2 : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 1) _) r)
+  (h :
+    TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp D Ω
+      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+  (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (hab : @LE.le.{0} Nat _ (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost a b) r),
+  @Exists.{1}
+    (@Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+        (@MeasureTheory.Measure.restrict.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          Ω))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        x)
+    fun
+      (U :
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              Ω))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+              _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            x) =>
+    And
+      (@Filter.EventuallyEq.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        Complex
+        (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@MeasureTheory.Measure.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          _ _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω))
+        (@MeasureTheory.AEEqFun.cast.{0, 0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _
+          (@MeasureTheory.Measure.restrict.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+            Ω)
+          _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                      Ω))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                x)
+            U))
+        (D a b))
+      (@LE.le.{0} Real _
+        (@Norm.norm.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0}
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                Ω))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                    Ω))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                  Ω))
+              x)
+          _ U)
+        (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω
+          (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+'TheoremT.Continuum.WeakGrushin.factorialShiftedWeightedField' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_le_profile' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.mono_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_mono_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorial_shifted_outer_norm_eq_local' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_representatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_unweighted_L2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_lower_unweighted_L2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

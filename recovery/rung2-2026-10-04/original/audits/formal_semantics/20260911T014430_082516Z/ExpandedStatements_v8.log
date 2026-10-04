@@ -1,0 +1,33 @@
+@TheoremT.Continuum.polynomialCoeffL1_sub.{u_1} : ∀ {σ : Type u_1} (p q : @MvPolynomial.{u_1, 0} σ Complex _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@HSub.hSub.{u_1, u_1, u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (@MvPolynomial.{u_1, 0} σ Complex _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) _ p q))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+      (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ q))
+TheoremT.Continuum.polynomialCoeffL1_ksDescentQuadraticPolynomial : ∀ (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (TheoremT.Continuum.ksDescentQuadraticPolynomial i j))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+TheoremT.Continuum.polynomialCoeffL1_ksBalancedDescentPolynomial : ∀ (a1 a2 b1 b2 : Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (TheoremT.Continuum.ksBalancedDescentPolynomial a1 a2 b1 b2))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+TheoremT.Continuum.polynomialCoeffL1_ksBalancedPolynomialDescent : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (TheoremT.Continuum.ksBalancedPolynomialDescent P))
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) P)
+'TheoremT.Continuum.polynomialCoeffL1_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksDescentQuadraticPolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksBalancedDescentPolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksBalancedPolynomialDescent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

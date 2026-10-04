@@ -1,0 +1,34 @@
+TheoremT.Continuum.WeakGrushin.factorialDegreeTwoIndices : (k : Nat) → Finset.{0} (Fin k → Nat)
+TheoremT.Continuum.WeakGrushin.factorialDegreeTwoIndices_mem : ∀ (k : Nat) (α : Fin k → Nat),
+  Iff
+    (@Membership.mem.{0, 0} (Fin k → Nat) (Finset.{0} (Fin k → Nat)) _
+      (TheoremT.Continuum.WeakGrushin.factorialDegreeTwoIndices k) α)
+    (@LE.le.{0} Nat _ (@Finset.sum.{0, 0} (Fin k) Nat _ (@Finset.univ.{0} (Fin k) _) fun (i : Fin k) => α i)
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration : Finset.{0}
+  TheoremT.Continuum.WeakGrushin.FactorialOuterIndex
+TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration_eq : @Eq.{1}
+  (Finset.{0} TheoremT.Continuum.WeakGrushin.FactorialOuterIndex)
+  TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration TheoremT.Continuum.WeakGrushin.factorialOuterIndices
+TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration_card : @Eq.{1} Nat
+  (@Finset.card.{0} TheoremT.Continuum.WeakGrushin.FactorialOuterIndex
+    TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration)
+  (@OfNat.ofNat.{0} Nat (nat_lit 498) _)
+TheoremT.Continuum.WeakGrushin.factorialOuterIndices_card : @Eq.{1} Nat
+  (@Finset.card.{0} TheoremT.Continuum.WeakGrushin.FactorialOuterIndex
+    TheoremT.Continuum.WeakGrushin.factorialOuterIndices)
+  (@OfNat.ofNat.{0} Nat (nat_lit 498) _)
+'TheoremT.Continuum.WeakGrushin.factorialDegreeTwoIndices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialDegreeTwoIndices_mem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialOuterDegreeEnumeration_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialOuterIndices_card' depends on axioms: [propext, Classical.choice, Quot.sound]

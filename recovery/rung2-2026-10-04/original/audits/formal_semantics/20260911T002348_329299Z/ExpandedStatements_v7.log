@@ -1,0 +1,458 @@
+TheoremT.Continuum.WeakGrushin.factorialProfileGraphConstant : (c aY : Real) → Real
+TheoremT.Continuum.WeakGrushin.factorialProfileCutoffFirst : (c aY ρ C1 : Real) → Real
+TheoremT.Continuum.WeakGrushin.factorialProfileCutoffSecond : (c aY ρ C1 C2 : Real) → Real
+TheoremT.Continuum.WeakGrushin.factorial_actual_profile_localized_bound : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (ha :
+    @Eq.{1} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a)
+      (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _))
+  (c : Real) (hcpos : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c) {aY aT ρ t e C1 C2 : Real}
+  (he : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e)
+  (ht0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) t)
+  (hte : @LE.le.{0} Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ t e) ρ) (hρy : @LT.lt.{0} Real _ ρ aY)
+  (hρt : @LT.lt.{0} Real _ ρ aT)
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2)
+  (r : Nat) (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) r) (V0 : Real)
+  (F : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (hF :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+      @LE.le.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+        @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ (F α β)
+          (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+            (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t))
+          V0)
+  (hY :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α k)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _
+          (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+            (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t))
+          (F α β)
+          (F
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+              α
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            β)
+          (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+  (hT :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β k))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _
+          (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+            (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t))
+          (F α β)
+          (F α
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+              β
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+  (B : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real)
+  (src : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+      _ Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t)))
+  (hsrc :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+      _ Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) src
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t)))
+  (M A F0 : Real) (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  (hBb :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))),
+      @LE.le.{0} Nat _
+          (@List.length.{0}
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) w)
+          r →
+        ∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+          @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+                (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t))
+              p →
+            @LE.le.{0} Real _
+              (@abs.{0} Real _ _
+                (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                    _ _)
+                  B w p))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                    (@List.length.{0}
+                      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                      w)))
+                (@Nat.cast.{0} Real _
+                  (Nat.factorial
+                    (@List.length.{0}
+                      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                      w)))))
+  (hP :
+    ∀ (φ : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real),
+      @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+          _ Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+        @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            Real _ _ φ →
+          @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                Real _ _ φ)
+              (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+                (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t)) →
+            @Eq.{1} Complex
+              (@MeasureTheory.integral.{0, 0}
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace
+                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+                  _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+                  _)
+                fun
+                  (p :
+                    Prod.{0, 0} TheoremT.Continuum.KSSpace
+                      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))) =>
+                @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                  (@TheoremT.Continuum.splitGrushin.{0, 0}
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ c
+                    (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) B φ p)
+                  (F (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _) p))
+              (@MeasureTheory.integral.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p) (src p)))
+  (hSourceBudget :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))),
+      @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _
+        (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _)
+          src w)
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ F0
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                (@List.length.{0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  w)))
+            (@Nat.cast.{0} Real _
+              (Nat.factorial
+                (@List.length.{0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  w))))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))),
+  @LE.le.{0} Real _
+    (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT r (@HAdd.hAdd.{0, 0, 0} Real Real Real _ t e))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.WeakGrushin.factorialProfileGraphConstant c aY)
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ F0 (@HPow.hPow.{0, 0, 0} Real Nat Real _ A r))
+                (@Nat.cast.{0} Real _ (Nat.factorial r)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+                  @HMul.hMul.{0, 0, 0} Real Real Real _
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _
+                        (@Nat.cast.{0} Real _
+                          (Nat.choose r (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                        (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                      (@Nat.cast.{0} Real _
+                        (Nat.factorial (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+                    (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT
+                      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+                      t))))
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) (@abs.{0} Real _ _ c))
+                  (@Nat.cast.{0} Real _ r))
+                (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT
+                  (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) t))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@abs.{0} Real _ _ c))
+                  (@Nat.cast.{0} Real _
+                    (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ r
+                      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+                (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT
+                  (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) t))))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) t)))
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)
+                    (@OfNat.ofNat.{0} Real (nat_lit 3) _))
+                  C1)
+                e)
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY ρ)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) (@abs.{0} Real _ _ c))))
+            (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) t))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                    (@OfNat.ofNat.{0} Real (nat_lit 9) _))
+                  (@HAdd.hAdd.{0, 0, 0} Real Real Real _ C2
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ C1 (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ e (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY ρ)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@abs.{0} Real _ _ c))))
+            (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) t)))))
+TheoremT.Continuum.WeakGrushin.factorialProfileRecurrenceConstant : (c aY ρ C1 C2 M : Real) → Real
+TheoremT.Continuum.WeakGrushin.factorial_actual_profile_recurrence : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (ha :
+    @Eq.{1} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a)
+      (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _))
+  (c : Real) (hcpos : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c) {aY aT ρ C1 C2 : Real}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _)) (hρy : @LT.lt.{0} Real _ ρ aY)
+  (hρt : @LT.lt.{0} Real _ ρ aT)
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2)
+  (F : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (hreg :
+    ∀ (m : Nat),
+      @Exists.{1} Real fun (W : Real) =>
+        And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) W)
+          (∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+            @LE.le.{0} Nat _
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                  (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+                    (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+                    fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+                  (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+                    (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+                m →
+              @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ (F α β)
+                (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) W))
+  (hY :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) (F α β)
+        (F
+          (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+            ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _ α
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          β)
+        (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+  (hT :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) (F α β)
+        (F α
+          (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+            ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _ β
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+        (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+  (B : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real)
+  (src : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+      _ Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT))
+  (hsrc :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+      _ Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) src
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT))
+  (M A F0 : Real) (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  (hBb :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+      (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+          (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) p →
+        @LE.le.{0} Real _
+          (@abs.{0} Real _ _
+            (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+              (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _
+                _)
+              B w p))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                (@List.length.{0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  w)))
+            (@Nat.cast.{0} Real _
+              (Nat.factorial
+                (@List.length.{0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  w)))))
+  (hP :
+    ∀ (φ : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real),
+      @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+          _ Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+        @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            Real _ _ φ →
+          @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                Real _ _ φ)
+              (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) →
+            @Eq.{1} Complex
+              (@MeasureTheory.integral.{0, 0}
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace
+                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+                  _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+                  _)
+                fun
+                  (p :
+                    Prod.{0, 0} TheoremT.Continuum.KSSpace
+                      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))) =>
+                @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                  (@TheoremT.Continuum.splitGrushin.{0, 0}
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ c
+                    (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) B φ p)
+                  (F (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _) p))
+              (@MeasureTheory.integral.{0, 0}
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+                fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p) (src p)))
+  (hSourceBudget :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))),
+      @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _
+        (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _)
+          src w)
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ F0
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                (@List.length.{0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  w)))
+            (@Nat.cast.{0} Real _
+              (Nat.factorial
+                (@List.length.{0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  w))))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))),
+  TheoremT.Continuum.GrushinScalarFixedGapRecurrence (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT) ρ
+    (TheoremT.Continuum.WeakGrushin.factorialProfileRecurrenceConstant c aY ρ C1 C2 M) A F0
+'TheoremT.Continuum.WeakGrushin.factorialProfileGraphConstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialProfileCutoffFirst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialProfileCutoffSecond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorial_actual_profile_localized_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialProfileRecurrenceConstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorial_actual_profile_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

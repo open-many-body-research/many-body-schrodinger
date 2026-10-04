@@ -1,0 +1,40 @@
+TheoremT.Continuum.ksCutoffBase : @ContDiffBump.{0} TheoremT.Continuum.KSSpace
+  (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)
+TheoremT.Continuum.ksHole : (δ : Real) → (y : TheoremT.Continuum.KSSpace) → Real
+TheoremT.Continuum.ksHole_contDiff : ∀ (δ : Real),
+  @ContDiff.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (TheoremT.Continuum.ksHole δ)
+TheoremT.Continuum.ksHole_nonneg : ∀ (δ : Real) (y : TheoremT.Continuum.KSSpace),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.ksHole δ y)
+TheoremT.Continuum.ksHole_le_one : ∀ (δ : Real) (y : TheoremT.Continuum.KSSpace),
+  @LE.le.{0} Real _ (TheoremT.Continuum.ksHole δ y) (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.ksHole_zero_on_inner : ∀ {δ : Real} (hδ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ)
+  {y : TheoremT.Continuum.KSSpace} (hy : @LE.le.{0} Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y) δ),
+  @Eq.{1} Real (TheoremT.Continuum.ksHole δ y) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+@TheoremT.Continuum.ksHole_one_on_outer : ∀ {δ : Real} (hδ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ)
+  {y : TheoremT.Continuum.KSSpace}
+  (hy :
+    @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) δ)
+      (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)),
+  @Eq.{1} Real (TheoremT.Continuum.ksHole δ y) (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.ksHole_test_tsupport_away : ∀ {N : Nat} (i : Fin N) {δ : Real}
+  (hδ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ) (φ : @TheoremT.Continuum.NuclearKSSpace N i → Real),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _
+    (@tsupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _
+      fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (TheoremT.Continuum.ksHole δ
+          (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q))
+        (φ q))
+    (@Set.ofPred.{0} (@TheoremT.Continuum.NuclearKSSpace N i) fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+      @LE.le.{0} Real _ δ
+        (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+          (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q)))
+'TheoremT.Continuum.ksCutoffBase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_zero_on_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_one_on_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_test_tsupport_away' depends on axioms: [propext, Classical.choice, Quot.sound]

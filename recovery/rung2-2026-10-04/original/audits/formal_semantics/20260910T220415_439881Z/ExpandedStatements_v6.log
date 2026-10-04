@@ -1,0 +1,25 @@
+TheoremT.Continuum.pairKSLift_contDiff_omega : @ContDiff.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _
+  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ (@Top.top.{0} (WithTop.{0} ENat) _)
+  TheoremT.Continuum.pairKSLift
+TheoremT.Continuum.pairKSLift_analyticAt : ∀ (q : TheoremT.Continuum.PairKSSpace),
+  @AnalyticAt.{0, 0, 0} Real TheoremT.Continuum.PairKSSpace
+    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _ _ TheoremT.Continuum.pairKSLift q
+TheoremT.Continuum.pairKSPotential_contDiffAt_omega : ∀ (Z E : Real) {q : TheoremT.Continuum.PairKSSpace}
+  (hq :
+    @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _
+      TheoremT.Continuum.pairKSCoefficientPatch q),
+  @ContDiffAt.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _ Real _ _ (@Top.top.{0} (WithTop.{0} ENat) _)
+    (TheoremT.Continuum.pairKSPotential Z E) q
+TheoremT.Continuum.pairKSPotential_analyticAt : ∀ (Z E : Real) {q : TheoremT.Continuum.PairKSSpace}
+  (hq :
+    @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _
+      TheoremT.Continuum.pairKSCoefficientPatch q),
+  @AnalyticAt.{0, 0, 0} Real TheoremT.Continuum.PairKSSpace Real _ _ _ _ _ (TheoremT.Continuum.pairKSPotential Z E) q
+TheoremT.Continuum.pairKSPotential_analyticOnNhd : ∀ (Z E : Real),
+  @AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.PairKSSpace Real _ _ _ _ _ (TheoremT.Continuum.pairKSPotential Z E)
+    TheoremT.Continuum.pairKSCoefficientPatch
+'TheoremT.Continuum.pairKSLift_contDiff_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSLift_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPotential_contDiffAt_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPotential_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPotential_analyticOnNhd' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,80 @@
+{
+  "status": "PASS_FORMAL_PHYSICAL_KS_FACTORIAL_BUDGET_MONOTONICITY_AND_SPIN_DOMINATION",
+  "utc": "2026-09-11T01:17:58.370648+00:00",
+  "exact_result": "At fixed M,A >= 1, increasing the nonnegative source parameter and H12 squared-budget parameter preserves PhysicalKSBoxFactorialData for exactly the same function, center and derivative-family witness. Each scalar component source/H12 bound is dominated by the displayed common finite-spin budgets.",
+  "mathematical_detail": [
+    "The proof retains the same F, base equality, every finite-order budget, all weak identities, and weighted MemLp data. It enlarges only the final numerical profile bound.",
+    "Common source parameter is M*sqrt(sum_sigma norm(u_sigma(0))^2)*sqrt(physicalKSUniformSourceVolume).",
+    "Common component H12 parameter is (L^2+sum_sigma norm(u_sigma(0))^2)*C_H. This bounds each component, not the sum of all component derivative profiles.",
+    "PhysicalKSBoxFactorialData.mono_spin_budget combines the finite-spin inequalities with the same-family monotonicity theorem."
+  ],
+  "modules": [
+    {
+      "source": {
+        "path": "lean/PhysicalKSBoxFactorialBudgetMono_v1.lean",
+        "sha256": "2a847ccc8d14aad758cdb4eb3916e616c27dfc82d56c54419a5b64734ac0e7b2"
+      },
+      "build": {
+        "path": "logs/development/PhysicalKSBoxFactorialBudgetMono_v1-20260911T011159_385862Z.json",
+        "sha256": "f7b9f9337e562bbaa12876fcb5626497812df522879e0449dd622eb67b3e9a90"
+      },
+      "declarations": [
+        "commonKSBoxFactorialConstant_one_le",
+        "PhysicalKSBoxFactorialData.mono_source_budget"
+      ]
+    },
+    {
+      "source": {
+        "path": "lean/SpinOriginFactorialBudgets_v1.lean",
+        "sha256": "c66ee697f8133b2bce37152687db56bd0ee7f8e3e863888ea97f4bae5c314f72"
+      },
+      "build": {
+        "path": "logs/development/SpinOriginFactorialBudgets_v1-20260911T011402_634363Z.json",
+        "sha256": "be86bc75229ddd3fb97fd7b9fc2ae0dba7c2f3f9a56832136b453763a6fdcdb6"
+      },
+      "declarations": [
+        "complex_component_norm_le_sqrt_sum_sq",
+        "spinOriginFactorialSourceBudget",
+        "spinOriginFactorialSourceBudget_nonneg",
+        "spinOriginFactorialSourceBudget_component_le",
+        "spinOriginH12Budget_component_le",
+        "PhysicalKSBoxFactorialData.mono_spin_budget"
+      ]
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T011433_825794Z/receipt.json",
+    "sha256": "aafeed6eb71a86096f14602121bace4af83da7f7f8891b90f0bdf19d4ac459ec"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T011433_825794Z/ExpandedStatements_v8.log",
+    "sha256": "0c61ea6a5477ac2b0357a8ca2e412ae7774f099f91e0eb670dcded9ee6b749ba"
+  },
+  "review": {
+    "path": "audits/PHYSICAL_KS_FACTORIAL_SPIN_BUDGET_MONO_REVIEW_v1_20260911T011453Z.json",
+    "sha256": "6ed1c1c276efa8f12e3de1f8818c775fdf45cb7cf2de2edab1ef61e10b0b55e3"
+  },
+  "consumed_scalar_checkpoint": {
+    "path": "audits/COULOMB_KS_PHYSICAL_FACTORIAL_CHECKPOINT_v1.json",
+    "sha256": "6e3d16e6c823f420c644eecffade7f5fc9763eef447812d0cc111095875e02a7"
+  },
+  "manual_check": "All source statements and complete proof bodies read; all105 expanded final-type/axiom log lines and full receipt read. Exact displayed parameters and actual definition bodies checked. Eight declarations have only standard foundational axioms.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "limitations": [
+    "Conditional budget enlargement, not a new representative or regularity construction.",
+    "No summed spin-profile estimate is claimed.",
+    "The physical hypotheses M>=1 and nonnegative lower source/H12 budgets are redundant for the underlying algebra but retained in the stated interface.",
+    "Pinned dependency objects reused; no new source rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Parent full-spin/ground-state instantiation; this stream proceeds to executable balanced-monomial pairing for polynomial KS descent."
+}
