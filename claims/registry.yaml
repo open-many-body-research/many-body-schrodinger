@@ -618,3 +618,41 @@ claims:
     Proposed tier-L submission pending human review. Qualitative joint H2 only;
     no quantitative uniform budgets, H12, simultaneous-collision or higher-N
     coverage, factorial estimates, full Rung 2 or Theorem T is concluded.
+
+- id: S8-009
+  sector: S8
+  title: Full joint local weak H3 on physical nuclear KS patches (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-006]
+  statement: >
+    For every electron number and selected index, the original scalar Coulomb
+    eigenfunction graph with a continuous physical representative and physical
+    AE identity yields ProductLocalWeakH3On of the actual nuclear KS pullback.
+    For positive electron number, the spin graph supplies one representative
+    before all components, nuclear charts and cutoffs, retaining physical AE,
+    permutation and Moser bounds. Every cutoff has the same output U and genuine
+    ordered arbitrary-direction first, second and third weak L2 witness families.
+    Actual spectator and Y differentiated equations and all input derivatives
+    are derived; no transformed PDE or third derivative is a physical premise.
+  conditional_on:
+    - The original scalar or spin Coulomb eigenfunction graph.
+    - Continuous representative and physical AE identity in the scalar theorem; constructed in the spin theorem.
+    - Compact smooth cutoffs inside the actual nuclear coefficient patch, with other singularities excluded.
+  lean:
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.product_local_weakH3_of_first_local_weakH2}
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.local_homogeneous_grushin_joint_h3}
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.scalar_coulomb_nuclear_KS_local_weakH3}
+    - {module: ManyBody.S8.Internal.JointWeakH3Initialization, decl: ManyBody.S8.coulomb_spin_nuclear_KS_local_weakH3}
+    - {module: ManyBody.S8.Internal.HigherSpectatorRegularity, decl: ManyBody.S8.weak_grushin_inhomogeneous_spectator_equation}
+    - {module: ManyBody.S8.Internal.HigherSpectatorRegularity, decl: ManyBody.S8.homogeneous_grushin_first_spectator_local_h2}
+    - {module: ManyBody.S8.Internal.GrushinYCommutator, decl: ManyBody.S8.weak_grushin_homogeneous_y_equation}
+    - {module: ManyBody.S8.Internal.HigherYRegularity, decl: ManyBody.S8.homogeneous_grushin_first_y_local_h2}
+    - {module: ManyBody.S8.Internal.HigherDirectionalRegularity, decl: ManyBody.S8.homogeneous_grushin_first_direction_local_h2}
+  card: claims/cards/S8-009.md
+  evidence: [lean/ManyBody/S8/Internal/JointWeakH3Initialization.lean, lean/ManyBody/S8/Internal/HigherSpectatorRegularity.lean, lean/ManyBody/S8/Internal/GrushinYCommutator.lean, lean/ManyBody/S8/Internal/WeakProductLocalCompatibility.lean, lean/ManyBody/S8/Internal/HigherYRegularity.lean, lean/ManyBody/S8/Internal/HigherDirectionalRegularity.lean, claims/cards/S8-009.md]
+  caveats: >
+    Proposed tier-L submission pending human statement review. Qualitative H3;
+    no H12 or all-order regularity, finite uniform budgets, factorial estimate,
+    pair/intersection coverage, full Rung 2 or Theorem T is concluded.
