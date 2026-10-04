@@ -210,3 +210,123 @@ are derived. The new functions reconstruct the actual normalized origin
 difference at every admissible scale; original unscaled coefficients are a
 separate extension. Both nuclear collisions and the triple origin are
 excluded. Human statement review and full committed verification are pending.
+
+
+## Submitted continuation: original annular mixed derivative budgets
+
+[S8-020](../../claims/cards/S8-020.md) gives genuine Euclidean physical
+coordinate mixed derivative budgets for the literal original A/B functions
+on every selected finite nuclear/pair annular neighborhood. A positive
+quarter-polydisc shrink and finite centers precede the state. The exact
+positive scale gives epsilon^(1-n) for positive-order A and epsilon^(-n)
+for B, with A's original Moser value at order zero. The common amplitudes
+are proportional to the original full-spin norm. Collision-free bulk,
+triple origin and all-direction operator norm bounds remain separate.
+Human review and full committed verification are pending.
+
+
+## Submitted continuation: genuine global H2 component moments
+
+[S8-022](../../claims/cards/S8-022.md) constructs genuine polynomial
+configuration-radius L2 moments of the actual normalized scalar ground state
+and every ordered first/second weak derivative at Z>=2. For each positive
+a with a^2<Z^2/112, one actual exponentially weighted component norm
+precedes all orders k and bounds the combined moments by C*k!/a^k.
+These outputs weight the original derivative components; weak derivatives
+of the weighted state and exact rational dictionary overlaps are separate.
+Human review and full committed verification remain pending.
+
+
+## Submitted continuation: original distance reconstructions and overlap
+
+[S8-021](../../claims/cards/S8-021.md) proves equality throughout the full
+common complex domain of two nuclear distance reconstructions for the same
+actual original ground function, with complex germs and every ordered jet.
+A real feasible triangle ball derives the initial equality from physical
+reconstruction; analytic continuation supplies the nonreal domain.
+[S8-023](../../claims/cards/S8-023.md) returns the literal pair ambient A/B
+functions to the original ground representative, preserving the correct
+epsilon on A and no extra epsilon on B. Both use Z>=2 and the selected
+state's original positive scale range. Separate coefficient compatibility,
+collision-type transitions, triple origin and a global atlas remain open.
+Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: compact physical H2 truncation
+
+[S8-024](../../claims/cards/S8-024.md) constructs literal compact truncations
+of the actual scalar ground graph at Z>=2. Genuine first and all ordered
+second product-rule weak derivatives have combined H2 defect at most
+C*exp(-a*R), for a^2<Z^2/112, with C before every R>=1. Compact support
+applies to the displayed AE representative, and the cutoff state need not
+be smooth or an eigenfunction. Finite dictionary approximation, computable
+prefactors and the complete rung remain open. Human statement review and
+full committed verification are pending.
+
+
+## Submitted continuation: actual pair ambient distance derivatives
+
+[S8-025](../../claims/cards/S8-025.md) derives all-order factorial operator
+norms and literal ordered distance-word bounds from the actual bounded
+holomorphic pair A/B/H profiles at Z>=2. The half-polydisc radius and exact
+original epsilon powers are explicit; only order zero retains u0. The
+complex Fin3 Pi norm and selected-state L,R budgets are retained. Human
+statement review and full committed verification remain pending.
+
+
+## Submitted continuation: true physical annular operator norms
+
+[S8-027](../../claims/cards/S8-027.md) strengthens the actual full-spin
+coordinate estimates to genuine real Frechet operator norms on the literal
+Position-times-Position product norm. Taylor support and coefficients derive
+the directional estimates, and physical lifts derive balance. Constants and
+finite quarter-width centers precede the state. Original epsilon factors,
+norm-linear amplitudes and actual reconstruction are retained. Human
+statement review and full committed verification remain pending.
+
+
+## Submitted continuation: identify actual separate complex collision profiles across scales
+
+[S8-026](../../claims/cards/S8-026.md) proves that for charge at least2, the same actual normalized scalar Coulomb ground representative has equal literal original A,B and H profiles throughout the common complex nuclear or pair distance polydisc at any two admissible scales sharing a positive collision-distance point. Real feasible triangle balls and actual reconstruction derive H equality. Genuine selected-distance parity separates A and B, including the collision face by holomorphic continuation. Every complex overlap germ and ordered Frechet jet agrees.
+The nuclear comparisons fix one selected index. Collision-type transitions, triple origin and the global atlas remain open. No profile parity or equality is supplied to the physical graph consumer; all original state facts are retained.
+Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: bound actual compact physical hamiltonian residuals exponentially
+
+[S8-028](../../claims/cards/S8-028.md) proves that for charge at least2, the same actual normalized scalar ground state and ordered weak derivative families have compact cutoff H2 approximants with a true scalar Coulomb graph output and eigenvalue residual at the original ground energy bounded by C*exp(-a*R). Each positive a with a^2<Z^2/112 has one finite C before every real R at least1. Full literal compact AE support, product-rule weak derivatives and the genuine H2 defect bound are retained. Graph output existence is derived from the actual H2 domain.
+The compact state need not be normalized, smooth or an eigenfunction. The prefactor is existential and selected-state dependent. Computable radii, finite dictionaries, rational matrices, effective solver and the full rung remain open.
+Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: bound actual nuclear ambient distance derivatives at all orders
+
+[S8-029](../../claims/cards/S8-029.md) proves that for charge at least2, the same actual normalized scalar ground witness has genuine all-order complex Frechet operator norms and ordered distance coordinate-word factorial budgets for literal original nuclear A,B and H, for both selected indices at all admissible scales and every half-polydisc point. Actual bounded holomorphic profiles discharge derivative estimates. A,H carry epsilon times epsilon^(-n) and u0 only at order zero, while B carries epsilon^(-n). All original physical and spectral facts are retained.
+The norm is the actual complex Fin3 Pi norm. Selected-state L,R and amplitude are retained. No norm-uniform all-state upgrade, real-distance transport, global approximation, computable prefactor or full rung is claimed.
+Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: identify actual complex nuclear profiles across indices and scales
+
+[S8-031](../../claims/cards/S8-031.md) proves that for charge at least2, the same actual normalized scalar ground witness has equal original nuclear A,B and H functions throughout the common full complex distance domains at arbitrary nuclear indices and admissible scales sharing a positive collision-distance point. The literal exchanged physical configuration and actual ground exchange law derive real values, then analytic continuation and genuine profile parity derive whole-domain separate coefficient equality, every complex germ and all ordered jets.
+Local q records selected nuclear radius, spectator radius and pair distance. Equality is not an input premise. Original selected-state scales and physical facts are retained. Collision-type transitions, triple origin, a global atlas, dictionary approximation and the full rung remain open.
+Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: normalize compact physical h2 approximants with true rayleigh error
+
+[S8-030](../../claims/cards/S8-030.md) For charge at least2, the same actual normalized scalar ground state and its genuine first and ordered second weak derivatives admit literal norm-one compact H2 approximants. Each a>0 with a^2<Z^2/112 has one finite C before every R at least max1(2C/a). The raw cutoff norm is at least1/2. Full actual H2 defect, true scalar Coulomb graph eigenvalue residual and absolute actual Rayleigh pairing error are all bounded by C*exp(-a*R), with literal compact AE support and genuine weak derivative and defect families.
+The threshold is explicit in the existential selected-state/rate constant, which is not computably extracted. The original ground retains realness, exchange and O3 symmetry; those symmetries of the normalized cutoff are not asserted. Smoothness, finite dictionaries, effective solver and full rung remain open.
+Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: bound genuine real distance derivatives of original collision profiles
+
+[S8-032](../../claims/cards/S8-032.md) For charge at least2, the same actual normalized scalar ground witness and original nuclear and pair A,B,H profiles have genuine all-order real Frechet operator and ordered distance-coordinate-word factorial budgets. The literal complex profiles are composed with the actual coordinatewise real cast. A proved norm-preserving cast and exact iterated derivative restriction transport the actual complex estimates, with the exact original epsilon powers and u0 term only at order zero. All physical ground facts are retained.
+The real domain is the actual Fin3 Pi maximum norm with complex values. This is a derivative bound in independent ambient distance coordinates; physical Cartesian transport or profile realness is not asserted. Selected original scales/amplitudes remain. Global approximation and full rung remain open.
+Human statement review and full committed verification remain pending.
+
+
+## Completed full verification of original physical continuation head
+
+The original S8-020--032 proof head `50d5ac0bcd783d5559dc7a970b5c3c4c64030952`, tree `e31b178f24e49f0a1eabbcc1c8994b29c9174e9d`, passed the full verifier: 817 Foundation hashes, both recovery manifests, 28 tool tests, Lake 5405 jobs, 260 registered axiom audits and all configured certificates. Receipt SHA256 `61370419e9572e872586f20d5a21124382d441be9eb71e4b01a19b274f3a08d7`; all ten actual log hashes were independently rechecked. Each card records the exact receipt and unchanged source applicability. This supersedes earlier full-pending wording only for that original proof run. Corrected/integrated exact heads, recovery/DCO acceptance and human statement review remain pending. Focused/cache limitations, proposed tiers, compact H2-only scope and open global approximation/rung obligations are retained.

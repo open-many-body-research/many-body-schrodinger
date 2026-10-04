@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 25 |
+| **L** | Lean-verified | 38 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -98,6 +98,19 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-017](claims/cards/S8-017.md) | Actual analytic applicability on finite physical annular collision charts (submitted; pending review) | **L** | The original two-electron physical full-spin Coulomb eigenfunction graph; Positive physical radius at most1/4 for analytic applicability; Membership in the displayed finite selected-collision neighborhoods |
 | [S8-018](claims/cards/S8-018.md) | Actual scalar ground ambient nuclear distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; Positive scales bounded by the selected original representative's min1(R/4); The explicit isolated nuclear distance polydisc, with other singularities excluded |
 | [S8-019](claims/cards/S8-019.md) | Actual scalar ground ambient pair distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; Positive scales bounded by the selected original representative's min1(R/4); The explicit isolated pair distance polydisc, with both nuclear collisions excluded |
+| [S8-020](claims/cards/S8-020.md) | Original physical annular mixed derivative budgets (submitted; pending review) | **L** | The original two-electron full-spin Coulomb eigenfunction graph; Positive physical radii at most1/4 and the explicit selected annular neighborhoods |
+| [S8-022](claims/cards/S8-022.md) | Genuine global polynomial moments of physical H2 components (submitted; pending review) | **L** | Real charge at least2, the discharged recovered physical decay range; Each explicitly quantified positive exponential rate with a^2<Z^2/112 |
+| [S8-021](claims/cards/S8-021.md) | Literal complex nuclear distance overlap compatibility (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; The same selected nuclear index and explicit positive-scale common-domain conditions |
+| [S8-023](claims/cards/S8-023.md) | Actual original scalar ground pair distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; The selected original representative's admissible positive scales and isolated pair distance polydisc |
+| [S8-024](claims/cards/S8-024.md) | Genuine compact physical H2 truncation with exponential error (submitted; pending review) | **L** | Real charge at least2, the discharged physical exponential decay range; Positive exponent with a^2<Z^2/112 and every real radius at least1 |
+| [S8-025](claims/cards/S8-025.md) | Bound actual pair ambient distance derivatives at all orders (submitted; pending review) | **L** | Real charge at least2 and the original selected state positive scale range; Every point in the half of the explicit full pair distance polydisc |
+| [S8-027](claims/cards/S8-027.md) | Full actual physical annular Frechet operator norm budgets (submitted; pending review) | **L** | The actual full-spin Coulomb eigenfunction graph at real charge and energy; Positive physical radii at most1/4 and selected annular collision neighborhoods |
+| [S8-026](claims/cards/S8-026.md) | Identify actual separate complex collision profiles across scales (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
+| [S8-028](claims/cards/S8-028.md) | Bound actual compact physical Hamiltonian residuals exponentially (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
+| [S8-029](claims/cards/S8-029.md) | Bound actual nuclear ambient distance derivatives at all orders (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
+| [S8-031](claims/cards/S8-031.md) | Identify actual complex nuclear profiles across indices and scales (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
+| [S8-030](claims/cards/S8-030.md) | Normalize compact physical H2 approximants with true Rayleigh error (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact rate, threshold or half-polydisc and selected-scale conditions in the card |
+| [S8-032](claims/cards/S8-032.md) | Bound genuine real distance derivatives of original collision profiles (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact rate, threshold or half-polydisc and selected-scale conditions in the card |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

@@ -1026,3 +1026,476 @@ claims:
     identity is a principal input. Original L,R and u0 source budgets remain.
     Separate ambient coefficient germ compatibility, triple collision,
     exterior atlas, global approximation and the full rung remain open.
+
+- id: S8-020
+  sector: S8
+  title: Original physical annular mixed derivative budgets (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-012, S8-013, S8-017]
+  statement: >
+    The actual two-electron spin eigenfunction graph supplies one representative,
+    common constants and a positive quarter-polydisc width with finite centers
+    before every state. Every selected nuclear and original coefficient-1 pair
+    annular neighborhood has true analytic reconstruction of the same original
+    function and actual real Euclidean coordinate mixed derivative bounds
+    proportional to the original spin-state norm. Exact positive-scale
+    transport gives epsilon times epsilon^(-n) for A at positive order,
+    the original Moser constant at order zero, and epsilon^(-n) for B.
+    Nuclear epsilon=rho and original pair epsilon=rho/sqrt2 are proved.
+  conditional_on:
+    - The original two-electron full-spin Coulomb eigenfunction graph.
+    - Positive physical radii at most1/4 and the explicit selected annular neighborhoods.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_iteratedFDeriv_complex_restriction}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_iteratedFDeriv_norm_le_complex}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_centered_iteratedFDeriv_complex_restriction}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_centered_iteratedFDeriv_norm_le_complex}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physicalCoordinateDirection_norm}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_centered_iteratedFDeriv_coordinate_word}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_iteratedFDeriv_inverse_scale}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_inverse_scale}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_rescaled_collision_B}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_rescaled_collision_A}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_centered_complex_restriction}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.physical_original_collision_derivative_at_budget}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.exists_annular_derivative_width}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.nuclear_annular_original_derivative_data}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.pair_annular_original_derivative_data}
+    - {module: ManyBody.S8.CoulombSpinAnnularAnalyticDerivativeBudgets, decl: ManyBody.S8.coulomb_spin_annular_original_mixed_derivative_budgets}
+  card: claims/cards/S8-020.md
+  evidence: [lean/ManyBody/S8/CoulombSpinAnnularAnalyticDerivativeBudgets.lean, lean/ManyBody/S8/Internal/PhysicalComplexDerivativeTransport.lean, lean/ManyBody/S8/Internal/PhysicalCollisionDerivativeScaling.lean, lean/ManyBody/S8/Internal/PhysicalOriginalCollisionDerivativeBudget.lean, claims/cards/S8-020.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    These are genuine coordinate multiindex derivatives, not an all-direction
+    Frechet operator norm. Constants are existential and non-effective.
+    Collision-free bulk estimates, triple origin, exterior analytic atlas,
+    global dictionary approximation and the full rung remain open.
+
+- id: S8-022
+  sector: S8
+  title: Genuine global polynomial moments of physical H2 components (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: []
+  statement: >
+    For every real charge at least2, the actual normalized scalar two-electron
+    Coulomb ground graph has original ordered first and second weak derivative
+    witnesses whose polynomial configuration-radius moments of every order
+    are genuine L2 functions. At each positive exponent with a^2<Z^2/112,
+    one finite prefactor precedes every moment order k and bounds the combined
+    weighted component norm by C*k!/a^k. Original normalization, actual H2
+    graph, realness, exchange and orthogonal rotation invariance are retained.
+    A graph consumer applies this result to any actual selected ground state.
+  conditional_on:
+    - Real charge at least2, the discharged recovered physical decay range.
+    - Each explicitly quantified positive exponential rate with a^2<Z^2/112.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physical_polynomial_weight_le_exponential}
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physical_polynomial_moment_memLp}
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physicalPolynomialMomentL2_ae}
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physicalPolynomialMomentL2_norm_bound}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.physical_H2_polynomial_moments_of_exponential_components}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.scalar_eigen_H2_polynomial_moments}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.twoElectron_ground_H2_polynomial_moments_of_graph}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.twoElectron_physical_ground_with_H2_polynomial_moments}
+  card: claims/cards/S8-022.md
+  evidence: [lean/ManyBody/S8/CoulombH2PolynomialMoments.lean, lean/ManyBody/S8/Internal/PhysicalPolynomialMomentBounds.lean, claims/cards/S8-022.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    These are polynomial moments of the original derivative components;
+    their outputs are not asserted to be derivatives of the weighted state.
+    The prefactor depends on the state, original derivative family and rate
+    and is not computably extracted. Exact rational basis overlaps, dictionary
+    matrices, global approximation, solver termination and the full rung remain open.
+
+- id: S8-021
+  sector: S8
+  title: Literal complex nuclear distance overlap compatibility (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-018]
+  statement: >
+    For charge at least2, the same normalized actual scalar Coulomb ground
+    representative has identical literal holomorphic nuclear distance functions
+    on the entire common complex polydisc of any two admissible positive scales
+    sharing an original positive collision-distance point. A derived nonempty
+    real feasible triangle ball, genuine physical reconstruction and analytic
+    continuation prove equality; no compatibility premise is supplied.
+    Complex germs and every actual ordered complex Frechet jet coincide.
+  conditional_on:
+    - Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range.
+    - The same selected nuclear index and explicit positive-scale common-domain conditions.
+  lean:
+    - {module: ManyBody.S8.Internal.AmbientRealSliceUniqueness, decl: ManyBody.S8.complex_real_interval_identity}
+    - {module: ManyBody.S8.Internal.AmbientRealSliceUniqueness, decl: ManyBody.S8.complex_real_ball_identity}
+    - {module: ManyBody.S8.Internal.AmbientRealSliceUniqueness, decl: ManyBody.S8.complex_real_germ_identity}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclearOriginalDistancePolydisc_convex}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclear_ambient_reconstruction_feasible}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_compatibility}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_complex_jets}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_ambient_distance_compatibility}
+  card: claims/cards/S8-021.md
+  evidence: [lean/ManyBody/S8/Internal/AmbientRealSliceUniqueness.lean, lean/ManyBody/S8/NuclearDistanceAmbientCompatibility.lean, claims/cards/S8-021.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Only one fixed nuclear index is compared. Separate ambient A,B, pair/index
+    transitions, triple collision, a global atlas and the full rung remain open.
+    The selected-state original L,R and u0 budgets remain unchanged.
+
+- id: S8-023
+  sector: S8
+  title: Actual original scalar ground pair distance reconstruction (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-019]
+  statement: >
+    The same actual normalized scalar Coulomb ground witness at charge at least2
+    has literal original unscaled A,B and H=A+r12*B bounded and holomorphic
+    on the full complex distance polydisc centered at(epsilon,epsilon,0).
+    They reconstruct the original physical representative at every advertised
+    configuration, including the selected pair collision and collinear cases.
+    Exact positive rescaling gives A=u0+epsilon*A_scaled(q/epsilon) and
+    B=B_scaled(q/epsilon), with no extra epsilon factor on B. All original
+    ground graph, spectrum, H2 decay and physical/axis data are retained.
+  conditional_on:
+    - Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range.
+    - The selected original representative's admissible positive scales and isolated pair distance polydisc.
+  lean:
+    - {module: ManyBody.S8.PairDistanceAnalyticReconstruction, decl: ManyBody.S8.pair_original_ambient_positive_rescaling}
+    - {module: ManyBody.S8.PairDistanceAnalyticReconstruction, decl: ManyBody.S8.pairAmbientPhysicalDistances_positive_smul}
+    - {module: ManyBody.S8.PairDistanceAnalyticReconstruction, decl: ManyBody.S8.twoElectron_scalar_ground_pair_ambient_distance_reconstruction}
+  card: claims/cards/S8-023.md
+  evidence: [lean/ManyBody/S8/PairDistanceAnalyticReconstruction.lean, claims/cards/S8-023.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Original selected-state L,R and u0 budgets remain; no all-state norm-uniform
+    upgrade, ambient derivative budget or cross-scale coefficient compatibility
+    is asserted. Both nuclear collisions and the triple origin are excluded.
+    Global approximation, solver termination and the full rung remain open.
+
+- id: S8-024
+  sector: S8
+  title: Genuine compact physical H2 truncation with exponential error (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-022]
+  statement: >
+    For every charge at least2, the same actual normalized scalar two-electron
+    Coulomb ground state and its genuine first and ordered second weak
+    derivatives admit literal compact cutoff truncations. At every positive
+    exponent with a^2<Z^2/112, a finite prefactor precedes every real radius
+    R at least1 and bounds the combined 43-component H2 defect by C*exp(-a*R).
+    Genuine product-rule derivatives, weak laws for the defect, and compact
+    support of the supplied literal AE representative inside ball2R are proved.
+  conditional_on:
+    - Real charge at least2, the discharged physical exponential decay range.
+    - Positive exponent with a^2<Z^2/112 and every real radius at least1.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalCompactCutoff, decl: ManyBody.S8.physicalCompactCutoff_tsupport_subset}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCutoff, decl: ManyBody.S8.physicalCompactCutoff_derivative_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCutoff, decl: ManyBody.S8.physicalCompactCutoffSecond_zero_inner}
+    - {module: ManyBody.S8.Internal.PhysicalCompactH2Truncation, decl: ManyBody.S8.physicalCompactFirst_weakPartial}
+    - {module: ManyBody.S8.Internal.PhysicalCompactH2Truncation, decl: ManyBody.S8.physicalCompactSecond_weakPartial}
+    - {module: ManyBody.S8.Internal.PhysicalCompactH2Truncation, decl: ManyBody.S8.physicalCompactH2DefectNorm_le}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.physical_compact_H2_truncation_of_tail}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.scalar_eigen_compact_H2_exponential_truncation}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.twoElectron_ground_compact_H2_exponential_truncation_of_graph}
+    - {module: ManyBody.S8.CoulombCompactH2Truncation, decl: ManyBody.S8.twoElectron_physical_ground_with_compact_H2_exponential_truncation}
+  card: claims/cards/S8-024.md
+  evidence: [lean/ManyBody/S8/CoulombCompactH2Truncation.lean, lean/ManyBody/S8/Internal/PhysicalCompactCutoff.lean, lean/ManyBody/S8/Internal/PhysicalCompactH2Truncation.lean, claims/cards/S8-024.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The cutoff state is H2, with literal compact AE representative; arbitrary
+    selected Lp representatives need not have compact support. The prefactor
+    is existential. Smoothness, an eigenfunction law for the truncated state,
+    finite dictionary approximation, computable radius, bit complexity and
+    the complete Rung2 endpoint remain open.
+
+- id: S8-025
+  sector: S8
+  title: Bound actual pair ambient distance derivatives at all orders (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-023]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness and
+    original pair distance reconstruction have genuine all-order complex Frechet
+    operator norm and ordered distance coordinate-word factorial budgets on the
+    half polydisc. Actual holomorphic boundedness yields rate(2exp1/delta)^n*n!
+    without an input derivative or coefficient estimate. Original positive
+    scaling gives epsilon times epsilon^(-n) for A and H, with u0 only at order
+    zero, and epsilon^(-n) for B. All original physical ground facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original selected state positive scale range.
+    - Every point in the half of the explicit full pair distance polydisc.
+  lean:
+    - {module: ManyBody.S8.Internal.HolomorphicBallDerivativeBounds, decl: ManyBody.S8.holomorphic_fderiv_ball_bound}
+    - {module: ManyBody.S8.Internal.HolomorphicBallDerivativeBounds, decl: ManyBody.S8.real_nat_pow_le_exp_factorial}
+    - {module: ManyBody.S8.Internal.HolomorphicBallDerivativeBounds, decl: ManyBody.S8.holomorphic_iteratedFDeriv_half_ball_bound}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.holomorphic_constant_add_half_ball_bound}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.PairAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.twoElectron_scalar_ground_pair_ambient_distance_derivative_budgets}
+  card: claims/cards/S8-025.md
+  evidence: [lean/ManyBody/S8/Internal/HolomorphicBallDerivativeBounds.lean, lean/ManyBody/S8/PairAmbientDistanceDerivativeBudgets.lean, claims/cards/S8-025.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The derivative norm uses the actual complex Fin3 Pi max norm. Bounds use the
+    selected state original L,R and amplitude; no all-state norm-uniform upgrade
+    is claimed. Nuclear distances, collision transitions, triple origin, global
+    dictionary approximation, effective solver and the full rung remain open.
+
+- id: S8-027
+  sector: S8
+  title: Full actual physical annular Frechet operator norm budgets (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-012, S8-020]
+  statement: >
+    The actual full-spin two-electron Coulomb eigenfunction graph supplies one
+    original representative with genuine all-order real Frechet operator norms
+    for literal original A,B collision profiles at each selected quarter-width
+    annular neighborhood. Common constants, width and finite centers precede
+    every state. Actual Taylor support and coefficient data derive the bounds;
+    nuclear/pair balance is discharged from literal lifts. A keeps the Moser
+    value only at order zero and scales as epsilon times epsilon^(-n); B scales
+    as epsilon^(-n), with amplitude linear in the original spin-state norm.
+    Coordinate mixed derivative budgets and actual reconstruction are retained.
+  conditional_on:
+    - The actual full-spin Coulomb eigenfunction graph at real charge and energy.
+    - Positive physical radii at most1/4 and selected annular collision neighborhoods.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalDescentOperatorNormBounds, decl: ManyBody.S8.homogeneous_spectator_sum_operator_norm_bound}
+    - {module: ManyBody.S8.Internal.PhysicalDescentOperatorNormBounds, decl: ManyBody.S8.physicalKSDescentOperatorBudget_original_norm}
+    - {module: ManyBody.S8.Internal.PhysicalDescentOperatorNormBounds, decl: ManyBody.S8.physical_descent_operator_norm_of_balanced}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalOperatorNormBudget, decl: ManyBody.S8.physical_iteratedFDeriv_rescaled_collision_A}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalOperatorNormBudget, decl: ManyBody.S8.physical_original_collision_operator_at_budget}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularOperatorNormBudget, decl: ManyBody.S8.nuclear_annular_original_operator_data}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularOperatorNormBudget, decl: ManyBody.S8.pair_annular_original_operator_data}
+    - {module: ManyBody.S8.CoulombSpinAnnularOperatorNormBudgets, decl: ManyBody.S8.coulomb_spin_annular_original_operator_norm_budgets}
+  card: claims/cards/S8-027.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalDescentOperatorNormBounds.lean, lean/ManyBody/S8/Internal/PhysicalOriginalOperatorNormBudget.lean, lean/ManyBody/S8/Internal/PhysicalAnnularOperatorNormBudget.lean, lean/ManyBody/S8/CoulombSpinAnnularOperatorNormBudgets.lean, lean/ManyBody/S8/Internal/AnisotropicCoordinateScaling.lean, lean/ManyBody/S8/Internal/AnisotropicPhysicalDerivativeBounds.lean, lean/ManyBody/S8/Internal/BinomialSeriesMixedBounds.lean, lean/ManyBody/S8/Internal/CoordinateWordFactorials.lean, lean/ManyBody/S8/Internal/HomogeneousSpectatorMixedBounds.lean, claims/cards/S8-027.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The domain is the actual product of Euclidean Position spaces with its
+    product norm; an independent Euclidean6 norm identification is not assumed.
+    Constants are existential. Collision-free bulk, triple origin, global atlas,
+    dictionary approximation, effective solver and the full rung remain open.
+
+- id: S8-026
+  sector: S8
+  title: Identify actual separate complex collision profiles across scales (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-018, S8-021, S8-023]
+  statement: >
+    For charge at least2, the same actual normalized scalar Coulomb ground
+    representative has equal literal original A,B and H profiles throughout the
+    common complex nuclear or pair distance polydisc at any two admissible scales
+    sharing a positive collision-distance point. Real feasible triangle balls
+    and actual reconstruction derive H equality. Genuine selected-distance
+    parity separates A and B, including the collision face by holomorphic
+    continuation. Every complex overlap germ and ordered Frechet jet agrees.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.EvenAmbientProfileUniqueness, decl: ManyBody.S8.holomorphic_even_profiles_compatible}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_recombine}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_even}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_analytic}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_bounds}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_reconstruction_feasible}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_two_scale_compatibility}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pairOriginalAmbient_profiles_even}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_separate_profiles}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_two_scale_separate_profiles}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_profile_jets}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_two_scale_profile_jets}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.twoElectron_scalar_ground_ambient_coefficient_compatibility}
+  card: claims/cards/S8-026.md
+  evidence: [lean/ManyBody/S8/Internal/EvenAmbientProfileUniqueness.lean, lean/ManyBody/S8/Internal/NuclearOriginalAmbientProfiles.lean, lean/ManyBody/S8/AmbientCollisionProfileCompatibility.lean, claims/cards/S8-026.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The nuclear comparisons fix one selected index. Collision-type transitions,
+    triple origin and the global atlas remain open. No profile parity or equality
+    is supplied to the physical graph consumer; all original state facts are retained.
+
+- id: S8-028
+  sector: S8
+  title: Bound actual compact physical Hamiltonian residuals exponentially (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-024]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground state and
+    ordered weak derivative families have compact cutoff H2 approximants with
+    a true scalar Coulomb graph output and eigenvalue residual at the original
+    ground energy bounded by C*exp(-a*R). Each positive a with a^2<Z^2/112
+    has one finite C before every real R at least1. Full literal compact AE
+    support, product-rule weak derivatives and the genuine H2 defect bound are
+    retained. Graph output existence is derived from the actual H2 domain.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalHamiltonianResidualBounds, decl: ManyBody.S8.physicalH2ComponentNorm_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalHamiltonianResidualBounds, decl: ManyBody.S8.scalar_graph_norm_le_physicalH2}
+    - {module: ManyBody.S8.CoulombCompactHamiltonianResidual, decl: ManyBody.S8.scalar_eigen_compact_residual_le_H2}
+    - {module: ManyBody.S8.CoulombCompactHamiltonianResidual, decl: ManyBody.S8.physical_compact_H2_data_mono}
+    - {module: ManyBody.S8.CoulombCompactHamiltonianResidual, decl: ManyBody.S8.scalar_eigen_compact_Hamiltonian_exponential_residual}
+    - {module: ManyBody.S8.CoulombCompactHamiltonianResidual, decl: ManyBody.S8.twoElectron_ground_compact_Hamiltonian_exponential_residual_of_graph}
+    - {module: ManyBody.S8.CoulombCompactHamiltonianResidual, decl: ManyBody.S8.twoElectron_physical_ground_with_compact_Hamiltonian_exponential_residual}
+  card: claims/cards/S8-028.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalHamiltonianResidualBounds.lean, lean/ManyBody/S8/CoulombCompactHamiltonianResidual.lean, claims/cards/S8-028.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The compact state need not be normalized, smooth or an eigenfunction.
+    The prefactor is existential and selected-state dependent. Computable radii,
+    finite dictionaries, rational matrices, effective solver and the full rung remain open.
+
+- id: S8-029
+  sector: S8
+  title: Bound actual nuclear ambient distance derivatives at all orders (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-025, S8-026]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness
+    has genuine all-order complex Frechet operator norms and ordered distance
+    coordinate-word factorial budgets for literal original nuclear A,B and H,
+    for both selected indices at all admissible scales and every half-polydisc
+    point. Actual bounded holomorphic profiles discharge derivative estimates.
+    A,H carry epsilon times epsilon^(-n) and u0 only at order zero, while B
+    carries epsilon^(-n). All original physical and spectral facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.NuclearAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.NuclearAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.NuclearAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_ambient_distance_derivative_budgets}
+  card: claims/cards/S8-029.md
+  evidence: [lean/ManyBody/S8/NuclearAmbientDistanceDerivativeBudgets.lean, claims/cards/S8-029.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The norm is the actual complex Fin3 Pi norm. Selected-state L,R and
+    amplitude are retained. No norm-uniform all-state upgrade, real-distance
+    transport, global approximation, computable prefactor or full rung is claimed.
+
+- id: S8-031
+  sector: S8
+  title: Identify actual complex nuclear profiles across indices and scales (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-026]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness
+    has equal original nuclear A,B and H functions throughout the common full
+    complex distance domains at arbitrary nuclear indices and admissible scales
+    sharing a positive collision-distance point. The literal exchanged physical
+    configuration and actual ground exchange law derive real values, then
+    analytic continuation and genuine profile parity derive whole-domain
+    separate coefficient equality, every complex germ and all ordered jets.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.nuclear_physical_coordinates_exchange}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.exchange_invariant_nuclear_coordinates}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.nuclear_ambient_index_and_scale_compatibility}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.nuclear_ambient_index_and_scale_profile_jets}
+    - {module: ManyBody.S8.NuclearAmbientIndexCompatibility, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_index_coefficient_compatibility}
+  card: claims/cards/S8-031.md
+  evidence: [lean/ManyBody/S8/NuclearAmbientIndexCompatibility.lean, claims/cards/S8-031.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Local q records selected nuclear radius, spectator radius and pair distance.
+    Equality is not an input premise. Original selected-state scales and physical
+    facts are retained. Collision-type transitions, triple origin, a global
+    atlas, dictionary approximation and the full rung remain open.
+
+- id: S8-030
+  sector: S8
+  title: Normalize compact physical H2 approximants with true Rayleigh error (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-024, S8-028]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground state and
+    its genuine first and ordered second weak derivatives admit literal norm-one
+    compact H2 approximants. Each a>0 with a^2<Z^2/112 has one finite C before
+    every R at least max1(2C/a). The raw cutoff norm is at least1/2. Full actual
+    H2 defect, true scalar Coulomb graph eigenvalue residual and absolute actual
+    Rayleigh pairing error are all bounded by C*exp(-a*R), with literal compact
+    AE support and genuine weak derivative and defect families.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact rate, threshold or half-polydisc and selected-scale conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.NormalizedPhysicalH2Approximation, decl: ManyBody.S8.physicalCompactNormalizationRadius_half}
+    - {module: ManyBody.S8.Internal.NormalizedPhysicalH2Approximation, decl: ManyBody.S8.physical_normalized_H2_defect_le}
+    - {module: ManyBody.S8.Internal.NormalizedPhysicalH2Approximation, decl: ManyBody.S8.normalized_physical_graph_rayleigh_error}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.physical_compact_residual_data_normalized}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.physical_normalized_compact_approximation_of_residual_family}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.scalar_eigen_normalized_compact_exponential_approximation}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.twoElectron_ground_normalized_compact_exponential_approximation_of_graph}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_normalized_compact_exponential_approximation}
+  card: claims/cards/S8-030.md
+  evidence: [lean/ManyBody/S8/Internal/NormalizedPhysicalH2Approximation.lean, lean/ManyBody/S8/CoulombNormalizedCompactApproximation.lean, claims/cards/S8-030.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The threshold is explicit in the existential selected-state/rate constant,
+    which is not computably extracted. The original ground retains realness,
+    exchange and O3 symmetry; those symmetries of the normalized cutoff are not
+    asserted. Smoothness, finite dictionaries, effective solver and full rung remain open.
+
+- id: S8-032
+  sector: S8
+  title: Bound genuine real distance derivatives of original collision profiles (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-025, S8-029]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness and
+    original nuclear and pair A,B,H profiles have genuine all-order real Frechet
+    operator and ordered distance-coordinate-word factorial budgets. The literal
+    complex profiles are composed with the actual coordinatewise real cast.
+    A proved norm-preserving cast and exact iterated derivative restriction
+    transport the actual complex estimates, with the exact original epsilon
+    powers and u0 term only at order zero. All physical ground facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact rate, threshold or half-polydisc and selected-scale conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambient_real_iteratedFDeriv_complex_restriction}
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambient_real_iteratedFDeriv_norm_le_complex}
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambient_real_iteratedFDeriv_coordinate_word}
+    - {module: ManyBody.S8.Internal.AmbientRealDerivativeTransport, decl: ManyBody.S8.ambientRealDistanceWordDerivative_norm_le}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_real_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_real_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.pair_real_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_real_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.RealAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.twoElectron_scalar_ground_real_ambient_distance_derivative_budgets}
+  card: claims/cards/S8-032.md
+  evidence: [lean/ManyBody/S8/Internal/AmbientRealDerivativeTransport.lean, lean/ManyBody/S8/RealAmbientDistanceDerivativeBudgets.lean, claims/cards/S8-032.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The real domain is the actual Fin3 Pi maximum norm with complex values.
+    This is a derivative bound in independent ambient distance coordinates;
+    physical Cartesian transport or profile realness is not asserted. Selected
+    original scales/amplitudes remain. Global approximation and full rung remain open.
