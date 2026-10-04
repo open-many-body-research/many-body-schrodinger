@@ -290,3 +290,10 @@ statement review and full committed verification remain pending.
 [S8-026](../../claims/cards/S8-026.md) proves that for charge at least2, the same actual normalized scalar Coulomb ground representative has equal literal original A,B and H profiles throughout the common complex nuclear or pair distance polydisc at any two admissible scales sharing a positive collision-distance point. Real feasible triangle balls and actual reconstruction derive H equality. Genuine selected-distance parity separates A and B, including the collision face by holomorphic continuation. Every complex overlap germ and ordered Frechet jet agrees.
 The nuclear comparisons fix one selected index. Collision-type transitions, triple origin and the global atlas remain open. No profile parity or equality is supplied to the physical graph consumer; all original state facts are retained.
 Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: bound actual compact physical hamiltonian residuals exponentially
+
+[S8-028](../../claims/cards/S8-028.md) proves that for charge at least2, the same actual normalized scalar ground state and ordered weak derivative families have compact cutoff H2 approximants with a true scalar Coulomb graph output and eigenvalue residual at the original ground energy bounded by C*exp(-a*R). Each positive a with a^2<Z^2/112 has one finite C before every real R at least1. Full literal compact AE support, product-rule weak derivatives and the genuine H2 defect bound are retained. Graph output existence is derived from the actual H2 domain.
+The compact state need not be normalized, smooth or an eigenfunction. The prefactor is existential and selected-state dependent. Computable radii, finite dictionaries, rational matrices, effective solver and the full rung remain open.
+Human statement review and full committed verification remain pending.
