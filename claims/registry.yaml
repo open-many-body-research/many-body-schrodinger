@@ -1426,3 +1426,39 @@ claims:
     Equality is not an input premise. Original selected-state scales and physical
     facts are retained. Collision-type transitions, triple origin, a global
     atlas, dictionary approximation and the full rung remain open.
+
+- id: S8-030
+  sector: S8
+  title: Normalize compact physical H2 approximants with true Rayleigh error (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-024, S8-028]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground state and
+    its genuine first and ordered second weak derivatives admit literal norm-one
+    compact H2 approximants. Each a>0 with a^2<Z^2/112 has one finite C before
+    every R at least max1(2C/a). The raw cutoff norm is at least1/2. Full actual
+    H2 defect, true scalar Coulomb graph eigenvalue residual and absolute actual
+    Rayleigh pairing error are all bounded by C*exp(-a*R), with literal compact
+    AE support and genuine weak derivative and defect families.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact rate, threshold or half-polydisc and selected-scale conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.NormalizedPhysicalH2Approximation, decl: ManyBody.S8.physicalCompactNormalizationRadius_half}
+    - {module: ManyBody.S8.Internal.NormalizedPhysicalH2Approximation, decl: ManyBody.S8.physical_normalized_H2_defect_le}
+    - {module: ManyBody.S8.Internal.NormalizedPhysicalH2Approximation, decl: ManyBody.S8.normalized_physical_graph_rayleigh_error}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.physical_compact_residual_data_normalized}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.physical_normalized_compact_approximation_of_residual_family}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.scalar_eigen_normalized_compact_exponential_approximation}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.twoElectron_ground_normalized_compact_exponential_approximation_of_graph}
+    - {module: ManyBody.S8.CoulombNormalizedCompactApproximation, decl: ManyBody.S8.twoElectron_physical_ground_with_normalized_compact_exponential_approximation}
+  card: claims/cards/S8-030.md
+  evidence: [lean/ManyBody/S8/Internal/NormalizedPhysicalH2Approximation.lean, lean/ManyBody/S8/CoulombNormalizedCompactApproximation.lean, claims\cards\S8-030.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The threshold is explicit in the existential selected-state/rate constant,
+    which is not computably extracted. The original ground retains realness,
+    exchange and O3 symmetry; those symmetries of the normalized cutoff are not
+    asserted. Smoothness, finite dictionaries, effective solver and full rung remain open.

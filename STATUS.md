@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 36 |
+| **L** | Lean-verified | 37 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -109,6 +109,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-028](claims/cards/S8-028.md) | Bound actual compact physical Hamiltonian residuals exponentially (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
 | [S8-029](claims/cards/S8-029.md) | Bound actual nuclear ambient distance derivatives at all orders (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
 | [S8-031](claims/cards/S8-031.md) | Identify actual complex nuclear profiles across indices and scales (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
+| [S8-030](claims/cards/S8-030.md) | Normalize compact physical H2 approximants with true Rayleigh error (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The exact rate, threshold or half-polydisc and selected-scale conditions in the card |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
