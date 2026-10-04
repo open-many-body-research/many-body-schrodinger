@@ -224,6 +224,43 @@ claims:
     and acceptance. This uses the proved uncertainty bound, not the exact 5 alpha/8
     repulsion moment; the full S2.4 threshold and Theorem T remain open.
 
+- id: S2-010
+  sector: S2
+  title: Exact product repulsion and sharpened physical ground branch (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S1-001, S1-003, S2-001, S2-002, S2-009]
+  statement: >
+    The actual normalized hydrogen product has Coulomb repulsion exactly
+    5 alpha / 8 for every alpha > 0, with physical density transport and true
+    product integrability proved. The actual normalized singlet with
+    alpha = Z - 5/16 has exact trial energy -(Z - 5/16)^2. For real
+    Z > (20 + 5 sqrt(10))/24, the physical ground branch is attained and simple,
+    E <= -(Z - 5/16)^2 < -5Z^2/8, and the complement and remaining unbounded
+    spectrum obey the same separator. The explicit charge 3/2 is included.
+  conditional_on:
+    - Positive alpha in the exact physical moment theorem.
+    - The displayed strict charge threshold in the above-threshold ground theorem.
+  lean:
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.hydrogenProductRepulsion_exact}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProductTrial_energy}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_charge_conditions}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_ground_branch}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_ground_branch_above_threshold}
+    - {module: ManyBody.S2.HydrogenProductRepulsionExact, decl: ManyBody.S2.exactProduct_three_halves_ground_energy}
+    - {module: ManyBody.S2.Internal.HydrogenProductDensity, decl: ManyBody.S2.hydrogenProductRepulsion_density_integrable}
+    - {module: ManyBody.S2.Internal.HydrogenProductDensity, decl: ManyBody.S2.hydrogenProductRepulsion_eq_double_integral}
+    - {module: ManyBody.S2.Internal.RadialCoulombNewton, decl: ManyBody.S2.Internal.Cylindrical.integral_radial_coulomb}
+  card: claims/cards/S2-010.md
+  evidence: [lean/ManyBody/S2/HydrogenProductRepulsionExact.lean, lean/ManyBody/S2/Internal/HydrogenProductDensity.lean, lean/ManyBody/S2/Internal/CylindricalIntegration.lean, lean/ManyBody/S2/Internal/CylindricalRadiusSubstitution.lean, lean/ManyBody/S2/Internal/CoulombHeightIntegral.lean, lean/ManyBody/S2/Internal/CylindricalCoulombReduction.lean, lean/ManyBody/S2/Internal/CoulombWedgeIntegration.lean, lean/ManyBody/S2/Internal/RadialCoulombNewton.lean, lean/ManyBody/S2/Internal/ExponentialRadialMoments.lean, claims/cards/S2-010.md]
+  caveats: >
+    Proposed tier-L topic-branch submission pending human statement-card review.
+    Supplies the S2.4 Lean deliverable; historical S2-005 remains P1 until
+    maintainer acceptance. The threshold is strict; lower charges and the endpoint
+    are not covered. This is not a sharp energy enclosure, S2.3, full Rung 2,
+    or Theorem T.
+
 # ---------------------------------------------------------------- S3 certified computation
 - id: S3-001
   sector: S3

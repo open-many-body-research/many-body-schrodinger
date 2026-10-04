@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 11 |
+| **L** | Lean-verified | 12 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -36,6 +36,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | S2-007 | Fixed-shift selection and computability of E_Z (paper) | **P1** | none |
 | S2-008 | Theorem T (polynomial-bit certified two-electron ground energy) | **O** | none |
 | [S2-009](claims/cards/S2-009.md) | Screened uncertainty extends the physical two-electron ground branch (submitted; pending review) | **L** | none |
+| [S2-010](claims/cards/S2-010.md) | Exact product repulsion and sharpened physical ground branch (submitted; pending review) | **L** | Positive alpha in the exact physical moment theorem; The displayed strict charge threshold in the above-threshold ground theorem |
 
 ## S3: [Certified energy intervals](sectors/S3-certified-computation/README.md)
 
