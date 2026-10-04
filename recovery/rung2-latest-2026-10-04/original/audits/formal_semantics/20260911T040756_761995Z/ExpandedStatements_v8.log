@@ -1,0 +1,95 @@
+@TheoremT.Continuum.collinear_complex_square_deviation : ∀ {R δ : Real}
+  (hR : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) R)
+  (hδ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ) {a c : Complex}
+  (hc : @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ c) R)
+  (ha : @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ a c)) δ),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ c (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ δ
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) R) δ))
+@TheoremT.Continuum.collinear_distance_numerator_bound : ∀ {r0 σ u0 δ : Real}
+  (hr0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r0)
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hu0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u0)
+  (hδ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ) {z0 r s u : Complex}
+  (hz0 : @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ z0) r0)
+  (hr :
+    @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ r (Complex.ofReal r0)))
+      δ)
+  (hs :
+    @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ s (Complex.ofReal σ)))
+      δ)
+  (hu :
+    @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ u (Complex.ofReal u0)))
+      δ),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+            (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (Complex.ofReal r0) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (Complex.ofReal σ) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+          (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (Complex.ofReal u0) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _) z0)
+          (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ s (Complex.ofReal σ)))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ δ
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) r0)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) σ))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) u0))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) δ)))
+@TheoremT.Continuum.collinear_distance_numerator_bound_coarse : ∀ {r0 σ u0 δ : Real}
+  (hr0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r0)
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hu0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u0)
+  (hδ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ)
+  (hsmall : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ σ (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  {z0 r s u : Complex} (hz0 : @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ z0) r0)
+  (hr :
+    @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ r (Complex.ofReal r0)))
+      δ)
+  (hs :
+    @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ s (Complex.ofReal σ)))
+      δ)
+  (hu :
+    @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ u (Complex.ofReal u0)))
+      δ),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+            (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (Complex.ofReal r0) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (Complex.ofReal σ) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+          (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (Complex.ofReal u0) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _) z0)
+          (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ s (Complex.ofReal σ)))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r0 σ) u0))
+      δ)
+'TheoremT.Continuum.collinear_complex_square_deviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.collinear_distance_numerator_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.collinear_distance_numerator_bound_coarse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

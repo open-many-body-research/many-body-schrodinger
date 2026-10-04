@@ -1,0 +1,45 @@
+{
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND",
+  "reviewer": "/root/ks_coefficient_transport",
+  "producer": "/root/ks_coefficient_transport/transport_review",
+  "utc": "2026-09-11T01:57:59.002614+00:00",
+  "source": {
+    "path": "lean/ComplexPolynomialRealOpenBox_v1.lean",
+    "sha256": "85f6f9cf933bc3b532e73807bc6ee9df50571c0b69219c27f735729db9a8a941"
+  },
+  "build": {
+    "path": "logs/development/ComplexPolynomialRealOpenBox_v1-20260911T015555_881865Z.json",
+    "sha256": "28226175d49a29d05edcd2d8cdaf9720bade847347855960f23f531def307544"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T015614_399134Z/receipt.json",
+    "sha256": "38cf6afdc12677d9ca5bd519a798e6236cb97c5fe10814a3e8be17b0e4c9f9f5"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T015614_399134Z/ExpandedStatements_v8.log",
+    "sha256": "09dcfe080535f52fd4550af2864e9d331720134eaaa8ed9df825d5606403ffa7"
+  },
+  "manual_review": [
+    "Full source and proof body read, full strict receipt and expanded theorem/axiom output read.",
+    "r>0 makes (-r,r) an infinite real interval. Its complex image remains infinite by injectivity of Complex.ofReal.",
+    "Mathlib.funext_set applies to the product of these actual infinite subsets; it does not require that a real slice be complex open. The complete library funext_set argument was read, including reduction to finitely many supported variables.",
+    "For any complex vector in this product the proof chooses actual real coordinates lying in (-r,r), obtains |y_i|<r, and applies precisely the displayed real-box evaluation hypothesis.",
+    "The arbitrary index-type generality is supported by polynomial finite-variable support in the library theorem; no uncountable power-series claim is involved."
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "limits": [
+    "This is polynomial extensionality, not equality of arbitrary analytic functions or general functions from real-slice values.",
+    "No computational representation or runtime claim is made.",
+    "Pinned dependencies reused; no isolated source rebuild."
+  ],
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-09-10T22:05:58.226591+00:00",
+  "module": "PairKSPotentialAnalytic_v1",
+  "status": "compiler, approved v6 audit and focused source review PASS; exact bytes preserved",
+  "scope": "The exact pairKSLift is ContDiff at omega and AnalyticAt everywhere. For every real Z,E, the exact pairKSPotential Z E is ContDiffAt at omega and AnalyticAt at every point of the existing pairKSCoefficientPatch, hence AnalyticOnNhd on that patch. The patch assumes precisely both physical nuclear positions are nonzero; no y\u22600 or pair separation is required, so the pair collision fiber away from the nucleus is retained.",
+  "review": "Independent read-only focused source review by /root/test_extension_recovery found no hypothesis defect: actual pairCoordinates and ksMap retained, ContDiff omega rather than infinity, inverse nuclear norms justified exactly by hq.1/hq.2, polynomial squared Y norm, arbitrary real Z,E, no altered coefficient, PDE or all-order constant claim. The reviewer did not run a compiler; the v6 audit below supplies compiler evidence.",
+  "records": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairKSPotentialAnalytic_v1.lean",
+      "sha256": "07a0c974ade69a672fe0ba64c09d31b5aff53876170ea87161e00b42788e5355",
+      "size": 2011
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PairKSPotentialAnalytic_v1.olean",
+      "sha256": "1b1704499a3ff9802ad038300a3b4e01efa26d8e595f8f7a9d7f65947963be24",
+      "size": 75640
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PAIR_KS_POTENTIAL_ANALYTIC_v1.md",
+      "sha256": "40927b58dc2cb5f90ef88800ea987021e71f050a176b5b21696989208ba88975",
+      "size": 2322
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220415_439881Z/ExpandedStatements_v6.lean",
+      "sha256": "dd769e91812c3e7742b2156b2d2f0ccd9dcc4534d023af37909284b98c5d6943",
+      "size": 1138
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220415_439881Z/ExpandedStatements_v6.log",
+      "sha256": "f297c757c17a34268e7096f171852c0e3956ee271a9b62b86ac22a9c2665e14f",
+      "size": 2098
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220415_439881Z/ExpandedStatements_v6.olean",
+      "sha256": "c2218ef99e4fd3c63280ac69d8d1a485ec2999e6454d13bc239f7b1e0853dd4a",
+      "size": 1416
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220415_439881Z/receipt.json",
+      "sha256": "668559b8bbeea5c5cb9f43d4e1e7b50e4661b06072ffc0cb4d1fc15f726b8f61",
+      "size": 4141
+    }
+  ]
+}

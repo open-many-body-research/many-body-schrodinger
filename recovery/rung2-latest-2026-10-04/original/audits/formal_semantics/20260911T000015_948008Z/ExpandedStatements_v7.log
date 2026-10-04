@@ -1,0 +1,198 @@
+TheoremT.Continuum.tensorClosedBox7 : (a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) →
+  Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+TheoremT.Continuum.tensorClosedBox7_isClosed : ∀ (a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+  @IsClosed.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensorClosedBox7_update : ∀ {a b x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) x)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) {r : Real}
+  (hr : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ (a i) (b i)) r),
+  @Membership.mem.{0, 0} ((a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Real)
+    (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+    (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+      (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r)
+TheoremT.Continuum.tensorBoxNormField7 : (a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) →
+  (D :
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) →
+    (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → ENNReal
+TheoremT.Continuum.tensorBoxNormField7_measurable : ∀ (a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+  {D :
+    Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hD :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+  @Measurable.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) ENNReal _ _
+    (TheoremT.Continuum.tensorBoxNormField7 a b D s)
+@TheoremT.Continuum.tensorBoxNormField7_coordinate_average : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  {D :
+    Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hD :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      Not
+          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+          @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+              x →
+            @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+              (fun (r : Real) =>
+                D s
+                  (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                    (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+              (D
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+                x)
+              (x i))
+  (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+  Not
+      (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+    ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+      @LE.le.{0} ENNReal _ (TheoremT.Continuum.tensorBoxNormField7 a b D s x)
+        (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _
+          (@MeasureTheory.lmarginal.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _
+            (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+              TheoremT.Continuum.intervalAverageMeasure (a j) (b j))
+            (@Singleton.singleton.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+              (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i)
+            (TheoremT.Continuum.tensorBoxNormField7 a b D s) x)
+          (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+            (ENNReal.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i)))
+            (@MeasureTheory.lmarginal.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+                TheoremT.Continuum.intervalAverageMeasure (a j) (b j))
+              (@Singleton.singleton.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i)
+              (TheoremT.Continuum.tensorBoxNormField7 a b D
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s))
+              x)))
+@TheoremT.Continuum.tensor_box7_pointwise_integral_bound : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  {D :
+    Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hD :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      Not
+          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+          @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+              x →
+            @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+              (fun (r : Real) =>
+                D s
+                  (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                    (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+              (D
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+                x)
+              (x i))
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) x),
+  @LE.le.{0} ENNReal _
+    (@ENorm.enorm.{0} Complex _
+      (D (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _) x))
+    (@Finset.sum.{0, 0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) ENNReal _
+      (@Finset.powerset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) _))
+      fun (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) =>
+      @HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) ENNReal _ s
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+          ENNReal.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i)))
+        (@MeasureTheory.lintegral.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Real)
+          (@MeasurableSpace.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _)
+          (@MeasureTheory.Measure.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => TheoremT.Continuum.intervalAverageMeasure (a i) (b i))
+          fun (y : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Real) =>
+          TheoremT.Continuum.tensorBoxNormField7 a b D s y))
+@TheoremT.Continuum.tensor_box7_pointwise_uniform_average_bound : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  {D :
+    Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hD :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      Not
+          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+          @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+              x →
+            @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+              (fun (r : Real) =>
+                D s
+                  (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                    (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+              (D
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+                x)
+              (x i))
+  {B : ENNReal}
+  (hB :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @LE.le.{0} ENNReal _
+        (@MeasureTheory.lintegral.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Real)
+          (@MeasurableSpace.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _)
+          (@MeasureTheory.Measure.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => TheoremT.Continuum.intervalAverageMeasure (a i) (b i))
+          fun (y : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Real) =>
+          TheoremT.Continuum.tensorBoxNormField7 a b D s y)
+        B)
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) x),
+  @LE.le.{0} ENNReal _
+    (@ENorm.enorm.{0} Complex _
+      (D (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _) x))
+    (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+      (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) ENNReal _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+        @HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (@OfNat.ofNat.{0} ENNReal (nat_lit 1) _)
+          (ENNReal.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i))))
+      B)
+'TheoremT.Continuum.tensorClosedBox7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensorClosedBox7_isClosed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensorClosedBox7_update' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensorBoxNormField7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensorBoxNormField7_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensorBoxNormField7_coordinate_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_pointwise_integral_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_pointwise_uniform_average_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

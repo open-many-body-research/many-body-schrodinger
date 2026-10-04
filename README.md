@@ -84,7 +84,7 @@ AI assistance is allowed, and it was used heavily to build v1.0. It must be disc
 
 Read the [weekly research newsletter](newsletters/README.md) for dated summaries of progress, notable contributions, releases, and open work.
 
-The [Rung 2 source recovery](recovery/rung2-2026-10-04/README.md) restores the later continuation sources and original verification receipts requested in issue #6, with a separate clean local-source rebuild runner. It does not promote any recorded claim.
+The [current Rung 2 source recovery](recovery/rung2-latest-2026-10-04/README.md) restores the latest continuation sources and original verification receipts requested in issue #6, with a clean local-source rebuild runner. The [initial requested closure and its replay receipt](recovery/rung2-2026-10-04/REPRODUCTION_v1.md) are also preserved. This recovery does not promote any recorded claim.
 
 ```
 claims/        registry.yaml (authoritative status) and statement cards

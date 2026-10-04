@@ -1,0 +1,78 @@
+{
+  "status": "PASS_PREREQUISITE_REPRESENTATIVE_LIMIT_PENDING",
+  "utc": "2026-09-11T00:18:34.206216+00:00",
+  "exact_result": "# Compact local weak word families globalize\n\nProductCompactWeakDirectionalGlobal_v1 derives actual global L2 membership of a raw locally L2 function supported in a compact K contained in its local domain. A genuine local weak directional pair f,g with both supports in K satisfies the global compact-test integration-by-parts identity. The proof constructs a smooth compact test cutoff equal to one on a neighborhood of K using the existing finite-dimensional cutoff existence theorem, then uses local equality for its derivative and vanishing of f,g off K. There is no boundary term and no indicator derivative is taken. The resulting actual global Lp classes are almost-everywhere representatives of the original functions and satisfy WeakProductL2Directional.\n\nProductCompactWeakWordGlobal_v1 proves arbitrary coefficient directional-word supports remain within the cutoff tsupport, and consequently every explicit ordered Leibniz word directionalWordProduct dirs chi D w has support within that same compact set. Its main product_compact_cutoff_finite_weak_word_family theorem takes an actual finite raw locally L2 weak word family on open Omega, a smooth compact cutoff chi supported inside Omega, and returns one global Lp family F before all word and direction choices. For length(w)<=m, F_w equals the explicit existing ordered Leibniz word almost everywhere; for length(w)<m, F_w has the actual global weak derivative F_(i::w) in dirs_i. Support bounds are derived from chi, not assumed in the cutoff theorem. The auxiliary generic family theorem has the shared compact support hypothesis explicitly. m=0 is covered by the explicit local L2 input. Entries beyond the finite reserve are set to zero without any asserted derivative relation.\n\nThe ordinary product has its actual maximum norm and product Lebesgue measure. No Euclidean inner-product structure is silently assigned to the product. These results supply consistent global weak cutoff jets for the separately proved finite-word mollifier approximation. They do not establish smoothness or continuity of the original weak derivatives, uniform convergence of the mollifier sequence, the local representative limit, R24 weak embedding completion, solution analyticity, evaluated factorial PDE constants or original T02 verification.\n\nAll seven declarations compiler PASS and approved v7 strict audit: formal_semantics/20260911T001420_279499Z and 20260911T001654_044445Z. Full expanded types and axiom reports were read. Only propext, Classical.choice, Quot.sound occur; zero forbidden tokens, ellipses, printer failures or missing reports. Source/object hashes stayed exact. Harmless unused-section and unnecessary-simpa lint warnings in the word module were preserved after first PASS. Independent read-only exact-source reviewer /root/finite_affine_jets/physical_direction_norm confirmed both sources and found no hypothesis, support, derivative, reserve, family-quantifier or AE-direction defect.\n\nCached pinned objects reused with no source rebuild, broad audit, shared-ledger edit or modification of prior/frozen/PASS files. Historical reference: rwa_proof/THEOREM_T_COMPOSITION.md, SHA-256 1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da, commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09, manifest THEOREM_T_FREEZE_2026-09-09_212604/FREEZE_MANIFEST.json.\n",
+  "modules": [
+    {
+      "module": "ProductCompactWeakDirectionalGlobal_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCompactWeakDirectionalGlobal_v1.lean",
+      "source_sha256": "b7ae04a78836cef938540cd6548605323a374773acc1da1fe8b8813bb607071d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCompactWeakDirectionalGlobal_v1.olean",
+      "object_sha256": "07d8c295138bebe6375cca7810c04f503c7fed49a18d54d2008c6fe7ed3316a8",
+      "declarations": [
+        "product_locallyL2_memLp_of_compact_support",
+        "ProductLocalWeakDirectional.global_tests_of_compact_support",
+        "ProductLocalWeakDirectional.globalize_of_compact_support"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCompactWeakDirectionalGlobal_v1-20260911T001354_248267Z.json",
+          "sha256": "dfdc0661d6af47408c643cc901bcf861e35932a0e4578e684034fd008c29f346"
+        }
+      ]
+    },
+    {
+      "module": "ProductCompactWeakWordGlobal_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCompactWeakWordGlobal_v1.lean",
+      "source_sha256": "325cde32e72aee54dc61ecfb33b49199501e288f16ce740081b73f51dd70ff2a",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCompactWeakWordGlobal_v1.olean",
+      "object_sha256": "2c64662a612babcf1d27399362ac383caff89d520149d7838cbc5405b795e8b4",
+      "declarations": [
+        "directionalWordDeriv_tsupport_subset",
+        "directionalWordProduct_support_subset",
+        "product_compact_local_weak_word_family_global",
+        "product_compact_cutoff_finite_weak_word_family"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCompactWeakWordGlobal_v1-20260911T001630_964039Z.json",
+          "sha256": "3c9690ac23a6894e442010e5e33f94fabef770d576b47317e76b6b48d1afee4f"
+        }
+      ]
+    }
+  ],
+  "strict_audits": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T001420_279499Z/receipt.json",
+      "sha256": "bcf1e6a64209ed23181dc45e3e8af6c109a7299d2aeefbee24866ed79f0d948d",
+      "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+      "axiom_lines": [
+        "TheoremT.Continuum.product_locallyL2_memLp_of_compact_support: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.ProductLocalWeakDirectional.global_tests_of_compact_support: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.ProductLocalWeakDirectional.globalize_of_compact_support: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T001654_044445Z/receipt.json",
+      "sha256": "e1901f510b82ec81fa4e520397fc88a7a055bcd06058aad249788450ced3bbb5",
+      "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+      "axiom_lines": [
+        "TheoremT.Continuum.directionalWordDeriv_tsupport_subset: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.directionalWordProduct_support_subset: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.product_compact_local_weak_word_family_global: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.product_compact_cutoff_finite_weak_word_family: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    }
+  ],
+  "focused_review": "Independent exact-source review by physical_direction_norm found no defect.",
+  "note": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_COMPACT_WEAK_WORD_GLOBAL_v1.md",
+    "sha256": "255028e178c7d6f148dbfc04dc7e77befc3b4ca6d3e929994f720f383d75e9f5"
+  }
+}

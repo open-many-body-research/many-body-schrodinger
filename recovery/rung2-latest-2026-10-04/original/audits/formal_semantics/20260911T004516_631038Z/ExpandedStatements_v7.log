@@ -1,0 +1,2037 @@
+@TheoremT.Continuum.tensor_box_sqrt_integral_eq_Lp_norm : ∀
+  {μ : @MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _}
+  (u :
+    @Subtype.{1} (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ)
+      fun (x : @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ)
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ) _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+          (@MeasurableSpace.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _)
+          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ)
+        x)
+  {g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hg :
+    @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+      (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _ μ)
+      (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ μ _
+        (@Subtype.val.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ)
+          (fun (x : @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ)
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ) _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                (@MeasurableSpace.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ)
+              x)
+          u))
+      g),
+  @Eq.{1} Real
+    (Real.sqrt
+      (@MeasureTheory.integral.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Real _ _
+        (@MeasurableSpace.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _)
+        μ fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (g x)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@Norm.norm.{0}
+      (@Subtype.{1} (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ)
+        fun (x : @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ)
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ μ) _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+            (@MeasurableSpace.pi.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+              (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _)
+            _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ)
+          x)
+      _ u)
+@TheoremT.Continuum.tensor_box7_uniformCauchy_of_L2_Cauchy : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  (D :
+    Nat →
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (hD :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D n s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      Not
+          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+          @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+              x →
+            @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+              (fun (r : Real) =>
+                D n s
+                  (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                    (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+              (D n
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+                x)
+              (x i))
+  (V :
+    Nat →
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+  (hV :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+        (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b))
+          _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                x)
+            (V n s)))
+        (D n s))
+  (hc :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @CauchySeq.{0, 0}
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+        Nat _ _ fun (n : Nat) => V n s),
+  @UniformCauchySeqOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+    (fun (n : Nat) =>
+      D n (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _))
+    (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_continuous_uniform_limit_of_L2_Cauchy : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  (D :
+    Nat →
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (hD :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D n s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      Not
+          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+          @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+              x →
+            @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+              (fun (r : Real) =>
+                D n s
+                  (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                    (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+              (D n
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+                x)
+              (x i))
+  (V :
+    Nat →
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+  (hV :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+        (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b))
+          _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                x)
+            (V n s)))
+        (D n s))
+  (hc :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @CauchySeq.{0, 0}
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+        Nat _ _ fun (n : Nat) => V n s),
+  @Exists.{1} ((Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+    fun (g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) =>
+    And
+      (@ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ g
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+      (@TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+        (fun (n : Nat) =>
+          D n (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _))
+        g (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+@TheoremT.Continuum.tensor_box7_uniform_limit_ae_Lp_limit : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (f : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  {g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ f g
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (V :
+    Nat →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          x)
+  (hV :
+    ∀ (n : Nat),
+      @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+        (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b))
+          _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                x)
+            (V n)))
+        (f n))
+  {W :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+        (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+          (TheoremT.Continuum.tensorClosedBox7 a b)))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        x}
+  (hW :
+    @Filter.Tendsto.{0, 0} Nat
+      (@Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          x)
+      V (@Filter.atTop.{0} Nat _)
+      (@nhds.{0}
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+        _ W)),
+  @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+    (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (TheoremT.Continuum.tensorClosedBox7 a b)))
+    (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+      _
+      (@Subtype.val.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        (fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+        W))
+    g
+@TheoremT.Continuum.tensor_box7_continuous_representative_of_L2_limits : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  (D :
+    Nat →
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (hD :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (D n s)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      Not
+          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+          @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b)
+              x →
+            @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+              (fun (r : Real) =>
+                D n s
+                  (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                    (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+              (D n
+                (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                  (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+                x)
+              (x i))
+  (V :
+    Nat →
+      Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+  (hV :
+    ∀ (n : Nat) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+        (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b))
+          _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                x)
+            (V n s)))
+        (D n s))
+  (W :
+    Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          x)
+  (hW :
+    ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @Filter.Tendsto.{0, 0} Nat
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+        (fun (n : Nat) => V n s) (@Filter.atTop.{0} Nat _)
+        (@nhds.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              x)
+          _ (W s))),
+  @Exists.{1} ((Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+    fun (g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) =>
+    And
+      (@ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ g
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+      (And
+        (@TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+          (fun (n : Nat) =>
+            D n (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _))
+          g (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+        (@Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+          (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b))
+            _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b)))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  x)
+              (W (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _))))
+          g))
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1,
+    u_2} : {E : Type u_1} →
+  [inst : NormedAddCommGroup.{u_1} E] →
+    [@NormedSpace.{0, u_1} Real E _ _] →
+      {ι : Type u_2} → (dirs : ι → E) → (f : E → Complex) → List.{u_2} ι → E → Complex
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv_contDiff.{u_1,
+    u_2} : ∀ {E : Type u_1} [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Real E _ _]
+  {ι : Type u_2} (dirs : ι → E) {f : E → Complex}
+  (hf : @ContDiff.{0, u_1, 0} Real _ E _ _ Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) f)
+  (w : List.{u_2} ι),
+  @ContDiff.{0, u_1, 0} Real _ E _ _ Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1, u_2} E _ _ ι dirs f w)
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv_append.{u_1,
+    u_2} : ∀ {E : Type u_1} [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Real E _ _]
+  {ι : Type u_2} (dirs : ι → E) (f : E → Complex) (u v : List.{u_2} ι),
+  @Eq.{u_1 + 1} (E → Complex)
+    (@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1, u_2} E _ _ ι dirs f
+      (@HAppend.hAppend.{u_2, u_2, u_2} (List.{u_2} ι) (List.{u_2} ι) (List.{u_2} ι) _ u v))
+    (@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1, u_2} E _ _ ι dirs
+      (@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1, u_2} E _ _ ι dirs f v) u)
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv_perm.{u_1,
+    u_2} : ∀ {E : Type u_1} [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Real E _ _]
+  {ι : Type u_2} (dirs : ι → E) {f : E → Complex}
+  (hf : @ContDiff.{0, u_1, 0} Real _ E _ _ Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) f)
+  {u v : List.{u_2} ι} (huv : @List.Perm.{u_2} ι u v),
+  @Eq.{u_1 + 1} (E → Complex) (@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1, u_2} E _ _ ι dirs f u)
+    (@TheoremT.Continuum.normedComplexDirectionalWordDeriv.{u_1, u_2} E _ _ ι dirs f v)
+TheoremT.Continuum.coordinateWordDeriv7 : (f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) →
+  List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex
+TheoremT.Continuum.canonicalSubsetWord7 : (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) →
+  List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+TheoremT.Continuum.canonicalSubsetWord7_nodup : ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+  @List.Nodup.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) (TheoremT.Continuum.canonicalSubsetWord7 s)
+TheoremT.Continuum.canonicalSubsetWord7_insert_perm : ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+  (hi :
+    Not
+      (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i)),
+  @List.Perm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+    (TheoremT.Continuum.canonicalSubsetWord7
+      (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s))
+    (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) i (TheoremT.Continuum.canonicalSubsetWord7 s))
+TheoremT.Continuum.canonicalSubsetWord7_append_length : ∀ (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+  (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+  @LE.le.{0} Nat _
+    (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+      (@HAppend.hAppend.{0, 0, 0} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+        (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _
+        (TheoremT.Continuum.canonicalSubsetWord7 s) w))
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w)
+      (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+TheoremT.Continuum.smoothSubsetField7 : (f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) →
+  (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) →
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex
+TheoremT.Continuum.smoothSubsetField7_empty : ∀ (f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex),
+  @Eq.{1} ((Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+    (TheoremT.Continuum.smoothSubsetField7 f
+      (@EmptyCollection.emptyCollection.{0} (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _))
+    f
+@TheoremT.Continuum.smoothSubsetField7_contDiff : ∀ {f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hf :
+    @ContDiff.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) f)
+  (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+  @ContDiff.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (TheoremT.Continuum.smoothSubsetField7 f s)
+TheoremT.Continuum.smoothSubsetField7_word_base : ∀ (f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+  @Eq.{1} ((Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+    (TheoremT.Continuum.smoothSubsetField7 (TheoremT.Continuum.coordinateWordDeriv7 f w) s)
+    (TheoremT.Continuum.coordinateWordDeriv7 f
+      (@HAppend.hAppend.{0, 0, 0} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+        (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _
+        (TheoremT.Continuum.canonicalSubsetWord7 s) w))
+@TheoremT.Continuum.smoothSubsetField7_directional : ∀ {f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hf :
+    @ContDiff.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) f)
+  (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+  (hi :
+    Not
+      (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i))
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => Complex) _
+      (@fderiv.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _
+        (TheoremT.Continuum.smoothSubsetField7 f s) x)
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _ i (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (TheoremT.Continuum.smoothSubsetField7 f
+      (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+      x)
+@TheoremT.Continuum.smoothSubsetField7_coordinate_hasDerivAt : ∀
+  {f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hf :
+    @ContDiff.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) f)
+  (s : Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+  (hi :
+    Not
+      (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ s i))
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+  @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+    (fun (r : Real) =>
+      TheoremT.Continuum.smoothSubsetField7 f s
+        (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+    (TheoremT.Continuum.smoothSubsetField7 f
+      (@Insert.insert.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))) _ i s)
+      x)
+    (x i)
+@TheoremT.Continuum.smooth_word7_continuous_representative_of_L2_limits : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  (u : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (hu :
+    ∀ (n : Nat),
+      @ContDiff.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _
+        (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (u n))
+  {m : Nat}
+  (V :
+    Nat →
+      List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+  (hV :
+    ∀ (n : Nat) (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+          (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b))
+            _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b)))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  x)
+              (V n w)))
+          (TheoremT.Continuum.coordinateWordDeriv7 (u n) w))
+  (W :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          x)
+  (hW :
+    ∀ (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Filter.Tendsto.{0, 0} Nat
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              x)
+          (fun (n : Nat) => V n w) (@Filter.atTop.{0} Nat _)
+          (@nhds.{0}
+            (@Subtype.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                x)
+            _ (W w)))
+  (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)))
+  (hw : @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w) m),
+  @Exists.{1} ((Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+    fun (g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) =>
+    And
+      (@ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ g
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+      (And
+        (@TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+          (fun (n : Nat) => TheoremT.Continuum.coordinateWordDeriv7 (u n) w) g (@Filter.atTop.{0} Nat _)
+          (TheoremT.Continuum.tensorClosedBox7 a b))
+        (@Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+          (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b))
+            _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b)))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  x)
+              (W w)))
+          g))
+@TheoremT.Continuum.smooth_words7_continuous_representatives_of_L2_limits : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hab : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)), @LT.lt.{0} Real _ (a i) (b i))
+  (u : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (hu :
+    ∀ (n : Nat),
+      @ContDiff.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _
+        (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (u n))
+  {m : Nat}
+  (V :
+    Nat →
+      List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            x)
+  (hV :
+    ∀ (n : Nat) (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+          (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b))
+            _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        (TheoremT.Continuum.tensorClosedBox7 a b)))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  x)
+              (V n w)))
+          (TheoremT.Continuum.coordinateWordDeriv7 (u n) w))
+  (W :
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (TheoremT.Continuum.tensorClosedBox7 a b)))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+              (TheoremT.Continuum.tensorClosedBox7 a b)))
+          x)
+  (hW :
+    ∀ (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+        @Filter.Tendsto.{0, 0} Nat
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+              (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                (TheoremT.Continuum.tensorClosedBox7 a b)))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              x)
+          (fun (n : Nat) => V n w) (@Filter.atTop.{0} Nat _)
+          (@nhds.{0}
+            (@Subtype.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                    (TheoremT.Continuum.tensorClosedBox7 a b)))
+                x)
+            _ (W w))),
+  @Exists.{1}
+    (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+    fun
+      (G :
+        List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) →
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex) =>
+    ∀ (w : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))),
+      @LE.le.{0} Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) w) m →
+        And
+          (@ContinuousOn.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _ (G w)
+            (TheoremT.Continuum.tensorClosedBox7 a b))
+          (And
+            (@TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+              (fun (n : Nat) => TheoremT.Continuum.coordinateWordDeriv7 (u n) w) (G w) (@Filter.atTop.{0} Nat _)
+              (TheoremT.Continuum.tensorClosedBox7 a b))
+            (@Filter.EventuallyEq.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+              (@MeasureTheory.ae.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (@MeasureTheory.Measure.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b)))
+              (@MeasureTheory.AEEqFun.cast.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _
+                (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                    _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                  (TheoremT.Continuum.tensorClosedBox7 a b))
+                _
+                (@Subtype.val.{1}
+                  (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                      (TheoremT.Continuum.tensorClosedBox7 a b)))
+                  (fun
+                      (x :
+                        @MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                            (TheoremT.Continuum.tensorClosedBox7 a b))) =>
+                    @Membership.mem.{0, 0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                        (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                          (TheoremT.Continuum.tensorClosedBox7 a b)))
+                      (@AddSubgroup.{0}
+                        (@MeasureTheory.AEEqFun.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex _ _
+                          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                            (TheoremT.Continuum.tensorClosedBox7 a b)))
+                        _)
+                      _
+                      (@MeasureTheory.Lp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                        _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                        (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+                          (TheoremT.Continuum.tensorClosedBox7 a b)))
+                      x)
+                  (W w)))
+              (G w)))
+@TheoremT.Continuum.tensor_box7_uniform_coordinate_slice : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  {f : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  {g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ f g
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) x)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+  @TendstoUniformlyOn.{0, 0, 0} Real Complex Nat _
+    (fun (n : Nat) (r : Real) =>
+      f n
+        (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+    (fun (r : Real) =>
+      g
+        (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+    (@Filter.atTop.{0} Nat _) (@Set.Ioo.{0} Real _ (a i) (b i))
+@TheoremT.Continuum.tensor_box7_coordinate_hasDerivAt_of_uniform_limits : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real} (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+  (f df : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  {g h : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ f g
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hDU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ df h
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (n : Nat) (y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+      @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) y →
+        @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+          (fun (r : Real) =>
+            f n
+              (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ y i r))
+          (df n y) (y i))
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) x)
+  (hxi : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Ioo.{0} Real _ (a i) (b i)) (x i)),
+  @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+    (fun (r : Real) =>
+      g
+        (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+    (h x) (x i)
+@TheoremT.Continuum.tensor_box7_partial_derivative_eq_of_uniform_limits : ∀
+  {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real} (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+  (f df : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  {g h : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ f g
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hDU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ df h
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (n : Nat) (y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+      @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) y →
+        @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+          (fun (r : Real) =>
+            f n
+              (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ y i r))
+          (df n y) (y i))
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) x)
+  (hxi : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Ioo.{0} Real _ (a i) (b i)) (x i)),
+  @Eq.{1} Complex
+    (@deriv.{0, 0} Real _ Complex _ _ _
+      (fun (r : Real) =>
+        g
+          (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+      (x i))
+    (h x)
+@TheoremT.Continuum.tensor_box7_coordinate_limit_inside : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (f : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (df : Nat → Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  {g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  {h : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hU :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ f g
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hDU :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+        (fun (n : Nat) => df n i) (h i) (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  (hd :
+    ∀ (n : Nat) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) (y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+      @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ (TheoremT.Continuum.tensorClosedBox7 a b) y →
+        @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+          (fun (r : Real) =>
+            f n
+              (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+                (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ y i r))
+          (df n i y) (y i))
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Ioo.{0} Real _ (a i) (b i)) (x i))
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+  @HasDerivAt.{0, 0} Real _ Complex _ _ _ _
+    (fun (r : Real) =>
+      g
+        (@Function.update.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ x i r))
+    (h i x) (x i)
+TheoremT.Continuum.coordinateDerivativeMap7 : (h : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Complex) →
+  @ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _
+TheoremT.Continuum.coordinateDerivativeMap7_fderiv : ∀ (f : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+  @Eq.{1}
+    (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _)
+    (TheoremT.Continuum.coordinateDerivativeMap7 fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+      @DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => Complex) _
+        (@fderiv.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ f x)
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _ i (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (@fderiv.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ f x)
+@TheoremT.Continuum.tensor_box7_uniformly_pi : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  {f : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Complex}
+  {g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Complex}
+  (h :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+        (fun (n : Nat) (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => f n x i)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => g x i) (@Filter.atTop.{0} Nat _)
+        (TheoremT.Continuum.tensorClosedBox7 a b)),
+  @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Complex) Nat _ f g (@Filter.atTop.{0} Nat _)
+    (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_fderiv_uniform_limit : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (f : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  {h : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Complex}
+  (hD :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+        (fun (n : Nat) (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => Complex) _
+            (@fderiv.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ (f n) x)
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+              (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _ i (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => h x i) (@Filter.atTop.{0} Nat _)
+        (TheoremT.Continuum.tensorClosedBox7 a b)),
+  @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+    (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _)
+    Nat _
+    (fun (n : Nat) =>
+      @fderiv.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ (f n))
+    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => TheoremT.Continuum.coordinateDerivativeMap7 (h x))
+    (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_limit_hasFDerivAt : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  {U : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)}
+  (hU : @IsOpen.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ U)
+  (hUK :
+    @LE.le.{0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ U
+      (TheoremT.Continuum.tensorClosedBox7 a b))
+  (f : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex)
+  (hf :
+    ∀ (n : Nat) (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+      @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ U x →
+        @DifferentiableAt.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ (f n)
+          x)
+  {g : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Complex}
+  (hg :
+    @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _ f g
+      (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.tensorClosedBox7 a b))
+  {h : (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Complex}
+  (hD :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      @TendstoUniformlyOn.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex Nat _
+        (fun (n : Nat) (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ Complex _ _ _ _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => Complex) _
+            (@fderiv.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ (f n) x)
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+              (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Real) _ _ i (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) => h x i) (@Filter.atTop.{0} Nat _)
+        (TheoremT.Continuum.tensorClosedBox7 a b))
+  {x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  (hx :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _ U x),
+  @HasFDerivAt.{0, 0, 0} Real _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ Complex _ _ _ g
+    (TheoremT.Continuum.coordinateDerivativeMap7 (h x)) x
+@TheoremT.Continuum.finite_coordinate_jet_contDiffOn.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] {U : Set.{u_1} (ι → Real)} (hU : @IsOpen.{u_1} (ι → Real) _ U) {m : Nat}
+  (G : List.{u_1} ι → (ι → Real) → Complex)
+  (hG :
+    ∀ (w : List.{u_1} ι),
+      @LE.le.{0} Nat _ (@List.length.{u_1} ι w) m → @ContinuousOn.{u_1, 0} (ι → Real) Complex _ _ (G w) U)
+  (hdG :
+    ∀ (w : List.{u_1} ι),
+      @LT.lt.{0} Nat _ (@List.length.{u_1} ι w) m →
+        ∀ (x : ι → Real),
+          @Membership.mem.{u_1, u_1} (ι → Real) (Set.{u_1} (ι → Real)) _ U x →
+            @HasFDerivAt.{0, u_1, 0} Real _ (ι → Real) _ _ _ Complex _ _ _ (G w)
+              (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+                (@ContinuousLinearEquiv.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _)
+                  _ _ (ι → Complex) _ _
+                  (@ContinuousLinearMap.{0, 0, u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ Complex _ _
+                    _ _)
+                  _ _ _ _)
+                (ι → Complex)
+                (fun (x : ι → Complex) =>
+                  @ContinuousLinearMap.{0, 0, u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ Complex _ _
+                    _ _)
+                _
+                (@ContinuousLinearEquiv.symm.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _)
+                  (@RingHom.id.{0} Real _) _ _
+                  (@ContinuousLinearMap.{0, 0, u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ Complex _ _
+                    _ _)
+                  _ _ (ι → Complex) _ _ _ _ (@ContinuousLinearEquiv.piRing.{0, 0, u_1} Real _ Complex _ _ _ ι _ _))
+                fun (i : ι) => G (@List.cons.{u_1} ι i w) x)
+              x)
+  (k : Nat) (w : List.{u_1} ι)
+  (hw : @LE.le.{0} Nat _ (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{u_1} ι w) k) m),
+  @ContDiffOn.{0, u_1, 0} Real _ (ι → Real) _ _ Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ k) (G w) U
+@TheoremT.Continuum.finite_coordinate_jet_base_contDiffOn.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] {U : Set.{u_1} (ι → Real)} (hU : @IsOpen.{u_1} (ι → Real) _ U) (m : Nat)
+  (G : List.{u_1} ι → (ι → Real) → Complex)
+  (hG :
+    ∀ (w : List.{u_1} ι),
+      @LE.le.{0} Nat _ (@List.length.{u_1} ι w) m → @ContinuousOn.{u_1, 0} (ι → Real) Complex _ _ (G w) U)
+  (hdG :
+    ∀ (w : List.{u_1} ι),
+      @LT.lt.{0} Nat _ (@List.length.{u_1} ι w) m →
+        ∀ (x : ι → Real),
+          @Membership.mem.{u_1, u_1} (ι → Real) (Set.{u_1} (ι → Real)) _ U x →
+            @HasFDerivAt.{0, u_1, 0} Real _ (ι → Real) _ _ _ Complex _ _ _ (G w)
+              (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+                (@ContinuousLinearEquiv.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _)
+                  _ _ (ι → Complex) _ _
+                  (@ContinuousLinearMap.{0, 0, u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ Complex _ _
+                    _ _)
+                  _ _ _ _)
+                (ι → Complex)
+                (fun (x : ι → Complex) =>
+                  @ContinuousLinearMap.{0, 0, u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ Complex _ _
+                    _ _)
+                _
+                (@ContinuousLinearEquiv.symm.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _)
+                  (@RingHom.id.{0} Real _) _ _
+                  (@ContinuousLinearMap.{0, 0, u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ Complex _ _
+                    _ _)
+                  _ _ (ι → Complex) _ _ _ _ (@ContinuousLinearEquiv.piRing.{0, 0, u_1} Real _ Complex _ _ _ ι _ _))
+                fun (i : ι) => G (@List.cons.{u_1} ι i w) x)
+              x),
+  @ContDiffOn.{0, u_1, 0} Real _ (ι → Real) _ _ Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ m)
+    (G (@List.nil.{u_1} ι)) U
+'TheoremT.Continuum.tensor_box_sqrt_integral_eq_Lp_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_uniformCauchy_of_L2_Cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_continuous_uniform_limit_of_L2_Cauchy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.tensor_box7_uniform_limit_ae_Lp_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_continuous_representative_of_L2_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.normedComplexDirectionalWordDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.normedComplexDirectionalWordDeriv_contDiff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.normedComplexDirectionalWordDeriv_append' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.normedComplexDirectionalWordDeriv_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateWordDeriv7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.canonicalSubsetWord7' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.canonicalSubsetWord7_nodup' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.canonicalSubsetWord7_insert_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.canonicalSubsetWord7_append_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothSubsetField7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothSubsetField7_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothSubsetField7_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothSubsetField7_word_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothSubsetField7_directional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothSubsetField7_coordinate_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smooth_word7_continuous_representative_of_L2_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.smooth_words7_continuous_representatives_of_L2_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.tensor_box7_uniform_coordinate_slice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_coordinate_hasDerivAt_of_uniform_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.tensor_box7_partial_derivative_eq_of_uniform_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.tensor_box7_coordinate_limit_inside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateDerivativeMap7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateDerivativeMap7_fderiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_uniformly_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_fderiv_uniform_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.tensor_box7_limit_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finite_coordinate_jet_contDiffOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finite_coordinate_jet_base_contDiffOn' depends on axioms: [propext, Classical.choice, Quot.sound]

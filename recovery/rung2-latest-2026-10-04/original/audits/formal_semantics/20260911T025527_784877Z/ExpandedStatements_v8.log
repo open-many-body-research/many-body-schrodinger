@@ -1,0 +1,10 @@
+@TheoremT.Continuum.multiindexCoordinateWord_count.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] (α : ι → Nat) (i : ι),
+  @Eq.{1} Nat
+    (@Finset.card.{0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i))
+      (@Finset.filter.{0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i))
+        (fun (j : Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) =>
+          @Eq.{u_1 + 1} ι (@TheoremT.Continuum.multiindexCoordinateWord.{u_1} ι _ α j) i)
+        _ (@Finset.univ.{0} (Fin (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) _)))
+    (α i)
+'TheoremT.Continuum.multiindexCoordinateWord_count' depends on axioms: [propext, Classical.choice, Quot.sound]

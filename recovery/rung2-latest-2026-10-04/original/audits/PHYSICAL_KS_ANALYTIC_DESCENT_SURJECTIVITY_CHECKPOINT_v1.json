@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-09-11T02:58:32.310300+00:00",
+  "status": "PASS_ACTUAL_PHYSICAL_COORDINATE_ANALYTIC_DESCENT",
+  "evidence_category": "Kernel-checked physical coordinate A+distance*B representation from proved actual pointwise data",
+  "exact_result": "For actual nuclear and pair chart functions with the established physical pointwise data, the literal A/B series satisfy g(X,t0+T)=A(X,T)+norm(X)*B(X,T) for every real physical X,T with norm(X)<min(r^2,D^-1),norm(T)<r, where r=min(1/1024,S^-1),S=7*rate,D=32*S^2. Both collision X=0 and spectator increment T=0 are included. A/B joint complex analyticity is supplied by the preceding actual A/B theorem.",
+  "mathematical_change": "Transferred the actual lifted identity to all positions in an explicit physical neighborhood using existing proved KS surjectivity and the exact preimage norm. No regular inverse KS section is assumed.",
+  "modules": [
+    {
+      "module": "PhysicalKSAnalyticDescentSurjectivity_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSAnalyticDescentSurjectivity_v1.lean",
+      "source_sha256": "9ab66f07b2aef47e99fb91dc310cb8dcd085053efbfa3cec4eea10dbb11695a1",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSAnalyticDescentSurjectivity_v1.olean",
+      "object_sha256": "b6a5ad3512d75522242876859b6e082cdf62b3ff1d9a4f1e106684ac731b228c",
+      "declarations": [
+        "nuclearKSPhysicalCoordinates",
+        "pairKSPhysicalCoordinates",
+        "PhysicalKSAnalyticDescentOnPhysicalNeighborhood",
+        "physicalKSAnalyticDescent_descend_surjective",
+        "nuclearKSPhysicalAnalyticDescent_physical_neighborhood",
+        "pairKSPhysicalAnalyticDescent_physical_neighborhood"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T025512_972403Z/receipt.json",
+    "sha256": "27390a4b769a11a8818b91a0de713f2dd3153a5fda083ddc2d682fcea5d80e7d"
+  },
+  "expanded": {
+    "path": "audits/formal_semantics/20260911T025512_972403Z/ExpandedStatements_v8.log",
+    "sha256": "53ac6a3c46decc8168f130e3eeac99a173fd61214e2cb0815b297a85ba8fd8da"
+  },
+  "root_review": "Full final source, all six expanded declarations and axiom reports, literal chart/output-predicate definitions and full independent review read.",
+  "independent_review": {
+    "path": "audits/PHYSICAL_KS_ANALYTIC_DESCENT_SURJECTIVITY_FOCUSED_REVIEW_v1.json",
+    "sha256": "2b9ce77b331e400122716bcf8aa608de3d7fe539af048b5ed2e16ca1a45e1329"
+  },
+  "dependencies": [
+    {
+      "path": "audits/PHYSICAL_KS_ACTUAL_ANALYTIC_DESCENT_IDENTITY_CHECKPOINT_v1.json",
+      "sha256": "09c9f29e8747cd4a20e33bc46d9ba2704a6c308995df03b4a44f2f8f970591b9"
+    },
+    {
+      "path": "audits/KS_GEOMETRY_PULLBACK_CHECKPOINT_v1.json",
+      "sha256": "b45d3142916a2037ce0786aa37aa0c616a7432c8319776a3166265985444d848"
+    }
+  ],
+  "limitations": [
+    "Final chart theorems retain actual PhysicalKSBoxPointwiseData and A>=1,F0>=0; unconditional ground/full-spin composition is the next consumer.",
+    "No mixed derivative constants, uniqueness or compatibility of germs, full collision/intersection or exterior coverage is claimed.",
+    "No global H2 approximation, rational finite algorithm, numerical interval or bit complexity.",
+    "Noncomputable mathematical series and existential preimage, not an executable coefficient or coordinate algorithm."
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned cached dependencies reused; outside isolated source rebuild v20.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

@@ -1,0 +1,409 @@
+TheoremT.Continuum.ksCircleActionCLM : (a b : Real) →
+  @ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+    TheoremT.Continuum.KSSpace _ _ _ _
+TheoremT.Continuum.ksCircleActionCLM_apply : ∀ (a b : Real) (y : TheoremT.Continuum.KSSpace),
+  @Eq.{1} TheoremT.Continuum.KSSpace
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+        TheoremT.Continuum.KSSpace _ _ _ _)
+      TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => TheoremT.Continuum.KSSpace) _
+      (TheoremT.Continuum.ksCircleActionCLM a b) y)
+    (TheoremT.Continuum.ksCircleAction a b y)
+@TheoremT.Continuum.ksCircleAction_norm : ∀ {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (y : TheoremT.Continuum.KSSpace),
+  @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ (TheoremT.Continuum.ksCircleAction a b y))
+    (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+@TheoremT.Continuum.ksCircleActionCLM_norm : ∀ {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (y : TheoremT.Continuum.KSSpace),
+  @Eq.{1} Real
+    (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+          TheoremT.Continuum.KSSpace _ _ _ _)
+        TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => TheoremT.Continuum.KSSpace) _
+        (TheoremT.Continuum.ksCircleActionCLM a b) y))
+    (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+TheoremT.Continuum.ksCircleProductCLM : (a b : Real) →
+  @ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _
+TheoremT.Continuum.ksCircleProductCLM_apply : ∀ (a b : Real)
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.ksCircleProductCLM a b) q)
+    (@Prod.mk.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (TheoremT.Continuum.ksCircleAction a b
+        (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) q))
+      (@Prod.snd.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) q))
+TheoremT.Continuum.ksCircleProductCLM_fixed : ∀ (a b : Real) (t0 : TheoremT.Continuum.Position),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.ksCircleProductCLM a b)
+      (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t0))
+    (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) TheoremT.Continuum.Position
+      (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t0)
+@TheoremT.Continuum.ksCircleProductCLM_norm : ∀ {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} Real
+    (@Norm.norm.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.ksCircleProductCLM a b) q))
+    (@Norm.norm.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ q)
+TheoremT.Continuum.ksCircleProductCLM_pullback_invariant : ∀
+  (Ψ : Prod.{0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position → Complex) {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} Complex
+    (Ψ
+      (@Prod.mk.{0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position
+        (TheoremT.Continuum.ksMap
+          (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+            (@DFunLike.coe.{1, 1, 1}
+              (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              _ (TheoremT.Continuum.ksCircleProductCLM a b) q)))
+        (@Prod.snd.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+              @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            _ (TheoremT.Continuum.ksCircleProductCLM a b) q))))
+    (Ψ
+      (@Prod.mk.{0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position
+        (TheoremT.Continuum.ksMap
+          (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) q))
+        (@Prod.snd.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) q)))
+TheoremT.Continuum.nuclearKSLift_physical_circle_invariant : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt i))
+        (@DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+            @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          _ (TheoremT.Continuum.ksCircleProductCLM a b) q)))
+    (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt i))
+        q))
+@TheoremT.Continuum.pairKSLift_physical_circle_invariant : ∀ {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (TheoremT.Continuum.pairKSLift
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+        (@DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+            @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          _ (TheoremT.Continuum.ksCircleProductCLM a b) q)))
+    (TheoremT.Continuum.pairKSLift
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+        q))
+TheoremT.Continuum.nuclearKSPhysicalPullback_circle_invariant : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} Complex
+    (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+        (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt i)))
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.ksCircleProductCLM a b) q))
+    (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+        (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt i)))
+      q)
+TheoremT.Continuum.pairKSPhysicalPullback_circle_invariant : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) {a b : Real}
+  (h :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} Complex
+    (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      TheoremT.Continuum.PairKSSpace Complex
+      (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g TheoremT.Continuum.pairKSLift)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.ksCircleProductCLM a b) q))
+    (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      TheoremT.Continuum.PairKSSpace Complex
+      (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g TheoremT.Continuum.pairKSLift)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      q)
+'TheoremT.Continuum.ksCircleActionCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleActionCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleAction_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleActionCLM_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleProductCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleProductCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleProductCLM_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleProductCLM_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksCircleProductCLM_pullback_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSLift_physical_circle_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSLift_physical_circle_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSPhysicalPullback_circle_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.pairKSPhysicalPullback_circle_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]

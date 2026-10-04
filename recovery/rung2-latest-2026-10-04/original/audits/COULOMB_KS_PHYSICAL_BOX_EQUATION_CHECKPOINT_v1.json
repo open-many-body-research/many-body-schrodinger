@@ -1,0 +1,106 @@
+{
+  "created_utc": "2026-09-11T00:45:17.485695+00:00",
+  "status": "FORMAL_ACTUAL_COULOMB_NORMALIZED_KS_PHYSICAL_BOX_EQUATIONS",
+  "evidence_category": "Kernel-verified physical implications from the actual scalar weak-H2 Coulomb eigen-graph and its continuous a.e. representative.",
+  "exact_result": "For either nuclear chart i:Fin2 and the unscaled pair chart, epsilon>0 and every unit spectator center t0, the unchanged normalized physical difference (g(epsilon*x)-g(0))/epsilon composed with the actual KS lift and inverse spectator reindex has local L2 on the seven-coordinate box centered at (0,t0) with half-widths 1/64. On that box it satisfies the original inhomogeneous weak Grushin equation, with both compact-test pairings integrable, nuclear c=4/pair c=1, potential epsilon*b(Z,epsilon*E), and source b(Z,epsilon*E)*(-g(0)). The potential and source are smooth on that same box, including the selected Y=0 collision fiber.",
+  "new_mathematical_step": "Composes actual physical Coulomb weak equations with proved volume-preserving spectator coordinate transport. Tests, second derivatives, finite coordinate sums and L2 statements refer to the same fixed seven-coordinate physical chart used by the local factorial theorem.",
+  "declarations": 5,
+  "module_records": [
+    {
+      "module": "PhysicalSpectatorWeakEquationTransport_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorWeakEquationTransport_v1.lean",
+      "source_sha256": "a6525f5cefdc1f7e204b6c31debf484250254e34bfad6f2b475bbecf318bdd0b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalSpectatorWeakEquationTransport_v1.olean",
+      "object_sha256": "afb4c4a4230bdb3992948176a67cf01bbaebc10bb4a505fcd808c8f3562d9c90",
+      "declarations": [
+        "physicalSpectatorReindexAt_measurePreserving",
+        "physicalSpectatorReindexAt_splitGrushin",
+        "physicalSpectatorReindexAt_weak_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "CoulombKSPhysicalBoxEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalBoxEquation_v1.lean",
+      "source_sha256": "2cee77b0a207f07693f4db0d071f335047c41747ecc458ce9b21552f016051bf",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoulombKSPhysicalBoxEquation_v1.olean",
+      "object_sha256": "7ffe479453681a0377e523e4be94026ad769f2e007c944babc37ac218fc8fe05",
+      "declarations": [
+        "scalar_coulomb_nuclear_physical_box_equation",
+        "scalar_coulomb_pair_physical_box_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compile_records": [
+    {
+      "path": "logs/development/PhysicalSpectatorWeakEquationTransport_v1-20260911T003424_602427Z.json",
+      "sha256": "87a3a966e2d0c352bcbdf683ecb0047061284a76b86e7cfc1d66001f2c0fcd0e"
+    },
+    {
+      "path": "logs/development/CoulombKSPhysicalBoxEquation_v1-20260911T004118_446125Z.json",
+      "sha256": "b440262c4b1ac30eb037785b5fb15f2258b66fab03ab979ab294fc613640ffc0"
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T004137_251537Z/receipt.json",
+    "sha256": "d0561266068e37d004c06bdf0f76f1185f034ec7a4fb4289825e88edd408dd1e"
+  },
+  "expanded_statement_and_axiom_log": {
+    "path": "audits/formal_semantics/20260911T004137_251537Z/ExpandedStatements_v7.log",
+    "sha256": "a7919a5863695965140ed78218fd696be647acf1cf5fb6494052dd4869ef1319"
+  },
+  "owner_review": "Both full sources, all 1418 expanded statement/axiom log lines, actual scalar graph and normalized difference definitions, physical isometry/cutoff/L2 transport, and scaled weak/affine-forcing source proofs read. No implicit arbitrary physical direction or output equation hypotheses found.",
+  "independent_review": {
+    "path": "audits/COULOMB_KS_PHYSICAL_BOX_EQUATION_FOCUSED_REVIEW_v1.json",
+    "sha256": "e1c9877b0a36384ed5358d74d36d0a4aafc530aa130ad613253b611df6fa2b89"
+  },
+  "dependency_checkpoints": [
+    {
+      "path": "audits/COULOMB_EPSILON_KS_WEAK_FORCING_CHECKPOINT_v1.json",
+      "sha256": "d533e7258d4e4bfe8c15bf3dffe130f4d38eac33ffa036c0a0a4d570c5ad1c5b"
+    }
+  ],
+  "direct_transport_dependencies": [
+    {
+      "path": "lean/PhysicalSpectatorL2BudgetTransport_v1.lean",
+      "sha256": "ee56f1b9e6ffa5fb1ca5443970ac62c2e483906438d3001a68b4895b56b3276c"
+    },
+    {
+      "path": "lean/PhysicalSpectatorCutoffTransportAll_v1.lean",
+      "sha256": "ec76c24dbfb8979d141ca1d13da07e89c2fd21504635a55f0dc24eb1c8821107"
+    },
+    {
+      "path": "lean/PhysicalSpectatorReindexAll_v1.lean",
+      "sha256": "f3ab3ed8b2f75b10692c4db3596ae55293836484c2e4f51160c8fe9c40e0c83c"
+    },
+    {
+      "path": "lean/KSCommonAnnulusPatchAll_v1.lean",
+      "sha256": "ce02a19d02b30cf0fb0a444e311667a45c5ac113f0f327a4f147b051b7c2d1fe"
+    }
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild. Current modules are outside isolated rebuild v20; no new source rebuild claimed.",
+  "limitations": [
+    "These local scalar implications do not assert ground-state existence, uniqueness, spin structure or a gap. The existing full-spin representative can instantiate them componentwise.",
+    "Continuity supplies local L2 for each positive epsilon; no uniform epsilon estimate follows from that continuity argument alone. Uniform source/coefficient/H12 budgets are separate proved inputs being composed elsewhere.",
+    "No differentiated equation, finite jet family, solution factorial bound, smooth solution, pointwise estimate or analyticity is assumed or concluded by this unit.",
+    "KS descent, global approximation, certified solver and full Theorem T remain separate obligations."
+  ],
+  "preservation": "Recovered PASS generic transport preserved byte-for-byte. Only a new continuation source and audit/review/checkpoint files created.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Compose these actual original equations with common physical coefficient/source budgets and transported actual H12 data in LocalWeakGrushinFixedBoxFactorial_v1."
+}

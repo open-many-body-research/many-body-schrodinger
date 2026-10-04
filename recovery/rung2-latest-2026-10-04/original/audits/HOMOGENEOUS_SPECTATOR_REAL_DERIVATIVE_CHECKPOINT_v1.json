@@ -1,0 +1,66 @@
+{
+  "status": "PASS_COMPILED_REPAIRED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "created_utc": "2026-09-11T03:07:28.773124+00:00",
+  "authorship": {
+    "draft_author": "/root/weak_pointwise_limit",
+    "compile_repair_and_audit": "/root/weak_pointwise_limit/radial_coefficient_bound",
+    "inherited_draft_sha256": "ec6566773fd97c9c4194a796f083eea88f434916ad677af9fd5f4fe39372745b",
+    "repair": "Made the ContDiffAt derivative-order sum explicitly Nat before casting to the differentiability-order type. All mathematical rate constants and stated coordinate/positivity hypotheses are unchanged."
+  },
+  "module_record": {
+    "module": "HomogeneousSpectatorRealDerivative_v1",
+    "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorRealDerivative_v1.lean",
+    "source_sha256": "24dfb41b818883cb746340b6bd8875557b198009ba2d03f8f18143ad8bb9450d",
+    "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorRealDerivative_v1.olean",
+    "object_sha256": "6c584a804e88feb834ba8e9b345d1ee1b32569be9993c82a783e5b7ccfc58175",
+    "declarations": [
+      "realMultiindexDeriv",
+      "realMultiindexDeriv_restriction",
+      "finite_real_complexification_norm",
+      "homogeneous_spectator_real_mixed_multiindex_factorial_bound"
+    ],
+    "forbidden_source_tokens": [],
+    "source_unchanged_during_audit": true,
+    "object_unchanged_during_audit": true
+  },
+  "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/HomogeneousSpectatorRealDerivative_v1-20260911T030559_169064Z.json",
+  "compiler_receipt_sha256": "1ce9c427256d9e5a6077047633123d7e856f57a04c21c1f3fcb2264eed938e13",
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030626_344283Z/receipt.json",
+  "strict_receipt_sha256": "139fc889e70e6bce5d9d043383659c7dcfe4f88ae3d14fca9537b38138cdb076",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030626_344283Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "f75c8e685f8f6491d8b63bec75d1c8901390e2d287bcf7c71f42bd0650716000",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "realMultiindexDeriv is the actual real iterated Frechet derivative of total order sum alpha evaluated on the fixed coordinate unit word with proved prescribed multiplicities.",
+    "Local complex smoothness proves exact equality of this real derivative of the coordinatewise-real restriction and complexMultiindexDeriv of the complex function.",
+    "The actual finite Pi norm of coordinatewise complexification equals the original real finite Pi norm.",
+    "For A(m,gamma) homogeneous of degree m with actual coefficient L1 <= M D^m S^(sum gamma), M>=0,D>0,S>0, and actual real spatial/spectator blocks satisfying D*norm(X)<=1/4 and S*norm(s)<=1/4, the literal double-series mixed real derivative is bounded by 2^(d+1) M [4(3+d)D]^|alpha| [4(3+d)S]^|beta| product alpha_i! product beta_i!."
+  ],
+  "semantic_checks": [
+    "The restriction equality uses local complex ContDiffAt at the actual complexified real point, not an assumed derivative equality.",
+    "The final series theorem derives the required local analyticity from the actual polynomial coefficient/homogeneity hypotheses and the strict geometric domains, using the quarter-block assumptions.",
+    "The real and complex coordinate norms are identified exactly. No new radius reduction or hidden scale factor is added by this transfer.",
+    "Separate D and S factors, all coordinate factorials, the explicit dimension factor 3+d, and the prefactor 2^(d+1)M remain visible.",
+    "Zero mixed derivative order and spectator dimension zero are included. Positive D and S are explicit hypotheses, even in those boundary cases.",
+    "The derivative definition uses a fixed classical word with actual proved occurrence counts. No intrinsic ordering or executable derivative procedure is claimed."
+  ],
+  "review_disclosure": "Read the complete inherited/final wrapper source, its actual complex mixed-bound and anisotropic analyticity source dependencies, all four exact expanded declarations and every axiom report, plus the complete strict receipt. This combines source review with a proof elaboration repair and does not assert an independent review of the entire dependency chain.",
+  "development": "Initial compilation failed at the finite-order cast; after the stated annotation the module and first strict audit passed. Failed and successful logs retained. All jobs terminal.",
+  "limits": [
+    "This is the corrected mixed derivative bound for an explicitly specified polynomial/spectator family. A physical KS input must separately satisfy the actual family construction and bounds.",
+    "The explicit dimension loss is retained; this does not establish the exact original D6 Cauchy constant or complete Rung 2.",
+    "No wavefunction, spectral theorem, certified solver or bit-complexity result is asserted.",
+    "Pinned cache objects were reused; no isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "Only the explicitly transferred uncompiled new draft was repaired, then sealed. All previously PASS and historical artifact bytes preserved."
+  }
+}

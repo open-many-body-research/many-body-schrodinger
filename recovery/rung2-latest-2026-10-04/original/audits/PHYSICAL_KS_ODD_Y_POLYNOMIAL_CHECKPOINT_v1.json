@@ -1,0 +1,83 @@
+{
+  "status": "PASS_ODD_Y_POLYNOMIAL_VANISHING_IN_ACTUAL_NUCLEAR_AND_PAIR_CHARTS",
+  "utc": "2026-09-11T02:45:52.370422+00:00",
+  "evidence_category": "Fully formalized finite polynomial algebra and actual physical Taylor corollaries with explicit pointwise-data premises.",
+  "exact_results": [
+    "A complex balanced spinor polynomial homogeneous of degree 2*m+1 equals zero.",
+    "The literal ksRealPolynomialToSpinor map is injective by its actual physical evaluation identity and real-grid polynomial extensionality.",
+    "For every nuclear i:Fin2 and the actual pair chart, at center (0,t0), physicalKSTaylorSpectatorCoefficient at Y order 2*m+1 equals zero for every spectator exponent gamma. No extra polynomial invariance premise."
+  ],
+  "targets": [
+    {
+      "module": "KSBalancedOddPolynomial_v1",
+      "source": {
+        "path": "lean/KSBalancedOddPolynomial_v1.lean",
+        "sha256": "40edeab26b5e760fa6f1b293da62ecefb3614139246622f946d72d27daf8cbb9"
+      },
+      "object": {
+        "path": "lean/build/KSBalancedOddPolynomial_v1.olean",
+        "sha256": "ab4646e76045ebd6d0946e3910ced39e66e082b76f52f1bfde9a4212fcaea1f2"
+      },
+      "declarations": [
+        "ksBalancedPolynomial_odd_eq_zero",
+        "ksRealPolynomialToSpinor_injective",
+        "ksRealPolynomial_odd_eq_zero_of_balanced"
+      ]
+    },
+    {
+      "module": "PhysicalKSTaylorOddSpectator_v1",
+      "source": {
+        "path": "lean/PhysicalKSTaylorOddSpectator_v1.lean",
+        "sha256": "977b1facd26315f61fa4c39609bb21fbc29cc6a17b188fd912473a1b35619951"
+      },
+      "object": {
+        "path": "lean/build/PhysicalKSTaylorOddSpectator_v1.olean",
+        "sha256": "5dbecff6cb4cbca492eaf55c01ddd8dc17981381d6efec4c3903722c7fd4fe38"
+      },
+      "declarations": [
+        "nuclearKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero",
+        "pairKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero"
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "path": "logs/development/KSBalancedOddPolynomial_v1-20260911T024219_262172Z.json",
+      "sha256": "28bb3969e8df9d19214dad478ce15df8803216147d0645d2efd5d0105a6c57f5"
+    },
+    {
+      "path": "logs/development/PhysicalKSTaylorOddSpectator_v1-20260911T024241_885300Z.json",
+      "sha256": "a9c67a421d9658c9e2d2f665493935cb792593a125a74e90d9f10805482b2ad1"
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T024310_036611Z/receipt.json",
+    "sha256": "01862c9665b0729759e168277fdd154c174bb7d91507b240ddea3e1d511c5792"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T024310_036611Z/ExpandedStatements_v8.log",
+    "sha256": "0d37dfbb76b82eb443001490514375d58088a87dad6872459e5d75ef31fb8f2b"
+  },
+  "independent_review": {
+    "path": "audits/PHYSICAL_KS_ODD_Y_POLYNOMIAL_REVIEW_v1_20260911T024517Z.json",
+    "sha256": "b749a60a59f8512a953f98691a32a4bbdfaca7c988bfa1005a903d9ce1c38486"
+  },
+  "manual_check": "Full final sources/proofs, all209 expanded-log lines, five exact declarations and axiom reports, full receipt and independent review read. All axioms are propext, Classical.choice and Quot.sound; no omissions.",
+  "limitations": [
+    "Oddness concerns Y degree in four coordinates only; the source does not say that odd total seven-variable Taylor terms vanish.",
+    "The physical result retains the actual pointwise-data premise and does not itself close all continuum PDE, spin or ground-state hypotheses.",
+    "These are exact finite-polynomial zero identities. No even-index HasSum reindexing, infinite-series descent, common descended radius or global chart compatibility is established here.",
+    "The original real-coordinate polynomial has complex coefficients. The zero conclusion is literal equality in MvPolynomial (Fin 4) Complex, not just pointwise vanishing.",
+    "Existing pinned dependency objects were reused by the consumed compiler and strict audit; this is not an isolated source rebuild."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; prior successful source and evidence bytes preserved."
+  },
+  "next": "Generic even-first-coordinate unconditional HasSum reindex helper; root owns actual double-series reconstruction."
+}

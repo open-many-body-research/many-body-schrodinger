@@ -1,0 +1,297 @@
+@TheoremT.Continuum.real_fixed_spectator_slice_analyticAt : ∀ {d : Nat}
+  (F : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex) (T : Fin d → Real)
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real)
+  (hF :
+    @AnalyticAt.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _
+      _ _ _ F
+      (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+        (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Complex.ofReal (X i)) fun (i : Fin d) =>
+        Complex.ofReal (T i))),
+  @AnalyticAt.{0, 0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) Complex _ _ _ _ _
+    (fun (Y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) =>
+      F
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Complex.ofReal (Y i)) fun (i : Fin d) =>
+          Complex.ofReal (T i)))
+    X
+@TheoremT.Continuum.real_fixed_spectator_slice_analyticOnNhd : ∀ {d : Nat}
+  (F : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex) {D S : Real}
+  (hF :
+    @AnalyticOnNhd.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _
+      _ _ _ _ F
+      (@Set.ofPred.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        fun (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+        And
+          (@LT.lt.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+              (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+          (@LT.lt.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+              (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+                z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) _))))
+  (T : Fin d → Real)
+  (hT :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@Norm.norm.{0} (Fin d → Real) _ T))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticOnNhd.{0, 0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) Complex _ _ _ _ _
+    (fun (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) =>
+      F
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Complex.ofReal (X i)) fun (i : Fin d) =>
+          Complex.ofReal (T i)))
+    (@Set.ofPred.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real)
+      fun (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) =>
+      @LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.complex_coordinates_norm_le_euclidean.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  (X : EuclideanSpace.{0, u_1} Real ι),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1} ((i : ι) → Complex) _ fun (i : ι) =>
+      Complex.ofReal
+        (@WithLp.ofLp.{u_1} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : ι) → (fun (x : ι) => Real) i) X i))
+    (@Norm.norm.{u_1} (EuclideanSpace.{0, u_1} Real ι) _ X)
+@TheoremT.Continuum.real_position_fixed_spectator_slice_analyticAt : ∀ {d : Nat}
+  (F : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex)
+  (T : EuclideanSpace.{0, 0} Real (Fin d)) (X : TheoremT.Continuum.Position)
+  (hF :
+    @AnalyticAt.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _
+      _ _ _ F
+      (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+        (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+              X i))
+        fun (i : Fin d) =>
+        Complex.ofReal
+          (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : Fin d) → (fun (x : Fin d) => Real) i) T i))),
+  @AnalyticAt.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+    (fun (Y : TheoremT.Continuum.Position) =>
+      F
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                Y i))
+          fun (i : Fin d) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : Fin d) → (fun (x : Fin d) => Real) i) T
+              i)))
+    X
+@TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd : ∀ {d : Nat}
+  (F : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex) {D S : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hF :
+    @AnalyticOnNhd.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _
+      _ _ _ _ F
+      (@Set.ofPred.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        fun (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+        And
+          (@LT.lt.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+              (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+          (@LT.lt.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+              (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+                z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) _))))
+  (T : EuclideanSpace.{0, 0} Real (Fin d))
+  (hT :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin d)) _ T))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+    (fun (X : TheoremT.Continuum.Position) =>
+      F
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X i))
+          fun (i : Fin d) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : Fin d) → (fun (x : Fin d) => Real) i) T
+              i)))
+    (@Set.ofPred.{0} TheoremT.Continuum.Position fun (X : TheoremT.Continuum.Position) =>
+      @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{0} TheoremT.Continuum.Position _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd_ball : ∀ {d : Nat}
+  (F : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex) {D S : Real}
+  (hD : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hF :
+    @AnalyticOnNhd.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _
+      _ _ _ _ F
+      (@Set.ofPred.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        fun (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+        And
+          (@LT.lt.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+              (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+          (@LT.lt.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+              (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+                z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+            (@OfNat.ofNat.{0} Real (nat_lit 1) _))))
+  (T : EuclideanSpace.{0, 0} Real (Fin d))
+  (hT :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin d)) _ T))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+    (fun (X : TheoremT.Continuum.Position) =>
+      F
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X i))
+          fun (i : Fin d) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : Fin d) → (fun (x : Fin d) => Real) i) T
+              i)))
+    (@Metric.ball.{0} TheoremT.Continuum.Position _ (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _)
+      (@Inv.inv.{0} Real _ D))
+@TheoremT.Continuum.homogeneous_spectator_real_slice_analyticOnNhd : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (T : Fin d → Real)
+  (hT :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@Norm.norm.{0} (Fin d → Real) _ T))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticOnNhd.{0, 0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) Complex _ _ _ _ _
+    (fun (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) =>
+      @TheoremT.Continuum.homogeneousSpectatorSum d A
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Complex.ofReal (X i)) fun (i : Fin d) =>
+          Complex.ofReal (T i)))
+    (@Set.ofPred.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real)
+      fun (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) =>
+      @LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Real) _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (T : EuclideanSpace.{0, 0} Real (Fin d))
+  (hT :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin d)) _ T))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+    (fun (X : TheoremT.Continuum.Position) =>
+      @TheoremT.Continuum.homogeneousSpectatorSum d A
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X i))
+          fun (i : Fin d) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : Fin d) → (fun (x : Fin d) => Real) i) T
+              i)))
+    (@Set.ofPred.{0} TheoremT.Continuum.Position fun (X : TheoremT.Continuum.Position) =>
+      @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{0} TheoremT.Continuum.Position _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd_ball : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (T : EuclideanSpace.{0, 0} Real (Fin d))
+  (hT :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin d)) _ T))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticOnNhd.{0, 0, 0} Real TheoremT.Continuum.Position Complex _ _ _ _ _
+    (fun (X : TheoremT.Continuum.Position) =>
+      @TheoremT.Continuum.homogeneousSpectatorSum d A
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+          (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                X i))
+          fun (i : Fin d) =>
+          Complex.ofReal
+            (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ((i : Fin d) → (fun (x : Fin d) => Real) i) T
+              i)))
+    (@Metric.ball.{0} TheoremT.Continuum.Position _ (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _)
+      (@Inv.inv.{0} Real _ D))
+'TheoremT.Continuum.real_fixed_spectator_slice_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.real_fixed_spectator_slice_analyticOnNhd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.complex_coordinates_norm_le_euclidean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.real_position_fixed_spectator_slice_analyticAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_real_slice_analyticOnNhd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

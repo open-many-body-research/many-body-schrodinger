@@ -1,0 +1,210 @@
+@TheoremT.Continuum.spectatorScalingCoefficient : {d : Nat} →
+  (a b : Real) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex
+@TheoremT.Continuum.spectatorScalingContinuousLinearMap : {d : Nat} →
+  (a b : Real) →
+    @ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _
+@TheoremT.Continuum.spectatorScalingContinuousLinearMap_coe : ∀ {d : Nat} (a b : Real),
+  @Eq.{1}
+    ((a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) →
+      Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _)
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      (fun (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+        Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      _ (@TheoremT.Continuum.spectatorScalingContinuousLinearMap d a b))
+    (@TheoremT.Continuum.spectatorScalingMap d a b)
+@TheoremT.Continuum.spectatorScalingContinuousLinearMap_single : ∀ {d : Nat} (a b : Real)
+  (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)),
+  @Eq.{1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _)
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      (fun (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+        Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      _ (@TheoremT.Continuum.spectatorScalingContinuousLinearMap d a b)
+      (@Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+        (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ i
+        (@OfNat.ofNat.{0} Complex (nat_lit 1) _)))
+    (@HSMul.hSMul.{0, 0, 0} Complex ((j : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) → Complex)
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+      (@TheoremT.Continuum.spectatorScalingCoefficient d a b i)
+      (@Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+        (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ i
+        (@OfNat.ofNat.{0} Complex (nat_lit 1) _)))
+@TheoremT.Continuum.spectatorScalingContinuousLinearMap_norm_single : ∀ {d : Nat} (a b : Real)
+  (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)),
+  @Eq.{1} Real
+    (@Norm.norm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _)
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        (fun (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+          Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        _ (@TheoremT.Continuum.spectatorScalingContinuousLinearMap d a b)
+        (@Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ i
+          (@OfNat.ofNat.{0} Complex (nat_lit 1) _))))
+    (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.spectatorScalingCoefficient d a b i))
+@TheoremT.Continuum.spectatorScalingContinuousLinearMap_norm_single_inl : ∀ {d : Nat} (a b : Real)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} Real
+    (@Norm.norm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _)
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        (fun (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+          Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        _ (@TheoremT.Continuum.spectatorScalingContinuousLinearMap d a b)
+        (@Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _
+          (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)
+          (@OfNat.ofNat.{0} Complex (nat_lit 1) _))))
+    (@abs.{0} Real _ _ a)
+@TheoremT.Continuum.spectatorScalingContinuousLinearMap_norm_single_inr : ∀ {d : Nat} (a b : Real) (i : Fin d),
+  @Eq.{1} Real
+    (@Norm.norm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _)
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        (fun (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+          Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        _ (@TheoremT.Continuum.spectatorScalingContinuousLinearMap d a b)
+        (@Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _
+          (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)
+          (@OfNat.ofNat.{0} Complex (nat_lit 1) _))))
+    (@abs.{0} Real _ _ b)
+@TheoremT.Continuum.iteratedFDeriv_comp_right_of_contDiffAt.{u_1, u_2,
+    u_3} : ∀ {E : Type u_1} {F : Type u_2} {G : Type u_3} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Complex E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Complex F _ _] [inst_4 : NormedAddCommGroup.{u_3} G]
+  [inst_5 : @NormedSpace.{0, u_3} Complex G _ _]
+  (g : @ContinuousLinearMap.{0, 0, u_3, u_1} Complex Complex _ _ (@RingHom.id.{0} Complex _) G _ _ E _ _ _ _)
+  (f : E → F) (x : G) (n : Nat)
+  (hf :
+    @ContDiffAt.{0, u_1, u_2} Complex _ E _ _ F _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n) f
+      (@DFunLike.coe.{max (u_1 + 1) (u_3 + 1), u_3 + 1, u_1 + 1}
+        (@ContinuousLinearMap.{0, 0, u_3, u_1} Complex Complex _ _ (@RingHom.id.{0} Complex _) G _ _ E _ _ _ _) G
+        (fun (x : G) => E) _ g x)),
+  @Eq.{max (u_2 + 1) (u_3 + 1)}
+    (@ContinuousMultilinearMap.{0, 0, u_3, u_2} Complex (Fin n) (fun (_i : Fin n) => G) F _ _ _ _ _ _ _)
+    (@iteratedFDeriv.{0, u_3, u_2} Complex _ G _ _ F _ _ n
+      (@Function.comp.{u_3 + 1, u_1 + 1, u_2 + 1} G E F f
+        (@DFunLike.coe.{max (u_1 + 1) (u_3 + 1), u_3 + 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, u_3, u_1} Complex Complex _ _ (@RingHom.id.{0} Complex _) G _ _ E _ _ _ _) G
+          (fun (x : G) => E) _ g))
+      x)
+    (@ContinuousMultilinearMap.compContinuousLinearMap.{0, 0, u_3, u_1, u_2} Complex (Fin n) (fun (x : Fin n) => G)
+      (fun (_i : Fin n) => E) F _ _ _ _ _ _ _ _ _ _
+      (@iteratedFDeriv.{0, u_1, u_2} Complex _ E _ _ F _ _ n f
+        (@DFunLike.coe.{max (u_1 + 1) (u_3 + 1), u_3 + 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, u_3, u_1} Complex Complex _ _ (@RingHom.id.{0} Complex _) G _ _ E _ _ _ _) G
+          (fun (x : G) => E) _ g x))
+      fun (x : Fin n) => g)
+@TheoremT.Continuum.spectatorScaling_iteratedFDeriv_word : ∀ {d : Nat} (a b : Real)
+  (f : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex)
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) (n : Nat)
+  (w : Fin n → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+  (hf :
+    @ContDiffAt.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+      Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n) f (@TheoremT.Continuum.spectatorScalingMap d a b z)),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin n)
+        (fun (_i : Fin n) => Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _ _ _ _
+        _ _)
+      ((i : Fin n) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      (fun (x : (i : Fin n) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) => Complex) _
+      (@iteratedFDeriv.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+        Complex _ _ n
+        (@Function.comp.{1, 1, 1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex f
+          (@TheoremT.Continuum.spectatorScalingMap d a b))
+        z)
+      fun (j : Fin n) =>
+      @Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+        (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ (w j)
+        (@OfNat.ofNat.{0} Complex (nat_lit 1) _))
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@Finset.prod.{0, 0} (Fin n) Complex _ (@Finset.univ.{0} (Fin n) _) fun (j : Fin n) =>
+        @TheoremT.Continuum.spectatorScalingCoefficient d a b (w j))
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin n)
+          (fun (_i : Fin n) => Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _ _ _
+          _ _ _)
+        ((i : Fin n) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        (fun (x : (i : Fin n) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) => Complex) _
+        (@iteratedFDeriv.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+          _ Complex _ _ n f (@TheoremT.Continuum.spectatorScalingMap d a b z))
+        fun (j : Fin n) =>
+        @Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ (w j)
+          (@OfNat.ofNat.{0} Complex (nat_lit 1) _)))
+@TheoremT.Continuum.spectatorScaling_iteratedFDeriv_word_norm_le : ∀ {d : Nat} (a b : Real)
+  (f : (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex)
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) (n : Nat)
+  (w : Fin n → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+  (hf :
+    @ContDiffAt.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _
+      Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n) f (@TheoremT.Continuum.spectatorScalingMap d a b z)),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin n)
+          (fun (_i : Fin n) => Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _ _ _
+          _ _ _)
+        ((i : Fin n) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        (fun (x : (i : Fin n) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) => Complex) _
+        (@iteratedFDeriv.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+          _ Complex _ _ n
+          (@Function.comp.{1, 1, 1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex f
+            (@TheoremT.Continuum.spectatorScalingMap d a b))
+          z)
+        fun (j : Fin n) =>
+        @Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ (w j)
+          (@OfNat.ofNat.{0} Complex (nat_lit 1) _)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@Norm.norm.{0}
+        (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin n)
+          (fun (_i : Fin n) => Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _ _ _
+          _ _ _)
+        _
+        (@iteratedFDeriv.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+          _ Complex _ _ n f (@TheoremT.Continuum.spectatorScalingMap d a b z)))
+      (@Finset.prod.{0, 0} (Fin n) Real _ (@Finset.univ.{0} (Fin n) _) fun (j : Fin n) =>
+        @Norm.norm.{0} Complex _ (@TheoremT.Continuum.spectatorScalingCoefficient d a b (w j))))
+'TheoremT.Continuum.spectatorScalingCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScalingContinuousLinearMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScalingContinuousLinearMap_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScalingContinuousLinearMap_single' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.spectatorScalingContinuousLinearMap_norm_single' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.spectatorScalingContinuousLinearMap_norm_single_inl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.spectatorScalingContinuousLinearMap_norm_single_inr' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.iteratedFDeriv_comp_right_of_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScaling_iteratedFDeriv_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScaling_iteratedFDeriv_word_norm_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,155 @@
+@TheoremT.Continuum.ProductLocalWeakDirectional.list_sum.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3}
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} {v : Prod.{u_1, u_2} Y T} (l : List.{u_3} ι)
+  (f d : ι → Prod.{u_1, u_2} Y T → Complex)
+  (hD :
+    ∀ (i : ι),
+      @Membership.mem.{u_3, u_3} ι (List.{u_3} ι) _ l i →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω (f i) (d i) v),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (p : Prod.{u_1, u_2} Y T) => @List.sum.{0} Complex _ _ (@List.map.{u_3, 0} ι Complex (fun (i : ι) => f i p) l))
+    (fun (p : Prod.{u_1, u_2} Y T) => @List.sum.{0} Complex _ _ (@List.map.{u_3, 0} ι Complex (fun (i : ι) => d i p) l))
+    v
+@TheoremT.Continuum.productLocallyL2On_list_sum.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3}
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} (l : List.{u_3} ι) (f : ι → Prod.{u_1, u_2} Y T → Complex)
+  (hf :
+    ∀ (i : ι),
+      @Membership.mem.{u_3, u_3} ι (List.{u_3} ι) _ l i →
+        @TheoremT.Continuum.ProductLocallyL2On.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ (f i) Ω),
+  @TheoremT.Continuum.ProductLocallyL2On.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _
+    (fun (p : Prod.{u_1, u_2} Y T) => @List.sum.{0} Complex _ _ (@List.map.{u_3, 0} ι Complex (fun (i : ι) => f i p) l))
+    Ω
+@TheoremT.Continuum.directionalWordDeriv.{u_1,
+    u_2} : {Y : Type u_1} →
+  {T : Type u_2} →
+    [inst : NormedAddCommGroup.{u_1} Y] →
+      [@InnerProductSpace.{0, u_1} Real Y _ _] →
+        [inst : NormedAddCommGroup.{u_2} T] →
+          [@InnerProductSpace.{0, u_2} Real T _ _] →
+            {ι : Type} →
+              (dirs : ι → Prod.{u_1, u_2} Y T) →
+                (B : Prod.{u_1, u_2} Y T → Real) → List.{0} ι → Prod.{u_1, u_2} Y T → Real
+@TheoremT.Continuum.directionalWordDeriv_contDiffOn.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} (hΩ : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ Ω)
+  {B : Prod.{u_1, u_2} Y T → Real}
+  (hB :
+    @ContDiffOn.{0, max u_1 u_2, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  (w : List.{0} ι),
+  @ContDiffOn.{0, max u_2 u_1, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Real _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (@TheoremT.Continuum.directionalWordDeriv.{u_1, u_2} Y T _ _ _ _ ι dirs B w) Ω
+@TheoremT.Continuum.directionalWordProduct.{u_1,
+    u_2} : {Y : Type u_1} →
+  {T : Type u_2} →
+    [inst : NormedAddCommGroup.{u_1} Y] →
+      [@InnerProductSpace.{0, u_1} Real Y _ _] →
+        [inst : NormedAddCommGroup.{u_2} T] →
+          [@InnerProductSpace.{0, u_2} Real T _ _] →
+            {ι : Type} →
+              (dirs : ι → Prod.{u_1, u_2} Y T) →
+                (B : Prod.{u_1, u_2} Y T → Real) →
+                  (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) →
+                    (w : List.{0} ι) → (p : Prod.{u_1, u_2} Y T) → Complex
+@TheoremT.Continuum.directionalWordProduct_nil.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (B : Prod.{u_1, u_2} Y T → Real) (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) (p : Prod.{u_1, u_2} Y T),
+  @Eq.{1} Complex (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G (@List.nil.{0} ι) p)
+    (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (B p) (G (@List.nil.{0} ι) p))
+@TheoremT.Continuum.directionalWordProduct_cons.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (B : Prod.{u_1, u_2} Y T → Real) (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) (j : ι) (w : List.{0} ι)
+  (p : Prod.{u_1, u_2} Y T),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G (@List.cons.{0} ι j w) p)
+    (@List.sum.{0} Complex _ _
+      (@List.map.{0, 0} (Prod.{0, 0} (List.{0} ι) (List.{0} ι)) Complex
+        (fun (ab : Prod.{0, 0} (List.{0} ι) (List.{0} ι)) =>
+          @HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+            (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+              (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), max (u_1 + 1) (u_2 + 1), 1}
+                (@ContinuousLinearMap.{0, 0, max u_2 u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                  (Prod.{u_1, u_2} Y T) _ _ Real _ _ _ _)
+                (Prod.{u_1, u_2} Y T) (fun (x : Prod.{u_1, u_2} Y T) => Real) _
+                (@fderiv.{0, max u_2 u_1, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ _ Real _ _ _
+                  (@TheoremT.Continuum.directionalWordDeriv.{u_1, u_2} Y T _ _ _ _ ι dirs B
+                    (@Prod.fst.{0, 0} (List.{0} ι) (List.{0} ι) ab))
+                  p)
+                (dirs j))
+              (G (@Prod.snd.{0, 0} (List.{0} ι) (List.{0} ι) ab) p))
+            (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+              (@TheoremT.Continuum.directionalWordDeriv.{u_1, u_2} Y T _ _ _ _ ι dirs B
+                (@Prod.fst.{0, 0} (List.{0} ι) (List.{0} ι) ab) p)
+              (G (@List.cons.{0} ι j (@Prod.snd.{0, 0} (List.{0} ι) (List.{0} ι) ab)) p)))
+        (@TheoremT.Continuum.WeakGrushin.spectatorWordSplits ι w)))
+@TheoremT.Continuum.directionalWordProduct_locallyL2.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} (hΩ : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ Ω)
+  {B : Prod.{u_1, u_2} Y T → Real}
+  (hB :
+    @ContDiffOn.{0, max u_1 u_2, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {m : Nat} (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex)
+  (hG :
+    ∀ (w : List.{0} ι),
+      @LE.le.{0} Nat _ (@List.length.{0} ι w) m →
+        @TheoremT.Continuum.ProductLocallyL2On.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ (G w) Ω)
+  (w : List.{0} ι) (hw : @LE.le.{0} Nat _ (@List.length.{0} ι w) m),
+  @TheoremT.Continuum.ProductLocallyL2On.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _
+    (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G w) Ω
+@TheoremT.Continuum.directionalWordProduct_localD.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} (hΩ : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ Ω)
+  {B : Prod.{u_1, u_2} Y T → Real}
+  (hB :
+    @ContDiffOn.{0, max u_1 u_2, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {m : Nat} (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex)
+  (hD :
+    ∀ (w : List.{0} ι) (j : ι),
+      @LT.lt.{0} Nat _ (@List.length.{0} ι w) m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω (G w)
+          (G (@List.cons.{0} ι j w)) (dirs j))
+  (w : List.{0} ι) (j : ι) (hw : @LT.lt.{0} Nat _ (@List.length.{0} ι w) m),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G w)
+    (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G (@List.cons.{0} ι j w)) (dirs j)
+'TheoremT.Continuum.ProductLocalWeakDirectional.list_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productLocallyL2On_list_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordDeriv_contDiffOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_nil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_locallyL2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_localD' depends on axioms: [propext, Classical.choice, Quot.sound]

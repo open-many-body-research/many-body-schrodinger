@@ -1,0 +1,93 @@
+{
+  "timestamp_utc": "2026-09-10T21:31:43.813976+00:00",
+  "status": "PASS_ACTUAL_COORDINATE_WEAK_JETS_AND_TEST_IDENTITIES",
+  "evidence_category": "Fully formalized finite weak coordinate representation from actual full triangular state.",
+  "modules": [
+    {
+      "module": "ProductCoordinateWeakHk_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakHk_v1.lean",
+      "source_sha256": "f45d9e11f8e49a85db9c3890fe734bcde364ac463b4507dba60c74a7e7db4d10",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCoordinateWeakHk_v1.olean",
+      "object_sha256": "1c0a871b696cc368f4742d0620f890fd217b9c7ae134302bd377a73e897e1520",
+      "declarations": [
+        "coordinateYWord",
+        "coordinateTWord",
+        "productCoordinateDirection",
+        "coordinateWord_length",
+        "ProductCoordinateWeakHk",
+        "mixedTriangularState_coordinateWeakHk"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductCoordinateWeakWordTests_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakWordTests_v1.lean",
+      "source_sha256": "aabac0f0f027e6a6e844a8311af3fb0e8b540a48d3282a50e5fa17f71ade7531",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCoordinateWeakWordTests_v1.olean",
+      "object_sha256": "3aa8f1c012123f568d78f4c05cc75a75e1434d3ddc166e40b4c217bea84631a6",
+      "declarations": [
+        "productCoordinateTestWord",
+        "productCoordinateTestWord_contDiff",
+        "productCoordinateTestWord_compact",
+        "productCoordinateTestWord_support",
+        "product_coordinate_family_test_identity",
+        "product_coordinate_family_tests_integrable"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "module_count": 2,
+  "declaration_count": 12,
+  "compile_receipts": [
+    {
+      "module": "ProductCoordinateWeakHk_v1",
+      "receipt": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCoordinateWeakHk_v1-20260910T212653_009013Z.json",
+      "sha256": "ec68c1f7f5a7d6de30a78ed21b1203f0e5c47b305429386e0346fd6b23d01839",
+      "log_sha256": "da26a14eb6a8727e9a087ad63c2477bcfef8d47bf0d48cbeea4e59562819fd5f"
+    },
+    {
+      "module": "ProductCoordinateWeakWordTests_v1",
+      "receipt": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ProductCoordinateWeakWordTests_v1-20260910T212824_256630Z.json",
+      "sha256": "f576d01ff1edaf7a26e91866ac95ef63a569313df09119a747bb7f0575d398b4",
+      "log_sha256": "71207dec3afb4c4d16e13203a84ddc2d13887554d9500c254db935bc7ee30a41"
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T213019_416716Z/receipt.json",
+      "sha256": "8358ef48db5fd9949aed8db097d25a35fb257493afb09e1176c7180de1f3176b"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "manuscript": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/paper/PRODUCT_COORDINATE_WEAK_HK_FORMAL_v1.md",
+    "sha256": "6da7dcf032158b6955fe1e2833208821dc279a7700f9fe9e6298f04e17c68c31"
+  },
+  "discharged": [
+    "All interleaved coordinate weak derivative chains with actual region L2 and unchanged per-jet budget.",
+    "Exact iterated compact-test identity, transpose order, support and integrability."
+  ],
+  "next_obligation": "Canonical multiindex extraction and summed derivative L2 norm; physical initialization composition.",
+  "limitations": [
+    "Not an identification with a pre-existing library Hm norm or alone an analytic regularity theorem.",
+    "No factorial estimates, approximation or full Theorem T."
+  ],
+  "cache_disclosure": "Pinned library/prior continuation object caches reused; no isolated source rebuild; outside earlier 671-target snapshot.",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_RWA_REPORT_relative_path": "THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md",
+    "frozen_RWA_REPORT_sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "frozen_and_passed_source_bytes": "unchanged",
+    "failed_logs": "preserved",
+    "root_ledger_resume": "untouched"
+  }
+}

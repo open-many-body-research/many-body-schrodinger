@@ -1,0 +1,118 @@
+@TheoremT.Continuum.scalarSpectatorPolynomialFamily : {d : Nat} →
+  (c : Nat → (Fin d → Nat) → Complex) →
+    (m : Nat) → (γ : Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+@TheoremT.Continuum.scalarSpectatorPolynomialFamily_isHomogeneous : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex)
+  (m : Nat) (γ : Fin d → Nat),
+  @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+    (@TheoremT.Continuum.scalarSpectatorPolynomialFamily d c m γ) m
+@TheoremT.Continuum.scalarSpectatorPolynomialFamily_coeffL1_le : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex)
+  (m : Nat) (γ : Fin d → Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+      (@TheoremT.Continuum.scalarSpectatorPolynomialFamily d c m γ))
+    (@Norm.norm.{0} Complex _ (c m γ))
+@TheoremT.Continuum.scalarSpectatorTerm : {d : Nat} →
+  (c : Nat → (Fin d → Nat) → Complex) →
+    (k : Prod.{0, 0} Nat (Fin d → Nat)) → (z : Prod.{0, 0} Complex (Fin d → Complex)) → Complex
+@TheoremT.Continuum.scalarSpectatorSum : {d : Nat} →
+  (c : Nat → (Fin d → Nat) → Complex) → (z : Prod.{0, 0} Complex (Fin d → Complex)) → Complex
+@TheoremT.Continuum.scalarSpectatorTerm_eq : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex)
+  (k : Prod.{0, 0} Nat (Fin d → Nat)) (z : Prod.{0, 0} Complex (Fin d → Complex)),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.homogeneousSpectatorTerm d (@TheoremT.Continuum.scalarSpectatorPolynomialFamily d c) k
+      (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @Prod.fst.{0, 0} Complex (Fin d → Complex) z)
+        (@Prod.snd.{0, 0} Complex (Fin d → Complex) z)))
+    (@TheoremT.Continuum.scalarSpectatorTerm d c k z)
+@TheoremT.Continuum.scalarSpectatorSum_eq : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex)
+  (z : Prod.{0, 0} Complex (Fin d → Complex)),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.homogeneousSpectatorSum d (@TheoremT.Continuum.scalarSpectatorPolynomialFamily d c)
+      (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Complex
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @Prod.fst.{0, 0} Complex (Fin d → Complex) z)
+        (@Prod.snd.{0, 0} Complex (Fin d → Complex) z)))
+    (@TheoremT.Continuum.scalarSpectatorSum d c z)
+@TheoremT.Continuum.scalar_spectator_sum_analytic : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex) {M D S : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hc :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (c m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))),
+  @AnalyticOnNhd.{0, 0, 0} Complex (Prod.{0, 0} Complex (Fin d → Complex)) Complex _ _ _ _ _
+    (@TheoremT.Continuum.scalarSpectatorSum d c)
+    (@Set.ofPred.{0} (Prod.{0, 0} Complex (Fin d → Complex)) fun (z : Prod.{0, 0} Complex (Fin d → Complex)) =>
+      And
+        (@LT.lt.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+            (@Norm.norm.{0} Complex _ (@Prod.fst.{0, 0} Complex (Fin d → Complex) z)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+        (@LT.lt.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+            (@Norm.norm.{0} (Fin d → Complex) _ (@Prod.snd.{0, 0} Complex (Fin d → Complex) z)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+@TheoremT.Continuum.scalar_spectator_series_closed_polydiscs : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex)
+  {M D r S h : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hSh : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S h) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hc :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (c m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))),
+  And
+    (∀ (z : Prod.{0, 0} Complex (Fin d → Complex)),
+      @Membership.mem.{0, 0} (Prod.{0, 0} Complex (Fin d → Complex)) (Set.{0} (Prod.{0, 0} Complex (Fin d → Complex))) _
+          (@Set.ofPred.{0} (Prod.{0, 0} Complex (Fin d → Complex)) fun (z : Prod.{0, 0} Complex (Fin d → Complex)) =>
+            And (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@Prod.fst.{0, 0} Complex (Fin d → Complex) z)) r)
+              (∀ (i : Fin d),
+                @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@Prod.snd.{0, 0} Complex (Fin d → Complex) z i)) h))
+          z →
+        And
+          (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+            (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) =>
+              @Norm.norm.{0} Complex _ (@TheoremT.Continuum.scalarSpectatorTerm d c k z))
+            (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+          (And
+            (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+              (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.scalarSpectatorTerm d c k z)
+              (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+            (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.scalarSpectatorSum d c z))
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ M
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ D r))
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                    (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _ S h))
+                    d))))))
+    (@HasSumUniformlyOn.{0, 0, 0} Complex (Prod.{0, 0} Complex (Fin d → Complex)) (Prod.{0, 0} Nat (Fin d → Nat)) _
+      (@TheoremT.Continuum.scalarSpectatorTerm d c) (@TheoremT.Continuum.scalarSpectatorSum d c)
+      (@Set.ofPred.{0} (Prod.{0, 0} Complex (Fin d → Complex)) fun (z : Prod.{0, 0} Complex (Fin d → Complex)) =>
+        And (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@Prod.fst.{0, 0} Complex (Fin d → Complex) z)) r)
+          (∀ (i : Fin d),
+            @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@Prod.snd.{0, 0} Complex (Fin d → Complex) z i)) h))
+      _)
+'TheoremT.Continuum.scalarSpectatorPolynomialFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalarSpectatorPolynomialFamily_isHomogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.scalarSpectatorPolynomialFamily_coeffL1_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.scalarSpectatorTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalarSpectatorSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalarSpectatorTerm_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalarSpectatorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalar_spectator_sum_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalar_spectator_series_closed_polydiscs' depends on axioms: [propext, Classical.choice, Quot.sound]

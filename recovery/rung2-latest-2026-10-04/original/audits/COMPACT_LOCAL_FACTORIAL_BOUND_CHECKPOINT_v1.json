@@ -1,0 +1,140 @@
+{
+  "created_utc": "2026-09-10T21:57:45.637100+00:00",
+  "status": "FORMAL_CONDITIONAL_COMPACT_FACTORIAL_ASSEMBLY_PASS",
+  "modules": [
+    {
+      "module": "FiniteFactorialMajorant_v1",
+      "source": {
+        "path": "lean/FiniteFactorialMajorant_v1.lean",
+        "sha256": "f7487197cd23a98ad2e2c2455a12adb3ebe997c773f691990e0aa7f440a3ed64",
+        "bytes": 2868
+      },
+      "object": {
+        "path": "lean/build/FiniteFactorialMajorant_v1.olean",
+        "sha256": "2f0e4e838d531c91fc9157b3f1ff8828c2fe36f272ea2e00e956d140c9023f9e",
+        "bytes": 62696
+      },
+      "compile_receipt": {
+        "path": "logs/development/FiniteFactorialMajorant_v1-20260910T215123_700287Z.json",
+        "sha256": "f14a7ede97d90c1d846304192e154a67cca28ee406d5802ee895bb3e9f1d6a96",
+        "bytes": 1762
+      },
+      "compile_log": {
+        "path": "logs/development/FiniteFactorialMajorant_v1-20260910T215123_700287Z.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "declarations": [
+        "finiteFactorialC",
+        "finiteFactorialA",
+        "finiteFactorialC_empty",
+        "finiteFactorialA_empty",
+        "finiteFactorialC_ge_one",
+        "finiteFactorialA_ge_one",
+        "le_finiteFactorialC",
+        "le_finiteFactorialA",
+        "finite_factorial_majorant",
+        "finite_factorial_common_bound"
+      ]
+    },
+    {
+      "module": "CompactLocalFactorialBound_v1",
+      "source": {
+        "path": "lean/CompactLocalFactorialBound_v1.lean",
+        "sha256": "81fccf51a6b047eb359d3535cd4db311a8847089e10f00053b891fd6a3b391e3",
+        "bytes": 3466
+      },
+      "object": {
+        "path": "lean/build/CompactLocalFactorialBound_v1.olean",
+        "sha256": "f435d15fa20771a9c506ad87faff1aca8b1697c7bb6bb73fd303c873c70bd7d1",
+        "bytes": 107400
+      },
+      "compile_receipt": {
+        "path": "logs/development/CompactLocalFactorialBound_v1-20260910T215237_241075Z.json",
+        "sha256": "907b9a61c8527ebf5561f2d07ce26325ec5b11adce601a9e75885faedcfad4d1",
+        "bytes": 1771
+      },
+      "compile_log": {
+        "path": "logs/development/CompactLocalFactorialBound_v1-20260910T215237_241075Z.log",
+        "sha256": "3b9bf3869ea622edda64d1d630b5e02df690f50fdc2d2845b35334aeb2862139",
+        "bytes": 372
+      },
+      "declarations": [
+        "compact_factorial_bound_of_neighborhood_family",
+        "compact_local_factorial_bound_uniform_nhds",
+        "compact_local_factorial_bound_uniform"
+      ]
+    }
+  ],
+  "module_count": 2,
+  "declaration_count": 13,
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T215515_829862Z/receipt.json",
+        "sha256": "5ff34bcdc168a3ed3a6bf68423323a58f21802874c30b32aa83f514b99ff6a5c",
+        "bytes": 4926
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T215515_829862Z/ExpandedStatements_v6.lean",
+        "sha256": "52e0581544d5f8e6b34d321adbe18eeeb0a91efd9a1c87ed4000f4d1787b286b",
+        "bytes": 1610
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T215515_829862Z/ExpandedStatements_v6.log",
+        "sha256": "e2522761fc2245b8a812bbf61de1903af422aa86f109ec8d8544fc48c79fe8c4",
+        "bytes": 5785
+      },
+      "declaration_count": 10
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T215256_551236Z/receipt.json",
+        "sha256": "9e6b279f21a5ec2a8909a948fce2012d23c68899f2a7eaf19e3cb7088d8468be",
+        "bytes": 3916
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T215256_551236Z/ExpandedStatements_v6.lean",
+        "sha256": "f671a5bfd00261d32ca1befeadffc7181c5b2bac2f78702effbf4fb2369dcd2f",
+        "bytes": 1001
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T215256_551236Z/ExpandedStatements_v6.log",
+        "sha256": "ffaf4808fa63e66724f6b089efd640dbf04fa882c60af7f13cc0efa7ba8db363",
+        "bytes": 7587
+      },
+      "declaration_count": 3
+    }
+  ],
+  "focused_review": {
+    "path": "audits/COMPACT_LOCAL_FACTORIAL_BOUND_FOCUSED_REVIEW_v1.json",
+    "sha256": "4b3dfe7d8fc444f1de0e13a050c2a7327385e11ada45baa7dc1cb2f8ab38e4f4",
+    "bytes": 12982
+  },
+  "scalar_checkpoint": {
+    "path": "audits/FINITE_FACTORIAL_MAJORANT_CHECKPOINT_v1.json",
+    "sha256": "3b772fe82fce535063e193eb2b20352afd7b88cb31ecbfe3edb4fc7252bb6bdb",
+    "bytes": 6269
+  },
+  "paper": {
+    "path": "paper/COMPACT_LOCAL_FACTORIAL_BOUND_v1.md",
+    "sha256": "a1f22632eb6ebb55fd5f4d2b6095ce91c6852a1d78277db49d249b0ee0f2c3b2",
+    "bytes": 2502
+  },
+  "exact_results": [
+    "Finite nonnegative scalar factorial majorants with explicit constants one plus finite sums.",
+    "Any compact K and pointwise neighborhood all-order factorial bounds imply common C,A>=1 on one neighborhood of K, hence on K.",
+    "A single finite cover and constants precede every order k. Targets and their supplied norms may depend on k.",
+    "No continuity or derivative identification assumption for the generic family. Empty K needs no special nonempty premise."
+  ],
+  "evidence_category": "Fully formal conditional implication; the local all-order estimates remain explicit hypotheses.",
+  "trust": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned dependency object cache reused; no isolated source rebuild.",
+  "non_effectivity": "Classical finite cover and local choices do not provide an executable constant-extraction algorithm.",
+  "preservation": "All earlier frozen and successful bytes retained. New conditional sources and evidence only.",
+  "next": "Separate actual analytic-on-compact specialization is compiling/auditing after the proved local analytic power-series estimate; not included in this conditional checkpoint."
+}

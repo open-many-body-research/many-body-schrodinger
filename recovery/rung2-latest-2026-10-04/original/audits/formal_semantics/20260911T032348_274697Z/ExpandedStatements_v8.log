@@ -1,0 +1,61 @@
+TheoremT.Continuum.so2RadialSquare : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2RadialSquare_coeff_axis : ∀ (m k : Nat),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+      (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+        (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          TheoremT.Continuum.so2RadialSquare m))
+      (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _) k))
+    (@ite.{1} Complex (@Eq.{1} Nat k (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)) _
+      (@OfNat.ofNat.{0} Complex (nat_lit 1) _) (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+TheoremT.Continuum.so2RadialSquare_C_mul_coeff_axis : ∀ (c : Complex) (m k : Nat),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+      (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+        (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+            Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+            (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) c)
+          (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+            TheoremT.Continuum.so2RadialSquare m)))
+      (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _) k))
+    (@ite.{1} Complex (@Eq.{1} Nat k (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)) _ c
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+TheoremT.Continuum.so2RadialSquare_C_mul_coeff : ∀ (c : Complex) (m : Nat),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+      (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+        (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+            Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+            (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) c)
+          (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+            TheoremT.Continuum.so2RadialSquare m)))
+      (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)))
+    c
+'TheoremT.Continuum.so2RadialSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2RadialSquare_coeff_axis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2RadialSquare_C_mul_coeff_axis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2RadialSquare_C_mul_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]

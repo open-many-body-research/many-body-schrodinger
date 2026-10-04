@@ -1,0 +1,132 @@
+@TheoremT.Continuum.collisionFree_real_smul : ∀ {N : Nat} {ε : Real}
+  (hε : @Ne.{1} Real ε (@OfNat.ofNat.{0} Real (nat_lit 0) _)) {x : TheoremT.Continuum.Configuration N}
+  (hx : @TheoremT.Continuum.collisionFree N x),
+  @TheoremT.Continuum.collisionFree N
+    (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε x)
+@TheoremT.Continuum.smoothLaplacian_comp_real_smul_at : ∀ {N : Nat} (ε : Real)
+  {g : TheoremT.Continuum.Configuration N → Complex} (x : TheoremT.Continuum.Configuration N)
+  (hg :
+    @ContDiffAt.{0, 0, 0} Real _ (TheoremT.Continuum.Configuration N) _ _ Complex _ _
+      (@OfNat.ofNat.{0} (WithTop.{0} ENat) (nat_lit 2) _) g
+      (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε x)),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.smoothLaplacian N
+      (fun (z : TheoremT.Continuum.Configuration N) =>
+        g (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε z))
+      x)
+    (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ ε (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@TheoremT.Continuum.smoothLaplacian N g
+        (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε x)))
+@TheoremT.Continuum.scalar_coulomb_origin_scaled_classical_equation : ∀ {N : Nat} {Z E ε : Real}
+  (hε : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ε)
+  {f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          _)
+        _ (TheoremT.Continuum.SpatialL2 N) x}
+  (hgraph :
+    TheoremT.Continuum.scalarHamiltonianGraph N Z f
+      (@HSMul.hSMul.{0, 0, 0} Complex
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              _)
+            _ (TheoremT.Continuum.SpatialL2 N) x)
+        (@Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              _)
+            _ (TheoremT.Continuum.SpatialL2 N) x)
+        _ (Complex.ofReal E) f))
+  {g : TheoremT.Continuum.Configuration N → Complex}
+  (hg : @Continuous.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _ g)
+  (hfg :
+    @Filter.EventuallyEq.{0, 0} (TheoremT.Continuum.Configuration N) Complex
+      (@MeasureTheory.ae.{0, 0} (TheoremT.Continuum.Configuration N)
+        (@MeasureTheory.Measure.{0} (TheoremT.Continuum.Configuration N) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+      (@MeasureTheory.AEEqFun.cast.{0, 0} (TheoremT.Continuum.Configuration N) Complex _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _) _
+        (@Subtype.val.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+          (fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration N) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (TheoremT.Continuum.Configuration N) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (TheoremT.Continuum.Configuration N) _) _
+                (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration N) _))
+              x)
+          f))
+      g)
+  {x : TheoremT.Continuum.Configuration N} (hx : @TheoremT.Continuum.collisionFree N x),
+  And
+    (@ContDiffAt.{0, 0, 0} Real _ (TheoremT.Continuum.Configuration N) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+      (fun (z : TheoremT.Continuum.Configuration N) =>
+        g (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε z))
+      x)
+    (@Eq.{1} Complex
+      (@TheoremT.Continuum.smoothLaplacian N
+        (fun (z : TheoremT.Continuum.Configuration N) =>
+          g
+            (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε
+              z))
+        x)
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _)
+          (Complex.ofReal
+            (@HSub.hSub.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ ε (TheoremT.Continuum.coulombPotential N Z x))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ ε (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) E))))
+        (g
+          (@HSMul.hSMul.{0, 0, 0} Real (TheoremT.Continuum.Configuration N) (TheoremT.Continuum.Configuration N) _ ε
+            x))))
+'TheoremT.Continuum.collisionFree_real_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothLaplacian_comp_real_smul_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.scalar_coulomb_origin_scaled_classical_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,122 @@
+@TheoremT.Continuum.WeakGrushin.restricted_compact_weight_memLp.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : MeasurableSpace.{u_1} E] [@BorelSpace.{u_1} E _ _]
+  {μ : @MeasureTheory.Measure.{u_1} E _} {Ω K : Set.{u_1} E} (hK : @IsCompact.{u_1} E _ K)
+  (hΩK : @LE.le.{u_1} (Set.{u_1} E) _ Ω K) (χ : E → Real) (hχ : @Continuous.{u_1, 0} E Real _ _ χ) {F : E → Complex}
+  (hF :
+    @MeasureTheory.MemLp.{u_1, 0} E Complex inst_1 _ _ F (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{u_1} E inst_1 μ Ω)),
+  @MeasureTheory.MemLp.{u_1, 0} E Complex inst_1 _ _
+    (fun (p : E) => @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (χ p) (F p)) (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+    (@MeasureTheory.Measure.restrict.{u_1} E inst_1 μ Ω)
+TheoremT.Continuum.WeakGrushin.rectangular_continuous_weight_memLp : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {A B : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (χ : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real)
+  (hχ :
+    @Continuous.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _ _ χ)
+  {F : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hF :
+    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      _ _ F (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a A B))),
+  @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    Complex
+    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+    _ _
+    (fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+      @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (χ p) (F p))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+    (@MeasureTheory.Measure.restrict.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@MeasureTheory.MeasureSpace.volume.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a A B))
+TheoremT.Continuum.WeakGrushin.rectangular_factorial_monomial_memLp : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {A B : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  {F : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hF :
+    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      _ _ F (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a A B))),
+  @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    Complex
+    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+    _ _
+    (fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+      @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+        (TheoremT.Continuum.WeakGrushin.factorialYMonomial γ
+          (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) p))
+        (F p))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+    (@MeasureTheory.Measure.restrict.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@MeasureTheory.MeasureSpace.volume.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a A B))
+TheoremT.Continuum.WeakGrushin.regionL2Budget_rectangular_factorial_monomial_memLp : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {A B : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  {F : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex} {W : Real}
+  (hF :
+    @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ F
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a A B) W),
+  @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    Complex
+    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+    _ _
+    (fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+      @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+        (TheoremT.Continuum.WeakGrushin.factorialYMonomial γ
+          (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) p))
+        (F p))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+    (@MeasureTheory.Measure.restrict.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@MeasureTheory.MeasureSpace.volume.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a A B))
+'TheoremT.Continuum.WeakGrushin.restricted_compact_weight_memLp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.rectangular_continuous_weight_memLp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.rectangular_factorial_monomial_memLp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.regionL2Budget_rectangular_factorial_monomial_memLp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
