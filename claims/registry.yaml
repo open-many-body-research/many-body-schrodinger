@@ -2199,3 +2199,29 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     Geometric open collision-chart coverage is an explicit restriction; full annular, bulk, tripleorigin and global coverage are not proved here. The dictionary weights and coefficient selections are existential. This result records genuine error H2 data, not trial graph data. Effective partition and coefficients, exact moments, solver termination, bit complexity, full Rung2 and TheoremT remain open.
+
+- id: S8-059
+  sector: S8
+  title: Derive exact quadratic physical compact Coulomb L2 scaling at the triple origin (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-041]
+  statement: >
+    Actual six-dimensional physical volume dilation and the original Coulomb potential homogeneity derive exact closed-ball L2 norm scaling by r squared. Literal open-ball L2 membership and the same quadratic norm bound are proved. All potential and inverse-distance integrability is derived from actual compact physical Hardy bounds. A separate actual oneplus inverse-distance L2 budget has the same quadratic upper bound for radii at most1, with constants chosen before every radius.
+  conditional_on:
+    - Every real charge Z and every positive physical radius r; the literal oneplus inverse-distance budget comparison separately requires r at most1.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_inverse_distance_budget_smul}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_closed_ball_distance_budget_L2_norm}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_closed_ball_coulomb_memLp}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_closed_ball_coulomb_L2_norm}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_closed_ball_coulomb_L2_norm_exact}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_compact_coulomb_quadratic_radius_budget}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_ball_coulomb_memLp}
+    - {module: ManyBody.S8.Internal.PhysicalCompactCoulombScaling, decl: ManyBody.S8.physical_ball_coulomb_L2_norm}
+  card: claims/cards/S8-059.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalCompactCoulombScaling.lean, claims/cards/S8-059.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    This actual potential helper does not yet prove a ground-state triple-origin cutoff H2 error, an analytic triple expansion, complete atlas, global dictionary rate, effective moments or solver bit complexity. Full Rung2 and TheoremT remain open.
