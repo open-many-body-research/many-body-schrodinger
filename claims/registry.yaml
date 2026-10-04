@@ -1877,3 +1877,28 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The exact selected coordinate is zero for nuclear and two for pair charts and the original inner radius is epsilon delta over8. Polynomial selection is existential. No composed physical H2 error, degree or cardinality rate, computable coefficient choice, global dictionary, solver or full rung is asserted.
+
+- id: S8-048
+  sector: S8
+  title: Bound actual dyadic collision distance dictionaries by a cubic monomial count (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-045, S8-039, S8-037]
+  statement: >
+    The literal canonical real Taylor dictionary for the same actual nuclear and pair collision A, B and H profiles has total degree below N and at most N cubed monomials at the common linear order N=2p+m+2. Actual support and coefficient definitions give exact global equality with each genuine value polynomial and its actual derivatives, retaining simultaneous true real value, gradient and Hessian errors at most onehalf to the powerp on the quarter distance box.
+  conditional_on:
+    - Real charge at least2 and the same actual original ground, graph, spectral and reconstructed distance profiles.
+    - One fixed offset per selected admissible original collision chart precedes all requested precision.
+  lean:
+    - {module: ManyBody.S8.Internal.RealTaylorDictionarySize, decl: ManyBody.S8.realTaylorPolynomial_exact_distance_dictionary}
+    - {module: ManyBody.S8.Internal.RealTaylorDictionarySize, decl: ManyBody.S8.realTaylorMvPolynomial_support_total_degree_lt}
+    - {module: ManyBody.S8.Internal.RealTaylorDictionarySize, decl: ManyBody.S8.realTaylorMvPolynomial_support_card_le}
+    - {module: ManyBody.S8.Internal.RealTaylorDictionarySize, decl: ManyBody.S8.realTaylorPolynomial_bounded_finite_dictionary}
+    - {module: ManyBody.S8.AmbientBoundedDyadicDistanceDictionary, decl: ManyBody.S8.real_three_profiles_bounded_dyadic_dictionary}
+    - {module: ManyBody.S8.AmbientBoundedDyadicDistanceDictionary, decl: ManyBody.S8.twoElectron_scalar_ground_bounded_dyadic_distance_dictionary}
+  card: claims/cards/S8-048.md
+  evidence: [lean/ManyBody/S8/Internal/RealTaylorDictionarySize.lean, lean/ManyBody/S8/AmbientBoundedDyadicDistanceDictionary.lean, claims/cards/S8-048.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The actual translated multilinear expansion derives the finite dictionary and the orderzero support is proved empty. Original real Taylor coefficients are not asserted rational or effectively extractable; no coefficient bitcost, physical H2 composition, global dictionary, solver or full rung is proved.
