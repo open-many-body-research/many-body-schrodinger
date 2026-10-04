@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 61 |
+| **L** | Lean-verified | 64 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -134,6 +134,9 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-054](claims/cards/S8-054.md) | Derive actual Coulomb graph-error rates for the same local dyadic distance dictionaries (submitted; pending review) | **L** | The entire same actual normalized two-electron scalar Coulomb ground witness at each real charge Z at least2 and every admissible positive original scale; Any genuine smooth compact cutoff supported in the closed inner eighth nuclear-index-zero or coefficientone electronpair distance chart; each cutoff constant and chart offset precedes every precision |
 | [S8-053](claims/cards/S8-053.md) | Derive genuine dyadic physical H2 approximation at the second nuclear collision (submitted; pending review) | **L** | The same entire original normalized scalar Coulomb ground witness of the actual dyadic physicalH2 theorem at every charge Z at least2 and each admissible positive original scale; Any smooth compact cutoff whose full support lies in the closed inner eighth nuclear-index-one chart in its actual selected radius order; original exchange invariance is derived from the same ground witness |
 | [S8-057](claims/cards/S8-057.md) | Derive genuine dyadic graph errors at both nuclear and original pair collision charts (submitted; pending review) | **L** | The same entire original normalized scalar Coulomb ground witness for each real charge Z at least2 and every admissible positive original scale; Every actual smooth compact cutoff supported in the respective closed inner eighth nuclear-index-zero, selected-index-one or coefficientone electronpair distance chart |
+| [S8-056](claims/cards/S8-056.md) | Derive genuine finite collision-chart gluing of physical dyadic H2 dictionary errors (submitted; pending review) | **L** | The same entire original normalized scalar Coulomb ground witness for every real charge Z at least2; An actual smooth compact physical target cutoff whose support is geometrically covered by admissible open inner nuclearzero, nuclearone and original coefficientone pair distance patches |
+| [S8-059](claims/cards/S8-059.md) | Derive exact quadratic physical compact Coulomb L2 scaling at the triple origin (submitted; pending review) | **L** | Every real charge Z and every positive physical radius r; the literal oneplus inverse-distance budget comparison separately requires r at most1 |
+| [S8-060](claims/cards/S8-060.md) | Derive actual finite collision dictionary trial H2 and Coulomb graph membership (submitted; pending review) | **L** | The same entire original normalized scalar ground witness for every real charge Z at least2; An actual smooth compact cutoff explicitly geometrically covered by the admissible original open collision patches |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
