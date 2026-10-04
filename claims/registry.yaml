@@ -1680,3 +1680,33 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The radius threshold is explicit in the existential selected-state/rate constant. Smoothness, finite dictionaries, computable constants or coefficient selection, solver termination and full rung remain open.
+
+- id: S8-039
+  sector: S8
+  title: Approximate actual physical collision profiles by rational distance polynomials (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-036, S8-037]
+  statement: >
+    The same actual normalized physical ground and its original nuclear and pair A,B,H admit literal finite unshifted distance monomial polynomials with rational coefficients. Each prescribed positive tolerance selects one polynomial per profile controlling its true real value, gradient and Hessian uniformly on the fixed closed inner distance box. Actual finite Taylor representation, rational density and coupled derivative errors are derived; all original physical and spectral facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact selected scales and closed inner distance boxes in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.RationalDistancePolynomial, decl: ManyBody.S8.iteratedFDeriv_realDistancePolynomial}
+    - {module: ManyBody.S8.Internal.RationalDistancePolynomial, decl: ManyBody.S8.rational_realDistancePolynomial_uniform_C2}
+    - {module: ManyBody.S8.Internal.RealTaylorDistanceDictionary, decl: ManyBody.S8.realTaylorPolynomial_finite_distance_dictionary}
+    - {module: ManyBody.S8.Internal.RealTaylorDistanceDictionary, decl: ManyBody.S8.rational_realTaylorPolynomial_uniform_C2}
+    - {module: ManyBody.S8.Internal.RealRationalAmbientProfile, decl: ManyBody.S8.ambientRealScalarProfile_derivative_difference_le}
+    - {module: ManyBody.S8.Internal.RealRationalAmbientProfile, decl: ManyBody.S8.realTaylorPolynomial_complex_restriction}
+    - {module: ManyBody.S8.Internal.RealRationalAmbientProfile, decl: ManyBody.S8.ambient_real_coupled_taylor_error}
+    - {module: ManyBody.S8.Internal.RealRationalAmbientProfile, decl: ManyBody.S8.rational_ambient_profile_uniform_C2}
+    - {module: ManyBody.S8.AmbientRationalDistanceApproximation, decl: ManyBody.S8.nuclear_real_rational_distance_C2_data}
+    - {module: ManyBody.S8.AmbientRationalDistanceApproximation, decl: ManyBody.S8.pair_real_rational_distance_C2_data}
+    - {module: ManyBody.S8.AmbientRationalDistanceApproximation, decl: ManyBody.S8.twoElectron_scalar_ground_real_rational_distance_C2_approximation}
+  card: claims/cards/S8-039.md
+  evidence: [lean/ManyBody/S8/Internal/RationalDistancePolynomial.lean, lean/ManyBody/S8/Internal/RealTaylorDistanceDictionary.lean, lean/ManyBody/S8/Internal/RealRationalAmbientProfile.lean, lean/ManyBody/S8/AmbientRationalDistanceApproximation.lean, claims/cards/S8-039.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Selection is existential and no effective coefficient or order algorithm is claimed. These errors are in independent real distance coordinates; physical H2 pullback, global finite dictionaries, solver and full rung remain separate.

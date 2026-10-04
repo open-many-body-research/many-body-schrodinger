@@ -364,3 +364,9 @@ Independent AI source/card/artifact review passed; human statement review and ex
 [S8-038](../../claims/cards/S8-038.md) The same actual normalized scalar Coulomb ground and original genuine weak derivative families admit norm-one radial compact H2 approximants preserving actual exchange, reality and simultaneous full O3 invariance. For each positive admissible decay rate one nonnegative constant precedes every real radius beyond the explicit normalization threshold and controls the true combined H2 defect, actual scalar Hamiltonian graph residual and absolute Rayleigh pairing error exponentially.
 The radius threshold is explicit in the existential selected-state/rate constant. Smoothness, finite dictionaries, computable constants or coefficient selection, solver termination and full rung remain open.
 Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: approximate actual physical collision profiles by rational distance polynomials
+
+[S8-039](../../claims/cards/S8-039.md) The same actual normalized physical ground and its original nuclear and pair A,B,H admit literal finite unshifted distance monomial polynomials with rational coefficients. Each prescribed positive tolerance selects one polynomial per profile controlling its true real value, gradient and Hessian uniformly on the fixed closed inner distance box. Actual finite Taylor representation, rational density and coupled derivative errors are derived; all original physical and spectral facts are retained.
+Selection is existential and no effective coefficient or order algorithm is claimed. These errors are in independent real distance coordinates; physical H2 pullback, global finite dictionaries, solver and full rung remain separate.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
