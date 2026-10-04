@@ -1499,3 +1499,28 @@ claims:
     This is a derivative bound in independent ambient distance coordinates;
     physical Cartesian transport or profile realness is not asserted. Selected
     original scales/amplitudes remain. Global approximation and full rung remain open.
+
+- id: S8-033
+  sector: S8
+  title: Derive actual distance Taylor sums and geometric truncation errors (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-025, S8-029]
+  statement: >
+    Actual complex distance profiles of the same normalized physical ground have canonical derivative-coefficient Taylor sums, explicit geometric value remainder, and genuine operator-norm Taylor remainders for every derivative field on the stated quarter polydiscs. All nuclear indices and admissible scales are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The exact selected scales, polydisc or tolerance and rate conditions in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.ComplexTaylorTruncation, decl: ManyBody.S8.actual_power_series_diagonal_coefficient}
+    - {module: ManyBody.S8.Internal.ComplexTaylorTruncation, decl: ManyBody.S8.holomorphic_taylor_line_sum_and_error}
+    - {module: ManyBody.S8.Internal.ComplexTaylorTruncation, decl: ManyBody.S8.bounded_holomorphic_complex_taylor_data}
+    - {module: ManyBody.S8.AmbientDistanceTaylorTruncation, decl: ManyBody.S8.nuclear_ambient_distance_taylor_data}
+    - {module: ManyBody.S8.AmbientDistanceTaylorTruncation, decl: ManyBody.S8.pair_ambient_distance_taylor_data}
+    - {module: ManyBody.S8.AmbientDistanceTaylorTruncation, decl: ManyBody.S8.twoElectron_scalar_ground_ambient_distance_taylor_truncation}
+  card: claims/cards/S8-033.md
+  evidence: [lean/ManyBody/S8/Internal/ComplexTaylorTruncation.lean, lean/ManyBody/S8/AmbientDistanceTaylorTruncation.lean, claims/cards/S8-033.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The derivative-field polynomials are stated separately; no coupling as derivatives of one value polynomial, effective coefficients, global atlas or full rung is claimed.

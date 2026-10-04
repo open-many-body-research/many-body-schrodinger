@@ -325,3 +325,9 @@ Human statement review and full committed verification remain pending.
 [S8-032](../../claims/cards/S8-032.md) For charge at least2, the same actual normalized scalar ground witness and original nuclear and pair A,B,H profiles have genuine all-order real Frechet operator and ordered distance-coordinate-word factorial budgets. The literal complex profiles are composed with the actual coordinatewise real cast. A proved norm-preserving cast and exact iterated derivative restriction transport the actual complex estimates, with the exact original epsilon powers and u0 term only at order zero. All physical ground facts are retained.
 The real domain is the actual Fin3 Pi maximum norm with complex values. This is a derivative bound in independent ambient distance coordinates; physical Cartesian transport or profile realness is not asserted. Selected original scales/amplitudes remain. Global approximation and full rung remain open.
 Human statement review and full committed verification remain pending.
+
+## Submitted continuation: derive actual distance taylor sums and geometric truncation errors
+
+[S8-033](../../claims/cards/S8-033.md) Actual complex distance profiles of the same normalized physical ground have canonical derivative-coefficient Taylor sums, explicit geometric value remainder, and genuine operator-norm Taylor remainders for every derivative field on the stated quarter polydiscs. All nuclear indices and admissible scales are retained.
+The derivative-field polynomials are stated separately; no coupling as derivatives of one value polynomial, effective coefficients, global atlas or full rung is claimed.
+Independent AI applicability review passed; human statement review and exact committed full verification remain pending.
