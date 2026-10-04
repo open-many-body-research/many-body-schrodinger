@@ -1,0 +1,421 @@
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (j : Real) →
+      Set.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteInnerCutoff : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (j : Real) →
+      @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ →
+        Real
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteEnergyCutoff : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (j : Real) →
+      @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ →
+        Real
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_isOpen : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (j : Real),
+  @IsOpen.{0}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    _ (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t j)
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_measurableSet : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (j : Real),
+  @MeasurableSet.{0}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    _ (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t j)
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_antitone : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+  @Antitone.{0, 0} Real
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    _ _ (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t)
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_zero : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+  @Eq.{1}
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+    (@Set.preimage.{0, 0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (fun
+            (a :
+              @TheoremT.Continuum.WeakGrushin.Space
+                (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 64) _))))
+TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_34 : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+  @Eq.{1}
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t (@OfNat.ofNat.{0} Real (nat_lit 34) _))
+    (@Set.preimage.{0, 0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (fun
+            (a :
+              @TheoremT.Continuum.WeakGrushin.Space
+                (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 128) _))))
+TheoremT.Continuum.WeakGrushin.physical_h12_concrete_step_geometry : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) {c C1 C2 j : Real}
+  (hc : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c)
+  (hj0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) j)
+  (hj : @LE.le.{0} Real _ j (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2),
+  @TheoremT.Continuum.WeakGrushin.SpectatorStepGeometry
+    (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _ c
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t j)
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ j (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ j (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteInnerCutoff i t j)
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteEnergyCutoff i t j) (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+    (TheoremT.Continuum.WeakGrushin.h12CutoffScalarBound c
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+      C1 C2 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+    (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound c
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+      C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+    (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound c
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+      C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (start k : Nat) →
+      Set.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleMiddle : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (start k : Nat) →
+      Set.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleInnerCutoff : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (start k : Nat) →
+      @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ →
+        Real
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleEnergyCutoff : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) →
+    (start k : Nat) →
+      @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ →
+        Real
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_isOpen : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (start k : Nat),
+  @IsOpen.{0}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    _ (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t start k)
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_measurableSet : ∀
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (start k : Nat),
+  @MeasurableSet.{0}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    _ (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t start k)
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_antitone : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (start : Nat),
+  @Antitone.{0, 0} Nat
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    _ _ (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t start)
+TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_subset_initial : ∀
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (start k : Nat),
+  @LE.le.{0}
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    _ (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t start k)
+    (TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox i t (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+TheoremT.Continuum.WeakGrushin.physical_h12_schedule_geometry : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) (start n : Nat) {c C1 C2 : Real}
+  (hc : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c)
+  (hLast :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ start
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) n))
+      (@OfNat.ofNat.{0} Nat (nat_lit 34) _))
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2)
+  (k : Nat),
+  @LT.lt.{0} Nat _ k n →
+    @TheoremT.Continuum.WeakGrushin.SpectatorStepGeometry
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _ c
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t start k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t start
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleMiddle i t start k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleInnerCutoff i t start k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleEnergyCutoff i t start k) (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffScalarBound c
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 C2 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound c
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound c
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+TheoremT.Continuum.WeakGrushin.physical_h12_T12_geometry : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) {c C1 C2 : Real}
+  (hc : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c)
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2)
+  (k : Nat),
+  @LT.lt.{0} Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 12) _) →
+    @TheoremT.Continuum.WeakGrushin.SpectatorStepGeometry
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _ c
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _) k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleMiddle i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _) k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleInnerCutoff i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _) k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleEnergyCutoff i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _) k)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffScalarBound c
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 C2 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound c
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound c
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+TheoremT.Continuum.WeakGrushin.physical_h12_Y5_geometry : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) {C1 C2 : Real}
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2)
+  (k : Nat),
+  @LT.lt.{0} Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 5) _) →
+    @TheoremT.Continuum.WeakGrushin.SpectatorStepGeometry
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _
+      (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _) k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _)
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleMiddle i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _) k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleInnerCutoff i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _) k)
+      (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleEnergyCutoff i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _) k)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffScalarBound (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 C2 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 32) _))
+        C1 TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+TheoremT.Continuum.WeakGrushin.physicalH12Schedule_T12_Y5_join : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+  @Eq.{1}
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+      (@OfNat.ofNat.{0} Nat (nat_lit 12) _))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _)
+      (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+TheoremT.Continuum.WeakGrushin.physicalH12Schedule_initial : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+  @Eq.{1}
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+      (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+    (@Set.preimage.{0, 0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (fun
+            (a :
+              @TheoremT.Continuum.WeakGrushin.Space
+                (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 64) _))))
+TheoremT.Continuum.WeakGrushin.physicalH12Schedule_terminal : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+  @Eq.{1}
+    (Set.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _))
+    (TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion i t (@OfNat.ofNat.{0} Nat (nat_lit 24) _)
+      (@OfNat.ofNat.{0} Nat (nat_lit 5) _))
+    (@Set.preimage.{0, 0}
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (fun
+            (a :
+              @TheoremT.Continuum.WeakGrushin.Space
+                (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 128) _))))
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteInnerCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteEnergyCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_isOpen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_measurableSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_antitone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ConcreteBox_34' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physical_h12_concrete_step_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleMiddle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleInnerCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleEnergyCutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_isOpen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_measurableSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_antitone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12ScheduleRegion_subset_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physical_h12_schedule_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physical_h12_T12_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physical_h12_Y5_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12Schedule_T12_Y5_join' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12Schedule_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.physicalH12Schedule_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]

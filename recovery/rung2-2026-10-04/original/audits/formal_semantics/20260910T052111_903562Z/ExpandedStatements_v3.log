@@ -1,0 +1,1407 @@
+TheoremT.Continuum.spinSingletLift_hydrogen_inner : ∀
+  (f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+          _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) Complex _
+          _
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) _))
+          _)
+        _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) x)
+  (ψ : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Eq.{1} Complex
+    (@Inner.inner.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+      (TheoremT.Continuum.twoElectronSinglet f)
+      (TheoremT.Continuum.spinSingletLift (TheoremT.Continuum.spinSingletDifference ψ)))
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _)
+      (@Inner.inner.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.twoElectronSinglet f) ψ))
+TheoremT.Continuum.twoElectron_low_eigen_zero_of_overlap_zero : ∀ (Z : Real)
+  (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+  (u :
+    @Subtype.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      fun
+        (x :
+          @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+      @Membership.mem.{0, 0}
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Submodule.{0, 0} Complex
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _ _)
+        _
+        (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+        x)
+  (E : Real)
+  (hE :
+    @LT.lt.{0} Real _ E
+      (@Neg.neg.{0} Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 5) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 8) _))))
+  (hEu :
+    @Eq.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      (@LinearPMap.toFun'.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z) u)
+      (@HSMul.hSMul.{0, 0, 0} Complex
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ (Complex.ofReal E)
+        (@Subtype.val.{1}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (fun
+              (x :
+                @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+            @Membership.mem.{0, 0}
+              (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                  _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Submodule.{0, 0} Complex
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ _)
+              _
+              (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+              x)
+          u)))
+  (horth :
+    @Eq.{1} Complex
+      (@Inner.inner.{0, 0} Complex
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ (TheoremT.Continuum.hydrogenicSinglet Z hZ)
+        (@Subtype.val.{1}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (fun
+              (x :
+                @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+            @Membership.mem.{0, 0}
+              (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                  _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Submodule.{0, 0} Complex
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ _)
+              _
+              (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+              x)
+          u))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _)),
+  @Eq.{1}
+    (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+      @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+        (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+    (@Subtype.val.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      (fun
+          (x :
+            @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+                (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+        @Membership.mem.{0, 0}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (@Submodule.{0, 0} Complex
+            (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+                (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            _ _ _)
+          _
+          (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+            (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+                (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            _ _
+            (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+                (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+          x)
+      u)
+    (@OfNat.ofNat.{0}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      (nat_lit 0) _)
+TheoremT.Continuum.twoElectron_low_eigen_singlet : ∀ (Z : Real)
+  (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+  (g :
+    @Subtype.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      fun
+        (x :
+          @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+      @Membership.mem.{0, 0}
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Submodule.{0, 0} Complex
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _ _)
+        _
+        (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+        x)
+  (E : Real)
+  (hE :
+    @LT.lt.{0} Real _ E
+      (@Neg.neg.{0} Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 5) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 8) _))))
+  (hEg :
+    @Eq.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      (@LinearPMap.toFun'.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z) g)
+      (@HSMul.hSMul.{0, 0, 0} Complex
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ (Complex.ofReal E)
+        (@Subtype.val.{1}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (fun
+              (x :
+                @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+            @Membership.mem.{0, 0}
+              (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                  _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Submodule.{0, 0} Complex
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ _)
+              _
+              (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+              x)
+          g))),
+  @Eq.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@HSMul.hSMul.{0, 0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _)
+      (@Subtype.val.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Subtype.val.{1}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (fun
+              (x :
+                @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+            @Membership.mem.{0, 0}
+              (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                  _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Submodule.{0, 0} Complex
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ _)
+              _
+              (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+              x)
+          g)))
+    (TheoremT.Continuum.spinSingletLift
+      (TheoremT.Continuum.spinSingletDifference
+        (@Subtype.val.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (@Subtype.val.{1}
+            (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+                (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            (fun
+                (x :
+                  @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                        _)
+                      _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+              @Membership.mem.{0, 0}
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                (@Submodule.{0, 0} Complex
+                  (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                        _)
+                      _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                  _ _ _)
+                _
+                (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                  (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                        _)
+                      _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                  _ _
+                  (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                        _)
+                      _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                  _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+                x)
+            g))))
+TheoremT.Continuum.twoElectron_low_eigen_spatial_amplitude : ∀ (Z : Real)
+  (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+  (g :
+    @Subtype.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      fun
+        (x :
+          @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+      @Membership.mem.{0, 0}
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Submodule.{0, 0} Complex
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _ _)
+        _
+        (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+        x)
+  (hg :
+    @Eq.{1} Real
+      (@Norm.norm.{0}
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _
+        (@Subtype.val.{1}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (fun
+              (x :
+                @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+            @Membership.mem.{0, 0}
+              (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                  _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Submodule.{0, 0} Complex
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ _)
+              _
+              (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+              x)
+          g))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (E : Real)
+  (hE :
+    @LT.lt.{0} Real _ E
+      (@Neg.neg.{0} Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 5) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 8) _))))
+  (hEg :
+    @Eq.{1}
+      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+          (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+      (@LinearPMap.toFun'.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z) g)
+      (@HSMul.hSMul.{0, 0, 0} Complex
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ (Complex.ofReal E)
+        (@Subtype.val.{1}
+          (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+              (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (fun
+              (x :
+                @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+            @Membership.mem.{0, 0}
+              (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                  _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Submodule.{0, 0} Complex
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ _)
+              _
+              (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _
+                (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+              x)
+          g))),
+  @Exists.{1}
+    (@Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+          _
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+          _)
+        _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+    fun
+      (u :
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              _)
+            _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+    And
+      (@Eq.{1} Real
+        (@Norm.norm.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                _)
+              _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ u)
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+      (And
+        (@Eq.{1}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                _)
+              _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+              (@Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              _ _ _ _)
+            (@Subtype.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  _)
+                _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            (fun
+                (x :
+                  @Subtype.{1}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    fun
+                      (x :
+                        @MeasureTheory.AEEqFun.{0, 0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                    @Membership.mem.{0, 0}
+                      (@MeasureTheory.AEEqFun.{0, 0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                      (@AddSubgroup.{0}
+                        (@MeasureTheory.AEEqFun.{0, 0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                        _)
+                      _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+              @Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            _ (@TheoremT.Continuum.pullback (@OfNat.ofNat.{0} Nat (nat_lit 2) _) TheoremT.Continuum.twoElectronSwap) u)
+          u)
+        (And (@TheoremT.Continuum.HasH2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _) u)
+          (And
+            (TheoremT.Continuum.scalarHamiltonianGraph (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z u
+              (@HSMul.hSMul.{0, 0, 0} Complex
+                (@Subtype.{1}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                      _)
+                    _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                (@Subtype.{1}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                      _)
+                    _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                _ (Complex.ofReal E) u))
+            (@Eq.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Subtype.val.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                      _)
+                    _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                (@Subtype.val.{1}
+                  (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+                        _)
+                      _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                  (fun
+                      (x :
+                        @Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Submodule.{0, 0} Complex
+                              (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                            _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+                    @Membership.mem.{0, 0}
+                      (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                        fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                        @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            _ _ _)
+                          _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                      (@Submodule.{0, 0} Complex
+                        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Submodule.{0, 0} Complex
+                              (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                            _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                        _ _ _)
+                      _
+                      (@LinearPMap.domain.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+                        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Submodule.{0, 0} Complex
+                              (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                            _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                        _ _
+                        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Submodule.{0, 0} Complex
+                              (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _)
+                            _ (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+                        _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+                      x)
+                  g))
+              (@HSMul.hSMul.{0, 0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                (@Inv.inv.{0} Complex _ (Complex.ofReal (Real.sqrt (@OfNat.ofNat.{0} Real (nat_lit 2) _))))
+                (TheoremT.Continuum.spinSingletLift u))))))
+TheoremT.Continuum.twoElectron_ground_spatial_eigenfunction : ∀ (Z : Real)
+  (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+  (hsep :
+    @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 9) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))),
+  @Exists.{1}
+    (@Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+          _
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+          _)
+        _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+    fun
+      (u :
+        @Subtype.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+            _ _
+            (@MeasureTheory.MeasureSpace.volume.{0}
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+          fun
+            (x :
+              @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+          @Membership.mem.{0, 0}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+            (@AddSubgroup.{0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              _)
+            _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+    And
+      (@Eq.{1} Real
+        (@Norm.norm.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                _)
+              _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          _ u)
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+      (And
+        (@Eq.{1}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                _)
+              _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearMap.{0, 0, 0, 0} Complex Complex _ _ (@RingHom.id.{0} Complex _)
+              (@Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              _ _ _ _)
+            (@Subtype.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+              fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  _)
+                _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            (fun
+                (x :
+                  @Subtype.{1}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    fun
+                      (x :
+                        @MeasureTheory.AEEqFun.{0, 0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                    @Membership.mem.{0, 0}
+                      (@MeasureTheory.AEEqFun.{0, 0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                      (@AddSubgroup.{0}
+                        (@MeasureTheory.AEEqFun.{0, 0}
+                          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0}
+                            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                        _)
+                      _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x) =>
+              @Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+            _ (@TheoremT.Continuum.pullback (@OfNat.ofNat.{0} Nat (nat_lit 2) _) TheoremT.Continuum.twoElectronSwap) u)
+          u)
+        (And (@TheoremT.Continuum.HasH2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _) u)
+          (TheoremT.Continuum.scalarHamiltonianGraph (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z u
+            (@HSMul.hSMul.{0, 0, 0} Complex
+              (@Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              (@Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0}
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0}
+                      (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0}
+                        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _))
+                    _)
+                  _ (TheoremT.Continuum.SpatialL2 (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+              _
+              (Complex.ofReal
+                (EReal.toReal (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z)))
+              u))))
+TheoremT.Continuum.hydrogenProductRepulsion_le_five_sevenths : ∀ (Z : Real)
+  (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z),
+  @LE.le.{0} Real _ (TheoremT.Continuum.hydrogenProductRepulsion Z hZ)
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 5) _) Z)
+      (@OfNat.ofNat.{0} Real (nat_lit 7) _))
+TheoremT.Continuum.twoElectron_ground_energy_upper : ∀ (Z : Real)
+  (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z),
+  @LE.le.{0} Real _ (EReal.toReal (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@Neg.neg.{0} Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 5) _) Z)
+        (@OfNat.ofNat.{0} Real (nat_lit 7) _)))
+TheoremT.Continuum.twoElectron_ground_energy_uniform_upper : ∀ (Z : Real)
+  (hZ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) Z),
+  @LE.le.{0} Real _ (EReal.toReal (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+    (@Neg.neg.{0} Real _
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 9) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@OfNat.ofNat.{0} Real (nat_lit 14) _)))
+TheoremT.Continuum.twoElectron_ground_separator_gap : ∀ (Z : Real)
+  (hZ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) Z),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Real (nat_lit 56) _))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@Neg.neg.{0} Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 5) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 8) _)))
+      (EReal.toReal (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z)))
+TheoremT.Continuum.twoElectron_ground_uniform_spectral_gap : ∀ (Z : Real)
+  (hZ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) Z) {z : Complex}
+  (hz :
+    @Membership.mem.{0, 0} Complex (Set.{0} Complex) _
+      (@TheoremT.OperatorTheory.unboundedSpectrum.{0}
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _ (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z))
+      z)
+  (hne :
+    @Ne.{1} Complex z
+      (Complex.ofReal
+        (EReal.toReal (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z)))),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ Z (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Real (nat_lit 56) _))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ (Complex.re z)
+      (EReal.toReal (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z)))
+@TheoremT.Continuum.helium_ground_uniform_spectral_gap : ∀ {z : Complex}
+  (hz :
+    @Membership.mem.{0, 0} Complex (Set.{0} Complex) _
+      (@TheoremT.OperatorTheory.unboundedSpectrum.{0}
+        (@Subtype.{1} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          fun (x : TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Membership.mem.{0, 0} (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Submodule.{0, 0} Complex (TheoremT.Continuum.SpinSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _) _
+            (TheoremT.Continuum.FermionicSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) x)
+        _ _
+        (TheoremT.Continuum.coulombPartialOperator (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+      z)
+  (hne :
+    @Ne.{1} Complex z
+      (Complex.ofReal
+        (EReal.toReal
+          (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+            (@OfNat.ofNat.{0} Real (nat_lit 2) _))))),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 14) _))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ (Complex.re z)
+      (EReal.toReal
+        (TheoremT.Continuum.variationalGroundEnergy (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))))
+'TheoremT.Continuum.spinSingletLift_hydrogen_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectron_low_eigen_zero_of_overlap_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.twoElectron_low_eigen_singlet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectron_low_eigen_spatial_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectron_ground_spatial_eigenfunction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.hydrogenProductRepulsion_le_five_sevenths' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.twoElectron_ground_energy_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectron_ground_energy_uniform_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectron_ground_separator_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectron_ground_uniform_spectral_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.helium_ground_uniform_spectral_gap' depends on axioms: [propext, Classical.choice, Quot.sound]

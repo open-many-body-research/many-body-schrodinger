@@ -1,0 +1,77 @@
+{
+  "status": "PASS_LOCAL_REAL_POLYNOMIAL_INVARIANCE_TO_BALANCED_SUPPORT",
+  "utc": "2026-09-11T02:10:42.369793+00:00",
+  "evidence_category": "Fully formalized finite polynomial results under literal local invariance.",
+  "exact_result": "For a complex coefficient polynomial P in four real coordinate variables, invariance under the actual unit-circle coordinate action on any positive-radius Euclidean ball centered at zero implies balanced support of the literal ksRealPolynomialToSpinor P. Local real spinor evaluation equality also determines the full independent-variable polynomial.",
+  "source": {
+    "path": "lean/KSSpinorPolynomialLocalInvariance_v1.lean",
+    "sha256": "84193fa4eedb2b45546ea8435a47aa358395c85492ac7897cafd2d274e3bcb8e"
+  },
+  "compiler": {
+    "path": "logs/development/KSSpinorPolynomialLocalInvariance_v1-20260911T020247_768189Z.json",
+    "sha256": "645fc300d169ced07fa77938be85ac6a8e010708e88fd6aa0ca92df9723f2aaa"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T020715_383484Z/receipt.json",
+    "sha256": "3d7464220da5253cf3881d6190801784a4243d33529b04e899f5621a5a29555b"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T020715_383484Z/ExpandedStatements_v8.log",
+    "sha256": "ff78ae2737bb744c16f4c97b3efbd306709cd2adb92f567dbe79738665397f9e"
+  },
+  "independent_review": {
+    "path": "audits/KS_SPINOR_LOCAL_POLYNOMIAL_INVARIANCE_REVIEW_v1_20260911T020906Z.json",
+    "sha256": "ecc2d48da2eadfc9a66bd0ca89607f77022a6019992ed5f231c4c6b9dd130010"
+  },
+  "open_box_helper": {
+    "source": {
+      "path": "lean/ComplexPolynomialRealOpenBox_v1.lean",
+      "sha256": "85f6f9cf933bc3b532e73807bc6ee9df50571c0b69219c27f735729db9a8a941"
+    },
+    "compiler": {
+      "path": "logs/development/ComplexPolynomialRealOpenBox_v1-20260911T015555_881865Z.json",
+      "sha256": "28226175d49a29d05edcd2d8cdaf9720bade847347855960f23f531def307544"
+    },
+    "strict": {
+      "path": "audits/formal_semantics/20260911T015614_399134Z/receipt.json",
+      "sha256": "38cf6afdc12677d9ca5bd519a798e6236cb97c5fe10814a3e8be17b0e4c9f9f5"
+    },
+    "expanded_log": {
+      "path": "audits/formal_semantics/20260911T015614_399134Z/ExpandedStatements_v8.log",
+      "sha256": "09dcfe080535f52fd4550af2864e9d331720134eaaa8ed9df825d5606403ffa7"
+    },
+    "independent_review": {
+      "path": "audits/COMPLEX_POLYNOMIAL_REAL_OPEN_BOX_REVIEW_v1.json",
+      "sha256": "040232dbbe48e57f3bc63d69aab34dadf4a62d0a1a5a3787eba0c38b151ad83f"
+    }
+  },
+  "global_bridge_checkpoint": {
+    "path": "audits/KS_SPINOR_REAL_SLICE_POLYNOMIAL_BRIDGE_CHECKPOINT_v1.json",
+    "sha256": "f5bf77827454e60f91fc96f1b3a59508d0160fa6ac4113056b158d2ca1eaf2b0"
+  },
+  "manual_check": "Full final source/proof bodies, expanded statement/axiom outputs and strict receipts of both new modules read; full independent reviews read. Four local declarations and one generic open-box declaration have only the standard three axioms.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "mathematical_detail": [
+    "The generic open-box theorem uses infinite real coordinate intervals and exact polynomial extensionality; no extension principle for arbitrary functions is invoked.",
+    "The box |y_i|<r/4 sits inside the actual Euclidean norm ball \u2016y\u2016<r via sum-of-four-squares.",
+    "WithLp.toLp 2 covers every real coordinate tuple with unchanged coordinates.",
+    "Actual circle covariance, inverse substitution, and finite support coefficient separation refer to the same transformed polynomial throughout."
+  ],
+  "limitations": [
+    "Local invariance of the finite polynomial is an explicit premise; extracting invariant Taylor polynomials from an invariant analytic KS lift remains separate.",
+    "No descended infinite-series convergence, coefficient rate, full R04 or full Theorem T claim.",
+    "No executable arbitrary-complex coefficient implementation or bit complexity.",
+    "Pinned dependency cache reused; no isolated source dependency rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Parent composes invariant Taylor-polynomial extraction with this support bridge and finite radial descent; this stream completed independent review of generic coordinate/Taylor representation."
+}

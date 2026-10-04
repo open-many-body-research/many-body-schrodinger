@@ -84,6 +84,8 @@ AI assistance is allowed, and it was used heavily to build v1.0. It must be disc
 
 Read the [weekly research newsletter](newsletters/README.md) for dated summaries of progress, notable contributions, releases, and open work.
 
+The [Rung 2 source recovery](recovery/rung2-2026-10-04/README.md) restores the later continuation sources and original verification receipts requested in issue #6, with a separate clean local-source rebuild runner. It does not promote any recorded claim.
+
 ```
 claims/        registry.yaml (authoritative status) and statement cards
 lean/          Lean 4 library: 817 modules, v1.0 foundation

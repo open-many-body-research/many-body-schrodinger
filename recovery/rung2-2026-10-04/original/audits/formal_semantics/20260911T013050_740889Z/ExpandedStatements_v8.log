@@ -1,0 +1,100 @@
+TheoremT.Continuum.polynomialCoeffL1_ksRadialSquare : @LE.le.{0} Real _
+  (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+    (@TheoremT.Continuum.ksRadialSquare.{0} Complex _))
+  (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+TheoremT.Continuum.polynomialCoeffL1_ksRadialMonomialCore : ∀
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+      (@TheoremT.Continuum.ksRadialMonomialCore.{0} Complex _ d))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+      (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _
+        (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+          (Fin.last (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_weighted : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialEven.{0} Complex _ P))
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialOdd.{0} Complex _ P)))
+    (@Finset.sum.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Real _
+      (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P)
+      fun (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Norm.norm.{0} Complex _
+          (@DFunLike.coe.{1, 1, 1}
+            (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+            (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+            (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) _
+              P)
+            d))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+          (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (Fin.last (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_totalDegree : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialEven.{0} Complex _ P))
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialOdd.{0} Complex _ P)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) P)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+        (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _
+          (@MvPolynomial.totalDegree.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_degree_bound : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) {m : Nat}
+  (hm : @LE.le.{0} Nat _ (@MvPolynomial.totalDegree.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P) m),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialEven.{0} Complex _ P))
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialOdd.{0} Complex _ P)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) P)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+        (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+TheoremT.Continuum.three_pow_half_le_two_pow : ∀ (m : Nat),
+  @LE.le.{0} Real _
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+      (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) m)
+TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_coarse_bound : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) {m : Nat}
+  (hm : @LE.le.{0} Nat _ (@MvPolynomial.totalDegree.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P) m),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialEven.{0} Complex _ P))
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@TheoremT.Continuum.ksRadialOdd.{0} Complex _ P)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) P)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) m))
+'TheoremT.Continuum.polynomialCoeffL1_ksRadialSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksRadialMonomialCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_weighted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_totalDegree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_degree_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.three_pow_half_le_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_coarse_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

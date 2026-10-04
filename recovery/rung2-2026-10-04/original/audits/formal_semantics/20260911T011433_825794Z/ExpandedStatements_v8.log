@@ -1,0 +1,105 @@
+TheoremT.Continuum.commonKSBoxFactorialConstant_one_le : ∀ (M : Real),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+    (TheoremT.Continuum.WeakGrushin.commonKSBoxFactorialConstant M)
+@TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_source_budget : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {M A F0 F1 W0 W1 : Real}
+  (h : TheoremT.Continuum.PhysicalKSBoxFactorialData f t0 M A F0 W0)
+  (_hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) M)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  (hW0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) W0) (hF : @LE.le.{0} Real _ F0 F1)
+  (hW : @LE.le.{0} Real _ W0 W1), TheoremT.Continuum.PhysicalKSBoxFactorialData f t0 M A F1 W1
+@TheoremT.Continuum.complex_component_norm_le_sqrt_sum_sq : ∀ {ι : Type} [inst : Fintype.{0} ι] (z : ι → Complex)
+  (i : ι),
+  @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (z i))
+    (Real.sqrt
+      (@Finset.sum.{0, 0} ι Real _ (@Finset.univ.{0} ι _) fun (j : ι) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (z j)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+TheoremT.Continuum.spinOriginFactorialSourceBudget : (M : Real) →
+  (u :
+      TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+        TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) →
+    Real
+@TheoremT.Continuum.spinOriginFactorialSourceBudget_nonneg : ∀ {M : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (u :
+    TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+      TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+@TheoremT.Continuum.spinOriginFactorialSourceBudget_component_le : ∀ {M : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (u :
+    TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+      TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (σ : TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+        (@Norm.norm.{0} Complex _
+          (u σ
+            (@OfNat.ofNat.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (Real.sqrt TheoremT.Continuum.physicalKSUniformSourceVolume))
+    (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+@TheoremT.Continuum.spinOriginH12Budget_component_le : ∀ {C_H : Real}
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C_H) (L : NNReal)
+  (u :
+    TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+      TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (σ : TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (NNReal.toReal L) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _
+            (u σ
+              (@OfNat.ofNat.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      C_H)
+    (TheoremT.Continuum.spinOriginH12Budget C_H L u)
+@TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_spin_budget : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {C_H M A : Real} {L : NNReal}
+  {u :
+    TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+      TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex}
+  {σ : TheoremT.Continuum.SpinConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)}
+  (h :
+    TheoremT.Continuum.PhysicalKSBoxFactorialData f t0 M A
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@Norm.norm.{0} Complex _
+            (u σ
+              (@OfNat.ofNat.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0)
+                _))))
+        (Real.sqrt TheoremT.Continuum.physicalKSUniformSourceVolume))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (NNReal.toReal L) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _
+              (u σ
+                (@OfNat.ofNat.{0} (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0)
+                  _)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        C_H))
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C_H)
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) M)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A),
+  TheoremT.Continuum.PhysicalKSBoxFactorialData f t0 M A (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+    (TheoremT.Continuum.spinOriginH12Budget C_H L u)
+'TheoremT.Continuum.commonKSBoxFactorialConstant_one_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_source_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.complex_component_norm_le_sqrt_sum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spinOriginFactorialSourceBudget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spinOriginFactorialSourceBudget_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spinOriginFactorialSourceBudget_component_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.spinOriginH12Budget_component_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_spin_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

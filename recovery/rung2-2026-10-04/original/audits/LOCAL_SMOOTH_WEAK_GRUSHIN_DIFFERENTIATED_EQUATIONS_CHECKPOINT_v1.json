@@ -1,0 +1,69 @@
+{
+  "timestamp_utc": "2026-09-10T23:36:46.374670+00:00",
+  "evidence": "Lean kernel-checked actual finite differentiated weak PDE from raw local data",
+  "strongest_result": "For each finite m, locally L2 f satisfying actual (Pc+B)f=s, smooth local B/s and c>0 yield genuine natural coordinate jets through m+2 on an interior rectangle and every differentiated weak PDE through m with exact proper ordered commutators, source localL2 and both test integrabilities.",
+  "semantic_review": "Full expanded final statements read. Final hypotheses contain no solution derivatives, finite gain witnesses, positive-order PDE or equivalent desired conclusion. All coordinate directions are actual standard product coordinates; only original weak equation is assumed. Finite W and representatives are selected noncomputably after m.",
+  "remaining": "Closed natural-index quadratic identification, weighted maximal norm application and factorial recurrence; no factorial regularity or full Theorem T established here.",
+  "audit_receipt": "audits/formal_semantics/20260910T233534_933052Z/receipt.json",
+  "audit_receipt_sha256": "b913b53a543b203827adb888ec14ac1d92f6c2054d3efdd903c04f925066c7f4",
+  "modules": [
+    {
+      "module": "WeakGrushinMixedMultiIndexEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinMixedMultiIndexEquation_v1.lean",
+      "source_sha256": "a91be2f5265de4ff7152f795b73ce386dbd58d16fbabbde5496bbcc56824d0b3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakGrushinMixedMultiIndexEquation_v1.olean",
+      "object_sha256": "0913f3763e096d0f180e1114b057d11f51818c642c4df075f71a8af203a6d02c",
+      "declarations": [
+        "mixedMultiIndexGrushinSource",
+        "weak_grushin_mixed_multiIndex_equations"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "LocalSmoothWeakGrushinDifferentiatedEquations_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalSmoothWeakGrushinDifferentiatedEquations_v1.lean",
+      "source_sha256": "2edfcbad180ac2b6464ad676a863bec582d22d47a246a7ab8a242ac6b01cf6cf",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalSmoothWeakGrushinDifferentiatedEquations_v1.olean",
+      "object_sha256": "0000800056e12c75251a274275617b1ad9cba3b0d281449a93c97f5bb0661fb4",
+      "declarations": [
+        "local_smooth_weak_grushin_differentiated_equations"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.WeakGrushin.mixedMultiIndexGrushinSource: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weak_grushin_mixed_multiIndex_equations: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.local_smooth_weak_grushin_differentiated_equations: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "dependencies": [
+    {
+      "path": "audits/LOCAL_GRUSHIN_WORD_COMMUTATOR_HELPERS_CHECKPOINT_v1.json",
+      "sha256": "0c5674c0c457a323d9317dd73ac2e536cf8548c929e0beb6719b8a8169169408"
+    },
+    {
+      "path": "audits/WEAK_GRUSHIN_COORDINATE_WORD_EQUATION_CHECKPOINT_v1.json",
+      "sha256": "3429b594f4a4464a1d3d3ec39120ef25c7ca95210df66bcebd651be0fe24fdc0"
+    },
+    {
+      "path": "audits/PRODUCT_MIXED_MULTIINDEX_WORD_FAMILY_CHECKPOINT_v1.json",
+      "sha256": "4260fa61130b57605f835ffbfe06ec16fde51f4b83b90fc3d11ad54a0ef5a1b6"
+    },
+    {
+      "path": "audits/LOCAL_SMOOTH_WEAK_GRUSHIN_FINITE_REGULARITY_CHECKPOINT_v1.json",
+      "sha256": "82422983dfa22bbacb6c9143f20131ad5bf6b83571059eecf05dd801e0e2c173"
+    },
+    {
+      "path": "audits/PRODUCT_MIXED_MULTIINDEX_WEAK_HK_CHECKPOINT_v1.json",
+      "sha256": "34faa2e8094078ab611decf5b520adc710cec6af82ee163d535a6f35467ea7eb"
+    }
+  ],
+  "manuscript": "paper/LOCAL_SMOOTH_WEAK_GRUSHIN_DIFFERENTIATED_EQUATIONS_FORMAL_v1.md",
+  "manuscript_sha256": "44e907b3f52810987aec145114d416379b75bf2d18085de312786310accfcf7f",
+  "cache": "Pinned object caches reused; outside prior isolated v20, no new source rebuild.",
+  "preservation": "All PASS and frozen source bytes, old receipts, and failed draft logs preserved."
+}

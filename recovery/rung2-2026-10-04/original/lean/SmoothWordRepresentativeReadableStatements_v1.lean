@@ -1,0 +1,58 @@
+import TensorBoxUniformLimit_v1
+import TensorBoxContinuousRepresentative_v1
+import SmoothCoordinateSubsetFields7_v1
+import SmoothWordBoxContinuousRepresentative_v1
+import TensorBoxCoordinateLimit_v1
+import TensorBoxFrechetLimit_v1
+import SmoothFiniteCoordinateJetRegularity_v1
+import SmoothWordBoxFiniteRepresentative_v1
+import SmoothWordBoxAllOrderRepresentative_v1
+import TensorBoxLimitPointwiseBound_v1
+import SmoothWordBoxQuantitativeRepresentative_v1
+import SmoothWordBoxFiniteQuantitative_v1
+
+set_option pp.maxSteps 1000000
+set_option maxRecDepth 16384
+open Set MeasureTheory Filter
+open scoped Topology ContDiff
+
+#check @TheoremT.Continuum.tensor_box_sqrt_integral_eq_Lp_norm
+#check @TheoremT.Continuum.tensor_box7_uniformCauchy_of_L2_Cauchy
+#check @TheoremT.Continuum.tensor_box7_continuous_uniform_limit_of_L2_Cauchy
+#check @TheoremT.Continuum.tensor_box7_uniform_limit_ae_Lp_limit
+#check @TheoremT.Continuum.tensor_box7_continuous_representative_of_L2_limits
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv_contDiff
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv_append
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv_perm
+#check @TheoremT.Continuum.coordinateWordDeriv7
+#check @TheoremT.Continuum.canonicalSubsetWord7
+#check @TheoremT.Continuum.canonicalSubsetWord7_nodup
+#check @TheoremT.Continuum.canonicalSubsetWord7_insert_perm
+#check @TheoremT.Continuum.canonicalSubsetWord7_append_length
+#check @TheoremT.Continuum.smoothSubsetField7
+#check @TheoremT.Continuum.smoothSubsetField7_empty
+#check @TheoremT.Continuum.smoothSubsetField7_contDiff
+#check @TheoremT.Continuum.smoothSubsetField7_word_base
+#check @TheoremT.Continuum.smoothSubsetField7_directional
+#check @TheoremT.Continuum.smoothSubsetField7_coordinate_hasDerivAt
+#check @TheoremT.Continuum.smooth_word7_continuous_representative_of_L2_limits
+#check @TheoremT.Continuum.smooth_words7_continuous_representatives_of_L2_limits
+#check @TheoremT.Continuum.tensor_box7_uniform_coordinate_slice
+#check @TheoremT.Continuum.tensor_box7_coordinate_hasDerivAt_of_uniform_limits
+#check @TheoremT.Continuum.tensor_box7_partial_derivative_eq_of_uniform_limits
+#check @TheoremT.Continuum.tensor_box7_coordinate_limit_inside
+#check @TheoremT.Continuum.coordinateDerivativeMap7
+#check @TheoremT.Continuum.coordinateDerivativeMap7_fderiv
+#check @TheoremT.Continuum.tensor_box7_uniformly_pi
+#check @TheoremT.Continuum.tensor_box7_fderiv_uniform_limit
+#check @TheoremT.Continuum.tensor_box7_limit_hasFDerivAt
+#check @TheoremT.Continuum.finite_coordinate_jet_contDiffOn
+#check @TheoremT.Continuum.finite_coordinate_jet_base_contDiffOn
+#check @TheoremT.Continuum.smooth_words7_finite_representatives_of_L2_limits
+#check @TheoremT.Continuum.compatible_coordinate_words7_eq
+#check @TheoremT.Continuum.smooth_words7_allOrder_representative_of_L2_limits
+#check @TheoremT.Continuum.tensor_box7_pointwise_bound_of_L2_limits
+#check @TheoremT.Continuum.smooth_words7_quantitative_representative_of_L2_limits
+#check @TheoremT.Continuum.compatible_finite_coordinate_words7_eq
+#check @TheoremT.Continuum.smooth_words7_finite_quantitative_representative_of_L2_limits

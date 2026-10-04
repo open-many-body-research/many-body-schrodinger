@@ -1,0 +1,147 @@
+@TheoremT.Continuum.epsilonNuclearKSPotential : {N : Nat} →
+  (i : Fin N) → (ε Z E : Real) → (q : @TheoremT.Continuum.NuclearKSSpace N i) → Real
+@TheoremT.Continuum.nuclearKSPotential_energy_affine : ∀ {N : Nat} (i : Fin N) (Z E : Real)
+  (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @Eq.{1} Real (@TheoremT.Continuum.nuclearKSPotential N i Z E q)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@TheoremT.Continuum.nuclearKSPotential N i Z (@OfNat.ofNat.{0} Real (nat_lit 0) _) q)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _) E)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.epsilonNuclearKSPotential_energy_affine : ∀ {N : Nat} (i : Fin N) (ε Z E : Real)
+  (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @Eq.{1} Real (@TheoremT.Continuum.epsilonNuclearKSPotential N i ε Z E q)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+        (@TheoremT.Continuum.nuclearKSPotential N i Z (@OfNat.ofNat.{0} Real (nat_lit 0) _) q))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ ε (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          E)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.epsilonNuclearKSPotential_eq_coulomb_scaled : ∀ {N : Nat} (i : Fin N) (ε Z E : Real)
+  (q : @TheoremT.Continuum.NuclearKSSpace N i)
+  (hq :
+    @Ne.{1} TheoremT.Continuum.KSSpace
+      (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q)
+      (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)),
+  @Eq.{1} Real (@TheoremT.Continuum.epsilonNuclearKSPotential N i ε Z E q)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+          (TheoremT.Continuum.coulombPotential N Z (@TheoremT.Continuum.nuclearKSLift N i q)))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ ε (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) E)))
+@TheoremT.Continuum.epsilonNuclearKSPotential_on_zero : ∀ {N : Nat} (i : Fin N) (ε Z E : Real)
+  (s : @TheoremT.Continuum.SpectatorConfiguration N i),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.epsilonNuclearKSPotential N i ε Z E
+      (@Prod.mk.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)
+        (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _) s))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Neg.neg.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)) ε) Z)
+@TheoremT.Continuum.epsilonNuclearKSPotential_contDiffAt : ∀ {N : Nat} (i : Fin N) (ε Z E : Real)
+  {q : @TheoremT.Continuum.NuclearKSSpace N i}
+  (hq :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _
+      (@TheoremT.Continuum.nuclearKSCoefficientPatch N i) q),
+  @ContDiffAt.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Real _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (@TheoremT.Continuum.epsilonNuclearKSPotential N i ε Z E) q
+TheoremT.Continuum.epsilonPairKSPotential : (ε Z E : Real) → (q : TheoremT.Continuum.PairKSSpace) → Real
+TheoremT.Continuum.pairKSPotential_energy_affine : ∀ (Z E : Real) (q : TheoremT.Continuum.PairKSSpace),
+  @Eq.{1} Real (TheoremT.Continuum.pairKSPotential Z E q)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (TheoremT.Continuum.pairKSPotential Z (@OfNat.ofNat.{0} Real (nat_lit 0) _) q)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) E)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+              (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+TheoremT.Continuum.epsilonPairKSPotential_energy_affine : ∀ (ε Z E : Real) (q : TheoremT.Continuum.PairKSSpace),
+  @Eq.{1} Real (TheoremT.Continuum.epsilonPairKSPotential ε Z E q)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+        (TheoremT.Continuum.pairKSPotential Z (@OfNat.ofNat.{0} Real (nat_lit 0) _) q))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ ε (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          E)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+              (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+TheoremT.Continuum.epsilonPairKSPotential_eq_coulomb_scaled : ∀ (ε Z E : Real) (q : TheoremT.Continuum.PairKSSpace)
+  (hq :
+    @Ne.{1} TheoremT.Continuum.KSSpace
+      (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        q)
+      (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)),
+  @Eq.{1} Real (TheoremT.Continuum.epsilonPairKSPotential ε Z E q)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+              (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+          (TheoremT.Continuum.coulombPotential (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z
+            (TheoremT.Continuum.pairKSLift q)))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ ε (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) E)))
+TheoremT.Continuum.epsilonPairKSPotential_on_zero : ∀ (ε Z E : Real)
+  (s :
+    @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)),
+  @Eq.{1} Real
+    (TheoremT.Continuum.epsilonPairKSPotential ε Z E
+      (@Prod.mk.{0, 0} TheoremT.Continuum.KSSpace
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _) s))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) ε)
+TheoremT.Continuum.epsilonPairKSPotential_contDiffAt : ∀ (ε Z E : Real) {q : TheoremT.Continuum.PairKSSpace}
+  (hq :
+    @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _
+      TheoremT.Continuum.pairKSCoefficientPatch q),
+  @ContDiffAt.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _ Real _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (TheoremT.Continuum.epsilonPairKSPotential ε Z E) q
+'TheoremT.Continuum.epsilonNuclearKSPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSPotential_energy_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonNuclearKSPotential_energy_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonNuclearKSPotential_eq_coulomb_scaled' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.epsilonNuclearKSPotential_on_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonNuclearKSPotential_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonPairKSPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPotential_energy_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonPairKSPotential_energy_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonPairKSPotential_eq_coulomb_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonPairKSPotential_on_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.epsilonPairKSPotential_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]

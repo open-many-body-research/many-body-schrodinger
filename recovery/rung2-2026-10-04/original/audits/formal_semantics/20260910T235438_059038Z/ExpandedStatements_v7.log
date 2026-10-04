@@ -1,0 +1,84 @@
+TheoremT.Continuum.WeakGrushin.FactorialBaseIndex : Type
+TheoremT.Continuum.WeakGrushin.factorialBaseIndices : (r : Nat) →
+  Finset.{0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex
+TheoremT.Continuum.WeakGrushin.factorialBaseIndex_coordinate_le_of_cost : ∀
+  (b : TheoremT.Continuum.WeakGrushin.FactorialBaseIndex) (r : Nat)
+  (h :
+    @LE.le.{0} Nat _
+      (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost
+        (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b)
+        (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b))
+      r),
+  And
+    (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LE.le.{0} Nat _
+        (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b i)
+        r)
+    (∀ (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LE.le.{0} Nat _
+        (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b j)
+        r)
+TheoremT.Continuum.WeakGrushin.factorialBaseIndices_mem : ∀ (r : Nat)
+  (b : TheoremT.Continuum.WeakGrushin.FactorialBaseIndex),
+  Iff
+    (@Membership.mem.{0, 0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex
+      (Finset.{0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex) _
+      (TheoremT.Continuum.WeakGrushin.factorialBaseIndices r) b)
+    (@LE.le.{0} Nat _
+      (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost
+        (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b)
+        (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b))
+      r)
+TheoremT.Continuum.WeakGrushin.factorialBaseIndices_zero_mem : ∀ (r : Nat),
+  @Membership.mem.{0, 0}
+    (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat))
+    (Finset.{0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex) _
+    (TheoremT.Continuum.WeakGrushin.factorialBaseIndices r)
+    (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+TheoremT.Continuum.WeakGrushin.factorialBaseIndices_nonempty : ∀ (r : Nat),
+  @Finset.Nonempty.{0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex
+    (TheoremT.Continuum.WeakGrushin.factorialBaseIndices r)
+@TheoremT.Continuum.WeakGrushin.factorialBaseIndices_mono : ∀ {r q : Nat} (hrq : @LE.le.{0} Nat _ r q),
+  @LE.le.{0} (Finset.{0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex) _
+    (TheoremT.Continuum.WeakGrushin.factorialBaseIndices r) (TheoremT.Continuum.WeakGrushin.factorialBaseIndices q)
+@TheoremT.Continuum.WeakGrushin.factorialBaseIndices_coordinate_le : ∀ {r : Nat}
+  {b : TheoremT.Continuum.WeakGrushin.FactorialBaseIndex}
+  (hb :
+    @Membership.mem.{0, 0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex
+      (Finset.{0} TheoremT.Continuum.WeakGrushin.FactorialBaseIndex) _
+      (TheoremT.Continuum.WeakGrushin.factorialBaseIndices r) b),
+  And
+    (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LE.le.{0} Nat _
+        (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b i)
+        r)
+    (∀ (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LE.le.{0} Nat _
+        (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) b j)
+        r)
+'TheoremT.Continuum.WeakGrushin.FactorialBaseIndex' does not depend on any axioms
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndex_coordinate_le_of_cost' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndices_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndices_zero_mem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndices_nonempty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndices_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialBaseIndices_coordinate_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
