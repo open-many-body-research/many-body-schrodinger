@@ -1,12 +1,13 @@
 # Weekly research newsletter
 
-An AI-assisted digest of the week's progress, published as dated Markdown files in this directory. The scheduled preparation time is **Sunday, 6:00 p.m. America/New_York**. Scheduling is handled by the repository owner's Codex automation, not GitHub Actions or a service hosted by this repository. A local automation needs its configured host and repository access to be available; the repository itself does not guarantee delivery.
+An AI-assisted digest of the week's progress, published as dated Markdown files in this directory. The scheduled preparation time is **Sunday, 5:00 p.m. America/New_York**. Scheduling is handled by the repository owner's Codex automation, not GitHub Actions or a service hosted by this repository. A local automation needs its configured host and repository access to be available; the repository itself does not guarantee delivery.
 
 Each edition explains research progress, notable merged and open PRs, relevant commits, versions/releases, corrections, verification results, and useful next steps. It links to its evidence and distinguishes an accepted result from a proposal or an AI interpretation. A newsletter is an editorial summary, not a new proof or a promotion of an evidence tier.
 
 ## Editions
 
 - [2026-09-13 — Foundation publication and contribution workflow](2026-09-13.md)
+- [2026-09-20 — Readable equations and first newsletter publication](2026-09-20.md)
 
 ## Editorial and publication rules
 
