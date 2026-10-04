@@ -140,3 +140,15 @@ times the original spin-state norm. The coefficient follows from uniform
 boundedness on the closed physical eigenspace; it is existential and has no
 numerical algorithm. The fixed radius 1 is available before the state. Human
 statement review is pending, and the full rung remains open.
+
+
+## Submitted continuation: one finite collision-chart family at all radii
+
+[S8-016](../../claims/cards/S8-016.md) proves a finite physical unit-center
+family before every radius, covering the entire punctured two-electron
+configuration space by scaled collision-free, nuclear and pair neighborhoods.
+The original half-sum pair center and its inverse-square-root-of-two normalization
+are explicit. At relative widths at most 1/16, each selected-collision
+neighborhood excludes the remaining physical singularities. This is a geometric
+cover: the triple origin and analytic applicability remain separate obligations.
+The finite centers are existential; human statement review remains pending.

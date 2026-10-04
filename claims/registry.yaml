@@ -720,3 +720,37 @@ claims:
     physical eigenspace. No numerical algorithm, charge/energy/radius uniformity,
     factorial estimate, global approximation, solver correctness or full Rung 2
     is concluded by this statement.
+
+- id: S8-016
+  sector: S8
+  title: One finite physical collision-chart family at every nonzero radius (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  statement: >
+    Every positive relative width has one finite set of unit physical spectator
+    centers covering the actual two-electron unit configuration sphere by the
+    collision-free set, both nuclear neighborhoods and the original half-sum
+    pair neighborhood. The same finite family precedes every positive radius
+    and covers every nonzero physical configuration after literal norm scaling.
+    At widths at most 1/16, nuclear neighborhoods exclude the other nucleus and
+    pair collision, and pair neighborhoods exclude both nuclei.
+  conditional_on:
+    - Positive relative neighborhood width; width at most 1/16 for the other-collision exclusions.
+    - Positive radius or nonzero original configuration for the scaled cover.
+  lean:
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.configuration_two_position_norm_sq}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_unit_annulus_covered}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_unit_annulus_finite_physical_chart_cover}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.annularNuclearNeighborhood_avoids_other_collisions}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.annularPairNeighborhood_avoids_nuclear_collisions}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_all_radii_finite_physical_chart_cover}
+    - {module: ManyBody.S8.Internal.TwoElectronAnnularCollisionCover, decl: ManyBody.S8.two_electron_punctured_configuration_finite_physical_chart_cover}
+  card: claims/cards/S8-016.md
+  evidence: [lean/ManyBody/S8/Internal/TwoElectronAnnularCollisionCover.lean, claims/cards/S8-016.md]
+  caveats: >
+    Proposed tier-L geometry pending human statement review. Triple origin is
+    excluded. No analytic applicability, derivative budgets, chart/stratum
+    compatibility, noncollision analytic estimate, global approximation, solver
+    or full Rung 2 follows. The finite center family is existential, with no
+    executable center-selection algorithm.
