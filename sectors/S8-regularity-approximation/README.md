@@ -235,3 +235,18 @@ precedes all orders k and bounds the combined moments by C*k!/a^k.
 These outputs weight the original derivative components; weak derivatives
 of the weighted state and exact rational dictionary overlaps are separate.
 Human review and full committed verification remain pending.
+
+
+## Submitted continuation: original distance reconstructions and overlap
+
+[S8-021](../../claims/cards/S8-021.md) proves equality throughout the full
+common complex domain of two nuclear distance reconstructions for the same
+actual original ground function, with complex germs and every ordered jet.
+A real feasible triangle ball derives the initial equality from physical
+reconstruction; analytic continuation supplies the nonreal domain.
+[S8-023](../../claims/cards/S8-023.md) returns the literal pair ambient A/B
+functions to the original ground representative, preserving the correct
+epsilon on A and no extra epsilon on B. Both use Z>=2 and the selected
+state's original positive scale range. Separate coefficient compatibility,
+collision-type transitions, triple origin and a global atlas remain open.
+Human statement review and full committed verification remain pending.

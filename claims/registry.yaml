@@ -1110,3 +1110,70 @@ claims:
     The prefactor depends on the state, original derivative family and rate
     and is not computably extracted. Exact rational basis overlaps, dictionary
     matrices, global approximation, solver termination and the full rung remain open.
+
+- id: S8-021
+  sector: S8
+  title: Literal complex nuclear distance overlap compatibility (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-018]
+  statement: >
+    For charge at least2, the same normalized actual scalar Coulomb ground
+    representative has identical literal holomorphic nuclear distance functions
+    on the entire common complex polydisc of any two admissible positive scales
+    sharing an original positive collision-distance point. A derived nonempty
+    real feasible triangle ball, genuine physical reconstruction and analytic
+    continuation prove equality; no compatibility premise is supplied.
+    Complex germs and every actual ordered complex Frechet jet coincide.
+  conditional_on:
+    - Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range.
+    - The same selected nuclear index and explicit positive-scale common-domain conditions.
+  lean:
+    - {module: ManyBody.S8.Internal.AmbientRealSliceUniqueness, decl: ManyBody.S8.complex_real_interval_identity}
+    - {module: ManyBody.S8.Internal.AmbientRealSliceUniqueness, decl: ManyBody.S8.complex_real_ball_identity}
+    - {module: ManyBody.S8.Internal.AmbientRealSliceUniqueness, decl: ManyBody.S8.complex_real_germ_identity}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclearOriginalDistancePolydisc_convex}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclear_ambient_reconstruction_feasible}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_compatibility}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_complex_jets}
+    - {module: ManyBody.S8.NuclearDistanceAmbientCompatibility, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_ambient_distance_compatibility}
+  card: claims/cards/S8-021.md
+  evidence: [lean/ManyBody/S8/Internal/AmbientRealSliceUniqueness.lean, lean/ManyBody/S8/NuclearDistanceAmbientCompatibility.lean, claims/cards/S8-021.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Only one fixed nuclear index is compared. Separate ambient A,B, pair/index
+    transitions, triple collision, a global atlas and the full rung remain open.
+    The selected-state original L,R and u0 budgets remain unchanged.
+
+- id: S8-023
+  sector: S8
+  title: Actual original scalar ground pair distance reconstruction (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-019]
+  statement: >
+    The same actual normalized scalar Coulomb ground witness at charge at least2
+    has literal original unscaled A,B and H=A+r12*B bounded and holomorphic
+    on the full complex distance polydisc centered at(epsilon,epsilon,0).
+    They reconstruct the original physical representative at every advertised
+    configuration, including the selected pair collision and collinear cases.
+    Exact positive rescaling gives A=u0+epsilon*A_scaled(q/epsilon) and
+    B=B_scaled(q/epsilon), with no extra epsilon factor on B. All original
+    ground graph, spectrum, H2 decay and physical/axis data are retained.
+  conditional_on:
+    - Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range.
+    - The selected original representative's admissible positive scales and isolated pair distance polydisc.
+  lean:
+    - {module: ManyBody.S8.PairDistanceAnalyticReconstruction, decl: ManyBody.S8.pair_original_ambient_positive_rescaling}
+    - {module: ManyBody.S8.PairDistanceAnalyticReconstruction, decl: ManyBody.S8.pairAmbientPhysicalDistances_positive_smul}
+    - {module: ManyBody.S8.PairDistanceAnalyticReconstruction, decl: ManyBody.S8.twoElectron_scalar_ground_pair_ambient_distance_reconstruction}
+  card: claims/cards/S8-023.md
+  evidence: [lean/ManyBody/S8/PairDistanceAnalyticReconstruction.lean, claims/cards/S8-023.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    Original selected-state L,R and u0 budgets remain; no all-state norm-uniform
+    upgrade, ambient derivative budget or cross-scale coefficient compatibility
+    is asserted. Both nuclear collisions and the triple origin are excluded.
+    Global approximation, solver termination and the full rung remain open.
