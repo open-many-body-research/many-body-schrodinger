@@ -463,3 +463,46 @@ claims:
     Only the coefficient bound is uniform in r; K, C and cutoff derivative
     budgets may depend on the radius and center. This claim supplies no mixed
     or second spectator jets, joint H2, H12, factorial bounds, or full Rung 2.
+
+- id: S8-006
+  sector: S8
+  title: Genuine joint local weak H2 on physical nuclear KS patches (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-005]
+  statement: >
+    For every electron count and selected nucleus, a scalar Coulomb eigenfunction
+    graph and continuous physical representative imply the existing
+    ProductLocalWeakH2On predicate for its actual nuclear KS pullback on the
+    coefficient patch. A spin eigenfunction graph supplies one physical locally
+    Lipschitz representative before all spin components, nuclear charts and
+    cutoffs, preserving its AE identity, permutation law and amplitude bound.
+    Every compact smooth cutoff has all arbitrary-direction ordered second weak
+    L2 jets, including mixed and second spectator derivatives. On the fixed
+    two-electron chart, the first spectator bootstrap is also proved from the
+    physical graph, with actual principal forcing integral M <= 2b1^2 A + 2b0^2 F,
+    where b0 = (26/3)|Z| + 8/11 + |E|/2 and b1 = (8/9)|Z| + 128/121.
+  conditional_on:
+    - The actual scalar or spin Coulomb Hamiltonian eigenfunction graph.
+    - A continuous physical representative and physical AE equality in the scalar theorem; both are constructed in the spin theorem.
+    - Smooth compact cutoffs inside the actual nuclear coefficient patch; remaining nucleus and pair collisions are excluded by that patch.
+  lean:
+    - {module: ManyBody.S8.Internal.JointWeakH2Initialization, decl: ManyBody.S8.local_homogeneous_grushin_joint_cutoff_h2}
+    - {module: ManyBody.S8.Internal.JointWeakH2Initialization, decl: ManyBody.S8.scalar_coulomb_nuclear_KS_local_weakH2}
+    - {module: ManyBody.S8.Internal.JointWeakH2Initialization, decl: ManyBody.S8.coulomb_spin_nuclear_KS_local_weakH2}
+    - {module: ManyBody.S8.Internal.SpectatorBootstrap, decl: ManyBody.S8.weak_grushin_homogeneous_spectator_equation}
+    - {module: ManyBody.S8.Internal.SpectatorBootstrap, decl: ManyBody.S8.local_weak_grushin_spectator_cutoff_gain}
+    - {module: ManyBody.S8.Internal.PhysicalPlateauEquation, decl: ManyBody.S8.scalar_nuclear_output_on_plateau}
+    - {module: ManyBody.S8.Internal.NuclearChartDerivativeBounds, decl: ManyBody.S8.nuclearKSPotential_spectator_abs_le_of_mem_nuclearChartOpen}
+    - {module: ManyBody.S8.Internal.SpectatorForcingBudget, decl: ManyBody.S8.bounded_spectator_forcing_integral_le}
+    - {module: ManyBody.S8.Internal.SpectatorForcingBudget, decl: ManyBody.S8.nuclear_chart_spectator_forcing_integral_le}
+    - {module: ManyBody.S8.NuclearChartSpectatorBootstrap, decl: ManyBody.S8.two_electron_nuclear_chart_spectator_bootstrap}
+  card: claims/cards/S8-006.md
+  evidence: [lean/ManyBody/S8/Internal/JointWeakH2Initialization.lean, lean/ManyBody/S8/Internal/SpectatorBootstrap.lean, lean/ManyBody/S8/Internal/PhysicalPlateauEquation.lean, lean/ManyBody/S8/Internal/NuclearChartDerivativeBounds.lean, lean/ManyBody/S8/Internal/SpectatorForcingBudget.lean, lean/ManyBody/S8/NuclearChartSpectatorBootstrap.lean, claims/cards/S8-006.md]
+  caveats: >
+    Proposed tier-L topic-branch submission pending human statement-card review.
+    The selected nuclear collision is included; simultaneous remaining singularities
+    are excluded. Joint H2 is qualitative. The explicit first spectator budgets
+    use local norms of constructed outputs. No H12, uniform H2 constants,
+    factorial estimate, analyticity, full collision coverage, or full Rung 2 is claimed.

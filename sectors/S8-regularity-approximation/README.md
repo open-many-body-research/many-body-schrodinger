@@ -55,3 +55,19 @@ the uniform statement concerns the coefficient bound only.
 This topic-branch result is pending human maintainer review. The accepted
 current-best table is unchanged. H12, factorial estimates, and all of Rung 2
 remain open.
+
+## Submitted continuation: genuine joint nuclear KS H2
+
+[S8-006](../../claims/cards/S8-006.md) derives genuine local weak $`H^2`$ for
+physical KS pullbacks on every existing nuclear coefficient patch, for every
+electron count. One spin representative works before all components, charts
+and cutoffs. The proof constructs actual TT diagonal derivatives from the
+spectator differentiated equation and combines them with YY derivatives through
+the exact frozen product Fourier theorem, giving all ordered mixed derivatives.
+The selected nuclear collision is included whenever the other singularities are
+separated. A two-electron specialization also proves the first spectator
+forcing budget using $`|D_T B|\le8|Z|/9+128/121`$.
+
+This submitted evidence is pending human maintainer statement review. It proves
+qualitative joint H2, while H12 initialization, uniform finite-order budgets,
+all-order factorial estimates and Rung 2 remain open.

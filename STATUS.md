@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 10 |
+| **L** | Lean-verified | 11 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -83,6 +83,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | S8-003 | Fixed-exponent Hylleraas residual obstruction, "Theorem C" (paper) | **P1** | none |
 | [S8-004](claims/cards/S8-004.md) | Homogeneous local Grushin one-step initialization (submitted; pending review) | **L** | The displayed homogeneous weak equation and local L2 membership of f; Continuity of B and the supplied coefficient bound /B/ <= b on K; Positive c and the displayed smooth compact cutoff inside an open region |
 | [S8-005](claims/cards/S8-005.md) | Physical two-electron nuclear KS initialization and coefficient bounds (submitted; pending review) | **L** | The actual Coulomb spin Hamiltonian eigenfunction graph; A positive radius at most one, center norm equal to that radius, and the displayed smooth compact cutoff support |
+| [S8-006](claims/cards/S8-006.md) | Genuine joint local weak H2 on physical nuclear KS patches (submitted; pending review) | **L** | The actual scalar or spin Coulomb Hamiltonian eigenfunction graph; A continuous physical representative and physical AE equality in the scalar theorem; both are constructed in the spin theorem; Smooth compact cutoffs inside the actual nuclear coefficient patch; remaining nucleus and pair collisions are excluded by that patch |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
