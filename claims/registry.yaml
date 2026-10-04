@@ -1363,3 +1363,33 @@ claims:
     The compact state need not be normalized, smooth or an eigenfunction.
     The prefactor is existential and selected-state dependent. Computable radii,
     finite dictionaries, rational matrices, effective solver and the full rung remain open.
+
+- id: S8-029
+  sector: S8
+  title: Bound actual nuclear ambient distance derivatives at all orders (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-025, S8-026]
+  statement: >
+    For charge at least2, the same actual normalized scalar ground witness
+    has genuine all-order complex Frechet operator norms and ordered distance
+    coordinate-word factorial budgets for literal original nuclear A,B and H,
+    for both selected indices at all admissible scales and every half-polydisc
+    point. Actual bounded holomorphic profiles discharge derivative estimates.
+    A,H carry epsilon times epsilon^(-n) and u0 only at order zero, while B
+    carries epsilon^(-n). All original physical and spectral facts are retained.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.NuclearAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_ambient_distance_derivative_data}
+    - {module: ManyBody.S8.NuclearAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.nuclear_ambient_distance_coordinate_word_budgets}
+    - {module: ManyBody.S8.NuclearAmbientDistanceDerivativeBudgets, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_ambient_distance_derivative_budgets}
+  card: claims/cards/S8-029.md
+  evidence: [lean/ManyBody/S8/NuclearAmbientDistanceDerivativeBudgets.lean, claims\cards\S8-029.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The norm is the actual complex Fin3 Pi norm. Selected-state L,R and
+    amplitude are retained. No norm-uniform all-state upgrade, real-distance
+    transport, global approximation, computable prefactor or full rung is claimed.

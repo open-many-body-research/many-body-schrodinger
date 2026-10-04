@@ -297,3 +297,10 @@ Human statement review and full committed verification remain pending.
 [S8-028](../../claims/cards/S8-028.md) proves that for charge at least2, the same actual normalized scalar ground state and ordered weak derivative families have compact cutoff H2 approximants with a true scalar Coulomb graph output and eigenvalue residual at the original ground energy bounded by C*exp(-a*R). Each positive a with a^2<Z^2/112 has one finite C before every real R at least1. Full literal compact AE support, product-rule weak derivatives and the genuine H2 defect bound are retained. Graph output existence is derived from the actual H2 domain.
 The compact state need not be normalized, smooth or an eigenfunction. The prefactor is existential and selected-state dependent. Computable radii, finite dictionaries, rational matrices, effective solver and the full rung remain open.
 Human statement review and full committed verification remain pending.
+
+
+## Submitted continuation: bound actual nuclear ambient distance derivatives at all orders
+
+[S8-029](../../claims/cards/S8-029.md) proves that for charge at least2, the same actual normalized scalar ground witness has genuine all-order complex Frechet operator norms and ordered distance coordinate-word factorial budgets for literal original nuclear A,B and H, for both selected indices at all admissible scales and every half-polydisc point. Actual bounded holomorphic profiles discharge derivative estimates. A,H carry epsilon times epsilon^(-n) and u0 only at order zero, while B carries epsilon^(-n). All original physical and spectral facts are retained.
+The norm is the actual complex Fin3 Pi norm. Selected-state L,R and amplitude are retained. No norm-uniform all-state upgrade, real-distance transport, global approximation, computable prefactor or full rung is claimed.
+Human statement review and full committed verification remain pending.
