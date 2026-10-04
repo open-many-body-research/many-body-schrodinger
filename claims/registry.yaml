@@ -935,3 +935,94 @@ claims:
     collision-free bulk. Triple origin and exterior analytic control are excluded.
     No quantitative unscaled derivative, ambient distance transition, global
     approximation, solver or full Rung 2 follows. Common constants are non-effective.
+
+- id: S8-018
+  sector: S8
+  title: Actual scalar ground ambient nuclear distance reconstruction (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-013]
+  statement: >
+    For every real charge at least2, the actual normalized scalar two-electron
+    Coulomb ground function has a literal bounded holomorphic function of
+    three independent complex physical distances on the full polydisc centered
+    at(0,epsilon,epsilon), for both selected nuclear indices and every
+    admissible positive scale. Its restriction reconstructs the same original
+    physical representative for every configuration in the stated neighborhood,
+    including the selected collision, collinear and zero-transverse cases.
+    The actual H2 graph and spectral ground witness, AE identity, Moser bound,
+    real, exchange and O3 laws are retained. Rational ambient axis coordinates,
+    a proved degenerate-safe physical orbit bridge and exact positive-scale
+    inversion discharge the analytic and physical identity obligations.
+  conditional_on:
+    - Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range.
+    - Positive scales bounded by the selected original representative's min1(R/4).
+    - The explicit isolated nuclear distance polydisc, with other singularities excluded.
+  lean:
+    - {module: ManyBody.S8.Internal.TwoVectorDistanceOrbit, decl: ManyBody.S8.two_vector_isometry_of_inner}
+    - {module: ManyBody.S8.Internal.TwoVectorDistanceOrbit, decl: ManyBody.S8.two_vector_isometry_of_distances}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceConfigurationOrbit, decl: ManyBody.S8.two_electron_configuration_rotation_of_distances}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceConfigurationOrbit, decl: ManyBody.S8.rotation_invariant_eq_of_physical_distances}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceConfigurationOrbit, decl: ManyBody.S8.nuclear_distance_real_representative_covers_original}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceConfigurationOrbit, decl: ManyBody.S8.nuclear_distance_real_coordinates_rotation}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceConfigurationOrbit, decl: ManyBody.S8.nuclear_rotation_invariant_eq_canonical_distances}
+    - {module: ManyBody.S8.Internal.NuclearDistanceAmbientComposition, decl: ManyBody.S8.nuclearAmbientDistanceInput_domain}
+    - {module: ManyBody.S8.Internal.NuclearDistanceAmbientComposition, decl: ManyBody.S8.nuclear_ambient_distance_composition_analytic_germ}
+    - {module: ManyBody.S8.Internal.NuclearDistanceAmbientComposition, decl: ManyBody.S8.nuclear_ambient_distance_composition_on_polydisc}
+    - {module: ManyBody.S8.Internal.NuclearDistancePhysicalReconstruction, decl: ManyBody.S8.physical_nuclear_ambient_axis_data}
+    - {module: ManyBody.S8.Internal.NuclearDistancePhysicalReconstruction, decl: ManyBody.S8.nuclearAmbientDistanceInput_real}
+    - {module: ManyBody.S8.Internal.NuclearDistancePhysicalReconstruction, decl: ManyBody.S8.physical_nuclear_ambient_canonical_identity}
+    - {module: ManyBody.S8.NuclearDistanceAnalyticReconstruction, decl: ManyBody.S8.nuclearAmbientRetainedRadius_pos}
+    - {module: ManyBody.S8.NuclearDistanceAnalyticReconstruction, decl: ManyBody.S8.nuclear_rotation_invariant_ambient_descent}
+    - {module: ManyBody.S8.NuclearDistanceAnalyticReconstruction, decl: ManyBody.S8.nuclear_rotation_invariant_ambient_original}
+    - {module: ManyBody.S8.NuclearDistanceAnalyticReconstruction, decl: ManyBody.S8.nuclear_original_ambient_positive_rescaling}
+    - {module: ManyBody.S8.NuclearDistanceAnalyticReconstruction, decl: ManyBody.S8.twoElectron_scalar_ground_nuclear_ambient_distance_reconstruction}
+  card: claims/cards/S8-018.md
+  evidence: [lean/ManyBody/S8/NuclearDistanceAnalyticReconstruction.lean, lean/ManyBody/S8/Internal/NuclearDistanceAmbientComposition.lean, lean/ManyBody/S8/Internal/NuclearDistancePhysicalReconstruction.lean, lean/ManyBody/S8/Internal/PhysicalDistanceConfigurationOrbit.lean, lean/ManyBody/S8/Internal/TwoVectorDistanceOrbit.lean, claims/cards/S8-018.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The ground witness retains its selected-state L,R and u0 source budgets;
+    this is not an all-state original-norm quantitative upgrade. It proves
+    ambient distance holomorphy, not Cartesian analyticity across a cusp.
+    Pair and triple collisions, ambient germ comparison, global analytic atlas,
+    dictionary approximation, solver termination and the full rung remain open.
+
+- id: S8-019
+  sector: S8
+  title: Actual scalar ground ambient pair distance reconstruction (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-018]
+  statement: >
+    For real charge at least2, the actual normalized scalar Coulomb ground
+    function supplies literal bounded holomorphic A and B functions of three
+    independent complex distances near(1,1,0), reconstructing its actual
+    normalized origin difference on every physical configuration in that
+    distance neighborhood. The principal complex square-root branch, real
+    canonical distances, and degenerate-safe orthogonal orbit coverage are
+    derived. The same original H2 graph, spectral ground, physical AE, real,
+    exchange and rotation laws and H2 exponential decay are retained.
+    One explicit positive ambient radius precedes every admissible scale.
+  conditional_on:
+    - Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range.
+    - Positive scales bounded by the selected original representative's min1(R/4).
+    - The explicit isolated pair distance polydisc, with both nuclear collisions excluded.
+  lean:
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.twoElectron_scalar_ground_pair_ambient_analytic_descent}
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.pairAmbientDistanceRadius_pos}
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.pairAmbientPhysicalAnalytic_data}
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.pairAmbientCanonical_identity}
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.pairAmbientCanonical_distances}
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.pairAmbientDistanceInput_domain}
+    - {module: ManyBody.S8.Internal.PairDistanceAmbientComposition, decl: ManyBody.S8.pair_ambient_distance_composition_on_polydisc}
+  card: claims/cards/S8-019.md
+  evidence: [lean/ManyBody/S8/Internal/PairDistanceAmbientComposition.lean, claims/cards/S8-019.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    New A,B reconstruct the normalized origin difference; original unscaled
+    ambient A,B are a separate extension. No assumed complex root or physical
+    identity is a principal input. Original L,R and u0 source budgets remain.
+    Separate ambient coefficient germ compatibility, triple collision,
+    exterior atlas, global approximation and the full rung remain open.
