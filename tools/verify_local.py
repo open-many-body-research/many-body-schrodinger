@@ -59,7 +59,7 @@ def verify_foundation() -> int:
         if name in records or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
             raise RuntimeError(f"Foundation hash mismatch or duplicate: {name}")
         records[name] = digest
-    actual = {str(p.relative_to(ROOT / "lean")) for p in (ROOT / "lean/Foundation").rglob("*.lean")}
+    actual = {p.relative_to(ROOT / "lean").as_posix() for p in (ROOT / "lean/Foundation").rglob("*.lean")}
     if actual != set(records):
         raise RuntimeError("Foundation manifest does not cover exactly the foundation source files")
     return len(records)
