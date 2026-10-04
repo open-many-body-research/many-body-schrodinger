@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 32 |
+| **L** | Lean-verified | 33 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -105,6 +105,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-024](claims/cards/S8-024.md) | Genuine compact physical H2 truncation with exponential error (submitted; pending review) | **L** | Real charge at least2, the discharged physical exponential decay range; Positive exponent with a^2<Z^2/112 and every real radius at least1 |
 | [S8-025](claims/cards/S8-025.md) | Bound actual pair ambient distance derivatives at all orders (submitted; pending review) | **L** | Real charge at least2 and the original selected state positive scale range; Every point in the half of the explicit full pair distance polydisc |
 | [S8-027](claims/cards/S8-027.md) | Full actual physical annular Frechet operator norm budgets (submitted; pending review) | **L** | The actual full-spin Coulomb eigenfunction graph at real charge and energy; Positive physical radii at most1/4 and selected annular collision neighborhoods |
+| [S8-026](claims/cards/S8-026.md) | Identify actual separate complex collision profiles across scales (submitted; pending review) | **L** | Real charge at least2 and the original actual physical ground graph range; The explicitly quantified admissible scales, domains and positive rates in the card |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

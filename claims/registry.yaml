@@ -1289,3 +1289,43 @@ claims:
     product norm; an independent Euclidean6 norm identification is not assumed.
     Constants are existential. Collision-free bulk, triple origin, global atlas,
     dictionary approximation, effective solver and the full rung remain open.
+
+- id: S8-026
+  sector: S8
+  title: Identify actual separate complex collision profiles across scales (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-018, S8-021, S8-023]
+  statement: >
+    For charge at least2, the same actual normalized scalar Coulomb ground
+    representative has equal literal original A,B and H profiles throughout the
+    common complex nuclear or pair distance polydisc at any two admissible scales
+    sharing a positive collision-distance point. Real feasible triangle balls
+    and actual reconstruction derive H equality. Genuine selected-distance
+    parity separates A and B, including the collision face by holomorphic
+    continuation. Every complex overlap germ and ordered Frechet jet agrees.
+  conditional_on:
+    - Real charge at least2 and the original actual physical ground graph range.
+    - The explicitly quantified admissible scales, domains and positive rates in the card.
+  lean:
+    - {module: ManyBody.S8.Internal.EvenAmbientProfileUniqueness, decl: ManyBody.S8.holomorphic_even_profiles_compatible}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_recombine}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_even}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_analytic}
+    - {module: ManyBody.S8.Internal.NuclearOriginalAmbientProfiles, decl: ManyBody.S8.nuclearOriginalAmbient_profiles_bounds}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_reconstruction_feasible}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_two_scale_compatibility}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pairOriginalAmbient_profiles_even}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_separate_profiles}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_two_scale_separate_profiles}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.nuclear_ambient_two_scale_profile_jets}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.pair_ambient_two_scale_profile_jets}
+    - {module: ManyBody.S8.AmbientCollisionProfileCompatibility, decl: ManyBody.S8.twoElectron_scalar_ground_ambient_coefficient_compatibility}
+  card: claims/cards/S8-026.md
+  evidence: [lean/ManyBody/S8/Internal/EvenAmbientProfileUniqueness.lean, lean/ManyBody/S8/Internal/NuclearOriginalAmbientProfiles.lean, lean/ManyBody/S8/AmbientCollisionProfileCompatibility.lean, claims\cards\S8-026.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The nuclear comparisons fix one selected index. Collision-type transitions,
+    triple origin and the global atlas remain open. No profile parity or equality
+    is supplied to the physical graph consumer; all original state facts are retained.

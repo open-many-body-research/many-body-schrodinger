@@ -283,3 +283,10 @@ the directional estimates, and physical lifts derive balance. Constants and
 finite quarter-width centers precede the state. Original epsilon factors,
 norm-linear amplitudes and actual reconstruction are retained. Human
 statement review and full committed verification remain pending.
+
+
+## Submitted continuation: identify actual separate complex collision profiles across scales
+
+[S8-026](../../claims/cards/S8-026.md) proves that for charge at least2, the same actual normalized scalar Coulomb ground representative has equal literal original A,B and H profiles throughout the common complex nuclear or pair distance polydisc at any two admissible scales sharing a positive collision-distance point. Real feasible triangle balls and actual reconstruction derive H equality. Genuine selected-distance parity separates A and B, including the collision face by holomorphic continuation. Every complex overlap germ and ordered Frechet jet agrees.
+The nuclear comparisons fix one selected index. Collision-type transitions, triple origin and the global atlas remain open. No profile parity or equality is supplied to the physical graph consumer; all original state facts are retained.
+Human statement review and full committed verification remain pending.
