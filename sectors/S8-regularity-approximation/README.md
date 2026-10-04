@@ -194,8 +194,9 @@ exactly returned to the original state. A proved O(3) orbit bridge includes
 collinear and zero selected positions. Both nuclear indices and every
 admissible positive scale of the same representative are retained. This
 uses the recovered selected-state L,R and u0 budgets; quantitative norm
-uniformity is a separate result. Human statement review and full committed
-verification are pending. Pair/triple collision reconstruction, ambient germ
+uniformity is a separate result. Original committed full verification passed
+at head3f71054c7be8 (see the card); recovery acceptance, resulting integration
+verification and human statement review remain pending. Pair/triple collision reconstruction, ambient germ
 compatibility and the full rung remain open.
 
 
@@ -209,7 +210,9 @@ canonical configuration distances and degenerate-safe physical orbit identity
 are derived. The new functions reconstruct the actual normalized origin
 difference at every admissible scale; original unscaled coefficients are a
 separate extension. Both nuclear collisions and the triple origin are
-excluded. Human statement review and full committed verification are pending.
+excluded. Original committed full verification passed at head3f71054c7be8
+(see the card); recovery acceptance, resulting integration verification and
+human statement review remain pending.
 
 
 ## Submitted continuation: original annular mixed derivative budgets
@@ -326,7 +329,148 @@ Human statement review and full committed verification remain pending.
 The real domain is the actual Fin3 Pi maximum norm with complex values. This is a derivative bound in independent ambient distance coordinates; physical Cartesian transport or profile realness is not asserted. Selected original scales/amplitudes remain. Global approximation and full rung remain open.
 Human statement review and full committed verification remain pending.
 
+## Submitted continuation: derive actual distance taylor sums and geometric truncation errors
+
+[S8-033](../../claims/cards/S8-033.md) Actual complex distance profiles of the same normalized physical ground have canonical derivative-coefficient Taylor sums, explicit geometric value remainder, and genuine operator-norm Taylor remainders for every derivative field on the stated quarter polydiscs. All nuclear indices and admissible scales are retained.
+The derivative-field polynomials are stated separately; no coupling as derivatives of one value polynomial, effective coefficients, global atlas or full rung is claimed.
+Independent AI applicability review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: construct smooth normalized compact physical ground approximants
+
+[S8-035](../../claims/cards/S8-035.md) The same actual normalized two-electron ground and genuine weak first and ordered second derivatives admit concrete smooth normalized compact approximants at every positive tolerance, with simultaneous physical H2 defect, actual Coulomb graph residual and absolute Rayleigh pairing error bounded by that tolerance. A single eventual concrete mollifier index controls all 43 components.
+The selected-state constants and eventual mollifier index are existential. The radius formula is explicit in those constants. Symmetry of the new approximants, finite dictionaries, computable coefficients, effective solver and full rung are not asserted.
+Independent AI applicability review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: preserve actual ground symmetries under radial physical compact truncation
+
+[S8-034](../../claims/cards/S8-034.md) For charge at least2, one actual normalized scalar Coulomb ground with original weak derivative families admits literal norm-radial compact truncations preserving actual exchange, reality and simultaneous O3 invariance. Each positive admissible decay rate has one constant before all real radii at least1, controlling both the true combined H2 defect and actual scalar Hamiltonian graph residual at the original ground energy.
+The new cutoff is the explicit inner-product-space radial bump, not an inferred symmetry of the old generic choice. Compact states are not asserted normalized, smooth or eigenfunctions. Constants are existential; finite dictionaries, effective solver and full rung remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: derive actual ambient profile reality and canonical real taylor coefficients
+
+[S8-036](../../claims/cards/S8-036.md) The same actual normalized physical ground and nuclear and pair collision profiles are real throughout the full real distance slices. Genuine feasible physical triangle values, real analytic continuation and actual parity derive separate A,B,H reality including the collision axis. Every ordered real derivative jet has zero imaginary part, and the unchanged canonical complex Taylor coefficients and finite value polynomials are real on actual real increments. All original ground and derivative-budget facts and the actual Taylor sums and errors are retained.
+Only real arguments and directions are asserted real. No arbitrary complex-direction or nonsymmetric power-series coefficient reality is claimed. Selected original scales remain; coupled polynomial derivative errors, rational coefficients, global approximation and full rung are separate obligations.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: couple actual distance taylor polynomial gradient and hessian errors
+
+[S8-037](../../claims/cards/S8-037.md) For the same actual normalized physical ground and original nuclear and pair A,B,H profiles, every literal finite canonical Taylor polynomial has genuine iterated derivative equal to the correctly shifted Taylor truncation of the corresponding actual derivative field. On the actual quarter polydiscs this gives simultaneous geometric value, gradient and Hessian errors for that one polynomial in true multilinear operator norms, while retaining all original physical and spectral facts.
+Errors are in independent complex ambient distance coordinates. Physical Cartesian pullback H2 integration, rational or effective coefficient choice, global approximation and full rung are separate obligations.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: normalize radial compact physical approximants while preserving ground symmetries
+
+[S8-038](../../claims/cards/S8-038.md) The same actual normalized scalar Coulomb ground and original genuine weak derivative families admit norm-one radial compact H2 approximants preserving actual exchange, reality and simultaneous full O3 invariance. For each positive admissible decay rate one nonnegative constant precedes every real radius beyond the explicit normalization threshold and controls the true combined H2 defect, actual scalar Hamiltonian graph residual and absolute Rayleigh pairing error exponentially.
+The radius threshold is explicit in the existential selected-state/rate constant. Smoothness, finite dictionaries, computable constants or coefficient selection, solver termination and full rung remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: approximate actual physical collision profiles by rational distance polynomials
+
+[S8-039](../../claims/cards/S8-039.md) The same actual normalized physical ground and its original nuclear and pair A,B,H admit literal finite unshifted distance monomial polynomials with rational coefficients. Each prescribed positive tolerance selects one polynomial per profile controlling its true real value, gradient and Hessian uniformly on the fixed closed inner distance box. Actual finite Taylor representation, rational density and coupled derivative errors are derived; all original physical and spectral facts are retained.
+Selection is existential and no effective coefficient or order algorithm is claimed. These errors are in independent real distance coordinates; physical H2 pullback, global finite dictionaries, solver and full rung remain separate.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: prove smooth compact density in the actual scalar coulomb graph
+
+[S8-040](../../claims/cards/S8-040.md) For every real charge and arbitrary actual scalar Coulomb graph pair f,h, genuine original weak derivative families are selected before every positive tolerance. A smooth compact physical representative supplies one approximating state with genuine weak and classical first and all ordered second derivative families, combined43component H2 defect and actual graph output difference each bounded by that tolerance. True L2 exterior convergence, finite component truncation, smoothing and actual graph output existence are proved without a ground, eigenvalue or weighted decay input.
+This is actual metric graph approximation; no separately defined abstract operator core predicate is asserted. Radius and mollifier index are existential. Approximants are not asserted normalized, real or symmetric for arbitrary states. Effective rate, finite dictionary, solver and full rung remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: construct genuine radial smoothing and normalized symmetric smooth ground approximants
+
+[S8-042](../../claims/cards/S8-042.md) The same actual normalized scalar Coulomb ground and original weak derivatives admit norm-one smooth compact approximants preserving actual exchange, reality and simultaneous O3 invariance both as physical L2 classes and at every point of the literal smooth representatives. One constant before every positive tolerance supplies the cutoff radius, and every sufficiently late index of a literal normalized radial kernel controls the true43component H2 defect, actual scalar graph residual and absolute Rayleigh pairing error by the tolerance. Actual kernel mass, convergence, covariance and weak and classical convolution derivatives are derived.
+The kernel is the literal radial cutoff divided by its actual positive integral. No symmetry of a classically chosen old mollifier is inferred. Constants and sufficiently late index are existential; no finite dictionary, effective coefficient selection, solver termination or full rung is claimed.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: approximate every normalized symmetric scalar graph state by genuine smooth compact states
+
+[S8-044](../../claims/cards/S8-044.md) Every actual normalized scalar Coulomb graph pair at any real charge, with explicit original exchange, reality and simultaneous O3 symmetry, admits norm-one smooth compact approximants preserving these symmetries both in the actual physical L2 class and pointwise on the literal smooth representative. Genuine original first and ordered second weak derivatives precede every tolerance; one cutoff radius and every sufficiently late actual radial-kernel index control the true43component H2 defect, actual graph difference and absolute Rayleigh pairing difference by that tolerance.
+No eigenvalue, charge lower bound, spectral gap, decay or approximation premise is used. Radius and sufficiently late index are existential; no symmetry of the graph image, rational dictionary, effective selection, solver termination or full rung is claimed.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: preserve actual coulomb graph image symmetries in normalized smooth approximation
+
+[S8-046](../../claims/cards/S8-046.md) Actual scalar Coulomb graph covariance and output uniqueness transport every original permutation, reality and simultaneous orthogonal symmetry to the original graph output. For every real charge, the same actual normalized symmetric smooth compact two-electron approximants have actual graph outputs with exchange, AE reality and fullO3 symmetry, retaining the true43component H2, originalstate, graph difference and absolute Rayleigh difference bounds at every positive tolerance.
+Output symmetry is derived from the actual input and graph, with no eigenvalue, gap, decay, outputsymmetry or approximationexistence premise. No smooth compact representative of the graph output, rational dictionary, effective selection, solver or full rung is asserted.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: bound actual collision taylor orders linearly in requested dyadic precision
+
+[S8-045](../../claims/cards/S8-045.md) The same actual physical Coulomb ground witness admits one common linear dyadic Taylor order N=2p+m+2 at each original nuclear and pair collision distance chart. A fixed natural offset before every precision controls the actual real zero, first and second derivative operatornorm errors for A, B and H by onehalf to the powerp, uniformly on the true open quarter distance box. Every retained graph, spectral, H2, decay, symmetry, reconstruction and rational approximation fact belongs to that same original witness.
+The offset can depend on state, scale and chart and is existential; no uniform acrossscales offset or algorithm for physical budgets and coefficient extraction is proved. Taylor coefficients are not asserted rational. This gives local linear ordergrowth with no rounding bitcost, composed physical H2 error, global atlas, triplecollision, solver or full rung conclusion.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: preserve actual collision parity and reconstruction in rational distance approximants
+
+[S8-043](../../claims/cards/S8-043.md) The same actual normalized Coulomb ground admits finite rational A and B distance polynomials globally even in the selected nuclear or pair distance. Their one reconstructed polynomial PH=PA+qjPB, with a proved finite rational monomial dictionary, approximates the actual original H while PA and PB approximate the actual A and B in true real value, gradient and Hessian operatornorms uniformly on the closed inner distance box. Original profile analyticity, parity and reconstruction are derived from that same graph witness.
+The exact selected coordinate is zero for nuclear and two for pair charts and the original inner radius is epsilon delta over8. Polynomial selection is existential. No composed physical H2 error, degree or cardinality rate, computable coefficient choice, global dictionary, solver or full rung is asserted.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: bound actual dyadic collision distance dictionaries by a cubic monomial count
+
+[S8-048](../../claims/cards/S8-048.md) The literal canonical real Taylor dictionary for the same actual nuclear and pair collision A, B and H profiles has total degree below N and at most N cubed monomials at the common linear order N=2p+m+2. Actual support and coefficient definitions give exact global equality with each genuine value polynomial and its actual derivatives, retaining simultaneous true real value, gradient and Hessian errors at most onehalf to the powerp on the quarter distance box.
+The actual translated multilinear expansion derives the finite dictionary and the orderzero support is proved empty. Original real Taylor coefficients are not asserted rational or effectively extractable; no coefficient bitcost, physical H2 composition, global dictionary, solver or full rung is proved.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: choose linear physical cutoff radii for dyadic normalized coulomb approximation errors
+
+[S8-049](../../claims/cards/S8-049.md) Every actual normalized symmetric Coulomb ground has an explicit physical radial cutoff radius linear in requested dyadic precision, max original normalization threshold and log oneplusC overa, plus p logtwo overa. The same actual normalized radial compact state has state L2 and true43component H2 defects, actual scalar eigenvalue residual and absolute Rayleigh error at most onehalf to the powerp, preserving exchange, AE reality and fullO3 state symmetry. Genuine original derivative families precede the rate and every precision.
+Actual ground decay and approximation bounds are derived, with no exponential approximation premise. The prefactor remains existential and no algorithm finds or evaluates the original state. This cutoff is not asserted smooth, a finite dictionary or computable representation; no coefficient bitcost, solver or full rung follows.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
 
 ## Completed full verification of original physical continuation head
 
 The original S8-020--032 proof head `50d5ac0bcd783d5559dc7a970b5c3c4c64030952`, tree `e31b178f24e49f0a1eabbcc1c8994b29c9174e9d`, passed the full verifier: 817 Foundation hashes, both recovery manifests, 28 tool tests, Lake 5405 jobs, 260 registered axiom audits and all configured certificates. Receipt SHA256 `61370419e9572e872586f20d5a21124382d441be9eb71e4b01a19b274f3a08d7`; all ten actual log hashes were independently rechecked. Each card records the exact receipt and unchanged source applicability. This supersedes earlier full-pending wording only for that original proof run. Corrected/integrated exact heads, recovery/DCO acceptance and human statement review remain pending. Focused/cache limitations, proposed tiers, compact H2-only scope and open global approximation/rung obligations are retained.
+
+## Submitted continuation: round genuine distance taylor coefficients with explicit dyadic c2 error rates
+
+[S8-047](../../claims/cards/S8-047.md) Literal rational floor rounding at denominator two to the powerb approximates the same actual finite polynomial in real value, gradient and Hessian operatornorms with an explicit support and radius budget. The true canonical real Taylor dictionary supplies degree belowN and cardinality at mostN cubed, deriving the bound16 N cubed G to the powerN times onehalf to the powerb. On the actual radius two box, b=p+4+7N gives rounding error at most onehalf to the powerp.
+The denominator exponent is not total coefficient encoding size; integer numerators depend on the original real coefficients. No algorithm evaluates arbitrary original coefficients or their floors, no analytic truncation order or total original profile error is supplied here, and no solver, physical H2 approximation or full rung is claimed.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: approximate actual original collision profiles with dyadic rational c2 dictionaries
+
+[S8-050](../../claims/cards/S8-050.md) The same complete original ground-state witness has literal dyadic rational dictionaries for its original A, B and H distance profiles. At every precision p, one canonical Taylor support of order N=2p+m+4 has cardinality at most N cubed, total degree below N and each coordinate exponent below N. Literal floor rounding on the common denominator grid with exponent b=15p+7m+33 gives total original real value, gradient and Hessian operator errors at most onehalf to the power p throughout the closed inner eighth chart.
+The three rounded profiles are independent. The common chart offset and coefficients are not asserted computably selectable, the denominator exponent is not a numerator encoding bound, and physical Cartesian H2 approximation, global atlas coverage, solver termination and full Rung2 or TheoremT remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: derive actual compact physical h2 taylor approximation across isolated collisions
+
+[S8-041](../../claims/cards/S8-041.md) The same complete physical ground witness admits one literal canonical finite Taylor polynomial for each compact collision chart with arbitrarily small genuine43-component physical H2 error across its isolated collision. The cutoff budget is selected before tolerance and polynomial order; actual regularized derivatives, common compact inverse-distance L2 domination and weakH2 closure derive all first and ordered second weak classes of the literal cutoff times original wavefunction minus that polynomial at actual raw distances. Every component, sum and square-root H2 norm has the stated quantitative profile-error budget, and genuine nonzero smooth chart cutoffs are derived at every inner physical point.
+This physical conclusion is local to nuclear index zero and the electronpair chart; both-index earlier analytic facts remain preserved. Taylor coefficients are actual complex derivatives, not rational or effective data. Global atlas gluing, exterior and triplecollision coverage, global dictionary rate, numerical solver and full Rung2 or TheoremT remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: bound literal dyadic taylor integer numerators for the actual original collision profiles
+
+[S8-051](../../claims/cards/S8-051.md) The genuine translated Taylor expansion, factorial-normalized derivative bounds and true3 to the power n coordinate-word count give a coefficient budget for the literal canonical real dictionary. The same entire original physical ground witness supplies common natural offsets before all Taylor orders N and denominator exponents b, bounding the actual integer floor numerator by two to the power b+(k+1)N+k0+1. At the already-proved total C2 precision schedule, the exact numerator exponent is (2k+17)p+(k+8)m+4k+k0+38.
+Offsets depend on the original state, chart and scale and are existential. The bound concerns the actual raw grid numerator, not a substituted reduced rational representation. No algorithm accesses arbitrary real Taylor coefficients or selects offsets, and no global dictionary, solver termination, effective bit-operation theorem or full Rung2 or TheoremT is claimed.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: approximate actual physical isolated-collision charts in h2 with finite dyadic rational dictionaries
+
+[S8-052](../../claims/cards/S8-052.md) The same complete original physical ground witness admits genuine43-component physical H2 approximation by one literal dyadic rational distance polynomial in each nuclear-index-zero or electronpair chart. One cutoff constant and chart offset precede every precision p. The actual canonical support has order N=2p+m+4 and at most N cubed monomials; literal floor coefficients use denominator exponent15p+7m+33. Genuine real-to-complex derivative transport and regularized weakH2 closure derive actual first and ordered second weak classes of the literal cutoff error, with each component and combined H2 norm bounded by its explicit compact-budget constant times onehalf to the power p.
+The result is local to the specified isolated charts and real compact cutoffs. Constants and offsets are existential and no original coefficient oracle is proved. Global atlas gluing, bulk and triplecollision coverage, full global approximation rates, solver termination, bit-operation cost and full Rung2 or TheoremT remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: derive actual coulomb graph-error rates for the same local dyadic distance dictionaries
+
+[S8-054](../../claims/cards/S8-054.md) The same literal rational dyadic dictionary and genuine43 weakH2 error classes admit a derived actual scalar Coulomb graph output. At every precision p the true H2 error is at most T=7CB times onehalf to the powerp, its graph-output norm is at most [3+2(2absoluteZ+1)]T and its error shifted by the original ground energy has norm at most [3+2(2absoluteZ+1)+absoluteE]T. The same canonical support, order, floor coefficients and complete physical ground facts are retained, and one actual dictionary error simultaneously has arbitrarily small H2, graph-output and energy-shifted norm.
+These are operator-domain errors of the literal localized approximation difference; no polynomial eigenfunction or zero residual of the original cutoff state is asserted. Constants and offsets are existential, and global atlas, bulk or triplecollision coverage, computable coefficient selection, exact finite overlaps, solver termination, effective bit cost and full Rung2 or TheoremT remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Submitted continuation: derive genuine dyadic physical h2 approximation at the second nuclear collision
+
+[S8-053](../../claims/cards/S8-053.md) Actual inverse-coordinate permutation transports the genuine first and all ordered second weak families of the literal indexzero dyadic dictionary error to the second nuclear chart. Measure-preserving L2 isometry and finite reindexing derive exact43-component norm preservation. For the same original ground state, one cutoff constant and chart offset precede every precision p, with each true component and combined physicalH2 error bounded by C times onehalf to the powerp. The literal polynomial, cubic support, degree and common dyadic grid are retained in the actual selected radius meanings, and nonzero smooth plateau cutoffs are derived at every strict inner chart point.
+The indexzero canonical polynomial is reused after actual selected-distance exchange; no identity with independently chosen indexone canonical coefficients is asserted. Constants and offsets are existential. Global partition or bulk/triplecollision coverage, coefficient evaluation, effective solver, bit-operation analysis and full Rung2 or TheoremT remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
+
+## Completed original approximation-stack full verification
+
+The original S8-033--038 stack at `213d408700ff3ccf9300c72d9e071512ce2cc2c7`, tree `025e3c2cf0eb6b267c3e7187590442ade980a6f4`, passed full verification:817 Foundation hashes,both recovery manifests,28tests,Lake5418jobs,327 standard-only registered declaration audits and all certificates. Receipt SHA256 `324abb6d0bc25ecc8b5a07735965957abba18d9cb10286c84f435f65cafeb4a0`; all ten actual log hashes and unchanged proof applicability were independently rechecked. The six cards preserve this exact original-head evidence separately from later repairs, further proofs and accepted-main integration, whose resulting exact-head checks, recovery/DCO acceptance and human statement review remain pending. All scientific scopes and open Rung2/TheoremT obligations are retained.
+
+## Submitted continuation: derive genuine dyadic graph errors at both nuclear and original pair collision charts
+
+[S8-057](../../claims/cards/S8-057.md) The same entire physical ground witness supplies actual local dyadic rational dictionary errors with genuine43 weakH2 families and derived scalar Coulomb graph outputs at all three isolated collision chart kinds. The second nuclear chart retains one common cutoff constant and offset before every precision and the same literal polynomial with cubic support, exact degree and denominator data. Its H2 and actual graph-output norms decay as C times onehalf to the powerp, with the true Coulomb coefficient and original ground energy shift. One actual error simultaneously has arbitrarily small H2, graph and energy-shifted norm; nuclear-index-zero and original pair graph data are added for the same state by the proved general conversion.
+The selected-index-one chart reuses the indexzero canonical polynomial in literal exchanged radius meanings. Constants and offsets are existential. Only explicitly supported isolated local charts are covered; global gluing, bulk and triplecollision coverage, original global dictionary rate, exact finite overlaps, effective solver and bit-operation complexity, full Rung2 and TheoremT remain open.
+Independent AI source/card/artifact review passed; human statement review and exact committed full verification remain pending.
