@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 55 |
+| **L** | Lean-verified | 56 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -128,6 +128,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-049](claims/cards/S8-049.md) | Choose linear physical cutoff radii for dyadic normalized Coulomb approximation errors (submitted; pending review) | **L** | Real charge at least2 and the actual original normalized symmetric scalar Coulomb ground graph with genuine weak first and ordered second derivatives; Positive actual decay rate whose square is below Z squared over112; one original nonnegative prefactor before every precision |
 | [S8-047](claims/cards/S8-047.md) | Round genuine distance Taylor coefficients with explicit dyadic C2 error rates (submitted; pending review) | **L** | Every actual finite real distance polynomial and literal canonical real Taylor dictionary; its exact support and coefficients precede every denominator exponent; Actual evaluation norm lies in the advertised finite radius; the explicit p plus4 plus7N denominator schedule applies on norm at most2 |
 | [S8-050](claims/cards/S8-050.md) | Approximate actual original collision profiles with dyadic rational C2 dictionaries (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground representative for every real charge Z at least2; every positive admissible original scale and both nuclear indices or the pair chart; Each fixed actual chart has one natural offset selected before every precision p; the closed inner eighth original distance box uses its true positive retained radius |
+| [S8-041](claims/cards/S8-041.md) | Derive actual compact physical H2 Taylor approximation across isolated collisions (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground representative for every real charge Z at least2 and each admissible original positive scale; Any actual smooth compact cutoff whose full topological support maps into the closed inner eighth original distance chart, for nuclear index zero or the physical coefficientone electronpair chart |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

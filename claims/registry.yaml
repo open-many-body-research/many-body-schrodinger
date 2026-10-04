@@ -1976,3 +1976,57 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The three rounded profiles are independent. The common chart offset and coefficients are not asserted computably selectable, the denominator exponent is not a numerator encoding bound, and physical Cartesian H2 approximation, global atlas coverage, solver termination and full Rung2 or TheoremT remain open.
+
+- id: S8-041
+  sector: S8
+  title: Derive actual compact physical H2 Taylor approximation across isolated collisions (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-018, S8-023, S8-032, S8-037]
+  statement: >
+    The same complete physical ground witness admits one literal canonical finite Taylor polynomial for each compact collision chart with arbitrarily small genuine43-component physical H2 error across its isolated collision. The cutoff budget is selected before tolerance and polynomial order; actual regularized derivatives, common compact inverse-distance L2 domination and weakH2 closure derive all first and ordered second weak classes of the literal cutoff times original wavefunction minus that polynomial at actual raw distances. Every component, sum and square-root H2 norm has the stated quantitative profile-error budget, and genuine nonzero smooth chart cutoffs are derived at every inner physical point.
+  conditional_on:
+    - The same actual normalized two-electron scalar Coulomb ground representative for every real charge Z at least2 and each admissible original positive scale.
+    - Any actual smooth compact cutoff whose full topological support maps into the closed inner eighth original distance chart, for nuclear index zero or the physical coefficientone electronpair chart.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionGeometry, decl: ManyBody.S8.physical_distance_triple_hasFDerivAt}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionGeometry, decl: ManyBody.S8.physical_distance_hessian_norm_le}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionGeometry, decl: ManyBody.S8.physical_inverse_distance_budget_memLp_on_compact}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionGeometry, decl: ManyBody.S8.physical_distance_triple_mixed_fderiv}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionLimits, decl: ManyBody.S8.regularized_physical_distance_mixed_fderiv}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionLimits, decl: ManyBody.S8.regularized_physical_distance_hessian_norm_le}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionLimits, decl: ManyBody.S8.regularized_physical_distance_hessian_tendsto}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionClassical, decl: ManyBody.S8.physical_distance_composition_second}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionClassical, decl: ManyBody.S8.physical_distance_composition_second_norm_le}
+    - {module: ManyBody.S8.Internal.PhysicalCutoffDistanceJets, decl: ManyBody.S8.regularized_cutoff_distance_second_tendsto}
+    - {module: ManyBody.S8.Internal.PhysicalCutoffDistanceJets, decl: ManyBody.S8.physical_cutoff_distance_second}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceJetDomination, decl: ManyBody.S8.regularized_cutoff_distance_indicator_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceJetDomination, decl: ManyBody.S8.regularized_cutoff_distance_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceJetDomination, decl: ManyBody.S8.actual_compact_cutoff_jet_bound}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceWeakH2, decl: ManyBody.S8.actual_physical_distance_cutoff_weakH2}
+    - {module: ManyBody.S8.Internal.LocalPhysicalDistanceWeakH2, decl: ManyBody.S8.actual_local_physical_distance_cutoff_weakH2}
+    - {module: ManyBody.S8.Internal.PhysicalCompactL2Domination, decl: ManyBody.S8.physical_compact_dominated_L2_limit}
+    - {module: ManyBody.S8.Internal.PhysicalCompactL2Domination, decl: ManyBody.S8.physical_compact_inverse_distance_domination_memLp}
+    - {module: ManyBody.S8.Internal.RealDistanceProfileExtension, decl: ManyBody.S8.real_distance_profile_smooth_compact_extension}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceProfileCompactBounds, decl: ManyBody.S8.physical_distance_images_compact_ball}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceProfileCompactBounds, decl: ManyBody.S8.physical_distance_profile_compact_bounds}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceH2ErrorBudget, decl: ManyBody.S8.physical_compact_distance_L2_norm_le}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceH2ErrorBudget, decl: ManyBody.S8.physical_distance_43_component_error_budget}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionErrors, decl: ManyBody.S8.actual_local_physical_distance_cutoff_H2_error}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceCompositionErrors, decl: ManyBody.S8.physical_cutoff_distance_indicator_bounds}
+    - {module: ManyBody.S8.Internal.RealAmbientCoupledTaylorError, decl: ManyBody.S8.ambientComplexTaylorError_contDiffOn}
+    - {module: ManyBody.S8.Internal.RealAmbientCoupledTaylorError, decl: ManyBody.S8.ambientComplexTaylorError_C2_bound}
+    - {module: ManyBody.S8.Internal.RealAmbientCoupledTaylorError, decl: ManyBody.S8.ambientComplexTaylorError_C2_arbitrarily_small}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceChartReconstruction, decl: ManyBody.S8.actual_nuclear_inner_distance_reconstruction}
+    - {module: ManyBody.S8.Internal.PhysicalDistanceChartReconstruction, decl: ManyBody.S8.actual_pair_inner_distance_reconstruction}
+    - {module: ManyBody.S8.PhysicalDistanceTaylorH2Approximation, decl: ManyBody.S8.physical_distance_taylor_actual_H2_error_small}
+    - {module: ManyBody.S8.PhysicalDistanceTaylorH2Approximation, decl: ManyBody.S8.actual_distance_chart_cutoff_exists}
+    - {module: ManyBody.S8.PhysicalDistanceTaylorH2Approximation, decl: ManyBody.S8.actual_nuclear_distance_taylor_H2_approximation}
+    - {module: ManyBody.S8.PhysicalDistanceTaylorH2Approximation, decl: ManyBody.S8.actual_pair_distance_taylor_H2_approximation}
+    - {module: ManyBody.S8.PhysicalDistanceTaylorH2Approximation, decl: ManyBody.S8.twoElectron_scalar_ground_physical_distance_taylor_H2_approximation}
+  card: claims/cards/S8-041.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalDistanceCompositionGeometry.lean, lean/ManyBody/S8/Internal/PhysicalDistanceCompositionLimits.lean, lean/ManyBody/S8/Internal/PhysicalDistanceCompositionClassical.lean, lean/ManyBody/S8/Internal/PhysicalCutoffDistanceJets.lean, lean/ManyBody/S8/Internal/PhysicalDistanceJetDomination.lean, lean/ManyBody/S8/Internal/PhysicalDistanceWeakH2.lean, lean/ManyBody/S8/Internal/LocalPhysicalDistanceWeakH2.lean, lean/ManyBody/S8/Internal/PhysicalCompactL2Domination.lean, lean/ManyBody/S8/Internal/RealDistanceProfileExtension.lean, lean/ManyBody/S8/Internal/PhysicalDistanceProfileCompactBounds.lean, lean/ManyBody/S8/Internal/PhysicalDistanceH2ErrorBudget.lean, lean/ManyBody/S8/Internal/PhysicalDistanceCompositionErrors.lean, lean/ManyBody/S8/Internal/RealAmbientCoupledTaylorError.lean, lean/ManyBody/S8/Internal/PhysicalDistanceChartReconstruction.lean, lean/ManyBody/S8/PhysicalDistanceTaylorH2Approximation.lean, claims/cards/S8-041.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    This physical conclusion is local to nuclear index zero and the electronpair chart; both-index earlier analytic facts remain preserved. Taylor coefficients are actual complex derivatives, not rational or effective data. Global atlas gluing, exterior and triplecollision coverage, global dictionary rate, numerical solver and full Rung2 or TheoremT remain open.
