@@ -1951,3 +1951,28 @@ claims:
   caveats: >
     Proposed evidence pending human statement review and sealed recovery acceptance.
     The denominator exponent is not total coefficient encoding size; integer numerators depend on the original real coefficients. No algorithm evaluates arbitrary original coefficients or their floors, no analytic truncation order or total original profile error is supplied here, and no solver, physical H2 approximation or full rung is claimed.
+
+- id: S8-050
+  sector: S8
+  title: Approximate actual original collision profiles with dyadic rational C2 dictionaries (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-047, S8-048]
+  statement: >
+    The same complete original ground-state witness has literal dyadic rational dictionaries for its original A, B and H distance profiles. At every precision p, one canonical Taylor support of order N=2p+m+4 has cardinality at most N cubed, total degree below N and each coordinate exponent below N. Literal floor rounding on the common denominator grid with exponent b=15p+7m+33 gives total original real value, gradient and Hessian operator errors at most onehalf to the power p throughout the closed inner eighth chart.
+  conditional_on:
+    - The same actual normalized two-electron scalar Coulomb ground representative for every real charge Z at least2; every positive admissible original scale and both nuclear indices or the pair chart.
+    - Each fixed actual chart has one natural offset selected before every precision p; the closed inner eighth original distance box uses its true positive retained radius.
+  lean:
+    - {module: ManyBody.S8.AmbientDyadicRationalDistanceDictionary, decl: ManyBody.S8.dyadic_rational_distance_coefficient_grid}
+    - {module: ManyBody.S8.AmbientDyadicRationalDistanceDictionary, decl: ManyBody.S8.dyadic_rational_dictionary_bits_linear}
+    - {module: ManyBody.S8.AmbientDyadicRationalDistanceDictionary, decl: ManyBody.S8.real_three_profiles_dyadic_rational_dictionary}
+    - {module: ManyBody.S8.AmbientDyadicRationalDistanceDictionary, decl: ManyBody.S8.nuclear_dyadic_rational_distance_dictionary}
+    - {module: ManyBody.S8.AmbientDyadicRationalDistanceDictionary, decl: ManyBody.S8.pair_dyadic_rational_distance_dictionary}
+    - {module: ManyBody.S8.AmbientDyadicRationalDistanceDictionary, decl: ManyBody.S8.twoElectron_scalar_ground_dyadic_rational_distance_dictionary}
+  card: claims/cards/S8-050.md
+  evidence: [lean/ManyBody/S8/AmbientDyadicRationalDistanceDictionary.lean, claims/cards/S8-050.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The three rounded profiles are independent. The common chart offset and coefficients are not asserted computably selectable, the denominator exponent is not a numerator encoding bound, and physical Cartesian H2 approximation, global atlas coverage, solver termination and full Rung2 or TheoremT remain open.
