@@ -210,3 +210,16 @@ are derived. The new functions reconstruct the actual normalized origin
 difference at every admissible scale; original unscaled coefficients are a
 separate extension. Both nuclear collisions and the triple origin are
 excluded. Human statement review and full committed verification are pending.
+
+
+## Submitted continuation: original annular mixed derivative budgets
+
+[S8-020](../../claims/cards/S8-020.md) gives genuine Euclidean physical
+coordinate mixed derivative budgets for the literal original A/B functions
+on every selected finite nuclear/pair annular neighborhood. A positive
+quarter-polydisc shrink and finite centers precede the state. The exact
+positive scale gives epsilon^(1-n) for positive-order A and epsilon^(-n)
+for B, with A's original Moser value at order zero. The common amplitudes
+are proportional to the original full-spin norm. Collision-free bulk,
+triple origin and all-direction operator norm bounds remain separate.
+Human review and full committed verification are pending.

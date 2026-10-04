@@ -1026,3 +1026,49 @@ claims:
     identity is a principal input. Original L,R and u0 source budgets remain.
     Separate ambient coefficient germ compatibility, triple collision,
     exterior atlas, global approximation and the full rung remain open.
+
+- id: S8-020
+  sector: S8
+  title: Original physical annular mixed derivative budgets (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-012, S8-013, S8-017]
+  statement: >
+    The actual two-electron spin eigenfunction graph supplies one representative,
+    common constants and a positive quarter-polydisc width with finite centers
+    before every state. Every selected nuclear and original coefficient-1 pair
+    annular neighborhood has true analytic reconstruction of the same original
+    function and actual real Euclidean coordinate mixed derivative bounds
+    proportional to the original spin-state norm. Exact positive-scale
+    transport gives epsilon times epsilon^(-n) for A at positive order,
+    the original Moser constant at order zero, and epsilon^(-n) for B.
+    Nuclear epsilon=rho and original pair epsilon=rho/sqrt2 are proved.
+  conditional_on:
+    - The original two-electron full-spin Coulomb eigenfunction graph.
+    - Positive physical radii at most1/4 and the explicit selected annular neighborhoods.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_iteratedFDeriv_complex_restriction}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_iteratedFDeriv_norm_le_complex}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_centered_iteratedFDeriv_complex_restriction}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_centered_iteratedFDeriv_norm_le_complex}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physicalCoordinateDirection_norm}
+    - {module: ManyBody.S8.Internal.PhysicalComplexDerivativeTransport, decl: ManyBody.S8.physical_centered_iteratedFDeriv_coordinate_word}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_iteratedFDeriv_inverse_scale}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_inverse_scale}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_rescaled_collision_B}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_rescaled_collision_A}
+    - {module: ManyBody.S8.Internal.PhysicalCollisionDerivativeScaling, decl: ManyBody.S8.physical_multiindex_centered_complex_restriction}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.physical_original_collision_derivative_at_budget}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.exists_annular_derivative_width}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.nuclear_annular_original_derivative_data}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalCollisionDerivativeBudget, decl: ManyBody.S8.pair_annular_original_derivative_data}
+    - {module: ManyBody.S8.CoulombSpinAnnularAnalyticDerivativeBudgets, decl: ManyBody.S8.coulomb_spin_annular_original_mixed_derivative_budgets}
+  card: claims/cards/S8-020.md
+  evidence: [lean/ManyBody/S8/CoulombSpinAnnularAnalyticDerivativeBudgets.lean, lean/ManyBody/S8/Internal/PhysicalComplexDerivativeTransport.lean, lean/ManyBody/S8/Internal/PhysicalCollisionDerivativeScaling.lean, lean/ManyBody/S8/Internal/PhysicalOriginalCollisionDerivativeBudget.lean, claims/cards/S8-020.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    These are genuine coordinate multiindex derivatives, not an all-direction
+    Frechet operator norm. Constants are existential and non-effective.
+    Collision-free bulk estimates, triple origin, exterior analytic atlas,
+    global dictionary approximation and the full rung remain open.
