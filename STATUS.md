@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 56 |
+| **L** | Lean-verified | 57 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -129,6 +129,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-047](claims/cards/S8-047.md) | Round genuine distance Taylor coefficients with explicit dyadic C2 error rates (submitted; pending review) | **L** | Every actual finite real distance polynomial and literal canonical real Taylor dictionary; its exact support and coefficients precede every denominator exponent; Actual evaluation norm lies in the advertised finite radius; the explicit p plus4 plus7N denominator schedule applies on norm at most2 |
 | [S8-050](claims/cards/S8-050.md) | Approximate actual original collision profiles with dyadic rational C2 dictionaries (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground representative for every real charge Z at least2; every positive admissible original scale and both nuclear indices or the pair chart; Each fixed actual chart has one natural offset selected before every precision p; the closed inner eighth original distance box uses its true positive retained radius |
 | [S8-041](claims/cards/S8-041.md) | Derive actual compact physical H2 Taylor approximation across isolated collisions (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground representative for every real charge Z at least2 and each admissible original positive scale; Any actual smooth compact cutoff whose full topological support maps into the closed inner eighth original distance chart, for nuclear index zero or the physical coefficientone electronpair chart |
+| [S8-051](claims/cards/S8-051.md) | Bound literal dyadic Taylor integer numerators for the actual original collision profiles (submitted; pending review) | **L** | The same actual normalized two-electron scalar Coulomb ground witness for every charge Z at least2 and each fixed admissible original nuclear or pair distance chart; Common natural chart offsets k,k0 precede every Taylor order, denominator exponent, profile choice and monomial index; the integer is the literal unreduced dyadic floor numerator |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 
