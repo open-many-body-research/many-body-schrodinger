@@ -6,7 +6,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 
 | Tier | Meaning | Count |
 |---|---|---|
-| **L** | Lean-verified | 26 |
+| **L** | Lean-verified | 27 |
 | **C** | Certified computation | 2 |
 | **P2** | Reviewed paper proof | 0 |
 | **P1** | Unreviewed paper proof | 12 |
@@ -99,6 +99,7 @@ Every result in this repository and its evidence tier. The tiers are defined in 
 | [S8-018](claims/cards/S8-018.md) | Actual scalar ground ambient nuclear distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; Positive scales bounded by the selected original representative's min1(R/4); The explicit isolated nuclear distance polydisc, with other singularities excluded |
 | [S8-019](claims/cards/S8-019.md) | Actual scalar ground ambient pair distance reconstruction (submitted; pending review) | **L** | Real charge at least2, the discharged recovered scalar ground symmetry and axis-data range; Positive scales bounded by the selected original representative's min1(R/4); The explicit isolated pair distance polydisc, with both nuclear collisions excluded |
 | [S8-020](claims/cards/S8-020.md) | Original physical annular mixed derivative budgets (submitted; pending review) | **L** | The original two-electron full-spin Coulomb eigenfunction graph; Positive physical radii at most1/4 and the explicit selected annular neighborhoods |
+| [S8-022](claims/cards/S8-022.md) | Genuine global polynomial moments of physical H2 components (submitted; pending review) | **L** | Real charge at least2, the discharged recovered physical decay range; Each explicitly quantified positive exponential rate with a^2<Z^2/112 |
 
 ## S9: [Lattice and model Hamiltonians](sectors/S9-lattice-models/README.md)
 

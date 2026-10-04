@@ -1072,3 +1072,41 @@ claims:
     Frechet operator norm. Constants are existential and non-effective.
     Collision-free bulk estimates, triple origin, exterior analytic atlas,
     global dictionary approximation and the full rung remain open.
+
+- id: S8-022
+  sector: S8
+  title: Genuine global polynomial moments of physical H2 components (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: []
+  statement: >
+    For every real charge at least2, the actual normalized scalar two-electron
+    Coulomb ground graph has original ordered first and second weak derivative
+    witnesses whose polynomial configuration-radius moments of every order
+    are genuine L2 functions. At each positive exponent with a^2<Z^2/112,
+    one finite prefactor precedes every moment order k and bounds the combined
+    weighted component norm by C*k!/a^k. Original normalization, actual H2
+    graph, realness, exchange and orthogonal rotation invariance are retained.
+    A graph consumer applies this result to any actual selected ground state.
+  conditional_on:
+    - Real charge at least2, the discharged recovered physical decay range.
+    - Each explicitly quantified positive exponential rate with a^2<Z^2/112.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physical_polynomial_weight_le_exponential}
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physical_polynomial_moment_memLp}
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physicalPolynomialMomentL2_ae}
+    - {module: ManyBody.S8.Internal.PhysicalPolynomialMomentBounds, decl: ManyBody.S8.physicalPolynomialMomentL2_norm_bound}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.physical_H2_polynomial_moments_of_exponential_components}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.scalar_eigen_H2_polynomial_moments}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.twoElectron_ground_H2_polynomial_moments_of_graph}
+    - {module: ManyBody.S8.CoulombH2PolynomialMoments, decl: ManyBody.S8.twoElectron_physical_ground_with_H2_polynomial_moments}
+  card: claims/cards/S8-022.md
+  evidence: [lean/ManyBody/S8/CoulombH2PolynomialMoments.lean, lean/ManyBody/S8/Internal/PhysicalPolynomialMomentBounds.lean, claims/cards/S8-022.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    These are polynomial moments of the original derivative components;
+    their outputs are not asserted to be derivatives of the weighted state.
+    The prefactor depends on the state, original derivative family and rate
+    and is not computably extracted. Exact rational basis overlaps, dictionary
+    matrices, global approximation, solver termination and the full rung remain open.

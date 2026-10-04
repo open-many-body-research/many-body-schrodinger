@@ -223,3 +223,15 @@ for B, with A's original Moser value at order zero. The common amplitudes
 are proportional to the original full-spin norm. Collision-free bulk,
 triple origin and all-direction operator norm bounds remain separate.
 Human review and full committed verification are pending.
+
+
+## Submitted continuation: genuine global H2 component moments
+
+[S8-022](../../claims/cards/S8-022.md) constructs genuine polynomial
+configuration-radius L2 moments of the actual normalized scalar ground state
+and every ordered first/second weak derivative at Z>=2. For each positive
+a with a^2<Z^2/112, one actual exponentially weighted component norm
+precedes all orders k and bounds the combined moments by C*k!/a^k.
+These outputs weight the original derivative components; weak derivatives
+of the weighted state and exact rational dictionary overlaps are separate.
+Human review and full committed verification remain pending.
