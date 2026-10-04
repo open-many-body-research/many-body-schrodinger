@@ -1251,3 +1251,41 @@ claims:
     selected state original L,R and amplitude; no all-state norm-uniform upgrade
     is claimed. Nuclear distances, collision transitions, triple origin, global
     dictionary approximation, effective solver and the full rung remain open.
+
+- id: S8-027
+  sector: S8
+  title: Full actual physical annular Frechet operator norm budgets (submitted; pending review)
+  tier: L
+  status: proposed
+  provenance: continuation-2026-10-04
+  depends_on: [S8-012, S8-020]
+  statement: >
+    The actual full-spin two-electron Coulomb eigenfunction graph supplies one
+    original representative with genuine all-order real Frechet operator norms
+    for literal original A,B collision profiles at each selected quarter-width
+    annular neighborhood. Common constants, width and finite centers precede
+    every state. Actual Taylor support and coefficient data derive the bounds;
+    nuclear/pair balance is discharged from literal lifts. A keeps the Moser
+    value only at order zero and scales as epsilon times epsilon^(-n); B scales
+    as epsilon^(-n), with amplitude linear in the original spin-state norm.
+    Coordinate mixed derivative budgets and actual reconstruction are retained.
+  conditional_on:
+    - The actual full-spin Coulomb eigenfunction graph at real charge and energy.
+    - Positive physical radii at most1/4 and selected annular collision neighborhoods.
+  lean:
+    - {module: ManyBody.S8.Internal.PhysicalDescentOperatorNormBounds, decl: ManyBody.S8.homogeneous_spectator_sum_operator_norm_bound}
+    - {module: ManyBody.S8.Internal.PhysicalDescentOperatorNormBounds, decl: ManyBody.S8.physicalKSDescentOperatorBudget_original_norm}
+    - {module: ManyBody.S8.Internal.PhysicalDescentOperatorNormBounds, decl: ManyBody.S8.physical_descent_operator_norm_of_balanced}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalOperatorNormBudget, decl: ManyBody.S8.physical_iteratedFDeriv_rescaled_collision_A}
+    - {module: ManyBody.S8.Internal.PhysicalOriginalOperatorNormBudget, decl: ManyBody.S8.physical_original_collision_operator_at_budget}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularOperatorNormBudget, decl: ManyBody.S8.nuclear_annular_original_operator_data}
+    - {module: ManyBody.S8.Internal.PhysicalAnnularOperatorNormBudget, decl: ManyBody.S8.pair_annular_original_operator_data}
+    - {module: ManyBody.S8.CoulombSpinAnnularOperatorNormBudgets, decl: ManyBody.S8.coulomb_spin_annular_original_operator_norm_budgets}
+  card: claims/cards/S8-027.md
+  evidence: [lean/ManyBody/S8/Internal/PhysicalDescentOperatorNormBounds.lean, lean/ManyBody/S8/Internal/PhysicalOriginalOperatorNormBudget.lean, lean/ManyBody/S8/Internal/PhysicalAnnularOperatorNormBudget.lean, lean/ManyBody/S8/CoulombSpinAnnularOperatorNormBudgets.lean, lean/ManyBody/S8/Internal/AnisotropicCoordinateScaling.lean, lean/ManyBody/S8/Internal/AnisotropicPhysicalDerivativeBounds.lean, lean/ManyBody/S8/Internal/BinomialSeriesMixedBounds.lean, lean/ManyBody/S8/Internal/CoordinateWordFactorials.lean, lean/ManyBody/S8/Internal/HomogeneousSpectatorMixedBounds.lean, claims\cards\S8-027.md]
+  caveats: >
+    Proposed evidence pending human statement review and sealed recovery acceptance.
+    The domain is the actual product of Euclidean Position spaces with its
+    product norm; an independent Euclidean6 norm identification is not assumed.
+    Constants are existential. Collision-free bulk, triple origin, global atlas,
+    dictionary approximation, effective solver and the full rung remain open.

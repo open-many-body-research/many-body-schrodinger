@@ -272,3 +272,14 @@ holomorphic pair A/B/H profiles at Z>=2. The half-polydisc radius and exact
 original epsilon powers are explicit; only order zero retains u0. The
 complex Fin3 Pi norm and selected-state L,R budgets are retained. Human
 statement review and full committed verification remain pending.
+
+
+## Submitted continuation: true physical annular operator norms
+
+[S8-027](../../claims/cards/S8-027.md) strengthens the actual full-spin
+coordinate estimates to genuine real Frechet operator norms on the literal
+Position-times-Position product norm. Taylor support and coefficients derive
+the directional estimates, and physical lifts derive balance. Constants and
+finite quarter-width centers precede the state. Original epsilon factors,
+norm-linear amplitudes and actual reconstruction are retained. Human
+statement review and full committed verification remain pending.
