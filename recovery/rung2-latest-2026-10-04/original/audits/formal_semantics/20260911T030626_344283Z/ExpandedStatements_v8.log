@@ -1,0 +1,87 @@
+@TheoremT.Continuum.realMultiindexDeriv.{u_1} : {ι : Type u_1} →
+  [Fintype.{u_1} ι] → [DecidableEq.{u_1 + 1} ι] → (f : (ι → Real) → Complex) → (α : ι → Nat) → (z : ι → Real) → Complex
+@TheoremT.Continuum.realMultiindexDeriv_restriction.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] (f : (ι → Complex) → Complex) (α : ι → Nat) (z : ι → Real)
+  (hf :
+    @ContDiffAt.{0, u_1, 0} Complex _ (ι → Complex) _ _ Complex _ _
+      (@Nat.cast.{0} (WithTop.{0} ENat) _ (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)) f
+      fun (i : ι) => Complex.ofReal (z i)),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.realMultiindexDeriv.{u_1} ι _ _ (fun (x : ι → Real) => f fun (i : ι) => Complex.ofReal (x i)) α
+      z)
+    (@TheoremT.Continuum.complexMultiindexDeriv.{u_1} ι _ _ f α fun (i : ι) => Complex.ofReal (z i))
+@TheoremT.Continuum.finite_real_complexification_norm.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] (x : ι → Real),
+  @Eq.{1} Real (@Norm.norm.{u_1} ((i : ι) → Complex) _ fun (i : ι) => Complex.ofReal (x i))
+    (@Norm.norm.{u_1} (ι → Real) _ x)
+@TheoremT.Continuum.homogeneous_spectator_real_mixed_multiindex_factorial_bound : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Real)
+  (hX :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+        (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Real) _
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (hs :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@Norm.norm.{0} ((i : Fin d) → Real) _ fun (i : Fin d) =>
+          z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (β : Fin d → Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@TheoremT.Continuum.realMultiindexDeriv.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) _ _
+        (fun (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Real) =>
+          @TheoremT.Continuum.homogeneousSpectatorSum d A
+            fun (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex.ofReal (x i))
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Nat α β) z))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) d)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                  (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                    (@Nat.cast.{0} Real _ d)))
+                D)
+              (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+                (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => α i)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@Nat.cast.{0} Real _ d)))
+              S)
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => β i)))
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Real _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @Nat.cast.{0} Real _ (Nat.factorial (α i))))
+      (@Finset.prod.{0, 0} (Fin d) Real _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+        @Nat.cast.{0} Real _ (Nat.factorial (β i))))
+'TheoremT.Continuum.realMultiindexDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.realMultiindexDeriv_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finite_real_complexification_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_real_mixed_multiindex_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

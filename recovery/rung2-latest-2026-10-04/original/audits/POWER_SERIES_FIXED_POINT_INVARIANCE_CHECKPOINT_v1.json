@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-09-11T02:15:09.081399+00:00",
+  "status": "PASS_GENERIC_FIXED_POINT_POWER_SERIES_DIAGONAL_INVARIANCE",
+  "evidence_category": "Lean kernel-compiled generic theorem with author statement check and independent root review",
+  "exact_result": "At any fixed point x of an actual continuous real linear map L, an actual convergent series for f at x and actual local invariance f composed with L equals f near x imply invariance of every diagonal coefficient p_n(Ly,...,Ly)=p_n(y,...,y). The expansion center and coefficient increment are distinct and correctly handled.",
+  "module_records": [
+    {
+      "module": "PowerSeriesFixedPointInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesFixedPointInvariance_v1.lean",
+      "source_sha256": "380fd4ddf56ce7a327792f28d60c327e9b7e60068c2c9895a3a04c6f135ba4dc",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PowerSeriesFixedPointInvariance_v1.olean",
+      "object_sha256": "20fa153e88c0a4f8acf997d08703ddbf65c22634e8449f0fcd5865cb7a64c71e",
+      "declarations": [
+        "powerSeries_diagonal_invariant_at_fixed_point"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compiler_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PowerSeriesFixedPointInvariance_v1-20260911T021250_289974Z.json",
+    "sha256": "3a7273418d612d6bfc549209d5a71f813095e1942d3678144cb924c8bb541c3f"
+  },
+  "strict_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021306_138192Z/receipt.json",
+    "sha256": "b9659fde3be59da3455acd77c0de8de85943bfe0ec84322ce2f956829d2db215"
+  },
+  "expanded_statement_and_axioms": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021306_138192Z/ExpandedStatements_v8.log",
+    "sha256": "c6de834e91eae925f0dbf52d5e674f9c09e74e38d6a54d9b89c5dc4905a07450"
+  },
+  "author_check": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/POWER_SERIES_FIXED_POINT_INVARIANCE_AUTHOR_CHECK_v1.json",
+    "sha256": "91ac36f3d5fbeac21dda99e77682d5abc5448f6a5d59a7ee79db4611a7f131be"
+  },
+  "independent_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/POWER_SERIES_FIXED_POINT_INVARIANCE_ROOT_REVIEW_v1.json",
+    "sha256": "2a5b6ef643918c6a8088d734aafc79d9370797268a41adc919d6ff2d3daea8fd"
+  },
+  "prior_checkpoint": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/POWER_SERIES_DIAGONAL_INVARIANCE_CHECKPOINT_v1.json",
+    "sha256": "032a1ee4e855628a0262f442314efd0764171cf1c48cfee8d732e037e6a54b08"
+  },
+  "mathematical_change": "Generalizes local diagonal invariance from the origin to an arbitrary actual fixed expansion center without introducing any symmetric-multilinear assumption.",
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "not_claimed": [
+    "off-diagonal coefficient equality",
+    "actual physical circle action or its fixed points",
+    "physical Taylor polynomial identification or invariant-support decomposition",
+    "infinite analytic KS descent, algorithm or complexity",
+    "isolated source-dependency rebuild"
+  ],
+  "next_active_obligation": "Root is coupling this result to the actual KS circle continuous linear maps and physical Taylor polynomial at a fixed center.",
+  "preservation": "All work is new post-freeze source and evidence. Previous successful source bytes remain unchanged."
+}

@@ -1,0 +1,39 @@
+import CoulombEpsilonKSClassical_v1
+import CoulombEpsilonKSWeak_v1
+import CoulombSpinEpsilonKSWeak_v1
+import CoulombEpsilonKSDifference_v1
+import CoulombSpinEpsilonKSDifference_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_classical_equation
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_classical_equation
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_off_zero_weak
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_weak
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_off_zero_weak
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_weak
+#check @TheoremT.Continuum.coulomb_spin_epsilon_KS_weak_representative
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_difference_weak
+#check @TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_difference_weak
+#check @TheoremT.Continuum.coulomb_spin_epsilon_KS_difference_representative
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_classical_equation
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_classical_equation
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_off_zero_weak
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_weak
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_off_zero_weak
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_weak
+#print axioms TheoremT.Continuum.coulomb_spin_epsilon_KS_weak_representative
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_nuclear_KS_difference_weak
+#print axioms TheoremT.Continuum.scalar_coulomb_epsilon_pair_KS_difference_weak
+#print axioms TheoremT.Continuum.coulomb_spin_epsilon_KS_difference_representative

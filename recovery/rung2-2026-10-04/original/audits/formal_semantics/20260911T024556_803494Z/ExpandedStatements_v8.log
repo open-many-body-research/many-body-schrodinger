@@ -1,0 +1,45 @@
+@TheoremT.Continuum.hasSum_even_first_coordinate_iff.{u_1,
+    u_2} : ∀ {κ : Type u_1} {E : Type u_2} [inst : AddCommMonoid.{u_2} E] [inst_1 : TopologicalSpace.{u_2} E]
+  {f : Prod.{0, u_1} Nat κ → E} {a : E}
+  (hodd :
+    ∀ (m : Nat) (γ : κ),
+      @Eq.{u_2 + 1} E
+        (f
+          (@Prod.mk.{0, u_1} Nat κ
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+            γ))
+        (@OfNat.ofNat.{u_2} E (nat_lit 0) _)),
+  Iff
+    (@HasSum.{u_2, u_1} E (Prod.{0, u_1} Nat κ) _ _
+      (fun (q : Prod.{0, u_1} Nat κ) =>
+        f
+          (@Prod.mk.{0, u_1} Nat κ
+            (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@Prod.fst.{0, u_1} Nat κ q))
+            (@Prod.snd.{0, u_1} Nat κ q)))
+      a (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat κ)))
+    (@HasSum.{u_2, u_1} E (Prod.{0, u_1} Nat κ) _ _ f a (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat κ)))
+@TheoremT.Continuum.hasSum_even_first_coordinate.{u_1,
+    u_2} : ∀ {κ : Type u_1} {E : Type u_2} [inst : AddCommMonoid.{u_2} E] [inst_1 : TopologicalSpace.{u_2} E]
+  {f : Prod.{0, u_1} Nat κ → E} {a : E}
+  (hf : @HasSum.{u_2, u_1} E (Prod.{0, u_1} Nat κ) _ _ f a (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat κ)))
+  (hodd :
+    ∀ (m : Nat) (γ : κ),
+      @Eq.{u_2 + 1} E
+        (f
+          (@Prod.mk.{0, u_1} Nat κ
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+            γ))
+        (@OfNat.ofNat.{u_2} E (nat_lit 0) _)),
+  @HasSum.{u_2, u_1} E (Prod.{0, u_1} Nat κ) _ _
+    (fun (q : Prod.{0, u_1} Nat κ) =>
+      f
+        (@Prod.mk.{0, u_1} Nat κ
+          (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@Prod.fst.{0, u_1} Nat κ q))
+          (@Prod.snd.{0, u_1} Nat κ q)))
+    a (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat κ))
+'TheoremT.Continuum.hasSum_even_first_coordinate_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.hasSum_even_first_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]

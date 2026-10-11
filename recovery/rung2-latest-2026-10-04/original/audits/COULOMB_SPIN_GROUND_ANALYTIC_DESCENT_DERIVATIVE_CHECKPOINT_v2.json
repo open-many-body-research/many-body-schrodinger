@@ -1,0 +1,156 @@
+{
+  "status": "PASS_ACTUAL_FULL_SPIN_AND_GROUND_PHYSICAL_ANALYTIC_DESCENT_WITH_COMPLEX_AND_REAL_MIXED_DERIVATIVES",
+  "utc": "2026-09-11T03:23:51.371131+00:00",
+  "evidence_category": "Fully formalized full-spin Coulomb graph implication and actual normalized two-electron ground-state theorem under the preserved charge hypotheses.",
+  "exact_results": [
+    "PhysicalKSBoxAnalyticDescentDerivativeData retains the entire v1 pointwise/analytic/physical-identity predicate as its first conjunct and adds actual complex and real coordinate mixed derivatives of its literal A and B functions.",
+    "Write P=physicalKSPointwiseAmplitude(M,A,F0,W), S=7*physicalKSPointwiseRate(M,A), D=32*S^2. At every complex coordinate point with D*norm(X)_sup<=1/4 and S*norm(T)_sup<=1/4, the actual mixed derivative of A with indices alpha,beta is bounded by 16*P*(24*D)^sum(alpha)*(24*S)^sum(beta)*product(alpha_i!)*product(beta_i!). The B bound is D times this budget. Identical bounds hold for actual real iterated Frechet coordinate derivatives of their literal real restrictions.",
+    "For fixed real Z,E, common C_H,M,A>=1 still precede every actual full-spin graph eigenfunction. The same representative u,L,R, a.e. equality, simultaneous fermionic symmetry, full-spin Moser bound and common source/H12 budgets are preserved. Every spin, epsilon>0 with epsilon<=min(1,R/4), unit center and nuclear/pair chart satisfies the new bundled conclusion.",
+    "For Z>0 and 32<9*Z^2, the same norm-one actual fermionic ground vector on the actual Coulomb operator domain retains its eigenvalue equation, spectral-bottom identification, all-spectral-points lower bound, normalized weak-H2 spatial singlet and all representative statements. Only the final two physical chart predicates are strengthened; no additional existence, analytic, balance or derivative premise is introduced."
+  ],
+  "modules": [
+    {
+      "module": "PhysicalKSBoxAnalyticDescentData_v2",
+      "source": {
+        "path": "lean/PhysicalKSBoxAnalyticDescentData_v2.lean",
+        "sha256": "bf96c450ac104b3cca40b762b9a1ed19fc941cab384a803e6e085fada65b1c82"
+      },
+      "object": {
+        "path": "lean/build/PhysicalKSBoxAnalyticDescentData_v2.olean",
+        "sha256": "03754d586dfa2f9d467642b3643893da49020d953eae7248ea8dbb275e5527b0"
+      },
+      "declarations": [
+        "PhysicalKSBoxAnalyticDescentDerivativeData",
+        "nuclearKSPhysicalAnalyticDescent_derivative_data",
+        "pairKSPhysicalAnalyticDescent_derivative_data"
+      ]
+    },
+    {
+      "module": "CoulombSpinPhysicalAnalyticDescent_v2",
+      "source": {
+        "path": "lean/CoulombSpinPhysicalAnalyticDescent_v2.lean",
+        "sha256": "e5bf44ffef5d9300d64efe57f1762d7ececf5f2dd41715169e5f66740b2bd04d"
+      },
+      "object": {
+        "path": "lean/build/CoulombSpinPhysicalAnalyticDescent_v2.olean",
+        "sha256": "c0d37eac7cd69898b38a8bf8187c1dfc19a786f548ab66d0fde2d3e398394c87"
+      },
+      "declarations": [
+        "coulomb_spin_physical_analytic_descent_derivative_representative"
+      ]
+    },
+    {
+      "module": "TwoElectronGroundPhysicalAnalyticDescent_v2",
+      "source": {
+        "path": "lean/TwoElectronGroundPhysicalAnalyticDescent_v2.lean",
+        "sha256": "777e606a6c4036f393b7c63f49ace34e5662da0f7a0bcd189ac390edc954b9ea"
+      },
+      "object": {
+        "path": "lean/build/TwoElectronGroundPhysicalAnalyticDescent_v2.olean",
+        "sha256": "3688cfab47cf04bf4aa76ebb7bb5c90595f553bc425ee8270175bafddbeb91a2"
+      },
+      "declarations": [
+        "twoElectron_physical_ground_analytic_descent_derivative"
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "path": "logs/development/PhysicalKSBoxAnalyticDescentData_v2-20260911T031730_605995Z.json",
+      "sha256": "51e41686ac7d1d1dc0ba7beb6a4db7b0382201c67b2b10e6b4e5ff8321a53992"
+    },
+    {
+      "path": "logs/development/CoulombSpinPhysicalAnalyticDescent_v2-20260911T031800_505233Z.json",
+      "sha256": "a91cd5c4294efa2d7340a76cd1a1440f7cc52b40644902a2350f6b5d1805c3e7"
+    },
+    {
+      "path": "logs/development/TwoElectronGroundPhysicalAnalyticDescent_v2-20260911T031817_061563Z.json",
+      "sha256": "ca5bedcd778b1ceeef94ddcbc738ba8ba3191977203a364296292e40a3cf4ebd"
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T031840_405554Z/receipt.json",
+    "sha256": "4da5b59aa46981225fe72c65d9ec291fb2d5fadc94fee06713240cc56ebf9865"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T031840_405554Z/ExpandedStatements_v8.log",
+    "sha256": "64cb7a43b2e6fb6bfd4603f6dacc53a54d7ee34ccffee652001a70d371082fdf"
+  },
+  "independent_review": {
+    "path": "audits/PHYSICAL_SPIN_GROUND_DESCENT_DERIVATIVE_REVIEW_v2_20260911T032224Z.json",
+    "sha256": "9287bd52121f01d6b51dd3a5f8357e591db97f18b384e4a6b10860a15c89cb19"
+  },
+  "predecessor_checkpoint": {
+    "path": "audits/COULOMB_SPIN_GROUND_ANALYTIC_DESCENT_CHECKPOINT_v1.json",
+    "sha256": "6ee0000b29e3bf1c1508d13f054d859c7b006d3b6df7b252f160b99d59b08d02"
+  },
+  "derivative_components_checkpoint": {
+    "path": "audits/PHYSICAL_KS_ANALYTIC_DESCENT_DERIVATIVE_CHECKPOINT_v1.json",
+    "sha256": "ea541119e873cbc34ae979a896d627c87b0616adb71bb38ad250f3f6b6d19311"
+  },
+  "derivative_components_review": {
+    "path": "audits/PHYSICAL_KS_ANALYTIC_DESCENT_MIXED_DERIVATIVE_FOCUSED_REVIEW_v1.json",
+    "sha256": "0975c466f2c4a79ad7cafd2b034cf845cc2b4c9dbacf263d335f630f59314973"
+  },
+  "expanded_delta": {
+    "path": "audits/COULOMB_SPIN_GROUND_ANALYTIC_DESCENT_DERIVATIVE_EXPANDED_DELTA_v1.diff",
+    "sha256": "6e39cb683843a338233c678c5d3d9aee3fe9fc42da265ad1c952888b85659554"
+  },
+  "statement_preservation": [
+    {
+      "predecessor": {
+        "path": "lean/CoulombSpinPhysicalAnalyticDescent_v1.lean",
+        "sha256": "bd1bad6a2239f20113a29b86787a3b13ddea8f4880b374e1d5f1911d9b21d3ef"
+      },
+      "target": {
+        "path": "lean/CoulombSpinPhysicalAnalyticDescent_v2.lean",
+        "sha256": "e5bf44ffef5d9300d64efe57f1762d7ececf5f2dd41715169e5f66740b2bd04d"
+      },
+      "exact_complete_source_statement_equal_after_only_theorem_and_predicate_rename": true,
+      "matched_statement_sha256": "a9e66afd3ce269d39c5ff2332740950ae1a9281e84f367fa8064f11f8f36baaf"
+    },
+    {
+      "predecessor": {
+        "path": "lean/TwoElectronGroundPhysicalAnalyticDescent_v1.lean",
+        "sha256": "758226f21a3770995db47df166aea329a9c1deac40ad90057c5cd639fa12f399"
+      },
+      "target": {
+        "path": "lean/TwoElectronGroundPhysicalAnalyticDescent_v2.lean",
+        "sha256": "777e606a6c4036f393b7c63f49ace34e5662da0f7a0bcd189ac390edc954b9ea"
+      },
+      "exact_complete_source_statement_equal_after_only_theorem_and_predicate_rename": true,
+      "matched_statement_sha256": "59f8e13ba13af27e620c8f4ceb48481e5ada26d512dc69f6caa18a3f9a34771f"
+    }
+  ],
+  "manual_reading": "Author read all final sources/proof bodies and the literal new predicate; read the complete new expanded constructor types, all five axiom reports, complete strict receipt and complete final expanded delta to the previously fully read v1 log. All five complete final expanded type texts coincide with v1 after only identifier reversals. Unchanged large expanded text is reused by exact comparison rather than broadly reread. The full independent focused review and upstream derivative checkpoint/review were read.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build_environment": "All three first proof compilations succeeded using explicit /usr/bin/python3 and login:false with pinned Lean 4.34.0-rc2/Mathlib and existing continuation objects. No draft correction, new isolated dependency rebuild or new trust mechanism.",
+  "mathematical_change": "The already proved actual local derivative components are now discharged conclusions for every spin/scale/chart of the same physical graph representative and of the actual ground state. The prior physical A plus distance times B identity remains part of the same data.",
+  "limitations": [
+    "The physical function is still the normalized origin-scaled difference epsilon inverse times (u_sigma(epsilon q)-u_sigma(0)). The new derivatives target its literal descended A/B functions, not the singular norm(X)B factor or unscaled u.",
+    "Mixed derivative domains use actual coordinate Pi sup norms. The retained physical identity uses its original Euclidean Position neighborhood. No equality of these distinct norms or new operator-norm derivative estimate is asserted.",
+    "The corrected prefactor16 and rates24 on the quarter polydisc do not establish sharper inherited D6 constants.",
+    "No global gluing, complete collision-stratum coverage, exterior estimate, exact-dictionary global H2 approximation, continuum solver, termination, bit complexity, certified energy interval or full Theorem T is supplied. R04 and rung2 remain open.",
+    "The series and multiindex-word objects are noncomputable mathematical constructions. No executable differentiation algorithm or evaluated numerical constants are claimed.",
+    "Pinned dependency caches were reused; later descent modules remain outside the earlier isolated v20 source-rebuild snapshot."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "Three new v2 Lean modules, their build and strict records, a new exact expanded delta, independent focused review, checkpoint and sidecars; every preceding PASS source and historical artifact preserved."
+  },
+  "next": "Root owns local norm-decomposition uniqueness and compatibility. This stream next proves physical nuclear/pair coordinate covariance under simultaneous orthogonal rotations and invariance of originScaledDifference from actual pointwise rotation invariance.",
+  "record_correction": {
+    "supersedes": "audits/COULOMB_SPIN_GROUND_ANALYTIC_DESCENT_DERIVATIVE_CHECKPOINT_v1.json",
+    "superseded_sha256": "189b6ddf261297ce5af290b60efde2ecb05f2b3dc44ad8f2c6638d8441c92b2e",
+    "reason": "The v1 checkpoint copied the independent reviewer preservation-action string, which described only that review. This v2 states the actual construction/checkpoint action; no mathematical statement or evidence binding changes."
+  }
+}

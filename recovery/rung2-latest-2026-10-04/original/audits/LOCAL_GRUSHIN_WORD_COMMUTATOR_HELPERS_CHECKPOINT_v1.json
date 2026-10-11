@@ -1,0 +1,51 @@
+{
+  "timestamp_utc": "2026-09-10T23:26:38.251298+00:00",
+  "evidence": "Lean kernel-checked conditional weak-calculus helpers",
+  "result": "Actual recovery of Pc+B from negative Y-Laplacian and genuine first/second spectator jets; exact ordered proper-split Leibniz commutator with all multiplicities. No higher differentiated PDE or factorial bound is claimed here.",
+  "mathematical_review": "Expanded final types read in full. Recovery assumes actual weak P0 equation and actual first/same-second spectator jets, proves local L2 and both test integrabilities with operator-fixed minus spectator trace. Commutator is defined by actual coefficient directional words and supplied finite solution jets, not assumed derivatives.",
+  "audit_receipt": "audits/formal_semantics/20260910T232547_081155Z/receipt.json",
+  "audit_receipt_sha256": "26406d328c50e07b85e876754ea8317fecbdcdb612bee9f2ac18cb71b84a0d47",
+  "modules": [
+    {
+      "module": "LocalWeakYToGrushinEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakYToGrushinEquation_v1.lean",
+      "source_sha256": "27e89e99712118e5375ed3cb3990b1ab64a03b3e45ca8dbf2770e254c26c8b7c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakYToGrushinEquation_v1.olean",
+      "object_sha256": "2a05093c2c8e637fce483e49c54497f24cf61a7fff1742683221b41cb5d504a7",
+      "declarations": [
+        "local_y_to_grushin_potential_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductDirectionalWordCommutator_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductDirectionalWordCommutator_v1.lean",
+      "source_sha256": "8e472e15904ba287b4f8d65749926ff9b7688e0ac2726c8c86bf9078eb3c20ed",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductDirectionalWordCommutator_v1.olean",
+      "object_sha256": "fddf2a0b409d23be31f5bd02e2a01582c7214317f7351695e4637d2bb4df75b2",
+      "declarations": [
+        "directionalWordCommutator",
+        "directionalWordProduct_eq_commutator_add",
+        "directionalWordCommutator_nil",
+        "directionalWordCommutator_locallyL2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.WeakGrushin.local_y_to_grushin_potential_equation: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.directionalWordCommutator: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.directionalWordProduct_eq_commutator_add: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.directionalWordCommutator_nil: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.directionalWordCommutator_locallyL2: [propext, Classical.choice, Quot.sound]"
+  ],
+  "source_rebuild": "Pinned caches reused; these modules are outside the earlier isolated v20 source rebuild. No new rebuild requested.",
+  "preservation": "All PASS source/object bytes and all prior failed build logs retained.",
+  "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+  "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+  "next": "Actual finite differentiated Pc+B word equation, then canonical natural-index and raw-data composition."
+}

@@ -1,0 +1,174 @@
+{
+  "review_kind": "independent_focused_actual_KS_Taylor_spectator_absolute_convergence_review",
+  "version": 1,
+  "timestamp_utc": "2026-09-11T02:41:24.382571+00:00",
+  "reviewer": "/root/spectator_series_review",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_STATED_ABSOLUTE_SUMMABILITY_SCOPE",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "operation": "New focused review only. No mathematical source, prior evidence, object, or frozen artifact modified. No independent compile, broad audit, or rebuild rerun."
+  },
+  "targets": [
+    {
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorFiniteVariables_v1.lean",
+        "sha256": "6b4ad4b30f03dc0541f71a557b44a18296cd09fd90bca07b1e7b9a088e2f063e"
+      },
+      "object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorFiniteVariables_v1.olean",
+        "sha256": "7a4c2372c22de783d0ab2f27150b45c1ef4bfc02e879bda569db86806df29d2c"
+      },
+      "complete_final_source_read": true,
+      "declarations": [
+        "homogeneous_spectator_finite_variables_norm_bound",
+        "homogeneous_spectator_finite_variables_summable"
+      ]
+    },
+    {
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorSpectatorSeries_v1.lean",
+        "sha256": "995fbf6613e7bca80e5cb292cf099f79e02e291849445c2623589b067a86f7be"
+      },
+      "object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorSpectatorSeries_v1.olean",
+        "sha256": "e79fb863dc378cfc53f4ed8ed282144e3002e650ecee37a9ef3aafe5e08bcbd6"
+      },
+      "complete_final_source_read": true,
+      "declarations": [
+        "physicalKSTaylorSpectatorFamily",
+        "physicalKSTaylorSpectatorFamily_homogeneous",
+        "physicalKSTaylorSpectatorFamily_coefficientL1",
+        "physicalKSTaylorSpectatorFamily_summable"
+      ]
+    }
+  ],
+  "strict_audit": {
+    "receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023911_145829Z/receipt.json",
+      "sha256": "e54fc6a571eac92cf3eaee4c28ec5e4c89aab8c1782fdaba200702cbea7121bd"
+    },
+    "expanded_log": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023911_145829Z/ExpandedStatements_v8.log",
+      "sha256": "fdabb4c55b271c8786717c8cd6af90a5fada1c30acddde02634f14b0e0dc66a5"
+    },
+    "audit_source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023911_145829Z/ExpandedStatements_v8.lean",
+      "sha256": "23a8d1757065195a070d856868b7174e8ea030672a53d15f9c7d0b8c1e2edf24"
+    },
+    "all_six_expanded_declarations_and_axiom_blocks_read": true,
+    "exit_code": 0,
+    "axiom_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "forbidden_target_source_tokens": [],
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": [],
+    "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+    "source_object_and_audit_hashes_verified_at_sealing": true
+  },
+  "complete_dependency_source_read": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorSpectatorCoefficients_v1.lean",
+      "sha256": "415aa78c8ed9da8229366e9fba21d65aaff2c9a0017017fdd277f5934e873b56"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpectatorCoefficientPolynomial_v1.lean",
+      "sha256": "98d5a9912b114a40cf747db0390d44831c05ccc534d70fd8fea2592a7b23bcda"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorCoordinatePolynomials_v1.lean",
+      "sha256": "d40efd52eb0d6a19919cf8908d0f6158a5c312c46dc2e7d92a1729b6a31bb258"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealTaylorCoordinatePolynomial_v1.lean",
+      "sha256": "b417698e63a80cb867f912dbc0cf4657777dcfe778875638dd4377cb1920a5ba"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealMultilinearCoordinatePolynomial_v1.lean",
+      "sha256": "847344e75c51ca6a86f47f7ef52a05d6c8fb826ff3bedeac461c42cb469fc35a"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorSeriesMajorant_v1.lean",
+      "sha256": "edec546ce41e57b0f435dd419c109dcfb3ec6cf578a99ac0988e063def566c98"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialEvaluationBound_v1.lean",
+      "sha256": "e7a6ffd4f7d46b088725dab501c5c03331d27ac45b936193963ad5ad9a32b069"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorGeometricMultiindexSum_v1.lean",
+      "sha256": "63535c2388dde1a7bfd17c57f5148b3e42a7c723c3d3db1dd35daffc980d9f2c"
+    }
+  ],
+  "additional_definition_ranges_read": [
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalPointwise_v1.lean",
+        "sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534"
+      },
+      "lines": "1-65",
+      "scope": "Actual PhysicalKSBoxPointwiseData definition and the scalar physical supplying interface."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxPointwiseFactorial_v1.lean",
+        "sha256": "ab9611be060253c3582b2936613ac082c8dfa9d8ddc9c4c4e739d9bc96806ba9"
+      },
+      "lines": "1-55",
+      "scope": "Exact pointwise rate, amplitude, and sign proofs."
+    }
+  ],
+  "checks": [
+    {
+      "id": "LITERAL-ACTUAL-COEFFICIENTS",
+      "result": "PASS",
+      "analysis": "physicalKSTaylorSpectatorFamily f x j gamma is precisely physicalKSTaylorSpectatorCoefficient f x j (Finsupp.equivFunOnFinite.symm gamma). The latter extracts spectator coefficient gamma from the actual seven-coordinate Taylor polynomial of f at x at total degree j+gamma.degree. Its four-variable coefficient at alpha is the original joint coefficient at Finsupp.sumElim alpha gamma. No arbitrary replacement coefficient family or selection is introduced."
+    },
+    {
+      "id": "DEGREE-AND-MULTIINDEX",
+      "result": "PASS",
+      "analysis": "Finite-support degree equals the sum over Fin 3 after the equivalence with functions. Joint degree j+sum(gamma) gives Y homogeneity j by the proved extraction degree theorem and natural addition/subtraction cancellation. The resulting L1 bound is amplitude*S^j*S^sum(gamma), where S=7*physicalKSPointwiseRate M A. The factor S^sum(gamma) is retained. There is no mistaken use of total degree as Y degree or parity assertion about total degree."
+    },
+    {
+      "id": "ABSOLUTE-DOUBLE-SERIES",
+      "result": "PASS",
+      "analysis": "The generic theorem bounds each literal term norm by M*(D*r)^j times the product of (S*h)^gamma_i. The exact geometric majorant is proved summable over Nat times (Fin d to Nat) with sum M/((1-D*r)*(1-S*h)^d). Summable.of_nonneg_of_le proves summability of the norms, and Summable.of_norm yields summability of the complex terms. Neither convergence nor any identification of the sum is an input premise."
+    },
+    {
+      "id": "NORM-AND-DIMENSION",
+      "result": "PASS",
+      "analysis": "The physical consumer uses complex function types Fin 4 to Complex and Fin 3 to Complex with their finite Pi sup norms. Each coordinate is bounded by norm_le_pi_norm. The generic evaluation theorem uses actual coordinate polydiscs and homogeneity j; it does not use a Euclidean norm or substitute the real WeakGrushin product norm. The factor 7 comes from the actual joint Taylor coefficient budget, and the geometric spectator product has dimension 3. The generic theorem itself permits arbitrary polynomial variable type sigma because each polynomial has finite support."
+    },
+    {
+      "id": "SIGNS-AND-EDGE-CASES",
+      "result": "PASS",
+      "analysis": "The physical amplitude is nonnegative from A>=1 and F0>=0; the rate is positive from A>=1 and the established common-constant lower bound. Both geometric ratios are strictly below 1. The generic result retains explicit nonnegative M,D,r,S,h. The degree-zero term is included, zero radii are permitted, and the spectator geometric proof includes d=0. No invalid division by a zero boundary denominator enters."
+    },
+    {
+      "id": "HYPOTHESIS-SCOPE",
+      "result": "PASS",
+      "analysis": "PhysicalKSBoxPointwiseData explicitly supplies actual smoothness, real analyticity and coordinate derivative factorial bounds on the stated rectangular box. The consumer uses those to obtain actual Taylor L1 budgets; it does not assume its coefficient budget or its summability conclusion. The result is a formal implication for any f satisfying that data, with x explicitly in the half-width 1/512 open rectangle. Physical eigenfunction existence and data supply remain upstream theorems."
+    },
+    {
+      "id": "CLAIM-BOUNDARY",
+      "result": "PASS",
+      "analysis": "The final conclusion is absolute summability of the extracted joint Taylor family at complex block coordinates satisfying S*norm(y)<1 and S*norm(t)<1. It does not claim that the double sum equals f, any real or complex extension of f, or the descended analytic-plus-distance functions. No reorder or physical sum identity has been silently taken as established."
+    }
+  ],
+  "invalidating_findings": [],
+  "limits": [
+    "The formal implication is from explicit PhysicalKSBoxPointwiseData; these two modules do not reprove the physical Hamiltonian theorem supplying that data.",
+    "Actual sum identification with the original joint Taylor sum and with f remains a separate obligation.",
+    "This is the pre-descent four-KS-variable family. Even Y-degree selection, descended A/B analyticity, physical surjectivity, compatible germs, and global H2 approximation are not conclusions of these modules.",
+    "Noncomputable derivative polynomials and mathematical infinite-sum convergence do not provide a finite rational coefficient algorithm or operational complexity bound.",
+    "The strict audit reused the pinned development object cache. This review is not an isolated source dependency rebuild and makes no new full Theorem T claim."
+  ]
+}

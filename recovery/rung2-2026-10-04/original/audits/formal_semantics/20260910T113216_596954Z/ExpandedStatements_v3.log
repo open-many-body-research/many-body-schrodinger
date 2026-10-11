@@ -1,0 +1,81 @@
+TheoremT.Continuum.ksTargetBasis : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → TheoremT.Continuum.Position
+TheoremT.Continuum.ksMap_fderiv_basis_expansion : ∀ (y : TheoremT.Continuum.KSSpace)
+  (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+        TheoremT.Continuum.Position _ _ _ _)
+      TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => TheoremT.Continuum.Position) _
+      (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ TheoremT.Continuum.Position _ _ _
+        TheoremT.Continuum.ksMap y)
+      (TheoremT.Continuum.ksBasis k))
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) TheoremT.Continuum.Position _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      @HSMul.hSMul.{0, 0, 0} Real TheoremT.Continuum.Position TheoremT.Continuum.Position _
+        (TheoremT.Continuum.ksJacobian y i k) (TheoremT.Continuum.ksTargetBasis i))
+@TheoremT.Continuum.ks_bilinear_trace_contraction.{u_1} : ∀ {G : Type u_1} [inst : NormedAddCommGroup.{u_1} G]
+  [inst_1 : @NormedSpace.{0, u_1} Real G _ _]
+  (B :
+    @ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _
+      (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _ G _ _
+        _ _)
+      _ _ _ _)
+  (y : TheoremT.Continuum.KSSpace),
+  @Eq.{u_1 + 1} G
+    (@Finset.sum.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) G _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @DFunLike.coe.{u_1 + 1, 1, u_1 + 1}
+        (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _ G _
+          _ _ _)
+        TheoremT.Continuum.Position (fun (x : TheoremT.Continuum.Position) => G) _
+        (@DFunLike.coe.{u_1 + 1, 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _
+            (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _
+              G _ _ _ _)
+            _ _ _ _)
+          TheoremT.Continuum.Position
+          (fun (x : TheoremT.Continuum.Position) =>
+            @ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _ G
+              _ _ _ _)
+          _ B
+          (@DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+              TheoremT.Continuum.Position _ _ _ _)
+            TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => TheoremT.Continuum.Position) _
+            (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ TheoremT.Continuum.Position _ _ _
+              TheoremT.Continuum.ksMap y)
+            (TheoremT.Continuum.ksBasis k)))
+        (@DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+            TheoremT.Continuum.Position _ _ _ _)
+          TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => TheoremT.Continuum.Position) _
+          (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ TheoremT.Continuum.Position _ _ _
+            TheoremT.Continuum.ksMap y)
+          (TheoremT.Continuum.ksBasis k)))
+    (@HSMul.hSMul.{0, u_1, u_1} Real G G _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@Finset.sum.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) G _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+        @DFunLike.coe.{u_1 + 1, 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _ G
+            _ _ _ _)
+          TheoremT.Continuum.Position (fun (x : TheoremT.Continuum.Position) => G) _
+          (@DFunLike.coe.{u_1 + 1, 1, u_1 + 1}
+            (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _
+              (@ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _
+                _ G _ _ _ _)
+              _ _ _ _)
+            TheoremT.Continuum.Position
+            (fun (x : TheoremT.Continuum.Position) =>
+              @ContinuousLinearMap.{0, 0, 0, u_1} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.Position _ _
+                G _ _ _ _)
+            _ B (TheoremT.Continuum.ksTargetBasis i))
+          (TheoremT.Continuum.ksTargetBasis i)))
+'TheoremT.Continuum.ksTargetBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_fderiv_basis_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_bilinear_trace_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]

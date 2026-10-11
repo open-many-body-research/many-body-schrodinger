@@ -1,0 +1,84 @@
+{
+  "schema": "focused-semantic-review-v1",
+  "created_utc": "2026-09-10T23:55:25.081279+00:00",
+  "status": "PASS_NO_DEFECT_FOUND",
+  "scope": "Focused source and expanded-statement review of R25 scalar composition only, with a boundary read of the directly used fixed-gap bound. No broad dependency audit or recompile.",
+  "module_records": [
+    {
+      "module": "GrushinScalarFactorialBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinScalarFactorialBound_v1.lean",
+      "source_sha256": "c7f1c6d7fa42229f689a6db690fe376e79b41f6ca6eb4a15f6285030eb3114e3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinScalarFactorialBound_v1.olean",
+      "object_sha256": "f3f250f88336d38ca11d94ff4cdd228435f4df0b1feaf2b6a822345686dc0d2c",
+      "declarations": [
+        "grushin_scalar_shifted_factorial_bound",
+        "grushin_scalar_embedding_factorial_bound",
+        "grushin_norm_family_factorial_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235308_412734Z/receipt.json",
+    "sha256": "715f83161b3e76f4dff69fb914938cc919fcf6aa758a8110819d697b5ac46640"
+  },
+  "audit_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235308_412734Z/ExpandedStatements_v7.lean",
+    "sha256": "8fc8b4d6e932f2c9dac7e71c6f9fd2dc0eafe4749df834829780c978e135a0be"
+  },
+  "audit_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235308_412734Z/ExpandedStatements_v7.log",
+    "sha256": "4f84a690c30836f1d8d4704744bfd64f33b7697ed7c6674cddea3b72928cfd3a"
+  },
+  "audit_object": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235308_412734Z/ExpandedStatements_v7.olean",
+    "sha256": "f77c35edfb2e18aade79c910205e908dab82612b6ebe63523e631e095864cba5"
+  },
+  "declarations": [
+    "TheoremT.Continuum.grushin_scalar_shifted_factorial_bound",
+    "TheoremT.Continuum.grushin_scalar_embedding_factorial_bound",
+    "TheoremT.Continuum.grushin_norm_family_factorial_bound"
+  ],
+  "axiom_reports": {
+    "TheoremT.Continuum.grushin_scalar_shifted_factorial_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TheoremT.Continuum.grushin_scalar_embedding_factorial_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TheoremT.Continuum.grushin_norm_family_factorial_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "numeric_prerequisite_checkpoint": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/GRUSHIN_SHIFTED_POWER_FACTORIAL_CHECKPOINT_v1.json",
+    "sha256": "1196fe0c2eb4e0da9bf1490f0076fa15837eb23652a30acbe92e81aebc32d4f6"
+  },
+  "direct_boundary_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinScalarFixedGapBound_v1.lean",
+    "sha256": "22af09caa63fd0d8229ce76dd707d705022522687c92e6b3697277eea3b18b6a"
+  },
+  "findings": [
+    "Substituting r=k+11 into the fixed-gap bound yields 2*B*S*[D*(k+12)]^(k+11), where B=2*C*A, S=F+H0 and D=2*B/rho. Positive rho and nonnegative coefficients justify multiplication by the numeric bound.",
+    "Power splitting yields exactly Cstar=2*B*Ebox*D^11*3^12*12^11 and Astar=D*6144. These depend only on supplied rho,C,A,Ebox; neither depends on k, x or the chosen set point. S=F+H0 remains a multiplicative amplitude.",
+    "No division by S or Ebox occurs. Zero amplitude and zero embedding coefficient cause no algebraic exception. The all-order arithmetic includes k=0.",
+    "The final norm family theorem retains hshift: for every k and x in K, norm(J k x)<=Ebox*N(k+11,rho), with a single common Ebox. Bare Norm suffices because only that real comparison is used; no unproved norm positivity or Sobolev properties are inferred.",
+    "The explicit fixed-gap recurrence hrec, nonnegative shrinking-region family, monotonicity, base bound through order eight and actual R24 comparison remain premises. This is a conditional formal implication and does not prove weighted PDE recurrence, Sobolev embedding or physical analyticity."
+  ],
+  "checks": {
+    "current_source_object_bindings": true,
+    "ordered_expanded_and_axiom_reports": true,
+    "only_standard_axioms": true,
+    "zero_printer_errors_ellipses": true
+  },
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "preservation": "Read-only source/audit review; only this new review record is written."
+}

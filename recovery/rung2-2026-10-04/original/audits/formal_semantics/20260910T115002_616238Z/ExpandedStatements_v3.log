@@ -1,0 +1,40 @@
+@TheoremT.Continuum.nuclear_KS_tube_squared_mass_tendsto_zero : ∀ {N : Nat} (i : Fin N)
+  {g : @TheoremT.Continuum.NuclearKSSpace N i → Complex} {M : Real}
+  (hM : ∀ (q : @TheoremT.Continuum.NuclearKSSpace N i), @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (g q)) M)
+  (T : Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i))
+  (hT :
+    @Ne.{1} ENNReal
+      (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.SpectatorConfiguration N i) _)
+        (Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i))
+        (fun (x : Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i)) => ENNReal) _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.SpectatorConfiguration N i) _) T)
+      (@Top.top.{0} ENNReal _))
+  {r : Nat → Real}
+  (hr :
+    @Filter.Tendsto.{0, 0} Nat Real r (@Filter.atTop.{0} Nat _)
+      (@nhds.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _))),
+  @Filter.Tendsto.{0, 0} Nat ENNReal
+    (fun (n : Nat) =>
+      @MeasureTheory.lintegral.{0}
+        (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i))
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+        (@MeasureTheory.Measure.restrict.{0}
+          (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i))
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+            (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+          (@SProd.sprod.{0, 0, 0} (Set.{0} TheoremT.Continuum.KSSpace)
+            (Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i))
+            (Set.{0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i))) _
+            (@Metric.ball.{0} TheoremT.Continuum.KSSpace _ (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)
+              (r n))
+            T))
+        fun (q : Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) =>
+        @HPow.hPow.{0, 0, 0} ENNReal Nat ENNReal _ (@ENorm.enorm.{0} Complex _ (g q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@Filter.atTop.{0} Nat _) (@nhds.{0} ENNReal _ (@OfNat.ofNat.{0} ENNReal (nat_lit 0) _))
+'TheoremT.Continuum.nuclear_KS_tube_squared_mass_tendsto_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

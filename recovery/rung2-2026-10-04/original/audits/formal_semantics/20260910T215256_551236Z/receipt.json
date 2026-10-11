@@ -1,0 +1,49 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "a1594fb26fecb7be25e97448b1db53881bf5a449e4b8c6413bad028c3e554119",
+  "timestamp_utc": "20260910T215256_551236Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215256_551236Z/ExpandedStatements_v6.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215256_551236Z/ExpandedStatements_v6.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.198753166,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "f671a5bfd00261d32ca1befeadffc7181c5b2bac2f78702effbf4fb2369dcd2f",
+  "audit_log_sha256": "ffaf4808fa63e66724f6b089efd640dbf04fa882c60af7f13cc0efa7ba8db363",
+  "module_records": [
+    {
+      "module": "CompactLocalFactorialBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CompactLocalFactorialBound_v1.lean",
+      "source_sha256": "81fccf51a6b047eb359d3535cd4db311a8847089e10f00053b891fd6a3b391e3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CompactLocalFactorialBound_v1.olean",
+      "object_sha256": "f435d15fa20771a9c506ad87faff1aca8b1697c7bb6bb73fd303c873c70bd7d1",
+      "declarations": [
+        "compact_factorial_bound_of_neighborhood_family",
+        "compact_local_factorial_bound_uniform_nhds",
+        "compact_local_factorial_bound_uniform"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.compact_factorial_bound_of_neighborhood_family: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.compact_local_factorial_bound_uniform_nhds: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.compact_local_factorial_bound_uniform: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.compact_factorial_bound_of_neighborhood_family",
+    "TheoremT.Continuum.compact_local_factorial_bound_uniform_nhds",
+    "TheoremT.Continuum.compact_local_factorial_bound_uniform"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

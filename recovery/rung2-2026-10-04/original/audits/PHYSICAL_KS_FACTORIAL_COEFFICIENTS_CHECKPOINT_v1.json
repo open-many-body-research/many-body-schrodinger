@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "utc": "2026-09-10T22:19:27.296917+00:00",
+  "evidence_category": "Fully formalized coefficient and forcing bounds; existential constants",
+  "exact_result": "# Physical KS factorial coefficient bounds\n\nEvidence: Lean theorems compiled and exact statements/axiom dependencies audited with the pinned dependency cache. This is not an isolated dependency rebuild or an executable constant-evaluation algorithm.\n\nFor any fixed compact subset K of the actual nuclear KS coefficient patch (any finite N and selected electron i), and for fixed real charge Z and energy E, there exist C,A >= 1 such that, for every epsilon in [0,1], every point q of K and every derivative order k,\n\n- the actual coefficient b_epsilon(q) = nuclearKSPotential i Z (epsilon E) q has operator derivative norm at most C A^k k!;\n- the actual physical scaled coefficient B_epsilon = epsilon b_epsilon has derivative norm at most epsilon C A^k k!;\n- the normalized forcing -a0 b_epsilon has derivative norm at most C A^k k! |a0|, for every complex a0.\n\nThe same theorem holds for the actual two-electron pair KS coefficient on its genuine pair patch. The nuclear/pair energy terms are exactly -8 epsilon E |y|^2 and -4 epsilon E |y|^2 inside b_epsilon, respectively. The singular fiber y=0 is included wherever allowed by the regularized coefficient patch. No inverse epsilon or replacement Hamiltonian occurs.",
+  "modules": [
+    {
+      "module": "AnalyticAffineCompactFactorialJets_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/AnalyticAffineCompactFactorialJets_v1.lean",
+      "source_sha256": "6dedf1afa3c8f6c043897171768190a423f91d3692ec489510c35a39121d35ba",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/AnalyticAffineCompactFactorialJets_v1.olean",
+      "object_sha256": "8215e78b0ca080b7a14c9529338d39ab50d7e6698cc2edd66458d22183cdba55",
+      "declarations": [
+        "analytic_affine_compact_factorial_source_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/AnalyticAffineCompactFactorialJets_v1-20260910T220706_495545Z.json",
+          "sha256": "6ef1bbf7a02a2533306ff5b50e2a57a467bbbc424b147aa6ee7f24d4665e23c4"
+        }
+      ]
+    },
+    {
+      "module": "KSScaledFactorialCoefficientBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSScaledFactorialCoefficientBounds_v1.lean",
+      "source_sha256": "1a180a861d2315b5918ea50c6a1c71ce8b2a819b7a31a588af590c2b35d450de",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSScaledFactorialCoefficientBounds_v1.olean",
+      "object_sha256": "4ed2e1d7cb00c559ef3276a3913607334d769a5330cdba4a86d77a927d9bf621",
+      "declarations": [
+        "nuclearKS_energy_coefficient_analyticAt",
+        "pairKS_energy_coefficient_analyticAt",
+        "nuclearKS_uniform_factorial_scaled_jets",
+        "pairKS_uniform_factorial_scaled_jets"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSScaledFactorialCoefficientBounds_v1-20260910T220723_754817Z.json",
+          "sha256": "dd823f4f324469c1c0b5a5050c0240be3b0554bd83a07907fc845f509145bc1b"
+        }
+      ]
+    },
+    {
+      "module": "PowerSeriesUniformTranslationBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesUniformTranslationBound_v1.lean",
+      "source_sha256": "3fea11d14c340071a487c54854aee1242f6f5f9f98dbe5e81c2c65124c5441af",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PowerSeriesUniformTranslationBound_v1.olean",
+      "object_sha256": "cb677ef0e7ea5aa3a573c33e2523ffd30a31215b8ad0e81a6bfc897b6f32292a",
+      "declarations": [
+        "powerSeriesTranslationMajorant",
+        "powerSeries_changeOrigin_uniform_nnnorm",
+        "powerSeries_changeOrigin_uniform_norm",
+        "powerSeries_changeOrigin_uniform_geometric_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PowerSeriesUniformTranslationBound_v1-20260910T215509_662685Z.json",
+          "sha256": "29a431353f5da3661b602908c0fab85836af4f8d0562e0a11c7905f2abacd229"
+        }
+      ]
+    },
+    {
+      "module": "KSScaledFactorialWordBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSScaledFactorialWordBounds_v1.lean",
+      "source_sha256": "417bf12ef06920e03121d6206d6d8d93c76c3db4a5620de5f3ea4c841e99befb",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSScaledFactorialWordBounds_v1.olean",
+      "object_sha256": "adc3b181e989739945ae946757b37e6fd50d715ea00b9be21760083952acd128",
+      "declarations": [
+        "nuclearKS_uniform_factorial_word_bounds",
+        "pairKS_uniform_factorial_word_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSScaledFactorialWordBounds_v1-20260910T221012_074809Z.json",
+          "sha256": "40e5f7446e6025a93d855e674afb788f122692c76230aa8c49410d459fac393d"
+        }
+      ]
+    }
+  ],
+  "strict_audits": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220800_746565Z/receipt.json",
+      "sha256": "a2d43a280b563a94307714cd3479244120e3a57d9beead91e7fb2c5861568c20",
+      "declarations": 5,
+      "axioms": "standard three only",
+      "printer_failures": []
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T221628_785708Z/receipt.json",
+      "sha256": "c06776efe0b1633fbd8eefae702e661ee9270802b7130eb52c0f17d6aa670823",
+      "declarations": 6,
+      "axioms": "standard three only",
+      "printer_failures": []
+    }
+  ],
+  "linked_evidence": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/ANALYTIC_COMPACT_FACTORIAL_BOUND_CHECKPOINT_v1.json",
+      "sha256": "f110ced0358450736646ac1e473f2c20af2df24b78d9090d98fb49f279704e2f"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/COMPACT_LOCAL_FACTORIAL_BOUND_CHECKPOINT_v1.json",
+      "sha256": "cf226e06f606838ab96c587096640b1d68d8d1d89fec6c045df6dc0f508818ea"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PAIR_KS_POTENTIAL_ANALYTIC_SEAL_v1.json",
+      "sha256": "113bad8833a1bf655863ba86a4d58b4d26e7d9d7a4c98c7f234d8fe1fe643e3f"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/AUDIT_FINAL_STATEMENTS_V7_ROOT_REVIEW_v1.json",
+      "sha256": "681bfa9eaec81ec3db015e1e23a4e73618893d59b5fe65c2f185e5efefba0fb1"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/ANALYTIC_AFFINE_AND_KS_SCALED_FACTORIAL_FOCUSED_REVIEW_v1.md",
+      "sha256": "3f31c4c97c6456734e96bae8d1f049ddf2a49614438eaf94e37f101b1e130d18"
+    }
+  ],
+  "manuscript": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_FACTORIAL_COEFFICIENTS_v1.md",
+    "sha256": "8023cd8291e1ba591e1d710c563d2b8520da41f36b8cd19e96ae0c9342bab1d7"
+  },
+  "cache_disclosure": "Pinned development dependency objects reused. These new units are outside the previously completed isolated v20 rebuild. No new isolated rebuild run.",
+  "limits": [
+    "No solution factorial estimate, descent, global H2 approximation, certified algorithm, evaluated C/A, or full Theorem T.",
+    "Rung 2 remains active and incomplete."
+  ],
+  "next": "Instantiate fixed common annuli and combine actual weak mixed equations with weighted maximal and factorial commutator bounds."
+}

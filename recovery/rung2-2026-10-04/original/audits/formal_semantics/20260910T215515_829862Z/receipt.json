@@ -1,0 +1,70 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "a1594fb26fecb7be25e97448b1db53881bf5a449e4b8c6413bad028c3e554119",
+  "timestamp_utc": "20260910T215515_829862Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215515_829862Z/ExpandedStatements_v6.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215515_829862Z/ExpandedStatements_v6.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.0620084159999998,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "52e0581544d5f8e6b34d321adbe18eeeb0a91efd9a1c87ed4000f4d1787b286b",
+  "audit_log_sha256": "e2522761fc2245b8a812bbf61de1903af422aa86f109ec8d8544fc48c79fe8c4",
+  "module_records": [
+    {
+      "module": "FiniteFactorialMajorant_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FiniteFactorialMajorant_v1.lean",
+      "source_sha256": "f7487197cd23a98ad2e2c2455a12adb3ebe997c773f691990e0aa7f440a3ed64",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FiniteFactorialMajorant_v1.olean",
+      "object_sha256": "2f0e4e838d531c91fc9157b3f1ff8828c2fe36f272ea2e00e956d140c9023f9e",
+      "declarations": [
+        "finiteFactorialC",
+        "finiteFactorialA",
+        "finiteFactorialC_empty",
+        "finiteFactorialA_empty",
+        "finiteFactorialC_ge_one",
+        "finiteFactorialA_ge_one",
+        "le_finiteFactorialC",
+        "le_finiteFactorialA",
+        "finite_factorial_majorant",
+        "finite_factorial_common_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.finiteFactorialC: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finiteFactorialA: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finiteFactorialC_empty: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finiteFactorialA_empty: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finiteFactorialC_ge_one: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finiteFactorialA_ge_one: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.le_finiteFactorialC: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.le_finiteFactorialA: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finite_factorial_majorant: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.finite_factorial_common_bound: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.finiteFactorialC",
+    "TheoremT.Continuum.finiteFactorialA",
+    "TheoremT.Continuum.finiteFactorialC_empty",
+    "TheoremT.Continuum.finiteFactorialA_empty",
+    "TheoremT.Continuum.finiteFactorialC_ge_one",
+    "TheoremT.Continuum.finiteFactorialA_ge_one",
+    "TheoremT.Continuum.le_finiteFactorialC",
+    "TheoremT.Continuum.le_finiteFactorialA",
+    "TheoremT.Continuum.finite_factorial_majorant",
+    "TheoremT.Continuum.finite_factorial_common_bound"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

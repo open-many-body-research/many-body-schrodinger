@@ -1,0 +1,130 @@
+@TheoremT.Continuum.productBoxVolume.{u_1} : {ι : Type u_1} → [Fintype.{u_1} ι] → (a b : ι → Real) → Real
+@TheoremT.Continuum.productBoxVolume_pos.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real}
+  (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i)),
+  @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (@TheoremT.Continuum.productBoxVolume.{u_1} ι _ a b)
+@TheoremT.Continuum.volume_product_closed_box.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] (a b : ι → Real),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@MeasureTheory.Measure.{u_1} ((i : ι) → Real) _) (Set.{u_1} ((i : ι) → Real))
+      (fun (x : Set.{u_1} ((i : ι) → Real)) => ENNReal) _ (@MeasureTheory.MeasureSpace.volume.{u_1} ((i : ι) → Real) _)
+      (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i)))
+    (@Finset.prod.{u_1, 0} ι ENNReal _ (@Finset.univ.{u_1} ι _) fun (i : ι) =>
+      ENNReal.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i)))
+@TheoremT.Continuum.volume_product_closed_box_of_lt.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real}
+  (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i)),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@MeasureTheory.Measure.{u_1} ((i : ι) → Real) _) (Set.{u_1} ((i : ι) → Real))
+      (fun (x : Set.{u_1} ((i : ι) → Real)) => ENNReal) _ (@MeasureTheory.MeasureSpace.volume.{u_1} ((i : ι) → Real) _)
+      (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i)))
+    (ENNReal.ofReal (@TheoremT.Continuum.productBoxVolume.{u_1} ι _ a b))
+@TheoremT.Continuum.product_interval_average_measure_eq.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  {a b : ι → Real} (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i)),
+  @Eq.{u_1 + 1} (@MeasureTheory.Measure.{u_1} ((i : ι) → Real) _)
+    (@MeasureTheory.Measure.pi.{u_1, 0} ι (fun (i : ι) => Real) _ _ fun (i : ι) =>
+      TheoremT.Continuum.intervalAverageMeasure (a i) (b i))
+    (@HSMul.hSMul.{0, u_1, u_1} ENNReal (@MeasureTheory.Measure.{u_1} ((i : ι) → Real) _)
+      (@MeasureTheory.Measure.{u_1} ((i : ι) → Real) _) _
+      (@Inv.inv.{0} ENNReal _
+        (@Finset.prod.{u_1, 0} ι ENNReal _ (@Finset.univ.{u_1} ι _) fun (i : ι) =>
+          ENNReal.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i))))
+      (@MeasureTheory.Measure.restrict.{u_1} ((i : ι) → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{u_1} ((i : ι) → Real) _)
+        (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i))))
+@TheoremT.Continuum.product_box_average_integral_norm_le_L2.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real} (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i))
+  {F : Type u_2} [inst_1 : NormedAddCommGroup.{u_2} F] {g : (ι → Real) → F}
+  (hg :
+    @MeasureTheory.MemLp.{u_1, u_2} (ι → Real) F (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} (ι → Real) _) _ _
+      g (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{u_1} (ι → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} (ι → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{u_1} (ι → Real) _)
+        (@Set.pi.{u_1, 0} ι (fun (a : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i)))),
+  @LE.le.{0} Real _
+    (@MeasureTheory.integral.{u_1, 0} ((i : ι) → Real) Real _ _ (@MeasurableSpace.pi.{u_1, 0} ι (fun (i : ι) => Real) _)
+      (@MeasureTheory.Measure.pi.{u_1, 0} ι (fun (i : ι) => Real) _ _ fun (i : ι) =>
+        TheoremT.Continuum.intervalAverageMeasure (a i) (b i))
+      fun (x : (i : ι) → Real) => @Norm.norm.{u_2} F _ (g x))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@Inv.inv.{0} Real _ (Real.sqrt (@TheoremT.Continuum.productBoxVolume.{u_1} ι _ a b)))
+      (Real.sqrt
+        (@MeasureTheory.integral.{u_1, 0} ((i : ι) → Real) Real _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+          (@MeasureTheory.Measure.restrict.{u_1} ((i : ι) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{u_1} ((i : ι) → Real) _)
+            (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) =>
+              @Set.Icc.{0} Real _ (a i) (b i)))
+          fun (x : (i : ι) → Real) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_2} F _ (g x)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.product_box_average_lintegral_enorm_le_L2.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real} (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i))
+  {F : Type u_2} [inst_1 : NormedAddCommGroup.{u_2} F] {g : (ι → Real) → F}
+  (hg :
+    @MeasureTheory.MemLp.{u_1, u_2} (ι → Real) F (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} (ι → Real) _) _ _
+      g (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{u_1} (ι → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} (ι → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{u_1} (ι → Real) _)
+        (@Set.pi.{u_1, 0} ι (fun (a : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i)))),
+  @LE.le.{0} ENNReal _
+    (@MeasureTheory.lintegral.{u_1} ((i : ι) → Real) (@MeasurableSpace.pi.{u_1, 0} ι (fun (i : ι) => Real) _)
+      (@MeasureTheory.Measure.pi.{u_1, 0} ι (fun (i : ι) => Real) _ _ fun (i : ι) =>
+        TheoremT.Continuum.intervalAverageMeasure (a i) (b i))
+      fun (x : (i : ι) → Real) => @ENorm.enorm.{u_2} F _ (g x))
+    (ENNReal.ofReal
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Inv.inv.{0} Real _ (Real.sqrt (@TheoremT.Continuum.productBoxVolume.{u_1} ι _ a b)))
+        (Real.sqrt
+          (@MeasureTheory.integral.{u_1, 0} ((i : ι) → Real) Real _ _
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+            (@MeasureTheory.Measure.restrict.{u_1} ((i : ι) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{u_1} ((i : ι) → Real) _)
+              (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) =>
+                @Set.Icc.{0} Real _ (a i) (b i)))
+            fun (x : (i : ι) → Real) =>
+            @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_2} F _ (g x)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+@TheoremT.Continuum.product_box_average_lintegral_indicator_enorm_le_L2.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real} (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i))
+  {F : Type u_2} [inst_1 : NormedAddCommGroup.{u_2} F] {g : (ι → Real) → F}
+  (hg :
+    @MeasureTheory.MemLp.{u_1, u_2} (ι → Real) F (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} (ι → Real) _) _ _
+      g (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{u_1} (ι → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} (ι → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{u_1} (ι → Real) _)
+        (@Set.pi.{u_1, 0} ι (fun (a : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i)))),
+  @LE.le.{0} ENNReal _
+    (@MeasureTheory.lintegral.{u_1} ((i : ι) → Real) (@MeasurableSpace.pi.{u_1, 0} ι (fun (i : ι) => Real) _)
+      (@MeasureTheory.Measure.pi.{u_1, 0} ι (fun (i : ι) => Real) _ _ fun (i : ι) =>
+        TheoremT.Continuum.intervalAverageMeasure (a i) (b i))
+      fun (x : (i : ι) → Real) =>
+      @Set.indicator.{u_1, 0} ((i : ι) → Real) ENNReal _
+        (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) => @Set.Icc.{0} Real _ (a i) (b i))
+        (fun (y : (i : ι) → Real) => @ENorm.enorm.{u_2} F _ (g y)) x)
+    (ENNReal.ofReal
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Inv.inv.{0} Real _ (Real.sqrt (@TheoremT.Continuum.productBoxVolume.{u_1} ι _ a b)))
+        (Real.sqrt
+          (@MeasureTheory.integral.{u_1, 0} ((i : ι) → Real) Real _ _
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+            (@MeasureTheory.Measure.restrict.{u_1} ((i : ι) → Real)
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{u_1} ((i : ι) → Real) _)
+              (@MeasureTheory.MeasureSpace.volume.{u_1} ((i : ι) → Real) _)
+              (@Set.pi.{u_1, 0} ι (fun (i : ι) => Real) (@Set.univ.{u_1} ι) fun (i : ι) =>
+                @Set.Icc.{0} Real _ (a i) (b i)))
+            fun (x : (i : ι) → Real) =>
+            @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_2} F _ (g x)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+'TheoremT.Continuum.productBoxVolume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productBoxVolume_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.volume_product_closed_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.volume_product_closed_box_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.product_interval_average_measure_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.product_box_average_integral_norm_le_L2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.product_box_average_lintegral_enorm_le_L2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.product_box_average_lintegral_indicator_enorm_le_L2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

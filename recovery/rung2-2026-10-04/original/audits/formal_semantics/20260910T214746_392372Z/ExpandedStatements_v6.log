@@ -1,0 +1,116 @@
+@TheoremT.Continuum.nonnegative_monomial_exp_neg_bound : ∀ {x : Real}
+  (hx : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) x) (n : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ x n)
+      (Real.exp (@Neg.neg.{0} Real _ x)))
+    (@Nat.cast.{0} Real _ (Nat.factorial n))
+TheoremT.Continuum.expNegInvGlue_polynomial_bound : ∀ (x : Real) (n : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ x) n)
+      (expNegInvGlue x))
+    (@Nat.cast.{0} Real _ (Nat.factorial n))
+TheoremT.Continuum.expNegInvGlue_deriv_formula : ∀ (x : Real),
+  @Eq.{1} Real (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue x)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ x) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (expNegInvGlue x))
+TheoremT.Continuum.expNegInvGlue_second_deriv_formula : ∀ (x : Real),
+  @Eq.{1} Real (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue) x)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ x) (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ x) (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+      (expNegInvGlue x))
+TheoremT.Continuum.expNegInvGlue_deriv_abs_le_two : ∀ (x : Real),
+  @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue x))
+    (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+TheoremT.Continuum.expNegInvGlue_second_deriv_abs_le_thirty_six : ∀ (x : Real),
+  @LE.le.{0} Real _
+    (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue) x))
+    (@OfNat.ofNat.{0} Real (nat_lit 36) _)
+TheoremT.Continuum.smoothTransition_denom_lower : ∀ (x : Real),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 16) _))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (expNegInvGlue x)
+      (expNegInvGlue (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) x)))
+TheoremT.Continuum.smoothTransitionDenominator : (x : Real) → Real
+TheoremT.Continuum.smoothTransitionDenominator_contDiff : @ContDiff.{0, 0, 0} Real _ Real _ _ Real _ _
+  (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) TheoremT.Continuum.smoothTransitionDenominator
+TheoremT.Continuum.smoothTransitionDenominator_deriv : ∀ (x : Real),
+  @Eq.{1} Real (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator x)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue x)
+      (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) x)))
+TheoremT.Continuum.smoothTransitionDenominator_second_deriv : ∀ (x : Real),
+  @Eq.{1} Real
+    (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator) x)
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue) x)
+      (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue)
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) x)))
+TheoremT.Continuum.smoothTransitionDenominator_deriv_bounds : ∀ (x : Real),
+  And
+    (@LE.le.{0} Real _
+      (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator x))
+      (@OfNat.ofNat.{0} Real (nat_lit 4) _))
+    (@LE.le.{0} Real _
+      (@abs.{0} Real _ _
+        (@deriv.{0, 0} Real _ Real _ _ _
+          (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator) x))
+      (@OfNat.ofNat.{0} Real (nat_lit 72) _))
+TheoremT.Continuum.smoothTransition_denominator_product : ∀ (x : Real),
+  @Eq.{1} Real
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.smoothTransitionDenominator x) (Real.smoothTransition x))
+    (expNegInvGlue x)
+TheoremT.Continuum.smoothTransition_product_first : ∀ (x : Real),
+  @Eq.{1} Real
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator x) (Real.smoothTransition x))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.smoothTransitionDenominator x)
+        (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)))
+    (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue x)
+TheoremT.Continuum.smoothTransition_product_second : ∀ (x : Real),
+  @Eq.{1} Real
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@deriv.{0, 0} Real _ Real _ _ _
+            (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator) x)
+          (Real.smoothTransition x))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+            (@deriv.{0, 0} Real _ Real _ _ _ TheoremT.Continuum.smoothTransitionDenominator x))
+          (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.smoothTransitionDenominator x)
+        (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x)))
+    (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ expNegInvGlue) x)
+TheoremT.Continuum.smoothTransition_deriv_abs_le_ninety_six : ∀ (x : Real),
+  @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x))
+    (@OfNat.ofNat.{0} Real (nat_lit 96) _)
+TheoremT.Continuum.smoothTransition_second_deriv_abs_le_fourteen_thousand_sixteen : ∀ (x : Real),
+  @LE.le.{0} Real _
+    (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+    (@OfNat.ofNat.{0} Real (nat_lit 14016) _)
+'TheoremT.Continuum.nonnegative_monomial_exp_neg_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.expNegInvGlue_polynomial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.expNegInvGlue_deriv_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.expNegInvGlue_second_deriv_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.expNegInvGlue_deriv_abs_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.expNegInvGlue_second_deriv_abs_le_thirty_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.smoothTransition_denom_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransitionDenominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransitionDenominator_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransitionDenominator_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransitionDenominator_second_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransitionDenominator_deriv_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransition_denominator_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransition_product_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransition_product_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransition_deriv_abs_le_ninety_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.smoothTransition_second_deriv_abs_le_fourteen_thousand_sixteen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

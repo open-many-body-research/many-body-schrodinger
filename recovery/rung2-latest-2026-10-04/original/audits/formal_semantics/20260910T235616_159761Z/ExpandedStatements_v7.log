@@ -1,0 +1,112 @@
+@TheoremT.Continuum.TensorMarginal.tensor_lmarginal_add.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : DecidableEq.{u_1 + 1} ι] {X : ι → Type u_2}
+  [inst_1 : (i : ι) → MeasurableSpace.{u_2} (X i)] (μ : (i : ι) → @MeasureTheory.Measure.{u_2} (X i) _)
+  (s : Finset.{u_1} ι) (f g : ((i : ι) → X i) → ENNReal)
+  (hf : @Measurable.{max u_1 u_2, 0} ((i : ι) → X i) ENNReal _ _ f),
+  @Eq.{max (u_1 + 1) (u_2 + 1)} ((x : (i : ι) → X i) → ENNReal)
+    (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ s fun (x : (i : ι) → X i) =>
+      @HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (f x) (g x))
+    fun (x : (i : ι) → X i) =>
+    @HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ s f x)
+      (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ s g x)
+@TheoremT.Continuum.TensorMarginal.tensor_lmarginal_const_mul.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : DecidableEq.{u_1 + 1} ι] {X : ι → Type u_2}
+  [inst_1 : (i : ι) → MeasurableSpace.{u_2} (X i)] (μ : (i : ι) → @MeasureTheory.Measure.{u_2} (X i) _)
+  (s : Finset.{u_1} ι) (a : ENNReal) (f : ((i : ι) → X i) → ENNReal)
+  (hf : @Measurable.{max u_1 u_2, 0} ((i : ι) → X i) ENNReal _ _ f),
+  @Eq.{max (u_1 + 1) (u_2 + 1)} ((x : (i : ι) → X i) → ENNReal)
+    (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ s fun (x : (i : ι) → X i) =>
+      @HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ a (f x))
+    fun (x : (i : ι) → X i) =>
+    @HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ a (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ s f x)
+@TheoremT.Continuum.TensorMarginal.finite_tensor_marginal_bound.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : DecidableEq.{u_1 + 1} ι] {X : ι → Type u_2}
+  [inst_1 : (i : ι) → MeasurableSpace.{u_2} (X i)] (μ : (i : ι) → @MeasureTheory.Measure.{u_2} (X i) _)
+  [∀ (i : ι), @MeasureTheory.SigmaFinite.{u_2} (X i) (inst_1 i) (μ i)] (L : ι → ENNReal)
+  (F : Finset.{u_1} ι → ((i : ι) → X i) → ENNReal)
+  (hF : ∀ (a : Finset.{u_1} ι), @Measurable.{max u_1 u_2, 0} ((i : ι) → X i) ENNReal _ _ (F a))
+  (hstep :
+    ∀ (a : Finset.{u_1} ι) (i : ι),
+      Not (@Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ a i) →
+        ∀ (x : (i : ι) → X i),
+          @LE.le.{0} ENNReal _ (F a x)
+            (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _
+              (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ (@Singleton.singleton.{u_1, u_1} ι (Finset.{u_1} ι) _ i)
+                (F a) x)
+              (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ (L i)
+                (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ (@Singleton.singleton.{u_1, u_1} ι (Finset.{u_1} ι) _ i)
+                  (F (@Insert.insert.{u_1, u_1} ι (Finset.{u_1} ι) _ i a)) x))))
+  (s : Finset.{u_1} ι) (x : (i : ι) → X i),
+  @LE.le.{0} ENNReal _ (F (@EmptyCollection.emptyCollection.{u_1} (Finset.{u_1} ι) _) x)
+    (@Finset.sum.{u_1, 0} (Finset.{u_1} ι) ENNReal _ (@Finset.powerset.{u_1} ι s) fun (a : Finset.{u_1} ι) =>
+      @HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ (@Finset.prod.{u_1, 0} ι ENNReal _ a fun (i : ι) => L i)
+        (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ s (F a) x))
+@TheoremT.Continuum.TensorMarginal.finite_tensor_product_bound.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : DecidableEq.{u_1 + 1} ι] {X : ι → Type u_2}
+  [inst_1 : (i : ι) → MeasurableSpace.{u_2} (X i)] [inst_2 : Fintype.{u_1} ι]
+  (μ : (i : ι) → @MeasureTheory.Measure.{u_2} (X i) _)
+  [∀ (i : ι), @MeasureTheory.SigmaFinite.{u_2} (X i) (inst_1 i) (μ i)] (L : ι → ENNReal)
+  (F : Finset.{u_1} ι → ((i : ι) → X i) → ENNReal)
+  (hF : ∀ (a : Finset.{u_1} ι), @Measurable.{max u_1 u_2, 0} ((i : ι) → X i) ENNReal _ _ (F a))
+  (hstep :
+    ∀ (a : Finset.{u_1} ι) (i : ι),
+      Not (@Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ a i) →
+        ∀ (x : (i : ι) → X i),
+          @LE.le.{0} ENNReal _ (F a x)
+            (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _
+              (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ (@Singleton.singleton.{u_1, u_1} ι (Finset.{u_1} ι) _ i)
+                (F a) x)
+              (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ (L i)
+                (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ (@Singleton.singleton.{u_1, u_1} ι (Finset.{u_1} ι) _ i)
+                  (F (@Insert.insert.{u_1, u_1} ι (Finset.{u_1} ι) _ i a)) x))))
+  (x : (i : ι) → X i),
+  @LE.le.{0} ENNReal _ (F (@EmptyCollection.emptyCollection.{u_1} (Finset.{u_1} ι) _) x)
+    (@Finset.sum.{u_1, 0} (Finset.{u_1} ι) ENNReal _ (@Finset.powerset.{u_1} ι (@Finset.univ.{u_1} ι _))
+      fun (a : Finset.{u_1} ι) =>
+      @HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ (@Finset.prod.{u_1, 0} ι ENNReal _ a fun (i : ι) => L i)
+        (@MeasureTheory.lintegral.{max u_2 u_1} ((i : ι) → X i) (@MeasurableSpace.pi.{u_1, u_2} ι X _)
+          (@MeasureTheory.Measure.pi.{u_1, u_2} ι X _ _ μ) fun (y : (i : ι) → X i) => F a y))
+@TheoremT.Continuum.TensorMarginal.finiteTensorCoefficient.{u_1} : {ι : Type u_1} →
+  [Fintype.{u_1} ι] → (L : ι → ENNReal) → ENNReal
+@TheoremT.Continuum.TensorMarginal.finite_tensor_uniform_bound.{u_1,
+    u_2} : ∀ {ι : Type u_1} [inst : DecidableEq.{u_1 + 1} ι] {X : ι → Type u_2}
+  [inst_1 : (i : ι) → MeasurableSpace.{u_2} (X i)] [inst_2 : Fintype.{u_1} ι]
+  (μ : (i : ι) → @MeasureTheory.Measure.{u_2} (X i) _)
+  [∀ (i : ι), @MeasureTheory.SigmaFinite.{u_2} (X i) (inst_1 i) (μ i)] (L : ι → ENNReal) (B : ENNReal)
+  (F : Finset.{u_1} ι → ((i : ι) → X i) → ENNReal)
+  (hF : ∀ (a : Finset.{u_1} ι), @Measurable.{max u_1 u_2, 0} ((i : ι) → X i) ENNReal _ _ (F a))
+  (hstep :
+    ∀ (a : Finset.{u_1} ι) (i : ι),
+      Not (@Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ a i) →
+        ∀ (x : (i : ι) → X i),
+          @LE.le.{0} ENNReal _ (F a x)
+            (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _
+              (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ (@Singleton.singleton.{u_1, u_1} ι (Finset.{u_1} ι) _ i)
+                (F a) x)
+              (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ (L i)
+                (@MeasureTheory.lmarginal.{u_1, u_2} ι X _ _ μ (@Singleton.singleton.{u_1, u_1} ι (Finset.{u_1} ι) _ i)
+                  (F (@Insert.insert.{u_1, u_1} ι (Finset.{u_1} ι) _ i a)) x))))
+  (hbound :
+    ∀ (a : Finset.{u_1} ι),
+      @LE.le.{0} ENNReal _
+        (@MeasureTheory.lintegral.{max u_2 u_1} ((i : ι) → X i) (@MeasurableSpace.pi.{u_1, u_2} ι X _)
+          (@MeasureTheory.Measure.pi.{u_1, u_2} ι X _ _ μ) fun (y : (i : ι) → X i) => F a y)
+        B)
+  (x : (i : ι) → X i),
+  @LE.le.{0} ENNReal _ (F (@EmptyCollection.emptyCollection.{u_1} (Finset.{u_1} ι) _) x)
+    (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+      (@TheoremT.Continuum.TensorMarginal.finiteTensorCoefficient.{u_1} ι _ L) B)
+'TheoremT.Continuum.TensorMarginal.tensor_lmarginal_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.TensorMarginal.tensor_lmarginal_const_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.TensorMarginal.finite_tensor_marginal_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.TensorMarginal.finite_tensor_product_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.TensorMarginal.finiteTensorCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.TensorMarginal.finite_tensor_uniform_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

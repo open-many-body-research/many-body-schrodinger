@@ -1,0 +1,194 @@
+@TheoremT.Continuum.homogeneousSpectatorSum : {d : Nat} →
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) →
+    (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) → Complex
+@TheoremT.Continuum.homogeneous_spectator_sum_analytic_isotropic : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M T : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hT : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) T)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ T
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m
+              (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))),
+  @AnalyticOnNhd.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _
+    _ _ _ (@TheoremT.Continuum.homogeneousSpectatorSum d A)
+    (@Set.ofPred.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      fun (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+      @LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ T
+          (@Norm.norm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ z))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.homogeneous_polynomial_eval_scale.{u_1} : ∀ {σ : Type u_1} (P : @MvPolynomial.{u_1, 0} σ Complex _)
+  {m : Nat} (hP : @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ P m) (a : Complex) (X : σ → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => @HMul.hMul.{0, 0, 0} Complex Complex Complex _ a (X i)) P)
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ a m)
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X) P))
+@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily.{u_1} : {σ : Type u_1} →
+  {d : Nat} →
+    (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _) →
+      (a b : Real) → (m : Nat) → (γ : Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _
+@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily_isHomogeneous.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (m : Nat) (γ : Fin d → Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A m γ) m) (a b : Real)
+  (m : Nat) (γ : Fin d → Nat),
+  @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _
+    (@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily.{u_1} σ d A a b m γ) m
+@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily_eval.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (m : Nat) (γ : Fin d → Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A m γ) m) (a b : Real)
+  (m : Nat) (γ : Fin d → Nat) (X : σ → Complex) (s : Fin d → Complex),
+  @Eq.{1} Complex
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X)
+        (@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily.{u_1} σ d A a b m γ))
+      (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+        @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (γ i)))
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) =>
+          @HMul.hMul.{0, 0, 0} Complex Complex Complex _ (Complex.ofReal a) (X i))
+        (A m γ))
+      (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+        @HPow.hPow.{0, 0, 0} Complex Nat Complex _
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (Complex.ofReal b) (s i)) (γ i)))
+@TheoremT.Continuum.polynomialCoeffL1_rescaledHomogeneousSpectatorFamily.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _) {M D S a b T : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (ha : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) a)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hDT : @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D a) T)
+  (hST : @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S b) T)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (m : Nat) (γ : Fin d → Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily.{u_1} σ d A a b m γ))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ T
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m
+          (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+@TheoremT.Continuum.spectatorScalingMap : {d : Nat} →
+  (a b : Real) →
+    (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) →
+      Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex
+@TheoremT.Continuum.spectatorScalingMap_analyticAt : ∀ {d : Nat} (a b : Real)
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex),
+  @AnalyticAt.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+    (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _ _ _ _ _
+    (@TheoremT.Continuum.spectatorScalingMap d a b) z
+@TheoremT.Continuum.spectatorScalingMap_inverse_cancel : ∀ {d : Nat} {a b : Real}
+  (ha : @Ne.{1} Real a (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (hb : @Ne.{1} Real b (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex),
+  @Eq.{1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+    (@TheoremT.Continuum.spectatorScalingMap d a b
+      (@TheoremT.Continuum.spectatorScalingMap d (@Inv.inv.{0} Real _ a) (@Inv.inv.{0} Real _ b) z))
+    z
+@TheoremT.Continuum.spectatorScalingMap_inverse_norm_le_one : ∀ {d : Nat} {a b : Real}
+  (ha : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) a)
+  (hb : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+  (hza :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LE.le.{0} Real _
+        (@Norm.norm.{0} Complex _ (z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i))) a)
+  (hzb :
+    ∀ (i : Fin d),
+      @LE.le.{0} Real _
+        (@Norm.norm.{0} Complex _ (z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i))) b),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+      (@TheoremT.Continuum.spectatorScalingMap d (@Inv.inv.{0} Real _ a) (@Inv.inv.{0} Real _ b) z))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.homogeneousSpectatorSum_rescaling : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  (a b : Real) (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex),
+  @Eq.{1} Complex
+    (@TheoremT.Continuum.homogeneousSpectatorSum d
+      (@TheoremT.Continuum.rescaledHomogeneousSpectatorFamily.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) d A a b) z)
+    (@TheoremT.Continuum.homogeneousSpectatorSum d A (@TheoremT.Continuum.spectatorScalingMap d a b z))
+@TheoremT.Continuum.exists_positive_larger_geometric_radius : ∀ {D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @Exists.{1} Real fun (a : Real) =>
+    And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) a)
+      (And (@LT.lt.{0} Real _ r a)
+        (@LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D a) (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+@TheoremT.Continuum.homogeneous_spectator_sum_analytic_anisotropic : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))),
+  @AnalyticOnNhd.{0, 0, 0} Complex (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _
+    _ _ _ (@TheoremT.Continuum.homogeneousSpectatorSum d A)
+    (@Set.ofPred.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+      fun (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) =>
+      And
+        (@LT.lt.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+            (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+        (@LT.lt.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+            (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+              z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+'TheoremT.Continuum.homogeneousSpectatorSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_sum_analytic_isotropic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_eval_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.rescaledHomogeneousSpectatorFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.rescaledHomogeneousSpectatorFamily_isHomogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.rescaledHomogeneousSpectatorFamily_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_rescaledHomogeneousSpectatorFamily' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.spectatorScalingMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScalingMap_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScalingMap_inverse_cancel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorScalingMap_inverse_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneousSpectatorSum_rescaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.exists_positive_larger_geometric_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_sum_analytic_anisotropic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,73 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T013050_740889Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013050_740889Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013050_740889Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.926328833,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "0193233428d8428526bd9fc5aa05591474ca8674e1f1913056d23a09a230a78e",
+  "audit_log_sha256": "73da2b72e11afb816bd64794fc07d38c2e1d16c3f3608c0f92b7c3fbf0beeb34",
+  "module_records": [
+    {
+      "module": "KSRadialCoefficientL1_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRadialCoefficientL1_v1.lean",
+      "source_sha256": "4db2171e658898015103a79b77169a71eb4e2d15c362c1a2a05f7d795c26fafa",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSRadialCoefficientL1_v1.olean",
+      "object_sha256": "256361419be2129dad3f05dc2fd37d9cb70053c73eb7c99094c032ab86a6a9db",
+      "declarations": [
+        "polynomialCoeffL1_ksRadialSquare",
+        "polynomialCoeffL1_ksRadialMonomialCore",
+        "polynomialCoeffL1_ksRadial_combined_weighted",
+        "polynomialCoeffL1_ksRadial_combined_totalDegree",
+        "polynomialCoeffL1_ksRadial_combined_degree_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSRadialCoefficientCoarseBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRadialCoefficientCoarseBound_v1.lean",
+      "source_sha256": "3aa0ec542f8e1a92653adbaecdb2263eea204c48e82d63d796029221a55c571e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSRadialCoefficientCoarseBound_v1.olean",
+      "object_sha256": "94e3aba53ead6e2494caae192ce29595f4669332688e005e75d91fb359467ff6",
+      "declarations": [
+        "three_pow_half_le_two_pow",
+        "polynomialCoeffL1_ksRadial_combined_coarse_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadialSquare: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadialMonomialCore: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_weighted: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_totalDegree: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_degree_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.three_pow_half_le_two_pow: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_coarse_bound: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadialSquare",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadialMonomialCore",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_weighted",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_totalDegree",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_degree_bound",
+    "TheoremT.Continuum.three_pow_half_le_two_pow",
+    "TheoremT.Continuum.polynomialCoeffL1_ksRadial_combined_coarse_bound"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

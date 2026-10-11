@@ -1,0 +1,584 @@
+TheoremT.Continuum.so2SpectatorPolynomial : (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _) →
+  @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+TheoremT.Continuum.so2SpectatorCoefficientPolynomial : (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _) →
+  (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) →
+    @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coeff : ∀
+  (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (γ α : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+      (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+        (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ))
+      α)
+    (@DFunLike.coe.{1, 1, 1}
+      (@Finsupp.{0, 0}
+        (@Finsupp.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat _)
+        Complex _)
+      (@Finsupp.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat _)
+      (fun
+          (x :
+            @Finsupp.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat
+              _) =>
+        Complex)
+      _
+      (@AddMonoidAlgebra.coeff.{0, 0} Complex
+        (@Finsupp.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat _)
+        _ P)
+      (@Finsupp.sumElim.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        Nat _ α γ))
+TheoremT.Continuum.so2SpectatorPolynomial_eval : ∀
+  (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (y t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex),
+  @Eq.{1} Complex
+    (@MvPolynomial.eval₂.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ y) t
+      (TheoremT.Continuum.so2SpectatorPolynomial P))
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0}
+        (@MvPolynomial.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+        Complex _ _)
+      (@MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+      (fun
+          (x :
+            @MvPolynomial.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex
+              _) =>
+        Complex)
+      _
+      (@MvPolynomial.eval.{0, 0} Complex
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          Complex y t))
+      P)
+TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct : ∀
+  (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (y t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0}
+        (@MvPolynomial.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+        Complex _ _)
+      (@MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+      (fun
+          (x :
+            @MvPolynomial.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex
+              _) =>
+        Complex)
+      _
+      (@MvPolynomial.eval.{0, 0} Complex
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          Complex y t))
+      P)
+    (@Finset.sum.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _
+      (@MvPolynomial.support.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ (TheoremT.Continuum.so2SpectatorPolynomial P))
+      fun (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) =>
+      @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ y)
+          (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ))
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ γ
+              i)))
+TheoremT.Continuum.so2JointMultiindex_degree : ∀
+  (α γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @Eq.{1} Nat
+    (@DFunLike.coe.{1, 1, 1}
+      (@AddMonoidHom.{0, 0}
+        (@Finsupp.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat _)
+        Nat _ _)
+      (@Finsupp.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat _)
+      (fun
+          (x :
+            @Finsupp.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat
+              _) =>
+        Nat)
+      _
+      (@Finsupp.degree.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Nat _)
+      (@Finsupp.sumElim.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        Nat _ α γ))
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@DFunLike.coe.{1, 1, 1}
+        (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _ _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Nat) _
+        (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) α)
+      (@DFunLike.coe.{1, 1, 1}
+        (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _ _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Nat) _
+        (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) γ))
+@TheoremT.Continuum.so2SpectatorCoefficientPolynomial_homogeneous : ∀
+  {P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _}
+  {n : Nat}
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _ P n)
+  (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+    (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ)
+    (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ n
+      (@DFunLike.coe.{1, 1, 1}
+        (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _ _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Nat) _
+        (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) γ))
+@TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eq_zero_of_degree_lt : ∀
+  {P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _}
+  {n : Nat}
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _ P n)
+  (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+  (hγ :
+    @LT.lt.{0} Nat _ n
+      (@DFunLike.coe.{1, 1, 1}
+        (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _ _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Nat) _
+        (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) γ)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ)
+    (@OfNat.ofNat.{0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (nat_lit 0) _)
+TheoremT.Continuum.polynomialCoeffL1_so2SpectatorCoefficientPolynomial : ∀
+  (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ))
+    (@TheoremT.Continuum.polynomialCoeffL1.{0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) P)
+TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coefficient_bound : ∀
+  (P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (γ α : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{1, 1, 1}
+        (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+        (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+          (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ))
+        α))
+    (@TheoremT.Continuum.polynomialCoeffL1.{0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) P)
+TheoremT.Continuum.so2SpectatorTailIndex : (w : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) →
+  @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+TheoremT.Continuum.so2SpectatorDegreeIndices : (n : Nat) →
+  Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+TheoremT.Continuum.so2SpectatorTailIndex_degree : ∀
+  (w : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _),
+  @Eq.{1} Nat
+    (@DFunLike.coe.{1, 1, 1}
+      (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _ _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Nat) _
+      (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (TheoremT.Continuum.so2SpectatorTailIndex w))
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+      @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ w
+        (@Fin.succ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+TheoremT.Continuum.so2SpectatorTailIndex_injective_on_degree : ∀ (n : Nat)
+  {w v : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _}
+  (hw :
+    @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+      (Finset.{0}
+        (@Finsupp.{0, 0}
+          (Fin
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          Nat _))
+      _ (TheoremT.Continuum.spectatorTotalDegreeIndices (@OfNat.ofNat.{0} Nat (nat_lit 2) _) n) w)
+  (hv :
+    @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+      (Finset.{0}
+        (@Finsupp.{0, 0}
+          (Fin
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          Nat _))
+      _ (TheoremT.Continuum.spectatorTotalDegreeIndices (@OfNat.ofNat.{0} Nat (nat_lit 2) _) n) v)
+  (h :
+    @Eq.{1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (TheoremT.Continuum.so2SpectatorTailIndex w) (TheoremT.Continuum.so2SpectatorTailIndex v)),
+  @Eq.{1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) w v
+TheoremT.Continuum.mem_so2SpectatorDegreeIndices_iff : ∀ (n : Nat)
+  (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  Iff
+    (@Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+      (TheoremT.Continuum.so2SpectatorDegreeIndices n) γ)
+    (@LE.le.{0} Nat _
+      (@DFunLike.coe.{1, 1, 1}
+        (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _ _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Nat) _
+        (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) γ)
+      n)
+@TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct_degree : ∀
+  {P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _}
+  {n : Nat}
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _ P n)
+  (y t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0}
+        (@MvPolynomial.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+        Complex _ _)
+      (@MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+      (fun
+          (x :
+            @MvPolynomial.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex
+              _) =>
+        Complex)
+      _
+      (@MvPolynomial.eval.{0, 0} Complex
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          Complex y t))
+      P)
+    (@Finset.sum.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _
+      (TheoremT.Continuum.so2SpectatorDegreeIndices n)
+      fun (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) =>
+      @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ y)
+          (TheoremT.Continuum.so2SpectatorCoefficientPolynomial P γ))
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ γ
+              i)))
+TheoremT.Continuum.so2SpectatorCoefficientPolynomial_grouped_reconstruct : ∀
+  (P :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (hP :
+    ∀ (n : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _
+        (P n) n)
+  (n : Nat),
+  @Eq.{1}
+    (@MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+    (@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (fun (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) =>
+        TheoremT.Continuum.so2SpectatorCoefficientPolynomial
+          (P
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j
+              (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+                (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => γ i)))
+          (@DFunLike.coe.{1, 1, 1}
+            (Equiv.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _))
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) =>
+              @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            _
+            (@Equiv.symm.{1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+              (@Finsupp.equivFunOnFinite.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _ _))
+            γ))
+      n)
+    (P n)
+TheoremT.Continuum.so2SpectatorFamily : (Q :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _) →
+  (j : Nat) →
+    (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) →
+      @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2SpectatorFamily_homogeneous : ∀
+  (Q :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (hQ :
+    ∀ (n : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _
+        (Q n) n)
+  (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat),
+  @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+    (TheoremT.Continuum.so2SpectatorFamily Q j γ) j
+TheoremT.Continuum.so2SpectatorFamily_coefficientL1 : ∀
+  (Q :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  {C B : Real}
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@TheoremT.Continuum.polynomialCoeffL1.{0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n)))
+  (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (TheoremT.Continuum.so2SpectatorFamily Q j γ))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B j))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => γ i)))
+TheoremT.Continuum.so2SpectatorFamily_grouped : ∀
+  (Q :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (hQ :
+    ∀ (n : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _
+        (Q n) n)
+  (n : Nat),
+  @Eq.{1}
+    (@MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+    (@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (TheoremT.Continuum.so2SpectatorFamily Q) n)
+    (Q n)
+TheoremT.Continuum.so2SpectatorFamily_summable : ∀
+  (Q :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (hQ :
+    ∀ (n : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _
+        (Q n) n)
+  {C B : Real} (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@TheoremT.Continuum.polynomialCoeffL1.{0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n)))
+  (y t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (hy :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ B
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _ y))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (ht :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ B
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _ t))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  And
+    (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) _ _
+      (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) =>
+        @Norm.norm.{0} Complex _
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ y)
+              (TheoremT.Continuum.so2SpectatorFamily Q
+                (@Prod.fst.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k)
+                (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k)))
+            (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+                (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k i))))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat))))
+    (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) _ _
+      (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+            (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ y)
+            (TheoremT.Continuum.so2SpectatorFamily Q
+              (@Prod.fst.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k)
+              (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k)))
+          (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+            (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+              (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat))))
+TheoremT.Continuum.so2SpectatorFamily_hasSum_of_joint_hasSum : ∀
+  (Q :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _)
+  (hQ :
+    ∀ (n : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex _
+        (Q n) n)
+  {C B : Real} (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@TheoremT.Continuum.polynomialCoeffL1.{0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n)))
+  (y t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (hy :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ B
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _ y))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (ht :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ B
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _ t))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  {v : Complex}
+  (hsum :
+    @HasSum.{0, 0} Complex Nat _ _
+      (fun (n : Nat) =>
+        @DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0}
+            (@MvPolynomial.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex
+              _)
+            Complex _ _)
+          (@MvPolynomial.{0, 0}
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) Complex
+            _)
+          (fun
+              (x :
+                @MvPolynomial.{0, 0}
+                  (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                  Complex _) =>
+            Complex)
+          _
+          (@MvPolynomial.eval.{0, 0} Complex
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+            (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              Complex y t))
+          (Q n))
+      v (SummationFilter.unconditional.{0} Nat)),
+  @HasSum.{0, 0} Complex (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) _ _
+    (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) =>
+      @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ y)
+          (TheoremT.Continuum.so2SpectatorFamily Q
+            (@Prod.fst.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k)
+            (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k)))
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+            (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) k i)))
+    v (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)))
+'TheoremT.Continuum.so2SpectatorPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorPolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2JointMultiindex_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_homogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eq_zero_of_degree_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_so2SpectatorCoefficientPolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coefficient_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2SpectatorTailIndex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorDegreeIndices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorTailIndex_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorTailIndex_injective_on_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.mem_so2SpectatorDegreeIndices_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2SpectatorCoefficientPolynomial_grouped_reconstruct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2SpectatorFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorFamily_homogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorFamily_coefficientL1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorFamily_grouped' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorFamily_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2SpectatorFamily_hasSum_of_joint_hasSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,67 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T015657_575610Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015657_575610Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015657_575610Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 17.911290875,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "40eed8ce4488d4253fd2f57a2e6676a9f2c55cfbdf9f6734f3419df499ffb7d9",
+  "audit_log_sha256": "da4cf734cd85d982fe339e0c9b3c01efc0d5a3fb654e56dd6d06963fadd8eb1f",
+  "module_records": [
+    {
+      "module": "CoordinateWordMultilinear_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoordinateWordMultilinear_v1.lean",
+      "source_sha256": "eb5a07e250de5aa25ae2c139be23a6adc3c28cdee1acf23c98c8652f215c61d2",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoordinateWordMultilinear_v1.olean",
+      "object_sha256": "d7dfb0314fa83fa50625395a1996682d39b79b76c479a2059506398d79234470",
+      "declarations": [
+        "coordinateWordMultilinear",
+        "coordinateWordMultilinear_apply",
+        "coordinateWordMultilinear_norm_le",
+        "coordinateWordMultilinear_diagonal"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousPolynomialMultilinear_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialMultilinear_v1.lean",
+      "source_sha256": "ca635b0bd793f24a13ee15ae3f301390bea2c7d77651b92c7855de39a7dd3c1b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousPolynomialMultilinear_v1.olean",
+      "object_sha256": "9d69e9f59759c67c99d8a0bf934cd8a22a4f3549b60c9cbbd14f059bb36e5204",
+      "declarations": [
+        "homogeneous_polynomial_multilinear_exists"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.coordinateWordMultilinear: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.coordinateWordMultilinear_apply: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.coordinateWordMultilinear_norm_le: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.coordinateWordMultilinear_diagonal: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_polynomial_multilinear_exists: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.coordinateWordMultilinear",
+    "TheoremT.Continuum.coordinateWordMultilinear_apply",
+    "TheoremT.Continuum.coordinateWordMultilinear_norm_le",
+    "TheoremT.Continuum.coordinateWordMultilinear_diagonal",
+    "TheoremT.Continuum.homogeneous_polynomial_multilinear_exists"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

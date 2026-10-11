@@ -1,0 +1,16 @@
+@TheoremT.Continuum.complexPolynomial_eq_of_real_openBox_eval_eq.{u_1} : ∀ {σ : Type u_1}
+  (P Q : @MvPolynomial.{u_1, 0} σ Complex _) {r : Real} (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (h :
+    ∀ (x : σ → Real),
+      (∀ (i : σ), @LT.lt.{0} Real _ (@abs.{0} Real _ _ (x i)) r) →
+        @Eq.{1} Complex
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => Complex.ofReal (x i)) P)
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => Complex.ofReal (x i)) Q)),
+  @Eq.{u_1 + 1} (@MvPolynomial.{u_1, 0} σ Complex _) P Q
+'TheoremT.Continuum.complexPolynomial_eq_of_real_openBox_eval_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

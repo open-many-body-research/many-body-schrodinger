@@ -1,0 +1,112 @@
+{
+  "schema": "focused-source-and-expanded-semantic-review-v1",
+  "timestamp_utc": "2026-09-11T01:20:33.242876+00:00",
+  "status": "PASS_NO_DEFECT_FOUND",
+  "reviewer": "/root/weak_pointwise_limit/fixed_box_geometry",
+  "category": "Independent focused source and expanded-statement review of actual weak-profile-to-physical-pointwise composition; no new compiler run by reviewer.",
+  "sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxPointwiseFactorial_v1.lean",
+      "sha256": "ab9611be060253c3582b2936613ac082c8dfa9d8ddc9c4c4e739d9bc96806ba9"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalPointwise_v1.lean",
+      "sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534"
+    }
+  ],
+  "strict_audit_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011745_657701Z/receipt.json",
+    "sha256": "0168946019c5531c9320605242c0bb909c408c6c904d7653b8ceea00b8d2895f"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011745_657701Z/ExpandedStatements_v8.log",
+    "sha256": "ba2bbde4c94f8733ce701fee5e4b91f10613c4a298b8c7c756ea511259ebc568"
+  },
+  "exact_review_scope": {
+    "complete_sources_read": true,
+    "all_expanded_log_lines_read": "1-422 inclusive",
+    "all_9_declarations_and_axiom_reports_read": true,
+    "source_hashes_match_compiled_strict_receipt": true,
+    "only_foundational_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "printer_failures": 0,
+    "printer_ellipses": 0
+  },
+  "focused_dependency_sources_read": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalFactorial_v1.lean",
+      "sha256": "6ac3778eacc8f4c796982d6610627c7c24832ec435358bdb7fa83ef3f78e0f0a"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinContinuousBaseRepresentative_v1.lean",
+      "sha256": "0895c68acf812abef6223694024127d018b1f4dd5ad79c211ff12b17d239750d"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FixedBoxSevenGeometry_v1.lean",
+      "sha256": "52190186c2c03b41db6b4922fab14fec4b47796e8beafde7050115dd0067e09e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialReserveAbsorption_v1.lean",
+      "sha256": "d0a2159b9f7f621838362e7ed72523809aad7e69debb642a6602015870a6a5bd"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateFactorialAnalytic_v1.lean",
+      "sha256": "aa1d4ae446e4556be731530323eca436750ff29a7a9e1da6e4f3426ff5b7989e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateFrechetBound_v1.lean",
+      "sha256": "3beb8f1e7e1f203202726a754c2dc74b52e58f2f487ebb481110fde5542d3fa2"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialFrechetAnalytic_v1.lean",
+      "sha256": "e1ddb1499a6187d6688c06a66e63622a8f2dde3684e901cc9520d14af808c3c0"
+    }
+  ],
+  "checks": [
+    {
+      "id": "same_actual_weak_family",
+      "finding": "PhysicalKSBoxFactorialData unfolds to one F with F00=f, all finite local L2 budgets, actual Y and T weak directional shifts, and actual weighted profile bounds. The consumer extracts local L2 for each F entry from its real RegionL2Budget. No pointwise derivative representatives or smoothness of higher F entries are inputs."
+    },
+    {
+      "id": "genuine_weak_embedding",
+      "finding": "The proof applies grushin_actual_profile_continuous_base with the actual fixedSevenCutoff and concrete closed/open box maps. F00 continuity is exactly the stated continuity of f after rewriting F00=f and the exact physical image equality. The returned smoothness and every actual complexDirectionalWordDeriv bound therefore apply to the original f on the open physical radius1/512 rectangle."
+    },
+    {
+      "id": "exact_reserve_and_constants",
+      "finding": "The bound first uses Ebox*factorialLocalProfile(F,k+11). The literal profile at that same k+11 is bounded by D*B^(k+11)*(k+11)!, with B=3072*C*A. The proved binomial estimate (k+11)! <= 2^(k+11)*k!*11! gives rate 2B=6144*C*A and amplitude Ebox*12*C*A*(F0+498*sqrt(W))*(2B)^11*11!. Nonnegative prefactors are proved; Ebox=(257/16)^7 is center-independent."
+    },
+    {
+      "id": "analyticity_from_actual_derivatives",
+      "finding": "physicalKSBoxFactorialData_analytic consumes the derived ContDiffOn and actual coordinate-word factorial bound. The existing coordinate-to-operator theorem incurs the explicit factor7 per derivative and the existing factorial-Frechet Taylor theorem proves an actual local power series. Smoothness in that generic Taylor implication is supplied here rather than left as an unproved premise."
+    },
+    {
+      "id": "quantifier_order",
+      "finding": "For fixed Z,E the scalar physical theorem selects C_H,M,A>=1 before quantifying f, its graph equation, continuous representative g, AE equality, L,R,eps, chart and unit center. Those three constants and the rate depend only on Z,E through selected M,A. The amplitude explicitly retains dependence on L and norm(g(0)) through F0=M*norm(g(0))*sqrt(sourceVolume) and W=(L^2+norm(g(0))^2)*C_H; no uniform bound independent of those supplied solution data is claimed."
+    },
+    {
+      "id": "all_actual_charts_and_scale",
+      "finding": "The theorem applies the already proved scalar_coulomb_all_physical_box_factorial output to both nuclear charts indexed by Fin2 and the pair chart, using the literal originScaledDifference, nuclearKSLift/pairKSLift and inverse physical spectator reindexing. Continuity of these same composed functions follows from global continuity of g and the actual continuous lifts. The scale hypotheses 0<eps and eps<=min(1,R/4), local Lipschitz hypothesis and unit-center condition remain explicit."
+    },
+    {
+      "id": "no_circular_or_added_math_premise",
+      "finding": "The weak-data implication is conditional on genuine weak jets and bounds, which are discharged for the exact physical fields in the scalar graph theorem. The final theorem assumes the scalar continuum graph eigenfunction equation and a continuous locally Lipschitz AE representative; it does not assume lifted smoothness, lifted analyticity, lifted pointwise factorial estimates, or the intended embedding conclusion."
+    }
+  ],
+  "defects_found": [],
+  "limitations": [
+    "This proves a local lifted regularity implication for an input scalar graph eigenfunction and the stated representative/Lipschitz data; it does not assert that a physical ground eigenfunction, these representative properties, spectral separation or binding have been constructed.",
+    "No KS descent, collision compatibility across the physical atlas, global H2 approximation, executable certified solver, complexity result, or full Theorem T follows from these two modules alone.",
+    "The named derivative amplitude depends on solution data F0 and W, unlike the universal constants C_H,M,A and exponential rate.",
+    "The development compiler and strict audit reuse pinned object caches. This focused review is not an isolated source rebuild."
+  ],
+  "preservation": {
+    "frozen_original_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_original_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "source_changes": "None; this new review file only."
+  }
+}

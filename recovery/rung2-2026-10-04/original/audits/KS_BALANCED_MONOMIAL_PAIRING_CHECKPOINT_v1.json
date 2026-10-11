@@ -1,0 +1,95 @@
+{
+  "status": "PASS_EXECUTABLE_NAT_PAIRING_AND_FINITE_BALANCED_MONOMIAL_FACTORIZATION",
+  "utc": "2026-09-11T01:33:32.811553+00:00",
+  "exact_result": "For nonnegative integer exponents a1+a2=b1+b2, the direct Nat minimum/subtraction algorithm returns a two-by-two exponent matrix with exact row and column margins. The balanced monomial equals the four quadratic factors with these exponents in every commutative monoid, in the literal complex polynomial ring, and on the actual KS image.",
+  "evidence_category": "Fully formalized finite mathematical result; executable Nat procedure.",
+  "mathematical_detail": [
+    "n00=min(a1,b1), n01=a1-n00, n10=b1-n00, n11=min(a2,b2).",
+    "The last entry equals the paper sequential Nat remainder, so truncation is accounted for.",
+    "Factor order is (z1*w1)^n00*(z1*w2)^n01*(z2*w1)^n10*(z2*w2)^n11. No variable or radius is required to be nonzero.",
+    "Physical specialization uses actual ksSpinor, complex conjugates, ksMap and radius equal to the actual Euclidean norm squared of y."
+  ],
+  "modules": [
+    {
+      "source": {
+        "path": "lean/KSBalancedMonomialPairing_v1.lean",
+        "sha256": "235aa45bd078260d4dbe5fe95a05ca7aab7274eef78d19fef0fe5d26044e8c36"
+      },
+      "build": {
+        "path": "logs/development/KSBalancedMonomialPairing_v1-20260911T011952_183324Z.json",
+        "sha256": "86b52be450007291c2a91fe3790bc3bd196df42ac6ea3ab40b9fa5bace4499a9"
+      }
+    },
+    {
+      "source": {
+        "path": "lean/KSBalancedMonomialFactorization_v1.lean",
+        "sha256": "4e73b064e654162e45d63808d6ad575f80dc38f4662068e1b6488a5ff1ef6214"
+      },
+      "build": {
+        "path": "logs/development/KSBalancedMonomialFactorization_v1-20260911T012426_695607Z.json",
+        "sha256": "af584d4dc86936fc738b5e2f1d00b2d356bdf73aa2f61b5b44525ac9433d9377"
+      }
+    },
+    {
+      "source": {
+        "path": "lean/KSPhysicalBalancedMonomial_v1.lean",
+        "sha256": "82356c52592f786d81803513e0b9de412777df98afd5b6e4fa5eb453bf7dc8b3"
+      },
+      "build": {
+        "path": "logs/development/KSPhysicalBalancedMonomial_v1-20260911T012517_619341Z.json",
+        "sha256": "139731e56f0a75d7c472da5973d2d4847bc57a5525b2886c419dd66477788a1a"
+      }
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T012532_800044Z/receipt.json",
+    "sha256": "f01fe577fa04b3bd0393b6f9b124ba957c93bcda93e74ce78d707ef04d47e4a8"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T012532_800044Z/ExpandedStatements_v8.log",
+    "sha256": "cce057e9f0f4799845d6674d7d03a4c38821d854b9769f7441249abd1651c816"
+  },
+  "review": {
+    "path": "audits/KS_BALANCED_MONOMIAL_PAIRING_REVIEW_v1_20260911T013128Z.json",
+    "sha256": "2cadfd1cfe9ded774661751606485b3c390bdb808e5778ee179129ba173bb6fa"
+  },
+  "consumed_spinor_algebra": {
+    "path": "lean/KSDescentSpinorAlgebra_v1.lean",
+    "sha256": "42eb7c2c66d6fdf951f2340e6af848b5c8bc68fee971262271d6e4e73b6a54a4"
+  },
+  "paper_target": {
+    "path": "audits/KS_QUANTITATIVE_DESCENT_v1.md",
+    "sha256": "17d55abbbfafae45ae5b62e1ed0c70603a50e22f62e520dd741d970129ebc69f"
+  },
+  "manual_check": "Exact source and proof bodies, full strict receipt and complete expanded statement/axiom log read. Ten declarations have only subsets of the standard foundational axioms. Focused independent review read in full.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "execution_diagnostic": {
+    "source": {
+      "path": "lean/KSBalancedMonomialExecution_v1.lean",
+      "sha256": "144302e9386156acef0303d54fa7afc5d524d1ddbd3230cc7d6a7330e8a48a77"
+    },
+    "build": {
+      "path": "logs/development/KSBalancedMonomialExecution_v1-20260911T012709_846532Z.json",
+      "sha256": "f5ba443012ea706e4b19f8ad14e37e081c0078522bb0217f5d32f6aef2d16f2b"
+    },
+    "output": "(0,0,0,0)->[[0,0],[0,0]]; (2,3,4,1)->[[2,0],[2,1]]; (4,1,2,3)->[[2,2],[0,1]]; (10^20,7,10^20-1,8)->[[10^20-1,1],[0,7]]",
+    "scope": "Actual Lean evaluation diagnostic. It has no named mathematical declaration and is excluded from the strict theorem audit; universal correctness is the compiled margin theorem, not these samples."
+  },
+  "limitations": [
+    "No invariant-series projection, coefficient-norm bound, radial reduction or convergence theorem is established by these three modules.",
+    "Abstract complex/polynomial equalities are mathematical objects; no executable arithmetic representation for arbitrary complex inputs is claimed.",
+    "No bit-complexity theorem is claimed.",
+    "Pinned dependency object cache reused; no new isolated source rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "This stream continues exact exponent totals and homogeneity of the actual substituted polynomial. Parent and other stream own coefficient-norm descent, radial reduction and series composition."
+}

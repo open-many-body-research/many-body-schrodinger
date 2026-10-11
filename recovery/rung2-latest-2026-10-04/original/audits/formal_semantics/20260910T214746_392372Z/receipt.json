@@ -1,0 +1,103 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "a1594fb26fecb7be25e97448b1db53881bf5a449e4b8c6413bad028c3e554119",
+  "timestamp_utc": "20260910T214746_392372Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214746_392372Z/ExpandedStatements_v6.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214746_392372Z/ExpandedStatements_v6.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.7273433750000002,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "3a2cd35626832967462bbe622421d98e2c0875356e84273ee4d6ffa0de2d64a6",
+  "audit_log_sha256": "a0c49f5fb716c6d5df9e45bb2e31f4a4a68d61ff8221b97a944033b2839f1782",
+  "module_records": [
+    {
+      "module": "ExpNegInvGlueExplicitBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ExpNegInvGlueExplicitBounds_v1.lean",
+      "source_sha256": "71109d87434c7e08d1fdc880e685a4e39a72fda264a29e23057034be79094ec4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ExpNegInvGlueExplicitBounds_v1.olean",
+      "object_sha256": "0d8789a24918b7186b40051d5f586c98e5dfcc2cf29e1550e24a46f4d5fbe2f2",
+      "declarations": [
+        "nonnegative_monomial_exp_neg_bound",
+        "expNegInvGlue_polynomial_bound",
+        "expNegInvGlue_deriv_formula",
+        "expNegInvGlue_second_deriv_formula",
+        "expNegInvGlue_deriv_abs_le_two",
+        "expNegInvGlue_second_deriv_abs_le_thirty_six",
+        "smoothTransition_denom_lower"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SmoothTransitionExplicitBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SmoothTransitionExplicitBounds_v1.lean",
+      "source_sha256": "1dfd38139daa37936b41001bdca945b1c7bb6f94bb9be9c7bd42dfd85b52bbd4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SmoothTransitionExplicitBounds_v1.olean",
+      "object_sha256": "b896899cde4a526a7520deb26f6dd0576e4b9f11a4a04d59a021ba7ce9575d96",
+      "declarations": [
+        "smoothTransitionDenominator",
+        "smoothTransitionDenominator_contDiff",
+        "smoothTransitionDenominator_deriv",
+        "smoothTransitionDenominator_second_deriv",
+        "smoothTransitionDenominator_deriv_bounds",
+        "smoothTransition_denominator_product",
+        "smoothTransition_product_first",
+        "smoothTransition_product_second",
+        "smoothTransition_deriv_abs_le_ninety_six",
+        "smoothTransition_second_deriv_abs_le_fourteen_thousand_sixteen"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.nonnegative_monomial_exp_neg_bound: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.expNegInvGlue_polynomial_bound: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.expNegInvGlue_deriv_formula: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.expNegInvGlue_second_deriv_formula: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.expNegInvGlue_deriv_abs_le_two: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.expNegInvGlue_second_deriv_abs_le_thirty_six: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.smoothTransition_denom_lower: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransitionDenominator: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransitionDenominator_contDiff: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransitionDenominator_deriv: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransitionDenominator_second_deriv: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransitionDenominator_deriv_bounds: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransition_denominator_product: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransition_product_first: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransition_product_second: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransition_deriv_abs_le_ninety_six: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.smoothTransition_second_deriv_abs_le_fourteen_thousand_sixteen: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.nonnegative_monomial_exp_neg_bound",
+    "TheoremT.Continuum.expNegInvGlue_polynomial_bound",
+    "TheoremT.Continuum.expNegInvGlue_deriv_formula",
+    "TheoremT.Continuum.expNegInvGlue_second_deriv_formula",
+    "TheoremT.Continuum.expNegInvGlue_deriv_abs_le_two",
+    "TheoremT.Continuum.expNegInvGlue_second_deriv_abs_le_thirty_six",
+    "TheoremT.Continuum.smoothTransition_denom_lower",
+    "TheoremT.Continuum.smoothTransitionDenominator",
+    "TheoremT.Continuum.smoothTransitionDenominator_contDiff",
+    "TheoremT.Continuum.smoothTransitionDenominator_deriv",
+    "TheoremT.Continuum.smoothTransitionDenominator_second_deriv",
+    "TheoremT.Continuum.smoothTransitionDenominator_deriv_bounds",
+    "TheoremT.Continuum.smoothTransition_denominator_product",
+    "TheoremT.Continuum.smoothTransition_product_first",
+    "TheoremT.Continuum.smoothTransition_product_second",
+    "TheoremT.Continuum.smoothTransition_deriv_abs_le_ninety_six",
+    "TheoremT.Continuum.smoothTransition_second_deriv_abs_le_fourteen_thousand_sixteen"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

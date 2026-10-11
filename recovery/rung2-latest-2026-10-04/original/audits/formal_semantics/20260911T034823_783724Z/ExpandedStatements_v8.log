@@ -1,0 +1,227 @@
+TheoremT.Continuum.physicalKSAxisSymmetryRadius : (M A : Real) → Real
+@TheoremT.Continuum.physicalKSAxisSymmetryRadius_pos : ∀ {M A : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A),
+  @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.physicalKSAxisSymmetryRadius M A)
+@TheoremT.Continuum.physicalKSAnalyticDescent_axis_angle_invariant : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {v : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex} {c M A F0 W : Real}
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxInvariantAnalyticDescentDerivativeData f v
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+      M A F0 W)
+  (θ : Real)
+  (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real))
+  (hz :
+    @LT.lt.{0} Real _
+      (@Norm.norm.{0}
+        (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real))
+        _ z)
+      (TheoremT.Continuum.physicalKSAxisSymmetryRadius M A)),
+  And
+    (@Eq.{1} Complex
+      (TheoremT.Continuum.physicalKSAnalyticDescentA f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (TheoremT.Continuum.so2RealRotation (Real.cos θ) (Real.sin θ)
+                  (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z)
+                  i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))))
+      (TheoremT.Continuum.physicalKSAnalyticDescentA f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i)))))
+    (@Eq.{1} Complex
+      (TheoremT.Continuum.physicalKSAnalyticDescentB f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (TheoremT.Continuum.so2RealRotation (Real.cos θ) (Real.sin θ)
+                  (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z)
+                  i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))))
+      (TheoremT.Continuum.physicalKSAnalyticDescentB f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i)))))
+@TheoremT.Continuum.real_unit_pair_exists_angle : ∀ {a b : Real}
+  (hab :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @Exists.{1} Real fun (θ : Real) => And (@Eq.{1} Real (Real.cos θ) a) (@Eq.{1} Real (Real.sin θ) b)
+@TheoremT.Continuum.physicalKSAnalyticDescent_axis_rotation_invariant : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {v : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex} {c M A F0 W : Real}
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxInvariantAnalyticDescentDerivativeData f v
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+      M A F0 W)
+  (a b : Real)
+  (hab :
+    @Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real))
+  (hz :
+    @LT.lt.{0} Real _
+      (@Norm.norm.{0}
+        (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real))
+        _ z)
+      (TheoremT.Continuum.physicalKSAxisSymmetryRadius M A)),
+  And
+    (@Eq.{1} Complex
+      (TheoremT.Continuum.physicalKSAnalyticDescentA f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (TheoremT.Continuum.so2RealRotation a b
+                  (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z)
+                  i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))))
+      (TheoremT.Continuum.physicalKSAnalyticDescentA f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i)))))
+    (@Eq.{1} Complex
+      (TheoremT.Continuum.physicalKSAnalyticDescentB f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (TheoremT.Continuum.so2RealRotation a b
+                  (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z)
+                  i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))))
+      (TheoremT.Continuum.physicalKSAnalyticDescentB f
+        (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+        (TheoremT.Continuum.physicalKSComplexAxisMap
+          (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              Complex.ofReal
+                (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i))
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            Complex.ofReal
+              (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) z i)))))
+'TheoremT.Continuum.physicalKSAxisSymmetryRadius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalKSAxisSymmetryRadius_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalKSAnalyticDescent_axis_angle_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.real_unit_pair_exists_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalKSAnalyticDescent_axis_rotation_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

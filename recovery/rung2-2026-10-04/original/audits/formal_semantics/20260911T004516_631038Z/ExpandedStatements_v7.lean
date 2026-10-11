@@ -1,0 +1,89 @@
+import TensorBoxUniformLimit_v1
+import TensorBoxContinuousRepresentative_v1
+import SmoothCoordinateSubsetFields7_v1
+import SmoothWordBoxContinuousRepresentative_v1
+import TensorBoxCoordinateLimit_v1
+import TensorBoxFrechetLimit_v1
+import SmoothFiniteCoordinateJetRegularity_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.tensor_box_sqrt_integral_eq_Lp_norm
+#check @TheoremT.Continuum.tensor_box7_uniformCauchy_of_L2_Cauchy
+#check @TheoremT.Continuum.tensor_box7_continuous_uniform_limit_of_L2_Cauchy
+#check @TheoremT.Continuum.tensor_box7_uniform_limit_ae_Lp_limit
+#check @TheoremT.Continuum.tensor_box7_continuous_representative_of_L2_limits
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv_contDiff
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv_append
+#check @TheoremT.Continuum.normedComplexDirectionalWordDeriv_perm
+#check @TheoremT.Continuum.coordinateWordDeriv7
+#check @TheoremT.Continuum.canonicalSubsetWord7
+#check @TheoremT.Continuum.canonicalSubsetWord7_nodup
+#check @TheoremT.Continuum.canonicalSubsetWord7_insert_perm
+#check @TheoremT.Continuum.canonicalSubsetWord7_append_length
+#check @TheoremT.Continuum.smoothSubsetField7
+#check @TheoremT.Continuum.smoothSubsetField7_empty
+#check @TheoremT.Continuum.smoothSubsetField7_contDiff
+#check @TheoremT.Continuum.smoothSubsetField7_word_base
+#check @TheoremT.Continuum.smoothSubsetField7_directional
+#check @TheoremT.Continuum.smoothSubsetField7_coordinate_hasDerivAt
+#check @TheoremT.Continuum.smooth_word7_continuous_representative_of_L2_limits
+#check @TheoremT.Continuum.smooth_words7_continuous_representatives_of_L2_limits
+#check @TheoremT.Continuum.tensor_box7_uniform_coordinate_slice
+#check @TheoremT.Continuum.tensor_box7_coordinate_hasDerivAt_of_uniform_limits
+#check @TheoremT.Continuum.tensor_box7_partial_derivative_eq_of_uniform_limits
+#check @TheoremT.Continuum.tensor_box7_coordinate_limit_inside
+#check @TheoremT.Continuum.coordinateDerivativeMap7
+#check @TheoremT.Continuum.coordinateDerivativeMap7_fderiv
+#check @TheoremT.Continuum.tensor_box7_uniformly_pi
+#check @TheoremT.Continuum.tensor_box7_fderiv_uniform_limit
+#check @TheoremT.Continuum.tensor_box7_limit_hasFDerivAt
+#check @TheoremT.Continuum.finite_coordinate_jet_contDiffOn
+#check @TheoremT.Continuum.finite_coordinate_jet_base_contDiffOn
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.tensor_box_sqrt_integral_eq_Lp_norm
+#print axioms TheoremT.Continuum.tensor_box7_uniformCauchy_of_L2_Cauchy
+#print axioms TheoremT.Continuum.tensor_box7_continuous_uniform_limit_of_L2_Cauchy
+#print axioms TheoremT.Continuum.tensor_box7_uniform_limit_ae_Lp_limit
+#print axioms TheoremT.Continuum.tensor_box7_continuous_representative_of_L2_limits
+#print axioms TheoremT.Continuum.normedComplexDirectionalWordDeriv
+#print axioms TheoremT.Continuum.normedComplexDirectionalWordDeriv_contDiff
+#print axioms TheoremT.Continuum.normedComplexDirectionalWordDeriv_append
+#print axioms TheoremT.Continuum.normedComplexDirectionalWordDeriv_perm
+#print axioms TheoremT.Continuum.coordinateWordDeriv7
+#print axioms TheoremT.Continuum.canonicalSubsetWord7
+#print axioms TheoremT.Continuum.canonicalSubsetWord7_nodup
+#print axioms TheoremT.Continuum.canonicalSubsetWord7_insert_perm
+#print axioms TheoremT.Continuum.canonicalSubsetWord7_append_length
+#print axioms TheoremT.Continuum.smoothSubsetField7
+#print axioms TheoremT.Continuum.smoothSubsetField7_empty
+#print axioms TheoremT.Continuum.smoothSubsetField7_contDiff
+#print axioms TheoremT.Continuum.smoothSubsetField7_word_base
+#print axioms TheoremT.Continuum.smoothSubsetField7_directional
+#print axioms TheoremT.Continuum.smoothSubsetField7_coordinate_hasDerivAt
+#print axioms TheoremT.Continuum.smooth_word7_continuous_representative_of_L2_limits
+#print axioms TheoremT.Continuum.smooth_words7_continuous_representatives_of_L2_limits
+#print axioms TheoremT.Continuum.tensor_box7_uniform_coordinate_slice
+#print axioms TheoremT.Continuum.tensor_box7_coordinate_hasDerivAt_of_uniform_limits
+#print axioms TheoremT.Continuum.tensor_box7_partial_derivative_eq_of_uniform_limits
+#print axioms TheoremT.Continuum.tensor_box7_coordinate_limit_inside
+#print axioms TheoremT.Continuum.coordinateDerivativeMap7
+#print axioms TheoremT.Continuum.coordinateDerivativeMap7_fderiv
+#print axioms TheoremT.Continuum.tensor_box7_uniformly_pi
+#print axioms TheoremT.Continuum.tensor_box7_fderiv_uniform_limit
+#print axioms TheoremT.Continuum.tensor_box7_limit_hasFDerivAt
+#print axioms TheoremT.Continuum.finite_coordinate_jet_contDiffOn
+#print axioms TheoremT.Continuum.finite_coordinate_jet_base_contDiffOn

@@ -1,0 +1,97 @@
+TheoremT.Continuum.nuclearDistanceAxisZ : (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) → Complex
+TheoremT.Continuum.nuclearDistanceAxisW : (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) → Complex
+TheoremT.Continuum.nuclearDistanceAxisMap : (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) →
+  Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex
+TheoremT.Continuum.nuclearDistanceAxisZ_analyticAt : ∀ (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hs :
+    @Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _)),
+  @AnalyticAt.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Complex _ _ _ _ _
+    TheoremT.Continuum.nuclearDistanceAxisZ q
+TheoremT.Continuum.nuclearDistanceAxisW_analyticAt : ∀ (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hs :
+    @Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _)),
+  @AnalyticAt.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Complex _ _ _ _ _
+    TheoremT.Continuum.nuclearDistanceAxisW q
+TheoremT.Continuum.nuclearDistanceAxisMap_analyticOnNhd : @AnalyticOnNhd.{0, 0, 0} Complex
+  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _ _ _ _ _
+  TheoremT.Continuum.nuclearDistanceAxisMap
+  (@Set.ofPred.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+    fun (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) =>
+    @Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+TheoremT.Continuum.nuclearDistanceAxisMap_center : ∀ (σ : Real),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+    (TheoremT.Continuum.nuclearDistanceAxisMap
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Complex (nat_lit 0) _)
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (Complex.ofReal σ)
+          (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _) (Complex.ofReal σ)
+            (@Matrix.vecEmpty.{0} Complex)))))
+    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (nat_lit 0) _)
+@TheoremT.Continuum.nuclearDistanceAxis_bounds_closed : ∀ {σ δ : Real}
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hδ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ)
+  (hδσ : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ σ (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hr :
+    @LE.le.{0} Real _
+      (@Norm.norm.{0} Complex _ (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))) δ)
+  (hs :
+    @LE.le.{0} Real _
+      (@Norm.norm.{0} Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)) (Complex.ofReal σ)))
+      δ)
+  (hu :
+    @LE.le.{0} Real _
+      (@Norm.norm.{0} Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _)) (Complex.ofReal σ)))
+      δ),
+  And
+    (@Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+    (And
+      (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.nuclearDistanceAxisZ q))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) δ))
+      (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.nuclearDistanceAxisW q))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 17) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ δ (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+@TheoremT.Continuum.nuclearDistanceAxis_bounds : ∀ {σ δ : Real}
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hδσ : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ σ (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hr :
+    @LT.lt.{0} Real _
+      (@Norm.norm.{0} Complex _ (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))) δ)
+  (hs :
+    @LT.lt.{0} Real _
+      (@Norm.norm.{0} Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)) (Complex.ofReal σ)))
+      δ)
+  (hu :
+    @LT.lt.{0} Real _
+      (@Norm.norm.{0} Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _)) (Complex.ofReal σ)))
+      δ),
+  And
+    (@Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+    (And
+      (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.nuclearDistanceAxisZ q))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) δ))
+      (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.nuclearDistanceAxisW q))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 17) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ δ (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+'TheoremT.Continuum.nuclearDistanceAxisZ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisW' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisZ_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisW_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisMap_analyticOnNhd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisMap_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxis_bounds_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxis_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

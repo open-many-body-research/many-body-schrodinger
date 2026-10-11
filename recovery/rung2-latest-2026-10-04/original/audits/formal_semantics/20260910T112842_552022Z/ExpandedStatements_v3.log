@@ -1,0 +1,117 @@
+TheoremT.Continuum.ksJacobian_bilinear_symmetry : ∀ (y v : TheoremT.Continuum.KSSpace)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} Real
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @HMul.hMul.{0, 0, 0} Real ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) k) Real _
+        (TheoremT.Continuum.ksJacobian y i k)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+          v k))
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @HMul.hMul.{0, 0, 0} Real ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) k) Real _
+        (TheoremT.Continuum.ksJacobian v i k)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+          y k))
+TheoremT.Continuum.ksMap_coordinate_second_fderiv : ∀ (y v w : TheoremT.Continuum.KSSpace)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _ _)
+      TheoremT.Continuum.KSSpace
+      (fun (x : TheoremT.Continuum.KSSpace) => (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _
+      (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _
+        (fun (x : TheoremT.Continuum.KSSpace) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+              ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _ _)
+            TheoremT.Continuum.KSSpace
+            (fun (x : TheoremT.Continuum.KSSpace) => (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _
+            (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _
+              ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _
+              (fun (z : TheoremT.Continuum.KSSpace) =>
+                @WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (TheoremT.Continuum.ksMap z) i)
+              x)
+            v)
+        y)
+      w)
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @HMul.hMul.{0, 0, 0} Real ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) k) Real _
+        (TheoremT.Continuum.ksJacobian v i k)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+          w k))
+TheoremT.Continuum.ksBasis : (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → TheoremT.Continuum.KSSpace
+TheoremT.Continuum.ksMap_coordinate_laplacian_zero : ∀ (y : TheoremT.Continuum.KSSpace)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+          ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _ _)
+        TheoremT.Continuum.KSSpace
+        (fun (x : TheoremT.Continuum.KSSpace) => (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _
+        (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _
+          ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _
+          (fun (x : TheoremT.Continuum.KSSpace) =>
+            @DFunLike.coe.{1, 1, 1}
+              (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+                ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _ _)
+              TheoremT.Continuum.KSSpace
+              (fun (x : TheoremT.Continuum.KSSpace) => (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _
+              (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _
+                ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) _ _ _
+                (fun (z : TheoremT.Continuum.KSSpace) =>
+                  @WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                    (TheoremT.Continuum.ksMap z) i)
+                x)
+              (TheoremT.Continuum.ksBasis k))
+          y)
+        (TheoremT.Continuum.ksBasis k))
+    (@OfNat.ofNat.{0} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i) (nat_lit 0) _)
+TheoremT.Continuum.ksMap_fderiv_coordinate : ∀ (y v : TheoremT.Continuum.KSSpace)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+          TheoremT.Continuum.Position _ _ _ _)
+        TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => TheoremT.Continuum.Position) _
+        (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ TheoremT.Continuum.Position _ _ _
+          TheoremT.Continuum.ksMap y)
+        v)
+      i)
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @HMul.hMul.{0, 0, 0} Real ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) k) Real _
+        (TheoremT.Continuum.ksJacobian y i k)
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+          v k))
+'TheoremT.Continuum.ksJacobian_bilinear_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_coordinate_second_fderiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_coordinate_laplacian_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_fderiv_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]

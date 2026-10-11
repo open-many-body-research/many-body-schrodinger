@@ -1,0 +1,44 @@
+@TheoremT.Continuum.powerSeries_local_factorial_radius_bound.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] [@CompleteSpace.{u_2} F _] {f : E → F}
+  {p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _} {x : E} {R : ENNReal}
+  (hf : @HasFPowerSeriesOnBall.{0, u_1, u_2} Real E F _ _ _ _ _ f p x R) {r s : NNReal}
+  (hs : @LT.lt.{0} NNReal _ (@OfNat.ofNat.{0} NNReal (nat_lit 0) _) s)
+  (hrs :
+    @LT.lt.{0} ENNReal _ (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (ENNReal.ofNNReal r) (ENNReal.ofNNReal s)) R),
+  @Exists.{1} Real fun (C : Real) =>
+    And (@GT.gt.{0} Real _ C (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+      (∀ (z : E),
+        @LE.le.{0} NNReal _ (@NNNorm.nnnorm.{u_1} E _ z) r →
+          ∀ (k : Nat),
+            @LE.le.{0} Real _
+              (@Norm.norm.{max u_2 u_1}
+                (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _
+                (@iteratedFDeriv.{0, u_1, u_2} Real _ E _ _ F _ _ k f (@HAdd.hAdd.{u_1, u_1, u_1} E E E _ x z)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial k))
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ (NNReal.toReal s) k))))
+@TheoremT.Continuum.analyticAt_local_factorial_bound.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] [@CompleteSpace.{u_2} F _] {f : E → F} {x : E}
+  (hf : @AnalyticAt.{0, u_1, u_2} Real E F _ _ _ _ _ f x),
+  @Exists.{1} Real fun (rho : Real) =>
+    And (@GT.gt.{0} Real _ rho (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+      (@Exists.{1} Real fun (C : Real) =>
+        And (@GT.gt.{0} Real _ C (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+          (@Exists.{1} Real fun (A : Real) =>
+            And (@GT.gt.{0} Real _ A (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+              (∀ (y : E),
+                @Membership.mem.{u_1, u_1} E (Set.{u_1} E) _ (@Metric.ball.{u_1} E _ x rho) y →
+                  ∀ (k : Nat),
+                    @LE.le.{0} Real _
+                      (@Norm.norm.{max u_2 u_1}
+                        (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _
+                          _)
+                        _ (@iteratedFDeriv.{0, u_1, u_2} Real _ E _ _ F _ _ k f y))
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                        (@Nat.cast.{0} Real _ (Nat.factorial k))))))
+'TheoremT.Continuum.powerSeries_local_factorial_radius_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.analyticAt_local_factorial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

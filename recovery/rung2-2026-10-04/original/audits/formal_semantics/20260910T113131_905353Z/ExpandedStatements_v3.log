@@ -1,0 +1,52 @@
+@TheoremT.Continuum.second_directional_composition.{u_1, u_2,
+    u_3} : ∀ {E : Type u_1} {F : Type u_2} {G : Type u_3} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] [inst_4 : NormedAddCommGroup.{u_3} G]
+  [inst_5 : @NormedSpace.{0, u_3} Real G _ _] {φ : F → G} {θ : E → F}
+  (hφ : @ContDiff.{0, u_2, u_3} Real _ F _ _ G _ _ (@OfNat.ofNat.{0} (WithTop.{0} ENat) (nat_lit 2) _) φ)
+  (hθ : @ContDiff.{0, u_1, u_2} Real _ E _ _ F _ _ (@OfNat.ofNat.{0} (WithTop.{0} ENat) (nat_lit 2) _) θ) (x v w : E),
+  @Eq.{u_3 + 1} G
+    (@DFunLike.coe.{max (u_1 + 1) (u_3 + 1), u_1 + 1, u_3 + 1}
+      (@ContinuousLinearMap.{0, 0, u_1, u_3} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ G _ _ _ _) E
+      (fun (x : E) => G) _
+      (@fderiv.{0, u_1, u_3} Real _ E _ _ _ G _ _ _
+        (fun (y : E) =>
+          @DFunLike.coe.{max (u_1 + 1) (u_3 + 1), u_1 + 1, u_3 + 1}
+            (@ContinuousLinearMap.{0, 0, u_1, u_3} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ G _ _ _ _) E
+            (fun (x : E) => G) _
+            (@fderiv.{0, u_1, u_3} Real _ E _ _ _ G _ _ _ (@Function.comp.{u_1 + 1, u_2 + 1, u_3 + 1} E F G φ θ) y) v)
+        x)
+      w)
+    (@HAdd.hAdd.{u_3, u_3, u_3} G G G _
+      (@DFunLike.coe.{max (u_2 + 1) (u_3 + 1), u_2 + 1, u_3 + 1}
+        (@ContinuousLinearMap.{0, 0, u_2, u_3} Real Real _ _ (@RingHom.id.{0} Real _) F _ _ G _ _ _ _) F
+        (fun (x : F) => G) _ (@fderiv.{0, u_2, u_3} Real _ F _ _ _ G _ _ _ φ (θ x))
+        (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+          (@ContinuousLinearMap.{0, 0, u_1, u_2} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ F _ _ _ _) E
+          (fun (x : E) => F) _
+          (@fderiv.{0, u_1, u_2} Real _ E _ _ _ F _ _ _
+            (fun (y : E) =>
+              @DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+                (@ContinuousLinearMap.{0, 0, u_1, u_2} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ F _ _ _ _) E
+                (fun (x : E) => F) _ (@fderiv.{0, u_1, u_2} Real _ E _ _ _ F _ _ _ θ y) v)
+            x)
+          w))
+      (@DFunLike.coe.{max (u_2 + 1) (u_3 + 1), u_2 + 1, u_3 + 1}
+        (@ContinuousLinearMap.{0, 0, u_2, u_3} Real Real _ _ (@RingHom.id.{0} Real _) F _ _ G _ _ _ _) F
+        (fun (x : F) => G) _
+        (@DFunLike.coe.{max (u_2 + 1) (u_3 + 1), u_2 + 1, max (u_2 + 1) (u_3 + 1)}
+          (@ContinuousLinearMap.{0, 0, u_2, max u_3 u_2} Real Real _ _ (@RingHom.id.{0} Real _) F _ _
+            (@ContinuousLinearMap.{0, 0, u_2, u_3} Real Real _ _ (@RingHom.id.{0} Real _) F _ _ G _ _ _ _) _ _ _ _)
+          F
+          (fun (x : F) => @ContinuousLinearMap.{0, 0, u_2, u_3} Real Real _ _ (@RingHom.id.{0} Real _) F _ _ G _ _ _ _)
+          _
+          (@fderiv.{0, u_2, max u_3 u_2} Real _ F _ _ _
+            (@ContinuousLinearMap.{0, 0, u_2, u_3} Real Real _ _ (@RingHom.id.{0} Real _) F _ _ G _ _ _ _) _ _ _
+            (fun (z : F) => @fderiv.{0, u_2, u_3} Real _ F _ _ _ G _ _ _ φ z) (θ x))
+          (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+            (@ContinuousLinearMap.{0, 0, u_1, u_2} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ F _ _ _ _) E
+            (fun (x : E) => F) _ (@fderiv.{0, u_1, u_2} Real _ E _ _ _ F _ _ _ θ x) w))
+        (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+          (@ContinuousLinearMap.{0, 0, u_1, u_2} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ F _ _ _ _) E
+          (fun (x : E) => F) _ (@fderiv.{0, u_1, u_2} Real _ E _ _ _ F _ _ _ θ x) v)))
+'TheoremT.Continuum.second_directional_composition' depends on axioms: [propext, Classical.choice, Quot.sound]

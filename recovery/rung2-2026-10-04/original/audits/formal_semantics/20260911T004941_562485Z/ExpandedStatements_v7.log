@@ -1,0 +1,58 @@
+@TheoremT.Continuum.directionalWordDeriv_constant_open.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {χ : Prod.{u_1, u_2} Y T → Real} {U : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  (hU : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ U) {c : Real}
+  (hχ :
+    ∀ (p : Prod.{u_1, u_2} Y T),
+      @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ U p →
+        @Eq.{1} Real (χ p) c)
+  (w : List.{0} ι) (p : Prod.{u_1, u_2} Y T),
+  @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ U p →
+    @Eq.{1} Real (@TheoremT.Continuum.directionalWordDeriv.{u_1, u_2} Y T _ _ _ _ ι dirs χ w p)
+      (@ite.{1} Real (@Eq.{1} (List.{0} ι) w (@List.nil.{0} ι)) _ c (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+@TheoremT.Continuum.directionalWordProduct_plateau.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {χ : Prod.{u_1, u_2} Y T → Real} {U : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  (hU : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ U)
+  (hχ :
+    ∀ (p : Prod.{u_1, u_2} Y T),
+      @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ U p →
+        @Eq.{1} Real (χ p) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (D : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) (w : List.{0} ι) {p : Prod.{u_1, u_2} Y T}
+  (hp :
+    @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ U p),
+  @Eq.{1} Complex (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs χ D w p) (D w p)
+@TheoremT.Continuum.directionalWordProduct_plateau_restrict_ae.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {χ : Prod.{u_1, u_2} Y T → Real} {U : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  (hU : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ U)
+  (hχ :
+    ∀ (p : Prod.{u_1, u_2} Y T),
+      @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ U p →
+        @Eq.{1} Real (χ p) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (D : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) (w : List.{0} ι) {K : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  (hK : @LE.le.{max u_1 u_2} (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ K U),
+  @Filter.EventuallyEq.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex
+    (@MeasureTheory.ae.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T)
+      (@MeasureTheory.Measure.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _ _
+      (@MeasureTheory.Measure.restrict.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)
+        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) K))
+    (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs χ D w) (D w)
+'TheoremT.Continuum.directionalWordDeriv_constant_open' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_plateau' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_plateau_restrict_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

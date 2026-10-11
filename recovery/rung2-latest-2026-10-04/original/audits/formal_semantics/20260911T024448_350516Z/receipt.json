@@ -1,0 +1,73 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T024448_350516Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024448_350516Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024448_350516Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 12.578264833,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "3d0c4573f21469791aba1b07fc0f800c22a5bb63143d16d3e4599b7fcd5efd4b",
+  "audit_log_sha256": "de6a1edfbc6b029540550906132d8a96f7b685aca932a6fe8cc003ebbe55524b",
+  "module_records": [
+    {
+      "module": "KSRealSpectatorSeriesData_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRealSpectatorSeriesData_v1.lean",
+      "source_sha256": "ae03a15cb8d04c82869b1f67b1c624ce2aa09ee75688ae3ba115a28f42f8df9e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSRealSpectatorSeriesData_v1.olean",
+      "object_sha256": "8d8d3c103723ff875786bf5675b92c2f7502047912b070e5a8a1483f93ed651a",
+      "declarations": [
+        "ksRealSpectatorFamilyA",
+        "ksRealSpectatorFamilyB",
+        "ks_real_spectator_series_data",
+        "ks_real_spectator_series_analytic",
+        "ks_real_spectator_series_norm_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSRealSpectatorSeriesDescent_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRealSpectatorSeriesDescent_v1.lean",
+      "source_sha256": "02cbbdd08d995810d34ee7e548b716b219ffbdd2217bba32aa3174e4164bfd80",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSRealSpectatorSeriesDescent_v1.olean",
+      "object_sha256": "f251e8f1b4ed13bedf2bda4976d12701929e609ea94bf20a5a53004f22a72e11",
+      "declarations": [
+        "ks_real_spectator_series_uniform_convergence",
+        "ks_real_spectator_series_physical_descent"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.ksRealSpectatorFamilyA: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksRealSpectatorFamilyB: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ks_real_spectator_series_data: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ks_real_spectator_series_analytic: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ks_real_spectator_series_norm_bounds: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ks_real_spectator_series_uniform_convergence: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ks_real_spectator_series_physical_descent: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.ksRealSpectatorFamilyA",
+    "TheoremT.Continuum.ksRealSpectatorFamilyB",
+    "TheoremT.Continuum.ks_real_spectator_series_data",
+    "TheoremT.Continuum.ks_real_spectator_series_analytic",
+    "TheoremT.Continuum.ks_real_spectator_series_norm_bounds",
+    "TheoremT.Continuum.ks_real_spectator_series_uniform_convergence",
+    "TheoremT.Continuum.ks_real_spectator_series_physical_descent"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

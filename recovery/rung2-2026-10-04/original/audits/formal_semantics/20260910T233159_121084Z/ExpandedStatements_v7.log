@@ -1,0 +1,241 @@
+TheoremT.Continuum.grushinGridNorm : (N : Nat → Real → Real) → (h : Real) → (r : Nat) → Real
+@TheoremT.Continuum.grushin_grid_time_bounds : ∀ {ρ : Real} {ell r : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ) (hr : @LT.lt.{0} Nat _ r ell),
+  And
+    (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))))
+    (@LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)))
+      ρ)
+TheoremT.Continuum.grushin_gridNorm_nonneg : ∀ (N : Nat → Real → Real) {ρ : Real} {ell r : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ) (hr : @LT.lt.{0} Nat _ r ell)
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s)),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (TheoremT.Continuum.grushinGridNorm N (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) r)
+TheoremT.Continuum.grushin_gridNorm_base : ∀ (N : Nat → Real → Real) {ρ H0 : Real} {ell r : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _)) (hr : @LT.lt.{0} Nat _ r ell)
+  (hH0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) H0)
+  (hbase :
+    ∀ (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s → @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (N r s) H0),
+  @LE.le.{0} Real _
+    (TheoremT.Continuum.grushinGridNorm N (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) r) H0
+TheoremT.Continuum.grushin_grid_lower_norm_le : ∀ (N : Nat → Real → Real) {ρ h : Real} {r j : Nat}
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hj0 : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 1) _) j) (hjr : @LE.le.{0} Nat _ j r)
+  (htop :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _)) h)
+      ρ)
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))
+      (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j) (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) h)))
+    (TheoremT.Continuum.grushinGridNorm N h (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))
+TheoremT.Continuum.grushin_inverse_gap_term_le : ∀ (N : Nat → Real → Real) {ρ h : Real} {r j : Nat}
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hj0 : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 1) _) j) (hjr : @LE.le.{0} Nat _ j r)
+  (htop :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _)) h)
+      ρ)
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ h r)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ h) j)
+        (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) h))))
+    (TheoremT.Continuum.grushinGridNorm N h (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))
+@TheoremT.Continuum.grushin_scaled_source_le : ∀ {ρ F A S : Real} {ell r : Nat}
+  (hρ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _)) (hr : @LT.lt.{0} Nat _ r ell)
+  (hF : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A) (hFS : @LE.le.{0} Real _ F S),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) r)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ F (@HPow.hPow.{0, 0, 0} Real Nat Real _ A r))
+        (@Nat.cast.{0} Real _ (Nat.factorial r))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@HPow.hPow.{0, 0, 0} Real Nat Real _ A r))
+TheoremT.Continuum.grushin_scaled_factorial_term_le : ∀ (N : Nat → Real → Real) {ρ A : Real} {ell r j : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A) (hr : @LT.lt.{0} Nat _ r ell)
+  (hj0 : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 1) _) j) (hjr : @LE.le.{0} Nat _ j r)
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s))
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) r)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ A j)
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial r))
+            (@Nat.cast.{0} Real _ (Nat.factorial (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j)))))
+        (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r)
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ A j)
+      (TheoremT.Continuum.grushinGridNorm N (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))
+        (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j)))
+TheoremT.Continuum.GrushinScalarFixedGapRecurrence : (N : Nat → Real → Real) → (ρ C A F : Real) → Prop
+TheoremT.Continuum.grushin_grid_recurrence_from_fixed_gap : ∀ (N : Nat → Real → Real) {ρ C A F S : Real} {ell r : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+  (hF : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F) (hFS : @LE.le.{0} Real _ F S)
+  (hr : @LT.lt.{0} Nat _ r ell) (hr9 : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 9) _) r)
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s))
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s))
+  (hrec : TheoremT.Continuum.GrushinScalarFixedGapRecurrence N ρ C A F),
+  have d : (r : Nat) → Real :=
+    TheoremT.Continuum.grushinGridNorm N (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell));
+  @LE.le.{0} Real _ (d r)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ S (@HPow.hPow.{0, 0, 0} Real Nat Real _ A r))
+            (d (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (d (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+          @HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            (d
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+                (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) j)))))
+TheoremT.Continuum.grushin_scalar_fixed_gap_grid_bound : ∀ (N : Nat → Real → Real) {ρ C A F H0 : Real} {ell r : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F)
+  (hH0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) H0) (hr : @LT.lt.{0} Nat _ r ell)
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s))
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s))
+  (hbase :
+    ∀ (q : Nat),
+      @LE.le.{0} Nat _ q (@OfNat.ofNat.{0} Nat (nat_lit 8) _) →
+        ∀ (s : Real),
+          @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+            @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (N q s) H0)
+  (hrec : TheoremT.Continuum.GrushinScalarFixedGapRecurrence N ρ C A F),
+  @LE.le.{0} Real _
+    (TheoremT.Continuum.grushinGridNorm N (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) r)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ F H0)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) C) A))
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+TheoremT.Continuum.grushin_scalar_fixed_gap_bound : ∀ (N : Nat → Real → Real) {ρ C A F H0 : Real}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F)
+  (hH0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) H0)
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s))
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s))
+  (hbase :
+    ∀ (q : Nat),
+      @LE.le.{0} Nat _ q (@OfNat.ofNat.{0} Nat (nat_lit 8) _) →
+        ∀ (s : Real),
+          @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+            @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (N q s) H0)
+  (hrec : TheoremT.Continuum.GrushinScalarFixedGapRecurrence N ρ C A F) (r : Nat),
+  have B : Real :=
+    @HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) C) A;
+  have S : Real := @HAdd.hAdd.{0, 0, 0} Real Real Real _ F H0;
+  @LE.le.{0} Real _ (N r ρ)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B) S)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B)
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+          ρ)
+        r))
+TheoremT.Continuum.grushin_scalar_fixed_gap_zero : ∀ (N : Nat → Real → Real) {ρ C A F H0 : Real}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F)
+  (hH0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) H0)
+  (hS : @Eq.{1} Real (@HAdd.hAdd.{0, 0, 0} Real Real Real _ F H0) (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s))
+  (hmono :
+    ∀ (q : Nat) (s t : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s t → @LE.le.{0} Real _ t ρ → @LE.le.{0} Real _ (N q t) (N q s))
+  (hbase :
+    ∀ (q : Nat),
+      @LE.le.{0} Nat _ q (@OfNat.ofNat.{0} Nat (nat_lit 8) _) →
+        ∀ (s : Real),
+          @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+            @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (N q s) H0)
+  (hrec : TheoremT.Continuum.GrushinScalarFixedGapRecurrence N ρ C A F) (r : Nat),
+  @Eq.{1} Real (N r ρ) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+'TheoremT.Continuum.grushinGridNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_grid_time_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_gridNorm_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_gridNorm_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_grid_lower_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_inverse_gap_term_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scaled_source_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scaled_factorial_term_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.GrushinScalarFixedGapRecurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_grid_recurrence_from_fixed_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scalar_fixed_gap_grid_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scalar_fixed_gap_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scalar_fixed_gap_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

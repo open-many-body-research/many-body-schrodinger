@@ -1,0 +1,75 @@
+{
+  "created_utc": "2026-09-11T01:27:29.277977+00:00",
+  "status": "FOCUSED_REVIEW_NO_DEFECT_FOUND",
+  "reviewer": "/root/fixed_box_review/spinor_algebra_review",
+  "scope": "Independent exact-source review of KSDescentSpinorAlgebra_v1 and its eleven expanded declarations and axiom reports, lines 1935-2100 of the joint strict v8 log. Full KSMapGeometry source, the actual Position definition, relevant nuclear/pair lift definition lines, and the literal D1/D10/K11 paper formulas were inspected. The two pointwise modules in the joint receipt are outside this review.",
+  "evidence_category": "Semantic review of compiled Lean algebra theorems; the review itself is not an additional kernel proof.",
+  "module_records": [
+    {
+      "module": "KSDescentSpinorAlgebra_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSDescentSpinorAlgebra_v1.lean",
+      "source_sha256": "42eb7c2c66d6fdf951f2340e6af848b5c8bc68fee971262271d6e4e73b6a54a4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSDescentSpinorAlgebra_v1.olean",
+      "object_sha256": "1490142f9f0147c1bcb6afa80a97bc21f9e51a3db008d0e59bfad2a8a6476f4b",
+      "declarations": [
+        "ksSpinor",
+        "ksDescentQuadratic",
+        "ksSpinor_balanced_quadratic",
+        "ksDescentQuadratic_determinant",
+        "ksMap_radial_relation",
+        "ksCircleAction",
+        "ksMap_circle_action",
+        "ksMap_circle_invariant",
+        "ksMap_rotation_invariant",
+        "ksSpinor_circle_action",
+        "ks_pullback_circle_invariant"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T012232_239943Z/receipt.json",
+    "sha256": "800a84d168cf14151a4c8f26fefdd83608b9b340847434282963bb5864be4102"
+  },
+  "expanded_statement_and_axioms": {
+    "path": "audits/formal_semantics/20260911T012232_239943Z/ExpandedStatements_v8.log",
+    "sha256": "d1101e29d33fc8248e6b110b94b912e8612decad176956ecb3959e83e756ef29",
+    "reviewed_lines": [
+      1935,
+      2100
+    ]
+  },
+  "immediate_source_and_formula_hashes": {
+    "lean/KSMapGeometry_v1.lean": "039fbbf45154e897fdb8a48a8967f5f1e346f5ef36e0a7df9daa43fc9410e4ca",
+    "lean/NuclearKSLift_v1.lean": "f9ab3f7770c7e5358cf3f214c1d1f0b4d519d970673d5b7d9b7030cdf3bec275",
+    "lean/PairKSLift_v1.lean": "52456ae6e1072cae6c5cf3bfc5269b2bb0e177994c50818be6cdd1cb661751c7",
+    "audits/KS_QUANTITATIVE_DESCENT_v1.md": "17d55abbbfafae45ae5b62e1ed0c70603a50e22f62e520dd741d970129ebc69f",
+    "audits/KS_WEAK_REMOVABILITY_v1.md": "ba8769955d76e01ce561a68071ad5832828106c3ca614ea8fe1e19c36aa78cde"
+  },
+  "checks": {
+    "actual_map": "KSSpace is EuclideanSpace R (Fin 4), Position is EuclideanSpace R (Fin 3), and ksMap has components 2(y0*y2+y1*y3), 2(y1*y2-y0*y3), y0^2+y1^2-y2^2-y3^2. The nuclear and pair lift definitions use this same global ksMap. There is no replacement map in the new algebra module.",
+    "balanced_quadratics": "The spinor entries are z0=y0+i*y1 and z1=y2+i*y3. Their actual conjugate products are ((r+X2)/2, (X0+i*X1)/2; (X0-i*X1)/2, (r-X2)/2) with X=ksMap(y), r=norm(y)^2. The off-diagonal signs agree with the second component of the KS map and the one-based paper D10 formulas. The expanded statement explicitly uses Complex.star and Complex.ofReal of the real squared Euclidean norm.",
+    "determinant": "For all independent complex X and r the determinant is (r^2-X0^2-X1^2-X2^2)/4. The proof expands the four entries and uses I^2=-1; it does not assume the radial relation. This identity alone makes no assertion that arbitrary complex X,r are on the real KS image.",
+    "radial_relation": "The exact real identity (norm(y)^2)^2=sum_k ksMap(y)[k]^2 holds for every y, including y=0, and follows from the actual Euclidean ksMap_norm_sq theorem. The already imported ksMap_norm identity gives norm(ksMap(y))=norm(y)^2, so the radial variable has the advertised physical meaning.",
+    "circle_action": "The displayed real four-dimensional map simultaneously applies (u,v)->(a*u-b*v,b*u+a*v) in both coordinate planes. Its spinor multiplier is a+i*b for both components. For arbitrary real a,b, ksMap transforms by the real scalar a^2+b^2. Exact invariance is asserted only with a^2+b^2=1, and the trigonometric specialization discharges that equality from sin^2+cos^2=1.",
+    "pullback": "For an arbitrary spectator type S and arbitrary Psi:Position x S -> Complex, the pullback identity leaves the spectator fixed and follows solely from exact equality of KS image points. No regularity assumption, eigenfunction premise, or almost-everywhere-to-pointwise step is hidden in this algebraic implication.",
+    "quantifiers": "All eight theorem statements have exactly their advertised point/vector parameters. The only nontrivial explicit hypotheses are the unit-circle equality in the two invariant statements. No invariant-polynomial decomposition, analytic descent result, or equivalent unresolved conclusion is present as a premise.",
+    "trust": "The current source and object hashes match the joint strict v8 receipt. All eleven relevant declarations have only propext, Classical.choice and Quot.sound. The receipt reports exit code 0, complete axiom output, no unexpected axioms, no source forbidden tokens, no printer ellipses and no printer failures. No proof compilation or audit was rerun for this review."
+  },
+  "limitations": [
+    "The balanced quadratic theorem is an identity on the actual real KS slice. A formal polynomial-ring construction with independent z,w variables, selection of balanced invariant monomials, exponent pairing and coefficient-norm estimates remains separate.",
+    "No convergent analytic-plus-distance decomposition, uniqueness of descended coefficients, explicit complex radius, global gluing, ordinary-distance boundary compatibility, trial approximation, solver, or full Theorem T follows from this module alone.",
+    "These identities do not by themselves prove surjectivity of the KS map or characterize its fibers.",
+    "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+    "A focused source review is semantic evidence and does not independently establish source-rebuild reproducibility."
+  ],
+  "preservation": {
+    "freeze_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "freeze_tag": "theorem-t-proof-freeze-2026-09-09",
+    "direct_frozen_artifacts_reviewed": [],
+    "note": "All mathematical sources inspected are post-freeze files. Paper D10 provenance points to the frozen sources recorded in KS_QUANTITATIVE_DESCENT_v1.md; no old bytes or completed records were modified."
+  },
+  "actions": "Read-only inspection and hash verification, followed by creation of this new immutable focused review JSON. No source edits, compile/audit reruns, or frozen-artifact changes."
+}

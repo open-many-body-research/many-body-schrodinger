@@ -1,0 +1,66 @@
+{
+  "utc": "2026-09-10T23:49:50.082394+00:00",
+  "status": "FORMAL_CANONICAL_ORDER_TWO_WEAK_JET_IDENTIFICATIONS_SEALED",
+  "modules": [
+    {
+      "module": "WeakFactorialJet_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakFactorialJet_v1.lean",
+      "source_sha256": "26915609b3b0f8c40bdd705fa60f35975116be7f8a73480b01db8d5ccf653c87",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakFactorialJet_v1.olean",
+      "object_sha256": "ea98526097db31259a541ab442fd06c37ee0d799a1770d4de71407288bb88140",
+      "declarations": [
+        "weakCoordinateJet",
+        "weakFactorialJet",
+        "weakCoordinateJet_tendsto",
+        "weakCoordinateJet_ae_smooth",
+        "weakFactorialJet_zero"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "WeakFactorialJetIdentifications_v2",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakFactorialJetIdentifications_v2.lean",
+      "source_sha256": "07100bfe4ccc5aa5055fc33cba0ce3e611e5c4deb147e46ac40f3f49c6a403b8",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakFactorialJetIdentifications_v2.olean",
+      "object_sha256": "706df1462e499af60b2596779a82f96824587a8f509b8331095ffe1f356171e8",
+      "declarations": [
+        "mixedMultiIndexWord_zero_pi",
+        "weakCoordinateJet_perm",
+        "weakFactorialJet_single_y",
+        "weakFactorialJet_single_t",
+        "weakFactorialJet_double_y",
+        "weakFactorialJet_mixed",
+        "weakFactorialJet_double_t"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "receipts": [
+    {
+      "path": "audits/formal_semantics/20260910T234638_958011Z/receipt.json",
+      "sha256": "a709ba3c177b65e252e43ac2ae9a8e6ab5f633360de2260c2a90f7ad1cd96d15"
+    },
+    {
+      "path": "audits/formal_semantics/20260910T234913_746556Z/receipt.json",
+      "sha256": "4381a4f06a6920463fd30ea2886e1fa01da94218b703eaa43af86096307492e9"
+    }
+  ],
+  "declarations": 12,
+  "exact_result": "weakFactorialJet is an actual L2 family selected by the fixed mixedMultiIndexWord. The six order-at-most-two components identify exactly with f, dY, dT, eYY, eYT, and eTT. Single derivatives and zero are definitional/combinatorial; the second-order identities assume genuine full global weak H2 jets and compact AE support of f.",
+  "proof": "The finite weakCoordinateJet uses f for empty words, d for singleton words, and e(dir second)(dir first) for words of length at least two. For length at most two it represents the ordinary smooth derivative word along the proved compact H2 approximation. Pointwise smooth permutation symmetry and uniqueness of strong L2 limits prove weak permutation equality. Canonical prefix permutations then give the six exact identities.",
+  "evidence": "Core and integration-safe identifications v2 compile against pinned dependencies. Two strict v7 audits cover all twelve declarations with complete expanded statements, only standard foundational axioms, and zero printer diagnostics.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "scope": "For words longer than two the total definition truncates to its first two letters; it is explicitly not an all-order derivative family. Actual compact-test semantics through order two are provided independently by WeakFactorialJetTests_v1, imported with the canonical support chain by identifications v2.",
+  "integration_correction": {
+    "historical_source": "lean/WeakFactorialJetIdentifications_v1.lean",
+    "historical_source_sha256": "66527f708bcd9f46e60741308ee0e68e0286554097d98f0321b06d404e767051",
+    "reason": "The first identification module passed independently but contained a duplicate weakFactorialJet_closed_support declaration concurrently proved in canonical WeakFactorialJetSupport_v1. Its successful bytes are preserved. Identifications v2 omits that duplicate and imports the canonical support module, and is the sole approved integration target.",
+    "use": "WeakFactorialJetIdentifications_v2",
+    "do_not_joint_import": "WeakFactorialJetIdentifications_v1"
+  },
+  "next": "Compose the actual six component identities with the weak radial bounds, original compact support, and exact 498-element outer-set assembly."
+}

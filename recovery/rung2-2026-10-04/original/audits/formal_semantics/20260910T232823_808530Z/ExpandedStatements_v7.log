@@ -1,0 +1,239 @@
+TheoremT.Continuum.WeakGrushin.factorialWordYCount_nil : @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (TheoremT.Continuum.WeakGrushin.factorialWordYCount
+    (@List.nil.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))))
+  (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+TheoremT.Continuum.WeakGrushin.factorialWordTCount_nil : @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (TheoremT.Continuum.WeakGrushin.factorialWordTCount
+    (@List.nil.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))))
+  (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _)
+TheoremT.Continuum.WeakGrushin.factorialWordYCount_cons_y : ∀
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+    (TheoremT.Continuum.WeakGrushin.factorialWordYCount
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i) w))
+    (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+      ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+      (TheoremT.Continuum.WeakGrushin.factorialWordYCount w)
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+        (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+TheoremT.Continuum.WeakGrushin.factorialWordTCount_cons_y : ∀
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+    (TheoremT.Continuum.WeakGrushin.factorialWordTCount
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i) w))
+    (TheoremT.Continuum.WeakGrushin.factorialWordTCount w)
+TheoremT.Continuum.WeakGrushin.factorialWordYCount_cons_t : ∀
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+    (TheoremT.Continuum.WeakGrushin.factorialWordYCount
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) j) w))
+    (TheoremT.Continuum.WeakGrushin.factorialWordYCount w)
+TheoremT.Continuum.WeakGrushin.factorialWordTCount_cons_t : ∀
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+    (TheoremT.Continuum.WeakGrushin.factorialWordTCount
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) j) w))
+    (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+      (TheoremT.Continuum.WeakGrushin.factorialWordTCount w)
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+TheoremT.Continuum.WeakGrushin.factorialWordYCount_mixedMultiIndexWord : ∀
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+    (TheoremT.Continuum.WeakGrushin.factorialWordYCount (TheoremT.Continuum.mixedMultiIndexWord α β)) α
+TheoremT.Continuum.WeakGrushin.factorialWordTCount_mixedMultiIndexWord : ∀
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+    (TheoremT.Continuum.WeakGrushin.factorialWordTCount (TheoremT.Continuum.mixedMultiIndexWord α β)) β
+TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily : (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex) →
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))) →
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex
+TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_nil : ∀
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily F
+      (@List.nil.{0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))))
+    (F (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_canonical : ∀
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily F (TheoremT.Continuum.mixedMultiIndexWord α β)) (F α β)
+@TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_budget : ∀
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {m : Nat}
+  {W : Real}
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (hF :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+      @LE.le.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+          m →
+        @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ (F α β) Ω W)
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (hw :
+    @LE.le.{0} Nat _
+      (@List.length.{0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) w)
+      m),
+  @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _
+    (TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily F w) Ω W
+@TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_localD : ∀
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {m : Nat}
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (hY :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α k)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+          m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω (F α β)
+          (F
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+              α
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+            β)
+          (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+  (hT :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @LT.lt.{0} Nat _
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+            (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β k))
+          m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω (F α β)
+          (F α
+            (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+              ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+              β
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (x : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+  (hw :
+    @LT.lt.{0} Nat _
+      (@List.length.{0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) w)
+      m),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _ Ω
+    (TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily F w)
+    (TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily F
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        x w))
+    (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ x)
+@TheoremT.Continuum.WeakGrushin.mixedMultiIndexWeakHk_coordinateWeakHk : ∀
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex} {m : Nat}
+  {W : Real} (hf : TheoremT.Continuum.WeakGrushin.ProductMixedMultiIndexWeakHk Ω f m W),
+  @TheoremT.Continuum.WeakGrushin.ProductCoordinateWeakHk (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ Ω f m W
+TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_append_tt : ∀
+  (F :
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily F
+      (@HAppend.hAppend.{0, 0, 0}
+        (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+        (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+        (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))) _
+        w
+        (@List.cons.{0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) j)
+          (@List.cons.{0}
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+            (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) j)
+            (@List.nil.{0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))))))
+    (F (TheoremT.Continuum.WeakGrushin.factorialWordYCount w)
+      (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+        (TheoremT.Continuum.WeakGrushin.factorialWordTCount w)
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+'TheoremT.Continuum.WeakGrushin.factorialWordYCount_nil' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordTCount_nil' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordYCount_cons_y' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordTCount_cons_y' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordYCount_cons_t' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordTCount_cons_t' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordYCount_mixedMultiIndexWord' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialWordTCount_mixedMultiIndexWord' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_nil' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_localD' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWeakHk_coordinateWeakHk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedMultiIndexWordFamily_append_tt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,454 @@
+TheoremT.Continuum.so2JointRealProduct : (z :
+    Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real) →
+  Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+TheoremT.Continuum.so2JointComplexProduct : (z :
+    Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real) →
+  Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+TheoremT.Continuum.so2JointRealProduct_norm_le : ∀
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0}
+      (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real))
+      _ (TheoremT.Continuum.so2JointRealProduct z))
+    (@Norm.norm.{0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real) _ z)
+TheoremT.Continuum.so2JointComplexProduct_norm_le : ∀
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0}
+      (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))
+      _ (TheoremT.Continuum.so2JointComplexProduct z))
+    (@Norm.norm.{0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real) _ z)
+TheoremT.Continuum.so2JointComplexProduct_elim : ∀
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real),
+  @Eq.{1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Complex)
+    (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex
+      (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (TheoremT.Continuum.so2JointComplexProduct z))
+      (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (TheoremT.Continuum.so2JointComplexProduct z)))
+    fun (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+    Complex.ofReal (z i)
+TheoremT.Continuum.so2JointComplexProduct_rotation : ∀ (a b : Real)
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real),
+  @Eq.{1}
+    (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))
+    (TheoremT.Continuum.so2JointComplexProduct
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real) _ _
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real) _ _
+          _ _)
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real)
+        (fun
+            (x :
+              Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+                Real) =>
+          Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Real)
+        _ (TheoremT.Continuum.so2JointRealRotationCLM a b) z))
+    (@Prod.mk.{0, 0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Complex)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Complex)
+      (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+        Complex.ofReal
+          (TheoremT.Continuum.so2RealRotation a b
+            (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) (TheoremT.Continuum.so2JointRealProduct z))
+            i))
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+      Complex.ofReal
+        (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) (TheoremT.Continuum.so2JointRealProduct z) i))
+@TheoremT.Continuum.physicalKSAxisPlanePolynomial_balanced_support : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {v : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex} {c M A F0 W : Real}
+  (hq :
+    TheoremT.Continuum.PhysicalKSAxisPolynomialData f
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+      M A F0 W)
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxInvariantAnalyticDescentDerivativeData f v
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+      M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0),
+  And
+    (∀ (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced
+              (TheoremT.Continuum.physicalKSAxisPlanePolynomialA f
+                (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                      (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+                j γ)))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+    (∀ (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced
+              (TheoremT.Continuum.physicalKSAxisPlanePolynomialB f
+                (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                      (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+                j γ)))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+TheoremT.Continuum.nuclearKSPhysicalAxisPlanePolynomial_balanced_support : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) {c M A F0 W : Real}
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxPointwiseData
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+        (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+          (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+            _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _
+          (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+            (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+            (TheoremT.Continuum.physicalSpectatorReindexAt i))))
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+      M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  (hg :
+    ∀
+      (Q :
+        @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+      (x : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+      @Eq.{1} Complex
+        (g
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _)
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (fun (a : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            _ (TheoremT.Continuum.configurationRotation (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Q) x))
+        (g x)),
+  And
+    (∀ (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced
+              (TheoremT.Continuum.physicalKSAxisPlanePolynomialA
+                (@Function.comp.{1, 1, 1}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+                  (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+                    (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+                  (@DFunLike.coe.{1, 1, 1}
+                    (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _
+                      _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+                      _ _ _ _)
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                      @TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+                    _
+                    (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+                      (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+                      (TheoremT.Continuum.physicalSpectatorReindexAt i))))
+                (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                      (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+                j γ)))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+    (∀ (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced
+              (TheoremT.Continuum.physicalKSAxisPlanePolynomialB
+                (@Function.comp.{1, 1, 1}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+                  (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+                    (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+                  (@DFunLike.coe.{1, 1, 1}
+                    (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _
+                      _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+                      _ _ _ _)
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                      @TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+                    _
+                    (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+                      (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+                      (TheoremT.Continuum.physicalSpectatorReindexAt i))))
+                (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                      (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+                j γ)))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+TheoremT.Continuum.pairKSPhysicalAxisPlanePolynomial_balanced_support : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) {c M A F0 W : Real}
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxPointwiseData
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        TheoremT.Continuum.PairKSSpace Complex
+        (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+          TheoremT.Continuum.pairKSLift)
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              _)
+            _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              _)
+          _
+          (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+            (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+            (TheoremT.Continuum.physicalSpectatorReindexAt
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))))
+      (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+        (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+          (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+            (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+      M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  (hg :
+    ∀
+      (Q :
+        @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position TheoremT.Continuum.Position _ _ _ _)
+      (x : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+      @Eq.{1} Complex
+        (g
+          (@DFunLike.coe.{1, 1, 1}
+            (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _ _ _)
+            (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (fun (a : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+              TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            _ (TheoremT.Continuum.configurationRotation (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Q) x))
+        (g x)),
+  And
+    (∀ (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced
+              (TheoremT.Continuum.physicalKSAxisPlanePolynomialA
+                (@Function.comp.{1, 1, 1}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  TheoremT.Continuum.PairKSSpace Complex
+                  (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+                    TheoremT.Continuum.pairKSLift)
+                  (@DFunLike.coe.{1, 1, 1}
+                    (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _
+                      _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                        _)
+                      _ _ _ _)
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                      @TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                        _)
+                    _
+                    (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                        _)
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+                      (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+                      (TheoremT.Continuum.physicalSpectatorReindexAt
+                        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))))
+                (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                      (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+                j γ)))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+    (∀ (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced
+              (TheoremT.Continuum.physicalKSAxisPlanePolynomialB
+                (@Function.comp.{1, 1, 1}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  TheoremT.Continuum.PairKSSpace Complex
+                  (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+                    (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+                    TheoremT.Continuum.pairKSLift)
+                  (@DFunLike.coe.{1, 1, 1}
+                    (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _
+                      _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                        _)
+                      _ _ _ _)
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                      @TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                        _)
+                    _
+                    (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+                      (@TheoremT.Continuum.WeakGrushin.Space
+                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                        _)
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+                      (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+                      (TheoremT.Continuum.physicalSpectatorReindexAt
+                        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))))
+                (@WithLp.toLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                      (@Matrix.vecCons.{0} Real (@OfNat.ofNat.{0} Nat (nat_lit 0) _) c (@Matrix.vecEmpty.{0} Real)))))
+                j γ)))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+'TheoremT.Continuum.so2JointRealProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2JointComplexProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2JointRealProduct_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2JointComplexProduct_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2JointComplexProduct_elim' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2JointComplexProduct_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalKSAxisPlanePolynomial_balanced_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearKSPhysicalAxisPlanePolynomial_balanced_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.pairKSPhysicalAxisPlanePolynomial_balanced_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

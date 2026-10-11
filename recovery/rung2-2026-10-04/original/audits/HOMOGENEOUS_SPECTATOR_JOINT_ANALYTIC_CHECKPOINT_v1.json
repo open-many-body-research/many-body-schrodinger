@@ -1,0 +1,132 @@
+{
+  "status": "PASS_ACTUAL_DOUBLE_SERIES_JOINT_COMPLEX_ANALYTICITY_WITH_SEPARATE_RADII",
+  "created_utc": "2026-09-11T02:45:29.538974+00:00",
+  "evidence_category": "Fully formalized conditional actual polynomial-series theorem",
+  "strongest_exact_result": "For actual A_m,gamma in complex MvPolynomial(Fin 3), homogeneous m and coefficient L1 bounded by M D^m S^sum(gamma), the original pair-index tsum of eval_X(A_m,gamma)*s^gamma is jointly complex analytic on D*norm(X)<1 and S*norm(s)<1. Includes nonnegative zero rates and spectator dimension zero. Absolute convergence and the identity with total-degree regrouping are proved, rather than assumed.",
+  "modules": [
+    {
+      "module": "HomogeneousSpectatorSumAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorSumAnalytic_v1.lean",
+      "source_sha256": "94c334c16802c77494adff9715a99a5041e60be85a49cf19239e04fd9388a30e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorSumAnalytic_v1.olean",
+      "object_sha256": "5677edc9c879f59d5fd7c3395551374b84deed28b996504b4877e0c478bbaeb4",
+      "declarations": [
+        "homogeneousSpectatorSum",
+        "homogeneous_spectator_sum_analytic_isotropic"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousSpectatorRescaling_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorRescaling_v1.lean",
+      "source_sha256": "8d12d73b89a87c0b0fc7aaf5123e8d2ee000602cdddb3cb0253898b9cac3f6f6",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorRescaling_v1.olean",
+      "object_sha256": "9ff0c6ec139016739dc17a97027179894618dba32f3afbd835da1de9bafba535",
+      "declarations": [
+        "homogeneous_polynomial_eval_scale",
+        "rescaledHomogeneousSpectatorFamily",
+        "rescaledHomogeneousSpectatorFamily_isHomogeneous",
+        "rescaledHomogeneousSpectatorFamily_eval",
+        "polynomialCoeffL1_rescaledHomogeneousSpectatorFamily"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SpectatorScalingMap_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorScalingMap_v1.lean",
+      "source_sha256": "f2556e76f062fcbcd7ed88dc74f2be80690593439375e309a5bd4c064c410102",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SpectatorScalingMap_v1.olean",
+      "object_sha256": "d39b17f2f9356e8eeb61d3ac02b3fb4c4a0efa0c2aa01572e2e676e25ad01fb6",
+      "declarations": [
+        "spectatorScalingMap",
+        "spectatorScalingMap_analyticAt",
+        "spectatorScalingMap_inverse_cancel",
+        "spectatorScalingMap_inverse_norm_le_one",
+        "homogeneousSpectatorSum_rescaling"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousSpectatorAnisotropicAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorAnisotropicAnalytic_v1.lean",
+      "source_sha256": "d8c4e9e9757a8c2ea53c32928133cd08312da62d323e5deb011ddb3ec8b5e28f",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorAnisotropicAnalytic_v1.olean",
+      "object_sha256": "7016a1c05197f00d1127bd07acd146bf6ab769e90f84ebdd97642db51fe524d2",
+      "declarations": [
+        "exists_positive_larger_geometric_radius",
+        "homogeneous_spectator_sum_analytic_anisotropic"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "declaration_count": 14,
+  "strict_audit": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023026_544348Z/receipt.json",
+    "sha256": "13ad16472b1b529b94f676305c3d206db6d54d6cd0cfdc4278812bb2de47997d"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023026_544348Z/ExpandedStatements_v8.log",
+    "sha256": "9c1389e79d56a7427bfad54bf5601d37af2dd910367bb89af884642d9293e2ef"
+  },
+  "dependencies_and_independent_review": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_ANISOTROPIC_ANALYTIC_FOCUSED_REVIEW_v1.json",
+      "sha256": "5f1e14ca7586880e323f142b257bf2f74a4f2a1a7503d29291e6a7b728c55d3d"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/GROUPED_HOMOGENEOUS_SPECTATOR_ANALYTIC_FOCUSED_REVIEW_v1.json",
+      "sha256": "de87b793934f7a172276ec3d43941b99c33f690451464417fdfc2bac8d624701"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_DOUBLE_SERIES_CHECKPOINT_v1.json",
+      "sha256": "5383d14cf92770dff26c481513ef4e40baf01904e339c8bbb297782cbb290121"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/SPECTATOR_POLYNOMIAL_SERIES_REINDEX_CHECKPOINT_v1.json",
+      "sha256": "1c37f1139454d7f2b8803052ec0935e9729e52455c9b69392dcfa3fae8368a8f"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_POLYNOMIAL_CHECKPOINT_v1.json",
+      "sha256": "0d3faa9d8acd4e7f0884f507cbcb7ba44fd75c97f331899b7f34f2a624bf5b87"
+    }
+  ],
+  "review": "Author read final primary sources and all fourteen complete expanded declarations and axiom reports; independent focused review read these plus nine grouping dependency declarations. Actual source and object hashes verified at sealing.",
+  "axioms": [
+    "TheoremT.Continuum.homogeneousSpectatorSum: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_spectator_sum_analytic_isotropic: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_polynomial_eval_scale: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.rescaledHomogeneousSpectatorFamily: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.rescaledHomogeneousSpectatorFamily_isHomogeneous: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.rescaledHomogeneousSpectatorFamily_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_rescaledHomogeneousSpectatorFamily: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.spectatorScalingMap: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.spectatorScalingMap_analyticAt: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.spectatorScalingMap_inverse_cancel: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.spectatorScalingMap_inverse_norm_le_one: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.homogeneousSpectatorSum_rescaling: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.exists_positive_larger_geometric_radius: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_spectator_sum_analytic_anisotropic: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "mathematical_change": "Exact finite total-degree counting gives a binomial geometric coefficient profile. Its polynomial growth does not reduce the radius. Local positive block rescalings then recover both original distinct radii rather than replacing them by a common maximum rate.",
+  "limits": [
+    "Prescribed coefficient family only; no physical Taylor identification is concluded.",
+    "Literal mixed multiindex derivative bounds and full Theorem T remain separate.",
+    "Classical coefficient representatives and series sums are not an executable numerical algorithm. No new isolated source rebuild is claimed."
+  ],
+  "next_active": "Compose literal finite KS descent for the prescribed two-index input family with this analytic result and the exact original pair-index physical evaluation identity; physical Taylor identification is being handled separately.",
+  "preservation": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-09-11T03:41:45.253604+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND",
+  "reviewer": "/root",
+  "author": "/root/scalar_ground_distance_data",
+  "scope": "Read both complete final sources and proof bodies, all new predicate/constructor expanded types, all axiom reports and strict receipt. Independently compared the complete scalar expanded statement to the previously completely reviewed statement, allowing only the theorem name and two strengthened predicate names; equality is exact.",
+  "modules": [
+    {
+      "module": "PhysicalKSBoxInvariantAnalyticDescentData_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxInvariantAnalyticDescentData_v1.lean",
+      "source_sha256": "12beade6ab2540656d4f35a4e560368ad0904f930d7801ba4b5bb8ab4919acf5",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSBoxInvariantAnalyticDescentData_v1.olean",
+      "object_sha256": "2cfc00d27a0ea39eababecfe514bdb128bbeb842f5d7f37cfad1cb38f9aaad4a",
+      "declarations": [
+        "PhysicalKSBoxInvariantAnalyticDescentDerivativeData",
+        "nuclearKSPhysicalAnalyticDescent_invariant_derivative_data",
+        "pairKSPhysicalAnalyticDescent_invariant_derivative_data"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "TwoElectronScalarGroundInvariantAnalyticDescent_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronScalarGroundInvariantAnalyticDescent_v1.lean",
+      "source_sha256": "37700029282f5cfa37b4cd5c68956adf2b3bfc9f640a9e55b98669eaeab64b6c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronScalarGroundInvariantAnalyticDescent_v1.olean",
+      "object_sha256": "e88666c3b0ca91b610d12399e51992c461d4932f71986e77f7a5074c181f4d63",
+      "declarations": [
+        "twoElectron_scalar_ground_invariant_analytic_descent_with_H2_decay"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T033319_875847Z/receipt.json",
+    "sha256": "016042376ce71a7b43e5acdc11c685faa5b7bed7126f94024628bc61ff745d82"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T033319_875847Z/ExpandedStatements_v8.log",
+    "sha256": "6a9485bd5632658e15f3608b447344e852092834222be0b2ad1e0199924278dd"
+  },
+  "predecessor_review": {
+    "path": "audits/TWO_ELECTRON_SCALAR_GROUND_ANALYTIC_DESCENT_ROOT_REVIEW_v1.json",
+    "sha256": "1c8f754a9a1bbb74585acf9cb4ac38bda2647f5312880ed7a8c9b811ddec1fae"
+  },
+  "exact_expanded_delta": {
+    "path": "audits/TWO_ELECTRON_SCALAR_GROUND_INVARIANT_DESCENT_EXPANDED_DELTA_v1.diff",
+    "sha256": "0ed1a3a6b0c80edcf2183e208056470dd608df59e9ed47b0abb91579dfb273c7"
+  },
+  "checks": [
+    "The entire actual derivative-data predicate remains the first conjunct; literal A/B invariance is added with Q fixing t0+T and with the proved physical radii.",
+    "Nuclear/pair constructors supply coefficient invariance from actual pointwise chart data and underlying g pointwise rotation invariance. No coefficient symmetry is assumed.",
+    "The same scalar u from the prior theorem supplies rotation symmetry of every originScaledDifference through exact coordinate rotation covariance. All prior spectrum, H2, normalization, symmetry, decay, constant-order, scale and center clauses are retained verbatim in the expanded type.",
+    "Only outer hypothesis remains Z>=2. No new unresolved analytic or symmetry hypothesis is added."
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "limits": [
+    "Finite constants are existential; this is not a computed set of numerical constants or an executable coefficient selector.",
+    "The scalar theorem constructs no new normalized fermionic vector explicitly; its target energy is already identified with the actual full fermionic continuum spectrum.",
+    "Chart decomposition is for normalized scaled differences; no unscaled singular-product derivative or complete distance-coordinate gluing result.",
+    "No global exact-dictionary H2 approximation, interval algorithm, termination, bit complexity or full Theorem T.",
+    "This is real coefficient invariance; complex SO2 balance and distance-variable descent are subsequent obligations."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

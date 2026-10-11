@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-09-11T00:15:37.083433+00:00",
+  "status": "FORMAL_ACTUAL_PROFILE_CUTOFF_OUTPUT_BOUND_SEALED",
+  "exact_result": "The genuine mixed-derivative compact cutoff has an actual global weak H2 input U and genuine first/second jets, an actual L2 principal output H, the original compact-test operator identity, and the explicit R13 plus differentiated-source norm bound. Every lower N(k) is the literal factorialBoxProfile on the current shrinking box. All lower weighted Lp representatives and the smooth-source derivative representative are constructed from actual finite solution budgets and initial-box analytic squared source budgets.",
+  "module_records": [
+    {
+      "module": "GrushinMixedCutoffActualProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinMixedCutoffActualProfile_v1.lean",
+      "source_sha256": "e853bc599fa0fab4a643961c18edbe6b8ba7f5d9af8c42366f0e5e64e1a468c4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinMixedCutoffActualProfile_v1.olean",
+      "object_sha256": "8dfa3433905b6fa8f46b9d4e450f454011fe3236aa11882277ac7156a0207663",
+      "declarations": [
+        "factorial_mixed_cutoff_actual_profile_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "declarations": 1,
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T001124_531476Z/receipt.json",
+    "sha256": "5f9bf65c9bd986a138676b86a45becb2cb950c01133d3276fe3fe6eae0eb8864"
+  },
+  "audit_source_sha256": "ea335aac2fc1d73dff44571dcc2e69b0665b1a11b88ad7f5a41d93e7a0c8e78a",
+  "audit_log_sha256": "9bb3b8c0ab546c609d90c6cbf1502a5bb95fbcb4621c91e141ccf3dec8a733ec",
+  "independent_review": {
+    "path": "audits/GRUSHIN_MIXED_CUTOFF_ACTUAL_PROFILE_REVIEW_v1.json",
+    "sha256": "46a86a8aafefd1763e5cc51ca4ae2ca1829725ef13dbeb2a55733f336e7581fc"
+  },
+  "exact_remaining_hypotheses": [
+    "Centered Y box, positive gap e, nonnegative t, t+e<=rho<min(aY,aT), and actual smoothTransition first/second bounds C1,C2.",
+    "Actual mixed raw family with finite restricted L2 budgets and genuine weak Y/T chains through r+2; r>=2.",
+    "Original local weak (Pc+B)F00=src and smooth real B / complex src on the current box.",
+    "Actual ordinary coordinate-word coefficient bounds M A^k k! through r, M>=0, A>=1.",
+    "Actual source coordinate-word squared L2 budgets (F0 A^k k!)^2 on the initial box, F0>=0."
+  ],
+  "semantic_scope_note": "GrushinFactorialSourceBudget_v1 is generic in its inferred direction map. This adapter explicitly has the actual product coordinate direction in its final expanded statement, so the generic lemma is validly specialized. The source and coefficient maps are not arbitrary hidden binders.",
+  "dependencies": [
+    {
+      "path": "audits/GRUSHIN_FACTORIAL_ACTUAL_PROFILE_CHECKPOINT_v1.json",
+      "sha256": "a88115aad9a3c243e396b7cdaaedb6284942579f708ff20312adaa21767ac8ed"
+    },
+    {
+      "path": "audits/GRUSHIN_MIXED_CUTOFF_OUTPUT_BOUND_CHECKPOINT_v1.json",
+      "sha256": "13e70cc85d01dca81ce14c0a2bbcc7825446b6e19b6048ae1d367c10392bd529"
+    },
+    {
+      "path": "lean/GrushinFactorialSourceBudget_v1.lean",
+      "sha256": "0c5aed8b7bda4e740294771d756eb4228ed4b1592c6f258524b656b73e108ab3"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T000710_917134Z/receipt.json",
+      "sha256": "72b8fc12713482f701ebe52c4e490214c0494f563ea9856d72d2fff5314cfe3a"
+    }
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "preservation": "New adapter only; all PASS sources and previous records unchanged. No replacement adapter was needed after exact statement confirmed physical-direction specialization.",
+  "limitations": [
+    "No maximal plateau comparison or closed factorial recurrence yet in this theorem.",
+    "Noncomputable Lp witness selection supplies mathematical objects, not an executable algorithm.",
+    "No full Theorem T, approximation rate or computational complexity result."
+  ],
+  "next": "Compose the actual compact maximal bound and plateau comparison to control the target profile, then the scalar R18 and factorial iteration."
+}

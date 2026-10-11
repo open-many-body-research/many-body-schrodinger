@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-09-10T23:37:13.617937+00:00",
+  "reviewer": "/root/compact_h2_density/outer_cardinality",
+  "mode": "Independent exact-source read-only adversarial review; no fresh compilation",
+  "sources": {
+    "ProductWeakJetClosedSupport_v1.lean": "74bf034ce6810dc147c9a99a0669c1e4d9ef33b9366031671ea741495289ff3c",
+    "WeakGrushinRadialJetBounds_v1.lean": "cc23b9e3ebb1bc195e5dc10464b7e16aae49f92f63f5b336f0024a338d2e4255",
+    "WeakGrushinRadialOutput_v1.lean": "688bcff91cf967648c1b586ce3300ff0963895ac0e9a51037b4a6e1c99763dd6"
+  },
+  "finding": "No mathematical defect found.",
+  "checks": [
+    "Open-complement compact-test uniqueness preserves the original closed support K for genuine weak first and second jets.",
+    "A larger approximation support L is used only for continuous-weight L2 convergence.",
+    "Individual weighted TT pairs are transferred from the proved smooth weighted Hessian identity, not inferred from the trace.",
+    "Real compact test functions identify the complex L2 output; both weak derivative signs match the negative Laplacians.",
+    "Weighted MemLp is proved separately on the original compact support."
+  ],
+  "limitations": [
+    "Global genuine weak H2 jets remain explicit inputs.",
+    "c=0 yields trivial spectator/mixed/TT component inequalities; useful divisions require c>0.",
+    "Weighted TT control is for |y|\u00b2 DTT, not unweighted TT near y=0."
+  ]
+}

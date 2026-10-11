@@ -1,0 +1,93 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "created_utc": "2026-09-11T03:02:18.226503+00:00",
+  "module_records": [
+    {
+      "module": "IteratedFDerivScalarLinearCompositionAt_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IteratedFDerivScalarLinearCompositionAt_v1.lean",
+      "source_sha256": "502aebd14dd9c960183d3cc8dfbe4e46d408354fa352973a89b63d508ee1819d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IteratedFDerivScalarLinearCompositionAt_v1.olean",
+      "object_sha256": "f662b97b8a7b0d105f9b86c067a60bea77ab263077b3841f1f9de810132c9820",
+      "declarations": [
+        "iteratedFDeriv_comp_right_of_contDiffAt_scalar"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/IteratedFDerivScalarLinearCompositionAt_v1-20260911T025842_308348Z.json",
+      "compiler_receipt_sha256": "ee5320b57a9bf0429aae95bdddc6022795a7a7ee40cfff2d32a629187dc88939"
+    },
+    {
+      "module": "RealCoordinateEmbedding_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealCoordinateEmbedding_v1.lean",
+      "source_sha256": "dd157daadd91c8fe4c9778a532603b7a7926f8d025a9e05ce5ea5246faf5f6b3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RealCoordinateEmbedding_v1.olean",
+      "object_sha256": "f2e3d8dbdfa0dc735cd19783ee23efe97a149d3363b3b35c0d6b73bb558d0b4a",
+      "declarations": [
+        "realCoordinateEmbedding",
+        "realCoordinateEmbedding_coe",
+        "realCoordinateEmbedding_single"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/RealCoordinateEmbedding_v1-20260911T025936_852108Z.json",
+      "compiler_receipt_sha256": "707b5be752723428264162c1fd25f890f397cfcfbba6487b48095b557c952774"
+    },
+    {
+      "module": "RealRestrictionIteratedDerivativeWord_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealRestrictionIteratedDerivativeWord_v1.lean",
+      "source_sha256": "a9bd87713c0dd69539cfb384d7101956589b91ee98196fc4e5245d7e1cdbda60",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RealRestrictionIteratedDerivativeWord_v1.olean",
+      "object_sha256": "aceff7874b0561f9323f7429a44d3a2205153253edbcbb8b97282ca5f24f1d51",
+      "declarations": [
+        "real_restriction_contDiffAt",
+        "real_restriction_iteratedFDeriv_word"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/RealRestrictionIteratedDerivativeWord_v1-20260911T030053_516716Z.json",
+      "compiler_receipt_sha256": "bc7e4f6ac28a4ef74721817d4b94865efda97b03f1232ecd2d9d3d1e88fd9507"
+    }
+  ],
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030109_001557Z/receipt.json",
+  "strict_receipt_sha256": "3e177478469a264cddb3536c90c388f0a02afad64923b59e588a113c331efe38",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030109_001557Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "7755989ccaf39f00572f5dac8141399b155d8ea3d10097485a365ece64bc7984",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "The coordinatewise inclusion x -> (i -> Complex.ofReal(x_i)) is represented by the actual real continuous linear map realCoordinateEmbedding, with exact coercion equality and actual real-unit-vector to complex-unit-vector identity.",
+    "Local right composition of iterated derivatives is proved over any nontrivially normed scalar field, generalizing the separate preserved complex-only lemma.",
+    "For finite iota, local complex ContDiffAt of finite order n at coordinatewise-real z implies local real ContDiffAt of the actual real-coordinate restriction.",
+    "For any actual coordinate word w:Fin n->iota, the real iterated derivative of the real-coordinate restriction evaluated on real Pi.single unit vectors equals the complex iterated derivative at coordinatewise-real z evaluated on corresponding complex unit vectors."
+  ],
+  "proof": "Restrict scalars from Complex to Real for the ambient complex-coordinate derivative using the pinned ContDiffAt.restrictScalars_iteratedFDeriv theorem. Apply the local real linear-composition rule to the literal coordinate embedding, then use its exact unit-vector identities.",
+  "semantic_checks": [
+    "Both derivatives are the actual Mathlib iteratedFDeriv objects over their advertised scalar fields and domains. The complex-valued codomain is retained in the real restriction.",
+    "Only local complex smoothness at the image point is assumed. Neither global smoothness nor a derivative equality is a hypothesis.",
+    "The actual coordinatewise embedding, actual evaluation point and actual coordinate unit directions are explicit in the final theorem.",
+    "Finite coordinate dimension and order zero are included; no new numerical factor is introduced by the equality.",
+    "The embedding definition itself is valid even without Fintype in the expanded declaration; its two wrapper theorems retain harmless Fintype section instances. The derivative theorems genuinely use finite Pi normed spaces.",
+    "DecidableEq iota is explicit where Pi.single is used, and is available for the intended Fin 3 + Fin d coordinates."
+  ],
+  "review_disclosure": "The author read all three complete final sources, all six complete expanded declarations and every axiom report, plus the complete strict receipt. Independent review is not asserted.",
+  "development": "Scalar-general chain and embedding modules passed initial compilation. The restriction module initially required explicit map coercion/image equalities for elaboration; these were fixed before final PASS. Two harmless unused Fintype warnings remain in the immutable embedding source. All compiler/auditor jobs are terminal.",
+  "limits": [
+    "This is a real-coordinate restriction theorem. Applying it to the corrected anisotropic derivative bound and to a physical KS family remains a separate consumer obligation.",
+    "No physical spectral result, actual wavefunction regularity theorem, original D6 constant, executable solver or bit-cost bound is claimed.",
+    "Pinned library and continuation caches reused; no isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New continuation sources and checkpoint only; all PASS and historical artifact bytes preserved."
+  }
+}

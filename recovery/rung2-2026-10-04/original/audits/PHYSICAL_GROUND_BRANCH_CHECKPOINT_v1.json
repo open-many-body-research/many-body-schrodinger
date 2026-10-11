@@ -1,0 +1,46 @@
+{
+  "utc": "2026-09-10T05:04:23.864728+00:00",
+  "status": "FORMAL_PHYSICAL_TWO_ELECTRON_GROUND_BRANCH_AND_CERTIFICATE_IMPLICATION",
+  "scope": "Actual full-spin fermionic continuum Coulomb operator N=2, exact weak H2 domain, all real Z>0 with 32<9 Z^2 for explicit ground branch; in particular Z=2.",
+  "established": [
+    "Actual unit charge-matched hydrogen product singlet is in intended H2 domain; exact Rayleigh mean -Z^2+R_Z with actual repulsion R_Z>=0 and R_Z^2<=Z^2/2",
+    "Actual spectral bottom is attained at normalized H2 g, E<-5 Z^2/8; ground orthogonal complement has form bound -5 Z^2/8; every spectral value is E or has real part at least -5 Z^2/8",
+    "Actual ground eigenspace is the complex line spanned by g; normalized ground vectors differ by a unit complex phase",
+    "For all Z>0, an actual unit H2 trial with certified mean L<=mu<=U<-5 Z^2/8 and actual centered residual squared<=r gives spectralGroundEnergy in [L-r/(-5 Z^2/8-U),U]; physical rank-one comparison is proved, not a hypothesis"
+  ],
+  "sources": {
+    "HydrogenProductTrialEnergy_v1.lean": "24099a81d2e488c45bb1190018313f5b3a544144137a5c09880604ab16584469",
+    "TwoElectronPhysicalGroundBranch_v1.lean": "4060f780e839eee3429295f67de39906be1be899f29b97e0706302c571df2523",
+    "TwoElectronGroundMultiplicity_v1.lean": "caf86b9f97b30b07c97218638110a1ec11139b5a5b436ccb22931c186dba3f7a",
+    "TwoElectronPhysicalCertificate_v1.lean": "7bdf672d79d99a46b8f449b46e86d34d900004ccf27bd20a5b41ba9f9772fddb"
+  },
+  "strict_audit_receipts": [
+    {
+      "path": "audits/formal_semantics/20260910T044224_415167Z/receipt.json",
+      "sha256": "252f4ac444d02f9fd3fb418576a2c9d618b7392effe36fc25b15a0a71b299d71"
+    },
+    {
+      "path": "audits/formal_semantics/20260910T044327_297875Z/receipt.json",
+      "sha256": "28eea41434cbf151ad05bd2ff9520efca187297ea692c33d7ada7eee76771d9a"
+    },
+    {
+      "path": "audits/formal_semantics/20260910T050152_502713Z/receipt.json",
+      "sha256": "6e98b1e99e685bc5c7d73a6de075fb95e5db7182c54877967bad5f469fee67af"
+    }
+  ],
+  "trust": "Lean kernel against pinned development Mathlib/prior objects; only propext, Classical.choice, Quot.sound; expanded final hypotheses audited. Compiler/core binaries reused. New chain not yet isolated-source rebuilt.",
+  "mathematical_change": "Relative-coordinate uncertainty supplies a sufficient strict physical trial without assuming the exact 5 Z/8 repulsion moment. Charge range is weaker than the reviewed exact-moment paper trial and is separately identified. Original dictionary and Hamiltonian unchanged.",
+  "unresolved": [
+    "Exact 5 Z/8 moment formalization and optimized trial range",
+    "Actual real singlet spatial symmetric/rotational representative and regularity/decay chain",
+    "Original global H2 dictionary approximation, residual production, rational solver, termination and bit complexity",
+    "Full Theorem T unverified"
+  ],
+  "next_active": "A01: derive actual physical ground symmetry and regularity; continue source rebuild on Colab after desktop storage failure.",
+  "preservation": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_report": "THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md",
+    "frozen_report_sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "ca3fa65e7331f8b46f82edbee9091a6f8c442c03321052a43ab1923d96b414d6",
+  "timestamp_utc": "20260910T213019_416716Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T213019_416716Z/ExpandedStatements_v5.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T213019_416716Z/ExpandedStatements_v5.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 9.688861167,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "130ec4421ced0874fd3af356d361cf980d7e805959797043bd7163b631683b03",
+  "audit_log_sha256": "f142c931306cdb3ba62659205170eb75ef09ea0ae597de2463a88b89d291f2e4",
+  "module_records": [
+    {
+      "module": "ProductCoordinateWeakHk_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakHk_v1.lean",
+      "source_sha256": "f45d9e11f8e49a85db9c3890fe734bcde364ac463b4507dba60c74a7e7db4d10",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCoordinateWeakHk_v1.olean",
+      "object_sha256": "1c0a871b696cc368f4742d0620f890fd217b9c7ae134302bd377a73e897e1520",
+      "declarations": [
+        "coordinateYWord",
+        "coordinateTWord",
+        "productCoordinateDirection",
+        "coordinateWord_length",
+        "ProductCoordinateWeakHk",
+        "mixedTriangularState_coordinateWeakHk"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductCoordinateWeakWordTests_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakWordTests_v1.lean",
+      "source_sha256": "aabac0f0f027e6a6e844a8311af3fb0e8b540a48d3282a50e5fa17f71ade7531",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCoordinateWeakWordTests_v1.olean",
+      "object_sha256": "3aa8f1c012123f568d78f4c05cc75a75e1434d3ddc166e40b4c217bea84631a6",
+      "declarations": [
+        "productCoordinateTestWord",
+        "productCoordinateTestWord_contDiff",
+        "productCoordinateTestWord_compact",
+        "productCoordinateTestWord_support",
+        "product_coordinate_family_test_identity",
+        "product_coordinate_family_tests_integrable"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.productCoordinateDirection: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateWord_length: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.ProductCoordinateWeakHk: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.mixedTriangularState_coordinateWeakHk: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_contDiff: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_compact: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_support: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.product_coordinate_family_test_identity: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.product_coordinate_family_tests_integrable: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateYWord: []",
+    "TheoremT.Continuum.WeakGrushin.coordinateTWord: []"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.coordinateYWord",
+    "TheoremT.Continuum.WeakGrushin.coordinateTWord",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateDirection",
+    "TheoremT.Continuum.WeakGrushin.coordinateWord_length",
+    "TheoremT.Continuum.WeakGrushin.ProductCoordinateWeakHk",
+    "TheoremT.Continuum.WeakGrushin.mixedTriangularState_coordinateWeakHk",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_contDiff",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_compact",
+    "TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_support",
+    "TheoremT.Continuum.WeakGrushin.product_coordinate_family_test_identity",
+    "TheoremT.Continuum.WeakGrushin.product_coordinate_family_tests_integrable"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0
+}

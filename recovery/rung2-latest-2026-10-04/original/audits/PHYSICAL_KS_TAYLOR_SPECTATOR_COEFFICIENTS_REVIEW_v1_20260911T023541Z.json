@@ -1,0 +1,178 @@
+{
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "utc": "2026-09-11T02:35:41.580130+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_ACTUAL_PHYSICAL_TAYLOR_SPECTATOR_COEFFICIENTS",
+  "scope": "Independent full-source and proof-premise review of PhysicalKSTaylorSpectatorCoefficients_v1 only, with immediate exact physical/Taylor definitions and prior independent reviews consumed. No source modifications, builds or broad audits.",
+  "target": {
+    "source": {
+      "path": "lean/PhysicalKSTaylorSpectatorCoefficients_v1.lean",
+      "sha256": "415aa78c8ed9da8229366e9fba21d65aaff2c9a0017017fdd277f5934e873b56"
+    },
+    "object": {
+      "path": "lean/build/PhysicalKSTaylorSpectatorCoefficients_v1.olean",
+      "sha256": "617be28c371ca1e58d0e36567b2a6247d695fcc258dc7cde4447c2b6bdbd0bff"
+    },
+    "declarations": [
+      "physicalKSTaylorSpectatorCoefficient",
+      "physicalKSTaylorSpectatorCoefficient_coeff",
+      "physicalKSTaylorSpectatorCoefficient_homogeneous",
+      "physicalKSTaylorSpectatorCoefficient_coefficientL1",
+      "nuclearKSPhysicalTaylorSpectatorCoefficient_circle_invariant",
+      "pairKSPhysicalTaylorSpectatorCoefficient_circle_invariant",
+      "nuclearKSPhysicalTaylorSpectatorCoefficient_balanced_support",
+      "pairKSPhysicalTaylorSpectatorCoefficient_balanced_support"
+    ]
+  },
+  "build_receipt": {
+    "path": "logs/development/PhysicalKSTaylorSpectatorCoefficients_v1-20260911T023122_116684Z.json",
+    "sha256": "6bbbc00ec01d3075f7cb8b65dfacafba271b6d939544fab3c5f5e1009d795525"
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T023200_098930Z/receipt.json",
+    "sha256": "980d811eb64a1d3932df41a00968e73cd776f262dd631f5a1b1ddec1e6cf5930"
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T023200_098930Z/ExpandedStatements_v8.lean",
+    "sha256": "8aa690219428f83c89229a5004956809bd705e564dbd5bf73ff523acdf8085c0"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T023200_098930Z/ExpandedStatements_v8.log",
+    "sha256": "23252f43c8ac1d1ea1bfa58d907a99ccf1da915128da6acaf105549fea57dbb0"
+  },
+  "inspection": {
+    "full_final_source_and_proofs_read": true,
+    "full_strict_receipt_read": true,
+    "full_expanded_log_read": true,
+    "expanded_log_lines": 532,
+    "declarations": 8,
+    "current_source_and_object_hashes_match": true,
+    "autoImplicit": false,
+    "unexpected_mathematical_binders": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "printer_omissions": 0
+  },
+  "checks": [
+    {
+      "topic": "Actual coefficient definition",
+      "result": "physicalKSTaylorSpectatorCoefficient f x j gamma extracts the gamma spectator coefficient of the literal physicalKSTaylorPolynomial f x (j+gamma.degree). The latter is the real coordinate polynomial of factorialFrechetSeries f x: the actual iterated real Frechet derivative divided by its total-order factorial. The coefficient theorem preserves exactly the original coefficient at sumElim alpha gamma, without rescaling or replacing f,x."
+    },
+    {
+      "topic": "Y degree versus total Taylor order",
+      "result": "The joint Taylor polynomial is homogeneous j+gamma.degree. Applying the exact extraction theorem and Nat.add_sub_cancel yields homogeneous Y degree j for every j,gamma, including j=0. Homogeneity permits zero polynomials. No odd-total-degree disappearance is asserted; odd spectator degree can coexist with Y degree zero."
+    },
+    {
+      "topic": "Whole coefficient budget",
+      "result": "The full extracted Y coefficient L1 is bounded by the full original joint Taylor coefficient L1, at exactly total order j+gamma.degree. This yields physicalKSPointwiseAmplitude M A F0 W times (7*physicalKSPointwiseRate M A)^(j+gamma.degree). Seven is the original four-plus-three coordinate count; the spectator extraction introduces no new factor. The inherited factorial normalization is unchanged."
+    },
+    {
+      "topic": "Predicate and parameter hypotheses",
+      "result": "PhysicalKSBoxPointwiseData is the actual conjunction of smoothness, real analyticity on the 1/512 rectangle centered at (0,t0), and all coordinate-word pointwise factorial bounds for the same f. The bound additionally assumes A>=1,F0>=0 and x in that rectangle. The exact amplitude and rate definitions are consumed. No hidden M>=1,W>=0 requirement is used by these wrappers; the existing amplitude-nonnegative and rate-positive lemmas suffice under the advertised assumptions."
+    },
+    {
+      "topic": "Actual physical invariance",
+      "result": "For each nuclear i:Fin 2, the same arbitrary g, nuclearKSLift i and inverse physicalSpectatorReindexAt i appear in hdata and both sides of the result. The pair theorem consistently uses pairKSLift and inverse index-zero reindex. All physical invariance statements use center (0,t0), the actual fixed collision-fiber center, and the previously proved joint Taylor invariance at total order j+gamma.degree for every physical product increment q. This supplies exactly the premise of finite spectator extraction invariance."
+    },
+    {
+      "topic": "No circular polynomial hypothesis",
+      "result": "Neither physical circle wrapper assumes its coefficient or Taylor polynomial is invariant. The consumed physical joint Taylor theorem derives invariance from the actual pullback identity and the convergent derivative series at the fixed center. The new wrapper extracts the same coefficient polynomial. The balanced-support theorems apply the prior real-spinor bridge to that exact polynomial for all real unit phases and all Y."
+    },
+    {
+      "topic": "Scope of generic versus physical claims",
+      "result": "The coefficient definition and algebraic homogeneity hold for arbitrary f because iteratedFDeriv and the coordinate polynomial are total definitions; a function-representing Taylor series is not inferred without analytic data. The quantitative and physical invariance statements retain hdata explicitly. Invariance is asserted at (0,t0), not at arbitrary off-fiber x; the quantitative bound allows any x in the advertised rectangle."
+    }
+  ],
+  "immediate_sources_read": [
+    {
+      "artifact": {
+        "path": "lean/PhysicalKSTaylorCircleInvariance_v1.lean",
+        "sha256": "7ff7601905007e38d04147595f0b7799534579762fb4ed63bd1202543ec16513"
+      },
+      "scope": "Full source; exact fixed-center diagonal-series premise and physical chart specialization."
+    },
+    {
+      "artifact": {
+        "path": "lean/PhysicalKSTaylorCoordinatePolynomials_v1.lean",
+        "sha256": "d40efd52eb0d6a19919cf8908d0f6158a5c312c46dc2e7d92a1729b6a31bb258"
+      },
+      "scope": "Full source; actual polynomial definition, degree, coefficient L1 and common-radius statements."
+    },
+    {
+      "artifact": {
+        "path": "lean/PowerSeriesFixedPointInvariance_v1.lean",
+        "sha256": "380fd4ddf56ce7a327792f28d60c327e9b7e60068c2c9895a3a04c6f135ba4dc"
+      },
+      "scope": "Full source; matching local invariance and fixed-point hypotheses for diagonal equality."
+    },
+    {
+      "artifact": {
+        "path": "lean/RealTaylorCoordinatePolynomial_v1.lean",
+        "sha256": "b417698e63a80cb867f912dbc0cf4657777dcfe778875638dd4377cb1920a5ba"
+      },
+      "scope": "Full source; actual factorial Frechet construction, evaluation and budget."
+    },
+    {
+      "artifact": {
+        "path": "lean/RealMultilinearCoordinatePolynomial_v1.lean",
+        "sha256": "847344e75c51ca6a86f47f7ef52a05d6c8fb826ff3bedeac461c42cb469fc35a"
+      },
+      "scope": "Literal defining finite sum and homogeneity/evaluation proof portion."
+    },
+    {
+      "artifact": {
+        "path": "lean/FactorialFrechetSeries_v1.lean",
+        "sha256": "44b0bcea3fd88cce33c6dc23df12ad88fcfb7895b64840547b6629a67ccc4694"
+      },
+      "scope": "Exact derivative/factorial definition and immediate apply lemma."
+    },
+    {
+      "artifact": {
+        "path": "lean/CoulombKSPhysicalPointwise_v1.lean",
+        "sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534"
+      },
+      "scope": "Exact PhysicalKSBoxPointwiseData predicate."
+    },
+    {
+      "artifact": {
+        "path": "lean/PhysicalKSBoxPointwiseFactorial_v1.lean",
+        "sha256": "ab9611be060253c3582b2936613ac082c8dfa9d8ddc9c4c4e739d9bc96806ba9"
+      },
+      "scope": "Exact physical amplitude/rate definitions and positivity premises."
+    }
+  ],
+  "consumed_independent_reviews": [
+    {
+      "path": "audits/KS_SPECTATOR_COEFFICIENT_EXTRACTION_INVARIANCE_REVIEW_v1_20260911T023303Z.json",
+      "sha256": "aa7bbeb546375f6da98ee9ad22d837dbd33bb45b5ea3401e5d64078ae3fd4819"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_CIRCLE_INVARIANCE_FOCUSED_REVIEW_v1.json",
+      "sha256": "0aa073ba1948c587903f973d747715cbcb784f82077c247614818d7310c1794f"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_AND_LOCAL_FINITE_DESCENT_FOCUSED_REVIEW_v1.json",
+      "sha256": "dd66201dbe8ad75f3e48abf5dc1032a5f4a484969816c578f62c911413dc9104"
+    }
+  ],
+  "independence_note": "This reviewer authored the generic sumRingEquiv helper consumed below the finite extraction module. Its independent review by /root/ks_coefficient_transport is bound by the preceding extraction review; no self-authored helper is claimed independently reviewed here.",
+  "invalidating_findings": [],
+  "limitations": [
+    "This source does not compose the explicit pointwise-data premise with all original scalar, spin or ground-state PDE hypotheses into a new closed continuum theorem.",
+    "The objects remain finite noncomputable complex polynomials for each j,gamma. No infinite spectator-series regrouping, common descended complex radius, analytic-plus-distance decomposition, or global chart compatibility is established here.",
+    "The coefficient theorem identifies the exact original joint Taylor coefficient; it does not state a separate closed mixed-partial multiindex-factorial formula.",
+    "Y degree j must remain distinct from total Taylor order j+gamma.degree. This module does not contain an odd-total-degree vanishing result.",
+    "Existing pinned dependency objects were reused by the consumed build and strict audit. This is not an isolated dependency-source rebuild or a fresh broad continuum audit."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; existing source and evidence bytes preserved."
+  }
+}

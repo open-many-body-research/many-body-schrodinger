@@ -1,0 +1,19 @@
+@TheoremT.Continuum.analytic_absolute_value_decomposition_zero : ∀ {f g : Real → Complex} {r : Real}
+  (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hf : @AnalyticOnNhd.{0, 0, 0} Real Real Complex _ _ _ _ _ f (@Set.Ioo.{0} Real _ (@Neg.neg.{0} Real _ r) r))
+  (hg : @AnalyticOnNhd.{0, 0, 0} Real Real Complex _ _ _ _ _ g (@Set.Ioo.{0} Real _ (@Neg.neg.{0} Real _ r) r))
+  (hfg :
+    ∀ (t : Real),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Ioo.{0} Real _ (@Neg.neg.{0} Real _ r) r) t →
+        @Eq.{1} Complex
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (f t)
+            (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@abs.{0} Real _ _ t) (g t)))
+          (@OfNat.ofNat.{0} Complex (nat_lit 0) _)),
+  And
+    (@Set.EqOn.{0, 0} Real Complex f (@OfNat.ofNat.{0} (Real → Complex) (nat_lit 0) _)
+      (@Set.Ioo.{0} Real _ (@Neg.neg.{0} Real _ r) r))
+    (@Set.EqOn.{0, 0} Real Complex g (@OfNat.ofNat.{0} (Real → Complex) (nat_lit 0) _)
+      (@Set.Ioo.{0} Real _ (@Neg.neg.{0} Real _ r) r))
+'TheoremT.Continuum.analytic_absolute_value_decomposition_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,58 @@
+{
+  "status": "PASS_ACTUAL_SCALAR_CONTINUUM_GROUND_AXIS_ANALYTIC_DESCENT",
+  "created_utc": "2026-09-11T04:11:12.566747+00:00",
+  "evidence_category": "Fully formalized theorem for the same actual two-electron scalar continuum ground representative",
+  "strongest_exact_result": "For each real Z>=2, the same normalized scalar H2 ground eigenfunction and locally Lipschitz representative from the preceding theorem retain all graph/spectrum, reality, exchange and rotation symmetry, Lipschitz/source budgets, H2 exterior decay and all nuclear/pair chart clauses (including pair coefficient evenness). The theorem additionally supplies the positive common explicit axis radius and actual bounded holomorphic G_A/G_B descent data at the unit axial center for every admissible scale epsilon and nuclear index/pair chart. The only input hypothesis is Z>=2.",
+  "modules": [
+    {
+      "module": "TwoElectronScalarGroundAxisAnalyticDescent_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronScalarGroundAxisAnalyticDescent_v1.lean",
+      "source_sha256": "9fba127cdc4459926ae70f2ba88b08e3ab75cece9b51719d520953607f873edc",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronScalarGroundAxisAnalyticDescent_v1.olean",
+      "object_sha256": "20241d1a5c82e296e773be9b9e0f290bf2679634bcdb188572d950f0251063f6",
+      "declarations": [
+        "twoElectron_scalar_ground_axis_analytic_descent_with_H2_decay"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T040318_207573Z/receipt.json",
+    "sha256": "f3ef06974882081e0efb9c8bd38a1e32110cfad89ca855c4ef0a8ae8fa3f1b9f"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T040318_207573Z/ExpandedStatements_v8.log",
+    "sha256": "6a3729afdd1978a84f06c029e61288d3e13c42a7c6e0b1bebd0699aa92ec050a",
+    "lines": 1140
+  },
+  "axioms": [
+    "TheoremT.Continuum.twoElectron_scalar_ground_axis_analytic_descent_with_H2_decay: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "declaration_count": 1,
+  "independent_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/TWO_ELECTRON_SCALAR_GROUND_AXIS_ANALYTIC_DESCENT_FOCUSED_REVIEW_v1.json",
+    "sha256": "e7bc404ca2fcc947ff88cc7ecd73e6c36d1d688eb35bf327dda462e6fef2b10c"
+  },
+  "axis_dependency": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_AXIS_ANALYTIC_DESCENT_CHECKPOINT_v1.json",
+    "sha256": "4dcd16a1c28e65e27b0b56144e5c30e8b23bfd70e0e8d8dd66a87c353af00c03"
+  },
+  "review": "Final source and all1140 expanded statement/axiom lines read by author and independent reviewer. The previous v2 conclusion is a literal prefix of the new conjunction. The same witnesses are reused; actual pointwise data and origin-scaled rotation invariance are derived from existing clauses. Only propext, Classical.choice and Quot.sound.",
+  "mathematical_change": "The actual SO2 axis analytic descent is now attached to the actual scalar continuum ground state without a Taylor-series, coefficient-symmetry, or descended-function premise. The neighborhood and amplitude are those established for the same original scale/source parameters.",
+  "limits": [
+    "This is a component theorem, not full Theorem T or its claimed approximation rate/complexity.",
+    "No effective computation of the existential ground state, regularity constants or coefficients is asserted.",
+    "Uniform noncollision Cartesian analytic estimates, all distance-coordinate physical reconstruction/gluing and subsequent dictionary approximation remain separate obligations.",
+    "Actual G is bounded/holomorphic on its explicit h^2 by h polydisc; original Cartesian identity holds on the stated domain intersection."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "next_active": "Prove B10/B11 collinear distance-coordinate geometry and compose the collision-axis analytic functions with physical distance representatives and compatible ambient germs.",
+  "preservation": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da"
+  }
+}

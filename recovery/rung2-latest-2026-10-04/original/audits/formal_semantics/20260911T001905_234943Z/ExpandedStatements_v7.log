@@ -1,0 +1,12 @@
+@TheoremT.Continuum.WeakGrushin.factorialLocalProfile_le_of_outerNorm_le : ∀
+  {D : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)} {r : Nat}
+  {Q : Real}
+  (h :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+      @LE.le.{0} Nat _ (TheoremT.Continuum.WeakGrushin.factorialMultiDerivativeCost α β) r →
+        @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm D Ω α β) Q),
+  @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialLocalProfile D Ω r) Q
+'TheoremT.Continuum.WeakGrushin.factorialLocalProfile_le_of_outerNorm_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

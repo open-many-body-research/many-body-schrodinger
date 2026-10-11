@@ -1,0 +1,65 @@
+import SO2SpectatorCoefficientPolynomial_v1
+import SO2SpectatorHomogeneousReconstruction_v1
+import SO2SpectatorFamilySeries_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.so2SpectatorPolynomial
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coeff
+#check @TheoremT.Continuum.so2SpectatorPolynomial_eval
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct
+#check @TheoremT.Continuum.so2JointMultiindex_degree
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_homogeneous
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eq_zero_of_degree_lt
+#check @TheoremT.Continuum.polynomialCoeffL1_so2SpectatorCoefficientPolynomial
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coefficient_bound
+#check @TheoremT.Continuum.so2SpectatorTailIndex
+#check @TheoremT.Continuum.so2SpectatorDegreeIndices
+#check @TheoremT.Continuum.so2SpectatorTailIndex_degree
+#check @TheoremT.Continuum.so2SpectatorTailIndex_injective_on_degree
+#check @TheoremT.Continuum.mem_so2SpectatorDegreeIndices_iff
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct_degree
+#check @TheoremT.Continuum.so2SpectatorCoefficientPolynomial_grouped_reconstruct
+#check @TheoremT.Continuum.so2SpectatorFamily
+#check @TheoremT.Continuum.so2SpectatorFamily_homogeneous
+#check @TheoremT.Continuum.so2SpectatorFamily_coefficientL1
+#check @TheoremT.Continuum.so2SpectatorFamily_grouped
+#check @TheoremT.Continuum.so2SpectatorFamily_summable
+#check @TheoremT.Continuum.so2SpectatorFamily_hasSum_of_joint_hasSum
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.so2SpectatorPolynomial
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coeff
+#print axioms TheoremT.Continuum.so2SpectatorPolynomial_eval
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct
+#print axioms TheoremT.Continuum.so2JointMultiindex_degree
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_homogeneous
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eq_zero_of_degree_lt
+#print axioms TheoremT.Continuum.polynomialCoeffL1_so2SpectatorCoefficientPolynomial
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_coefficient_bound
+#print axioms TheoremT.Continuum.so2SpectatorTailIndex
+#print axioms TheoremT.Continuum.so2SpectatorDegreeIndices
+#print axioms TheoremT.Continuum.so2SpectatorTailIndex_degree
+#print axioms TheoremT.Continuum.so2SpectatorTailIndex_injective_on_degree
+#print axioms TheoremT.Continuum.mem_so2SpectatorDegreeIndices_iff
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_reconstruct_degree
+#print axioms TheoremT.Continuum.so2SpectatorCoefficientPolynomial_grouped_reconstruct
+#print axioms TheoremT.Continuum.so2SpectatorFamily
+#print axioms TheoremT.Continuum.so2SpectatorFamily_homogeneous
+#print axioms TheoremT.Continuum.so2SpectatorFamily_coefficientL1
+#print axioms TheoremT.Continuum.so2SpectatorFamily_grouped
+#print axioms TheoremT.Continuum.so2SpectatorFamily_summable
+#print axioms TheoremT.Continuum.so2SpectatorFamily_hasSum_of_joint_hasSum

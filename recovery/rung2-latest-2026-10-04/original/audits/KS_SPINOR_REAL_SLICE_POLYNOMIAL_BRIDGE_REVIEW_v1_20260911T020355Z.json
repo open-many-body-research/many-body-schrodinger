@@ -1,0 +1,212 @@
+{
+  "review_kind": "independent_focused_real_slice_spinor_polynomial_bridge_review",
+  "version": 1,
+  "timestamp_utc": "2026-09-11T02:03:55.032962+00:00",
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_GLOBAL_REAL_POLYNOMIAL_BRIDGE_SCOPE",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_relative_path": "CORRECTION_PROTOCOL.md",
+    "protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "operation": "New review and digest only; previous sources and audit records unchanged."
+  },
+  "targets": [
+    {
+      "module": "ComplexPolynomialRealSlice_v2",
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ComplexPolynomialRealSlice_v2.lean",
+        "sha256": "865ebb2990b24145f97628b7ad8d73925c55fe6fbab315ba095f815c5bed8223"
+      },
+      "compiler_pass_receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ComplexPolynomialRealSlice_v2-20260911T015955_194072Z.json",
+        "sha256": "04feec8ff6f97f8ddb4236550a1537f0b6f8af3661907dc9fb75d27009c3df06"
+      },
+      "object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ComplexPolynomialRealSlice_v2.olean",
+        "sha256": "c04e77b8db1f111a66b094df427bd8003ce72fe0049e639673e21576e9e7722b"
+      },
+      "complete_final_source_read": true,
+      "declarations": [
+        "complexPolynomial_eq_of_real_eval_eq"
+      ]
+    },
+    {
+      "module": "KSSpinorForwardPolynomial_v1",
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpinorForwardPolynomial_v1.lean",
+        "sha256": "a1ea194860fc8aec8c75141f14cf26f6d153ecef356643cac8ec2250869790ae"
+      },
+      "compiler_pass_receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSSpinorForwardPolynomial_v1-20260911T015710_860201Z.json",
+        "sha256": "4240552476cead6e4059cd4832bd5a31da45d54146d474dc143b60acc686a116"
+      },
+      "object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSSpinorForwardPolynomial_v1.olean",
+        "sha256": "584e2fc522fa8c3a783cd724963aeef738156ea5001623c5c2219de8fc4cd262"
+      },
+      "complete_final_source_read": true,
+      "declarations": [
+        "ksSpinorForwardPolynomial",
+        "ksSpinorPolynomialToReal",
+        "ksSpinorForwardPolynomial_physical_eval",
+        "ksSpinorPolynomialToReal_physical_eval",
+        "ksPolynomialCircleAction_physical_eval"
+      ]
+    },
+    {
+      "module": "KSSpinorPolynomialRealSlice_v1",
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpinorPolynomialRealSlice_v1.lean",
+        "sha256": "5055b88c9b1c46ef27a46777388453d7d5b817e423f4e8dfb05e30c56c3785d2"
+      },
+      "compiler_pass_receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSSpinorPolynomialRealSlice_v1-20260911T020014_069621Z.json",
+        "sha256": "1d9c68f66f41db3e18b1db586c65eb6897403249cc06ab8da28872dd4fd23dc0"
+      },
+      "object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSSpinorPolynomialRealSlice_v1.olean",
+        "sha256": "33df1fdd3251622b7819cae57df717627dba1ccc49bb4c4fd1ddca603fb5afef"
+      },
+      "complete_final_source_read": true,
+      "declarations": [
+        "ksSpinorForwardPolynomial_inverse",
+        "ksSpinorPolynomialToReal_left_inverse",
+        "ksSpinorPolynomialToReal_injective",
+        "ksPolynomial_eq_of_spinor_real_eval_eq",
+        "ksRealPolynomialToSpinor_circle_invariant",
+        "ksRealPolynomialToSpinor_balanced_support"
+      ]
+    }
+  ],
+  "historical_comment_token_rejection": {
+    "preserved_source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ComplexPolynomialRealSlice_v1.lean",
+      "sha256": "0f2f3188770b32a6fd8b6daeb1c12f335186cb147b3c02eaf8ce570d9ddf093e"
+    },
+    "preserved_receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015757_843749Z/receipt.json",
+      "sha256": "5a685fc1fa5826395d3a3b90ad740f036a86b5260c95164efa392881f1d78868"
+    },
+    "status": "Lean compiler and expanded statements succeeded, but overall strict-v8 guard rejected the English word admit in the source comment. This receipt is not labelled strict PASS.",
+    "resolution": "New RealSlice_v2 changes only the flagged prose sentence; theorem and proof text from set_option onward verified byte-identical. No old artifact or scanner was modified."
+  },
+  "consumed_sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRealPolynomialToSpinor_v1.lean",
+      "sha256": "cd2ca53d1c4e6f6124617e73b98bd5b927fb61105b926c497bfd4beb7ee5737d",
+      "scope": "Complete source read; this bridge review uses exact inverse coordinate polynomials, ksRealPolynomialToSpinor definition and physical-evaluation theorems. It does not independently certify the coefficient-norm subproofs in this imported source."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSDescentSpinorAlgebra_v1.lean",
+      "sha256": "42eb7c2c66d6fdf951f2340e6af848b5c8bc68fee971262271d6e4e73b6a54a4",
+      "scope": "Exact spinor, real-coordinate circle action and spinor covariance definitions/theorems read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSPolynomialCircleInvariant_v1.lean",
+      "sha256": "ea9cca1ac1b42628095bfba80d6cc75e452bf877ab7abe3b38cbb61743e1c2c7",
+      "scope": "Literal all-unit-phase polynomial action and previously reviewed balanced-support theorem."
+    },
+    {
+      "path": "formal/.lake/packages/mathlib/Mathlib/Algebra/MvPolynomial/Funext.lean",
+      "sha256": "d20b2f428fce75d4009eede0c05b4e852269809b4327bbb104496ecfce4ee6cc",
+      "scope": "Exact funext_set statement and its arbitrary-index finite-variable reduction proof read."
+    },
+    {
+      "path": "formal/.lake/packages/mathlib/Mathlib/Algebra/MvPolynomial/Eval.lean",
+      "sha256": "617a2278665e02a00684f6f17b96f9925a473c54e456fc53eb6dae299c0fd89f",
+      "scope": "Exact eval_assoc polynomial substitution/evaluation composition lemma."
+    },
+    {
+      "path": "formal/.lake/packages/mathlib/Mathlib/Data/Set/Finite/Basic.lean",
+      "sha256": "63d8d4380f87f94c5723361cb6f2e789056126c583770e5e0adba4bee9f3f934",
+      "scope": "Infinite range of an injective map and supporting infinite-image statements."
+    }
+  ],
+  "strict_audit": {
+    "receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020120_018110Z/receipt.json",
+      "sha256": "d11faef25b633cbfe7ac622fd34ede8143c41fb980a61105ec0de021a4f145c2"
+    },
+    "expanded_log": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020120_018110Z/ExpandedStatements_v8.log",
+      "sha256": "10cbf2e022a915a128f603f75beec4205724bf1fd0bed54b62c243fd5feab655"
+    },
+    "audit_source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020120_018110Z/ExpandedStatements_v8.lean",
+      "sha256": "57037dce697c867d290df29ca3dab94f25ae0b4b8aa8ea83ddd9af2f7aa64f34"
+    },
+    "inspection": "Full final receipt and all twelve expanded statements/axiom reports read. Current target source/object hashes verified against the receipt at sealing. No new build or audit run by this reviewer.",
+    "declaration_count": 12,
+    "exit_code": 0,
+    "axiom_report_complete": true,
+    "unexpected_axioms": [],
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": [],
+    "forbidden_source_tokens": [],
+    "axiom_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "receipt_format_note": "Two multiline axiom summaries contain duplicate commas. Full expanded output confirms exactly the standard three axioms.",
+    "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild."
+  },
+  "checks": [
+    {
+      "id": "REAL-SLICE-01",
+      "result": "PASS",
+      "analysis": "The real-slice theorem applies polynomial funext_set to the infinite range of Complex.ofReal independently in every coordinate. Injectivity of the real embedding proves each side infinite. Choosing real preimages of a point in that product reduces exactly to the displayed hypothesis. The index type is arbitrary, and Mathlib reduces a polynomial to its finite variable support. No complex-open-set assumption or arbitrary-function continuation principle is used."
+    },
+    {
+      "id": "FORWARD-01",
+      "result": "PASS",
+      "analysis": "The literal vector in four complexified real-coordinate variables is (Y0+iY1,Y2+iY3,Y0-iY1,Y2-iY3), in spinor-variable order (z1,z2,w1,w2). Its physical evaluation is exactly (ksSpinor y0,ksSpinor y1,star(ksSpinor y0),star(ksSpinor y1)). The negative signs describe conjugates only on real coordinate inputs; no conjugacy of independent complex variables is presumed."
+    },
+    {
+      "id": "FORWARD-02",
+      "result": "PASS",
+      "analysis": "ksSpinorPolynomialToReal applies eval2 with the coefficient embedding C and the literal forward vector. Despite its name, the output still has complex coefficients; Real describes the coordinate interpretation. The physical evaluation theorem follows from exact eval_assoc and all four generator evaluation identities, retaining the same original polynomial and coefficients."
+    },
+    {
+      "id": "COVARIANCE-01",
+      "result": "PASS",
+      "analysis": "The circle-action evaluation formula holds for every complex u, including u=0 and nonunit u. The actual real linear coordinate map uses (u.re,u.im); ksSpinor_circle_action and u.re+i*u.im=u multiply the first two spinors by u, while star_mul multiplies the conjugate pair by star(u). This is covariance, not a claim that a nonunit scalar leaves the KS map invariant."
+    },
+    {
+      "id": "INVERSE-01",
+      "result": "PASS",
+      "analysis": "The consumed inverse vector is ((z1+w1)/2,(-i/2)*(z1-w1),(z2+w2)/2,(-i/2)*(z2-w2)). Substituting it into the forward vector recovers the four independent variables by i^2=-1. The checked theorem gives RealToSpinor(SpinorToReal(P))=P and therefore injectivity of SpinorToReal. This left-inverse direction is exactly the direction needed by subsequent proofs; no unproved opposite composition is used."
+    },
+    {
+      "id": "EXTENSION-01",
+      "result": "PASS",
+      "analysis": "Equality of two spinor polynomials on all actual real spinors first becomes equality of their forward substitutions on all real coordinate tuples. Every such tuple x is represented by y=WithLp.toLp 2 x in the actual Euclidean KSSpace, with the same coordinates. Real-slice polynomial extensionality proves equality of the forward substitutions, and their proved injectivity yields equality of the original independent-variable polynomials."
+    },
+    {
+      "id": "INVARIANCE-01",
+      "result": "PASS",
+      "analysis": "The real-invariance premise concerns the same coordinate polynomial P evaluated at ksCircleAction a b y and y, for every real a,b with a^2+b^2=1 and every y. For any unit complex u, its real and imaginary parts meet that equation by normSq_eq_norm_sq. Physical covariance and the inverse-substitution physical evaluation turn hreal into equality of the two transformed spinor polynomials on every real spinor. The established extensionality then proves literal polynomial circle invariance."
+    },
+    {
+      "id": "SUPPORT-01",
+      "result": "PASS",
+      "analysis": "The final conclusion is balanced support of ksRealPolynomialToSpinor P, the exact transformed polynomial appearing in the invariance theorem. It follows from the previously reviewed coefficientwise support theorem. Neither balanced support nor polynomial-ring invariance is assumed in the input hreal. No homogeneity, positive degree, nonzero polynomial, or nonzero coordinate restriction is introduced."
+    },
+    {
+      "id": "BINDERS-01",
+      "result": "PASS",
+      "analysis": "All three final modules set autoImplicit false. Full expanded types match the source: arbitrary index only for the generic slice result, concrete complex Fin 4 polynomials for the spinor maps, actual KSSpace physical points, and exactly the stated global real-invariance premise. No additional mathematical hypothesis was found."
+    }
+  ],
+  "invalidating_findings": [],
+  "limits": [
+    "This seal covers global real-slice equality and global real-coordinate polynomial circle invariance. The separate positive-radius local box and norm-ball variants are outside this three-module target.",
+    "These are finite polynomial statements. No theorem deriving Taylor-polynomial invariance from an invariant analytic function, convergence of descended series, or full R04 closure is asserted.",
+    "The imported inverse module was inspected for exact definitions and physical evaluation used here; its coefficient-norm and homogeneity results are not independently reviewed by this record.",
+    "All formal evidence reuses pinned dependency objects and is not a clean source dependency rebuild. The phase helper was authored by this reviewer and is not represented as independently reviewed here."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "theorem-t-pair-ks-potential-checkpoint-v1",
+  "created_utc": "2026-09-10T19:17:01.066383+00:00",
+  "evidence_category": "Formalized exact N=2 pair KS coefficient identities, collision-free patch implication, and local coefficient smoothness",
+  "status": "PASS_STRICT_AUDIT_SEALED",
+  "sources": [
+    {
+      "module": "PairKSPotential_v1",
+      "source": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairKSPotential_v1.lean",
+        "sha256": "73f8f520401c447377812acaeca287830dab01fd5611d437b8ba4f1440ecbb34"
+      },
+      "object": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PairKSPotential_v1.olean",
+        "sha256": "c4f296ea9f71bfe0c0085acacf3f143c7a5c4bcb66a190ea4255a67e0a54f28b"
+      },
+      "compile_receipt": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PairKSPotential_v1-20260910T191411_410946Z.json",
+        "sha256": "d47ff018ede52e6d8cb66aca2fbb722969441a3ca069ba5bb632f18828021ee2"
+      },
+      "compile_log": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PairKSPotential_v1-20260910T191411_410946Z.log",
+        "sha256": "3af56119262dd63daba395a7400d3f1de9e46023b79cf8e1da4d5995a3cf0935"
+      },
+      "declarations": [
+        "pairKSPotential",
+        "pairKSCoefficientPatch",
+        "pairKSPotential_eq_coulomb_scaled",
+        "pairKSPotential_on_zero",
+        "pairKSCoefficientPatch_off_zero_collisionFree"
+      ]
+    },
+    {
+      "module": "PairKSPotentialSmooth_v1",
+      "source": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairKSPotentialSmooth_v1.lean",
+        "sha256": "d806b262aab38db8377671809baafaaa3c490a1b5951f50d9763faa539cf0ab7"
+      },
+      "object": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PairKSPotentialSmooth_v1.olean",
+        "sha256": "f27797caa8fb01e94956c4a8895d8de9d8299b4a86b6d8a2e50da2ff9449fa0b"
+      },
+      "compile_receipt": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PairKSPotentialSmooth_v1-20260910T191511_280269Z.json",
+        "sha256": "2558bf09afed287014c8125be79b6fec7cb88044252dea7831e65e60e7008d95"
+      },
+      "compile_log": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PairKSPotentialSmooth_v1-20260910T191511_280269Z.log",
+        "sha256": "df25873bb3a237b7673b214ca75b4ab95b3f262d253939a86073e22267d6ca30"
+      },
+      "declarations": [
+        "pairKSPotential_contDiffAt",
+        "pairKSCoefficientPatch_isOpen"
+      ]
+    }
+  ],
+  "strict_audit": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T191536_002482Z/receipt.json",
+    "sha256": "0e592c79aed2449b6ee45456f4237b5974d6c0e33ada358809b71cf7c2ced29b"
+  },
+  "expanded_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T191536_002482Z/ExpandedStatements_v3.lean",
+    "sha256": "42d67b9eb871e491784edbcf48b4fc2f5cfde7b77fddb5d38dee226c1715ad5e"
+  },
+  "expanded_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T191536_002482Z/ExpandedStatements_v3.log",
+    "sha256": "c582941b4e6d684c9bfac424b343d038662efa8168e436ec8948432dd0f5f629"
+  },
+  "declarations_audited": 7,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "geometry": {
+    "electron_count": 2,
+    "space": "PairKSSpace = NuclearKSSpace (0 : Fin 2)",
+    "positions": "x0=pairCenterEquiv(s)+(1/2)*ksMap(y), x1=pairCenterEquiv(s)-(1/2)*ksMap(y)",
+    "pair_radius": "norm(x0-x1)=norm(y)^2",
+    "parent_source": {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairKSLift_v1.lean",
+      "sha256": "52456ae6e1072cae6c5cf3bfc5269b2bb0e177994c50818be6cdd1cb661751c7"
+    }
+  },
+  "coefficient": "pairKSPotential Z E (y,s) = 4+4*norm(y)^2*(-Z*(norm(x0)^(-1)+norm(x1)^(-1))-E)",
+  "patch": "pairKSCoefficientPatch requires exactly x0 != 0 and x1 != 0; it does not require y != 0.",
+  "exact_results": [
+    "For every real Z,E and y!=0, the coefficient equals 4*norm(y)^2*(coulombPotential 2 Z (pairKSLift(y,s))-E).",
+    "At y=0 the coefficient is exactly 4 for every Z,E,s.",
+    "Every point in the coefficient patch with y!=0 lifts to an actual collisionFree two-electron configuration.",
+    "The coefficient is ContDiffAt real infinity at each point of the coefficient patch, including pair collisions there.",
+    "The coefficient patch is open."
+  ],
+  "semantic_review": {
+    "physical_model": "The untruncated original two-electron Coulomb potential is used, with repulsive pair coefficient +1 and nuclear terms -Z/r. The additive constant +4 is the exact product of that pair pole with 4*norm(y)^2.",
+    "zero_set": "The coefficient identity with the unextended Coulomb representative is asserted only for y!=0. Its value at y=0 is given by the explicitly defined extended coefficient. Smoothness uses the separate nuclear-avoidance patch; no claim at the simultaneous nuclear/pair origin is made.",
+    "collision_free": "For N=2, the two nuclear conditions and ksMap(y)!=0 give exactly all collisionFree conditions by exhausting the two electron indices.",
+    "smoothness": "Both physical position maps are polynomial/linear compositions. Their inverse norms are smooth where each position is nonzero. The squared KS norm is globally smooth; no derivative or regularity of an eigenfunction is assumed by this coefficient result.",
+    "operator_coefficient": "This potential is intended for the pair principal coefficient c=1 once the parent weighted linear trace and actual physical equation are supplied. Neither that principal identity nor the physical weak equation is claimed by this checkpoint."
+  },
+  "reused_exact_potential_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombTwoElectronExpectation_v1.lean",
+    "sha256": "19bc777c65869482c1210a644b814ddd341c3b957550d723ef5bcf515cf7224d"
+  },
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "reproduction": "Two sequential pinned development builds and one joint strict audit; no source rebuild, remote run or publication.",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_original_path": "rwa_proof/RWA_THEOREM.md",
+    "frozen_original_sha256": "d13f655a98cd278115924af4f0597991619fce0345f81e17151c1524229e8f09",
+    "successful_prior_bytes_changed": false
+  },
+  "next_obligation": "Parent composition of the actual pair KS weighted Laplacian, classical eigen-equation, compact-test integration by parts and pair-singular-set removal."
+}

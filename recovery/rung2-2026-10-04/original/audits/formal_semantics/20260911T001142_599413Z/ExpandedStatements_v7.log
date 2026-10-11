@@ -1,0 +1,88 @@
+@TheoremT.Continuum.lp_submeasure_representative_bound.{u_1} : ∀ {X : Type u_1} [inst : MeasurableSpace.{u_1} X]
+  {μ ν : @MeasureTheory.Measure.{u_1} X _} (hνμ : @LE.le.{u_1} (@MeasureTheory.Measure.{u_1} X _) _ ν μ)
+  (f :
+    @Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+      fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) =>
+      @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+        (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) _) _
+        (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ) x)
+  (g : X → Complex)
+  (hfg :
+    @Filter.EventuallyEq.{u_1, 0} X Complex (@MeasureTheory.ae.{u_1, u_1} X (@MeasureTheory.Measure.{u_1} X _) _ _ ν)
+      (@MeasureTheory.AEEqFun.cast.{u_1, 0} X Complex _ μ _
+        (@Subtype.val.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+          (fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) =>
+            @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+              (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) _) _
+              (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ) x)
+          f))
+      g),
+  And (@MeasureTheory.MemLp.{u_1, 0} X Complex inst _ _ g (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ν)
+    (@LE.le.{0} Real _
+      (ENNReal.toReal (@MeasureTheory.eLpNorm.{u_1, 0} X Complex _ inst g (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ν))
+      (@Norm.norm.{u_1}
+        (@Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+          fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) =>
+          @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+            (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) _) _
+            (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ) x)
+        _ f))
+@TheoremT.Continuum.lp_submeasure_representative_exists.{u_1} : ∀ {X : Type u_1} [inst : MeasurableSpace.{u_1} X]
+  {μ ν : @MeasureTheory.Measure.{u_1} X _} (hνμ : @LE.le.{u_1} (@MeasureTheory.Measure.{u_1} X _) _ ν μ)
+  (f :
+    @Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+      fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) =>
+      @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+        (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) _) _
+        (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ) x)
+  (g : X → Complex)
+  (hfg :
+    @Filter.EventuallyEq.{u_1, 0} X Complex (@MeasureTheory.ae.{u_1, u_1} X (@MeasureTheory.Measure.{u_1} X _) _ _ ν)
+      (@MeasureTheory.AEEqFun.cast.{u_1, 0} X Complex _ μ _
+        (@Subtype.val.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+          (fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) =>
+            @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+              (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) _) _
+              (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ) x)
+          f))
+      g),
+  @Exists.{u_1 + 1}
+    (@Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+      fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) =>
+      @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+        (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) _) _
+        (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ν) x)
+    fun
+      (u :
+        @Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+          fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) =>
+          @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+            (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) _) _
+            (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ν) x) =>
+    And
+      (@Filter.EventuallyEq.{u_1, 0} X Complex (@MeasureTheory.ae.{u_1, u_1} X (@MeasureTheory.Measure.{u_1} X _) _ _ ν)
+        (@MeasureTheory.AEEqFun.cast.{u_1, 0} X Complex _ ν _
+          (@Subtype.val.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+            (fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) =>
+              @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+                (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) _) _
+                (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ν) x)
+            u))
+        g)
+      (@LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+            fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) =>
+            @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν)
+              (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ ν) _) _
+              (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) ν) x)
+          _ u)
+        (@Norm.norm.{u_1}
+          (@Subtype.{u_1 + 1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+            fun (x : @MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) =>
+            @Membership.mem.{u_1, u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ)
+              (@AddSubgroup.{u_1} (@MeasureTheory.AEEqFun.{u_1, 0} X Complex _ _ μ) _) _
+              (@MeasureTheory.Lp.{0, u_1} X Complex inst _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) μ) x)
+          _ f))
+'TheoremT.Continuum.lp_submeasure_representative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.lp_submeasure_representative_exists' depends on axioms: [propext, Classical.choice, Quot.sound]

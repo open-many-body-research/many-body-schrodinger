@@ -1,0 +1,51 @@
+{
+  "status": "PASS_ACTUAL_BALANCED_DESCENT_COEFFICIENT_NONEXPANSIVENESS",
+  "created_utc": "2026-09-11T01:45:24.502818+00:00",
+  "evidence_category": "Fully formalized finite polynomial norm estimate in the pinned Lean environment",
+  "statement": "For all i,j:Fin2, L1(ksDescentQuadraticPolynomial i j)<=1. For every natural exponent tuple, L1(ksBalancedDescentPolynomial a1 a2 b1 b2)<=1. For every complex polynomial P in four variables, L1(ksBalancedPolynomialDescent P)<=L1(P).",
+  "meaning": "All generators, monomial products and the finite support sum are the literal previously implemented polynomials. L1 is the actual finite sum of complex coefficient norms. The norm bounds require no balance, invariance, homogeneity, degree or physical evaluation hypothesis.",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedPolynomialCoefficientBound_v1.lean",
+    "sha256": "e8a0c3168e68f88c37769550f041926c630a79a4290eee8908726c3ba3b856c1"
+  },
+  "direct_dependency_sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedDescentPolynomial_v1.lean",
+      "sha256": "655996be637e67e501b3abbf5d750e8fe83e97c4df351ff62747a7fbf1401557"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedPolynomialDescent_v1.lean",
+      "sha256": "e2d397416acbb9acbe2f6906413a7d31083ca045eab9c29fcd431c198a338bfd"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MvPolynomialCoefficientL1Scaling_v1.lean",
+      "sha256": "226665fe82d95662b5c7a1b5481966b06a6dbf8326540a292f9036fd64df74bb"
+    }
+  ],
+  "compiler_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSBalancedPolynomialCoefficientBound_v1-20260911T014354_061576Z.json",
+    "sha256": "f869126d0929c13c4974044b9d381f30671df991717139babfc6537f1402a20e"
+  },
+  "strict_v8_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T014430_082516Z/receipt.json",
+    "sha256": "8bbf1c4aff545a4816c54f1989dec54206f5516ad192f833045af8c43a5432e0"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T014430_082516Z/ExpandedStatements_v8.log",
+    "sha256": "c1689347106711f147c1baa70a1aa3da3c1d74c9d83ea138a855e1c6d990e1ea"
+  },
+  "declarations_audited": 4,
+  "manual_review": "Full final source, all four expanded statement entries, all four axiom reports and full strict receipt read directly. Actual generator/descent and scaling source bodies were inspected. Independent review is owned by parent and is not asserted complete here.",
+  "trust": "Only propext, Classical.choice, Quot.sound; no unexpected axioms, missing reports, ellipses, printer failures or forbidden source tokens.",
+  "environment": "Lean 4.34.0-rc2; pinned project object caches reused; no source dependency rebuild claimed.",
+  "errors": "Two development compiles left generator-case simplifier goals for 1+1 and the imaginary constant. Explicit coefficient-norm rewrites followed by norm_num discharged them. Final source has only unused simp-argument warnings from the four-case split. Successful source bytes are preserved.",
+  "limits": "The theorem is a norm estimate for the implemented map, and does not by itself show that an invariant input has balanced support, prove the physical evaluation identity, or establish infinite-series descent or full Theorem T.",
+  "next_active_obligation": "Compose nonexpansiveness with the separately proved balanced-support/evaluation/degree results and radial coefficient bounds, then transfer actual Taylor coefficient bounds.",
+  "process_state": "All owned compiler/auditor sessions terminal.",
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

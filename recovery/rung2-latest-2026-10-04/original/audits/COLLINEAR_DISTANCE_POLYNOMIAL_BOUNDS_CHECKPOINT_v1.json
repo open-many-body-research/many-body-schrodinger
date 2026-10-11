@@ -1,0 +1,64 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_ALL_FINAL_SOURCE_EXPANDED_STATEMENTS_AND_AXIOMS_READ",
+  "created_utc": "2026-09-11T04:08:57.393216+00:00",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "module_records": [
+    {
+      "module": "CollinearDistancePolynomialBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CollinearDistancePolynomialBounds_v1.lean",
+      "source_sha256": "aa13a77981167bc39b732d1856d08d3d68b9d401c4cf074661f81b873929260c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CollinearDistancePolynomialBounds_v1.olean",
+      "object_sha256": "6dfab29ac0a9221fe128009d5f1c10a9f4538008434635ce19ef9c41578f8e0d",
+      "declarations": [
+        "collinear_complex_square_deviation",
+        "collinear_distance_numerator_bound",
+        "collinear_distance_numerator_bound_coarse"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compiler_receipts": [
+    {
+      "module": "CollinearDistancePolynomialBounds_v1",
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/CollinearDistancePolynomialBounds_v1-20260911T040726_879228Z.json",
+      "sha256": "228b544659874ea75514a95d6fcaf441f4b8a5d4bfc66f9da3ff64c3b12c4f63"
+    }
+  ],
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T040756_761995Z/receipt.json",
+  "strict_receipt_sha256": "6109f82ca85747eb12d22a2fd2612451b1845fe07f10d8abb10a345c43c5a44e",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T040756_761995Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "b417c50a36291d076ac62e908291e736f667b6a1173bc712adc0e082ebf12aee",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "For complex a,c with ||c||<=R and ||a-c||<=delta, R,delta>=0, ||a^2-c^2||<=delta*(2R+delta).",
+    "For nonnegative real r0,u0, positive sigma, complex z0 with ||z0||<=r0 and distance-variable deviations <=delta, the literal shifted numerator N=(r^2-r0^2)+(s^2-sigma^2)-(u^2-u0^2)-2z0(s-sigma) satisfies ||N||<=delta*(4r0+2sigma+2u0+3delta).",
+    "If delta<=sigma/4 then ||N||<=6*(r0+sigma+u0)*delta."
+  ],
+  "scope": [
+    "These algebra estimates require no center collinearity relation and no chart identity.",
+    "The generic square estimate allows arbitrary complex centers, including zero, and delta=0 is included throughout.",
+    "No denominator is divided by, and quotient, actual coordinate map and neighborhood/radius conclusions remain separate.",
+    "No scale-uniform lower bound on sigma is assumed; its displayed positivity and delta relation suffice."
+  ],
+  "compiler_warning": "One harmless unused-variable warning: explicit hR is redundant since ||c||<=R entails R>=0. First PASS source preserved.",
+  "evidence_category": "Kernel-compiled explicit complex polynomial inequalities, supporting B10/B11 geometry.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "isolated_source_rebuild_claimed": false,
+  "dependency_source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairDistancePolynomialBounds_v1.lean",
+    "sha256": "f5356939a54550624b64692ea294ad2f2ae2e9df7ea61a5a0e33b597418c68f7"
+  },
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next_obligation": "Parent proves actual collinear distance axis quotient cancellation and C_z/C_w neighborhood bounds."
+}

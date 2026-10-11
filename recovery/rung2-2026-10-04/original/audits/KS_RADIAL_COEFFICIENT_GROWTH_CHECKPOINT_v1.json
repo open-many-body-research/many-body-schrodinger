@@ -1,0 +1,68 @@
+{
+  "status": "PASS_RADIAL_COMBINED_COEFFICIENT_GROWTH",
+  "created_utc": "2026-09-11T01:31:59.190056+00:00",
+  "evidence_category": "Fully formalized finite polynomial estimates in the declared pinned Lean environment",
+  "strongest_statement": "For every P in C[X_0,X_1,X_2,r], L1(ksRadialEven P)+L1(ksRadialOdd P) <= sum over d in P.support of norm(P.coeff d)*3^(d(r)/2). If P.totalDegree<=m, the combined norm is <=L1(P)*3^(m/2)<=L1(P)*2^m. All divisions in exponents are natural-number floor division.",
+  "meaning": "ksRadialEven and ksRadialOdd are the existing literal finite reduction of r^2=X_0^2+X_1^2+X_2^2. L1 is the actual finite sum of complex coefficient norms. No homogeneity hypothesis is required.",
+  "mathematical_change": "A combined estimate uses the parity partition once and avoids adding a separate bound for each output. The three spatial variables each have coefficient norm one and the radial square has coefficient norm at most three.",
+  "sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRadialCoefficientL1_v1.lean",
+      "sha256": "4db2171e658898015103a79b77169a71eb4e2d15c362c1a2a05f7d795c26fafa"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRadialCoefficientCoarseBound_v1.lean",
+      "sha256": "3aa0ec542f8e1a92653adbaecdb2263eea204c48e82d63d796029221a55c571e"
+    }
+  ],
+  "direct_dependency_sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSRadialPolynomialReduction_v1.lean",
+      "sha256": "02de38c58636c52aefd406d888eb72f8be7c6c6c4873170478f24f5ad68991cb"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MvPolynomialCoefficientL1_v1.lean",
+      "sha256": "8e89c33a79d6c5884a11e2be9c9559435772f31eeab213b303a8b3533365f081"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MvPolynomialCoefficientL1Substitution_v1.lean",
+      "sha256": "16c54624cfbe97e5df90074c193b16a22f5ecea13c94bd571c8f36c28269017b"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MvPolynomialCoefficientL1DegreeBound_v1.lean",
+      "sha256": "3e5e6de6967226b1f6f9c0960b08bd26f5cab09e47ae0f1b9193761dea1f347f"
+    }
+  ],
+  "compiler_receipts": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSRadialCoefficientL1_v1-20260911T012956_193417Z.json",
+      "sha256": "541a3ee3aa4fae02feddcd54cdbd1eae3d1aeaf39609d0c2d1e55ff37fe5acd4"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSRadialCoefficientCoarseBound_v1-20260911T013033_699739Z.json",
+      "sha256": "f45b5ff77d10b44702884dbe9fe68371e6fbfe072b6633bed248514baf37972c"
+    }
+  ],
+  "strict_audit": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013050_740889Z/receipt.json",
+    "sha256": "ea81220066903673be84bf0a236b4a11c108bbf7028bfcb282462b8b0b9a7194"
+  },
+  "expanded_statement_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013050_740889Z/ExpandedStatements_v8.log",
+    "sha256": "73da2b72e11afb816bd64794fc07d38c2e1d16c3f3608c0f92b7c3fbf0beeb34"
+  },
+  "declarations_audited": 7,
+  "manual_review": "All final owned source bodies, all seven expanded theorem statements, all seven axiom reports, and the full strict receipt were read directly. Definitions and direct coefficient-norm dependency source bodies were also inspected. Independent source review is owned by parent and is not asserted complete here.",
+  "trust": "Only propext, Classical.choice, Quot.sound. No unexpected axioms, missing reports, printer failures, ellipses, or forbidden source tokens in the selected modules.",
+  "environment": "Lean 4.34.0-rc2, existing pinned project Mathlib development objects reused. No isolated source rebuild is claimed by this checkpoint.",
+  "errors": "No mathematical or compilation failure in these two modules. The first module has only deprecated if_true/if_false spelling warnings; successful source bytes are preserved.",
+  "limits": "This is finite polynomial coefficient control. It does not by itself establish analytic KS descent, the invariant lift, convergence of descended Taylor series, global approximation, a continuum solver, or full Theorem T.",
+  "next_active_obligation": "Compose with the separately owned invariant polynomial lift and exact degree preservation, then transfer the analytic Taylor coefficient bounds through the finite reduction.",
+  "process_state": "All owned compiler and auditor sessions are terminal.",
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

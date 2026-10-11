@@ -1,0 +1,165 @@
+{
+  "created_utc": "2026-09-11T01:26:26.223169+00:00",
+  "reviewer": "/root/fixed_box_review",
+  "status": "NO_DEFECT_FOUND_IN_BOUNDED_INCREMENTAL_REVIEW",
+  "scope": "Full exact source review of two physical pointwise wrappers and the new physical pointwise predicate/bridge, plus complete exact expanded-statement comparison with the previously reviewed weighted package. The separate spinor algebra module in the same strict receipt is reviewed independently in another record.",
+  "targets": [
+    {
+      "module": "CoulombSpinPhysicalPointwise_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombSpinPhysicalPointwise_v1.lean",
+      "source_sha256": "46bdf11391006f58c6f8c1c492756ff7109af1cb958193743f1f48b83101d33d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoulombSpinPhysicalPointwise_v1.olean",
+      "object_sha256": "5a2c40647bc89ed4b61b62dbcdb3eba044c5466832c27940ad6ae83cf6334688",
+      "declarations": [
+        "coulomb_spin_physical_pointwise_representative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "TwoElectronGroundPhysicalPointwise_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronGroundPhysicalPointwise_v1.lean",
+      "source_sha256": "cc6311767aef8b45b2bbb07c46adb749a340da0ef7ea3563346fb898bc69782d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronGroundPhysicalPointwise_v1.olean",
+      "object_sha256": "8807b213fb892286e85933261fb4769f93fe1cc379a3c3f2727041e06ef2702d",
+      "declarations": [
+        "twoElectron_physical_ground_pointwise"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T012232_239943Z/receipt.json",
+    "sha256": "800a84d168cf14151a4c8f26fefdd83608b9b340847434282963bb5864be4102"
+  },
+  "expanded_output": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T012232_239943Z/ExpandedStatements_v8.log",
+    "sha256": "d1101e29d33fc8248e6b110b94b912e8612decad176956ecb3959e83e756ef29"
+  },
+  "expanded_statement_diff": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/COULOMB_SPIN_GROUND_PHYSICAL_POINTWISE_EXPANDED_DIFF_v1.txt",
+    "sha256": "8ea3345d1c30ba927b1fa30124d67c06477d704629ff8acb12229f37c3363e40",
+    "prior_statement_lines": 1934,
+    "new_statement_lines": 1934,
+    "exact_changes": {
+      "coulomb_spin_physical_factorial_representative": 1,
+      "twoElectron_physical_ground_factorial": 1,
+      "PhysicalKSBoxFactorialData": 4
+    },
+    "byte_identical_after_exact_name_and_predicate_substitutions": true,
+    "review": "Entire diff inspected. Every other binder, actual physical function, scale/charge hypothesis, common budget, operator domain, spectral statement and singlet equality is byte-identical to the previously fully reviewed expanded statements. Both new axiom reports inspected."
+  },
+  "trust": {
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "printer_issues": [],
+    "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+    "no_recompilation_by_reviewer": true,
+    "source_object_and_log_hashes_rechecked": true
+  },
+  "prior_weighted_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/COULOMB_SPIN_GROUND_PHYSICAL_FACTORIAL_FOCUSED_REVIEW_v1.json",
+    "sha256": "fe19bed31c34bb79430126aba26fb3e171e6b86e1ec1d738c757216aa7b59d66"
+  },
+  "findings": [
+    {
+      "check": "Actual pointwise predicate",
+      "result": "PASS",
+      "reason": "PhysicalKSBoxPointwiseData means ContDiffOn real infinity, real AnalyticOnNhd and true recursively defined fderiv coordinate-word bounds for the same actual normalized physical KS pullback on the open box of halfwidth 1/512."
+    },
+    {
+      "check": "Continuous-base identification",
+      "result": "PASS",
+      "reason": "The representative already supplied by the physical graph is locally Lipschitz, hence continuous. Each KS lift and physical spectator inverse is continuous. The weak-profile smooth representative agrees pointwise with this original continuous base on the open box by volume.eqOn_open_of_ae_eq. Actual fderiv words are transferred by equality on an open neighborhood."
+    },
+    {
+      "check": "Fixed geometric constants",
+      "result": "PASS",
+      "reason": "The inner box halfwidth is 1/512, so each seven-dimensional tensor side length is 1/256 and the point-evaluation product constant is (257/16)^7. It lies inside the smooth cutoff plateau halfwidth 3/1024 and profile norm region halfwidth 1/256; the cutoff support remains inside the weak derivative region halfwidth 1/128."
+    },
+    {
+      "check": "Derivative reserve and factorial constants",
+      "result": "PASS",
+      "reason": "The actual profile embedding uses order k+11. The binomial estimate (k+11)! <= 2^(k+11)*k!*11! yields rate Q=6144*C*A and amplitude (257/16)^7*[12*C*A*(F0+498*sqrt(W))]*Q^11*11!, with C=commonKSBoxFactorialConstant M. Nonnegativity and Q>0 are proved from A>=1, F0>=0 and C>=1."
+    },
+    {
+      "check": "Real analyticity",
+      "result": "PASS",
+      "reason": "Actual coordinate-word bounds for all seven coordinates imply actual iterated Frechet operator bounds with factor 7^k. The existing factorial Frechet series theorem gives real analyticity on the open region using a positive interior margin. No analyticity assumption is introduced in the physical pointwise wrappers."
+    },
+    {
+      "check": "Uniformity and physical spin representation",
+      "result": "PASS",
+      "reason": "The same C_H,M,A,u,L,R and source/H12 amplitudes from the weighted endpoint are retained before all spin, scale, chart and center quantifiers. The normalized difference, nuclear and pair maps and inverse physical spectator permutations are unchanged."
+    },
+    {
+      "check": "Ground-state mathematical meaning",
+      "result": "PASS",
+      "reason": "The actual normalized weak-H2-domain ground vector, eigen-equation, spectral infimum equality, spectrum membership/lower bound and normalized symmetric spatial singlet amplitude are identical to the reviewed weighted ground package. The explicit charge assumptions remain Z>0 and 32<9*Z^2."
+    }
+  ],
+  "evidence_category": "Lean kernel-compiled local pointwise smoothness/analyticity and factorial estimate, instantiated at an actual physical full-spin ground state under the explicit charge hypotheses.",
+  "limitations": [
+    "This is a local lifted theorem. Quantitative KS descent into the physical coordinates, collision compatibility across a global construction, exterior estimates and global approximation remain separate obligations.",
+    "The derivative bound is real analytic in the lifted coordinates; a holomorphic complexification or a global physical analytic representation is not silently included.",
+    "The existential constants are not evaluated computationally by this result. A certified finite energy solver, termination and bit complexity still require their own proofs.",
+    "The result does not complete full Theorem T or Rung 2."
+  ],
+  "new_immediate_sources_read_in_full": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalPointwise_v1.lean",
+      "sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxPointwiseFactorial_v1.lean",
+      "sha256": "ab9611be060253c3582b2936613ac082c8dfa9d8ddc9c4c4e739d9bc96806ba9"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FixedBoxSevenGeometry_v1.lean",
+      "sha256": "52190186c2c03b41db6b4922fab14fec4b47796e8beafde7050115dd0067e09e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialReserveAbsorption_v1.lean",
+      "sha256": "d0a2159b9f7f621838362e7ed72523809aad7e69debb642a6602015870a6a5bd"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateFactorialAnalytic_v1.lean",
+      "sha256": "aa1d4ae446e4556be731530323eca436750ff29a7a9e1da6e4f3426ff5b7989e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinContinuousBaseRepresentative_v1.lean",
+      "sha256": "0895c68acf812abef6223694024127d018b1f4dd5ad79c211ff12b17d239750d"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinActualProfileSmoothRepresentative_v1.lean",
+      "sha256": "d9b153c8a2b29ded56059da828abd1a99e5fc3fd7df2606d53f66bec0fa03210"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialFrechetAnalytic_v1.lean",
+      "sha256": "e1ddb1499a6187d6688c06a66e63622a8f2dde3684e901cc9520d14af808c3c0"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateFrechetBound_v1.lean",
+      "sha256": "3beb8f1e7e1f203202726a754c2dc74b52e58f2f487ebb481110fde5542d3fa2"
+    }
+  ],
+  "targeted_definition_reads": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SmoothComplexMixedSourceWords_v1.lean",
+      "lines": "1-48",
+      "purpose": "Actual recursive complexDirectionalWordDeriv definition uses real fderiv."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakHk_v1.lean",
+      "lines": "1-48",
+      "purpose": "Actual productCoordinateDirection uses the physical Y and spectator coordinate directions."
+    }
+  ]
+}

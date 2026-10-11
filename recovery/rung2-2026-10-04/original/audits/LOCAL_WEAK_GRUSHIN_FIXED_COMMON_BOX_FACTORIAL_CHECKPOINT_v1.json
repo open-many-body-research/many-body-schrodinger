@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-09-11T01:15:25.894775+00:00",
+  "status": "PASS_FIXED_PHYSICAL_BOX_WEAK_FACTORIAL_WITH_SHARED_KS_PRINCIPAL_CONSTANT",
+  "evidence_category": "Kernel-checked theorem from genuine local weak PDE data and actual finite H12 initialization",
+  "exact_result": "On Y4 x T3, from actual weak (Pc+B)f=src and local L2 on the 1/64 box, analytic known coefficient/source word bounds and genuine H12(f) budget W on the 1/128 box, construct one coherent all-order weak family F with F00=f. On the 1/256 box all weighted fields are MemLp and N_r <=12*C*A*(F0+498*sqrt(W))*(3072*C*A)^r*r!. For the common specialization c is 1 or 4 and C=max(C_fixed(1,M),C_fixed(4,M)), independent of center and order.",
+  "mathematical_change": "Eliminated cutoff derivative bounds as premises using actual constants96 and14016, specialized strict nested boxes, and combined both KS principal constants without altering source or equation.",
+  "hypothesis_review": "The all-order weak family and profile bound are conclusions. Inputs include genuine original weak equation, finite H12, and known analytic coefficient/source bounds. No pointwise solution bound, recurrence or intended regularity conclusion is assumed.",
+  "not_claimed": [
+    "physical Coulomb solution coupling by this local theorem",
+    "pointwise analyticity or KS descent",
+    "global H2 dictionary approximation",
+    "solver/termination/bit complexity",
+    "full Theorem T"
+  ],
+  "module_records": [
+    {
+      "module": "LocalWeakGrushinFixedBoxFactorial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakGrushinFixedBoxFactorial_v1.lean",
+      "source_sha256": "67a9702cbdc9790dc2270dad93dfe77651b7a188795ea979d18c62ddf498a2d7",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakGrushinFixedBoxFactorial_v1.olean",
+      "object_sha256": "4f3ce18fd92951af4024b24304ad2fa298128d7aa9c756f5cc04d12396d6b608",
+      "declarations": [
+        "fixedBoxFactorialConstant",
+        "local_weak_grushin_fixed_box_factorial"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "LocalWeakGrushinCommonKSBoxFactorial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakGrushinCommonKSBoxFactorial_v1.lean",
+      "source_sha256": "61369d63f165bcac84b4c6f92c34e1d4a24729f6e578e1ff2f6f71e0b183ca53",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakGrushinCommonKSBoxFactorial_v1.olean",
+      "object_sha256": "59180e0eae85f46cc9e486a1e780844ae937b79a731e1332de7a93a5a0d98626",
+      "declarations": [
+        "commonKSBoxFactorialConstant",
+        "fixedBoxFactorialConstant_one_le",
+        "fixedBoxFactorialConstant_le_common",
+        "local_weak_grushin_common_KS_box_factorial"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260911T003815_237634Z/receipt.json",
+        "sha256": "e30734366c403561e7545ba2b848707f7ae0a677465f38775d1d78b44b24f954"
+      },
+      "expanded_statements_and_axioms": {
+        "path": "audits/formal_semantics/20260911T003815_237634Z/ExpandedStatements_v7.log",
+        "sha256": "298a58071d6339c3b2ddd30aa164ccd9cc120bd51dbb27d4056a654e733b08ad"
+      }
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260911T004741_816704Z/receipt.json",
+        "sha256": "2fdd29e3ca49c90522574e8b206d714e90e63ac08f2d5bead373d2347d245284"
+      },
+      "expanded_statements_and_axioms": {
+        "path": "audits/formal_semantics/20260911T004741_816704Z/ExpandedStatements_v7.log",
+        "sha256": "c5bc5e68a17b0ee0f9877f77904e5255794057ead22d9bc6a6a0085770943330"
+      }
+    }
+  ],
+  "root_review": "Root read complete final sources and both complete final expanded statement/axiom logs; checked true directions, strict geometry, all-order quantifiers and monotone max-constant transfer.",
+  "independent_reviews": [
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_FIXED_BOX_FACTORIAL_FOCUSED_REVIEW_v1.json",
+      "sha256": "7c73f42bb976bd984bae5fbce3e9710b6e46531f695b5c3fedc34c24be38f4de"
+    },
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_COMMON_KS_BOX_FACTORIAL_FOCUSED_REVIEW_v1.json",
+      "sha256": "5309c0aa9aec747052f62a71974a371ba6de7762a70e8250e6a990c463894a36"
+    }
+  ],
+  "dependency_checkpoints": [
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_RAW_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "4e98a5f84c6b82ec683c1a809582969b869ada06695c17775534b39ff1d1941b"
+    },
+    {
+      "path": "audits/SMOOTH_TRANSITION_EXPLICIT_CONSTANTS_CHECKPOINT_v1.json",
+      "sha256": "708c46c7f38063ce7ced8da82598a1f31d06708dbf621c288d7f091574fb5c3e"
+    }
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development objects reused. These modules are outside isolated source rebuildv20; no new isolated rebuild or alternate trust mechanism.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}
