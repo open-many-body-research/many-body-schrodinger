@@ -1,0 +1,10 @@
+@TheoremT.Continuum.monomial_exponent_word_exists.{u_1,
+    u_2} : ∀ {σ : Type u_1} {M : Type u_2} [inst : CommMonoid.{u_2} M] (d : @Finsupp.{u_1, 0} σ Nat _) (n : Nat)
+  (hn : @Eq.{1} Nat (@Finsupp.sum.{u_1, 0, 0} σ Nat Nat _ _ d fun (x : σ) (e : Nat) => e) n),
+  @Exists.{u_1 + 1} (Fin n → σ) fun (w : Fin n → σ) =>
+    ∀ (z : σ → M),
+      @Eq.{u_2 + 1} M (@Finset.prod.{0, u_2} (Fin n) M _ (@Finset.univ.{0} (Fin n) _) fun (j : Fin n) => z (w j))
+        (@Finset.prod.{u_1, u_2} σ M _ (@Finsupp.support.{u_1, 0} σ Nat _ d) fun (i : σ) =>
+          @HPow.hPow.{u_2, 0, u_2} M Nat M _ (z i)
+            (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} σ Nat _) σ (fun (x : σ) => Nat) _ d i))
+'TheoremT.Continuum.monomial_exponent_word_exists' depends on axioms: [propext, Classical.choice, Quot.sound]

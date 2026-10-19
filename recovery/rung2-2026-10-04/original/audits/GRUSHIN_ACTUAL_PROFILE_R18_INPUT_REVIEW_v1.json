@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-09-11T00:20:46.444658+00:00",
+  "status": "FOCUSED_SOURCE_INTERFACE_REVIEW_NO_MATHEMATICAL_MISMATCH_FOUND",
+  "sources": [
+    {
+      "module": "GrushinFactorialLocalProfile_v1",
+      "sha256": "dd7e9f8b641959d8063ebde2b0c797897681f5b645f0b725b80f538836cb95a7"
+    },
+    {
+      "module": "GrushinFactorialBoxProfile_v1",
+      "sha256": "c7662b48be9f1c640c1c692e53063e87e67ba51093ba9de4494081292242de5e"
+    },
+    {
+      "module": "GrushinFactorialProfileLowerBudgets_v1",
+      "sha256": "20925034300fcbfaecc393022b7a03eff80a98f27755368c3009e4e950945045"
+    },
+    {
+      "module": "GrushinMixedCutoffActualProfile_v1",
+      "sha256": "e853bc599fa0fab4a643961c18edbe6b8ba7f5d9af8c42366f0e5e64e1a468c4"
+    },
+    {
+      "module": "WeakFactorialPlateauOuterBound_v1",
+      "sha256": "b85609eae24fa4a8daa56ea49a9352e9dbec7300dcf28c6073fb7680d3548c58"
+    },
+    {
+      "module": "GrushinLocalizedScalarAbsorption_v1",
+      "sha256": "9f8df157683a38b8bf3ccfec93e29cad44d5aaa5c09c1e8126fd214170aaf166"
+    },
+    {
+      "module": "GrushinRecurrenceForcingAbsorption_v1",
+      "sha256": "71e4a080ae9c075ab8a260565983ccb91dc01b5a658d2c60fa2bad3ab6caaa01"
+    },
+    {
+      "module": "GrushinScalarFixedGapRecurrence_v1",
+      "sha256": "1f6c3e1afb7a9ecf39a0cca6760654bdab1df5b7588a6c1a1bdb4bfd4ac63eae"
+    },
+    {
+      "module": "GrushinFactorialCutoffData_v1",
+      "sha256": "92dfd7ac3f4a470f7dcbbbaf5bd2bffd6fb45eaaf4358aa5523e7a8637012f03"
+    },
+    {
+      "module": "GrushinRectangularBoxGeometry_v1",
+      "sha256": "51d0296868dab7672caf3f74f33a654b7c6b3f56fae65af22ef251363524b915"
+    },
+    {
+      "module": "GrushinFactorialProfileUpperBound_v1",
+      "sha256": "39fad486c803f6d579482ba86b6d87c9c0f691afb0c44696efeafd68f13c9427"
+    }
+  ],
+  "reviewers": [
+    "compact_h2_density exact source and algebra review",
+    "outer_cardinality independent read-only matching review; preliminary exact substitution findings received"
+  ],
+  "exact_substitutions": {
+    "N(k)": "factorialBoxProfile F a aY aT k t",
+    "Q": "F0*A^r*(r.factorial : Real)",
+    "K1": "((8/3)*C1)*(8/(aY-rho)^2+6*abs(c))",
+    "K2": "((32/9)*(C2+C1^2))*(4/(aY-rho)^2+3*abs(c))",
+    "uniform_C0": "498*S^2*(4*R^2+2*R+2+2/c); for centered Y coordinate and t>=0 use R=aY, S=max(1,2*aY)"
+  },
+  "normalizations": [
+    "Use div_eq_mul_inv and inv_pow to turn cutoff coefficients into K1*inverse(e) and K2*inverse(e)^2. Ring normalization handles grouped principal/cutoff sums versus scalar left association.",
+    "The potential sum uses r-(j+1); the scalar falling-factorial sum uses r-1-j. Exact natural equality and the choose-factorial ratio are already proved in GrushinRecurrenceForcingAbsorption_v1.",
+    "The finite maximum over all base indices introduces no cardinality multiplier. The factor 498 comes only from the outer weighted norm."
+  ],
+  "order_checks": [
+    "Scalar recurrence applies r>=9, stronger than the output and principal-absorption requirement r>=2.",
+    "For a base cost<=r, ordinary total order is <=r. Plateau first-chain requests with additional total<2 use total<=r+1<r+2, within actual hY/hT.",
+    "hF through r+2 licenses the actual compact weak H2 input and all weighted profiles needed at r-1. One common representative family works for every k<=r-1.",
+    "The ordinary source word length is at most cost r. A>=1 and F0>=0 justify the common source upper bound F0*A^r*r! from its actual squared budgets."
+  ],
+  "domain_and_constant_checks": [
+    "Use the same actual F for all orders and radii; construct the profile from the already chosen all-order family rather than choosing another family.",
+    "Source budgets are on the initial box. Nonnegative t gives inclusion of the current box into it.",
+    "The output requires e>0 and t+e<=rho<min(aY,aT). Scalar absorption additionally needs e<=1, supplied uniformly by rho<=1 and t>=0.",
+    "Uniform C0 requires c>0, unlike the scalar/output algebra which permits any real c. The compact maximal theorem consumes c>0.",
+    "tsupport of the exact cutoff lies in the closed box of half-widths aY-t-e/4 and aT-t-e/4. With centered Y and t>=0, a uniform Y slab R=aY and Euclidean radius S=max(1,2*aY) are valid. The four-dimensional Euclidean radius is distinct from the coordinate slab.",
+    "C1 and C2 must be fixed nonnegative bounds independent of solution, order, t and e. Actual proven C-infinity constants 96 and 14016 may be used. Paper quintic numerical constants are not silently substituted."
+  ],
+  "remaining_obligations": [
+    "Parent-owned composition must prove the support geometry inequalities for the selected R,S, supply the compact cutoff maximal theorem and compare the actual inner outer norm on the plateau.",
+    "Then apply factorialLocalProfile_le_of_outerNorm_le to the uniform pointwise-in-base bound and multiply the output inequality by nonnegative C0.",
+    "Attach the literal localized profile inequality to grushin_fixed_gap_recurrence_of_localized_bounds with the exact K1/K2 choices and nonnegative constants.",
+    "Apply actual R9 base control on the same F; coefficient/source analytic data remain their own proved physical obligations. The normalized physical KS source is not set to zero."
+  ],
+  "scope": "This is a focused source-interface/algebra review, not a new proof of the full localized recurrence. No old audit was rerun. The newly added finite-sup lemma alone is compiled and strictly audited in its checkpoint."
+}

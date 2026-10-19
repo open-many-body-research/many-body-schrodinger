@@ -1,0 +1,118 @@
+--- THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030034_338568Z/ExpandedStatements_v8.log
++++ THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T031840_405554Z/ExpandedStatements_v8.log
+@@ -1,8 +1,8 @@
+-TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData : (f :
++TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData : (f :
+     @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex) →
+   (v : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex) →
+     (t0 : TheoremT.Continuum.Position) → (M A F0 W : Real) → Prop
+-TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_data : ∀
++TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_derivative_data : ∀
+   (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+   (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+   (hdata :
+@@ -32,7 +32,7 @@
+       t0 M A F0 W)
+   (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+   (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0),
+-  TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
++  TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
+     (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+       (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+       (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+@@ -56,7 +56,7 @@
+           (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+           (TheoremT.Continuum.physicalSpectatorReindexAt i))))
+     (fun (X T : TheoremT.Continuum.Position) => g (TheoremT.Continuum.nuclearKSPhysicalCoordinates i X T)) t0 M A F0 W
+-TheoremT.Continuum.pairKSPhysicalAnalyticDescent_data : ∀
++TheoremT.Continuum.pairKSPhysicalAnalyticDescent_derivative_data : ∀
+   (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+   {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+   (hdata :
+@@ -93,7 +93,7 @@
+       t0 M A F0 W)
+   (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+   (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0),
+-  TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
++  TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
+     (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+       TheoremT.Continuum.PairKSSpace Complex
+       (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+@@ -123,7 +123,7 @@
+           (TheoremT.Continuum.physicalSpectatorReindexAt
+             (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))))
+     (fun (X T : TheoremT.Continuum.Position) => g (TheoremT.Continuum.pairKSPhysicalCoordinates X T)) t0 M A F0 W
+-TheoremT.Continuum.coulomb_spin_physical_analytic_descent_representative : ∀ (Z E : Real),
++TheoremT.Continuum.coulomb_spin_physical_analytic_descent_derivative_representative : ∀ (Z E : Real),
+   @Exists.{1} Real fun (C_H : Real) =>
+     @Exists.{1} Real fun (M : Real) =>
+       @Exists.{1} Real fun (A : Real) =>
+@@ -359,7 +359,7 @@
+                                                   (t0 : TheoremT.Continuum.Position),
+                                                   @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ t0)
+                                                       (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                    TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
++                                                    TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
+                                                       (@Function.comp.{1, 1, 1}
+                                                         (@TheoremT.Continuum.WeakGrushin.Space
+                                                           (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+@@ -429,7 +429,7 @@
+                                                   (t0 : TheoremT.Continuum.Position),
+                                                   @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ t0)
+                                                       (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                    TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
++                                                    TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
+                                                       (@Function.comp.{1, 1, 1}
+                                                         (@TheoremT.Continuum.WeakGrushin.Space
+                                                           (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+@@ -494,7 +494,7 @@
+                                                           (TheoremT.Continuum.pairKSPhysicalCoordinates X T))
+                                                       t0 M A (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+                                                       (TheoremT.Continuum.spinOriginH12Budget C_H L u)))))))))))))
+-TheoremT.Continuum.twoElectron_physical_ground_analytic_descent : ∀ (Z : Real)
++TheoremT.Continuum.twoElectron_physical_ground_analytic_descent_derivative : ∀ (Z : Real)
+   (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+   (hsep :
+     @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+@@ -1894,7 +1894,7 @@
+                                                                           (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                             t0)
+                                                                           (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                        TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
++                                                                        TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
+                                                                           (@Function.comp.{1, 1, 1}
+                                                                             (@TheoremT.Continuum.WeakGrushin.Space
+                                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+@@ -1991,7 +1991,7 @@
+                                                                           (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                             t0)
+                                                                           (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                        TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
++                                                                        TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
+                                                                           (@Function.comp.{1, 1, 1}
+                                                                             (@TheoremT.Continuum.WeakGrushin.Space
+                                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+@@ -2083,12 +2083,18 @@
+                                                                             M u)
+                                                                           (TheoremT.Continuum.spinOriginH12Budget C_H L
+                                                                             u)))))))))))))))))))))))
+-'TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData' depends on axioms: [propext, Classical.choice, Quot.sound]
+-'TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+-'TheoremT.Continuum.pairKSPhysicalAnalyticDescent_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+-'TheoremT.Continuum.coulomb_spin_physical_analytic_descent_representative' depends on axioms: [propext,
++'TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData' depends on axioms: [propext,
+  Classical.choice,
+  Quot.sound]
+-'TheoremT.Continuum.twoElectron_physical_ground_analytic_descent' depends on axioms: [propext,
++'TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_derivative_data' depends on axioms: [propext,
+  Classical.choice,
+  Quot.sound]
++'TheoremT.Continuum.pairKSPhysicalAnalyticDescent_derivative_data' depends on axioms: [propext,
++ Classical.choice,
++ Quot.sound]
++'TheoremT.Continuum.coulomb_spin_physical_analytic_descent_derivative_representative' depends on axioms: [propext,
++ Classical.choice,
++ Quot.sound]
++'TheoremT.Continuum.twoElectron_physical_ground_analytic_descent_derivative' depends on axioms: [propext,
++ Classical.choice,
++ Quot.sound]

@@ -1,0 +1,189 @@
+TheoremT.Continuum.pair_distance_heron_factorization : ∀ (r s u : Real),
+  @Eq.{1} Real
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+          (@HSub.hSub.{0, 0, 0} Real Real Real _
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@OfNat.ofNat.{0} Real (nat_lit 4) _))))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.pair_distance_heron_nonneg : ∀ {r s u : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hs : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s)
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hlow : @LE.le.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)) u)
+  (hhigh : @LE.le.{0} Real _ u (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s)),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+          (@HSub.hSub.{0, 0, 0} Real Real Real _
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@OfNat.ofNat.{0} Real (nat_lit 4) _))))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+@TheoremT.Continuum.pair_distance_axis_real_quotient_identity : ∀ {r s τ : Real}
+  (hτ : @Ne.{1} Real τ (@OfNat.ofNat.{0} Real (nat_lit 0) _)),
+  @Eq.{1} Real
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ τ
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) τ)))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+@TheoremT.Continuum.pair_distance_real_transverse_nonneg : ∀ {r s u τ : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hs : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s)
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hlow : @LE.le.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)) u)
+  (hhigh : @LE.le.{0} Real _ u (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s))
+  (hτ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) τ)
+  (htau :
+    @Eq.{1} Real (@HPow.hPow.{0, 0, 0} Real Nat Real _ τ (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@OfNat.ofNat.{0} Real (nat_lit 4) _)))),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HSub.hSub.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) τ))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+@TheoremT.Continuum.pair_distance_real_radius_identities : ∀ {r s u τ : Real}
+  (hτ : @Ne.{1} Real τ (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (htau :
+    @Eq.{1} Real (@HPow.hPow.{0, 0, 0} Real Nat Real _ τ (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@OfNat.ofNat.{0} Real (nat_lit 4) _)))),
+  And
+    (@Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ τ (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ τ
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HSub.hSub.{0, 0, 0} Real Real Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) τ))))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@Eq.{1} Real
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ τ (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ τ
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HSub.hSub.{0, 0, 0} Real Real Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) τ))))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+@TheoremT.Continuum.pair_distance_real_reconstruction : ∀ {r s u τ : Real}
+  (hτ : @Ne.{1} Real τ (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (htau :
+    @Eq.{1} Real (@HPow.hPow.{0, 0, 0} Real Nat Real _ τ (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@OfNat.ofNat.{0} Real (nat_lit 4) _)))),
+  have z : Real :=
+    @HDiv.hDiv.{0, 0, 0} Real Real Real _
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) τ);
+  have w : Real :=
+    @HSub.hSub.{0, 0, 0} Real Real Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ z (@OfNat.ofNat.{0} Nat (nat_lit 2) _));
+  And
+    (@Eq.{1} Real
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ w (@OfNat.ofNat.{0} Real (nat_lit 4) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _ τ
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ z (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (And
+      (@Eq.{1} Real
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _ w (@OfNat.ofNat.{0} Real (nat_lit 4) _))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HSub.hSub.{0, 0, 0} Real Real Real _ τ
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ z (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@Eq.{1} Real
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ w
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ z (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+'TheoremT.Continuum.pair_distance_heron_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pair_distance_heron_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pair_distance_axis_real_quotient_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.pair_distance_real_transverse_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pair_distance_real_radius_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pair_distance_real_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]

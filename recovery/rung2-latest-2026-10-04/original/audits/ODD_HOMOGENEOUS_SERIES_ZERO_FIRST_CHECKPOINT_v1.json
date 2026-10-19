@@ -1,0 +1,29 @@
+{
+  "status": "PASS_ORIGINAL_ODD_SERIES_INDEXING",
+  "created_utc": "2026-09-11T02:03:38.440714+00:00",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/OddHomogeneousPolynomialSeriesZeroFirst_v1.lean",
+    "sha256": "ad8bd526265064b9280bdce830c6c1460b4db0bcb5ba4ebc9fcd0a362cc0dd63"
+  },
+  "compiler_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/OddHomogeneousPolynomialSeriesZeroFirst_v1-20260911T020220_014758Z.json",
+    "sha256": "5fe2838ee24a3ef1d86be1a03a41b406dde4ea113eaea7fe8d6b52f1b59dfa0d"
+  },
+  "strict_v8_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020257_080040Z/receipt.json",
+    "sha256": "e6770ff76d99932d5715900662058ef1d4f8745d927a4582452fb72a3b891efe"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020257_080040Z/ExpandedStatements_v8.log",
+    "sha256": "d9574d000cb841f5a0965e5c407598cf4c7f4727661a11fba10f3ed7b3f60e37"
+  },
+  "statement": "For B0=0, B(n+1) homogeneous of degree n, and L1(B(n+1))<=M D^(n+1), with D,r>=0 and Dr<1, the original series over all m is absolutely summable on the literal closed polydisc, equals the shifted series over n+1, has norm at most MD/(1-Dr), and converges uniformly both over finite subsets and actual original range partial sums.",
+  "evidence_category": "Fully formalized actual polynomial-series reindexing and convergence theorem",
+  "manual_review": "Complete final source, entire expanded statement, its axiom report and complete strict receipt read directly. The B0=0 hypothesis is explicit and used to remove the initial term only after summability is proved.",
+  "trust": "Only propext, Classical.choice, Quot.sound; complete report; no unexpected axioms, forbidden source tokens, ellipses or printer failures.",
+  "environment": "Lean 4.34.0-rc2 pinned development objects reused. No source dependency rebuild claimed.",
+  "errors": "First compile and first strict audit passed. Successful source bytes immutable.",
+  "limits": "The actual physical odd coefficient family must separately supply these hypotheses. No physical identification or analyticity theorem is claimed here.",
+  "next_active_obligation": "Parent composes with the actual odd radial coefficient family and the shifted analytic-series theorem.",
+  "process_state": "All owned compiler/auditor sessions terminal."
+}

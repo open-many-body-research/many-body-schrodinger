@@ -1,0 +1,130 @@
+@TheoremT.Continuum.interval_norm_sub_le_derivative_integral.{u_1} : ∀ {F : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} F] [inst_1 : @NormedSpace.{0, u_1} Real F _ _] {a b : Real}
+  (hab : @LE.le.{0} Real _ a b) {g dg : Real → F} (hg : @ContinuousOn.{0, u_1} Real F _ _ g (@Set.Icc.{0} Real _ a b))
+  (hdg : @ContinuousOn.{0, u_1} Real F _ _ dg (@Set.Icc.{0} Real _ a b))
+  (hd :
+    ∀ (t : Real),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) t →
+        @HasDerivAt.{0, u_1} Real _ F _ _ _ _ g (dg t) t)
+  {x y : Real} (hx : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) x)
+  (hy : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) y),
+  @LE.le.{0} Real _ (@Norm.norm.{u_1} F _ (@HSub.hSub.{u_1, u_1, u_1} F F F _ (g x) (g y)))
+    (@intervalIntegral.{0} Real _ _ (fun (t : Real) => @Norm.norm.{u_1} F _ (dg t)) a b
+      (@MeasureTheory.MeasureSpace.volume.{0} Real _))
+@TheoremT.Continuum.interval_pointwise_norm_mul_length_le.{u_1} : ∀ {F : Type u_1} [inst : NormedAddCommGroup.{u_1} F]
+  [inst_1 : @NormedSpace.{0, u_1} Real F _ _] {a b : Real} (hab : @LE.le.{0} Real _ a b) {g dg : Real → F}
+  (hg : @ContinuousOn.{0, u_1} Real F _ _ g (@Set.Icc.{0} Real _ a b))
+  (hdg : @ContinuousOn.{0, u_1} Real F _ _ dg (@Set.Icc.{0} Real _ a b))
+  (hd :
+    ∀ (t : Real),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) t →
+        @HasDerivAt.{0, u_1} Real _ F _ _ _ _ g (dg t) t)
+  {x : Real} (hx : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) x),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ b a) (@Norm.norm.{u_1} F _ (g x)))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@intervalIntegral.{0} Real _ _ (fun (t : Real) => @Norm.norm.{u_1} F _ (g t)) a b
+        (@MeasureTheory.MeasureSpace.volume.{0} Real _))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ b a)
+        (@intervalIntegral.{0} Real _ _ (fun (t : Real) => @Norm.norm.{u_1} F _ (dg t)) a b
+          (@MeasureTheory.MeasureSpace.volume.{0} Real _))))
+@TheoremT.Continuum.interval_pointwise_norm_le_average_derivative.{u_1} : ∀ {F : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} F] [inst_1 : @NormedSpace.{0, u_1} Real F _ _] {a b : Real}
+  (hab : @LT.lt.{0} Real _ a b) {g dg : Real → F} (hg : @ContinuousOn.{0, u_1} Real F _ _ g (@Set.Icc.{0} Real _ a b))
+  (hdg : @ContinuousOn.{0, u_1} Real F _ _ dg (@Set.Icc.{0} Real _ a b))
+  (hd :
+    ∀ (t : Real),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) t →
+        @HasDerivAt.{0, u_1} Real _ F _ _ _ _ g (dg t) t)
+  {x : Real} (hx : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) x),
+  @LE.le.{0} Real _ (@Norm.norm.{u_1} F _ (g x))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Inv.inv.{0} Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ b a))
+        (@intervalIntegral.{0} Real _ _ (fun (t : Real) => @Norm.norm.{u_1} F _ (g t)) a b
+          (@MeasureTheory.MeasureSpace.volume.{0} Real _)))
+      (@intervalIntegral.{0} Real _ _ (fun (t : Real) => @Norm.norm.{u_1} F _ (dg t)) a b
+        (@MeasureTheory.MeasureSpace.volume.{0} Real _)))
+@TheoremT.Continuum.finite_measure_integral_norm_le_sqrt.{u_1,
+    u_2} : ∀ {X : Type u_1} {F : Type u_2} [inst : MeasurableSpace.{u_1} X] [inst_1 : NormedAddCommGroup.{u_2} F]
+  {mu : @MeasureTheory.Measure.{u_1} X _} [@MeasureTheory.IsFiniteMeasure.{u_1} X inst mu] {g : X → F}
+  (hg : @MeasureTheory.MemLp.{u_1, u_2} X F inst _ _ g (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _) mu),
+  @LE.le.{0} Real _ (@MeasureTheory.integral.{u_1, 0} X Real _ _ inst mu fun (x : X) => @Norm.norm.{u_2} F _ (g x))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (Real.sqrt
+        (ENNReal.toReal
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@MeasureTheory.Measure.{u_1} X _) (Set.{u_1} X)
+            (fun (x : Set.{u_1} X) => ENNReal) _ mu (@Set.univ.{u_1} X))))
+      (Real.sqrt
+        (@MeasureTheory.integral.{u_1, 0} X Real _ _ inst mu fun (x : X) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_2} F _ (g x)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.interval_integral_norm_le_sqrt.{u_1} : ∀ {F : Type u_1} [inst : NormedAddCommGroup.{u_1} F]
+  {g : Real → F} {a b : Real} (hab : @LE.le.{0} Real _ a b)
+  (hg : @ContinuousOn.{0, u_1} Real F _ _ g (@Set.Icc.{0} Real _ a b)),
+  @LE.le.{0} Real _
+    (@intervalIntegral.{0} Real _ _ (fun (t : Real) => @Norm.norm.{u_1} F _ (g t)) a b
+      (@MeasureTheory.MeasureSpace.volume.{0} Real _))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (Real.sqrt (@HSub.hSub.{0, 0, 0} Real Real Real _ b a))
+      (Real.sqrt
+        (@intervalIntegral.{0} Real _ _
+          (fun (t : Real) =>
+            @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_1} F _ (g t)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          a b (@MeasureTheory.MeasureSpace.volume.{0} Real _))))
+@TheoremT.Continuum.interval_pointwise_norm_le_L2.{u_1} : ∀ {F : Type u_1} [inst : NormedAddCommGroup.{u_1} F]
+  [inst_1 : @NormedSpace.{0, u_1} Real F _ _] {a b : Real} (hab : @LT.lt.{0} Real _ a b) {g dg : Real → F}
+  (hg : @ContinuousOn.{0, u_1} Real F _ _ g (@Set.Icc.{0} Real _ a b))
+  (hdg : @ContinuousOn.{0, u_1} Real F _ _ dg (@Set.Icc.{0} Real _ a b))
+  (hd :
+    ∀ (t : Real),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) t →
+        @HasDerivAt.{0, u_1} Real _ F _ _ _ _ g (dg t) t)
+  {x : Real} (hx : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) x),
+  @LE.le.{0} Real _ (@Norm.norm.{u_1} F _ (g x))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Inv.inv.{0} Real _ (Real.sqrt (@HSub.hSub.{0, 0, 0} Real Real Real _ b a)))
+        (Real.sqrt
+          (@intervalIntegral.{0} Real _ _
+            (fun (t : Real) =>
+              @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_1} F _ (g t)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            a b (@MeasureTheory.MeasureSpace.volume.{0} Real _))))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (Real.sqrt (@HSub.hSub.{0, 0, 0} Real Real Real _ b a))
+        (Real.sqrt
+          (@intervalIntegral.{0} Real _ _
+            (fun (t : Real) =>
+              @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_1} F _ (dg t)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            a b (@MeasureTheory.MeasureSpace.volume.{0} Real _)))))
+TheoremT.Continuum.intervalAverageMeasure : (a b : Real) → @MeasureTheory.Measure.{0} Real _
+@TheoremT.Continuum.intervalAverageMeasure_univ : ∀ {a b : Real} (hab : @LT.lt.{0} Real _ a b),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} Real _) (Set.{0} Real) (fun (x : Set.{0} Real) => ENNReal) _
+      (TheoremT.Continuum.intervalAverageMeasure a b) (@Set.univ.{0} Real))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 1) _)
+@TheoremT.Continuum.interval_pointwise_enorm_le_average_derivative.{u_1} : ∀ {F : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} F] [inst_1 : @NormedSpace.{0, u_1} Real F _ _] {a b : Real}
+  (hab : @LT.lt.{0} Real _ a b) {g dg : Real → F} (hg : @ContinuousOn.{0, u_1} Real F _ _ g (@Set.Icc.{0} Real _ a b))
+  (hdg : @ContinuousOn.{0, u_1} Real F _ _ dg (@Set.Icc.{0} Real _ a b))
+  (hd :
+    ∀ (t : Real),
+      @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) t →
+        @HasDerivAt.{0, u_1} Real _ F _ _ _ _ g (dg t) t)
+  {x : Real} (hx : @Membership.mem.{0, 0} Real (Set.{0} Real) _ (@Set.Icc.{0} Real _ a b) x),
+  @LE.le.{0} ENNReal _ (@ENorm.enorm.{u_1} F _ (g x))
+    (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _
+      (@MeasureTheory.lintegral.{0} Real Real.measurableSpace (TheoremT.Continuum.intervalAverageMeasure a b)
+        fun (t : Real) => @ENorm.enorm.{u_1} F _ (g t))
+      (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _ (ENNReal.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ b a))
+        (@MeasureTheory.lintegral.{0} Real Real.measurableSpace (TheoremT.Continuum.intervalAverageMeasure a b)
+          fun (t : Real) => @ENorm.enorm.{u_1} F _ (dg t))))
+'TheoremT.Continuum.interval_norm_sub_le_derivative_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.interval_pointwise_norm_mul_length_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.interval_pointwise_norm_le_average_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.finite_measure_integral_norm_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.interval_integral_norm_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.interval_pointwise_norm_le_L2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.intervalAverageMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.intervalAverageMeasure_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.interval_pointwise_enorm_le_average_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

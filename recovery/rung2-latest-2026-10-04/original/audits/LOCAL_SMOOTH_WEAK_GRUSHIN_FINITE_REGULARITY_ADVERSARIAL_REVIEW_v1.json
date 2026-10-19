@@ -1,0 +1,191 @@
+{
+  "schema": "focused-mathematical-adversarial-review-v1",
+  "timestamp_utc": "2026-09-10T21:56:46.315707+00:00",
+  "reviewer": "/root/partial_convolution_recovery/partial_pde_commutation_plan",
+  "category": "Focused human/agent mathematical and semantic review of exact compiled statements; not a substitute for kernel checking.",
+  "verdict": "No concrete mathematical or hypothesis mismatch found within the examined scope.",
+  "main_theorem": "TheoremT.Continuum.WeakGrushin.local_smooth_weak_grushin_finite_regularity",
+  "exact_scope": {
+    "space": "KSSpace x EuclideanSpace real (Fin 3), four Y and three T coordinates, with product Lebesgue measure.",
+    "operator": "splitGrushin c oscillatorBasis B = -Delta_Y - c*norm(Y)^2*Delta_T + B, c > 0.",
+    "inputs": "Open Omega; positive inner halfwidths strictly below outer halfwidths, outer closed box contained in Omega; real B and arbitrary complex s smooth on Omega; raw complex f locally L2 on Omega; only the original compact smooth real-test weak equation (Pc+B)f=s; arbitrary finite natural m.",
+    "output": "For each m, exists a nonnegative W and an actual ProductCoordinateWeakHk family on the inner open box: D[]=f, each word of length <=m lies in L2 there with squared integral <=W, and every next coordinate step below order m satisfies the bundled weak derivative identity.",
+    "quantifier_limit": "W and witnesses may depend on m and all input data. No common all-order family, uniform-in-order estimate or effective bound-selection procedure is asserted."
+  },
+  "checks": [
+    "The finite intermediate theorem assumes source derivative families hSY/hST, not solution derivatives. Its spectator iteration begins with the raw order-zero L2 state; the triangular Y iteration uses the reserve constructed by those spectator stages.",
+    "The final local wrapper discharges every finite source-chain and budget premise using the literal complexMixedSourceWord s. Its empty/empty source is definitionally s. Real coefficient mixed derivatives through m receive a finite compact bound from smoothness; there is no bound on or derivative of f assumed beyond local L2.",
+    "The construction uses m spectator stages followed by m Y stages. The initial two-level Y reserve becomes r=2+2*m while total order stays m, then lowers r to m. Source/coefficient orders through m cover the stricter m-1 and m-2 requirements of the component iterations.",
+    "The final wrapper constructs genuine cutoff geometry for 2*m stages. The positive gap is min(aY-bY,aT-bT)/(2*(2*m+1)); the terminal open region contains the closed inner box, and hence the desired nonempty inner open box. The supplied-stage intermediate theorem alone could have empty regions, but the final wrapper supplies nondegenerate positive-width geometry.",
+    "The c=0 Y stages are intentional negative-Y-Laplacian recovery stages after the genuine spectator reserve is available. They do not assert hypoellipticity of c=0 without spectator information. The only original PDE is restricted to each intermediate domain; positive-order equations are constructed in the established iteration dependencies.",
+    "For m=0 no derivative gain or stage geometry is consumed. The gap denominator remains positive, the initial and terminal regions coincide, and the result is the raw L2 order-zero package restricted to the inner box.",
+    "The weak PDE is semantically an integrable identity: derivatives of compact tests vanish off their support; local L2 of f and local smoothness of B and s give integrability of every compactly supported test product. Source weak-chain construction separately proves all integration-by-parts integrability. The use of totalized Bochner integral notation does not substitute for those local bounds.",
+    "Only local smoothness of B and s is required. Every derivative evaluation used for bounds or weak chains occurs on the specified open domain, and all test supports and intermediate regions lie there; arbitrary values or failure of smoothness outside Omega do not enter the construction.",
+    "The squared Y-radius coefficient has exact derivatives of orders zero, one and two, and vanishing higher Y words. The common R^2+2*R+2 bound is valid for R>=0 and norm(y)<=R; the outer box radius estimate supplies both conditions.",
+    "The custom coordinate predicate contains genuine weak next-step identities for all interleaved coordinate words, not merely a norm-bounded arbitrary family. The per-word budget W is not an assertion that the full summed Sobolev norm squared is <=W."
+  ],
+  "findings": [],
+  "limitations": [
+    "This review does not prove the separate equivalence to any conventional or library H^m definition, nor Sobolev embedding or existence of a smooth representative.",
+    "No analytic/factorial bound, spectral result, Coulomb regularity at all physical collision strata, approximation theorem, certified energy interval, complexity result or full Theorem T is discharged here.",
+    "Only the seven-coordinate final box theorem is licensed. The intermediate supplied-geometry theorem is generic in finite spectator index, but the actual geometry wrapper is Fin 3.",
+    "The transitive elliptic, weak compactness, cutoff construction and finite-stage gain proofs were not broadly re-audited. Their exact used interfaces were inspected, with previous focused reviews reused where applicable.",
+    "No compiler was run by this reviewer. Existing successful compilation and approved v6 receipts were inspected; pinned library and prior object caches were reused in those checks, which are not isolated source rebuilds.",
+    "The reviewer authored the generic complex source words module earlier; its companion bounds were child-authored and independently reviewed. The new two regularity composition modules were parent-authored and reviewed independently here."
+  ],
+  "sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FiniteWeakGrushinCoordinateRegularity_v1.lean",
+      "sha256": "57f9518c77659ce54bde399727a622e37bc15fbc353ed45e1293858be48441b2",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalSmoothWeakGrushinFiniteRegularity_v1.lean",
+      "sha256": "0653128d4d9d99231e00d9270b0eee59150e465e8e43d01cca3d7240f06d05b8",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFiniteNestedGeometry_v1.lean",
+      "sha256": "666f8a270e3272fbef9a3b003d0f5f9274b333758803d55fa7f0644c993a794c",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFiniteBoxGap_v1.lean",
+      "sha256": "b39c588888eb36dff9f0e2bb5d782d68441cffc6507196f302bb73df18e9bfad",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFiniteStepGeometry_v1.lean",
+      "sha256": "7fb86985a690a8c54616a41c2db5f592bf06cd02b4b6cdbe2417ed73090bebdb",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorH12Geometry_v1.lean",
+      "sha256": "a7ef6bad070ed7d23a98bca993758112aebd978d98b5840aad298b956a5f4545",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinQuadraticYWordBound_v1.lean",
+      "sha256": "e457e39732092c767a58a8acddc5d142b6af2528297b2563aa833673c0aac4ca",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorFiniteIteration_v1.lean",
+      "sha256": "a469c41d89c5df3c1340d4bd446d8677a50e4fe98c132e83d62b754aab6f240d",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MixedYFiniteIteration_v1.lean",
+      "sha256": "d5a7d10013f0e1d6a067d18863417194f2022d233a3a5172a9c94de3a0428203",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakHk_v1.lean",
+      "sha256": "f45d9e11f8e49a85db9c3890fe734bcde364ac463b4507dba60c74a7e7db4d10",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorIterationGeometry_v1.lean",
+      "sha256": "b6754bd6c3cdb9082f00d9cad4d20280de2403eafa3edd753ce2c047afc17a68",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SmoothComplexMixedSourceWords_v1.lean",
+      "sha256": "e34165c59a8b0b22f51bc3598a9567ed6d35804105cb18d61bbb29699ca3caf9",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SmoothComplexMixedSourceBounds_v1.lean",
+      "sha256": "b85c6a19b26738479e3ec26c10d4a65dfc356137e4f6fe666d4f5b2b734a0de8",
+      "review_scope": "Full source read in this focused review."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalProductDirectionalWeakAlgebra_v1.lean",
+      "sha256": "722ef2cd2a1ed0ac6ec401857b9469627cd575570198263d3ad8a9566aa5fc18",
+      "review_scope": "Definition and local test-integrability, restriction and swap interfaces, lines 1-75."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductLocalEllipticH2_v1.lean",
+      "sha256": "006067e3219a6a770112ef98a8c3247a883483ed22ba91ab7eac402f19d15ba8",
+      "review_scope": "Local L2 and actual weak H2 definitions and elliptic-gain statement, lines 1-42."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinHoleCommutator_v1.lean",
+      "sha256": "90b614cd3e371e1259709b0584dcdf6810577f1b784adfc48dd663a180ee1a67",
+      "review_scope": "Actual splitGrushin definition and initial product formula, lines 1-35."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorIterationState_v1.lean",
+      "sha256": "79442716cfa5067a3a6b4306f334ceca0f60c99c914dd915a82397b05412206d",
+      "review_scope": "RegionL2Budget, restriction/localization and spectator finite-state definitions, including order-zero construction, lines 1-75."
+    }
+  ],
+  "final_expanded_audits": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214623_008224Z/receipt.json",
+      "sha256": "362a381304dd368fa58c40dcc09e8191e7c7094113708f177f5a5498799e080e",
+      "review_scope": "Full receipt inspected; source/object current hashes match, complete standard axiom reports, no printer failure/ellipsis."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214623_008224Z/ExpandedStatements_v6.log",
+      "sha256": "71a74a0f3dbc923607052d6a81491bdf21f029736cf0442c6615432a0afbb30f",
+      "review_scope": "Full expanded statement and all axiom lines read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215027_467162Z/receipt.json",
+      "sha256": "c3bbf5a8255eb52f6705ea9524fcbd0bfa49d2ad90cb1c105a6cb9692891becf",
+      "review_scope": "Full receipt inspected; source/object current hashes match, complete standard axiom reports, no printer failure/ellipsis."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215027_467162Z/ExpandedStatements_v6.log",
+      "sha256": "586fdf58bc50f00a2f507f795be7296a0fe4dad942121364ac08ff995a0be354",
+      "review_scope": "Full expanded statement and all axiom lines read."
+    }
+  ],
+  "independent_child_review": {
+    "reviewer": "/root/partial_convolution_recovery/partial_pde_commutation_plan/cutoff_common_bounds_plan",
+    "verdict": "No concrete issue in finite theorem and direct stage interfaces; no solution derivative input, no unavailable order, correct m=0. Conditional supplied geometry caveat is discharged by final wrapper reviewed separately above.",
+    "exact_examined_sources": [
+      {
+        "module": "FiniteWeakGrushinCoordinateRegularity_v1",
+        "sha256": "57f9518c77659ce54bde399727a622e37bc15fbc353ed45e1293858be48441b2"
+      },
+      {
+        "module": "SpectatorFiniteIteration_v1",
+        "sha256": "a469c41d89c5df3c1340d4bd446d8677a50e4fe98c132e83d62b754aab6f240d"
+      },
+      {
+        "module": "MixedYFiniteIteration_v1",
+        "sha256": "d5a7d10013f0e1d6a067d18863417194f2022d233a3a5172a9c94de3a0428203"
+      },
+      {
+        "module": "SpectatorIterationStep_v1",
+        "sha256": "5903b567b9ed88d96ca1c1c8e2559fb6f31f2fe29b3ca9d92471d31d13cc5703"
+      },
+      {
+        "module": "SpectatorIterationGeometry_v1",
+        "sha256": "b6754bd6c3cdb9082f00d9cad4d20280de2403eafa3edd753ce2c047afc17a68"
+      },
+      {
+        "module": "MixedTriangularPotentialStep_v1",
+        "sha256": "12bc09b864b516f5a0a2e7212bd79833a161d7e46d9ad810d121ab9a386afd80"
+      },
+      {
+        "module": "WeakGrushinExplicitFiniteSpectatorReserve_v1",
+        "sha256": "79b29d7d3451e46f3a7043eef59a5affb61de35670d1339b390b6326153b60bd"
+      }
+    ]
+  },
+  "prior_focused_records": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_COORDINATE_WEAK_HK_ADVERSARIAL_REVIEW_v1.json",
+      "sha256": "82042e7b7ddb76cca8e7523c6044f96fe6d6552f554323eeced2eb172447e047",
+      "review_scope": "Previously completed exact predicate and weak-test meaning review reused."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/MIXED_TRIANGULAR_POTENTIAL_STEP_ADVERSARIAL_REVIEW_v1.json",
+      "sha256": "c25982d396629b4c257a5590a5219ac3af48c78c14fb63adbcb3e259f31f6e37",
+      "review_scope": "Previously completed source signs, triangular edges, genuine gain and finite-order review reused."
+    }
+  ]
+}

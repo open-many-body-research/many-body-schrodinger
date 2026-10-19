@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-09-11T02:14:31.384563+00:00",
+  "reviewer": "/root",
+  "status": "NO_DEFECT_FOUND_IN_BOUNDED_INDEPENDENT_REVIEW",
+  "scope": "Complete final source and full expanded type/axiom report; previously reviewed diagonal uniqueness reused.",
+  "modules": [
+    {
+      "module": "PowerSeriesFixedPointInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesFixedPointInvariance_v1.lean",
+      "source_sha256": "380fd4ddf56ce7a327792f28d60c327e9b7e60068c2c9895a3a04c6f135ba4dc",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PowerSeriesFixedPointInvariance_v1.olean",
+      "object_sha256": "20fa153e88c0a4f8acf997d08703ddbf65c22634e8449f0fcd5865cb7a64c71e",
+      "declarations": [
+        "powerSeries_diagonal_invariant_at_fixed_point"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "receipt": {
+    "path": "audits/formal_semantics/20260911T021306_138192Z/receipt.json",
+    "sha256": "b9659fde3be59da3455acd77c0de8de85943bfe0ec84322ce2f956829d2db215"
+  },
+  "findings": [
+    "Composition is centered at L x; the explicit fixed-point premise L x=x is used to obtain the series for f composed with L at x.",
+    "Local equality near x then gives equality of diagonals by the previously reviewed uniqueness theorem.",
+    "No off-diagonal equality, invertibility, finite dimension, isometry, completeness or symmetry of coefficient maps is assumed or inferred."
+  ],
+  "axioms": [
+    "TheoremT.Continuum.powerSeries_diagonal_invariant_at_fixed_point: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild."
+}

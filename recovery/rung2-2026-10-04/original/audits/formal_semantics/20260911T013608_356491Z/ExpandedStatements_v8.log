@@ -1,0 +1,47 @@
+TheoremT.Continuum.degreeMonomialExponents4 : (k : Nat) →
+  Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+TheoremT.Continuum.mem_degreeMonomialExponents4_iff_sum : ∀ (k : Nat)
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+  Iff
+    (@Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+      (TheoremT.Continuum.degreeMonomialExponents4 k) d)
+    (@Eq.{1} Nat
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+        @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d i)
+      k)
+TheoremT.Continuum.mem_degreeMonomialExponents4_iff_finsupp_sum : ∀ (k : Nat)
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+  Iff
+    (@Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+      (TheoremT.Continuum.degreeMonomialExponents4 k) d)
+    (@Eq.{1} Nat
+      (@Finsupp.sum.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat Nat _ _ d
+        fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (n : Nat) => n)
+      k)
+TheoremT.Continuum.card_degreeMonomialExponents4_eq_choose : ∀ (k : Nat),
+  @Eq.{1} Nat
+    (@Finset.card.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (TheoremT.Continuum.degreeMonomialExponents4 k))
+    (Nat.choose (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) k)
+TheoremT.Continuum.card_degreeMonomialExponents4_le_pow : ∀ (k : Nat),
+  @LE.le.{0} Nat _
+    (@Finset.card.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (TheoremT.Continuum.degreeMonomialExponents4 k))
+    (@HPow.hPow.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 4) _) k)
+TheoremT.Continuum.card_degreeMonomialExponents4_zero : @Eq.{1} Nat
+  (@Finset.card.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+    (TheoremT.Continuum.degreeMonomialExponents4 (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+  (@OfNat.ofNat.{0} Nat (nat_lit 1) _)
+'TheoremT.Continuum.degreeMonomialExponents4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mem_degreeMonomialExponents4_iff_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mem_degreeMonomialExponents4_iff_finsupp_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.card_degreeMonomialExponents4_eq_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.card_degreeMonomialExponents4_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.card_degreeMonomialExponents4_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,82 @@
+{
+  "status": "PASS_GLOBAL_REAL_SLICE_TO_BALANCED_SPINOR_SUPPORT",
+  "utc": "2026-09-11T02:08:17.217241+00:00",
+  "evidence_category": "Fully formalized finite polynomial results under literal real-coordinate invariance.",
+  "exact_result": "Any complex coefficient polynomial P in four real coordinate variables invariant under every actual unit-circle coordinate action has balanced support after the literal inverse spinor substitution. The proof extends equality from actual real spinors to equality in four independent complex variables using polynomial extensionality and a proved substitution left inverse.",
+  "sources": [
+    {
+      "path": "lean/ComplexPolynomialRealSlice_v2.lean",
+      "sha256": "865ebb2990b24145f97628b7ad8d73925c55fe6fbab315ba095f815c5bed8223"
+    },
+    {
+      "path": "lean/KSSpinorForwardPolynomial_v1.lean",
+      "sha256": "a1ea194860fc8aec8c75141f14cf26f6d153ecef356643cac8ec2250869790ae"
+    },
+    {
+      "path": "lean/KSSpinorPolynomialRealSlice_v1.lean",
+      "sha256": "5055b88c9b1c46ef27a46777388453d7d5b817e423f4e8dfb05e30c56c3785d2"
+    }
+  ],
+  "builds": [
+    {
+      "path": "logs/development/ComplexPolynomialRealSlice_v2-20260911T015955_194072Z.json",
+      "sha256": "04feec8ff6f97f8ddb4236550a1537f0b6f8af3661907dc9fb75d27009c3df06"
+    },
+    {
+      "path": "logs/development/KSSpinorForwardPolynomial_v1-20260911T015710_860201Z.json",
+      "sha256": "4240552476cead6e4059cd4832bd5a31da45d54146d474dc143b60acc686a116"
+    },
+    {
+      "path": "logs/development/KSSpinorPolynomialRealSlice_v1-20260911T020014_069621Z.json",
+      "sha256": "1d9c68f66f41db3e18b1db586c65eb6897403249cc06ab8da28872dd4fd23dc0"
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T020120_018110Z/receipt.json",
+    "sha256": "d11faef25b633cbfe7ac622fd34ede8143c41fb980a61105ec0de021a4f145c2"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T020120_018110Z/ExpandedStatements_v8.log",
+    "sha256": "10cbf2e022a915a128f603f75beec4205724bf1fd0bed54b62c243fd5feab655"
+  },
+  "review": {
+    "path": "audits/KS_SPINOR_REAL_SLICE_POLYNOMIAL_BRIDGE_REVIEW_v1_20260911T020355Z.json",
+    "sha256": "3e11ee1ae6c22a5ef9e5435d36b54814cce51bcf3c02f418642996882ecec9b7"
+  },
+  "manual_check": "Complete final source/proof bodies, full strict receipt and expanded statement/axiom output, and full independent review read. Twelve declarations; exactly standard three axioms.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "historical_rejection": {
+    "source": {
+      "path": "lean/ComplexPolynomialRealSlice_v1.lean",
+      "sha256": "0f2f3188770b32a6fd8b6daeb1c12f335186cb147b3c02eaf8ce570d9ddf093e"
+    },
+    "strict": {
+      "path": "audits/formal_semantics/20260911T015757_843749Z/receipt.json",
+      "sha256": "5a685fc1fa5826395d3a3b90ad740f036a86b5260c95164efa392881f1d78868"
+    },
+    "detail": "Old v1 compiler PASS but strict guard rejected an English prose token in a comment. New v2 changes only that sentence, with theorem/proof bytes unchanged. Old source/receipt preserved and not labelled strict PASS; no guard changes."
+  },
+  "mathematical_detail": [
+    "The forward substitution represents z1,z2,w1,w2 by Y0+iY1,Y2+iY3,Y0-iY1,Y2-iY3; conjugacy is used only on actual real inputs.",
+    "The inverse substitution cancels the forward substitution on four independent complex variables; its proved left-inverse direction suffices for injectivity.",
+    "Circle covariance holds for every complex scalar u; invariance uses only unit norm phases.",
+    "Final support balance is d0+d1=d2+d3 for the same literal transformed polynomial."
+  ],
+  "limitations": [
+    "Finite polynomial theorem; invariance of analytic Taylor components and convergence of descended series are separate obligations.",
+    "Complex polynomial definitions are noncomputable mathematical objects; no certified executable arbitrary-complex procedure is claimed.",
+    "This checkpoint treats global real invariance; local positive-radius strengthening is recorded separately.",
+    "Pinned Lean/Mathlib objects reused; no new isolated source rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Seal local norm-ball strengthening, then review parent generic multilinear/Taylor polynomial bridge."
+}

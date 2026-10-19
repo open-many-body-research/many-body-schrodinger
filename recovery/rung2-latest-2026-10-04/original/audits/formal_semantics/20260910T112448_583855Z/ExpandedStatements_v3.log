@@ -1,0 +1,43 @@
+TheoremT.Continuum.KSSpace : Type
+TheoremT.Continuum.ksMap : (y : TheoremT.Continuum.KSSpace) → TheoremT.Continuum.Position
+TheoremT.Continuum.ksJacobian : (y : TheoremT.Continuum.KSSpace) →
+  Matrix.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real
+TheoremT.Continuum.ksMap_norm_sq : ∀ (y : TheoremT.Continuum.KSSpace),
+  @Eq.{1} Real
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.Position _ (TheoremT.Continuum.ksMap y))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+TheoremT.Continuum.ksMap_norm : ∀ (y : TheoremT.Continuum.KSSpace),
+  @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ (TheoremT.Continuum.ksMap y))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+TheoremT.Continuum.ksMap_eq_zero_iff : ∀ (y : TheoremT.Continuum.KSSpace),
+  Iff
+    (@Eq.{1} TheoremT.Continuum.Position (TheoremT.Continuum.ksMap y)
+      (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _))
+    (@Eq.{1} TheoremT.Continuum.KSSpace y (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _))
+TheoremT.Continuum.ksJacobian_row_orthogonality : ∀ (y : TheoremT.Continuum.KSSpace)
+  (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} Real
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.ksJacobian y i k) (TheoremT.Continuum.ksJacobian y j k))
+    (@ite.{1} Real (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i j) _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+TheoremT.Continuum.ksMap_contDiff : @ContDiff.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _
+  TheoremT.Continuum.Position _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) TheoremT.Continuum.ksMap
+'TheoremT.Continuum.KSSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksJacobian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksJacobian_row_orthogonality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]

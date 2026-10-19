@@ -1,0 +1,31 @@
+@TheoremT.Continuum.pair_series_zero_first_shift.{u_1} : ∀ {ι : Type u_1} (f : Prod.{0, u_1} Nat ι → Complex)
+  (h0 :
+    ∀ (γ : ι),
+      @Eq.{1} Complex (f (@Prod.mk.{0, u_1} Nat ι (@OfNat.ofNat.{0} Nat (nat_lit 0) _) γ))
+        (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+  (hshift :
+    @Summable.{0, u_1} Real (Prod.{0, u_1} Nat ι) _ _
+      (fun (k : Prod.{0, u_1} Nat ι) =>
+        @Norm.norm.{0} Complex _
+          (f
+            (@Prod.mk.{0, u_1} Nat ι
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@Prod.fst.{0, u_1} Nat ι k) (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+              (@Prod.snd.{0, u_1} Nat ι k))))
+      (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat ι))),
+  And
+    (@Summable.{0, u_1} Real (Prod.{0, u_1} Nat ι) _ _ (fun (k : Prod.{0, u_1} Nat ι) => @Norm.norm.{0} Complex _ (f k))
+      (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat ι)))
+    (And
+      (@Summable.{0, u_1} Complex (Prod.{0, u_1} Nat ι) _ _ f
+        (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat ι)))
+      (@Eq.{1} Complex
+        (@tsum.{0, u_1} Complex (Prod.{0, u_1} Nat ι) _ _ (fun (k : Prod.{0, u_1} Nat ι) => f k)
+          (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat ι)))
+        (@tsum.{0, u_1} Complex (Prod.{0, u_1} Nat ι) _ _
+          (fun (k : Prod.{0, u_1} Nat ι) =>
+            f
+              (@Prod.mk.{0, u_1} Nat ι
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@Prod.fst.{0, u_1} Nat ι k) (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+                (@Prod.snd.{0, u_1} Nat ι k)))
+          (SummationFilter.unconditional.{u_1} (Prod.{0, u_1} Nat ι)))))
+'TheoremT.Continuum.pair_series_zero_first_shift' depends on axioms: [propext, Classical.choice, Quot.sound]

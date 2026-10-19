@@ -1,0 +1,1159 @@
+@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy : {κ : Type} →
+  [inst : Fintype.{0} κ] →
+    [DecidableEq.{1} κ] →
+      (c : Real) →
+        (d :
+            @TheoremT.Continuum.WeakGrushin.Space κ _ →
+              @Subtype.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  x) →
+          Real
+@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy_eq_cutoff_one : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real)
+  (f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        x)
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x),
+  @Eq.{1} Real (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+    (@TheoremT.Continuum.WeakGrushin.cutoffGradient κ _ _ c
+      (fun (x : @TheoremT.Continuum.WeakGrushin.Space κ _) => @OfNat.ofNat.{0} Real (nat_lit 1) _) f d)
+@TheoremT.Continuum.WeakGrushin.compact_smooth_jet_energy : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real) {G : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (hcG : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _ G)
+  (f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        x)
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x)
+  (e : @TheoremT.Continuum.WeakGrushin.Jet κ _)
+  (hf :
+    @Filter.EventuallyEq.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+      (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+        (@Subtype.val.{1}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              x)
+          f))
+      G)
+  (hd :
+    ∀ (v : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @Filter.EventuallyEq.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+        (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                x)
+            (d v)))
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+            (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space κ _) (fun (x : @TheoremT.Continuum.WeakGrushin.Space κ _) => Complex) _
+          (@fderiv.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ _ Complex _ _ _ G p) v)
+  (he :
+    ∀ (v w : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @Filter.EventuallyEq.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+        (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                x)
+            (e v w)))
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+            (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space κ _) (fun (x : @TheoremT.Continuum.WeakGrushin.Space κ _) => Complex) _
+          (@fderiv.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ _ Complex _ _ _
+            (fun (z : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+              @DFunLike.coe.{1, 1, 1}
+                (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                  (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _ _ _)
+                (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                (fun (x : @TheoremT.Continuum.WeakGrushin.Space κ _) => Complex) _
+                (@fderiv.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ _ Complex _ _ _ G z) v)
+            p)
+          w),
+  @Eq.{1} Real (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+    (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+      fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+      @Inner.inner.{0, 0} Real Complex _
+        (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@Subtype.val.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            (fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                x)
+            f)
+          p)
+        (@TheoremT.Continuum.WeakGrushin.principal κ _ _ c e p))
+@TheoremT.Continuum.WeakGrushin.compact_weakH2_energy : ∀ {κ : Type} [inst : Fintype.{0} κ] [inst_1 : DecidableEq.{1} κ]
+  (c : Real)
+  {f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        x}
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x)
+  (e : @TheoremT.Continuum.WeakGrushin.Jet κ _)
+  (hd :
+    ∀ (v : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ f (d v) v)
+  (he :
+    ∀ (v w : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ (d v) (e v w) w)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hs :
+    @Filter.Eventually.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        Not
+            (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K p) →
+          @Eq.{1} Complex
+            (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+              (@Subtype.val.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    x)
+                f)
+              p)
+            (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+      (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))),
+  And
+    (@MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+      (@TheoremT.Continuum.WeakGrushin.principal κ _ _ c e) (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+    (@Eq.{1} Real (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @Inner.inner.{0, 0} Real Complex _
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  x)
+              f)
+            p)
+          (@TheoremT.Continuum.WeakGrushin.principal κ _ _ c e p)))
+@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy_nonneg : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {c : Real} (hc : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c)
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+@TheoremT.Continuum.WeakGrushin.weakGrushin_y_gradient_le_energy : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {c : Real} (hc : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c)
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x),
+  @LE.le.{0} Real _
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+      @MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _
+            (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+              (@Subtype.val.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    x)
+                (d (@TheoremT.Continuum.WeakGrushin.yDir κ _ i)))
+              p))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+@TheoremT.Continuum.WeakGrushin.compact_weakH2_energy_cauchy : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real)
+  {f :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        x}
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x)
+  (e : @TheoremT.Continuum.WeakGrushin.Jet κ _)
+  (hd :
+    ∀ (v : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ f (d v) v)
+  (he :
+    ∀ (v w : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ (d v) (e v w) w)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hs :
+    @Filter.Eventually.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        Not
+            (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K p) →
+          @Eq.{1} Complex
+            (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+              (@Subtype.val.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    x)
+                f)
+              p)
+            (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+      (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))),
+  @LE.le.{0} Real _
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _
+            (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+              (@Subtype.val.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    x)
+                f)
+              p))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.WeakGrushin.principal κ _ _ c e p))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+@TheoremT.Continuum.WeakGrushin.compact_weakH2_energy_output : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real)
+  {f h :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        x}
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x)
+  (e : @TheoremT.Continuum.WeakGrushin.Jet κ _)
+  (hd :
+    ∀ (v : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ f (d v) v)
+  (he :
+    ∀ (v w : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ (d v) (e v w) w)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hs :
+    @Filter.Eventually.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        Not
+            (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K p) →
+          @Eq.{1} Complex
+            (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+              (@Subtype.val.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    x)
+                f)
+              p)
+            (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+      (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)))
+  (hP :
+    ∀ (φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real),
+      @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+        @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ →
+          @Eq.{1} Complex
+            (@MeasureTheory.integral.{0, 0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+              fun (p : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+              @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                (@TheoremT.Continuum.splitGrushin.{0, 0} (EuclideanSpace.{0, 0} Real κ) _ _ κ _ c
+                  (@TheoremT.Continuum.oscillatorBasis.{0} κ _)
+                  (fun (x : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                    @OfNat.ofNat.{0} Real (nat_lit 0) _)
+                  φ p)
+                (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@Subtype.val.{1}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (fun
+                        (x :
+                          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                      @Membership.mem.{0, 0}
+                        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        (@AddSubgroup.{0}
+                          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                          _)
+                        _
+                        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                            _)
+                          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        x)
+                    f)
+                  p))
+            (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+              fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+              @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p)
+                (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@Subtype.val.{1}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (fun
+                        (x :
+                          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                      @Membership.mem.{0, 0}
+                        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        (@AddSubgroup.{0}
+                          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                          _)
+                        _
+                        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                            _)
+                          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        x)
+                    h)
+                  p))),
+  And
+    (@Eq.{1} Real (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @Inner.inner.{0, 0} Real Complex _
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  x)
+              f)
+            p)
+          (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@Subtype.val.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              (fun
+                  (x :
+                    @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                @Membership.mem.{0, 0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  (@AddSubgroup.{0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    _)
+                  _
+                  (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  x)
+              h)
+            p)))
+    (@LE.le.{0} Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy κ _ _ c d)
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0}
+            (@Subtype.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                x)
+            _ f)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0}
+            (@Subtype.{1}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              fun
+                (x :
+                  @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+              @Membership.mem.{0, 0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (@AddSubgroup.{0}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  _)
+                _
+                (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                  (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                x)
+            _ h)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.WeakGrushin.compact_weakH2_y_gradient_square_output : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {c : Real} (hc : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) c)
+  {f h :
+    @Subtype.{1}
+      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+      @Membership.mem.{0, 0}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        (@AddSubgroup.{0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        x}
+  (d :
+    @TheoremT.Continuum.WeakGrushin.Space κ _ →
+      @Subtype.{1}
+        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+        @Membership.mem.{0, 0}
+          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          (@AddSubgroup.{0}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+          x)
+  (e : @TheoremT.Continuum.WeakGrushin.Jet κ _)
+  (hd :
+    ∀ (v : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ f (d v) v)
+  (he :
+    ∀ (v w : @TheoremT.Continuum.WeakGrushin.Space κ _),
+      @TheoremT.Continuum.WeakProductL2Directional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ (d v) (e v w) w)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hs :
+    @Filter.Eventually.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        Not
+            (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K p) →
+          @Eq.{1} Complex
+            (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+              (@Subtype.val.{1}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (fun
+                    (x :
+                      @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                  @Membership.mem.{0, 0}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (@AddSubgroup.{0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      _)
+                    _
+                    (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    x)
+                f)
+              p)
+            (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+      (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+        (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)))
+  (hP :
+    ∀ (φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real),
+      @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+        @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ →
+          @Eq.{1} Complex
+            (@MeasureTheory.integral.{0, 0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ))
+              Complex _ _
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+              (@MeasureTheory.MeasureSpace.volume.{0}
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+              fun (p : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+              @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                (@TheoremT.Continuum.splitGrushin.{0, 0} (EuclideanSpace.{0, 0} Real κ) _ _ κ _ c
+                  (@TheoremT.Continuum.oscillatorBasis.{0} κ _)
+                  (fun (x : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                    @OfNat.ofNat.{0} Real (nat_lit 0) _)
+                  φ p)
+                (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@Subtype.val.{1}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (fun
+                        (x :
+                          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                      @Membership.mem.{0, 0}
+                        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        (@AddSubgroup.{0}
+                          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                          _)
+                        _
+                        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                            _)
+                          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        x)
+                    f)
+                  p))
+            (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+              fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+              @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p)
+                (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                  (@Subtype.val.{1}
+                    (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                    (fun
+                        (x :
+                          @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                      @Membership.mem.{0, 0}
+                        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        (@AddSubgroup.{0}
+                          (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                            (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                          _)
+                        _
+                        (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                            _)
+                          _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        x)
+                    h)
+                  p))),
+  @LE.le.{0} Real _
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Real _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+        @MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+          fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _
+              (@MeasureTheory.AEEqFun.cast.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                (@Subtype.val.{1}
+                  (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                  (fun
+                      (x :
+                        @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+                    @Membership.mem.{0, 0}
+                      (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      (@AddSubgroup.{0}
+                        (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                        _)
+                      _
+                      (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                          _)
+                        _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                      x)
+                  (d (@TheoremT.Continuum.WeakGrushin.yDir κ _ i)))
+                p))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@Norm.norm.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              x)
+          _ f)
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@Norm.norm.{0}
+          (@Subtype.{1}
+            (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+            fun
+              (x :
+                @MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)) =>
+            @Membership.mem.{0, 0}
+              (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              (@AddSubgroup.{0}
+                (@MeasureTheory.AEEqFun.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                _)
+              _
+              (@MeasureTheory.Lp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _
+                (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+              x)
+          _ h)
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+'TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy_eq_cutoff_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.compact_smooth_jet_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.compact_weakH2_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.weakGrushinGradientEnergy_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.weakGrushin_y_gradient_le_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.compact_weakH2_energy_cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.compact_weakH2_energy_output' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.compact_weakH2_y_gradient_square_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

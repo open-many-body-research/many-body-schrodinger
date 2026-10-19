@@ -1,0 +1,108 @@
+@TheoremT.Continuum.ksScaledPrincipal : {N : Nat} →
+  (i : Fin N) →
+    (c : Real) →
+      (u : @TheoremT.Continuum.NuclearKSSpace N i → Complex) → (q : @TheoremT.Continuum.NuclearKSSpace N i) → Complex
+@TheoremT.Continuum.ksScaledRealPrincipal : {N : Nat} →
+  (i : Fin N) →
+    (c : Real) →
+      (φ : @TheoremT.Continuum.NuclearKSSpace N i → Real) → (q : @TheoremT.Continuum.NuclearKSSpace N i) → Real
+@TheoremT.Continuum.ksScaledPrincipal_four : ∀ {N : Nat} (i : Fin N)
+  (u : @TheoremT.Continuum.NuclearKSSpace N i → Complex) (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @Eq.{1} Complex (@TheoremT.Continuum.ksScaledPrincipal N i (@OfNat.ofNat.{0} Real (nat_lit 4) _) u q)
+    (@TheoremT.Continuum.nuclearKSPrincipal N i u q)
+@TheoremT.Continuum.ksScaledRealPrincipal_four : ∀ {N : Nat} (i : Fin N)
+  (φ : @TheoremT.Continuum.NuclearKSSpace N i → Real) (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @Eq.{1} Real (@TheoremT.Continuum.ksScaledRealPrincipal N i (@OfNat.ofNat.{0} Real (nat_lit 4) _) φ q)
+    (@TheoremT.Continuum.nuclearKSRealPrincipal N i φ q)
+@TheoremT.Continuum.ks_scaled_principal_integration_by_parts : ∀ {N : Nat} (i : Fin N) (c : Real)
+  {φ : @TheoremT.Continuum.NuclearKSSpace N i → Real} {u : @TheoremT.Continuum.NuclearKSSpace N i → Complex}
+  (hφ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ)
+  (hc : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ φ)
+  (hu :
+    ∀ (q : @TheoremT.Continuum.NuclearKSSpace N i),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+          _ (@tsupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ φ) q →
+        @ContDiffAt.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Complex _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) u q),
+  And
+    (@MeasureTheory.Integrable.{0, 0} Complex _ _ (@TheoremT.Continuum.NuclearKSSpace N i)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+      (fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+        @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@TheoremT.Continuum.ksScaledRealPrincipal N i c φ q) (u q))
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _))
+    (And
+      (@MeasureTheory.Integrable.{0, 0} Complex _ _ (@TheoremT.Continuum.NuclearKSSpace N i)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+        (fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+          @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ q) (@TheoremT.Continuum.ksScaledPrincipal N i c u q))
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _))
+      (@Eq.{1} Complex
+        (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Complex _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+          fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+          @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@TheoremT.Continuum.ksScaledRealPrincipal N i c φ q) (u q))
+        (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Complex _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+          fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+          @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ q) (@TheoremT.Continuum.ksScaledPrincipal N i c u q))))
+@TheoremT.Continuum.ks_scaled_local_classical_kernel_weak : ∀ {N : Nat} (i : Fin N) (c : Real)
+  {φ B : @TheoremT.Continuum.NuclearKSSpace N i → Real} {u : @TheoremT.Continuum.NuclearKSSpace N i → Complex}
+  (hφ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ)
+  (hc : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ φ)
+  (hu :
+    ∀ (q : @TheoremT.Continuum.NuclearKSSpace N i),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+          _ (@tsupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ φ) q →
+        @ContDiffAt.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Complex _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) u q)
+  (hB :
+    ∀ (q : @TheoremT.Continuum.NuclearKSSpace N i),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+          _ (@tsupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ φ) q →
+        @ContDiffAt.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Real _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B q)
+  (hP :
+    ∀ (q : @TheoremT.Continuum.NuclearKSSpace N i),
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+          _ (@tsupport.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ φ) q →
+        @Eq.{1} Complex (@TheoremT.Continuum.ksScaledPrincipal N i c u q)
+          (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (B q) (u q))),
+  And
+    (@MeasureTheory.Integrable.{0, 0} Complex _ _
+      (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i))
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+      (fun (q : Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (Complex.ofReal
+            (@TheoremT.Continuum.splitGrushin.{0, 0} (@TheoremT.Continuum.SpectatorConfiguration N i) _ _
+              (@TheoremT.Continuum.SpectatorCoordinate N i) _ c (@TheoremT.Continuum.spectatorBasis N i) B φ q))
+          (u q))
+      (@MeasureTheory.MeasureSpace.volume.{0}
+        (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _))
+    (@Eq.{1} Complex
+      (@MeasureTheory.integral.{0, 0}
+        (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) Complex _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+        fun (q : Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (Complex.ofReal
+            (@TheoremT.Continuum.splitGrushin.{0, 0} (@TheoremT.Continuum.SpectatorConfiguration N i) _ _
+              (@TheoremT.Continuum.SpectatorCoordinate N i) _ c (@TheoremT.Continuum.spectatorBasis N i) B φ q))
+          (u q))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _))
+'TheoremT.Continuum.ksScaledPrincipal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksScaledRealPrincipal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksScaledPrincipal_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksScaledRealPrincipal_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_scaled_principal_integration_by_parts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_scaled_local_classical_kernel_weak' depends on axioms: [propext, Classical.choice, Quot.sound]

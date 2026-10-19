@@ -1,0 +1,215 @@
+{
+  "status": "PASS_R24_ACTUAL_WEAK_PROFILE_EMBEDDING",
+  "timestamp_utc": "2026-09-11T01:08:57.013623+00:00",
+  "exact_result": "For one genuine all-order weak natural-index jet family F on the physical Y4 x T3 product and an actual smooth compact cutoff with an interior plateau containing a closed seven-coordinate box, a single smooth representative v on the mapped open box has all actual physical coordinate-word derivatives equal almost everywhere to the corresponding counted entries of F, and every word of length k satisfies norm(D_w v(x)) <= Ebox * factorialLocalProfile F OmegaN (k+11). Actual weighted MemLp on OmegaN is required. If F00 is continuous, the same smoothness and all pointwise bounds hold for F00 itself. Ebox is the exact box evaluation constant, independent of k and F.",
+  "evidence_category": "fully_formalized_local_weak_to_smooth_embedding_with_actual_profile",
+  "primary_endpoints": [
+    "TheoremT.Continuum.WeakGrushin.grushin_actual_profile_smooth_representative",
+    "TheoremT.Continuum.WeakGrushin.grushin_actual_profile_continuous_base"
+  ],
+  "mathematical_changes": [
+    "Returned the constructed seven-coordinate smooth representative to the exact physical product and actual WeakGrushin complexDirectionalWordDeriv; proved exact forward/inverse word chains under the literal continuous linear equivalence.",
+    "Transferred literal product restricted L2 budgets by proved measure-preserving restricted volume identity; MemLp precedes all extended-norm real interpretation.",
+    "Proved the zero outer weighted index supplies each unweighted field and cost(word)<=length(word)+4; at most seven tensor letters give the exact k+11 reserve.",
+    "Replaced arbitrary norm-budget inputs by the actual finite weighted factorialLocalProfile.",
+    "Upgraded the actual continuous base F00 itself to classical smoothness and pointwise derivative bounds using open-set AE uniqueness."
+  ],
+  "obligations_discharged": [
+    "Local arbitrary-word mollification and strong L2 convergence consumed through prior checkpoint",
+    "Continuous weak-derivative representative recovery",
+    "Actual Frechet compatibility and all-order smoothness",
+    "Exact tensor Ebox pointwise bound from actual local weighted profile",
+    "Exact physical-product derivative and measure return",
+    "Exact R24 derivative reserve +11"
+  ],
+  "module_records": [
+    {
+      "module": "CoordinateWordLinearEquivTransport_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoordinateWordLinearEquivTransport_v1.lean",
+      "source_sha256": "402cec1c788fcc0b0e4bca92ff86d606f57cd3bb18a12a3abef7ad3b46d0847e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoordinateWordLinearEquivTransport_v1.olean",
+      "object_sha256": "8b93d5a467dfcc9bdfb52208633f188f8486c7aa10bbbc3f0a6a76edd735de8a",
+      "declarations": [
+        "normed_word_linearEquiv_transport",
+        "normed_word_eq_product_word",
+        "sevenToProduct_all_word_chain",
+        "sevenToProduct_symm_direction",
+        "sevenToProduct_symm_all_word_chain"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SevenCoordinateRepresentativeReturn_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SevenCoordinateRepresentativeReturn_v1.lean",
+      "source_sha256": "d6a16a5eda5c131de71a145744a508f4776b01513929f893addde59da4761495",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SevenCoordinateRepresentativeReturn_v1.olean",
+      "object_sha256": "90b703b9aeba09dbf12872d0af34a5114122d5e9684b70269952098b8ef49350",
+      "declarations": [
+        "sevenToProduct_symm_measurePreserving",
+        "sevenToProduct_ae_return",
+        "seven_coordinate_smooth_representative_return"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductLocalWeakWordsPhysicalRepresentative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductLocalWeakWordsPhysicalRepresentative_v1.lean",
+      "source_sha256": "0834fe7cf602d2264054b9370a3d012b62c3fbb4ffe5afa3110fb332d2618eaa",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductLocalWeakWordsPhysicalRepresentative_v1.olean",
+      "object_sha256": "1f6d643ae6ba694e348f9496fdb33af0162d5053d8acfeccf16a9f192e1ef392",
+      "declarations": [
+        "product_local_weak_words_physical_quantitative_representative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "FactorialProfilePointwiseWordBudgets_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialProfilePointwiseWordBudgets_v1.lean",
+      "source_sha256": "7e0327ff5a3017c7dbb9badde61c1ca1352c89b00fc40c4b74e3e7befd8a4ff6",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FactorialProfilePointwiseWordBudgets_v1.olean",
+      "object_sha256": "5bcf63eaedc13dae52de21e438bf0fabed277681fb01b4dde04774b7dc109708",
+      "declarations": [
+        "factorialOuterIndices_zero_member",
+        "factorialLocalProfile_unweighted_bound",
+        "factorial_word_cost_le_length_add_four",
+        "factorial_subset_word_cost_le_eleven",
+        "factorial_profile_mixed_subset_word_norms",
+        "factorial_profile_word_memLp"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinActualProfileSmoothRepresentative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinActualProfileSmoothRepresentative_v1.lean",
+      "source_sha256": "d9b153c8a2b29ded56059da828abd1a99e5fc3fd7df2606d53f66bec0fa03210",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinActualProfileSmoothRepresentative_v1.olean",
+      "object_sha256": "28210cbb95bcbd371d99cbb2e0ada516d87be3063ea2a8e0c7972b43cdf7bdda",
+      "declarations": [
+        "grushin_actual_profile_smooth_representative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinContinuousBaseRepresentative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinContinuousBaseRepresentative_v1.lean",
+      "source_sha256": "0895c68acf812abef6223694024127d018b1f4dd5ad79c211ff12b17d239750d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinContinuousBaseRepresentative_v1.olean",
+      "object_sha256": "2b03c45d673bc5a4eac416457bc74c44cb58fb01684f3dbd3b09659ee8437899",
+      "declarations": [
+        "complex_word_congr_on_open",
+        "grushin_actual_profile_continuous_base"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audits": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T005828_654281Z/receipt.json",
+      "sha256": "3c968f2464977b8ebbe556cbdbfa35b247464f99e00d5fa7398e54e3a0719682",
+      "declarations": 9,
+      "axiom_lines": [
+        "TheoremT.Continuum.normed_word_linearEquiv_transport: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.normed_word_eq_product_word: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.sevenToProduct_all_word_chain: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.sevenToProduct_symm_direction: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.sevenToProduct_symm_all_word_chain: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.sevenToProduct_symm_measurePreserving: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.sevenToProduct_ae_return: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.seven_coordinate_smooth_representative_return: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.product_local_weak_words_physical_quantitative_representative: [propext,, Classical.choice,, Quot.sound]"
+      ],
+      "printer_ellipsis_count": 0,
+      "printer_failure_diagnostics": []
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T010354_479452Z/receipt.json",
+      "sha256": "e40df59a53ba526552eac9f2663c2c0df1a406a036e9f85c2de6cd9cf4dd15ee",
+      "declarations": 7,
+      "axiom_lines": [
+        "TheoremT.Continuum.WeakGrushin.factorialOuterIndices_zero_member: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_unweighted_bound: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.factorial_word_cost_le_length_add_four: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.factorial_subset_word_cost_le_eleven: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.factorial_profile_mixed_subset_word_norms: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.factorial_profile_word_memLp: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.grushin_actual_profile_smooth_representative: [propext,, Classical.choice,, Quot.sound]"
+      ],
+      "printer_ellipsis_count": 0,
+      "printer_failure_diagnostics": []
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T010556_798651Z/receipt.json",
+      "sha256": "13d86a8153270645a0489bc6fbfbbfa1eadf676160d42419443a0eced42459db",
+      "declarations": 2,
+      "axiom_lines": [
+        "TheoremT.Continuum.WeakGrushin.complex_word_congr_on_open: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.WeakGrushin.grushin_actual_profile_continuous_base: [propext,, Classical.choice,, Quot.sound]"
+      ],
+      "printer_ellipsis_count": 0,
+      "printer_failure_diagnostics": []
+    }
+  ],
+  "audit_reading": "Complete source bodies, all expanded declaration statements and all axiom lines in these three strict receipts were read. No unwanted direction binder, missing report, printer failure, or ellipsis. All proof dependencies report only propext, Classical.choice and Quot.sound.",
+  "dependency_checkpoints": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/LOCAL_WEAK_WORD_SMOOTH_REPRESENTATIVE_CHECKPOINT_v1.json",
+      "sha256": "d48ce117f9d362187cf5c07ffc1963b8377b52df507b04041e0caf2b48a4db36"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_SEVEN_WORD_MOLLIFIER_TRANSPORT_CHECKPOINT_v1.json",
+      "sha256": "e34c8544f3300a03e75f697fe16c7f3ae8c978556501634b828fb3c45c43bc20"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_SEVEN_PULLBACK_WORD_BUDGET_CHECKPOINT_v1.json",
+      "sha256": "d9d48b3b11ffc7ad791221b1ee1ce6a357e6cac343f9a133d7a770497ffc8fc3"
+    }
+  ],
+  "independent_reviews": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_WORD_REPRESENTATIVE_RETURN_FOCUSED_SOURCE_REVIEW_v1.json",
+      "sha256": "f906d10ca9e3b2a17913219044bb6df0e591f2364069acc5be7e083c4b3e97d2"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_LOCAL_WEAK_WORDS_QUANTITATIVE_FOCUSED_SOURCE_REVIEW_v1.json",
+      "sha256": "396a52a4452b55cf96749bcd135681ec38ef1fceca49d7c3be75939d0e2af067"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/GRUSHIN_ACTUAL_PROFILE_POINTWISE_FOCUSED_REVIEW_v1.json",
+      "sha256": "6cf15b2d2f9e46dd564c66f4805fa1034c21d70a7535b1e02ba55e528afd0c6e"
+    }
+  ],
+  "manuscript": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/R24_WEAK_PROFILE_EMBEDDING_v1.md",
+    "sha256": "3693f18892cd4587c8b8a229a30391d7558cc85a4c284654e7257d33920a4390"
+  },
+  "limitations": [
+    "This is a general local embedding instantiated at the actual weighted profile, not yet the fixed-box raw PDE or physical Coulomb KS pointwise factorial theorem. Concrete jet data, cutoff/box geometry and profile growth must be supplied by their existing completed proofs.",
+    "The original continuum Theorem T, global dictionary H2 approximation, KS descent, numerical algorithm and bit complexity remain separate obligations.",
+    "All existence choices concern mathematical representatives, not executable algorithms."
+  ],
+  "audit_tool_note": "Consumed pullback helper versions v1 and v2 compile. Their direct v7 scans had documented lexical false positives for image notation and the word axiom in a comment. Those unchanged proof bodies and full expanded standard-foundation reports were reviewed; actual consumer endpoints and the family budget adapter pass strict v7. See the hash-bound pullback budget checkpoint for exact scope. No auditor modification or extra trust mechanism was used.",
+  "environment": {
+    "lean": "4.34.0-rc2",
+    "mathlib": "d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9",
+    "cache": "pre-existing pinned dependency object caches reused; all these sources are outside isolated source rebuild v20; no new isolated rebuild claimed"
+  },
+  "preservation": {
+    "historical_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "historical_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next_active_obligation": "Instantiate grushin_actual_profile_continuous_base with the same all-order F from LocalWeakGrushinFixedBoxFactorial_v1/CoulombKSPhysicalFactorial_v1 and actual rectangular cutoff geometry; compose the profile growth at k+11 with the scalar factorial conversion and product Frechet/Taylor analyticity criterion."
+}

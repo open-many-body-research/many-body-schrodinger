@@ -1,0 +1,100 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260911T000107_853648Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000107_853648Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000107_853648Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 23.405854875,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "807443478d0387a15ccfacad1c326f29bf00417ddf42e18394ea0399e5312040",
+  "audit_log_sha256": "379f1bb1fe2689b42b2e0482b9f8abd6957ffa4e4d07856b628529c1e5db5827",
+  "module_records": [
+    {
+      "module": "GrushinFactorialLocalProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialLocalProfile_v1.lean",
+      "source_sha256": "dd7e9f8b641959d8063ebde2b0c797897681f5b645f0b725b80f538836cb95a7",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialLocalProfile_v1.olean",
+      "object_sha256": "59c38022545f936a39cefd58536cc7259c17e03641e12be6cd26e71d232ca671",
+      "declarations": [
+        "factorialShiftedWeightedField",
+        "factorialLocalOuterNorm",
+        "FactorialLocalMemLp",
+        "factorialLocalProfile",
+        "factorialLocalOuterNorm_nonneg",
+        "factorialLocalOuterNorm_le_profile",
+        "factorialLocalProfile_nonneg",
+        "factorialLocalProfile_mono_order",
+        "FactorialLocalMemLp.mono_order",
+        "FactorialLocalMemLp.restrict",
+        "factorialLocalOuterNorm_mono_domain",
+        "factorialLocalProfile_mono_domain"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFactorialLocalRepresentatives_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialLocalRepresentatives_v1.lean",
+      "source_sha256": "d77e1b9a2a6921e8b6a5f80ab39b210138a2c86d7f8f31500aac9356643913ae",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialLocalRepresentatives_v1.olean",
+      "object_sha256": "253e8eaa2a98bf708b8637777e8e9fc5bbc19bf095d5f0df4acfa1c8cfaceb0e",
+      "declarations": [
+        "factorial_shifted_outer_norm_eq_local",
+        "factorialLocalProfile_representatives",
+        "factorialLocalProfile_unweighted_L2",
+        "factorialLocalProfile_lower_unweighted_L2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.factorialShiftedWeightedField: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_nonneg: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_le_profile: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_nonneg: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_order: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.mono_order: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.restrict: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_mono_domain: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_domain: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_shifted_outer_norm_eq_local: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_representatives: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_unweighted_L2: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_lower_unweighted_L2: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.factorialShiftedWeightedField",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm",
+    "TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_nonneg",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_le_profile",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_nonneg",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_order",
+    "TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.mono_order",
+    "TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp.restrict",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalOuterNorm_mono_domain",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_mono_domain",
+    "TheoremT.Continuum.WeakGrushin.factorial_shifted_outer_norm_eq_local",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_representatives",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_unweighted_L2",
+    "TheoremT.Continuum.WeakGrushin.factorialLocalProfile_lower_unweighted_L2"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

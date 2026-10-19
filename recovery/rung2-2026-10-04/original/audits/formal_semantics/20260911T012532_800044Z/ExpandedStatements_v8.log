@@ -1,0 +1,347 @@
+TheoremT.Continuum.ksBalancedMonomialPairing : (a1 a2 b1 b2 : Nat) →
+  (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) → Nat
+TheoremT.Continuum.ksBalancedMonomialPairing_entries : ∀ (a1 a2 b1 b2 : Nat),
+  And
+    (@Eq.{1} Nat
+      (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      (@Min.min.{0} Nat _ a1 b1))
+    (And
+      (@Eq.{1} Nat
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+        (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ a1 (@Min.min.{0} Nat _ a1 b1)))
+      (And
+        (@Eq.{1} Nat
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ b1 (@Min.min.{0} Nat _ a1 b1)))
+        (@Eq.{1} Nat
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+          (@Min.min.{0} Nat _ a2 b2))))
+@TheoremT.Continuum.ksBalancedMonomialPairing_margins : ∀ {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2)),
+  And
+    (@Eq.{1} Nat
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+      a1)
+    (And
+      (@Eq.{1} Nat
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+        a2)
+      (And
+        (@Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          b1)
+        (@Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+          b2)))
+@TheoremT.Continuum.ksBalancedMonomialPairing_row_sum : ∀ {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2))
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Eq.{1} Nat
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+      fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+      TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2 i j)
+    (@ite.{1} Nat
+      (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      _ a1 a2)
+@TheoremT.Continuum.ksBalancedMonomialPairing_column_sum : ∀ {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Eq.{1} Nat
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+      TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2 i j)
+    (@ite.{1} Nat
+      (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) j
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      _ b1 b2)
+@TheoremT.Continuum.ksBalancedMonomialPairing_last_eq_remainder : ∀ {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2)),
+  @Eq.{1} Nat
+    (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+    (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+        (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@Min.min.{0} Nat _ a1 b1))
+        (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ a1 (@Min.min.{0} Nat _ a1 b1)))
+      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ b1 (@Min.min.{0} Nat _ a1 b1)))
+@TheoremT.Continuum.ksBalancedMonomial_factorization.{u_1} : ∀ {R : Type u_1} [inst : CommMonoid.{u_1} R]
+  (z1 z2 w1 w2 : R) {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2)),
+  @Eq.{u_1 + 1} R
+    (@HMul.hMul.{u_1, u_1, u_1} R R R _
+      (@HMul.hMul.{u_1, u_1, u_1} R R R _
+        (@HMul.hMul.{u_1, u_1, u_1} R R R _ (@HPow.hPow.{u_1, 0, u_1} R Nat R _ z1 a1)
+          (@HPow.hPow.{u_1, 0, u_1} R Nat R _ z2 a2))
+        (@HPow.hPow.{u_1, 0, u_1} R Nat R _ w1 b1))
+      (@HPow.hPow.{u_1, 0, u_1} R Nat R _ w2 b2))
+    (@HMul.hMul.{u_1, u_1, u_1} R R R _
+      (@HMul.hMul.{u_1, u_1, u_1} R R R _
+        (@HMul.hMul.{u_1, u_1, u_1} R R R _
+          (@HPow.hPow.{u_1, 0, u_1} R Nat R _ (@HMul.hMul.{u_1, u_1, u_1} R R R _ z1 w1)
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          (@HPow.hPow.{u_1, 0, u_1} R Nat R _ (@HMul.hMul.{u_1, u_1, u_1} R R R _ z1 w2)
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+        (@HPow.hPow.{u_1, 0, u_1} R Nat R _ (@HMul.hMul.{u_1, u_1, u_1} R R R _ z2 w1)
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (@HPow.hPow.{u_1, 0, u_1} R Nat R _ (@HMul.hMul.{u_1, u_1, u_1} R R R _ z2 w2)
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+TheoremT.Continuum.ksBalancedComplexMonomial_factorization : ∀ (z1 z2 w1 w2 : Complex) {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2)),
+  @Eq.{1} Complex
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ z1 a1)
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ z2 a2))
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ w1 b1))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ w2 b2))
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ z1 w1)
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ z1 w2)
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ z2 w1)
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ z2 w2)
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+@TheoremT.Continuum.ksBalancedPolynomialMonomial_factorization : ∀ {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+    (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+      (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+        (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+          (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+            (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            a1)
+          (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+            (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _))
+            a2))
+        (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+          (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+          b1))
+      (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+        (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))
+        b2))
+    (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+      (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+        (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+          (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+            (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+              (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+              (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _)))
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+            (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+              (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+              (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _)))
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+        (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+          (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+            (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _))
+            (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _)))
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Nat
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+        (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) _
+          (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _))
+          (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _)))
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+TheoremT.Continuum.ksSpinor_balanced_monomial : ∀ (y : TheoremT.Continuum.KSSpace) {a1 a2 b1 b2 : Nat}
+  (h : @Eq.{1} Nat (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ a1 a2) (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ b1 b2)),
+  @Eq.{1} Complex
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+            (TheoremT.Continuum.ksSpinor y (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            a1)
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+            (TheoremT.Continuum.ksSpinor y (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+            a2))
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+          (@Star.star.{0} Complex _
+            (TheoremT.Continuum.ksSpinor y (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          b1))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+        (@Star.star.{0} Complex _
+          (TheoremT.Continuum.ksSpinor y (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+        b2))
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+            (TheoremT.Continuum.ksDescentQuadratic
+              (fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                Complex.ofReal
+                  (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                    (TheoremT.Continuum.ksMap y) k))
+              (Complex.ofReal
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+            (TheoremT.Continuum.ksDescentQuadratic
+              (fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                Complex.ofReal
+                  (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                    (TheoremT.Continuum.ksMap y) k))
+              (Complex.ofReal
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+            (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+          (TheoremT.Continuum.ksDescentQuadratic
+            (fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              Complex.ofReal
+                (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (TheoremT.Continuum.ksMap y) k))
+            (Complex.ofReal
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+        (TheoremT.Continuum.ksDescentQuadratic
+          (fun (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                (TheoremT.Continuum.ksMap y) k))
+          (Complex.ofReal
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+        (TheoremT.Continuum.ksBalancedMonomialPairing a1 a2 b1 b2
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+'TheoremT.Continuum.ksBalancedMonomialPairing' depends on axioms: [propext]
+'TheoremT.Continuum.ksBalancedMonomialPairing_entries' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.ksBalancedMonomialPairing_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBalancedMonomialPairing_row_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBalancedMonomialPairing_column_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBalancedMonomialPairing_last_eq_remainder' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.ksBalancedMonomial_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBalancedComplexMonomial_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBalancedPolynomialMonomial_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.ksSpinor_balanced_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]

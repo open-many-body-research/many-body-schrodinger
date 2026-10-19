@@ -1,0 +1,52 @@
+import KSSpectatorCoefficientPolynomial_v1
+import KSSpectatorCoefficientInvariance_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.ksSpectatorPolynomial
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coeff
+#check @TheoremT.Continuum.ksSpectatorPolynomial_eval
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_reconstruct
+#check @TheoremT.Continuum.ksJointMultiindex_degree
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_homogeneous
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eq_zero_of_degree_lt
+#check @TheoremT.Continuum.polynomialCoeffL1_ksSpectatorCoefficientPolynomial
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coefficient_bound
+#check @TheoremT.Continuum.ksSpectatorEvaluationPolynomial
+#check @TheoremT.Continuum.ksSpectatorEvaluationPolynomial_coeff
+#check @TheoremT.Continuum.ksSpectatorEvaluationPolynomial_eval
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq
+#check @TheoremT.Continuum.ksJointPolynomial_product_coordinate_eval
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_circle_invariant
+#check @TheoremT.Continuum.ksSpectatorCoefficientPolynomial_balanced_support
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.ksSpectatorPolynomial
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coeff
+#print axioms TheoremT.Continuum.ksSpectatorPolynomial_eval
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_reconstruct
+#print axioms TheoremT.Continuum.ksJointMultiindex_degree
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_homogeneous
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eq_zero_of_degree_lt
+#print axioms TheoremT.Continuum.polynomialCoeffL1_ksSpectatorCoefficientPolynomial
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coefficient_bound
+#print axioms TheoremT.Continuum.ksSpectatorEvaluationPolynomial
+#print axioms TheoremT.Continuum.ksSpectatorEvaluationPolynomial_coeff
+#print axioms TheoremT.Continuum.ksSpectatorEvaluationPolynomial_eval
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq
+#print axioms TheoremT.Continuum.ksJointPolynomial_product_coordinate_eval
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_circle_invariant
+#print axioms TheoremT.Continuum.ksSpectatorCoefficientPolynomial_balanced_support

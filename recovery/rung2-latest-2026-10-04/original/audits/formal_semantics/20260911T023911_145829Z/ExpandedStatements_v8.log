@@ -1,0 +1,207 @@
+@TheoremT.Continuum.homogeneous_spectator_finite_variables_norm_bound.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (m : Nat) (γ : Fin d → Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A m γ) m) {M D r S h : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (y : σ → Complex) (t : Fin d → Complex)
+  (hy :
+    @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) y)
+  (ht :
+    @Membership.mem.{0, 0} (Fin d → Complex) (Set.{0} (Fin d → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h) t)
+  (k : Prod.{0, 0} Nat (Fin d → Nat)),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+          (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, u_1} Complex σ _ y)
+          (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) k) (@Prod.snd.{0, 0} Nat (Fin d → Nat) k)))
+        (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+          @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) k i))))
+    (@TheoremT.Continuum.homogeneousSpectatorMajorant d M D r S h k)
+@TheoremT.Continuum.homogeneous_spectator_finite_variables_summable.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (m : Nat) (γ : Fin d → Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A m γ) m) {M D r S h : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hSh : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S h) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (y : σ → Complex) (t : Fin d → Complex)
+  (hy :
+    @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) y)
+  (ht :
+    @Membership.mem.{0, 0} (Fin d → Complex) (Set.{0} (Fin d → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h) t),
+  And
+    (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+      (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) =>
+        @Norm.norm.{0} Complex _
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+            (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+              (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, u_1} Complex σ _ y)
+              (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) k) (@Prod.snd.{0, 0} Nat (Fin d → Nat) k)))
+            (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+              @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) k i))))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+    (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+      (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ y)
+            (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) k) (@Prod.snd.{0, 0} Nat (Fin d → Nat) k)))
+          (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) k i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+TheoremT.Continuum.physicalKSTaylorSpectatorFamily : (f :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex) →
+  (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+    (j : Nat) →
+      (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+        @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _
+TheoremT.Continuum.physicalKSTaylorSpectatorFamily_homogeneous : ∀
+  (f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (j : Nat)
+  (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _
+    (TheoremT.Continuum.physicalKSTaylorSpectatorFamily f x j γ) j
+@TheoremT.Continuum.physicalKSTaylorSpectatorFamily_coefficientL1 : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata : TheoremT.Continuum.PhysicalKSBoxPointwiseData f t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  {x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _}
+  (hx :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t0)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _)))
+      x)
+  (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (TheoremT.Continuum.physicalKSTaylorSpectatorFamily f x j γ))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.physicalKSPointwiseAmplitude M A F0 W)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+            (TheoremT.Continuum.physicalKSPointwiseRate M A))
+          j))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+          (TheoremT.Continuum.physicalKSPointwiseRate M A))
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => γ i)))
+@TheoremT.Continuum.physicalKSTaylorSpectatorFamily_summable : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata : TheoremT.Continuum.PhysicalKSBoxPointwiseData f t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  {x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _}
+  (hx :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t0)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _)))
+      x)
+  (y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) (t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hy :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+          (TheoremT.Continuum.physicalKSPointwiseRate M A))
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) _ y))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (ht :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+          (TheoremT.Continuum.physicalKSPointwiseRate M A))
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) _ t))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  And
+    (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)) _ _
+      (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)) =>
+        @Norm.norm.{0} Complex _
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ y)
+              (TheoremT.Continuum.physicalKSTaylorSpectatorFamily f x
+                (@Prod.fst.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) k)
+                (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) k)))
+            (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+              (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+                (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) k i))))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat))))
+    (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)) _ _
+      (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Complex _ _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+            (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ y)
+            (TheoremT.Continuum.physicalKSTaylorSpectatorFamily f x
+              (@Prod.fst.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) k)
+              (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) k)))
+          (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+            (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+              (@Prod.snd.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) k i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat))))
+'TheoremT.Continuum.homogeneous_spectator_finite_variables_norm_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_finite_variables_summable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSTaylorSpectatorFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalKSTaylorSpectatorFamily_homogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSTaylorSpectatorFamily_coefficientL1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSTaylorSpectatorFamily_summable' depends on axioms: [propext, Classical.choice, Quot.sound]

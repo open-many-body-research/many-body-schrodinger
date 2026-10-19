@@ -1,0 +1,200 @@
+@TheoremT.Continuum.polynomialCoeffL1.{u_1} : {σ : Type u_1} → (p : @MvPolynomial.{u_1, 0} σ Complex _) → Real
+@TheoremT.Continuum.polynomialCoeffL1_eq_sum.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _),
+  @Eq.{1} Real (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+    (@Finset.sum.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Real _ (@MvPolynomial.support.{0, u_1} Complex σ _ p)
+      fun (d : @Finsupp.{u_1, 0} σ Nat _) =>
+      @Norm.norm.{0} Complex _
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Complex _)
+          (@Finsupp.{u_1, 0} σ Nat _) (fun (x : @Finsupp.{u_1, 0} σ Nat _) => Complex) _
+          (@AddMonoidAlgebra.coeff.{0, u_1} Complex (@Finsupp.{u_1, 0} σ Nat _) _ p) d))
+@TheoremT.Continuum.polynomialCoeffL1_nonneg.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+@TheoremT.Continuum.polynomialCoeffL1_eq_sum_of_support_subset.{u_1} : ∀ {σ : Type u_1}
+  (p : @MvPolynomial.{u_1, 0} σ Complex _) (s : Finset.{u_1} (@Finsupp.{u_1, 0} σ Nat _))
+  (hs : @LE.le.{u_1} (Finset.{u_1} (@Finsupp.{u_1, 0} σ Nat _)) _ (@MvPolynomial.support.{0, u_1} Complex σ _ p) s),
+  @Eq.{1} Real (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+    (@Finset.sum.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Real _ s fun (d : @Finsupp.{u_1, 0} σ Nat _) =>
+      @Norm.norm.{0} Complex _
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Complex _)
+          (@Finsupp.{u_1, 0} σ Nat _) (fun (x : @Finsupp.{u_1, 0} σ Nat _) => Complex) _
+          (@AddMonoidAlgebra.coeff.{0, u_1} Complex (@Finsupp.{u_1, 0} σ Nat _) _ p) d))
+@TheoremT.Continuum.polynomialCoeffL1_zero.{u_1} : ∀ {σ : Type u_1},
+  @Eq.{1} Real
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@OfNat.ofNat.{u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (nat_lit 0) _))
+    (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+@TheoremT.Continuum.polynomialCoeffL1_monomial.{u_1} : ∀ {σ : Type u_1} (d : @Finsupp.{u_1, 0} σ Nat _) (c : Complex),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@DFunLike.coe.{u_1 + 1, 1, u_1 + 1}
+        (@LinearMap.{0, 0, 0, u_1} Complex Complex _ _ (@RingHom.id.{0} Complex _) Complex
+          (@MvPolynomial.{u_1, 0} σ Complex _) _ _ _ _)
+        Complex (fun (x : Complex) => @MvPolynomial.{u_1, 0} σ Complex _) _
+        (@MvPolynomial.monomial.{0, u_1} Complex σ _ d) c))
+    (@Norm.norm.{0} Complex _ c)
+@TheoremT.Continuum.polynomialCoeffL1_C.{u_1} : ∀ {σ : Type u_1} (c : Complex),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@DFunLike.coe.{u_1 + 1, 1, u_1 + 1} (@RingHom.{0, u_1} Complex (@MvPolynomial.{u_1, 0} σ Complex _) _ _) Complex
+        (fun (x : Complex) => @MvPolynomial.{u_1, 0} σ Complex _) _ (@MvPolynomial.C.{0, u_1} Complex σ _) c))
+    (@Norm.norm.{0} Complex _ c)
+@TheoremT.Continuum.polynomialCoeffL1_one.{u_1} : ∀ {σ : Type u_1},
+  @Eq.{1} Real
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@OfNat.ofNat.{u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (nat_lit 1) _))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.polynomialCoeffL1_X.{u_1} : ∀ {σ : Type u_1} (i : σ),
+  @Eq.{1} Real (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (@MvPolynomial.X.{0, u_1} Complex σ _ i))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.polynomialCoeffL1_add.{u_1} : ∀ {σ : Type u_1} (p q : @MvPolynomial.{u_1, 0} σ Complex _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@HAdd.hAdd.{u_1, u_1, u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (@MvPolynomial.{u_1, 0} σ Complex _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) _ p q))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+      (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ q))
+@TheoremT.Continuum.polynomialCoeffL1_sum.{u_1,
+    u_2} : ∀ {σ : Type u_1} {ι : Type u_2} (s : Finset.{u_2} ι) (p : ι → @MvPolynomial.{u_1, 0} σ Complex _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@Finset.sum.{u_2, u_1} ι (@MvPolynomial.{u_1, 0} σ Complex _) _ s fun (i : ι) => p i))
+    (@Finset.sum.{u_2, 0} ι Real _ s fun (i : ι) => @TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (p i))
+@TheoremT.Continuum.polynomialCoeffL1_mul.{u_1} : ∀ {σ : Type u_1} (p q : @MvPolynomial.{u_1, 0} σ Complex _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@HMul.hMul.{u_1, u_1, u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (@MvPolynomial.{u_1, 0} σ Complex _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) _ p q))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+      (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ q))
+@TheoremT.Continuum.polynomialCoeffL1_pow.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _) (n : Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@HPow.hPow.{u_1, 0, u_1} (@MvPolynomial.{u_1, 0} σ Complex _) Nat (@MvPolynomial.{u_1, 0} σ Complex _) _ p n))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p) n)
+@TheoremT.Continuum.polynomialCoeffL1_prod.{u_1,
+    u_2} : ∀ {σ : Type u_1} {ι : Type u_2} (s : Finset.{u_2} ι) (p : ι → @MvPolynomial.{u_1, 0} σ Complex _),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@Finset.prod.{u_2, u_1} ι (@MvPolynomial.{u_1, 0} σ Complex _) _ s fun (i : ι) => p i))
+    (@Finset.prod.{u_2, 0} ι Real _ s fun (i : ι) => @TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (p i))
+@TheoremT.Continuum.polynomialCoeffL1_substitution_weighted.{u_1,
+    u_2} : ∀ {σ : Type u_1} {τ : Type u_2} (p : @MvPolynomial.{u_1, 0} σ Complex _)
+  (G : σ → @MvPolynomial.{u_2, 0} τ Complex _) (R : σ → Real)
+  (hR : ∀ (i : σ), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (R i))
+  (hG : ∀ (i : σ), @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ (G i)) (R i)),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ
+      (@MvPolynomial.eval₂.{0, u_2, u_1} Complex (@MvPolynomial.{u_2, 0} τ Complex _) σ _ _
+        (@MvPolynomial.C.{0, u_2} Complex τ _) G p))
+    (@Finset.sum.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Real _ (@MvPolynomial.support.{0, u_1} Complex σ _ p)
+      fun (d : @Finsupp.{u_1, 0} σ Nat _) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Norm.norm.{0} Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Complex _)
+            (@Finsupp.{u_1, 0} σ Nat _) (fun (x : @Finsupp.{u_1, 0} σ Nat _) => Complex) _
+            (@AddMonoidAlgebra.coeff.{0, u_1} Complex (@Finsupp.{u_1, 0} σ Nat _) _ p) d))
+        (@Finset.prod.{u_1, 0} σ Real _ (@Finsupp.support.{u_1, 0} σ Nat _ d) fun (i : σ) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _ (R i)
+            (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} σ Nat _) σ (fun (x : σ) => Nat) _ d i)))
+@TheoremT.Continuum.polynomialCoeffL1_substitution_nonexpansive.{u_1,
+    u_2} : ∀ {σ : Type u_1} {τ : Type u_2} (p : @MvPolynomial.{u_1, 0} σ Complex _)
+  (G : σ → @MvPolynomial.{u_2, 0} τ Complex _)
+  (hG :
+    ∀ (i : σ),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ (G i)) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ
+      (@MvPolynomial.eval₂.{0, u_2, u_1} Complex (@MvPolynomial.{u_2, 0} τ Complex _) σ _ _
+        (@MvPolynomial.C.{0, u_2} Complex τ _) G p))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+@TheoremT.Continuum.polynomialCoeffL1_coefficient_bound.{u_1} : ∀ {σ : Type u_1}
+  (p : @MvPolynomial.{u_1, 0} σ Complex _) (d : @Finsupp.{u_1, 0} σ Nat _),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Complex _)
+        (@Finsupp.{u_1, 0} σ Nat _) (fun (x : @Finsupp.{u_1, 0} σ Nat _) => Complex) _
+        (@AddMonoidAlgebra.coeff.{0, u_1} Complex (@Finsupp.{u_1, 0} σ Nat _) _ p) d))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+@TheoremT.Continuum.polynomialCoeffL1_eq_zero_iff.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _),
+  Iff (@Eq.{1} Real (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p) (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+    (@Eq.{u_1 + 1} (@MvPolynomial.{u_1, 0} σ Complex _) p
+      (@OfNat.ofNat.{u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (nat_lit 0) _))
+@TheoremT.Continuum.polynomialCoeffL1_substitution_totalDegree.{u_1,
+    u_2} : ∀ {σ : Type u_1} {τ : Type u_2} (p : @MvPolynomial.{u_1, 0} σ Complex _)
+  (G : σ → @MvPolynomial.{u_2, 0} τ Complex _) {B : Real}
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) B)
+  (hG : ∀ (i : σ), @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ (G i)) B),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ
+      (@MvPolynomial.eval₂.{0, u_2, u_1} Complex (@MvPolynomial.{u_2, 0} τ Complex _) σ _ _
+        (@MvPolynomial.C.{0, u_2} Complex τ _) G p))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ B (@MvPolynomial.totalDegree.{0, u_1} Complex σ _ p)))
+@TheoremT.Continuum.polynomialCoeffL1_substitution_degree_bound.{u_1,
+    u_2} : ∀ {σ : Type u_1} {τ : Type u_2} (p : @MvPolynomial.{u_1, 0} σ Complex _)
+  (G : σ → @MvPolynomial.{u_2, 0} τ Complex _) {B : Real}
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) B)
+  (hG : ∀ (i : σ), @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ (G i)) B) {n : Nat}
+  (hn : @LE.le.{0} Nat _ (@MvPolynomial.totalDegree.{0, u_1} Complex σ _ p) n),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ
+      (@MvPolynomial.eval₂.{0, u_2, u_1} Complex (@MvPolynomial.{u_2, 0} τ Complex _) σ _ _
+        (@MvPolynomial.C.{0, u_2} Complex τ _) G p))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n))
+@TheoremT.Continuum.polynomial_eval_norm_weighted.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _)
+  (z : σ → Complex) (R : σ → Real) (hz : ∀ (i : σ), @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (z i)) (R i)),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ z) p))
+    (@Finset.sum.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Real _ (@MvPolynomial.support.{0, u_1} Complex σ _ p)
+      fun (d : @Finsupp.{u_1, 0} σ Nat _) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Norm.norm.{0} Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} (@Finsupp.{u_1, 0} σ Nat _) Complex _)
+            (@Finsupp.{u_1, 0} σ Nat _) (fun (x : @Finsupp.{u_1, 0} σ Nat _) => Complex) _
+            (@AddMonoidAlgebra.coeff.{0, u_1} Complex (@Finsupp.{u_1, 0} σ Nat _) _ p) d))
+        (@Finset.prod.{u_1, 0} σ Real _ (@Finsupp.support.{u_1, 0} σ Nat _ d) fun (i : σ) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _ (R i)
+            (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@Finsupp.{u_1, 0} σ Nat _) σ (fun (x : σ) => Nat) _ d i)))
+@TheoremT.Continuum.polynomial_eval_norm_le_coeffL1.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _)
+  (z : σ → Complex)
+  (hz : ∀ (i : σ), @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (z i)) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ z) p))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+'TheoremT.Continuum.polynomialCoeffL1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_eq_sum_of_support_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_X' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_substitution_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_substitution_nonexpansive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_coefficient_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_substitution_totalDegree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_substitution_degree_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomial_eval_norm_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomial_eval_norm_le_coeffL1' depends on axioms: [propext, Classical.choice, Quot.sound]

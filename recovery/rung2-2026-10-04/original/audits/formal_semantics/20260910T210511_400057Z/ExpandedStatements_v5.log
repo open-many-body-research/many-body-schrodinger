@@ -1,0 +1,107 @@
+@TheoremT.Continuum.ProductLocalWeakDirectional.zero.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] (Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T))
+  (v : Prod.{u_1, u_2} Y T),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (x : Prod.{u_1, u_2} Y T) => @OfNat.ofNat.{0} Complex (nat_lit 0) _)
+    (fun (x : Prod.{u_1, u_2} Y T) => @OfNat.ofNat.{0} Complex (nat_lit 0) _) v
+@TheoremT.Continuum.ProductLocalWeakDirectional.add.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  {f g df dg : Prod.{u_1, u_2} Y T → Complex} {v : Prod.{u_1, u_2} Y T}
+  (hD : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω f df v)
+  (hE : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω g dg v),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (p : Prod.{u_1, u_2} Y T) => @HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (f p) (g p))
+    (fun (p : Prod.{u_1, u_2} Y T) => @HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (df p) (dg p)) v
+@TheoremT.Continuum.ProductLocalWeakDirectional.neg.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  {f d : Prod.{u_1, u_2} Y T → Complex} {v : Prod.{u_1, u_2} Y T}
+  (hD : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω f d v),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (p : Prod.{u_1, u_2} Y T) => @Neg.neg.{0} Complex _ (f p))
+    (fun (p : Prod.{u_1, u_2} Y T) => @Neg.neg.{0} Complex _ (d p)) v
+@TheoremT.Continuum.ProductLocalWeakDirectional.sub.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  {f g df dg : Prod.{u_1, u_2} Y T → Complex} {v : Prod.{u_1, u_2} Y T}
+  (hD : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω f df v)
+  (hE : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω g dg v),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (p : Prod.{u_1, u_2} Y T) => @HSub.hSub.{0, 0, 0} Complex Complex Complex _ (f p) (g p))
+    (fun (p : Prod.{u_1, u_2} Y T) => @HSub.hSub.{0, 0, 0} Complex Complex Complex _ (df p) (dg p)) v
+@TheoremT.Continuum.ProductLocalWeakDirectional.const_smul.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  {f d : Prod.{u_1, u_2} Y T → Complex} {v : Prod.{u_1, u_2} Y T}
+  (hD : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω f d v) (a : Real),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (p : Prod.{u_1, u_2} Y T) => @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ a (f p))
+    (fun (p : Prod.{u_1, u_2} Y T) => @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ a (d p)) v
+@TheoremT.Continuum.ProductLocalWeakDirectional.finset_sum.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3}
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} {v : Prod.{u_1, u_2} Y T} (s : Finset.{u_3} ι)
+  (f d : ι → Prod.{u_1, u_2} Y T → Complex)
+  (hD :
+    ∀ (i : ι),
+      @Membership.mem.{u_3, u_3} ι (Finset.{u_3} ι) _ s i →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω (f i) (d i) v),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω
+    (fun (p : Prod.{u_1, u_2} Y T) => @Finset.sum.{u_3, 0} ι Complex _ s fun (i : ι) => f i p)
+    (fun (p : Prod.{u_1, u_2} Y T) => @Finset.sum.{u_3, 0} ι Complex _ s fun (i : ι) => d i p) v
+@TheoremT.Continuum.ProductLocalWeakDirectional.congr_ae_local.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)}
+  {f d g e : Prod.{u_1, u_2} Y T → Complex} {v : Prod.{u_1, u_2} Y T}
+  (hD : @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω f d v)
+  (hfg :
+    @Filter.Eventually.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+      (fun (p : Prod.{u_1, u_2} Y T) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ Ω
+            p →
+          @Eq.{1} Complex (f p) (g p))
+      (@MeasureTheory.ae.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T)
+        (@MeasureTheory.Measure.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)))
+  (hde :
+    @Filter.Eventually.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+      (fun (p : Prod.{u_1, u_2} Y T) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T) (Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)) _ Ω
+            p →
+          @Eq.{1} Complex (d p) (e p))
+      (@MeasureTheory.ae.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T)
+        (@MeasureTheory.Measure.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _ _
+        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ Ω g e v
+'TheoremT.Continuum.ProductLocalWeakDirectional.zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ProductLocalWeakDirectional.add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ProductLocalWeakDirectional.neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ProductLocalWeakDirectional.sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ProductLocalWeakDirectional.const_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ProductLocalWeakDirectional.finset_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ProductLocalWeakDirectional.congr_ae_local' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

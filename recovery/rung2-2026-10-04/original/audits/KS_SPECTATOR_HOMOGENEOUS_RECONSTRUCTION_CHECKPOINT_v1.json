@@ -1,0 +1,60 @@
+{
+  "checkpoint": "KS_SPECTATOR_HOMOGENEOUS_RECONSTRUCTION_v1",
+  "timestamp_utc": "2026-09-11T02:42:42.170044+00:00",
+  "status": "VERIFIED_FINAL_SOURCE_AND_STRICT_AUDIT_WITH_INDEPENDENT_REVIEW",
+  "evidence_category": "Fully formalized finite homogeneous polynomial reconstruction; infinite regrouping remains separate.",
+  "strongest_exact_result": "groupedHomogeneousSpectatorPolynomial (fun j gamma => ksSpectatorCoefficientPolynomial (P (j + sum gamma)) (Finsupp.equivFunOnFinite.symm gamma)) n = P n for every complex polynomial family P with P n homogeneous n.",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpectatorHomogeneousReconstruction_v1.lean",
+    "sha256": "01d868b95583453867a68b55d5323a19894bd0e6d64fe156ecd6296b964d88ff"
+  },
+  "object": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSSpectatorHomogeneousReconstruction_v1.olean",
+    "sha256": "501327a119e786f6b5cd34dee015b01bc8242516f328b5fe68ce73f17e0718de"
+  },
+  "compiler_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSSpectatorHomogeneousReconstruction_v1-20260911T023941_440072Z.json",
+    "sha256": "434ce290bfa8786a0f944a02d50c794d154f679b3ad394da07df335aedda9972"
+  },
+  "strict_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023956_829122Z/receipt.json",
+    "sha256": "fcdb9dc005414c2bbd8ce258f6c6db3c947b9b668b9b9fa9c18c83d73ec0f0ef"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023956_829122Z/ExpandedStatements_v8.log",
+    "sha256": "e9b79b1fbff6c99adc27ad7be26a566f0dfa39118d03014483c4cdf9e9de81d1"
+  },
+  "author_check": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_SPECTATOR_HOMOGENEOUS_RECONSTRUCTION_AUTHOR_CHECK_v1.json",
+    "sha256": "3ce48c2e07bdd8ab993966e529621a4c44494f93187a0ea4cd53a288907a797c"
+  },
+  "independent_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_SPECTATOR_HOMOGENEOUS_RECONSTRUCTION_FOCUSED_REVIEW_v1.json",
+    "sha256": "74e19b2fb68241e82219f4346bde1933cb59fe94d1fb321f0913c266c7947c69"
+  },
+  "independent_review_read_in_full_by_author": true,
+  "source_object_and_evidence_hashes_rechecked_at_sealing": true,
+  "declaration_count": 7,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "next_obligation": "Root will apply the exact reconstruction to the actual physical Taylor family and combine it with independently proved absolute summability to identify the double series.",
+  "limits": [
+    "No infinite interchange, physical A/B analytic descent, executable rational solver, or full Theorem T is asserted here.",
+    "The finite polynomial and index constructions use noncomputable Mathlib objects."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "frozen_reference_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New focused review record only. All successful sources, objects, logs, receipts, prior reviews and frozen artifacts unchanged."
+  }
+}

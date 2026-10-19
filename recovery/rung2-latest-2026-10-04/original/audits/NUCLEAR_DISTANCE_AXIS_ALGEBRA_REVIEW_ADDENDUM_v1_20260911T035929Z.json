@@ -1,0 +1,92 @@
+{
+  "schema": "focused-independent-review-addendum-v1",
+  "timestamp_utc": "2026-09-11T03:59:29.577429+00:00",
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "author": "/root/ks_coefficient_transport",
+  "scope": "Independent three-declaration NuclearDistanceAxisAlgebra_v1 review addendum. Together with the linked unchanged prior review, covers all sixteen declarations in the three nuclear coordinate modules.",
+  "verdict": "PASS: no invalidating finding within the reviewed scope",
+  "findings": [],
+  "target": {
+    "module": "NuclearDistanceAxisAlgebra_v1",
+    "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearDistanceAxisAlgebra_v1.lean",
+    "source_sha256": "b251a35a253f84eec059dda88a745abd01aad1750133f1faedb2bef05518ded2",
+    "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NuclearDistanceAxisAlgebra_v1.olean",
+    "object_sha256": "cb0054c28a058e904e0215d52ddc40e44c81557eeb4db880781e3a7ae2f79abf",
+    "declarations": [
+      "nuclearDistanceAxisZ_mul",
+      "nuclearDistanceAxisW_add_Z_sq",
+      "nuclearDistanceAxisW_add_shifted_Z_sq"
+    ]
+  },
+  "compiler_evidence": {
+    "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/NuclearDistanceAxisAlgebra_v1-20260911T035704_376084Z.json",
+    "receipt_sha256": "c06baa771b1af93e1ac696cb3b93fa18dd7761589f4e761af08e0207b633c5e4",
+    "exit_code": 0,
+    "elapsed_seconds": 13.819063541999999,
+    "dependency_objects": "pre-existing pinned cache, not source-rebuilt"
+  },
+  "strict_evidence": {
+    "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035726_324292Z/receipt.json",
+    "receipt_sha256": "79dea712a72c39f6d342e4313a1cbe1f5524906a2fe58a7769ea64451f517628",
+    "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035726_324292Z/ExpandedStatements_v8.log",
+    "expanded_log_sha256": "d7fb03d8a23eac1bc4c7cb4fe04e8693b554a008be8c25c5dcef963ceb38d35d",
+    "expanded_log_lines": 44,
+    "all_three_expanded_statements_and_axiom_reports_read": true,
+    "exit_code": 0,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "axiom_report_complete": true,
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": [],
+    "forbidden_source_tokens": [],
+    "current_source_object_and_log_hashes_match_receipt": true,
+    "source_and_object_unchanged_during_audit": true,
+    "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+    "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722"
+  },
+  "prior_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/NUCLEAR_DISTANCE_AXIS_MAP_NEIGHBORHOOD_REVIEW_v1_20260911T035814Z.json",
+    "sha256": "b511993a70259e4e5832b0a5a8589e3f6256611dd348861e0132f308700c33f8",
+    "declarations": 13,
+    "all_prior_source_and_object_hashes_rechecked_unchanged": true,
+    "read_vs_reuse": "Prior review already read all original map/neighborhood proof bodies and complete expanded types/axioms. This addendum reuses that sealed review rather than claiming a new reread. The new algebra source, all three proof bodies, complete strict output and both receipts were read in full."
+  },
+  "semantic_checks": [
+    {
+      "claim": "Actual denominator cancellation",
+      "result": "For every complex q with q1 != 0, (2*q1)*Z(q)=q0^2+q1^2-q2^2. The proof cancels the exact nonzero complex denominator 2*q1; there is no nonzero assumption on r, u, or the numerator."
+    },
+    {
+      "claim": "Unshifted squared relation",
+      "result": "W(q)+Z(q)^2=q0^2 holds for all complex q by the literal definition W=q0^2-Z^2. No denominator premise is needed for this identity, including when q1=0 under total field division."
+    },
+    {
+      "claim": "Shifted squared relation and sign",
+      "result": "Under q1 != 0, W(q)+(Z(q)-q1)^2=q2^2 follows by expanding W and the square and substituting 2*q1*Z=q0^2+q1^2-q2^2. The sign and shift match the nuclear distance convention with the other electron at s along the axis."
+    },
+    {
+      "claim": "Exact scope and quantifiers",
+      "result": "autoImplicit is false and the three expanded statements have exactly the listed complex q and denominator hypotheses. These are polynomial/rational squared identities over Complex, not identities of Hermitian norm squares, and they select no square root or real planar representative."
+    }
+  ],
+  "limits": [
+    "No root branch, positivity of W, actual Euclidean distance realization, SO(2) invariance, analytic A/B factor, or physical solution equality is proved by these three identities.",
+    "Together with the linked prior review this covers sixteen declarations, but it does not discharge the complete Section 3 physical extension theorem.",
+    "Supplied compiler and strict evidence use pinned cached imports; no transitive source rebuild was performed."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "paper_cited_frozen_target": "rwa_proof/RWA_THEOREM.md section 5",
+    "paper_cited_frozen_target_sha256": "d13f655a98cd278115924af4f0597991619fce0345f81e17151c1524229e8f09",
+    "protocol": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "operation": "New review addendum and digest only; original 13-declaration review and all successful source/object/receipt/log/frozen bytes preserved."
+  }
+}

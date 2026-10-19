@@ -1,0 +1,62 @@
+{
+  "review_version": 1,
+  "timestamp_utc": "2026-09-10T21:32:40.119764+00:00",
+  "review_type": "Bounded independent source-semantic review, not kernel verification",
+  "reviewers": [
+    "/root/partial_convolution_recovery/partial_pde_commutation_plan",
+    "/root/partial_convolution_recovery/partial_pde_commutation_plan/cutoff_common_bounds_plan"
+  ],
+  "status": "NO_CONCRETE_ISSUE_FOUND_WITH_EXPLICIT_SOBLEV_SCOPE_QUALIFICATIONS",
+  "examined_sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakHk_v1.lean",
+      "sha256": "f45d9e11f8e49a85db9c3890fe734bcde364ac463b4507dba60c74a7e7db4d10",
+      "scope": "full source read by both reviewers"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakWordTests_v1.lean",
+      "sha256": "aabac0f0f027e6a6e844a8311af3fb0e8b540a48d3282a50e5fa17f71ade7531",
+      "scope": "full source read by both reviewers"
+    }
+  ],
+  "findings": [],
+  "checks": [
+    {
+      "item": "genuine derivative content",
+      "result": "ProductCoordinateWeakHk includes actual RegionL2Budget for every word through m and bundled ProductLocalWeakDirectional for each next coordinate through m. It is not merely an arbitrary norm-bounded family."
+    },
+    {
+      "item": "all interleavings",
+      "result": "The Y and T subword selectors retain the relative order of letters of their own kind. Their lengths sum to the original word length. For D(w)=F(Ysubword(w),Tsubword(w)), prepending a Y letter invokes hY and prepending a T letter invokes the existing mixed hT. The triangular m,m state supplies both for every word length<m without extra derivatives, preserving the same individual W budget."
+    },
+    {
+      "item": "transpose order and sign",
+      "result": "For w=[i,j], the weak derivative family means D_i D_j f and productCoordinateTestWord means D_j D_i phi. In general the test recursion reverses the order of operator action and contributes exactly (-1)^length. The proof does not require silently commuting the test derivatives."
+    },
+    {
+      "item": "test validity",
+      "result": "The explicit induction proves global smoothness, compact support, and support inclusion for every iterated test. Each weak derivative identity is therefore applied to an admissible test whose support stays in Omega."
+    },
+    {
+      "item": "integrability and zero order",
+      "result": "product_coordinate_family_tests_integrable derives both integrabilities from actual restricted L2 membership of D(w) and D([]). The identity helper has no separate L2 budget premise; at m=0 its equality is tautological and by itself asserts no integrability. Combined with ProductCoordinateWeakHk the separate integrability theorem supplies both real-test Bochner integrals, including zero order."
+    },
+    {
+      "item": "budget meaning",
+      "result": "W is a common upper bound on each ordered word derivative squared L2 norm. It is not an asserted upper bound on the sum of all coordinate or multiindex derivative squared norms."
+    }
+  ],
+  "precise_remaining_bridge": {
+    "open_domain_requirement": "For comparison with conventional H^m(Omega), assume IsOpen Omega. The present custom predicate is syntactically defined for arbitrary sets, where tests supported in Omega alone are not the usual open-domain Sobolev definition.",
+    "membership_bridge": "On an open region, select an ordered coordinate word for each multiindex alpha with total degree<=m, define g_alpha from the word-family witness, identify the recursively transposed test operator with the conventional multiindex derivative on smooth tests, and package the proved L2 memberships plus distributional identities into the chosen conventional/library H^m definition. These two modules do not state or prove that identification.",
+    "equivalence_bridge": "A claim of equivalence additionally needs the converse: conventional weak Sobolev derivatives must be assembled into a compatible ordered coordinate family with its requested common budget. No converse is proved in these two files.",
+    "norm_bridge": "An aggregate Sobolev squared-norm bound requires a specified counting/norm convention and an explicit finite sum bound. Multiplicity of interleaved words differs from the usual distinct-multiindex convention. No multiindex count or aggregate H^m norm statement is proved here.",
+    "complex_valued_convention": "The displayed tests are real valued and the unknowns complex valued. Identification with a complex-test Sobolev/distribution convention should explicitly use real/imaginary linearity or state the equivalent real-test convention."
+  },
+  "limitations": [
+    "Only the two listed sources were read in this review; their transitive dependencies and the multiindex/count construction being developed elsewhere were not re-audited.",
+    "No compiler, strict-audit script, or rebuild was run. Existing source hashes were checked; strict receipts were not inspected for this bounded review.",
+    "This review establishes no physical wavefunction regularity, factorial estimate, full H12 theorem, approximation result, or algorithm.",
+    "Independent agent agreement is supporting review evidence and does not replace kernel verification."
+  ]
+}

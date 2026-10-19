@@ -1,0 +1,50 @@
+@TheoremT.Continuum.mvPolynomial_sumRingEquiv_coeff_coeff.{u_1, u_2,
+    u_3} : ∀ {σ : Type u_1} {τ : Type u_2} {R : Type u_3} [inst : CommSemiring.{u_3} R]
+  (P : @MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _) (α : @Finsupp.{u_1, 0} σ Nat _)
+  (β : @Finsupp.{u_2, 0} τ Nat _),
+  @Eq.{u_3 + 1} R
+    (@DFunLike.coe.{max (u_2 + 1) (u_3 + 1), u_2 + 1, u_3 + 1} (@Finsupp.{u_2, u_3} (@Finsupp.{u_2, 0} τ Nat _) R _)
+      (@Finsupp.{u_2, 0} τ Nat _) (fun (x : @Finsupp.{u_2, 0} τ Nat _) => R) _
+      (@AddMonoidAlgebra.coeff.{u_3, u_2} R (@Finsupp.{u_2, 0} τ Nat _) _
+        (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), u_1 + 1, max (u_2 + 1) (u_3 + 1)}
+          (@Finsupp.{u_1, max u_2 u_3} (@Finsupp.{u_1, 0} σ Nat _) (@MvPolynomial.{u_2, u_3} τ R _) _)
+          (@Finsupp.{u_1, 0} σ Nat _) (fun (x : @Finsupp.{u_1, 0} σ Nat _) => @MvPolynomial.{u_2, u_3} τ R _) _
+          (@AddMonoidAlgebra.coeff.{max u_2 u_3, u_1} (@MvPolynomial.{u_2, u_3} τ R _) (@Finsupp.{u_1, 0} σ Nat _) _
+            (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1),
+                  max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+              (@RingEquiv.{max u_3 u_2 u_1, max (max u_3 u_2) u_1}
+                (@MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _)
+                (@MvPolynomial.{u_1, max u_3 u_2} σ (@MvPolynomial.{u_2, u_3} τ R _) _) _ _ _ _)
+              (@MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _)
+              (fun (x : @MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _) =>
+                @MvPolynomial.{u_1, max u_3 u_2} σ (@MvPolynomial.{u_2, u_3} τ R _) _)
+              _ (@MvPolynomial.sumRingEquiv.{u_3, u_1, u_2} R σ τ _) P))
+          α))
+      β)
+    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (u_1 + 1) (u_2 + 1), u_3 + 1}
+      (@Finsupp.{max u_1 u_2, u_3} (@Finsupp.{max u_2 u_1, 0} (Sum.{u_1, u_2} σ τ) Nat _) R _)
+      (@Finsupp.{max u_2 u_1, 0} (Sum.{u_1, u_2} σ τ) Nat _)
+      (fun (x : @Finsupp.{max u_2 u_1, 0} (Sum.{u_1, u_2} σ τ) Nat _) => R) _
+      (@AddMonoidAlgebra.coeff.{u_3, max u_1 u_2} R (@Finsupp.{max u_2 u_1, 0} (Sum.{u_1, u_2} σ τ) Nat _) _ P)
+      (@Finsupp.sumElim.{u_1, u_2, 0} σ τ Nat _ α β))
+@TheoremT.Continuum.mvPolynomial_sumRingEquiv_eval.{u_1, u_2,
+    u_3} : ∀ {σ : Type u_1} {τ : Type u_2} {R : Type u_3} [inst : CommSemiring.{u_3} R]
+  (P : @MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _) (X : σ → R) (Y : τ → R),
+  @Eq.{u_3 + 1} R
+    (@MvPolynomial.eval₂.{max u_2 u_3, u_3, u_1} (@MvPolynomial.{u_2, u_3} τ R _) R σ _ _
+      (@MvPolynomial.eval.{u_3, u_2} R τ _ Y) X
+      (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1),
+            max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}
+        (@RingEquiv.{max u_3 u_2 u_1, max (max u_3 u_2) u_1} (@MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _)
+          (@MvPolynomial.{u_1, max u_3 u_2} σ (@MvPolynomial.{u_2, u_3} τ R _) _) _ _ _ _)
+        (@MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _)
+        (fun (x : @MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _) =>
+          @MvPolynomial.{u_1, max u_3 u_2} σ (@MvPolynomial.{u_2, u_3} τ R _) _)
+        _ (@MvPolynomial.sumRingEquiv.{u_3, u_1, u_2} R σ τ _) P))
+    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), u_3 + 1}
+      (@RingHom.{max u_3 u_2 u_1, u_3} (@MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _) R _ _)
+      (@MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _)
+      (fun (x : @MvPolynomial.{max u_2 u_1, u_3} (Sum.{u_1, u_2} σ τ) R _) => R) _
+      (@MvPolynomial.eval.{u_3, max u_2 u_1} R (Sum.{u_1, u_2} σ τ) _ (@Sum.elim.{u_1, u_2, u_3 + 1} σ τ R X Y)) P)
+'TheoremT.Continuum.mvPolynomial_sumRingEquiv_coeff_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mvPolynomial_sumRingEquiv_eval' depends on axioms: [propext, Classical.choice, Quot.sound]

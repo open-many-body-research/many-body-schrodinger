@@ -1,0 +1,36 @@
+{
+  "utc": "2026-09-11T00:24:44.803987+00:00",
+  "status": "PASS: kernel compilation and strict v7 expanded-statement/dependency audit",
+  "modules": [
+    {
+      "module": "FactorialCenteredBoxBaseProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialCenteredBoxBaseProfile_v1.lean",
+      "source_sha256": "907e547818779e3ac10918e3210eab7591b633230a5db2d239b69b15a3a5b19b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FactorialCenteredBoxBaseProfile_v1.olean",
+      "object_sha256": "73b9635b695629a23841bf649701bcd2cfc7f2b7acf86ab02f67b014e9eb0c35",
+      "declarations": [
+        "factorial_centered_box_base_profile_of_H12"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "receipt": "audits/formal_semantics/20260911T002349_643302Z/receipt.json",
+  "receipt_sha256": "32343a145bed50d4cdb82dd591ae6255470d7c8388bd52cba00d4f8ad121910f",
+  "declarations": [
+    "TheoremT.Continuum.WeakGrushin.factorial_centered_box_base_profile_of_H12"
+  ],
+  "exact_result": "For the same raw family F with genuine all natural coordinate weak chains on a centered positive-width rectangular box and an actual finite ProductMixedMultiIndexWeakHk budget of order 12 and squared budget W for F(0,0), every r<=8 and s>=0 has actual weighted L2 membership and factorialBoxProfile(F,a,aY,aT,r,s)<=498*(max(1,2*aY))^2*sqrt(W).",
+  "proof": "The closed-box Euclidean Y radius is at most 2*aY because its four-dimensional center is zero. Apply the existing R9 finite-budget theorem with S=max(1,2*aY), reflexive zero-family AE equality, actual natural weak chains, and shrinking-box inclusion.",
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.factorial_centered_box_base_profile_of_H12: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "printer_failure_diagnostics": [],
+  "evidence": "Exact source compiled with pinned Lean v4.34.0-rc2. The one expanded declaration uses only propext, Classical.choice, Quot.sound. No additional trust mechanism.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "compiler_warning": "The explicit hypothesis hT:0<aT is unused in this bound. Retained requested positive-box input class; source unchanged after PASS. No proof hole or missing norm premise.",
+  "scope": "Finite base orders only; no all-order factorial recurrence or effective computational construction. The same raw family and W precede every r,s. No radius or profile norm is assumed.",
+  "next": "Consumed by the R23 scalar base-envelope composition with the separately established actual R18 recurrence."
+}

@@ -1,0 +1,34 @@
+@TheoremT.Continuum.powerSeries_diagonal_invariant_at_fixed_point.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] {f : E → F}
+  {p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _} {x : E}
+  (hf : @HasFPowerSeriesAt.{0, u_1, u_2} Real E F _ _ _ _ _ f p x)
+  (L : @ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _)
+  (hfixed :
+    @Eq.{u_1 + 1} E
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+        (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _) E
+        (fun (x : E) => E) _ L x)
+      x)
+  (hInv :
+    @Filter.EventuallyEq.{u_1, u_2} E F (@nhds.{u_1} E _ x)
+      (@Function.comp.{u_1 + 1, u_1 + 1, u_2 + 1} E E F f
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _) E
+          (fun (x : E) => E) _ L))
+      f)
+  (n : Nat) (y : E),
+  @Eq.{u_2 + 1} F
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) =>
+      @DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+        (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _) E
+        (fun (x : E) => E) _ L y)
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) => y)
+'TheoremT.Continuum.powerSeries_diagonal_invariant_at_fixed_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

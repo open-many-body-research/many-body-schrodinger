@@ -1,0 +1,65 @@
+@TheoremT.Continuum.ksRadialSquare_isHomogeneous.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R],
+  @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+    (@TheoremT.Continuum.ksRadialSquare.{u_1} R _) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+@TheoremT.Continuum.ksRadialMonomialCore_isHomogeneous.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+  @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+    (@TheoremT.Continuum.ksRadialMonomialCore.{u_1} R _ d)
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+        @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+          (@Fin.castSucc (@OfNat.ofNat.{0} Nat (nat_lit 3) _) i))
+      (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+        (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+            (Fin.last (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.ks_radial_support_degree.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  {P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _} {m : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _ P m)
+  {d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _}
+  (hd :
+    @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+      (@MvPolynomial.support.{u_1, 0} R (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P) d),
+  @Eq.{1} Nat
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+        @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+          (@Fin.castSucc (@OfNat.ofNat.{0} Nat (nat_lit 3) _) i))
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+        (Fin.last (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+    m
+@TheoremT.Continuum.ksRadialEven_isHomogeneous.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  {P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _} {m : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _ P m),
+  @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+    (@TheoremT.Continuum.ksRadialEven.{u_1} R _ P) m
+@TheoremT.Continuum.ksRadialOdd_isHomogeneous.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  {P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _} {m : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _ P m),
+  @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+    (@TheoremT.Continuum.ksRadialOdd.{u_1} R _ P)
+    (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ m (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+@TheoremT.Continuum.ksRadialOdd_eq_zero_of_degree_zero.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  {P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _}
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _ P
+      (@OfNat.ofNat.{0} Nat (nat_lit 0) _)),
+  @Eq.{u_1 + 1} (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _)
+    (@TheoremT.Continuum.ksRadialOdd.{u_1} R _ P)
+    (@OfNat.ofNat.{u_1} (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) (nat_lit 0) _)
+'TheoremT.Continuum.ksRadialSquare_isHomogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialMonomialCore_isHomogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_radial_support_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialEven_isHomogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialOdd_isHomogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialOdd_eq_zero_of_degree_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

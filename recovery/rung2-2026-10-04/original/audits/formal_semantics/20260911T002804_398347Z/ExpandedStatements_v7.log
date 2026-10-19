@@ -1,0 +1,38 @@
+TheoremT.Continuum.grushin_successor_core_power_factorial_bound : ∀ (r : Nat),
+  @LE.le.{0} Real _
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _)) r)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (@Nat.cast.{0} Real _ (Nat.factorial r)))
+TheoremT.Continuum.grushin_r23_factorial_bound : ∀ (r : Nat) {ρ B S N : Real}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hN :
+    @LE.le.{0} Real _ N
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B) S)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B)
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r) (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+            ρ)
+          r))),
+  @LE.le.{0} Real _ N
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) B) S)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) B) ρ)
+          r))
+      (@Nat.cast.{0} Real _ (Nat.factorial r)))
+'TheoremT.Continuum.grushin_successor_core_power_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.grushin_r23_factorial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

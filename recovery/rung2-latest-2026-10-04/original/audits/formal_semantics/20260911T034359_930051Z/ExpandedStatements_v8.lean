@@ -1,0 +1,34 @@
+import PhysicalKSPairExchange_v1
+import PhysicalKSPairAnalyticDescentEven_v1
+import PhysicalKSPairEvenAnalyticDescentData_v1
+import TwoElectronScalarGroundInvariantAnalyticDescent_v2
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.permuteSpace_swap_pairKSPhysicalCoordinates
+#check @TheoremT.Continuum.originScaledDifference_permuteSpace
+#check @TheoremT.Continuum.originScaledDifference_pairKSPhysicalCoordinates_even
+#check @TheoremT.Continuum.pairKSPhysicalAnalyticDescent_even
+#check @TheoremT.Continuum.PhysicalKSBoxEvenInvariantAnalyticDescentDerivativeData
+#check @TheoremT.Continuum.pairKSPhysicalAnalyticDescent_even_invariant_derivative_data
+#check @TheoremT.Continuum.twoElectron_scalar_ground_invariant_analytic_descent_and_pair_even_with_H2_decay
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.permuteSpace_swap_pairKSPhysicalCoordinates
+#print axioms TheoremT.Continuum.originScaledDifference_permuteSpace
+#print axioms TheoremT.Continuum.originScaledDifference_pairKSPhysicalCoordinates_even
+#print axioms TheoremT.Continuum.pairKSPhysicalAnalyticDescent_even
+#print axioms TheoremT.Continuum.PhysicalKSBoxEvenInvariantAnalyticDescentDerivativeData
+#print axioms TheoremT.Continuum.pairKSPhysicalAnalyticDescent_even_invariant_derivative_data
+#print axioms TheoremT.Continuum.twoElectron_scalar_ground_invariant_analytic_descent_and_pair_even_with_H2_decay

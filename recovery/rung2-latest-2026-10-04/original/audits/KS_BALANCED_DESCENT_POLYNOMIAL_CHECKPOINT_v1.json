@@ -1,0 +1,88 @@
+{
+  "status": "PASS_EXACT_PAIRING_SIZE_AND_LITERAL_BALANCED_DESCENT_POLYNOMIAL",
+  "utc": "2026-09-11T01:42:23.800813+00:00",
+  "evidence_category": "Fully formalized finite algebra and explicit mathematical polynomial definitions.",
+  "exact_result": "For balanced Nat exponents, the actual two-by-two pairing has sum a1+a2 and each entry is at most that sum. The literal quadratic-generator product in MvPolynomial (Fin 4) complex is IsHomogeneous (a1+a2); evaluating it at the actual KS map and real Euclidean norm squared gives the actual balanced spinor monomial.",
+  "definitions": {
+    "output_variable_order": [
+      "X0",
+      "X1",
+      "X2",
+      "r=X3"
+    ],
+    "generator_matrix": [
+      [
+        "(r+X2)/2",
+        "(X0+i*X1)/2"
+      ],
+      [
+        "(X0-i*X1)/2",
+        "(r-X2)/2"
+      ]
+    ],
+    "product": "q00^n00*q01^n01*q10^n10*q11^n11"
+  },
+  "modules": [
+    {
+      "source": {
+        "path": "lean/KSBalancedMonomialPairingSize_v1.lean",
+        "sha256": "43cab31e58ecda8bf85f4b2df3ff4b0d39ad051b15950628941ef38fcda6f7aa"
+      },
+      "build": {
+        "path": "logs/development/KSBalancedMonomialPairingSize_v1-20260911T013023_096653Z.json",
+        "sha256": "f4fbc82fa46d2134210385f1c7c1404a1d0a200bdcf6754429b537851cb3806e"
+      }
+    },
+    {
+      "source": {
+        "path": "lean/KSBalancedDescentPolynomial_v1.lean",
+        "sha256": "655996be637e67e501b3abbf5d750e8fe83e97c4df351ff62747a7fbf1401557"
+      },
+      "build": {
+        "path": "logs/development/KSBalancedDescentPolynomial_v1-20260911T013331_632191Z.json",
+        "sha256": "c11afbc40689b85568bf7d8a12a2caa6f2b4259a6fe82210437ce6aac1cf6b46"
+      }
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T013412_666154Z/receipt.json",
+    "sha256": "dbbdb760f04f8a40f83a94d6319dc97c8f70229228d9456edcd1f82d5d36e310"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T013412_666154Z/ExpandedStatements_v8.log",
+    "sha256": "3a4a5548c1a25456b8a91194c22a676dadf610f7d2c880132b99eb06318b42d3"
+  },
+  "review": {
+    "path": "audits/KS_BALANCED_DESCENT_POLYNOMIAL_REVIEW_v1_20260911T014141Z.json",
+    "sha256": "755e0ae833a3d2b392905e76f22fc208699b75c983e63777ce978cae477f3aaf"
+  },
+  "prior_pairing_checkpoint": {
+    "path": "audits/KS_BALANCED_MONOMIAL_PAIRING_CHECKPOINT_v1.json",
+    "sha256": "8c2fa1c158e333a60cdd910fb24e5a6b012a2e7d7ca187056ced1cc6a25a5578"
+  },
+  "manual_check": "Complete exact sources, full strict receipt, all expanded declaration/axiom output, and full independent review read. Ten declarations use only the standard three axioms.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "mathematical_change": [
+    "Adds explicit degree bookkeeping to the already proved finite pairing.",
+    "Builds the actual descended monomial polynomial instead of choosing one from an existence proposition.",
+    "Links independent complex polynomial variables to the physical KS image by exact evaluation."
+  ],
+  "limitations": [
+    "IsHomogeneous is the exact statement; no separate nonzero theorem or totalDegree equality is claimed.",
+    "Degree is in X0,X1,X2,r, not in the real four-dimensional y variable.",
+    "The complex polynomial module is noncomputable; only the separate Nat exponent pairing is claimed executable.",
+    "No invariant-support extraction, coefficient-norm estimate, radial reduction or infinite-series convergence is asserted by this checkpoint.",
+    "Pinned object caches reused; no new isolated dependency-source rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "The already compiled and strict-audited finite balanced-support polynomial sum is receiving its separate focused review. Parent and other streams compose coefficient norms and radial homogeneity."
+}

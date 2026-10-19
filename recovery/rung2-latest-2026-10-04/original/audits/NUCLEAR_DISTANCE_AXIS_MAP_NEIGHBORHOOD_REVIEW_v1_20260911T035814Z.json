@@ -1,0 +1,166 @@
+{
+  "schema": "focused-independent-source-review-v1",
+  "timestamp_utc": "2026-09-11T03:58:14.345135+00:00",
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "author": "/root/ks_coefficient_transport",
+  "scope": "Independent joint review of the literal complex nuclear distance-to-axis map and its explicit polydisc neighborhood. Includes a bounded check of Section 3 coordinate constants in the cited paper, not its other sections or global gluing.",
+  "verdict": "PASS: no invalidating finding within the reviewed scope",
+  "findings": [],
+  "modules": [
+    {
+      "module": "NuclearDistanceAxisMap_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearDistanceAxisMap_v1.lean",
+      "source_sha256": "11bac8906f5651c5242771ba838238e279da6a2e907dd294d96dfd9d86cc4eb3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NuclearDistanceAxisMap_v1.olean",
+      "object_sha256": "4781bb4fd59862235463e580ad072a4655b84de9811b9d9484b8f37cd5edede7",
+      "declarations": [
+        "nuclearDistanceAxisZ",
+        "nuclearDistanceAxisW",
+        "nuclearDistanceAxisMap",
+        "nuclearDistanceAxisZ_analyticAt",
+        "nuclearDistanceAxisW_analyticAt",
+        "nuclearDistanceAxisMap_analyticOnNhd",
+        "nuclearDistanceAxisMap_center",
+        "nuclearDistanceAxis_bounds_closed",
+        "nuclearDistanceAxis_bounds"
+      ],
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/NuclearDistanceAxisMap_v1-20260911T035408_112465Z.json",
+      "compiler_receipt_sha256": "08627c85e1f34956d58d4a90c1159334b7cd88c71f3d12e4804b985d560d6fbb",
+      "compiler_exit_code": 0,
+      "compiler_elapsed_seconds": 4.135505083999999,
+      "dependency_objects": "pre-existing pinned cache, not source-rebuilt",
+      "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035442_490014Z/receipt.json",
+      "strict_receipt_sha256": "b5354b81ee13f508c85346db06e58c0cca32c4f6f8ed11d04af0a1517d1108ee",
+      "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035442_490014Z/ExpandedStatements_v8.log",
+      "expanded_log_sha256": "c437af065ec9b0de90d434ca4fcce2e4cc15b195f2cc49113ce10d575f92cf57",
+      "expanded_log_lines": 97,
+      "strict_exit_code": 0,
+      "unexpected_axioms": [],
+      "axiom_report_complete": true,
+      "printer_ellipsis_count": 0,
+      "printer_failure_diagnostics": [],
+      "forbidden_source_tokens": [],
+      "all_expanded_statements_and_axiom_reports_read": true,
+      "source_object_and_log_current_hashes_match_receipt": true,
+      "source_and_object_unchanged_during_audit": true,
+      "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+      "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722"
+    },
+    {
+      "module": "NuclearDistanceAxisNeighborhood_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearDistanceAxisNeighborhood_v1.lean",
+      "source_sha256": "4fdbde854f6abdba2dd8abc115f56fe344a5631043b9fb03105200a7acddd8fe",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NuclearDistanceAxisNeighborhood_v1.olean",
+      "object_sha256": "0ceee428a2aca25fdf82936355dd43d74d0a055ad3776c67825fc4870f8a31fc",
+      "declarations": [
+        "nuclearDistancePolydisc",
+        "nuclearDistanceAxis_denominator_ne_zero",
+        "nuclearDistanceAxisMap_analyticOnNhd_polydisc",
+        "nuclearDistanceAxis_half_polyradii"
+      ],
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/NuclearDistanceAxisNeighborhood_v1-20260911T035537_680427Z.json",
+      "compiler_receipt_sha256": "9e1e15f7693f754af322fbff0c0823fd917cb94533e1043b55b8974adbfb2527",
+      "compiler_exit_code": 0,
+      "compiler_elapsed_seconds": 17.296661083,
+      "dependency_objects": "pre-existing pinned cache, not source-rebuilt",
+      "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035604_779740Z/receipt.json",
+      "strict_receipt_sha256": "65c22c7d49926072e8eaa4877b9f9ee3d8e16f2e639f0bc3886981934e1ab2b9",
+      "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035604_779740Z/ExpandedStatements_v8.log",
+      "expanded_log_sha256": "4bbcc2530340c1c1545e81f87e0314bef13ac44522d98fe543b36478964d9512",
+      "expanded_log_lines": 48,
+      "strict_exit_code": 0,
+      "unexpected_axioms": [],
+      "axiom_report_complete": true,
+      "printer_ellipsis_count": 0,
+      "printer_failure_diagnostics": [],
+      "forbidden_source_tokens": [],
+      "all_expanded_statements_and_axiom_reports_read": true,
+      "source_object_and_log_current_hashes_match_receipt": true,
+      "source_and_object_unchanged_during_audit": true,
+      "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+      "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722"
+    }
+  ],
+  "total_declarations": 13,
+  "foundation_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "read_coverage": {
+    "targets": "Complete final sources, all definition/proof bodies, both final compiler receipts, both strict receipts, and every expanded statement and actual Lean axiom footer in both logs.",
+    "immediate_library": "AnalyticAt.div and its multiplication/inverse derivation, AnalyticAt.pi and its coordinatewise power-series derivation in Constructions.lean; ContinuousLinearMap.analyticAt and its finite power-series derivation in Linear.lean.",
+    "hashed_library_sources": [
+      {
+        "path": "formal/.lake/packages/mathlib/Mathlib/Analysis/Analytic/Constructions.lean",
+        "sha256": "b4ebe935f31d1c4110a0889146b48909c63e30a9e2de771e9065fa472d7d1be6"
+      },
+      {
+        "path": "formal/.lake/packages/mathlib/Mathlib/Analysis/Analytic/Linear.lean",
+        "sha256": "995d73465fe898120c008f5e4080d9396841d786a18cecc1df45c6daf854e8f8"
+      }
+    ],
+    "paper": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/DISTANCE_BOUNDARY_GERMS_v1.md",
+      "sha256": "b956af4f732085ae83eb9ace3a965a59ca18bd85e922178f3453f58748c86991",
+      "review_scope": "Section 3, formulas B4-B5, denominator, complex norm estimates and half-polyradii allocation only."
+    },
+    "reuse_disclosure": "Pinned imported object caches were used by the supplied compiler/strict runs; no broad source dependency rebuild or independent build was performed. The reviewer performed exact source/type reads and current-byte hash verification."
+  },
+  "semantic_checks": [
+    {
+      "claim": "Literal complex map and index order",
+      "result": "q has type Fin 3 -> Complex with coordinates (r,s,u). Z=(r^2+s^2-u^2)/(2*s), W=r^2-Z^2. The vector map returns (Z,W) in that order. The formulas contain no complex conjugation, square root, triangle-area division, physical reality restriction, or choice of planar representative."
+    },
+    {
+      "claim": "Analytic domain and zero-center edge",
+      "result": "Scalar analyticity assumes exactly q1 != 0, and vector AnalyticOnNhd is on that same set. The proofs use analytic complex coordinate projections, polynomial operations, division with the actual nonzero denominator 2*q1, and finite-coordinate analyticity. The center identity holds for every real sigma, including zero by total field division; it makes no analyticity claim at sigma=0."
+    },
+    {
+      "claim": "Closed-polydisc denominator",
+      "result": "For real sigma>0 and 0<=delta<=sigma/4, the actual norm bounds imply ||s||>=sigma-delta>=3*sigma/4>0. This remains valid at delta=0, when the closed polydisc consists of the center. The theorem returns q1 != 0 and the neighborhood companion returns the actual denominator 2*q1 != 0."
+    },
+    {
+      "claim": "Complex numerator and Z estimate",
+      "result": "The proof factors s^2-u^2 as (s-u)*(s+u), uses ||s-u||<=2*delta and ||s+u||<=2*sigma+2*delta, and bounds the numerator by delta^2+2*delta*(2*sigma+2*delta)=4*sigma*delta+5*delta^2. Together with the denominator lower bound and delta^2<=sigma*delta/4 this proves ||Z||<=4*delta. All product and squared-norm comparisons have the required nonnegativity."
+    },
+    {
+      "claim": "W estimate",
+      "result": "The actual W=r^2-Z^2 is bounded using norm_sub_le and multiplicativity of the complex norm: ||W||<=||r||^2+||Z||^2<=delta^2+(4*delta)^2=17*delta^2. No cancellation or reality of r and Z is assumed."
+    },
+    {
+      "claim": "Strict-polydisc wrapper",
+      "result": "The strict theorem derives nonnegative delta from ||r||<delta, then invokes the closed theorem with the same sigma, delta and q. It requires neither delta<=1 nor a separate positivity premise on delta. When delta<=0 the strict domain is empty."
+    },
+    {
+      "claim": "Explicit neighborhood and half polyradii",
+      "result": "nuclearDistancePolydisc is exactly the intersection ||r||<delta, ||s-sigma||<delta, ||u-sigma||<delta in complex three-space. Its analyticOnNhd proof restricts the already established q1!=0 analytic domain. Under h>0 and delta<=h/16, the companion gives ||Z||<=h/4, ||W||<h^2/2, and ||s-sigma||<h/16. The strict W bound follows from 17/256<1/2 and h^2>0, even when delta=h/16. Also h/4<h/2, so the non-strict Z result is inside the required open half radius."
+    },
+    {
+      "claim": "Paper constants independently checked",
+      "result": "Section 3 constants also follow directly from ||s+u||<=5*sigma/2 and ||s-u||<=2*delta: numerator<=delta^2+5*sigma*delta<=21*sigma*delta/4, yielding ||Z||<=7*delta/2 and ||W||<=53*delta^2/4. These stronger estimates were checked mathematically by the reviewer; the formal module intentionally states only the verified 4 and 17 bounds. The paper restriction delta<=1 is unused for these coordinate inequalities."
+    },
+    {
+      "claim": "No hidden hypotheses",
+      "result": "Both files set autoImplicit false. All 13 expanded types match their source quantifiers. Positive sigma is explicit in quantitative/neighborhood results, positive h is explicit in the half-polyradii theorem, and arbitrary complex input coordinates remain unrestricted apart from the stated scalar norm inequalities. No PDE, function invariance, solution, analytic factor, or missing physical-domain hypothesis is smuggled into this coordinate claim."
+    }
+  ],
+  "limits": [
+    "The output vector is ordered (Z,W); a later consumer expecting (W,Z,s) must explicitly reorder and append s.",
+    "These modules provide analytic rational coordinates and their bounds. They do not construct SO(2)-descended analytic A/B factors, prove equality with an actual physical solution, establish a distance-orbit theorem, or discharge the complete paper Section 3 holomorphic extension.",
+    "No square-root inverse or planar representative is constructed; physical distance realization remains a separate task.",
+    "The strict audit receipt renders one multiline axiom list with doubled commas, while the actual Lean footer, read in full, contains exactly propext, Classical.choice, Quot.sound. No source or receipt was edited to alter this harmless rendering.",
+    "Compiler and strict evidence use cached imports, not a fresh transitive source rebuild."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "paper_cited_frozen_target": "rwa_proof/RWA_THEOREM.md section 5",
+    "paper_cited_frozen_target_sha256": "d13f655a98cd278115924af4f0597991619fce0345f81e17151c1524229e8f09",
+    "protocol": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "operation": "New independent review JSON and digest only; all successful sources, objects, receipts, logs and frozen artifacts preserved."
+  }
+}

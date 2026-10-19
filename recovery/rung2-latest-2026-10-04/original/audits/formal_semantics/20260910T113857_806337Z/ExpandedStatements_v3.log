@@ -1,0 +1,65 @@
+TheoremT.Continuum.ksSpace_ball_volume : ∀ (r : Real),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} TheoremT.Continuum.KSSpace _)
+      (Set.{0} TheoremT.Continuum.KSSpace) (fun (x : Set.{0} TheoremT.Continuum.KSSpace) => ENNReal) _
+      (@MeasureTheory.MeasureSpace.volume.{0} TheoremT.Continuum.KSSpace _)
+      (@Metric.ball.{0} TheoremT.Continuum.KSSpace _ (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _) r))
+    (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+      (@HPow.hPow.{0, 0, 0} ENNReal Nat ENNReal _ (ENNReal.ofReal r) (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (ENNReal.ofReal
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ Real.pi (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _))))
+@TheoremT.Continuum.nuclear_KS_tube_volume : ∀ {N : Nat} (i : Fin N) (r : Real)
+  (T : Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i)),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{1, 1, 1}
+      (@MeasureTheory.Measure.{0}
+        (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+      (Set.{0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)))
+      (fun (x : Set.{0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i))) =>
+        ENNReal)
+      _
+      (@MeasureTheory.MeasureSpace.volume.{0}
+        (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i)) _)
+      (@SProd.sprod.{0, 0, 0} (Set.{0} TheoremT.Continuum.KSSpace)
+        (Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i))
+        (Set.{0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i))) _
+        (@Metric.ball.{0} TheoremT.Continuum.KSSpace _ (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _) r)
+        T))
+    (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+      (@HMul.hMul.{0, 0, 0} ENNReal ENNReal ENNReal _
+        (@HPow.hPow.{0, 0, 0} ENNReal Nat ENNReal _ (ENNReal.ofReal r) (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+        (ENNReal.ofReal
+          (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ Real.pi (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@OfNat.ofNat.{0} Real (nat_lit 2) _))))
+      (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.SpectatorConfiguration N i) _)
+        (Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i))
+        (fun (x : Set.{0} (@TheoremT.Continuum.SpectatorConfiguration N i)) => ENNReal) _
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.SpectatorConfiguration N i) _) T))
+@TheoremT.Continuum.nuclear_KS_transverse_zero_null : ∀ {N : Nat} (i : Fin N),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+      (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+      (fun (x : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) => ENNReal) _
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+      (@Set.ofPred.{0} (@TheoremT.Continuum.NuclearKSSpace N i) fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+        @Eq.{1} TheoremT.Continuum.KSSpace
+          (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q)
+          (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 0) _)
+@TheoremT.Continuum.nuclear_KS_selected_collision_null : ∀ {N : Nat} (i : Fin N),
+  @Eq.{1} ENNReal
+    (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+      (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+      (fun (x : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) => ENNReal) _
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+      (@Set.ofPred.{0} (@TheoremT.Continuum.NuclearKSSpace N i) fun (q : @TheoremT.Continuum.NuclearKSSpace N i) =>
+        @Eq.{1} TheoremT.Continuum.Position (@TheoremT.Continuum.position N (@TheoremT.Continuum.nuclearKSLift N i q) i)
+          (@OfNat.ofNat.{0} TheoremT.Continuum.Position (nat_lit 0) _)))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 0) _)
+'TheoremT.Continuum.ksSpace_ball_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclear_KS_tube_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclear_KS_transverse_zero_null' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclear_KS_selected_collision_null' depends on axioms: [propext, Classical.choice, Quot.sound]

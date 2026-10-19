@@ -1,0 +1,78 @@
+@TheoremT.Continuum.iteratedFDeriv_comp_right_of_contDiffAt_scalar.{u_1, u_2, u_3,
+    u_4} : ∀ {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} {G : Type u_4} [inst : NontriviallyNormedField.{u_1} 𝕜]
+  [inst_1 : NormedAddCommGroup.{u_2} E] [inst_2 : @NormedSpace.{u_1, u_2} 𝕜 E _ _] [inst_3 : NormedAddCommGroup.{u_3} F]
+  [inst_4 : @NormedSpace.{u_1, u_3} 𝕜 F _ _] [inst_5 : NormedAddCommGroup.{u_4} G]
+  [inst_6 : @NormedSpace.{u_1, u_4} 𝕜 G _ _]
+  (g : @ContinuousLinearMap.{u_1, u_1, u_4, u_2} 𝕜 𝕜 _ _ (@RingHom.id.{u_1} 𝕜 _) G _ _ E _ _ _ _) (f : E → F) (x : G)
+  (n : Nat)
+  (hf :
+    @ContDiffAt.{u_1, u_2, u_3} 𝕜 _ E _ _ F _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n) f
+      (@DFunLike.coe.{max (u_2 + 1) (u_4 + 1), u_4 + 1, u_2 + 1}
+        (@ContinuousLinearMap.{u_1, u_1, u_4, u_2} 𝕜 𝕜 _ _ (@RingHom.id.{u_1} 𝕜 _) G _ _ E _ _ _ _) G (fun (x : G) => E)
+        _ g x)),
+  @Eq.{max (u_3 + 1) (u_4 + 1)}
+    (@ContinuousMultilinearMap.{u_1, 0, u_4, u_3} 𝕜 (Fin n) (fun (_i : Fin n) => G) F _ _ _ _ _ _ _)
+    (@iteratedFDeriv.{u_1, u_4, u_3} 𝕜 _ G _ _ F _ _ n
+      (@Function.comp.{u_4 + 1, u_2 + 1, u_3 + 1} G E F f
+        (@DFunLike.coe.{max (u_2 + 1) (u_4 + 1), u_4 + 1, u_2 + 1}
+          (@ContinuousLinearMap.{u_1, u_1, u_4, u_2} 𝕜 𝕜 _ _ (@RingHom.id.{u_1} 𝕜 _) G _ _ E _ _ _ _) G
+          (fun (x : G) => E) _ g))
+      x)
+    (@ContinuousMultilinearMap.compContinuousLinearMap.{u_1, 0, u_4, u_2, u_3} 𝕜 (Fin n) (fun (x : Fin n) => G)
+      (fun (_i : Fin n) => E) F _ _ _ _ _ _ _ _ _ _
+      (@iteratedFDeriv.{u_1, u_2, u_3} 𝕜 _ E _ _ F _ _ n f
+        (@DFunLike.coe.{max (u_2 + 1) (u_4 + 1), u_4 + 1, u_2 + 1}
+          (@ContinuousLinearMap.{u_1, u_1, u_4, u_2} 𝕜 𝕜 _ _ (@RingHom.id.{u_1} 𝕜 _) G _ _ E _ _ _ _) G
+          (fun (x : G) => E) _ g x))
+      fun (x : Fin n) => g)
+@TheoremT.Continuum.realCoordinateEmbedding.{u_1} : {ι : Type u_1} →
+  @ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ (ι → Complex) _ _ _ _
+@TheoremT.Continuum.realCoordinateEmbedding_coe.{u_1} : ∀ {ι : Type u_1} [Fintype.{u_1} ι],
+  @Eq.{u_1 + 1} ((a : ι → Real) → ι → Complex)
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+      (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ (ι → Complex) _ _ _
+        _)
+      (ι → Real) (fun (x : ι → Real) => ι → Complex) _ (@TheoremT.Continuum.realCoordinateEmbedding.{u_1} ι))
+    fun (x : ι → Real) (i : ι) => Complex.ofReal (x i)
+@TheoremT.Continuum.realCoordinateEmbedding_single.{u_1} : ∀ {ι : Type u_1} [Fintype.{u_1} ι]
+  [inst : DecidableEq.{u_1 + 1} ι] (i : ι),
+  @Eq.{u_1 + 1} (ι → Complex)
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+      (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (ι → Real) _ _ (ι → Complex) _ _ _
+        _)
+      (ι → Real) (fun (x : ι → Real) => ι → Complex) _ (@TheoremT.Continuum.realCoordinateEmbedding.{u_1} ι)
+      (@Pi.single.{u_1, 0} ι (fun (a : ι) => Real) _ _ i (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (@Pi.single.{u_1, 0} ι (fun (j : ι) => Complex) _ _ i (@OfNat.ofNat.{0} Complex (nat_lit 1) _))
+@TheoremT.Continuum.real_restriction_contDiffAt.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  (f : (ι → Complex) → Complex) (z : ι → Real) (n : Nat)
+  (hf :
+    @ContDiffAt.{0, u_1, 0} Complex _ (ι → Complex) _ _ Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n) f
+      fun (i : ι) => Complex.ofReal (z i)),
+  @ContDiffAt.{0, u_1, 0} Real _ (ι → Real) _ _ Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n)
+    (fun (x : ι → Real) => f fun (i : ι) => Complex.ofReal (x i)) z
+@TheoremT.Continuum.real_restriction_iteratedFDeriv_word.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] (f : (ι → Complex) → Complex) (z : ι → Real) (n : Nat) (w : Fin n → ι)
+  (hf :
+    @ContDiffAt.{0, u_1, 0} Complex _ (ι → Complex) _ _ Complex _ _ (@Nat.cast.{0} (WithTop.{0} ENat) _ n) f
+      fun (i : ι) => Complex.ofReal (z i)),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Real (Fin n) (fun (_i : Fin n) => ι → Real) Complex _ _ _ _ _ _ _)
+      ((i : Fin n) → ι → Real) (fun (x : (i : Fin n) → ι → Real) => Complex) _
+      (@iteratedFDeriv.{0, u_1, 0} Real _ (ι → Real) _ _ Complex _ _ n
+        (fun (x : ι → Real) => f fun (i : ι) => Complex.ofReal (x i)) z)
+      fun (j : Fin n) => @Pi.single.{u_1, 0} ι (fun (a : ι) => Real) _ _ (w j) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => ι → Complex) Complex _ _ _ _ _ _ _)
+      ((i : Fin n) → ι → Complex) (fun (x : (i : Fin n) → ι → Complex) => Complex) _
+      (@iteratedFDeriv.{0, u_1, 0} Complex _ (ι → Complex) _ _ Complex _ _ n f fun (i : ι) => Complex.ofReal (z i))
+      fun (j : Fin n) =>
+      @Pi.single.{u_1, 0} ι (fun (a : ι) => Complex) _ _ (w j) (@OfNat.ofNat.{0} Complex (nat_lit 1) _))
+'TheoremT.Continuum.iteratedFDeriv_comp_right_of_contDiffAt_scalar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realCoordinateEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.realCoordinateEmbedding_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.realCoordinateEmbedding_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.real_restriction_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.real_restriction_iteratedFDeriv_word' depends on axioms: [propext, Classical.choice, Quot.sound]

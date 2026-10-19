@@ -1,0 +1,37 @@
+import RealFixedSpectatorSliceAnalytic_v1
+import RealPositionSpectatorSliceAnalytic_v1
+import HomogeneousSpectatorRealSliceAnalytic_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.real_fixed_spectator_slice_analyticAt
+#check @TheoremT.Continuum.real_fixed_spectator_slice_analyticOnNhd
+#check @TheoremT.Continuum.complex_coordinates_norm_le_euclidean
+#check @TheoremT.Continuum.real_position_fixed_spectator_slice_analyticAt
+#check @TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd
+#check @TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd_ball
+#check @TheoremT.Continuum.homogeneous_spectator_real_slice_analyticOnNhd
+#check @TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd
+#check @TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd_ball
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.real_fixed_spectator_slice_analyticAt
+#print axioms TheoremT.Continuum.real_fixed_spectator_slice_analyticOnNhd
+#print axioms TheoremT.Continuum.complex_coordinates_norm_le_euclidean
+#print axioms TheoremT.Continuum.real_position_fixed_spectator_slice_analyticAt
+#print axioms TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd
+#print axioms TheoremT.Continuum.real_position_fixed_spectator_slice_analyticOnNhd_ball
+#print axioms TheoremT.Continuum.homogeneous_spectator_real_slice_analyticOnNhd
+#print axioms TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd
+#print axioms TheoremT.Continuum.homogeneous_spectator_real_position_slice_analyticOnNhd_ball

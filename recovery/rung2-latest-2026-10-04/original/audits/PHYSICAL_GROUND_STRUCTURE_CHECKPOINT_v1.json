@@ -1,0 +1,40 @@
+{
+  "utc": "2026-09-10T05:30:51.385844+00:00",
+  "status": "FORMAL_ACTUAL_SPIN_SPATIAL_REAL_STRUCTURE_AND_UNIFORM_GAP",
+  "sources": {
+    "PhysicalSpinSinglet_v1.lean": "9c1158db29378e2c702bcad6d13b80f71f22f1439d6ee176f00a85856bbef77f",
+    "TwoElectronEigenSinglet_v1.lean": "a82aa29779b644fcb7386e5e4498795507e65b7a6069ec28201e190566253f1c",
+    "TwoElectronGroundSpatial_v1.lean": "fb5614c2d2e1f69fdca48ce1632b9e55bb1a2afd94c41e22eab3814d0f075fa8",
+    "TwoElectronUniformGap_v1.lean": "d099578553529af3ac86aceb489815a17d2917f3926b84a9dee4f7e8bc517cf3",
+    "CoulombConjugation_v1.lean": "814f6359bbd8e9ea6086d480c6b1f37bffc630fc1a8d447cb32d3c109df7b7ce",
+    "TwoElectronGroundReal_v1.lean": "613420869785224ea58b795dbb88847fdd8d2b6bee406c31d0fe9b34f07d8eff"
+  },
+  "receipts": [
+    {
+      "path": "audits/formal_semantics/20260910T051149_867617Z/receipt.json",
+      "sha256": "0aaa7a506ce4b2cf5ee4bacc0c15b0a18be57fb83c3655800a4c5b16a4f172eb"
+    },
+    {
+      "path": "audits/formal_semantics/20260910T052111_903562Z/receipt.json",
+      "sha256": "daadc1ec65d9ca9aa04186bd4fe98d5a8b95dc71eaf2e388bf4253c450b2fe02"
+    },
+    {
+      "path": "audits/formal_semantics/20260910T052735_289606Z/receipt.json",
+      "sha256": "27345208eb23786b3ba7c3127734fc7d1c5f17397f6c04e420f1c6746db7ab87"
+    }
+  ],
+  "strongest": [
+    "Every actual H2 eigenvector below -5 Z^2/8 has pure spin-singlet structure",
+    "For Z>0 and 32<9 Z^2, an actual normalized symmetric spatial H2 eigenfunction at the full fermionic spectral bottom exists and can be chosen real a.e.",
+    "For every real Z>=2, E<=-9 Z^2/14 and every other actual spectral value has real part at least E+Z^2/56; helium gap lower bound1/14",
+    "Actual L2 conjugation commutes with the weak scalar Coulomb graph for every finite N and real Z"
+  ],
+  "trust": "Strict expanded statements compile; only propext, Classical.choice, Quot.sound. Pinned development dependency object cache reused. These six sources postdate and are excluded from the running392-source Colab snapshot.",
+  "remaining": [
+    "Rotation invariance of chosen ground wavefunction",
+    "Positivity if required by subsequent proof",
+    "Physical decay and stronger local/analytic regularity",
+    "All unchanged dictionary approximation and implementation obligations of full Theorem T"
+  ],
+  "next": "FourierConfigurationIsometry_v1: prove actual L2 Fourier covariance, H2/graph covariance, then physical simultaneous rotations and fixed ground vector."
+}

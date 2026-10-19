@@ -1,0 +1,42 @@
+{
+  "timestamp_utc": "2026-09-10T23:56:55.042462+00:00",
+  "status": "FORMAL_RAW_WEAK_DERIVATIVE_FAMILY_498_BOUND_TRANSFER",
+  "module": "CompactWeakGrushinOuterRawFamily_v1",
+  "source_sha256": "628c9b851229d37ac0f9e4f7a523b8999ca6e27917367ff106bc44de3f260e69",
+  "object_sha256": "b824eb63e1d4e50c7763aaf575a977d1e90de731150d619ee24677e31b1312b5",
+  "declarations": 1,
+  "receipt": {
+    "path": "audits/formal_semantics/20260910T235515_321526Z/receipt.json",
+    "sha256": "9312f15493f79f96a04bac12031c42a30657068f2ae9f8b36b0161841436ef6d"
+  },
+  "main_checkpoint": {
+    "path": "audits/COMPACT_WEAK_GRUSHIN_OUTER_MAXIMAL_CHECKPOINT_v1.json",
+    "sha256": "8999f50f49acc23b27a9a5d09e5358435a7718c5b4cd2dbc472d95dfa60b46b0"
+  },
+  "exact_result": "For any raw natural family through order2, genuine local derivative tests of f on openOmega, localL2, and support in the same compactK subsetOmega identify it globally AE with canonical true derivatives. All raw components become globally MemLp2, and all498 weighted L2 representatives satisfy the same explicit graph norm bound.",
+  "inputs_retained": [
+    "actual global first and orderedsecond weakL2 witnesses for f",
+    "actual compact-test Pc f=h",
+    "c>0,compactK AE supportf,onecoordinate slabR>0,radialK boundS>=1",
+    "rawD localL2onopenOmega,AE supportK subsetOmega,and exact canonical weak derivative test identities through2"
+  ],
+  "independent_review": {
+    "reviewer": "/root/finite_affine_jets/physical_direction_norm",
+    "mode": "Read-only exactsource review, SHA confirmed, no compile",
+    "finding": "No defect found",
+    "checks": [
+      "D=AEcanonical is reversed correctly for MemLp.ae_eq and representative congruence.",
+      "Orderzero is included, so D00 is identified with true input f via tests rather than assumed.",
+      "Global identification uses closedK subsetOmega and bothactual AE supports.",
+      "All derivative inputs/conclusions restricted to order<=2.",
+      "Existing weighted representatives and exact498norm reused unchanged."
+    ]
+  },
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "environment": "Lean4.34.0-rc2; strictv7; pinned dependency objects reused, no isolated source rebuild.",
+  "next": "Use this interface with actual cutoff derivative families and the differentiated PDE to discharge the factorial recurrence; no recurrence or all-order quantitative bound is asserted here."
+}

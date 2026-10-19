@@ -1,0 +1,210 @@
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion : (a :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  (ry rt δ : Real) →
+    (k : Nat) → Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+TheoremT.Continuum.WeakGrushin.finiteGrushinMiddle : (a :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  (ry rt δ : Real) →
+    (k : Nat) → Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+TheoremT.Continuum.WeakGrushin.finiteGrushinInnerCutoff : (a :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  (ry rt δ : Real) →
+    (k : Nat) → @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real
+TheoremT.Continuum.WeakGrushin.finiteGrushinEnergyCutoff : (a :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  (ry rt δ : Real) →
+    (k : Nat) → @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_isOpen : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (ry rt δ : Real) (k : Nat),
+  @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ k)
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_measurableSet : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (ry rt δ : Real) (k : Nat),
+  @MeasurableSet.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ k)
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_zero : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (ry rt δ : Real),
+  @Eq.{1} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a ry rt)
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_antitone : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (ry rt : Real) {δ : Real}
+  (hδ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ),
+  @Antitone.{0, 0} Nat (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    _ (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ)
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_subset_initial : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (ry rt : Real) {δ : Real}
+  (hδ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ) (k : Nat),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ k)
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a ry rt)
+TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_contains_closed : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {ry rt δ bY bT : Real}
+  (n : Nat)
+  (hy :
+    @LT.lt.{0} Real _ bY
+      (@HSub.hSub.{0, 0, 0} Real Real Real _ ry
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n)) δ)))
+  (ht :
+    @LT.lt.{0} Real _ bT
+      (@HSub.hSub.{0, 0, 0} Real Real Real _ rt
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n)) δ))),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    (TheoremT.Continuum.WeakGrushin.rectangularClosedBox a bY bT)
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ n)
+TheoremT.Continuum.WeakGrushin.finite_grushin_step_geometry : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (n : Nat)
+  {ry rt δ C1 C2 : Real} (hδ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ)
+  (hy :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n)) δ)
+      ry)
+  (ht :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) (@Nat.cast.{0} Real _ n)) δ)
+      rt)
+  (c : Nat → Real)
+  (hc : ∀ (k : Nat), @LT.lt.{0} Nat _ k n → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (c k))
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2)
+  (k : Nat),
+  @LT.lt.{0} Nat _ k n →
+    @TheoremT.Continuum.WeakGrushin.SpectatorStepGeometry (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ (c k)
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ k)
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a ry rt δ
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinMiddle a ry rt δ k)
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinInnerCutoff a ry rt δ k)
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinEnergyCutoff a ry rt δ k) (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffScalarBound (c k)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+            (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) ry))
+        C1 C2 δ)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound (c k)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+            (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) ry))
+        C1 δ)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound (c k)
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+            (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) ry))
+        C1 δ)
+TheoremT.Continuum.WeakGrushin.finite_grushin_nested_geometry : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (n : Nat)
+  {aY aT bY bT C1 C2 : Real} (hby : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) bY)
+  (hbt : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) bT) (hy : @LT.lt.{0} Real _ bY aY)
+  (ht : @LT.lt.{0} Real _ bT aT) (c : Nat → Real)
+  (hc : ∀ (k : Nat), @LT.lt.{0} Nat _ k n → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (c k))
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2),
+  have δ : Real := TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n;
+  ∀ (k : Nat),
+    @LT.lt.{0} Nat _ k n →
+      @TheoremT.Continuum.WeakGrushin.SpectatorStepGeometry (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ (c k)
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ k)
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinMiddle a aY aT δ k)
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinInnerCutoff a aY aT δ k)
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinEnergyCutoff a aY aT δ k) (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (TheoremT.Continuum.WeakGrushin.h12CutoffScalarBound (c k)
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+              (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) aY))
+          C1 C2 δ)
+        (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound (c k)
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+              (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) aY))
+          C1 δ)
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (TheoremT.Continuum.WeakGrushin.h12CutoffWeightBound (c k)
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+              (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) aY))
+          C1 δ)
+TheoremT.Continuum.WeakGrushin.finite_grushin_nested_final_contains : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (n : Nat)
+  {aY aT bY bT : Real} (hy : @LT.lt.{0} Real _ bY aY) (ht : @LT.lt.{0} Real _ bT aT),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    (TheoremT.Continuum.WeakGrushin.rectangularClosedBox a bY bT)
+    (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT
+      (TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n) n)
+TheoremT.Continuum.WeakGrushin.finite_grushin_nested_domains : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (n : Nat)
+  {aY aT bY bT : Real} (hy : @LT.lt.{0} Real _ bY aY) (ht : @LT.lt.{0} Real _ bT aT),
+  have δ : Real := TheoremT.Continuum.WeakGrushin.finiteGrushinGap aY aT bY bT n;
+  And
+    (∀ (k : Nat),
+      And
+        (@IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+          (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ k))
+        (@MeasurableSet.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+          (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ k)))
+    (And
+      (@Antitone.{0, 0} Nat
+        (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _ _
+        (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ))
+      (And
+        (∀ (k : Nat),
+          @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+            (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ k)
+            (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT))
+        (@LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+          (TheoremT.Continuum.WeakGrushin.rectangularClosedBox a bY bT)
+          (TheoremT.Continuum.WeakGrushin.finiteGrushinRegion a aY aT δ n))))
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinMiddle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinInnerCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinEnergyCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_measurableSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_subset_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_contains_closed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_grushin_step_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_grushin_nested_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_grushin_nested_final_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_grushin_nested_domains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

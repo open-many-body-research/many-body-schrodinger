@@ -1,0 +1,67 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260911T000709_878774Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000709_878774Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T000709_878774Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 5.5823522500000005,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "960f3db50b32a3d1a03ce0d54934735fe5fea358ab6150a6b20f33298bda532b",
+  "audit_log_sha256": "ce916d4406c10804861e6feb44262082baf2c271ae4bc386d00c75e704dbd4fa",
+  "module_records": [
+    {
+      "module": "WeakGrushinMixedCutoffEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinMixedCutoffEquation_v1.lean",
+      "source_sha256": "6ff2a06b18fa61d9b982c7e6178dcba7e6b70d598535d22ed78052a8b60a3d41",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakGrushinMixedCutoffEquation_v1.olean",
+      "object_sha256": "b7ac1fea05637fa6d110c939ed2a5f293ef9a5473662c2b3b4543760426922bd",
+      "declarations": [
+        "mixed_family_local_weakH2",
+        "weak_grushin_mixed_cutoff_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RestrictedL2OutputNorm_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RestrictedL2OutputNorm_v1.lean",
+      "source_sha256": "e6351267648cd7e4d179ca9d3ad8ec340e2be47c8b87b740d98d4c6cb2975231",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RestrictedL2OutputNorm_v1.olean",
+      "object_sha256": "04c3c449e11bc550fe771a4636c36460f5ec6ca23aeb0aab6517598698057357",
+      "declarations": [
+        "restrictedL2Extension_norm",
+        "supported_output_norm_le_restricted",
+        "restricted_cutoff_output_norm"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.mixed_family_local_weakH2: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weak_grushin_mixed_cutoff_equation: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.restrictedL2Extension_norm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.supported_output_norm_le_restricted: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.restricted_cutoff_output_norm: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.mixed_family_local_weakH2",
+    "TheoremT.Continuum.WeakGrushin.weak_grushin_mixed_cutoff_equation",
+    "TheoremT.Continuum.restrictedL2Extension_norm",
+    "TheoremT.Continuum.supported_output_norm_le_restricted",
+    "TheoremT.Continuum.restricted_cutoff_output_norm"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

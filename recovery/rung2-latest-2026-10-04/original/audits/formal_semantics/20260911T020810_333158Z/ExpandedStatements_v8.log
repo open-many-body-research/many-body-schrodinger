@@ -1,0 +1,58 @@
+@TheoremT.Continuum.powerSeries_diagonal_eq_of_eventually.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] {f g : E → F}
+  {p q : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _} {x : E}
+  (hp : @HasFPowerSeriesAt.{0, u_1, u_2} Real E F _ _ _ _ _ f p x)
+  (hq : @HasFPowerSeriesAt.{0, u_1, u_2} Real E F _ _ _ _ _ g q x)
+  (heq : @Filter.EventuallyEq.{u_1, u_2} E F (@nhds.{u_1} E _ x) f g) (n : Nat) (y : E),
+  @Eq.{u_2 + 1} F
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) => y)
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (q n) fun (x : Fin n) => y)
+@TheoremT.Continuum.powerSeries_diagonal_invariant.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] {f : E → F}
+  {p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _}
+  (hf : @HasFPowerSeriesAt.{0, u_1, u_2} Real E F _ _ _ _ _ f p (@OfNat.ofNat.{u_1} E (nat_lit 0) _))
+  (L : @ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _)
+  (hInv :
+    @Filter.EventuallyEq.{u_1, u_2} E F (@nhds.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _))
+      (@Function.comp.{u_1 + 1, u_1 + 1, u_2 + 1} E E F f
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _) E
+          (fun (x : E) => E) _ L))
+      f)
+  (n : Nat) (y : E),
+  @Eq.{u_2 + 1} F
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) =>
+      @DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+        (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) E _ _ E _ _ _ _) E
+        (fun (x : E) => E) _ L y)
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) => y)
+@TheoremT.Continuum.powerSeries_odd_diagonal_eq_zero.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _] {f : E → F}
+  {p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _}
+  (hf : @HasFPowerSeriesAt.{0, u_1, u_2} Real E F _ _ _ _ _ f p (@OfNat.ofNat.{u_1} E (nat_lit 0) _))
+  (heven :
+    @Filter.EventuallyEq.{u_1, u_2} E F (@nhds.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _))
+      (fun (x : E) => f (@Neg.neg.{u_1} E _ x)) f)
+  {n : Nat} (hn : @Odd.{0} Nat _ n) (y : E),
+  @Eq.{u_2 + 1} F
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _)
+      ((i : Fin n) → E) (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) => y)
+    (@OfNat.ofNat.{u_2} F (nat_lit 0) _)
+'TheoremT.Continuum.powerSeries_diagonal_eq_of_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.powerSeries_diagonal_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.powerSeries_odd_diagonal_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

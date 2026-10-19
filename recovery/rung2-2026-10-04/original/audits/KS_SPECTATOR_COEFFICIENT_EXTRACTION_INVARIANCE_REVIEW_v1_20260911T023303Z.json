@@ -1,0 +1,173 @@
+{
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "utc": "2026-09-11T02:33:03.282154+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_EXACT_FINITE_SPECTATOR_EXTRACTION_AND_INVARIANCE",
+  "scope": "Independent source and premise review of exactly KSSpectatorCoefficientPolynomial_v1 and KSSpectatorCoefficientInvariance_v1. No source edits, compiler runs, broad audits, or transitive source rebuilds were performed for this review.",
+  "targets": [
+    {
+      "module": "KSSpectatorCoefficientPolynomial_v1",
+      "source": {
+        "path": "lean/KSSpectatorCoefficientPolynomial_v1.lean",
+        "sha256": "98d5a9912b114a40cf747db0390d44831c05ccc534d70fd8fea2592a7b23bcda"
+      },
+      "object": {
+        "path": "lean/build/KSSpectatorCoefficientPolynomial_v1.olean",
+        "sha256": "8e11a191a5ef1d4d44769e37b7497e719bebe8492ff41d09579e8e9732f00d54"
+      },
+      "declarations": [
+        "ksSpectatorPolynomial",
+        "ksSpectatorCoefficientPolynomial",
+        "ksSpectatorCoefficientPolynomial_coeff",
+        "ksSpectatorPolynomial_eval",
+        "ksSpectatorCoefficientPolynomial_eval_reconstruct",
+        "ksJointMultiindex_degree",
+        "ksSpectatorCoefficientPolynomial_homogeneous",
+        "ksSpectatorCoefficientPolynomial_eq_zero_of_degree_lt",
+        "polynomialCoeffL1_ksSpectatorCoefficientPolynomial",
+        "ksSpectatorCoefficientPolynomial_coefficient_bound"
+      ]
+    },
+    {
+      "module": "KSSpectatorCoefficientInvariance_v1",
+      "source": {
+        "path": "lean/KSSpectatorCoefficientInvariance_v1.lean",
+        "sha256": "155b6ab192d6bb426a447bbbcd487440d86f2d9475a84eba525d9837e73287c7"
+      },
+      "object": {
+        "path": "lean/build/KSSpectatorCoefficientInvariance_v1.olean",
+        "sha256": "206e7113378ce3f88b88f95ad766580c310ccebd7c58a3a3e0ba792dd9600f84"
+      },
+      "declarations": [
+        "ksSpectatorEvaluationPolynomial",
+        "ksSpectatorEvaluationPolynomial_coeff",
+        "ksSpectatorEvaluationPolynomial_eval",
+        "ksSpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq",
+        "ksJointPolynomial_product_coordinate_eval",
+        "ksSpectatorCoefficientPolynomial_circle_invariant",
+        "ksSpectatorCoefficientPolynomial_balanced_support"
+      ]
+    }
+  ],
+  "build_receipts": [
+    {
+      "path": "logs/development/KSSpectatorCoefficientPolynomial_v1-20260911T022738_896487Z.json",
+      "sha256": "d3e3e13326e74557be85a23748ea2f4691eebb12972c5a933cd0d7561b3846f9"
+    },
+    {
+      "path": "logs/development/KSSpectatorCoefficientInvariance_v1-20260911T022829_206495Z.json",
+      "sha256": "b5a0a8a5194005cbd63c52b912f19716e486188e6a25e692277511ca6ecbb7e4"
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T022910_280758Z/receipt.json",
+    "sha256": "f7dbb74597deb6bfc7b1bbb480a4fca5846b6d9cabe8e8e0b991a78e97907777"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T022910_280758Z/ExpandedStatements_v8.log",
+    "sha256": "32e38649fd2c32a3cb93563102272b3edc0e3d596d812f087e9c2e8a662fc924"
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T022910_280758Z/ExpandedStatements_v8.lean",
+    "sha256": "a210a8a73492cfd830342c57e32e6e80dfd103c2f8efb1ca3c13587aa3724f63"
+  },
+  "inspection": {
+    "complete_target_sources_and_proofs_read": true,
+    "complete_strict_receipt_read": true,
+    "complete_expanded_log_read": true,
+    "expanded_log_lines": 611,
+    "declarations": 17,
+    "current_source_and_object_hashes_match": true,
+    "autoImplicit": false,
+    "unexpected_mathematical_binders": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "printer_omissions": 0
+  },
+  "checks": [
+    {
+      "topic": "Literal regrouping and exact coefficient",
+      "result": "ksSpectatorPolynomial first renames by Sum.swap, then uses sumRingEquiv with Fin 3 as the outer spectator variables and Fin 4 as the inner Y variables. The coefficient identity returns exactly P.coeff(Finsupp.sumElim alpha gamma), with no scalar factor, conjugation, factorial normalization, or coefficient aggregation. The inverse swap and injective rename have the correct orientation."
+    },
+    {
+      "topic": "Evaluation and reconstruction",
+      "result": "The eval identity restores Sum.elim y t in original four-plus-three order. The reconstruction is the finite sum over the actual outer polynomial support of eval y of the extracted polynomial times the three spectator powers. It holds for all complex y,t, and coefficients that vanish after evaluation cause no difficulty."
+    },
+    {
+      "topic": "Degree and zero cases",
+      "result": "The joint exponent degree is alpha.degree+gamma.degree. For P homogeneous n, each nonzero extracted coefficient forces that sum to n, hence the Y polynomial is homogeneous n\u2212gamma.degree. The separate theorem makes the entire slice zero when gamma.degree>n, so truncated Nat subtraction does not introduce a nonzero spurious degree-zero slice. IsHomogeneous allows the zero polynomial and is not a claim of nonzero exact totalDegree."
+    },
+    {
+      "topic": "Full coefficient L1 bound",
+      "result": "polynomialCoeffL1 is the literal sum of norms of every complex coefficient. The map alpha\u21a6sumElim alpha gamma is injective for fixed gamma and sends extracted support into P.support. Thus the entire extracted Y-polynomial coefficient L1 is bounded by the full original coefficient L1; the individual coefficient bound also refers to that same original P. Nonnegative norms justify support enlargement. No cancellation estimate is needed for this regrouping."
+    },
+    {
+      "topic": "Finite real-spectator comparison",
+      "result": "ksSpectatorEvaluationPolynomial is map(eval y) of the same outer polynomial. Equality of evaluations at every real spectator tuple gives equality of the two finite complex spectator polynomials by the previously reviewed real-slice lemma. Taking their gamma coefficients gives equality of the same extracted Y-polynomial evaluations. The arbitrary complex y,z remain fixed throughout the spectator comparison."
+    },
+    {
+      "topic": "Actual product coordinates and circle action",
+      "result": "productCoordinateComponent is exactly q.1 on Sum.inl and q.2 on Sum.inr. Substitution q=(y,WithLp.toLp 2 t) covers every real spectator tuple and keeps t unchanged under the literal ksCircleProductCLM. The single-action coefficient theorem does not need a unit premise once hJoint is supplied. The balanced-support theorem explicitly requires all real a,b with a^2+b^2=1 and all physical product q, then consumes the existing real-spinor theorem on exactly ksSpectatorCoefficientPolynomial P gamma."
+    },
+    {
+      "topic": "Edge-case falsification",
+      "result": "Zero P, constants, gamma=0, and gamma above the total degree are consistent. For the mathematical example P=X(Sum.inr j), gamma is the j-th unit exponent and the extracted Y polynomial is 1: total degree is odd, Y degree is zero, and spinor balance holds. Consequently these modules do not state or imply that all odd-total-degree joint terms vanish."
+    }
+  ],
+  "consumed_evidence": [
+    {
+      "record": {
+        "path": "audits/MV_POLYNOMIAL_SUM_COEFFICIENT_REVIEW_v1.json",
+        "sha256": "2070cec8bb8f02279203167f8f26cf6ec7c2a3120c9790ad3efd3180913cd2f1"
+      },
+      "independence": "The generic sumRingEquiv helper was authored by this reviewer and independently reviewed by /root/ks_coefficient_transport. Its independent review is consumed here; this record makes no independent-review claim about that helper."
+    },
+    {
+      "record": {
+        "path": "audits/KS_SPINOR_REAL_SLICE_POLYNOMIAL_BRIDGE_REVIEW_v1_20260911T020355Z.json",
+        "sha256": "3e11ee1ae6c22a5ef9e5435d36b54814cce51bcf3c02f418642996882ecec9b7"
+      },
+      "role": "Prior independent review of the exact real-slice and real-spinor balanced-support bridge."
+    },
+    {
+      "record": {
+        "path": "audits/KS_CIRCLE_CLM_PHYSICAL_INVARIANCE_REVIEW_v1_20260911T021553Z.json",
+        "sha256": "05489059c73df3a6ce89bc5193eb367edf830b71cceb8e997955c82cf2d12b19"
+      },
+      "role": "Prior independent review of the exact physical product circle map."
+    }
+  ],
+  "immediate_definitions_checked": [
+    {
+      "path": "lean/MvPolynomialCoefficientL1_v1.lean",
+      "sha256": "8e89c33a79d6c5884a11e2be9c9559435772f31eeab213b303a8b3533365f081"
+    },
+    {
+      "path": "lean/MvPolynomialCoefficientL1Substitution_v1.lean",
+      "sha256": "16c54624cfbe97e5df90074c193b16a22f5ecea13c94bd571c8f36c28269017b"
+    },
+    {
+      "path": "lean/ProductCoordinateExpansion_v1.lean",
+      "sha256": "5260b6f94db8605eef602d8bd58eaf8f870d8ce3af8512eff1df33fa1575248f"
+    }
+  ],
+  "invalidating_findings": [],
+  "limitations": [
+    "These are finite polynomial identities and conditional finite-polynomial invariance results. They do not derive Taylor coefficients from a physical function, prove that function has a power series, or justify an infinite spectator series regrouping.",
+    "The invariance premise is equality at all real physical product coordinates for the finite polynomial. Local physical function invariance and its passage to Taylor polynomials are outside these two modules.",
+    "The degree is the remaining Y degree after subtracting spectator degree. There is no odd-total-degree vanishing theorem and no radial series descent claim.",
+    "The full L1 bound is for each fixed spectator coefficient polynomial; this module does not state a summed bound over all spectator slices.",
+    "Existing pinned dependency objects were reused in the consumed compiler and strict audit evidence; this review is not an isolated dependency-source rebuild."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; prior successful sources, objects, logs, receipts and reviews preserved."
+  }
+}

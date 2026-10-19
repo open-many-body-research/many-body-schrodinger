@@ -1,0 +1,37 @@
+{
+  "status": "APPROVED FOR NARROW CONTINUATION USE",
+  "utc": "2026-09-10T22:16:28.675638+00:00",
+  "scope": "Root read the entire new helper, narrow diff and regression script; independently reran the 60-case suite and checked the actual four declaration names against the passed mathematical source. The executable auditor AST remains identical after versioned helper/output substitutions.",
+  "auditor": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/audit_final_statements_v7.py",
+    "sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1"
+  },
+  "helper": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/lean_declaration_discovery_v2.py",
+    "sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb"
+  },
+  "regression": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/AUDIT_FINAL_STATEMENTS_V7_REGRESSION_v1_20260910T221031_486993Z.json",
+    "sha256": "82dde1cb4a906f77f27deffe3b5b9fa1547c1a10d76ee1a5446f79a15bae7987"
+  },
+  "diff": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/AUDIT_FINAL_STATEMENTS_V7_DIFF_v1_20260910T221031_486993Z.patch",
+    "sha256": "2228b6435d2fe859edd0a2493bbac3fb04c09cdebdf36850ea5bc1fce1eafcd1"
+  },
+  "mathematical_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesUniformTranslationBound_v1.lean",
+    "sha256": "3fea11d14c340071a487c54854aee1242f6f5f9f98dbe5e81c2c65124c5441af"
+  },
+  "exact_names": [
+    "powerSeriesTranslationMajorant",
+    "powerSeries_changeOrigin_uniform_nnnorm",
+    "powerSeries_changeOrigin_uniform_norm",
+    "powerSeries_changeOrigin_uniform_geometric_bound"
+  ],
+  "limits": [
+    "Only the exact pinned Mathlib infinite sum/product prime tokens are added. No text is masked by that branch.",
+    "All v6 axiom, printer-failure, omission and source/object-immutability checks remain.",
+    "This is conservative lexical discovery, not a general Lean parser or a mathematical adequacy proof.",
+    "No old proof, helper, auditor or audit receipt was modified. No broad audit rerun."
+  ]
+}

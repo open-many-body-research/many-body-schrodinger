@@ -1,0 +1,175 @@
+@TheoremT.Continuum.formalMultilinearSeries_radius_geometric.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D R : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hR : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) R)
+  (hDR : @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D R) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @LE.le.{0} ENNReal _ (ENNReal.ofReal R) (@FormalMultilinearSeries.radius.{0, u_1, 0} Complex E Complex _ _ _ _ _ p)
+@TheoremT.Continuum.formalMultilinearSeries_analyticAt_geometric.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (X : E)
+  (hX :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ X))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @AnalyticAt.{0, u_1, 0} Complex E Complex _ _ _ _ _
+    (@FormalMultilinearSeries.sum.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _ p) X
+@TheoremT.Continuum.formalMultilinearSeries_analyticOnNhd_geometric.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @AnalyticOnNhd.{0, u_1, 0} Complex E Complex _ _ _ _ _
+    (@FormalMultilinearSeries.sum.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _ p)
+    (@Set.ofPred.{u_1} E fun (X : E) =>
+      @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries.{u_1} : {σ : Type u_1} →
+  [Fintype.{u_1} σ] →
+    (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _) →
+      (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) →
+        @FormalMultilinearSeries.{0, u_1, 0} Complex (σ → Complex) Complex _ _ _ _ _ _ _ _ _ _ _
+@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_diagonal.{u_1} : ∀ {σ : Type u_1} [inst : Fintype.{u_1} σ]
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) (n : Nat) (X : σ → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _)
+      ((i : Fin n) → σ → Complex) (fun (x : (i : Fin n) → σ → Complex) => Complex) _
+      (@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries.{u_1} σ _ A hA n) fun (x : Fin n) => X)
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_norm.{u_1} : ∀ {σ : Type u_1} [inst : Fintype.{u_1} σ]
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) (n : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _)
+      _ (@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries.{u_1} σ _ A hA n))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_sum.{u_1} : ∀ {σ : Type u_1} [inst : Fintype.{u_1} σ]
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n),
+  @Eq.{u_1 + 1} ((x : σ → Complex) → Complex)
+    (@FormalMultilinearSeries.sum.{0, u_1, 0} Complex (σ → Complex) Complex _ _ _ _ _ _ _ _ _ _ _
+      (@TheoremT.Continuum.homogeneousPolynomialMultilinearSeries.{u_1} σ _ A hA))
+    fun (X : σ → Complex) =>
+    @tsum.{0, 0} Complex Nat _ _
+      (fun (n : Nat) =>
+        @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+          (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+      (SummationFilter.unconditional.{0} Nat)
+@TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd.{u_1} : ∀ {σ : Type u_1} [inst : Fintype.{u_1} σ]
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @AnalyticOnNhd.{0, u_1, 0} Complex (σ → Complex) Complex _ _ _ _ _
+    (fun (X : σ → Complex) =>
+      @tsum.{0, 0} Complex Nat _ _
+        (fun (n : Nat) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+        (SummationFilter.unconditional.{0} Nat))
+    (@Set.ofPred.{u_1} (σ → Complex) fun (X : σ → Complex) =>
+      @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} (σ → Complex) _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd_closed_polydisc.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D r : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @AnalyticOnNhd.{0, u_1, 0} Complex (σ → Complex) Complex _ _ _ _ _
+    (fun (X : σ → Complex) =>
+      @tsum.{0, 0} Complex Nat _ _
+        (fun (n : Nat) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+        (SummationFilter.unconditional.{0} Nat))
+    (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r)
+@TheoremT.Continuum.shifted_homogeneous_polynomial_series_analyticOnNhd.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ D
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))),
+  @AnalyticOnNhd.{0, u_1, 0} Complex (σ → Complex) Complex _ _ _ _ _
+    (fun (X : σ → Complex) =>
+      @tsum.{0, 0} Complex Nat _ _
+        (fun (n : Nat) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+        (SummationFilter.unconditional.{0} Nat))
+    (@Set.ofPred.{u_1} (σ → Complex) fun (X : σ → Complex) =>
+      @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} (σ → Complex) _ X))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+'TheoremT.Continuum.formalMultilinearSeries_radius_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_analyticAt_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_analyticOnNhd_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneousPolynomialMultilinearSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd_closed_polydisc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.shifted_homogeneous_polynomial_series_analyticOnNhd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

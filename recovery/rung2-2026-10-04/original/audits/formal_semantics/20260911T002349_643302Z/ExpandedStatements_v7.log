@@ -1,0 +1,61 @@
+TheoremT.Continuum.WeakGrushin.factorial_centered_box_base_profile_of_H12 : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (ha :
+    @Eq.{1} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a)
+      (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _))
+  {aY aT W : Real} (hY : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) aY)
+  (hT : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) aT)
+  (F : TheoremT.Continuum.WeakGrushin.FactorialRawJetFamily)
+  (hf :
+    TheoremT.Continuum.WeakGrushin.ProductMixedMultiIndexWeakHk
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT)
+      (F (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 12) _) W)
+  (hFY :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+      @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) (F α β)
+        (F
+          (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+            ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _ α
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          β)
+        (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+  (hFT :
+    ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+      (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+      @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _ _ _ _ _ _ _ _ _ _
+        (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a aY aT) (F α β)
+        (F α
+          (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+            ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _ β
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+        (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+  (r : Nat),
+  @LE.le.{0} Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 8) _) →
+    ∀ (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        And
+          (TheoremT.Continuum.WeakGrushin.FactorialLocalMemLp F
+            (TheoremT.Continuum.WeakGrushin.factorialProfileBox a aY aT s) r)
+          (@LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialBoxProfile F a aY aT r s)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 498) _)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                  (@Max.max.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) aY))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (Real.sqrt W)))
+'TheoremT.Continuum.WeakGrushin.factorial_centered_box_base_profile_of_H12' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,54 @@
+{
+  "status": "PASS_ACTUAL_HOMOGENEOUS_POLYNOMIAL_GEOMETRIC_SERIES",
+  "created_utc": "2026-09-11T01:56:17.849351+00:00",
+  "evidence_category": "Fully formalized convergence and quantitative sum bounds for actual polynomial evaluation series",
+  "statement": "Let A_n be actual complex multivariate polynomials homogeneous of degree n with L1(A_n)<=M*D^n. For D,r>=0 and D*r<1, the evaluation series is absolutely summable at each point of the literal closed complex polydisc of radius r, has a uniform sum there, its actual range partial sums converge uniformly, and its sum has norm at most M/(1-D*r). The theorem is generic in the variable index type, including Fin3. For Q_n homogeneous of degree n with L1(Q_n)<=M*D^(n+1), the same convergence conclusions hold with sum bound M*D/(1-D*r).",
+  "hypotheses": "Only actual homogeneity, literal coefficient bounds, D/r nonnegativity and the strict geometric-ratio condition. No convergence, summability, analyticity or formal power-series representation hypothesis. The requested M>=0 cases are included; a separate M nonnegativity premise is unnecessary.",
+  "mathematical_change": "The true degree n is retained in the geometric majorant. The shifted odd sequence pays the coefficient amplitude M*D and no additional radius factor. Boundary points of every admissible closed polydisc are included; D*r=1 is excluded.",
+  "sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialGeometricSeries_v1.lean",
+      "sha256": "5ef607bb9dcd497912ee1e4cf319f05b46f5b5bd38dedc8f2514ca281e3e59ea"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ShiftedHomogeneousPolynomialGeometricSeries_v1.lean",
+      "sha256": "281737a023a9e1a3d9937e3ed3024ad06fa5aa1bf1ea40fcbe4dd0fe0cca091b"
+    }
+  ],
+  "direct_evaluation_dependency": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialEvaluationBound_v1.lean",
+    "sha256": "e7a6ffd4f7d46b088725dab501c5c03331d27ac45b936193963ad5ad9a32b069"
+  },
+  "compiler_receipts": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/HomogeneousPolynomialGeometricSeries_v1-20260911T015348_863161Z.json",
+      "sha256": "fe02031fd3b974b6535305104a232a9022e13b770fb11af29672f5395b2923de"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ShiftedHomogeneousPolynomialGeometricSeries_v1-20260911T015443_315701Z.json",
+      "sha256": "dea9f22ccd0de06a565488d4abbf13a7eefe54cbfee746904d24bf3035dbe242"
+    }
+  ],
+  "strict_v8_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015509_734107Z/receipt.json",
+    "sha256": "f4930bfac7a60c2f885b2fabc32e055fc9019b6cbe300a02c9e7c83451367091"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T015509_734107Z/ExpandedStatements_v8.log",
+    "sha256": "c145d08760d7203c9b1b40a8d573a1008c6302b5c42c903bc39a7f0ff84f1c94"
+  },
+  "declarations_audited": 6,
+  "manual_review": "Both complete final source bodies, all six expanded declarations (the full 201-line log), every axiom report and the complete strict receipt were read directly. The actual evaluation bound source and pinned uniform-series/geometric majorant APIs were inspected. Independent review is owned by parent and is not asserted complete here.",
+  "trust": "Only propext, Classical.choice, Quot.sound; no unexpected axioms, missing reports, printer failures, ellipses or forbidden source tokens.",
+  "environment": "Lean 4.34.0-rc2 with pinned project object caches reused. No isolated source dependency rebuild claimed.",
+  "errors": "Both modules compiled on their first attempts and passed their first joint strict audit. Successful source bytes are immutable.",
+  "limits": "No claim of analyticity of the limit is made here, nor of a physical KS identity for a particular series, quantitative descent in physical coordinates, global approximation, spectrum, solver correctness or full Theorem T.",
+  "next_active_obligation": "Combine uniform convergence with the separately developed polynomial analyticity machinery, then instantiate the actual descended even and shifted odd coefficient sequences.",
+  "process_state": "All owned compiler/auditor sessions terminal.",
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

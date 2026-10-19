@@ -1,0 +1,144 @@
+{
+  "review_kind": "independent_focused_actual_physical_KS_complex_Taylor_extension_consumer_review",
+  "version": 1,
+  "timestamp_utc": "2026-09-11T02:27:20.782223+00:00",
+  "reviewer": "/root/fixed_box_review",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_ACTUAL_LOCAL_COMPLEX_EXTENSION_SCOPE",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "operation": "New review only. No source, existing evidence or object edits and no rebuild or audit rerun."
+  },
+  "target": {
+    "source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSComplexTaylorExtension_v1.lean",
+      "sha256": "77d801dd429b57c50f6cfee5cb4831a3372eb563e154b48c4d1d22b6cf8de295"
+    },
+    "object": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSComplexTaylorExtension_v1.olean",
+      "sha256": "94395b059c21b2cf8808731d65e30edd0df352be61145004a89e8ca8f8f24138"
+    },
+    "complete_source_read": true,
+    "declarations": [
+      "TheoremT.Continuum.physicalKSComplexTaylorExtension",
+      "TheoremT.Continuum.physicalKSComplexTaylorExtension_analytic",
+      "TheoremT.Continuum.physicalKSComplexTaylorExtension_norm_bound",
+      "TheoremT.Continuum.physicalKSComplexTaylorExtension_agrees_on_real_ball"
+    ]
+  },
+  "strict_audit": {
+    "receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022446_215067Z/receipt.json",
+      "sha256": "ebf145391bceecbf3c5ba9c53bcbea2026ac6e13331f42896f9d4bf20fda8c9c"
+    },
+    "expanded_log": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022446_215067Z/ExpandedStatements_v8.log",
+      "sha256": "d695c6dfff4f87e9cf24864acee884fa52ac856fcba5ed5c3dd1d748b69beab3"
+    },
+    "audit_source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022446_215067Z/ExpandedStatements_v8.lean",
+      "sha256": "6d903e45735917710b4472981465784eb29b4e1fc10e06b463f785a9b7e82413"
+    },
+    "all_four_expanded_declarations_and_axiom_footer_read": true,
+    "exit_code": 0,
+    "axiom_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": [],
+    "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+    "target_source_object_and_log_hashes_matched_at_sealing": true
+  },
+  "reused_reviews": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_POLYNOMIAL_SERIES_ANALYTIC_FOCUSED_REVIEW_v1.json",
+      "sha256": "9cd4f67dad124289b2b877d64abe2bdb3e99e7a6f1a5d96c4ee6ee79dced6874"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_TAYLOR_AND_LOCAL_FINITE_DESCENT_FOCUSED_REVIEW_v1.json",
+      "sha256": "dd66201dbe8ad75f3e48abf5dc1032a5f4a484969816c578f62c911413dc9104"
+    }
+  ],
+  "immediate_dependency_scope": [
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialSeriesAnalytic_v1.lean",
+        "sha256": "e751c24891ff365eb5df6217e5cf986d5d0e17f7051a1d2937813af575a2e255"
+      },
+      "reading": "Complete source and existing independent review read; exact literal-sum analyticity interface checked."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialGeometricSeries_v1.lean",
+        "sha256": "5ef607bb9dcd497912ee1e4cf319f05b46f5b5bd38dedc8f2514ca281e3e59ea"
+      },
+      "reading": "Complete source and existing independent review read; actual summability and norm-of-tsum bound interface checked."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialEvaluationBound_v1.lean",
+        "sha256": "e7a6ffd4f7d46b088725dab501c5c03331d27ac45b936193963ad5ad9a32b069"
+      },
+      "reading": "Exact complex closed and open polydisc definitions and homogeneous evaluation bound statement read; prior focused review reused for generic proof."
+    },
+    {
+      "artifact": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorCoordinatePolynomials_v1.lean",
+        "sha256": "d40efd52eb0d6a19919cf8908d0f6158a5c312c46dc2e7d92a1729b6a31bb258"
+      },
+      "reading": "Previously reviewed in full; actual polynomial definition, homogeneity, coefficient L1 bound and common-radius HasSum statement reread."
+    }
+  ],
+  "checks": [
+    {
+      "id": "SAME-ACTUAL-POLYNOMIALS",
+      "result": "PASS",
+      "analysis": "physicalKSComplexTaylorExtension is literally the natural-index tsum of eval z (physicalKSTaylorPolynomial f x k). These are the actual coordinate polynomials of the real factorial Frechet derivative series of the same f at the same x. No unrelated complex extension, alternate coefficients or externally assumed agreement is selected."
+    },
+    {
+      "id": "SUP-NORM-COMPLEX-DOMAIN",
+      "result": "PASS",
+      "analysis": "The complex variable has type (Fin 4 sum Fin 3) to complex, whose ordinary finite Pi norm is the coordinate sup norm. The analytic domain is exactly (7*physicalKSPointwiseRate M A)*norm(z)<1. The closed polydisc condition is pointwise norm(z_i)<=r, not a seven-dimensional Euclidean ball."
+    },
+    {
+      "id": "BUDGET-AND-ANALYTICITY",
+      "result": "PASS",
+      "analysis": "For x in the open rectangular box of half-width 1/512, the actual degree-k polynomials satisfy coefficient L1 <= physicalKSPointwiseAmplitude*(7*physicalKSPointwiseRate)^k. The amplitude is proved nonnegative from A>=1 and F0>=0, and the rate is proved positive. The generic several-complex-variable polynomial-series theorem therefore proves AnalyticOnNhd of the literal sum. No complex analyticity or series convergence is assumed by this consumer."
+    },
+    {
+      "id": "NORM-BOUND",
+      "result": "PASS",
+      "analysis": "For r>=0 and (7*rate)*r<1, the exact same homogeneous family and coefficient budget enter the proved absolute-summability and geometric-series estimate. The bound is amplitude/(1-(7*rate)*r) on every coordinate-bounded point. The denominator is strictly positive; no boundary equality or missing dimension factor occurs."
+    },
+    {
+      "id": "REAL-AGREEMENT",
+      "result": "PASS",
+      "analysis": "The agreement theorem retains the previously proved real domain: centers in the closed rectangular box of half-width 1/1024 and increments in the actual WeakGrushin product-norm open ball of radius min(1/1024,(7*rate)^(-1)). That norm is max of the Euclidean KS and Euclidean spectator norms. The same coordinates are embedded in complex numbers, and HasSum.tsum_eq identifies the literal sum with f(x+y). It does not silently replace this real product ball by the larger coordinate sup-norm ball."
+    },
+    {
+      "id": "INCREMENT-CONVENTION",
+      "result": "PASS",
+      "analysis": "The complex variable z represents increments at x. On real embedded coordinates the resulting value is f(x+y), exactly as stated. The fixed real center x is not being added a second time, and x itself is not incorrectly complexified in the function definition."
+    },
+    {
+      "id": "ZERO-AND-QUANTIFIERS",
+      "result": "PASS",
+      "analysis": "The natural sum includes degree zero. The closed-polydisc estimate remains valid at r=0 and z=0. The common radius is positive by the prior actual-radius theorem. Analyticity and norm-bound center assumptions are explicit and broader than, but consistent with, the smaller common real-agreement center set."
+    }
+  ],
+  "invalidating_findings": [],
+  "limits": [
+    "This is a formal implication from actual PhysicalKSBoxPointwiseData. The current source does not duplicate the physical Hamiltonian/eigenfunction existence theorem supplying that data.",
+    "The sum is mathematically defined using noncomputable tsum and real derivative polynomials. It is not an executable algorithm for evaluating complex values or obtaining rational coefficients.",
+    "No convergence or extension property is claimed outside the proved complex domain. The globally defined tsum has no advertised analytic meaning there.",
+    "The variable remains the joint four-KS plus three-spectator variable. No descended A(X,t)+norm(X)B(X,t) physical series, global dictionary approximation, solver, or full Theorem T follows from this consumer alone.",
+    "This focused review reuses independently reviewed generic series mathematics and cached pinned dependencies; it is not a new isolated dependency-source rebuild."
+  ]
+}

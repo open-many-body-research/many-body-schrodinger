@@ -1,0 +1,77 @@
+{
+  "timestamp_utc": "2026-09-11T00:27:49.452842+00:00",
+  "status": "FORMAL_ACTUAL_PROFILE_R23_BOUND",
+  "modules": 1,
+  "declarations": 2,
+  "source": {
+    "path": "lean/GrushinActualProfileBound_v1.lean",
+    "sha256": "fc2e4fb27c92c70af0f9a8e3b8c9c90758be52a0681f8f9b05caa5bc5f88bf6b"
+  },
+  "object": {
+    "path": "lean/build/GrushinActualProfileBound_v1.olean",
+    "sha256": "c30ac10336cf23f33e0aa7ea308269f3bcc551dbe526ab6ca9752403a924650d"
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T002541_942984Z/receipt.json",
+    "sha256": "d9416aee1dd58d3e6be3ab7db9a236eea4650a8131778816726bea6e190edaef"
+  },
+  "review": {
+    "path": "audits/GRUSHIN_ACTUAL_PROFILE_R23_REVIEW_v1.json",
+    "sha256": "384335b396b8f93671c9da289f2afb3f27414d92d8a7fbd6c6f6ec440b7c078d"
+  },
+  "manuscript": {
+    "path": "paper/GRUSHIN_ACTUAL_PROFILE_R23_FORMAL_v1.md",
+    "sha256": "14b84daaa8734379422e94344403a1cd5a1e79a2d86620f7e014ea14b9be776b"
+  },
+  "exact_result": "For the actual weak weighted profile, N_r(rho) <= 2*B*(F0+H0)*(2*B*(r+1)/rho)^r for every natural r, where B=2CA and H0=498*(max1(2aY))^2*sqrtW. Actual shifted weighted L2 representatives satisfy the same bound.",
+  "derived_obligations": [
+    "Actual PDE recurrence from original equation",
+    "Actual profile nonnegativity and domain monotonicity with proven weighted finiteness",
+    "R9 base estimate from genuine H12 and actual cross-family weak uniqueness",
+    "R23 scalar fixed-gap conclusion",
+    "Actual L2 representative construction and norm bound"
+  ],
+  "remaining_explicit_inputs": [
+    "One genuine all-order weak family with finite local L2 budgets, without a prescribed order dependence",
+    "Actual finite H12 budget on the outer box",
+    "Original local weak Grushin-plus-potential equation",
+    "Actual potential and source factorial derivative bounds",
+    "Centered rectangular geometry and actual smoothTransition derivative constants"
+  ],
+  "dependency_records": [
+    {
+      "path": "audits/formal_semantics/20260911T002348_329299Z/receipt.json",
+      "sha256": "5f0100f582af9e83f5bfa11388e7431e96f6942c14155cb2c28c8d8197d9dc94"
+    },
+    {
+      "path": "audits/FACTORIAL_CENTERED_BOX_BASE_PROFILE_CHECKPOINT_v1.json",
+      "sha256": "74f898a74e7b69b131c3f3b6bac9778ee467099153f2e6cf305fa3f2b8ddedd9"
+    },
+    {
+      "path": "audits/FACTORIAL_CENTERED_BOX_BASE_PROFILE_INDEPENDENT_REVIEW_v1.json",
+      "sha256": "1ae75846bcde8d52c58883826fc88083e5e367fc9c96f63bfcfea68c8ee3e0b4"
+    },
+    {
+      "path": "audits/FACTORIAL_R9_BASE_PROFILE_CHECKPOINT_v1.json",
+      "sha256": "8f77ccb5197fe386fc1f8478825db8e6aaa9efeda620824322fd79ab8119b120"
+    },
+    {
+      "path": "audits/GRUSHIN_SCALAR_FIXED_GAP_NORMALIZATION_CHECKPOINT_v1.json",
+      "sha256": "152d44198dd1ae88d3644c62c26e7f2b621fcfb3d8fa90fc546b44f3d1886f9a"
+    }
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "environment": "Pinned Lean 4.34.0-rc2; approved strict v7; dependency objects reused, not isolated source-rebuilt.",
+  "next": "Root composes a raw locally L2 PDE wrapper deriving the all-order qualitative weak family; R24 separately supplies pointwise representative estimates.",
+  "frozen": {
+    "path": "RWA_REPORT.md",
+    "sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "snapshot": "THEOREM_T_FREEZE_2026-09-09_212604/"
+  }
+}

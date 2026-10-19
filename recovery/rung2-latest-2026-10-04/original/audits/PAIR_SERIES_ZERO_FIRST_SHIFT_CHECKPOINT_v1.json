@@ -1,0 +1,51 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENT_READ",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "created_utc": "2026-09-11T02:34:11.270037+00:00",
+  "module_record": {
+    "module": "PairSeriesZeroFirstShift_v1",
+    "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PairSeriesZeroFirstShift_v1.lean",
+    "source_sha256": "d38746f8da08ef47831c2c26ba6f7430d95c8a189dffb3be8aea7ee6a61847e4",
+    "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PairSeriesZeroFirstShift_v1.olean",
+    "object_sha256": "704cb1e0fbd2f9ed755f0be202de5d33da152a3ab9f4fc99747742795ba5a208",
+    "declarations": [
+      "pair_series_zero_first_shift"
+    ],
+    "forbidden_source_tokens": [],
+    "source_unchanged_during_audit": true,
+    "object_unchanged_during_audit": true
+  },
+  "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/PairSeriesZeroFirstShift_v1-20260911T023256_842941Z.json",
+  "compiler_receipt_sha256": "d033e56d09990789f7c6e874a7be330cb6aef759455d41ba3d59e6364f4197c3",
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023317_526498Z/receipt.json",
+  "strict_receipt_sha256": "64d5dbcda46382ff3f8849f34796e0df304bed984ff306ff4b64abd3ffd2c214",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023317_526498Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "59b69321c06cbca56ca79197e9611e2e6765bae7a9a970cfab75cbba2230ff05",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_statement": "For any index type iota and f : Nat x iota -> Complex, if f(0,gamma)=0 for every gamma and the actual shifted pair-index norm series norm(f(n+1,gamma)) is summable, then the original norm series is summable, f is summable, and its actual unconditional tsum equals the shifted pair-index tsum.",
+  "construction": "The literal successor map (n,gamma) -> (n+1,gamma) is proved injective. Outside its range, the natural coordinate must be zero, so both the original values and norms vanish. The pinned injective summability and HasSum transfer theorems then apply.",
+  "semantic_checks": [
+    "The whole zero slice is explicitly zero; it may be infinite, and is not treated as a single removable term.",
+    "The only convergence hypothesis is actual shifted absolute summability; no equality or full-series summability is assumed.",
+    "Both sums use unconditional summation over the same actual product index type. No unproved interchange of iterated sums occurs.",
+    "The type iota can be Fin d -> Nat with d=0 included, or any other type, without a countability assumption."
+  ],
+  "review_disclosure": "Complete final source, exact full expanded statement, all axioms and full audit receipt read by the author. Independent review is not asserted.",
+  "development": "Initial compilation failed only at elaboration of a projection of the local successor map; explicit pair injection fixed it before final PASS. Failed and successful logs retained. All owned compiler and auditor jobs are terminal.",
+  "limits": [
+    "This is the general index-shift lemma. Its application to original physical KS B polynomials and equality of the physical input series is a separate consumer obligation.",
+    "No executable solver, approximation rate, spectral result or bit-cost claim is made.",
+    "Pinned dependency caches were reused; no isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New continuation source and checkpoint only; PASS source and prior artifacts preserved."
+  }
+}

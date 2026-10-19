@@ -1,0 +1,456 @@
+TheoremT.Continuum.WeakGrushin.factorialRectCutoff : (a :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  (aY aT s e : Real) → @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real
+TheoremT.Continuum.WeakGrushin.factorialRectCutoff_geometry : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {aY aT ρ s e : Real}
+  (he : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e)
+  (hse : @LE.le.{0} Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e) ρ) (hρy : @LT.lt.{0} Real _ ρ aY)
+  (hρt : @LT.lt.{0} Real _ ρ aT),
+  And
+    (@ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+      (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+    (And
+      (@HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        Real _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+      (And
+        (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+          And
+            (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+              (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e p))
+            (@LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e p)
+              (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+        (And
+          (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+            @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+                (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a
+                  (@HSub.hSub.{0, 0, 0} Real Real Real _ aY (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e))
+                  (@HSub.hSub.{0, 0, 0} Real Real Real _ aT (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e)))
+                p →
+              @Eq.{1} Real (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e p)
+                (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+          (And
+            (@LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                Real _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+              (TheoremT.Continuum.WeakGrushin.rectangularClosedBox a
+                (@HSub.hSub.{0, 0, 0} Real Real Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY s)
+                  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ e (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+                (@HSub.hSub.{0, 0, 0} Real Real Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aT s)
+                  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ e (@OfNat.ofNat.{0} Real (nat_lit 4) _)))))
+            (@LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                Real _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+              (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY s)
+                (@HSub.hSub.{0, 0, 0} Real Real Real _ aT s)))))))
+TheoremT.Continuum.WeakGrushin.factorialRectCutoff_derivative_bounds : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (aY aT s : Real)
+  {C1 C2 e : Real} (he : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e)
+  (hC1 :
+    ∀ (x : Real), @LE.le.{0} Real _ (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition x)) C1)
+  (hC2 :
+    ∀ (x : Real),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _ (@deriv.{0, 0} Real _ Real _ _ _ (@deriv.{0, 0} Real _ Real _ _ _ Real.smoothTransition) x))
+        C2),
+  And
+    (∀ (j : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _
+          (@DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _ _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real) _
+            (@fderiv.{0, 0, 0} Real _
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ Real _ _ _
+              (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) p)
+            (TheoremT.Continuum.WeakGrushin.boxDirection j)))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)
+              (@OfNat.ofNat.{0} Real (nat_lit 3) _))
+            C1)
+          e))
+    (∀ (j : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+      @LE.le.{0} Real _
+        (@abs.{0} Real _ _
+          (@DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _ _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real) _
+            (@fderiv.{0, 0, 0} Real _
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ Real _ _ _
+              (fun (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                @DFunLike.coe.{1, 1, 1}
+                  (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _
+                    _)
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real)
+                  _
+                  (@fderiv.{0, 0, 0} Real _
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ Real _ _
+                    _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) q)
+                  (TheoremT.Continuum.WeakGrushin.boxDirection j))
+              p)
+            (TheoremT.Continuum.WeakGrushin.boxDirection j)))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@OfNat.ofNat.{0} Real (nat_lit 9) _))
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _ C2
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ C1 (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ e (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+TheoremT.Continuum.WeakGrushin.factorialRectCutoff_y_lower_radius : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (ha :
+    @Eq.{1} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a)
+      (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _))
+  {aY aT ρ s e : Real} (he : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e)
+  (hse : @LE.le.{0} Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e) ρ) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+  {p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _}
+  (hp :
+    Or
+      (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+        (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _ _
+          fun (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _ _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real) _
+            (@fderiv.{0, 0, 0} Real _
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ Real _ _ _
+              (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) q)
+            (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+        p)
+      (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+        (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _ _
+          fun (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _ _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real) _
+            (@fderiv.{0, 0, 0} Real _
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ Real _ _ _
+              (fun (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                @DFunLike.coe.{1, 1, 1}
+                  (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _
+                    _)
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real)
+                  _
+                  (@fderiv.{0, 0, 0} Real _
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ Real _ _
+                    _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) z)
+                  (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+              q)
+            (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+        p)),
+  @LE.le.{0} Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY ρ)
+    (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) p))
+TheoremT.Continuum.WeakGrushin.factorialRectCutoff_uniform_data : @Exists.{1} Real fun (C1 : Real) =>
+  @Exists.{1} Real fun (C2 : Real) =>
+    And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C1)
+      (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C2)
+        (∀ (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (aY aT ρ s e : Real),
+          @Eq.{1} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+              (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a)
+              (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) →
+            @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e →
+              @LE.le.{0} Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e) ρ →
+                @LT.lt.{0} Real _ ρ aY →
+                  @LT.lt.{0} Real _ ρ aT →
+                    And
+                      (@ContDiff.{0, 0, 0} Real _
+                        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _
+                        _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+                        (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+                      (And
+                        (@HasCompactSupport.{0, 0}
+                          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _ _
+                          (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+                        (And
+                          (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+                            And
+                              (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+                                (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e p))
+                              (@LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e p)
+                                (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+                          (And
+                            (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+                              @Membership.mem.{0, 0}
+                                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                  (Set.{0}
+                                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                                      _))
+                                  _
+                                  (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a
+                                    (@HSub.hSub.{0, 0, 0} Real Real Real _ aY
+                                      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e))
+                                    (@HSub.hSub.{0, 0, 0} Real Real Real _ aT
+                                      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e)))
+                                  p →
+                                @Eq.{1} Real (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e p)
+                                  (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+                            (And
+                              (@LE.le.{0}
+                                (Set.{0}
+                                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+                                _
+                                (@tsupport.{0, 0}
+                                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                  Real _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+                                (TheoremT.Continuum.WeakGrushin.rectangularClosedBox a
+                                  (@HSub.hSub.{0, 0, 0} Real Real Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY s)
+                                    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ e (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+                                  (@HSub.hSub.{0, 0, 0} Real Real Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aT s)
+                                    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ e (@OfNat.ofNat.{0} Real (nat_lit 4) _)))))
+                              (And
+                                (@LE.le.{0}
+                                  (Set.{0}
+                                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                                      _))
+                                  _
+                                  (@tsupport.{0, 0}
+                                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                    Real _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e))
+                                  (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a
+                                    (@HSub.hSub.{0, 0, 0} Real Real Real _ aY s)
+                                    (@HSub.hSub.{0, 0, 0} Real Real Real _ aT s)))
+                                (And
+                                  (∀
+                                    (j :
+                                      Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                                    (p :
+                                      @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                                        _),
+                                    @LE.le.{0} Real _
+                                      (@abs.{0} Real _ _
+                                        (@DFunLike.coe.{1, 1, 1}
+                                          (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                                            (@TheoremT.Continuum.WeakGrushin.Space
+                                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                            _ _ Real _ _ _ _)
+                                          (@TheoremT.Continuum.WeakGrushin.Space
+                                            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                          (fun
+                                              (x :
+                                                @TheoremT.Continuum.WeakGrushin.Space
+                                                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                            Real)
+                                          _
+                                          (@fderiv.{0, 0, 0} Real _
+                                            (@TheoremT.Continuum.WeakGrushin.Space
+                                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                            _ _ _ Real _ _ _
+                                            (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) p)
+                                          (TheoremT.Continuum.WeakGrushin.boxDirection j)))
+                                      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+                                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                          (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)
+                                            (@OfNat.ofNat.{0} Real (nat_lit 3) _))
+                                          C1)
+                                        e))
+                                  (And
+                                    (∀
+                                      (j :
+                                        Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                                      (p :
+                                        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                                          _),
+                                      @LE.le.{0} Real _
+                                        (@abs.{0} Real _ _
+                                          (@DFunLike.coe.{1, 1, 1}
+                                            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                                              (@TheoremT.Continuum.WeakGrushin.Space
+                                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                              _ _ Real _ _ _ _)
+                                            (@TheoremT.Continuum.WeakGrushin.Space
+                                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                            (fun
+                                                (x :
+                                                  @TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                              Real)
+                                            _
+                                            (@fderiv.{0, 0, 0} Real _
+                                              (@TheoremT.Continuum.WeakGrushin.Space
+                                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                              _ _ _ Real _ _ _
+                                              (fun
+                                                  (q :
+                                                    @TheoremT.Continuum.WeakGrushin.Space
+                                                      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                                @DFunLike.coe.{1, 1, 1}
+                                                  (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _
+                                                    (@RingHom.id.{0} Real _)
+                                                    (@TheoremT.Continuum.WeakGrushin.Space
+                                                      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                    _ _ Real _ _ _ _)
+                                                  (@TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                  (fun
+                                                      (x :
+                                                        @TheoremT.Continuum.WeakGrushin.Space
+                                                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                                    Real)
+                                                  _
+                                                  (@fderiv.{0, 0, 0} Real _
+                                                    (@TheoremT.Continuum.WeakGrushin.Space
+                                                      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                    _ _ _ Real _ _ _
+                                                    (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) q)
+                                                  (TheoremT.Continuum.WeakGrushin.boxDirection j))
+                                              p)
+                                            (TheoremT.Continuum.WeakGrushin.boxDirection j)))
+                                        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+                                          (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                            (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+                                              (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                                              (@OfNat.ofNat.{0} Real (nat_lit 9) _))
+                                            (@HAdd.hAdd.{0, 0, 0} Real Real Real _ C2
+                                              (@HPow.hPow.{0, 0, 0} Real Nat Real _ C1
+                                                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                          (@HPow.hPow.{0, 0, 0} Real Nat Real _ e
+                                            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                    (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                      (p :
+                                        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                                          _),
+                                      Or
+                                          (@Membership.mem.{0, 0}
+                                            (@TheoremT.Continuum.WeakGrushin.Space
+                                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                            (Set.{0}
+                                              (@TheoremT.Continuum.WeakGrushin.Space
+                                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+                                            _
+                                            (@tsupport.{0, 0}
+                                              (@TheoremT.Continuum.WeakGrushin.Space
+                                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                              Real _ _
+                                              fun
+                                                (q :
+                                                  @TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                              @DFunLike.coe.{1, 1, 1}
+                                                (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _
+                                                  (@RingHom.id.{0} Real _)
+                                                  (@TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                  _ _ Real _ _ _ _)
+                                                (@TheoremT.Continuum.WeakGrushin.Space
+                                                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                (fun
+                                                    (x :
+                                                      @TheoremT.Continuum.WeakGrushin.Space
+                                                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                                  Real)
+                                                _
+                                                (@fderiv.{0, 0, 0} Real _
+                                                  (@TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                  _ _ _ Real _ _ _
+                                                  (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e) q)
+                                                (@TheoremT.Continuum.WeakGrushin.yDir
+                                                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+                                            p)
+                                          (@Membership.mem.{0, 0}
+                                            (@TheoremT.Continuum.WeakGrushin.Space
+                                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                            (Set.{0}
+                                              (@TheoremT.Continuum.WeakGrushin.Space
+                                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+                                            _
+                                            (@tsupport.{0, 0}
+                                              (@TheoremT.Continuum.WeakGrushin.Space
+                                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                              Real _ _
+                                              fun
+                                                (q :
+                                                  @TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                              @DFunLike.coe.{1, 1, 1}
+                                                (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _
+                                                  (@RingHom.id.{0} Real _)
+                                                  (@TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                  _ _ Real _ _ _ _)
+                                                (@TheoremT.Continuum.WeakGrushin.Space
+                                                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                (fun
+                                                    (x :
+                                                      @TheoremT.Continuum.WeakGrushin.Space
+                                                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                                  Real)
+                                                _
+                                                (@fderiv.{0, 0, 0} Real _
+                                                  (@TheoremT.Continuum.WeakGrushin.Space
+                                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                  _ _ _ Real _ _ _
+                                                  (fun
+                                                      (z :
+                                                        @TheoremT.Continuum.WeakGrushin.Space
+                                                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                                    @DFunLike.coe.{1, 1, 1}
+                                                      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _
+                                                        (@RingHom.id.{0} Real _)
+                                                        (@TheoremT.Continuum.WeakGrushin.Space
+                                                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                        _ _ Real _ _ _ _)
+                                                      (@TheoremT.Continuum.WeakGrushin.Space
+                                                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                      (fun
+                                                          (x :
+                                                            @TheoremT.Continuum.WeakGrushin.Space
+                                                              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+                                                        Real)
+                                                      _
+                                                      (@fderiv.{0, 0, 0} Real _
+                                                        (@TheoremT.Continuum.WeakGrushin.Space
+                                                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                        _ _ _ Real _ _ _
+                                                        (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT s e)
+                                                        z)
+                                                      (@TheoremT.Continuum.WeakGrushin.yDir
+                                                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+                                                  q)
+                                                (@TheoremT.Continuum.WeakGrushin.yDir
+                                                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+                                            p) →
+                                        @LE.le.{0} Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ aY ρ)
+                                          (@Norm.norm.{0}
+                                            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+                                            (@Prod.fst.{0, 0}
+                                              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                              (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                                              p))))))))))))
+'TheoremT.Continuum.WeakGrushin.factorialRectCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialRectCutoff_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialRectCutoff_derivative_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialRectCutoff_y_lower_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorialRectCutoff_uniform_data' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

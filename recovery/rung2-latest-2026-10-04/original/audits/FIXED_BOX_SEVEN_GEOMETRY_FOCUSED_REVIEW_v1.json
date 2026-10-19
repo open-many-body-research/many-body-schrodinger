@@ -1,0 +1,169 @@
+{
+  "schema": "focused-source-semantic-review-v1",
+  "timestamp_utc": "2026-09-11T01:18:13.357723+00:00",
+  "category": "Focused adversarial source review of physical/Fin7 geometry, concrete cutoff, and exact scalar evaluation constant; existing strict audit receipt inspected; no compilation performed by this reviewer.",
+  "status": "PASS_NO_DEFECT_FOUND",
+  "reviewer": "/root/weak_pointwise_limit/fixed_box_geometry/geometry_review",
+  "scope": "Complete FixedBoxSevenGeometry_v1 source plus narrowly relevant dependency definitions and proofs. No broad dependency audit or source rebuild.",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FixedBoxSevenGeometry_v1.lean",
+    "sha256": "52190186c2c03b41db6b4922fab14fec4b47796e8beafde7050115dd0067e09e"
+  },
+  "definitions_and_dependencies_read": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinContinuousBaseRepresentative_v1.lean",
+      "sha256": "0895c68acf812abef6223694024127d018b1f4dd5ad79c211ff12b17d239750d"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinRectangularCutoff_v1.lean",
+      "sha256": "a2fa264f93763a63d6cdde029065176779363bba9ad503694410c8229b02c972"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductSevenCoordinateTransport_v1.lean",
+      "sha256": "c0abb61b81432163f4290b0fae67244aaf8e5bbd409a3b5e7c852a321610c86e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinRectangularBoxGeometry_v1.lean",
+      "sha256": "51d0296868dab7672caf3f74f33a654b7c6b3f56fae65af22ef251363524b915"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinCoordinateBoxGeometry_v1.lean",
+      "sha256": "62ac9562fc123085310dbccfb616ee587fc4a54c498b20f95a02058de4f047f8"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SmoothTransitionWindow_v1.lean",
+      "sha256": "acc4f4308de6cdcc8d9076c14652e46d10e98d9b8584bab1b62f68505f100b6c"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/BoxEvaluationConstant_v1.lean",
+      "sha256": "47b590a7b620a4bf504f9d1b3e4a6aa37180f1105fa258b4ae5d89a052d3599e"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoordinateMultiIndexWord_v1.lean",
+      "sha256": "0b7e4f740b40fdd778235bc151eb9ddf6793736e50a2c384f4b5cd50dacd57da"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TensorBoxPointwiseFTC_v1.lean",
+      "sha256": "2f28e890e9f3d7d26571f08fa18ed29da59a39d6d63f3559c61fcc38f6a844a5"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductBoxAverageMeasure_v1.lean",
+      "sha256": "70e9e06771a3b40342eaffd4abf7d0e08883ceeee9c4698afcc550a1fda93cbb"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinJetFields_v1.lean",
+      "sha256": "23cff8b0fc061db7d882951747dfdcab5089cdaf8e4fc406ce1ffa415eb3f6cc"
+    }
+  ],
+  "strict_audit": {
+    "receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011521_802496Z/receipt.json",
+      "sha256": "d44e067f702560cdb410156a622195601d22c928b5a453009c869c73b276c353"
+    },
+    "reported_declaration_count": 16,
+    "receipt_inspected": true,
+    "expanded_log_read_by_this_reviewer": false,
+    "expanded_log_review_owner": "/root/weak_pointwise_limit/fixed_box_geometry",
+    "no_new_compile_run": true
+  },
+  "checks": [
+    {
+      "id": "physical_coordinate_identity",
+      "status": "PASS",
+      "declarations": [
+        "seven_symm_coordinate",
+        "fixedSeven_closed_iff"
+      ],
+      "finding": "Space (Fin 3) is EuclideanSpace R (Fin 4) times EuclideanSpace R (Fin 3). sevenCoordinateEquiv is inverse finSumFinEquiv, and sevenToProduct uses only coordinate reindexing, product splitting and PiLp representation changes. The new identity states that its inverse coordinate equals boxCoordinate for precisely that physical Y or T coordinate. The closed-box biconditional uses this literal coordinate identity and linearity on p-z; no equality of the distinct ambient norms is asserted or used."
+    },
+    {
+      "id": "nonvacuous_box_and_open_image",
+      "status": "PASS",
+      "declarations": [
+        "fixedSevenLower",
+        "fixedSevenUpper",
+        "fixedSevenOpen",
+        "fixedSeven_lower_lt_upper",
+        "fixedSeven_open_isOpen",
+        "fixedSeven_open_subset_closed",
+        "fixedSeven_open_image"
+      ],
+      "finding": "Every endpoint is the same center coordinate minus/plus 1/512, so every interval has strictly positive length 1/256. tensorClosedBox7 is the Cartesian product of these seven closed intervals. fixedSevenOpen is exactly the pullback of the open physical rectangular box with Y and T half-width 1/512; continuity proves openness and surjectivity proves its exact image. Its center is included, so these sets are not empty by construction."
+    },
+    {
+      "id": "strict_nested_geometry",
+      "status": "PASS",
+      "declarations": [
+        "fixedSeven_maps_plateau",
+        "fixedSeven_maps_norm_region"
+      ],
+      "finding": "The same closed physical half-width 1/512 box maps into both open boxes because 1/512 < 3/1024 < 1/256. Both the four Y and three T inequalities are checked, with no center restriction or generic chart-containment hypothesis."
+    },
+    {
+      "id": "actual_cutoff",
+      "status": "PASS",
+      "declarations": [
+        "fixedSevenCutoff",
+        "fixedSevenCutoff_data"
+      ],
+      "finding": "fixedSevenCutoff is the actual grushinRectCutoff centered at z, with Y and T plateau half-width 3/1024 and gap 1/1024. This dependency is the product over Fin 4 sum Fin 3 of transitionWindow(r,r+g,boxCoordinate i (p-z)); transitionWindow is an explicit product of two Real.smoothTransition expressions. Smoothness and compact support are proved for that function, not taken as hypotheses or attached to an arbitrary witness."
+    },
+    {
+      "id": "cutoff_plateau_and_support",
+      "status": "PASS",
+      "declarations": [
+        "fixedSevenCutoff_data"
+      ],
+      "finding": "The dependency proves value one on the closed half-width 3/1024 box, hence on the open plateau required here. Its topological support is contained in the closed half-width (3/1024 + 1/1024) = 1/256 box, which is strictly contained in the open half-width 1/128 box in the stated conclusion. A support inclusion into the OPEN half-width 1/256 norm region is neither proved nor needed by this geometry module."
+    },
+    {
+      "id": "exact_scalar_constant",
+      "status": "PASS",
+      "declarations": [
+        "fixedSevenEvaluationConstant",
+        "fixedSevenEvaluationConstant_pos",
+        "fixedSeven_evaluation_constant"
+      ],
+      "finding": "boxEvaluationConstant is inverse sqrt(product of side lengths) times product(1 + side length). Its proved product identity requires only positive side lengths. Each present side length is exactly 1/256, sqrt(1/256)=1/16, and each one-coordinate factor is 16 + 1/16 = 257/16. Exactly seven factors give the positive scalar (257/16)^7."
+    },
+    {
+      "id": "uniformity_and_assumptions",
+      "status": "PASS",
+      "declarations": [
+        "fixedSeven_evaluation_constant",
+        "fixedSevenCutoff_data"
+      ],
+      "finding": "The numerical evaluation constant has no center, function, word, derivative order, or PDE parameter in its definition. The center z is arbitrary and cancels from all side lengths. The cutoff data and map lemmas accept only z; all rational sign/gap conditions are discharged. There is no supplied cutoff support/plateau premise, assumed geometry conclusion, or pointwise estimate in these statements."
+    },
+    {
+      "id": "circularity_and_trust_scope",
+      "status": "PASS",
+      "declarations": [
+        "all 16 declarations in FixedBoxSevenGeometry_v1"
+      ],
+      "finding": "Every target proof uses prior coordinate, rectangular-box, concrete-window, or scalar-product facts, or earlier declarations in this same file. No target conclusion is an input to its proof. The existing strict receipt matches the exact reviewed source hash, reports all 16 declarations and only the standard propext, Classical.choice, Quot.sound foundations, with no forbidden source tokens or missing axiom reports. The reviewer inspected the receipt, not the expanded-statement log; the parent separately reads that log."
+    }
+  ],
+  "defects_found": [],
+  "limitations": [
+    "This module supplies fixed box and cutoff geometry only. It does not prove existence of a physical PDE solution, produce a weak jet family, establish profile growth, or discharge all of Theorem T.",
+    "The center independence proved here concerns the tensor evaluation scalar and these translated inclusions; it does not assert that Grushin operator coefficient bounds are independent of the Y center.",
+    "The closed support box and open norm region share half-width 1/256; only the smaller evaluation box is proved to map into that open norm region.",
+    "The existing strict check reuses pinned library and continuation object caches; this review is not an isolated source dependency rebuild."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_reference": "THEOREM_T_FREEZE_2026-09-09_212604/rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "frozen_manifest": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/FREEZE_MANIFEST.json",
+      "sha256": "c01b4f3568b623795c5785282d94c734339445125a990cef054cb1706b3801b0"
+    },
+    "correction_protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "source_changes": "None; new versioned audit only; no issue requiring correction discovered."
+  }
+}

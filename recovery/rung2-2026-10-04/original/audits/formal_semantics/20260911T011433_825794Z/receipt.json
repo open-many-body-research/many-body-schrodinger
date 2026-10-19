@@ -1,0 +1,76 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T011433_825794Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011433_825794Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011433_825794Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 6.4351915,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "634582588a3b9ddf240f70a9fafb9a10e842ac837f1dfe817f7fbca705ce6743",
+  "audit_log_sha256": "0c61ea6a5477ac2b0357a8ca2e412ae7774f099f91e0eb670dcded9ee6b749ba",
+  "module_records": [
+    {
+      "module": "PhysicalKSBoxFactorialBudgetMono_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxFactorialBudgetMono_v1.lean",
+      "source_sha256": "2a847ccc8d14aad758cdb4eb3916e616c27dfc82d56c54419a5b64734ac0e7b2",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSBoxFactorialBudgetMono_v1.olean",
+      "object_sha256": "1e16d12dd094b1b707431eb94d8eb65f7147c15d488bb7435a90784be2032b02",
+      "declarations": [
+        "commonKSBoxFactorialConstant_one_le",
+        "PhysicalKSBoxFactorialData.mono_source_budget"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SpinOriginFactorialBudgets_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpinOriginFactorialBudgets_v1.lean",
+      "source_sha256": "c66ee697f8133b2bce37152687db56bd0ee7f8e3e863888ea97f4bae5c314f72",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SpinOriginFactorialBudgets_v1.olean",
+      "object_sha256": "7ea8bae959cb7bcb3d10a1913f6aaed6866f230d8308df917296e876822be2ce",
+      "declarations": [
+        "complex_component_norm_le_sqrt_sum_sq",
+        "spinOriginFactorialSourceBudget",
+        "spinOriginFactorialSourceBudget_nonneg",
+        "spinOriginFactorialSourceBudget_component_le",
+        "spinOriginH12Budget_component_le",
+        "PhysicalKSBoxFactorialData.mono_spin_budget"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.commonKSBoxFactorialConstant_one_le: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_source_budget: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.complex_component_norm_le_sqrt_sum_sq: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.spinOriginFactorialSourceBudget: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.spinOriginFactorialSourceBudget_nonneg: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.spinOriginFactorialSourceBudget_component_le: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.spinOriginH12Budget_component_le: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_spin_budget: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.commonKSBoxFactorialConstant_one_le",
+    "TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_source_budget",
+    "TheoremT.Continuum.complex_component_norm_le_sqrt_sum_sq",
+    "TheoremT.Continuum.spinOriginFactorialSourceBudget",
+    "TheoremT.Continuum.spinOriginFactorialSourceBudget_nonneg",
+    "TheoremT.Continuum.spinOriginFactorialSourceBudget_component_le",
+    "TheoremT.Continuum.spinOriginH12Budget_component_le",
+    "TheoremT.Continuum.PhysicalKSBoxFactorialData.mono_spin_budget"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

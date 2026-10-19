@@ -1,0 +1,44 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/polynomial_norm_review",
+  "created_utc": "2026-09-11T02:10:27.902400+00:00",
+  "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ComplexPowerSeriesCenterDerivativeBound_v1.lean",
+  "source_sha256": "c3835954e9de4ea70570279e62f9b23c38f145815a369692eb517ba3dee17d57",
+  "object_sha256": "8243cada102082e141abaca4a66483edabe655072ba1d2832b1d125932b1d2a6",
+  "declarations": [
+    "complex_powerSeries_iteratedFDeriv_eq_permutation_sum",
+    "complex_powerSeries_norm_iteratedFDeriv_le_factorial_coeff"
+  ],
+  "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/ComplexPowerSeriesCenterDerivativeBound_v1-20260911T020919_868867Z.json",
+  "compiler_receipt_sha256": "5d92e3884aea73ab8c911079f0d94547c5eefc1d15a099af3bc40977e41865e2",
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020938_790085Z/receipt.json",
+  "strict_receipt_sha256": "849a62ff862475fb2e424df21181a38383c47c0133b5c53886932b71a9235add",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020938_790085Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "603b98c1ba894b13c7f07615e7611da3aba02a946f2b0a2e9ca7488d1e50847c",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "statement": "For any complex normed domain E and complete complex normed codomain F, an actual HasFPowerSeriesOnBall f p x R implies iteratedFDeriv Complex k f x is the sum over all permutations of the inputs of p k. Consequently its operator norm is at most k! times ||p k||, for every natural k, including zero.",
+  "semantic_checks": [
+    "The same supplied actual power series p appears in the representation premise and coefficient bound. No conclusion or equivalent derivative estimate is assumed.",
+    "The permutation formula is the pinned generic-field Mathlib theorem instantiated over Complex. No one-variable restriction is present.",
+    "The norm estimate uses the finite triangle inequality, invariance of operator norm under input permutations and card(Perm(Fin k))=k!.",
+    "The k=0 case uses the single permutation of the empty index set and 0!=1; no excluded order or unjustified symmetry requirement is introduced."
+  ],
+  "review_disclosure": "Final source and both complete expanded statements plus axiom reports were read by the author. This is not represented as an independent review. An attempted child review dispatch failed because the agent thread limit was reached.",
+  "limits": [
+    "Only the exact center derivative identity and factorial coefficient estimate are proved here. Geometric coefficient bounds and explicit changed-center estimates must be supplied separately.",
+    "Existing pinned dependency caches were reused; no isolated source rebuild, executable algorithm or complexity result is claimed."
+  ],
+  "preservation": {
+    "prior_real_module": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesCenterDerivativeBound_v1.lean",
+    "prior_real_module_sha256": "5c69b992403032276bb52b65dd1a4f9c5aca7f3ef6cd17d3a61818ea2ef39425",
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New complex module and checkpoint; old real module and frozen artifacts unchanged."
+  }
+}

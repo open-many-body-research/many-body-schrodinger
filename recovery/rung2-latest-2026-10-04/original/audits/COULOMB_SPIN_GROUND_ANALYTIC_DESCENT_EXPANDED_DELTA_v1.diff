@@ -1,0 +1,106 @@
+--- coulomb_spin_physical_pointwise_representative
++++ coulomb_spin_physical_analytic_descent_representative
+@@ -1,4 +1,4 @@
+-TheoremT.Continuum.coulomb_spin_physical_pointwise_representative : ∀ (Z E : Real),
++TheoremT.Continuum.coulomb_spin_physical_analytic_descent_representative : ∀ (Z E : Real),
+   @Exists.{1} Real fun (C_H : Real) =>
+     @Exists.{1} Real fun (M : Real) =>
+       @Exists.{1} Real fun (A : Real) =>
+@@ -234,7 +234,7 @@
+                                                   (t0 : TheoremT.Continuum.Position),
+                                                   @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ t0)
+                                                       (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                    TheoremT.Continuum.PhysicalKSBoxPointwiseData
++                                                    TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
+                                                       (@Function.comp.{1, 1, 1}
+                                                         (@TheoremT.Continuum.WeakGrushin.Space
+                                                           (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+@@ -283,6 +283,12 @@
+                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                                                             _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _
+                                                             _ _ _ (TheoremT.Continuum.physicalSpectatorReindexAt i))))
++                                                      (fun (X T : TheoremT.Continuum.Position) =>
++                                                        @TheoremT.Continuum.originScaledDifference.{0}
++                                                          (TheoremT.Continuum.Configuration
++                                                            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
++                                                          _ _ (u σ) ε
++                                                          (TheoremT.Continuum.nuclearKSPhysicalCoordinates i X T))
+                                                       t0 M A (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+                                                       (TheoremT.Continuum.spinOriginH12Budget C_H L u))
+                                           (∀ (ε : Real),
+@@ -298,7 +304,7 @@
+                                                   (t0 : TheoremT.Continuum.Position),
+                                                   @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ t0)
+                                                       (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                    TheoremT.Continuum.PhysicalKSBoxPointwiseData
++                                                    TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
+                                                       (@Function.comp.{1, 1, 1}
+                                                         (@TheoremT.Continuum.WeakGrushin.Space
+                                                           (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+@@ -355,5 +361,11 @@
+                                                               (@OfNat.ofNat.{0}
+                                                                 (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0)
+                                                                 _)))))
++                                                      (fun (X T : TheoremT.Continuum.Position) =>
++                                                        @TheoremT.Continuum.originScaledDifference.{0}
++                                                          (TheoremT.Continuum.Configuration
++                                                            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
++                                                          _ _ (u σ) ε
++                                                          (TheoremT.Continuum.pairKSPhysicalCoordinates X T))
+                                                       t0 M A (TheoremT.Continuum.spinOriginFactorialSourceBudget M u)
+                                                       (TheoremT.Continuum.spinOriginH12Budget C_H L u)))))))))))))
+
+--- twoElectron_physical_ground_pointwise
++++ twoElectron_physical_ground_analytic_descent
+@@ -1,4 +1,4 @@
+-TheoremT.Continuum.twoElectron_physical_ground_pointwise : ∀ (Z : Real)
++TheoremT.Continuum.twoElectron_physical_ground_analytic_descent : ∀ (Z : Real)
+   (hZ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Z)
+   (hsep :
+     @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+@@ -1398,7 +1398,7 @@
+                                                                           (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                             t0)
+                                                                           (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                        TheoremT.Continuum.PhysicalKSBoxPointwiseData
++                                                                        TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
+                                                                           (@Function.comp.{1, 1, 1}
+                                                                             (@TheoremT.Continuum.WeakGrushin.Space
+                                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+@@ -1466,6 +1466,13 @@
+                                                                                 (@RingHom.id.{0} Real _) _ _ _ _ _ _
+                                                                                 (TheoremT.Continuum.physicalSpectatorReindexAt
+                                                                                   i))))
++                                                                          (fun (X T : TheoremT.Continuum.Position) =>
++                                                                            @TheoremT.Continuum.originScaledDifference.{0}
++                                                                              (TheoremT.Continuum.Configuration
++                                                                                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
++                                                                              _ _ (u σ) ε
++                                                                              (TheoremT.Continuum.nuclearKSPhysicalCoordinates
++                                                                                i X T))
+                                                                           t0 M A
+                                                                           (TheoremT.Continuum.spinOriginFactorialSourceBudget
+                                                                             M u)
+@@ -1488,7 +1495,7 @@
+                                                                           (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                             t0)
+                                                                           (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                        TheoremT.Continuum.PhysicalKSBoxPointwiseData
++                                                                        TheoremT.Continuum.PhysicalKSBoxAnalyticDescentData
+                                                                           (@Function.comp.{1, 1, 1}
+                                                                             (@TheoremT.Continuum.WeakGrushin.Space
+                                                                               (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+@@ -1568,6 +1575,13 @@
+                                                                                       (@OfNat.ofNat.{0} Nat (nat_lit 2)
+                                                                                         _))
+                                                                                     (nat_lit 0) _)))))
++                                                                          (fun (X T : TheoremT.Continuum.Position) =>
++                                                                            @TheoremT.Continuum.originScaledDifference.{0}
++                                                                              (TheoremT.Continuum.Configuration
++                                                                                (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
++                                                                              _ _ (u σ) ε
++                                                                              (TheoremT.Continuum.pairKSPhysicalCoordinates
++                                                                                X T))
+                                                                           t0 M A
+                                                                           (TheoremT.Continuum.spinOriginFactorialSourceBudget
+                                                                             M u)

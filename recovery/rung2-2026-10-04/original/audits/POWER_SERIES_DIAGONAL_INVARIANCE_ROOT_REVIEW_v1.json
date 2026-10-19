@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-09-11T02:09:40.118516+00:00",
+  "reviewer": "/root",
+  "status": "NO_DEFECT_FOUND_IN_BOUNDED_INDEPENDENT_REVIEW",
+  "scope": "Complete source and all three expanded final types/axiom reports; pinned diagonal uniqueness proof and its preceding BigO scaling lemma read.",
+  "module_records": [
+    {
+      "module": "PowerSeriesDiagonalInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PowerSeriesDiagonalInvariance_v1.lean",
+      "source_sha256": "80f9c0b17c692211868599c2b7dc85f0ab953ab88e8e29adc6dc7247de728175",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PowerSeriesDiagonalInvariance_v1.olean",
+      "object_sha256": "668430c7a089b799bd026f0d6dee7b3459f35d19b32065ff5956324d88623c31",
+      "declarations": [
+        "powerSeries_diagonal_eq_of_eventually",
+        "powerSeries_diagonal_invariant",
+        "powerSeries_odd_diagonal_eq_zero"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T020810_333158Z/receipt.json",
+    "sha256": "057323350c6d7829973e9ce8f0fb71daa0c75797ce614bd4839b7bf51727cc3a"
+  },
+  "checks": [
+    "Subtracting locally equal actual convergent series gives a series for zero; pinned uniqueness only gives diagonal equality, which is exactly the conclusion.",
+    "Composition uses the declared actual continuous linear map with L(0)=0. Neither invertibility nor isometry nor global invariance is assumed.",
+    "Odd vanishing follows from actual local evenness, multilinearity and real scalar 2 being nonzero.",
+    "All n and all y are quantified; no finite-dimensional, symmetric-multilinear, completeness or physical-KS hypothesis is hidden.",
+    "No off-diagonal equality, physical chart invariance or Taylor-piece identification is asserted."
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.powerSeries_diagonal_eq_of_eventually: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.powerSeries_diagonal_invariant: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.powerSeries_odd_diagonal_eq_zero: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild."
+}

@@ -1,0 +1,67 @@
+@TheoremT.Continuum.analytic_norm_pair_unique.{u_1} : ∀ {E : Type u_1} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [Nontrivial.{u_1} E] {a b c d : E → Complex} {r : Real}
+  (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (ha :
+    @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ a
+      (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hb :
+    @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ b
+      (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hc :
+    @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ c
+      (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hd :
+    @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ d
+      (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hrep :
+    ∀ (x : E),
+      @Membership.mem.{u_1, u_1} E (Set.{u_1} E) _ (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r) x →
+        @Eq.{1} Complex
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (a x)
+            (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@Norm.norm.{u_1} E _ x) (b x)))
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (c x)
+            (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@Norm.norm.{u_1} E _ x) (d x)))),
+  And (@Set.EqOn.{u_1, 0} E Complex a c (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+    (@Set.EqOn.{u_1, 0} E Complex b d (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+@TheoremT.Continuum.analytic_norm_pair_unique_with_parameter.{u_1,
+    u_2} : ∀ {E : Type u_1} [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Real E _ _]
+  [Nontrivial.{u_1} E] {T : Type u_2} (U : Set.{u_2} T) (a b c d : E → T → Complex) {r : Real}
+  (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (ha :
+    ∀ (t : T),
+      @Membership.mem.{u_2, u_2} T (Set.{u_2} T) _ U t →
+        @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ (fun (x : E) => a x t)
+          (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hb :
+    ∀ (t : T),
+      @Membership.mem.{u_2, u_2} T (Set.{u_2} T) _ U t →
+        @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ (fun (x : E) => b x t)
+          (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hc :
+    ∀ (t : T),
+      @Membership.mem.{u_2, u_2} T (Set.{u_2} T) _ U t →
+        @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ (fun (x : E) => c x t)
+          (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hd :
+    ∀ (t : T),
+      @Membership.mem.{u_2, u_2} T (Set.{u_2} T) _ U t →
+        @AnalyticOnNhd.{0, u_1, 0} Real E Complex _ _ _ _ _ (fun (x : E) => d x t)
+          (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r))
+  (hrep :
+    ∀ (t : T),
+      @Membership.mem.{u_2, u_2} T (Set.{u_2} T) _ U t →
+        ∀ (x : E),
+          @Membership.mem.{u_1, u_1} E (Set.{u_1} E) _ (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r)
+              x →
+            @Eq.{1} Complex
+              (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (a x t)
+                (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@Norm.norm.{u_1} E _ x) (b x t)))
+              (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (c x t)
+                (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (@Norm.norm.{u_1} E _ x) (d x t))))
+  (t : T),
+  @Membership.mem.{u_2, u_2} T (Set.{u_2} T) _ U t →
+    ∀ (x : E),
+      @Membership.mem.{u_1, u_1} E (Set.{u_1} E) _ (@Metric.ball.{u_1} E _ (@OfNat.ofNat.{u_1} E (nat_lit 0) _) r) x →
+        And (@Eq.{1} Complex (a x t) (c x t)) (@Eq.{1} Complex (b x t) (d x t))
+'TheoremT.Continuum.analytic_norm_pair_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.analytic_norm_pair_unique_with_parameter' depends on axioms: [propext, Classical.choice, Quot.sound]
