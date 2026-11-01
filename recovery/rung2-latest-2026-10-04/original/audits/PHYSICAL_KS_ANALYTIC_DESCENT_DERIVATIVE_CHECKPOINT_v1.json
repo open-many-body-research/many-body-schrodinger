@@ -1,0 +1,121 @@
+{
+  "status": "PASS_ACTUAL_PHYSICAL_KS_COMPLEX_AND_REAL_MIXED_DERIVATIVE_COMPONENTS",
+  "created_utc": "2026-09-11T03:12:58.840320+00:00",
+  "evidence_category": "Fully formalized conditional physical-chart component theorem",
+  "strongest_exact_result": "For the actual nuclear and electron-pair KS lifts of a scalar g:Configuration 2 -> Complex, actual PhysicalKSBoxPointwiseData and A>=1,F0>=0 imply mixed derivative bounds for the A/B functions defined from their actual physical Taylor coefficients. Write P=physicalKSPointwiseAmplitude(M,A,F0,W), S=7 physicalKSPointwiseRate(M,A), D=32 S^2. On D norm(X)_infinity<=1/4 and S norm(s)_infinity<=1/4, every actual complex mixed multiindex derivative of A is bounded by 16 P (24D)^sum(alpha) (24S)^sum(beta) alpha! beta!, and B by D times that bound. The same estimates hold for the actual real iterated Frechet coordinate derivatives of their literal real restrictions, with no additional factor. Nuclear/pair balance is proved from actual lift symmetry, not a wrapper hypothesis.",
+  "modules": [
+    {
+      "module": "PhysicalKSAnalyticDescentDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSAnalyticDescentDerivative_v1.lean",
+      "source_sha256": "7b11fc65d94eadf122f68479dfd9ed8d9d160ec77a264038500deb21fd25a97f",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSAnalyticDescentDerivative_v1.olean",
+      "object_sha256": "ce829354422fd1168349787078c6256dcf47045bf9dcead1a4b8163c5d8c9adc",
+      "declarations": [
+        "physicalKSDescentDerivativeBudget",
+        "physicalKSAnalyticDescent_mixed_derivative_of_balanced",
+        "nuclearKSPhysicalAnalyticDescent_mixed_derivative",
+        "pairKSPhysicalAnalyticDescent_mixed_derivative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSAnalyticDescentRealDerivative_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSAnalyticDescentRealDerivative_v1.lean",
+      "source_sha256": "6abb68bcb4684c937d3f2f3599f830ec19379ee1cd1696486cedfd70e9d91121",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSAnalyticDescentRealDerivative_v1.olean",
+      "object_sha256": "02cd0b0b4f8dd34fde505ad1d378ee73c661c85485c6eed9f68d42128510bd00",
+      "declarations": [
+        "physicalKSAnalyticDescent_real_mixed_derivative_of_balanced",
+        "nuclearKSPhysicalAnalyticDescent_real_mixed_derivative",
+        "pairKSPhysicalAnalyticDescent_real_mixed_derivative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030635_686458Z/receipt.json",
+        "sha256": "b0a128a651f803499d8cda46860d6880ab7b0f05daeaed44895a12508e112bd0"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030635_686458Z/ExpandedStatements_v8.log",
+        "sha256": "cefe4b7cb13dfd9fa8cd2a3e65c640e377b1c306e0904a4766e73310af7fcae8"
+      },
+      "declarations": 4,
+      "axioms": [
+        "TheoremT.Continuum.physicalKSDescentDerivativeBudget: [propext, Classical.choice, Quot.sound]",
+        "TheoremT.Continuum.physicalKSAnalyticDescent_mixed_derivative_of_balanced: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_mixed_derivative: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.pairKSPhysicalAnalyticDescent_mixed_derivative: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    },
+    {
+      "receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030934_794599Z/receipt.json",
+        "sha256": "b067a30960bb400848abd75e42143ddc3cb41cb2e84e0648b74023aa2c22b3aa"
+      },
+      "expanded_log": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030934_794599Z/ExpandedStatements_v8.log",
+        "sha256": "591f38964cbcc23b9384df79ddff59de450c852284e58be1dd4521e38e6687a8"
+      },
+      "declarations": 3,
+      "axioms": [
+        "TheoremT.Continuum.physicalKSAnalyticDescent_real_mixed_derivative_of_balanced: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_real_mixed_derivative: [propext,, Classical.choice,, Quot.sound]",
+        "TheoremT.Continuum.pairKSPhysicalAnalyticDescent_real_mixed_derivative: [propext,, Classical.choice,, Quot.sound]"
+      ]
+    }
+  ],
+  "declaration_count": 7,
+  "dependencies_and_independent_review": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_ANALYTIC_DESCENT_MIXED_DERIVATIVE_FOCUSED_REVIEW_v1.json",
+      "sha256": "0975c466f2c4a79ad7cafd2b034cf845cc2b4c9dbacf263d335f630f59314973"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_MIXED_DERIVATIVE_CHECKPOINT_v1.json",
+      "sha256": "584ae07faf6d3b8838fb908e4a4731065d3b4d37bfb2172a1a774613c2f91aec"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/HOMOGENEOUS_SPECTATOR_REAL_DERIVATIVE_CHECKPOINT_v1.json",
+      "sha256": "0b6be63deb9064d87e9c7fd69c18fcd1c5e3a1b09b04f322102882571ca2c867"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/REAL_RESTRICTION_DERIVATIVE_WORD_CHECKPOINT_v1.json",
+      "sha256": "0f1b99e3b332c37e7fb384a00ded255c543f4adbb7f724a46f3c493fa54f1887"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_REAL_SPECTATOR_SERIES_DESCENT_CHECKPOINT_v1.json",
+      "sha256": "6473920122c87249291ffaba58b9e653907856a2747edeefc027f9cea9e7a1a5"
+    }
+  ],
+  "literal_physical_input_definition": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorAnalyticDescentData_v1.lean",
+    "sha256": "2bb9ce5591ec6f3537f18a92aed28526ec2a462704724d481ec7055f5170308f"
+  },
+  "review": "Author read both final physical source bodies and all seven complete expanded declarations and axiom reports. Independent focused review additionally read all generic real differentiation, embedding and scalar-chain dependencies; source/object/receipt hashes verified at sealing.",
+  "mathematical_change": "The previously conditional polynomial-family estimates are instantiated with actual physical Taylor pieces and actual nuclear/pair circle balance. Exact real scalar restriction then gives actual real-coordinate derivative estimates. The norm equality for coordinatewise complexification preserves the domain.",
+  "limits": [
+    "These are component theorems with actual PhysicalKSBoxPointwiseData as an explicit premise. They do not by themselves construct that data for every eigenfunction or compose full Theorem T.",
+    "The original sharper D6 constants are not established here; the corrected prefactor/rates and smaller quarter polydisc are explicit.",
+    "Position is physically Euclidean. These mixed derivative statements use literal coordinate arrays with sup-norm domain conditions; the Euclidean fixed-spectator analytic slice transport is a separate active theorem.",
+    "No ground energy interval, executable solver, termination or bit-complexity result is claimed."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "next_active": "Real analytic fixed-spectator slices on the actual Euclidean Position domain for collision-centered compatibility; root owns norm-decomposition uniqueness and full physical spin/ground consumers.",
+  "resume": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/POLYNOMIAL_SERIES_DESCENT_RESUME_v1.md",
+    "sha256": "62da673f49f60fda5215c39f56ff8cf88a3fa837dd5c0ade3ea860bbcddc1180"
+  },
+  "preservation": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

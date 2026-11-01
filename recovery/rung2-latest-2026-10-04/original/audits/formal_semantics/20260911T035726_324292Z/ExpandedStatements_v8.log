@@ -1,0 +1,44 @@
+TheoremT.Continuum.nuclearDistanceAxisZ_mul : ∀ (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hs :
+    @Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _)),
+  @Eq.{1} Complex
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _)
+        (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)))
+      (TheoremT.Continuum.nuclearDistanceAxisZ q))
+    (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+      (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+        (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+TheoremT.Continuum.nuclearDistanceAxisW_add_Z_sq : ∀ (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex),
+  @Eq.{1} Complex
+    (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (TheoremT.Continuum.nuclearDistanceAxisW q)
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (TheoremT.Continuum.nuclearDistanceAxisZ q)
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+      (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+TheoremT.Continuum.nuclearDistanceAxisW_add_shifted_Z_sq : ∀ (q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hs :
+    @Ne.{1} Complex (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) _)),
+  @Eq.{1} Complex
+    (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _ (TheoremT.Continuum.nuclearDistanceAxisW q)
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ (TheoremT.Continuum.nuclearDistanceAxisZ q)
+          (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+      (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+'TheoremT.Continuum.nuclearDistanceAxisZ_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisW_add_Z_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisW_add_shifted_Z_sq' depends on axioms: [propext, Classical.choice, Quot.sound]

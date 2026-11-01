@@ -1,0 +1,137 @@
+@TheoremT.Continuum.WeakGrushin.finite_multiindex_eq_zero_of_sum_eq_zero.{u_1} : ∀ {ι : Type u_1}
+  [inst : Fintype.{u_1} ι] (α : ι → Nat)
+  (h :
+    @Eq.{1} Nat (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)
+      (@OfNat.ofNat.{0} Nat (nat_lit 0) _)),
+  @Eq.{u_1 + 1} (ι → Nat) α (@OfNat.ofNat.{u_1} (ι → Nat) (nat_lit 0) _)
+@TheoremT.Continuum.WeakGrushin.finite_multiindex_single_of_sum_eq_one.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] (α : ι → Nat)
+  (h :
+    @Eq.{1} Nat (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)
+      (@OfNat.ofNat.{0} Nat (nat_lit 1) _)),
+  @Exists.{u_1 + 1} ι fun (i : ι) =>
+    @Eq.{u_1 + 1} (ι → Nat) α (@Pi.single.{u_1, 0} ι (fun (j : ι) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+@TheoremT.Continuum.WeakGrushin.finite_multiindex_two_singles_of_sum_eq_two.{u_1} : ∀ {ι : Type u_1}
+  [inst : Fintype.{u_1} ι] [inst_1 : DecidableEq.{u_1 + 1} ι] (α : ι → Nat)
+  (h :
+    @Eq.{1} Nat (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Exists.{u_1 + 1} ι fun (i : ι) =>
+    @Exists.{u_1 + 1} ι fun (j : ι) =>
+      @Eq.{u_1 + 1} (ι → Nat) α
+        (@HAdd.hAdd.{u_1, u_1, u_1} ((j : ι) → Nat) ((j : ι) → Nat) (ι → Nat) _
+          (@Pi.single.{u_1, 0} ι (fun (a : ι) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+          (@Pi.single.{u_1, 0} ι (fun (a : ι) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+@TheoremT.Continuum.WeakGrushin.finite_multiindex_degree_le_two_cases.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι]
+  [inst_1 : DecidableEq.{u_1 + 1} ι] (α : ι → Nat)
+  (h :
+    @LE.le.{0} Nat _ (@Finset.sum.{u_1, 0} ι Nat _ (@Finset.univ.{u_1} ι _) fun (i : ι) => α i)
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  Or (@Eq.{u_1 + 1} (ι → Nat) α (@OfNat.ofNat.{u_1} (ι → Nat) (nat_lit 0) _))
+    (Or
+      (@Exists.{u_1 + 1} ι fun (i : ι) =>
+        @Eq.{u_1 + 1} (ι → Nat) α
+          (@Pi.single.{u_1, 0} ι (fun (j : ι) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (@Exists.{u_1 + 1} ι fun (i : ι) =>
+        @Exists.{u_1 + 1} ι fun (j : ι) =>
+          @Eq.{u_1 + 1} (ι → Nat) α
+            (@HAdd.hAdd.{u_1, u_1, u_1} ((j : ι) → Nat) ((j : ι) → Nat) (ι → Nat) _
+              (@Pi.single.{u_1, 0} ι (fun (a : ι) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+              (@Pi.single.{u_1, 0} ι (fun (a : ι) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+TheoremT.Continuum.WeakGrushin.factorial_outer_derivative_six_cases : ∀
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (h :
+    @LE.le.{0} Nat _
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+        (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  Or
+    (And
+      (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) α
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _))
+      (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) β
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _)))
+    (Or
+      (@Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+        And
+          (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) α
+            (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+              (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) β
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _)))
+      (Or
+        (@Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          And
+            (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) α
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _))
+            (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) β
+              (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+        (Or
+          (@Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+            @Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+              And
+                (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) α
+                  (@HAdd.hAdd.{0, 0, 0} ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat)
+                    ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat)
+                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+                    (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                      (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i
+                      (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+                    (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                      (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ j
+                      (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) β
+                  (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _)))
+          (Or
+            (@Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+              @Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                And
+                  (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) α
+                    (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                      (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i
+                      (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+                  (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) β
+                    (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                      (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                      (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+            (@Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              @Exists.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+                And
+                  (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) α
+                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _))
+                  (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) β
+                    (@HAdd.hAdd.{0, 0, 0} ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat)
+                      ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat)
+                      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+                      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ i
+                        (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+                      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j
+                        (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))))))
+'TheoremT.Continuum.WeakGrushin.finite_multiindex_eq_zero_of_sum_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_multiindex_single_of_sum_eq_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_multiindex_two_singles_of_sum_eq_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.finite_multiindex_degree_le_two_cases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.factorial_outer_derivative_six_cases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

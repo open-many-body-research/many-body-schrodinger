@@ -1,0 +1,32 @@
+@TheoremT.Continuum.complex_powerSeries_iteratedFDeriv_eq_permutation_sum.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Complex E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Complex F _ _] [@CompleteSpace.{u_2} F _] {f : E → F}
+  {p : @FormalMultilinearSeries.{0, u_1, u_2} Complex E F _ _ _ _ _ _ _ _ _ _ _} {x : E} {R : ENNReal}
+  (hf : @HasFPowerSeriesOnBall.{0, u_1, u_2} Complex E F _ _ _ _ _ f p x R) (k : Nat),
+  @Eq.{max (u_1 + 1) (u_2 + 1)}
+    (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Complex (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _)
+    (@iteratedFDeriv.{0, u_1, u_2} Complex _ E _ _ F _ _ k f x)
+    (@Finset.sum.{0, max u_2 u_1} (Equiv.Perm.{1} (Fin k))
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Complex (Fin k) (fun (x : Fin k) => E) F _ _ _ _ _ _ _) _
+      (@Finset.univ.{0} (Equiv.Perm.{1} (Fin k)) _) fun (sigma : Equiv.Perm.{1} (Fin k)) =>
+      @ContinuousMultilinearMap.domDomCongr.{0, 0, u_1, u_2, 0} Complex (Fin k) E F _ _ _ _ _ _ _ (Fin k) sigma (p k))
+@TheoremT.Continuum.complex_powerSeries_norm_iteratedFDeriv_le_factorial_coeff.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Complex E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Complex F _ _] [@CompleteSpace.{u_2} F _] {f : E → F}
+  {p : @FormalMultilinearSeries.{0, u_1, u_2} Complex E F _ _ _ _ _ _ _ _ _ _ _} {x : E} {R : ENNReal}
+  (hf : @HasFPowerSeriesOnBall.{0, u_1, u_2} Complex E F _ _ _ _ _ f p x R) (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{max u_2 u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Complex (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _
+      (@iteratedFDeriv.{0, u_1, u_2} Complex _ E _ _ F _ _ k f x))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial k))
+      (@Norm.norm.{max u_1 u_2}
+        (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Complex (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _ (p k)))
+'TheoremT.Continuum.complex_powerSeries_iteratedFDeriv_eq_permutation_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.complex_powerSeries_norm_iteratedFDeriv_le_factorial_coeff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

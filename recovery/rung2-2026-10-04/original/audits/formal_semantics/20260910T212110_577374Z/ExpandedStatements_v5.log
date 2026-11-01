@@ -1,0 +1,18 @@
+TheoremT.Continuum.WeakGrushin.mixedYSourceBudget : (c K Q H : Real) → (m d : Nat) → (W : Real) → Real
+TheoremT.Continuum.WeakGrushin.mixedYIterationNext : (c M A L D Q K0 Q0 H0 : Real) → (m d : Nat) → (W : Real) → Real
+TheoremT.Continuum.WeakGrushin.mixedYSourceBudget_nonneg : ∀ (c K Q H : Real) (m d : Nat) (W : Real)
+  (hH : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) H)
+  (hW : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) W),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (TheoremT.Continuum.WeakGrushin.mixedYSourceBudget c K Q H m d W)
+TheoremT.Continuum.WeakGrushin.mixedYIterationNext_ge : ∀ (c M A L D Q K0 Q0 H0 : Real) (m d : Nat) (W : Real),
+  @LE.le.{0} Real _ W (TheoremT.Continuum.WeakGrushin.mixedYIterationNext c M A L D Q K0 Q0 H0 m d W)
+TheoremT.Continuum.WeakGrushin.mixedYIterationNext_nonneg : ∀ (c M A L D Q K0 Q0 H0 : Real) (m d : Nat) (W : Real)
+  (hW : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) W),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (TheoremT.Continuum.WeakGrushin.mixedYIterationNext c M A L D Q K0 Q0 H0 m d W)
+'TheoremT.Continuum.WeakGrushin.mixedYSourceBudget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYIterationNext' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYSourceBudget_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYIterationNext_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedYIterationNext_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]

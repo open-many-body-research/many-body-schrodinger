@@ -1,0 +1,180 @@
+{
+  "review_kind": "independent_focused_source_and_existing_evidence_review",
+  "version": 1,
+  "timestamp_utc": "2026-09-11T01:31:28.076604+00:00",
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_REVIEWED_FINITE_MONOMIAL_SCOPE",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_protocol": {
+      "path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+      "sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3"
+    },
+    "frozen_relative_path": "CORRECTION_PROTOCOL.md",
+    "operation": "New review only; no source, existing receipt, existing audit, or frozen bytes modified."
+  },
+  "targets": [
+    {
+      "module": "KSBalancedMonomialPairing_v1",
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedMonomialPairing_v1.lean",
+        "sha256": "235aa45bd078260d4dbe5fe95a05ca7aab7274eef78d19fef0fe5d26044e8c36"
+      },
+      "compiler_pass_receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSBalancedMonomialPairing_v1-20260911T011952_183324Z.json",
+        "sha256": "86b52be450007291c2a91fe3790bc3bd196df42ac6ea3ab40b9fa5bace4499a9"
+      },
+      "strict_audit_object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSBalancedMonomialPairing_v1.olean",
+        "sha256": "4edda79290096b8f300349940f45045ab875c26741cfdc633c0f0b2dff2c5c0f"
+      },
+      "complete_source_read": true,
+      "declarations": [
+        "ksBalancedMonomialPairing",
+        "ksBalancedMonomialPairing_entries",
+        "ksBalancedMonomialPairing_margins",
+        "ksBalancedMonomialPairing_row_sum",
+        "ksBalancedMonomialPairing_column_sum",
+        "ksBalancedMonomialPairing_last_eq_remainder"
+      ]
+    },
+    {
+      "module": "KSBalancedMonomialFactorization_v1",
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedMonomialFactorization_v1.lean",
+        "sha256": "4e73b064e654162e45d63808d6ad575f80dc38f4662068e1b6488a5ff1ef6214"
+      },
+      "compiler_pass_receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSBalancedMonomialFactorization_v1-20260911T012426_695607Z.json",
+        "sha256": "af584d4dc86936fc738b5e2f1d00b2d356bdf73aa2f61b5b44525ac9433d9377"
+      },
+      "strict_audit_object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSBalancedMonomialFactorization_v1.olean",
+        "sha256": "b07712d77f30f9df9976bcbad6cd1eafc6319a70466ca9d080aaa28545a92d32"
+      },
+      "complete_source_read": true,
+      "declarations": [
+        "ksBalancedMonomial_factorization",
+        "ksBalancedComplexMonomial_factorization",
+        "ksBalancedPolynomialMonomial_factorization"
+      ]
+    },
+    {
+      "module": "KSPhysicalBalancedMonomial_v1",
+      "source": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSPhysicalBalancedMonomial_v1.lean",
+        "sha256": "82356c52592f786d81803513e0b9de412777df98afd5b6e4fa5eb453bf7dc8b3"
+      },
+      "compiler_pass_receipt": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSPhysicalBalancedMonomial_v1-20260911T012517_619341Z.json",
+        "sha256": "139731e56f0a75d7c472da5973d2d4847bc57a5525b2886c419dd66477788a1a"
+      },
+      "strict_audit_object": {
+        "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSPhysicalBalancedMonomial_v1.olean",
+        "sha256": "12f589d8e548d9481640eb95b1d036a77de08d6e5e2b5efaa4fe449220a9673c"
+      },
+      "complete_source_read": true,
+      "declarations": [
+        "ksSpinor_balanced_monomial"
+      ]
+    }
+  ],
+  "consumed_sources": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSDescentSpinorAlgebra_v1.lean",
+      "sha256": "42eb7c2c66d6fdf951f2340e6af848b5c8bc68fee971262271d6e4e73b6a54a4",
+      "scope": "Complete source read; current assessment uses exact ksSpinor, ksDescentQuadratic and ksSpinor_balanced_quadratic."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSMapGeometry_v1.lean",
+      "sha256": "039fbbf45154e897fdb8a48a8967f5f1e346f5ef36e0a7df9daa43fc9410e4ca",
+      "scope": "Exact real Euclidean KSSpace and actual ksMap coordinate convention read."
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_QUANTITATIVE_DESCENT_v1.md",
+      "sha256": "17d55abbbfafae45ae5b62e1ed0c70603a50e22f62e520dd741d970129ebc69f",
+      "scope": "Section 3, especially balanced pairing and quadratic substitutions. No assessment of the other manuscript sections or of the subsequent series claims is made here."
+    }
+  ],
+  "strict_audit_evidence": {
+    "receipt": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T012532_800044Z/receipt.json",
+      "sha256": "f01fe577fa04b3bd0393b6f9b124ba957c93bcda93e74ce78d707ef04d47e4a8"
+    },
+    "expanded_log": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T012532_800044Z/ExpandedStatements_v8.log",
+      "sha256": "cce057e9f0f4799845d6674d7d03a4c38821d854b9769f7441249abd1651c816"
+    },
+    "audit_source": {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T012532_800044Z/ExpandedStatements_v8.lean",
+      "sha256": "f4d178961a068373a95c4280224f5708b72a7a9acbfb5caf9840c7167ee658d5"
+    },
+    "inspection": "Read existing full receipt and expanded statement/axiom output for all ten declarations; no new build or audit executed by reviewer. Current source and object hashes rechecked against receipt when sealing.",
+    "expected_declaration_count": 10,
+    "exit_code": 0,
+    "axiom_report_complete": true,
+    "unexpected_axioms": [],
+    "printer_ellipsis_count": 0,
+    "printer_failure_diagnostics": [],
+    "allowed_axiom_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "binder_result": "All three modules explicitly disable autoImplicit. Expanded statements retain only the advertised explicit types, balance hypothesis, and generic CommMonoid instance; no extra mathematical premise was found.",
+    "receipt_format_note": "The polynomial theorem axiom_lines summary contains duplicate commas from multiline formatting. The complete expanded log was inspected and reports exactly propext, Classical.choice, Quot.sound.",
+    "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild."
+  },
+  "checks": [
+    {
+      "id": "PAIRING-01",
+      "result": "PASS",
+      "claim": "The four entries implement the advertised computable Nat procedure.",
+      "analysis": "For zero-based indices the entries are n00=min(a1,b1), n01=a1-n00, n10=b1-n00, n11=min(a2,b2). This is a direct definition using finite equality tests, minimum and natural subtraction, not an existential choice of a matrix. Proof-level classical dependencies do not make this exponent function noncomputable. No separate execution diagnostic is relied upon in this review."
+    },
+    {
+      "id": "PAIRING-02",
+      "result": "PASS",
+      "claim": "The exact four margins and remainder formula hold under precisely a1+a2=b1+b2.",
+      "analysis": "The two row sums are a1,a2 and the two column sums b1,b2. The final remainder theorem explicitly relates min(a2,b2) to the sequential Nat-subtraction formula, so truncation is accounted for. The row/column Fin 2 sum statements specialize these same margins; the total of all entries equals the common degree by adding the row margins."
+    },
+    {
+      "id": "PAIRING-03",
+      "result": "PASS",
+      "claim": "Boundary and saturation cases do not introduce missing positivity hypotheses.",
+      "analysis": "If a1<=b1 then n00=a1, n01=0, n10=b1-a1, and balance gives n11=b2<=a2. If b1<=a1 then n00=b1, n10=0, n01=a1-b1, and balance gives n11=a2<=b2. Equality makes both off-diagonals zero. Zero total makes all four entries zero. Zero individual rows/columns are covered by the same cases. These are algebraic checks, not sampled runtime evidence."
+    },
+    {
+      "id": "FACTOR-01",
+      "result": "PASS",
+      "claim": "The generic factorization uses the exact row/column exponents and factor order.",
+      "analysis": "The right factors are (z1*w1)^n00, (z1*w2)^n01, (z2*w1)^n10, (z2*w2)^n11. Expanding powers by the margins and reordering in the explicit CommMonoid yields z1^a1*z2^a2*w1^b1*w2^b2. No inverse, cancellation, division by a variable, or nonzero value is required; zero exponents use ordinary power zero."
+    },
+    {
+      "id": "FACTOR-02",
+      "result": "PASS",
+      "claim": "Complex and multivariate-polynomial specializations preserve independent variables.",
+      "analysis": "The complex theorem holds for four arbitrary complex values, without assuming conjugacy. The MvPolynomial (Fin 4) complex theorem uses X0,X1,X2,X3 in the order z1,z2,w1,w2. This Fin 4 variable order must not be identified with the four real coordinates of y. It is an abstract polynomial equality obtained by specializing the generic identity, not a claim of executable complex arithmetic or a full invariant-polynomial descent algorithm."
+    },
+    {
+      "id": "PHYSICAL-01",
+      "result": "PASS",
+      "claim": "The actual physical spinor and KS-map quadratic substitutions match all four factors and signs.",
+      "analysis": "The consumed definitions are z1=y0+i*y1, z2=y2+i*y3 and K(y)=(2*(y0*y2+y1*y3),2*(y1*y2-y0*y3),y0^2+y1^2-y2^2-y3^2). Consequently z1*conj(z1)=(r+X2)/2, z1*conj(z2)=(X0+i*X1)/2, z2*conj(z1)=(X0-i*X1)/2, z2*conj(z2)=(r-X2)/2 for X=K(y), r=the actual real Euclidean norm squared of y, cast into complex numbers. The physical theorem retains the same n00,n01,n10,n11 in this order. Each factor includes its division by 2; no denominator or conjugation sign is lost."
+    },
+    {
+      "id": "PHYSICAL-02",
+      "result": "PASS",
+      "claim": "The physical identity is valid at the origin and under exactly the stated balance condition.",
+      "analysis": "The proof applies the generic factorization to z1,z2 and their complex conjugates, then rewrites with the consumed exact quadratic lemma. There is no nonzero-y or nonzero-radius hypothesis and no division by y or radius. At total degree zero both sides are 1 even at y=0. The inspected expanded statement contains the actual ksMap and real norm squared, with no substituted arbitrary physical map or abstract radius assumption."
+    }
+  ],
+  "invalidating_findings": [],
+  "limits": [
+    "This seal covers the three listed modules at their listed hashes and the exact consumed algebraic definitions. It does not certify all transitive library proof sources from a clean dependency rebuild.",
+    "Only a computable exponent pairing and finite monomial identities are established here. The abstract complex and MvPolynomial equalities are not a separately certified executable arithmetic transformation over complex numbers.",
+    "No general invariant polynomial projection, invariant-series coefficient extraction, coefficient norm estimate, radial A+rB reduction, analytic convergence, pointwise series descent, or full closure of R04 is asserted by this review.",
+    "The separate KSBalancedMonomialExecution_v1 diagnostic module was excluded as requested; none of its sampled outputs forms part of this proof review."
+  ]
+}

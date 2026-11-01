@@ -1,0 +1,120 @@
+@TheoremT.Continuum.compact_factorial_bound_of_neighborhood_family.{u_1,
+    u_2} : ∀ {X : Type u_1} [inst : TopologicalSpace.{u_1} X] {F : Nat → Type u_2}
+  [inst_1 : (k : Nat) → Norm.{u_2} (F k)] {K : Set.{u_1} X} (hK : @IsCompact.{u_1} X _ K) (J : (k : Nat) → X → F k)
+  (U : @Set.Elem.{u_1} X K → Set.{u_1} X) (C A : @Set.Elem.{u_1} X K → Real)
+  (hU :
+    ∀ (x : @Set.Elem.{u_1} X K),
+      @Membership.mem.{u_1, u_1} (Set.{u_1} X) (Filter.{u_1} X) _
+        (@nhds.{u_1} X _ (@Subtype.val.{u_1 + 1} X (fun (x : X) => @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ K x) x))
+        (U x))
+  (hC : ∀ (x : @Set.Elem.{u_1} X K), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (C x))
+  (hA : ∀ (x : @Set.Elem.{u_1} X K), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (A x))
+  (hJ :
+    ∀ (x : @Set.Elem.{u_1} X K) (y : X),
+      @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ (U x) y →
+        ∀ (k : Nat),
+          @LE.le.{0} Real _ (@Norm.norm.{u_2} (F k) _ (J k y))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (C x) (@HPow.hPow.{0, 0, 0} Real Nat Real _ (A x) k))
+              (@Nat.cast.{0} Real _ (Nat.factorial k)))),
+  @Exists.{u_1 + 1} (Finset.{u_1} (@Set.Elem.{u_1} X K)) fun (s : Finset.{u_1} (@Set.Elem.{u_1} X K)) =>
+    And
+      (@Membership.mem.{u_1, u_1} (Set.{u_1} X) (Filter.{u_1} X) _ (@nhdsSet.{u_1} X _ K)
+        (@Set.iUnion.{u_1, u_1 + 1} X (@Set.Elem.{u_1} X K) fun (x : @Set.Elem.{u_1} X K) =>
+          @Set.iUnion.{u_1, 0} X
+            (@Membership.mem.{u_1, u_1} (@Set.Elem.{u_1} X K) (Finset.{u_1} (@Set.Elem.{u_1} X K)) _ s x)
+            fun (h : @Membership.mem.{u_1, u_1} (@Set.Elem.{u_1} X K) (Finset.{u_1} (@Set.Elem.{u_1} X K)) _ s x) =>
+            U x))
+      (And
+        (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@TheoremT.Continuum.finiteFactorialC.{u_1} (@Set.Elem.{u_1} X K) s C))
+        (And
+          (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+            (@TheoremT.Continuum.finiteFactorialA.{u_1} (@Set.Elem.{u_1} X K) s A))
+          (∀ (y : X),
+            @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _
+                (@Set.iUnion.{u_1, u_1 + 1} X (@Set.Elem.{u_1} X K) fun (x : @Set.Elem.{u_1} X K) =>
+                  @Set.iUnion.{u_1, 0} X
+                    (@Membership.mem.{u_1, u_1} (@Set.Elem.{u_1} X K) (Finset.{u_1} (@Set.Elem.{u_1} X K)) _ s x)
+                    fun
+                      (h :
+                        @Membership.mem.{u_1, u_1} (@Set.Elem.{u_1} X K) (Finset.{u_1} (@Set.Elem.{u_1} X K)) _ s x) =>
+                    U x)
+                y →
+              ∀ (k : Nat),
+                @LE.le.{0} Real _ (@Norm.norm.{u_2} (F k) _ (J k y))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _
+                      (@TheoremT.Continuum.finiteFactorialC.{u_1} (@Set.Elem.{u_1} X K) s C)
+                      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                        (@TheoremT.Continuum.finiteFactorialA.{u_1} (@Set.Elem.{u_1} X K) s A) k))
+                    (@Nat.cast.{0} Real _ (Nat.factorial k))))))
+@TheoremT.Continuum.compact_local_factorial_bound_uniform_nhds.{u_1,
+    u_2} : ∀ {X : Type u_1} [inst : TopologicalSpace.{u_1} X] {F : Nat → Type u_2}
+  [inst_1 : (k : Nat) → Norm.{u_2} (F k)] {K : Set.{u_1} X} (hK : @IsCompact.{u_1} X _ K) (J : (k : Nat) → X → F k)
+  (hlocal :
+    ∀ (x : X),
+      @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ K x →
+        @Exists.{u_1 + 1} (Set.{u_1} X) fun (U : Set.{u_1} X) =>
+          And (@Membership.mem.{u_1, u_1} (Set.{u_1} X) (Filter.{u_1} X) _ (@nhds.{u_1} X _ x) U)
+            (@Exists.{1} Real fun (C : Real) =>
+              @Exists.{1} Real fun (A : Real) =>
+                And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+                  (And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+                    (∀ (y : X),
+                      @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ U y →
+                        ∀ (k : Nat),
+                          @LE.le.{0} Real _ (@Norm.norm.{u_2} (F k) _ (J k y))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                              (@Nat.cast.{0} Real _ (Nat.factorial k))))))),
+  @Exists.{u_1 + 1} (Set.{u_1} X) fun (U : Set.{u_1} X) =>
+    And (@Membership.mem.{u_1, u_1} (Set.{u_1} X) (Filter.{u_1} X) _ (@nhdsSet.{u_1} X _ K) U)
+      (@Exists.{1} Real fun (C : Real) =>
+        @Exists.{1} Real fun (A : Real) =>
+          And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+            (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+              (∀ (y : X),
+                @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ U y →
+                  ∀ (k : Nat),
+                    @LE.le.{0} Real _ (@Norm.norm.{u_2} (F k) _ (J k y))
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                        (@Nat.cast.{0} Real _ (Nat.factorial k))))))
+@TheoremT.Continuum.compact_local_factorial_bound_uniform.{u_1,
+    u_2} : ∀ {X : Type u_1} [inst : TopologicalSpace.{u_1} X] {F : Nat → Type u_2}
+  [inst_1 : (k : Nat) → Norm.{u_2} (F k)] {K : Set.{u_1} X} (hK : @IsCompact.{u_1} X _ K) (J : (k : Nat) → X → F k)
+  (hlocal :
+    ∀ (x : X),
+      @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ K x →
+        @Exists.{u_1 + 1} (Set.{u_1} X) fun (U : Set.{u_1} X) =>
+          And (@Membership.mem.{u_1, u_1} (Set.{u_1} X) (Filter.{u_1} X) _ (@nhds.{u_1} X _ x) U)
+            (@Exists.{1} Real fun (C : Real) =>
+              @Exists.{1} Real fun (A : Real) =>
+                And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+                  (And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A)
+                    (∀ (y : X),
+                      @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ U y →
+                        ∀ (k : Nat),
+                          @LE.le.{0} Real _ (@Norm.norm.{u_2} (F k) _ (J k y))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                              (@Nat.cast.{0} Real _ (Nat.factorial k))))))),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (x : X),
+            @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ K x →
+              ∀ (k : Nat),
+                @LE.le.{0} Real _ (@Norm.norm.{u_2} (F k) _ (J k x))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                    (@Nat.cast.{0} Real _ (Nat.factorial k)))))
+'TheoremT.Continuum.compact_factorial_bound_of_neighborhood_family' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.compact_local_factorial_bound_uniform_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.compact_local_factorial_bound_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]

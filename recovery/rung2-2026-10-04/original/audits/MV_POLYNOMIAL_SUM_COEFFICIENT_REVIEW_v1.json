@@ -1,0 +1,45 @@
+{
+  "reviewer": "/root/ks_coefficient_transport",
+  "utc": "2026-09-11T02:28:20.194658+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_GENERIC_COEFFICIENT_AND_EVALUATION_IDENTITIES",
+  "source": {
+    "path": "lean/MvPolynomialSumCoefficient_v1.lean",
+    "sha256": "895d59f96d9abcc00060b27c5ce9d31c4719d4a30d7dd42f1c04fa47305c93b9"
+  },
+  "build": {
+    "path": "logs/development/MvPolynomialSumCoefficient_v1-20260911T022605_244337Z.json",
+    "sha256": "9baf5e16eafa9ea4ce8bfaa83d247d8741e790601445e0844135ae0ff9740481"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T022626_096627Z/receipt.json",
+    "sha256": "7a921123c5366ed619b3d8e3513cbb1eaefe762a638183a8a1ba15217ced7ea5"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T022626_096627Z/ExpandedStatements_v8.log",
+    "sha256": "d41d9e0e44043a2deca368e69281e3d4007d175c0cabe0ba96f9a5a612cc45d2"
+  },
+  "inspection": "Complete final source and proof, full strict receipt, both expanded statements and axiom reports read. Current source/object hashes match. Exact pinned sumRingEquiv, curry ring equivalence, coefficient mapDomain equivalence, and Finsupp sum exponent equivalence definitions read.",
+  "checks": [
+    "The outer variables are exactly the left sum component and inner coefficient variables exactly the right. Double coefficient extraction maps to original coefficient at Finsupp.sumElim alpha beta.",
+    "The inverse exponent equivalence is definitionally sumElim; no coefficient normalization, conjugation, or aggregate bound replaces the original coefficient.",
+    "Evaluation identity compares genuine ring homomorphisms on constants and both variable injections; it holds over arbitrary CommSemiring R, arbitrary index types, and all values X,Y.",
+    "The expanded statements contain no finite-cardinality, nonzero-polynomial, infinite-field, or hidden invariance premise. Both sources disable autoImplicit and the selected source uses current sumRingEquiv rather than deprecated sumToIter."
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "invalidating_findings": [],
+  "environment_note": "An initial ambient Homebrew Python invocation stalled before Lean started and was stopped by root. The unchanged v1 then compiled in3.968s under /usr/bin/python3 login:false on its first actual Lean run. Separately preserved v2 candidate is not the selected import and has no strict audit in this record.",
+  "limitations": [
+    "This is generic finite polynomial algebra, not a convergence or analytic extraction theorem.",
+    "Pinned dependency objects reused; no isolated source rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

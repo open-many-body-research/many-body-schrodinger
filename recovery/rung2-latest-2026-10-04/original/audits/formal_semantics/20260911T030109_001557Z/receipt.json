@@ -1,0 +1,82 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T030109_001557Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030109_001557Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T030109_001557Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 9.478891124999999,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "2c0a7c3a27a9d3655aa19c7c2cf0727bbd5cd9d9b96113763226b89df8114a86",
+  "audit_log_sha256": "7755989ccaf39f00572f5dac8141399b155d8ea3d10097485a365ece64bc7984",
+  "module_records": [
+    {
+      "module": "IteratedFDerivScalarLinearCompositionAt_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IteratedFDerivScalarLinearCompositionAt_v1.lean",
+      "source_sha256": "502aebd14dd9c960183d3cc8dfbe4e46d408354fa352973a89b63d508ee1819d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IteratedFDerivScalarLinearCompositionAt_v1.olean",
+      "object_sha256": "f662b97b8a7b0d105f9b86c067a60bea77ab263077b3841f1f9de810132c9820",
+      "declarations": [
+        "iteratedFDeriv_comp_right_of_contDiffAt_scalar"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RealCoordinateEmbedding_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealCoordinateEmbedding_v1.lean",
+      "source_sha256": "dd157daadd91c8fe4c9778a532603b7a7926f8d025a9e05ce5ea5246faf5f6b3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RealCoordinateEmbedding_v1.olean",
+      "object_sha256": "f2e3d8dbdfa0dc735cd19783ee23efe97a149d3363b3b35c0d6b73bb558d0b4a",
+      "declarations": [
+        "realCoordinateEmbedding",
+        "realCoordinateEmbedding_coe",
+        "realCoordinateEmbedding_single"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RealRestrictionIteratedDerivativeWord_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealRestrictionIteratedDerivativeWord_v1.lean",
+      "source_sha256": "a9bd87713c0dd69539cfb384d7101956589b91ee98196fc4e5245d7e1cdbda60",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RealRestrictionIteratedDerivativeWord_v1.olean",
+      "object_sha256": "aceff7874b0561f9323f7429a44d3a2205153253edbcbb8b97282ca5f24f1d51",
+      "declarations": [
+        "real_restriction_contDiffAt",
+        "real_restriction_iteratedFDeriv_word"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.iteratedFDeriv_comp_right_of_contDiffAt_scalar: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.realCoordinateEmbedding: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.realCoordinateEmbedding_coe: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.realCoordinateEmbedding_single: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.real_restriction_contDiffAt: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.real_restriction_iteratedFDeriv_word: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.iteratedFDeriv_comp_right_of_contDiffAt_scalar",
+    "TheoremT.Continuum.realCoordinateEmbedding",
+    "TheoremT.Continuum.realCoordinateEmbedding_coe",
+    "TheoremT.Continuum.realCoordinateEmbedding_single",
+    "TheoremT.Continuum.real_restriction_contDiffAt",
+    "TheoremT.Continuum.real_restriction_iteratedFDeriv_word"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

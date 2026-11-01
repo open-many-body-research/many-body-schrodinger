@@ -1,0 +1,40 @@
+TheoremT.Continuum.SO2AnalyticDescentData : (F :
+    Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) →
+      Complex) →
+  (G : Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) → Complex) → (M h : Real) → Prop
+TheoremT.Continuum.so2PolynomialSeriesInput_analytic_descent : ∀
+  (P :
+    Nat →
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) →
+        @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (F :
+    Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) →
+      Complex)
+  {M h : Real} (hdata : TheoremT.Continuum.SO2PolynomialSeriesInput P F M h)
+  (hb :
+    ∀ (n : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)
+      (e : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced (P n γ)))
+          e →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ e
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ e
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h),
+  TheoremT.Continuum.SO2AnalyticDescentData F
+    (@TheoremT.Continuum.scalarSpectatorSum (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (@TheoremT.Continuum.so2DescendedCoefficient (@OfNat.ofNat.{0} Nat (nat_lit 2) _) P))
+    M h
+'TheoremT.Continuum.SO2AnalyticDescentData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialSeriesInput_analytic_descent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

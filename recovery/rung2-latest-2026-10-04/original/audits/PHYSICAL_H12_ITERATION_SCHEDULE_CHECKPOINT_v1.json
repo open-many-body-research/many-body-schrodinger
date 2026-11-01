@@ -1,0 +1,209 @@
+{
+  "created_utc": "2026-09-10T21:40:07.840528+00:00",
+  "status": "FORMAL_ACTUAL_PHYSICAL_T12_Y5_GEOMETRY_PASS",
+  "modules": [
+    {
+      "module": "GrushinH12ConcreteScheduleArithmetic_v1",
+      "source": {
+        "path": "lean/GrushinH12ConcreteScheduleArithmetic_v1.lean",
+        "sha256": "50395ec8b07e715c6000f57292ad5a6cf730ad0a9f5866b300a2c1bdf24420d1",
+        "bytes": 4311
+      },
+      "object": {
+        "path": "lean/build/GrushinH12ConcreteScheduleArithmetic_v1.olean",
+        "sha256": "30ad150943aecb06512028bef519c215a8206a85b81a183c57e07e647316234f",
+        "bytes": 195328
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinH12ConcreteScheduleArithmetic_v1-20260910T213603_094357Z.json",
+        "sha256": "995d5ea721df2facee4d275071c511d5f681bc3e205b2dba3d1d8090a07a5868",
+        "bytes": 1801
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinH12ConcreteScheduleArithmetic_v1-20260910T213603_094357Z.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "declarations": [
+        "h12ConcreteDelta",
+        "h12ConcreteRadius",
+        "h12ConcreteBox",
+        "h12ConcreteDelta_pos",
+        "h12ConcreteDelta_eq_boxGap",
+        "h12ConcreteRadius_eq",
+        "h12ConcreteRadius_zero",
+        "h12ConcreteRadius_34",
+        "h12ConcreteRadius_add_one",
+        "h12ConcreteRadius_add_two",
+        "h12ConcreteRadius_antitone",
+        "h12ConcreteRadius_two_gap",
+        "h12ConcreteRadius_le_outer",
+        "h12ConcreteRadius_ge_inner",
+        "h12ConcreteRadius_pos",
+        "h12ConcreteBox_eq_rectangularOpenBox",
+        "h12ConcreteBox_zero",
+        "h12ConcreteBox_34",
+        "h12ConcreteBox_isOpen",
+        "h12ConcreteBox_measurableSet",
+        "h12ConcreteBox_antitone",
+        "h12ConcreteBox_subset_outer",
+        "h12ConcreteBox_y_radius"
+      ]
+    },
+    {
+      "module": "PhysicalH12ConcreteStepGeometry_v1",
+      "source": {
+        "path": "lean/PhysicalH12ConcreteStepGeometry_v1.lean",
+        "sha256": "2eb6df3ed680f5f404cf344ce0ff829d1c135a457d4280e904ae9d01c81850b9",
+        "bytes": 3704
+      },
+      "object": {
+        "path": "lean/build/PhysicalH12ConcreteStepGeometry_v1.olean",
+        "sha256": "ec2f9d0fea3d0216d27e10fc796e5b6cf0ef764a71bbfb971628446ee6e2f3e0",
+        "bytes": 182920
+      },
+      "compile_receipt": {
+        "path": "logs/development/PhysicalH12ConcreteStepGeometry_v1-20260910T213739_985990Z.json",
+        "sha256": "6c7ef6d8017302c493022f03e1180f39b9efc3e4ef5b5afded6e16c39f912f3a",
+        "bytes": 1793
+      },
+      "compile_log": {
+        "path": "logs/development/PhysicalH12ConcreteStepGeometry_v1-20260910T213739_985990Z.log",
+        "sha256": "55767b83b19334b69ac60dc7f3cab3fc597d610f97438a6d21f2884db8319e02",
+        "bytes": 130
+      },
+      "declarations": [
+        "physicalH12ConcreteBox",
+        "physicalH12ConcreteInnerCutoff",
+        "physicalH12ConcreteEnergyCutoff",
+        "physicalH12ConcreteBox_isOpen",
+        "physicalH12ConcreteBox_measurableSet",
+        "physicalH12ConcreteBox_antitone",
+        "physicalH12ConcreteBox_zero",
+        "physicalH12ConcreteBox_34",
+        "physical_h12_concrete_step_geometry"
+      ]
+    },
+    {
+      "module": "PhysicalH12IterationSchedule_v1",
+      "source": {
+        "path": "lean/PhysicalH12IterationSchedule_v1.lean",
+        "sha256": "95dc8329874ece0084593c8bf19b5afcd66b026d28bc3eb008245c1f31b020c2",
+        "bytes": 5868
+      },
+      "object": {
+        "path": "lean/build/PhysicalH12IterationSchedule_v1.olean",
+        "sha256": "61ae2808f2d52ab9176869e100dbd128fdfd7bb22fa7e93ffa4819bf647bed14",
+        "bytes": 178896
+      },
+      "compile_receipt": {
+        "path": "logs/development/PhysicalH12IterationSchedule_v1-20260910T213755_592566Z.json",
+        "sha256": "ff3aa4177640190663aa5ad7b709fdfecfde812fbbcf8bee8038715ffb1bd1db",
+        "bytes": 1776
+      },
+      "compile_log": {
+        "path": "logs/development/PhysicalH12IterationSchedule_v1-20260910T213755_592566Z.log",
+        "sha256": "9ca11a9d75ab0fbb5c021ae447457a1809ad2bf4b39525be6ead80e516cfa1ec",
+        "bytes": 356
+      },
+      "declarations": [
+        "physicalH12ScheduleRegion",
+        "physicalH12ScheduleMiddle",
+        "physicalH12ScheduleInnerCutoff",
+        "physicalH12ScheduleEnergyCutoff",
+        "physicalH12ScheduleRegion_isOpen",
+        "physicalH12ScheduleRegion_measurableSet",
+        "physicalH12ScheduleRegion_antitone",
+        "physicalH12ScheduleRegion_subset_initial",
+        "physical_h12_schedule_geometry",
+        "physical_h12_T12_geometry",
+        "physical_h12_Y5_geometry",
+        "physicalH12Schedule_T12_Y5_join",
+        "physicalH12Schedule_initial",
+        "physicalH12Schedule_terminal"
+      ]
+    }
+  ],
+  "module_count": 3,
+  "declaration_count": 46,
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T213633_408317Z/receipt.json",
+        "sha256": "4325a8c0c0b3f0d1a32c9cf19503954557a3675d49f45179dfd00804e9aa584f",
+        "bytes": 7800
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T213633_408317Z/ExpandedStatements_v5.lean",
+        "sha256": "2f675dc8c96fa9da96866b58ef66694cd50af0b0cfd28ed7a49f30d613ec1e18",
+        "bytes": 3540
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T213633_408317Z/ExpandedStatements_v5.log",
+        "sha256": "d34f631a23cb3d7e0e90dd52efe1a673c7f3d3dca4dfc9d8a72fe924d39a37f6",
+        "bytes": 12133
+      },
+      "declaration_count": 23
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T213816_969841Z/receipt.json",
+        "sha256": "07f283147440dfe68796f264aaca7d0ee0ead7d23e54879f1af4e77378c58ce4",
+        "bytes": 9040
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T213816_969841Z/ExpandedStatements_v5.lean",
+        "sha256": "d63fad295db3e00652be63c1d4a3002ff54875c57378c2a8d0d137169a9ce62d",
+        "bytes": 3902
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T213816_969841Z/ExpandedStatements_v5.log",
+        "sha256": "17c9041823221d45ee493d0ee3848e157272f2c1b4f7d8ae10c0d8cb69ad71aa",
+        "bytes": 27485
+      },
+      "declaration_count": 23
+    }
+  ],
+  "paper": {
+    "path": "paper/PHYSICAL_H12_ITERATION_SCHEDULE_v1.md",
+    "sha256": "407afe3396065739f6b356ad8d43b07aaa62d33ce12878559dd8e7ff81864b37",
+    "bytes": 3137
+  },
+  "arithmetic_checkpoint": {
+    "path": "audits/GRUSHIN_H12_CONCRETE_SCHEDULE_ARITHMETIC_CHECKPOINT_v1.json",
+    "sha256": "a9d77c56ab6938023a658d878e595591165adeba356c30c8d1e9f004dbfb5a85",
+    "bytes": 6638
+  },
+  "physical_transport_checkpoint": {
+    "path": "audits/PHYSICAL_SPECTATOR_CUTOFF_GEOMETRY_ALL_CHECKPOINT_v1.json",
+    "sha256": "ae71d57df3e89e7e417d5d703d5ec346b0fa5c5e1132487c7836bc819c33112a",
+    "bytes": 8142
+  },
+  "exact_results": [
+    "Every selected i:Fin2 has actual reindexed physical cutoff geometry on the common 34-gap schedule.",
+    "T12 consumes gaps0 through24 with arbitrary nonnegative c; Y5 consumes24 through34 with cutoff coefficient0.",
+    "Exact final two half-widths1/128, initial1/64, delta1/4352; exact join at24.",
+    "Regions are open, measurable, antitone and included in initialization.",
+    "Uniform S1/32 and unchanged stage M,A,B,D,Q, with actual smoothTransition derivative hypotheses explicit."
+  ],
+  "expanded_statement_review": "Read exact final T12/Y5/join/terminal statements and underlying definitions; actual spectator index, nonnegative c, explicit C1/C2 and all gap arithmetic agree. No hidden regularity/PDE/physical-patch premise or assumed uniform estimate.",
+  "trust": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned existing dependency objects reused; no isolated source rebuild.",
+  "limitations": [
+    "Geometry only; root composes raw physical PDE, fixed patch inclusion and coefficient/source budgets.",
+    "Actual transition derivative constants remain explicit bounded inputs here.",
+    "This unit makes no Theorem T, global approximation, novelty or efficient-computation claim."
+  ],
+  "preservation": "All earlier PASS/sealed and frozen bytes retained; only new files created.",
+  "frozen_provenance": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/UNIFORM_ANALYTIC_AUDIT.md",
+    "sha256": "5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c"
+  },
+  "next": "Root composition of actual finite physical reserve; separate requested arbitrary-finite Fin3 geometry prerequisite for R02."
+}

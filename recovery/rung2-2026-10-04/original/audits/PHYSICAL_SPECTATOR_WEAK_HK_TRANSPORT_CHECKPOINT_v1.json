@@ -1,0 +1,131 @@
+{
+  "status": "PASS_ACTUAL_FINITE_WEAK_HK_AND_H12_PHYSICAL_REINDEX_TRANSPORT",
+  "created_utc": "2026-09-11T00:43:12.464397+00:00",
+  "evidence_category": "Fully formalized transport theorem for genuine supplied weak derivatives; not a new regularity theorem.",
+  "source": {
+    "path": "lean/PhysicalSpectatorWeakHkTransport_v1.lean",
+    "sha256": "c59c84335ff847b291853d5f1f72f243bb315e1040dde322218a4f286abc12c8",
+    "bytes": 4820
+  },
+  "object": {
+    "path": "lean/build/PhysicalSpectatorWeakHkTransport_v1.olean",
+    "sha256": "b9bf9f1db7621032ce89a6a56dedfa81ad1c67955c54802195ecc096ffc328fb",
+    "bytes": 262768
+  },
+  "build_receipt": {
+    "path": "logs/development/PhysicalSpectatorWeakHkTransport_v1-20260911T004101_176763Z.json",
+    "sha256": "0a6d32319ef1bde8186d520c5b610703751c9360fc829071b3f533b3cc31d15e",
+    "bytes": 1790
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T004127_484277Z/receipt.json",
+    "sha256": "f60fd1f40926e837cf00a09a238ab61ccb3895b844df2f2a5ca5d0ed792b270e",
+    "bytes": 4186
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T004127_484277Z/ExpandedStatements_v7.lean",
+    "sha256": "076021926c1d35779444d87f3e419cc46c6efb492e7e97580a51378d60eb0bb2",
+    "bytes": 1165
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T004127_484277Z/ExpandedStatements_v7.log",
+    "sha256": "adbdb5613e47c0e5d329d999364b61e8dfb68018f59282763291b2776351eb27",
+    "bytes": 16631
+  },
+  "expanded_object": {
+    "path": "audits/formal_semantics/20260911T004127_484277Z/ExpandedStatements_v7.olean",
+    "sha256": "b1add2ac38ec72c1f9ed4cfe2cd7ec4ce9ab39f3ca5d837ad2e994fa50762685",
+    "bytes": 1424
+  },
+  "independent_review": {
+    "path": "audits/PHYSICAL_SPECTATOR_WEAK_HK_TRANSPORT_COEFFICIENT_AGENT_REVIEW_v1.json",
+    "sha256": "1a96d486ea3f25d2de1639185435cc9c7368d99c1ebc7341caf06eeea5d76060",
+    "bytes": 1259
+  },
+  "declarations": [
+    "TheoremT.Continuum.physicalSpectatorReindexAt_localWeakDirectional",
+    "TheoremT.Continuum.physicalSpectatorReindexAt_coordinateWeakHk",
+    "TheoremT.Continuum.physicalSpectatorReindexAt_mixedMultiIndexWeakHk",
+    "TheoremT.Continuum.physicalSpectatorReindexAt_mixedH12"
+  ],
+  "exact_result": "For either selected electron i in Fin 2, any canonical open region Omega, every finite order m and real squared-integral budget W, actual ProductCoordinateWeakHk on physicalSpectatorReindexAt i preimage Omega transports to actual canonical ProductMixedMultiIndexWeakHk of f composed with the inverse reindex, retaining m and W. The order-12 specialization is explicit.",
+  "proof_components": [
+    "Local weak directional transport pulls every smooth compactly supported real test through the exact physical reindex, proves the support preimage condition, uses the actual Frechet derivative chain rule in the inverse direction, and changes both Bochner integrals by product-volume preservation.",
+    "Local L2 membership of the function and derivative is transported using the actual inverse reindex and compact subsets; test-product integrability follows from the genuine ProductLocalWeakDirectional definition and its existing test_integrable theorem.",
+    "Canonical coordinate words are mapped literally by Sum.map id spectator-coordinate-equivalence.symm, preserving cons order and length. Every finite squared L2 budget is transported unchanged; no order or dimension factor is introduced.",
+    "The canonical mixed-multiindex result is obtained from the existing coordinate-word permutation and local weak-derivative uniqueness theorem on open Omega. No unspecified direction map is bound in the expanded final statements."
+  ],
+  "physical_consumer": "For SpinPhysicalH12Reserve i (reindex preimage Omega) f W, apply physicalSpectatorReindexAt_mixedH12 i hOmega (hReserve.1 sigma) to each actual spin component. The prior Coulomb spin H12 theorem supplies this reserve on half-width 1/128 boxes.",
+  "scope_limits": [
+    "Finite coordinate Hk data are explicit inputs. This result does not independently derive H12 from the Coulomb equation.",
+    "No smooth representative, solution factorial bound, global approximation, certified energy output or executable choice is asserted.",
+    "Canonical coordinate Hk transport itself does not require openness; openness enters exactly when canonical words are converted to mixed multiindices."
+  ],
+  "direct_semantic_dependencies_read": [
+    {
+      "path": "lean/PhysicalSpectatorL2BudgetTransport_v1.lean",
+      "sha256": "ee56f1b9e6ffa5fb1ca5443970ac62c2e483906438d3001a68b4895b56b3276c",
+      "bytes": 2585
+    },
+    {
+      "path": "lean/PhysicalSpectatorWeakEquationTransport_v1.lean",
+      "sha256": "a6525f5cefdc1f7e204b6c31debf484250254e34bfad6f2b475bbecf318bdd0b",
+      "bytes": 4606
+    },
+    {
+      "path": "lean/PhysicalSpectatorFactorialWords_v1.lean",
+      "sha256": "dc9f016d0931bdcf36f2633b35aa6da7f0f0fa02231f559f8f13436d12169350",
+      "bytes": 2729
+    },
+    {
+      "path": "lean/PhysicalSpectatorCutoffTransportAll_v1.lean",
+      "sha256": "ec76c24dbfb8979d141ca1d13da07e89c2fd21504635a55f0dc24eb1c8821107",
+      "bytes": 4216
+    },
+    {
+      "path": "lean/PhysicalSpectatorReindexAll_v1.lean",
+      "sha256": "f3ab3ed8b2f75b10692c4db3596ae55293836484c2e4f51160c8fe9c40e0c83c",
+      "bytes": 5516
+    },
+    {
+      "path": "lean/ProductCoordinateWeakHk_v1.lean",
+      "sha256": "f45d9e11f8e49a85db9c3890fe734bcde364ac463b4507dba60c74a7e7db4d10",
+      "bytes": 2248
+    },
+    {
+      "path": "lean/ProductMixedMultiIndexWeakHk_v1.lean",
+      "sha256": "eb93f618aa70a6f8e7219a894867a63ee3c82a8115ffbb652bdcdc0d32c9251d",
+      "bytes": 3301
+    },
+    {
+      "path": "lean/LocalProductDirectionalWeakAlgebra_v1.lean",
+      "sha256": "722ef2cd2a1ed0ac6ec401857b9469627cd575570198263d3ad8a9566aa5fc18",
+      "bytes": 4456
+    },
+    {
+      "path": "lean/PhysicalSpinCoordinateH12Reserve_v1.lean",
+      "sha256": "14a3d7601fb7c832990ace053959aea3eecc5b15a2f781cbbd73e16196a6ee62",
+      "bytes": 2419
+    }
+  ],
+  "trust": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "verification": "Final source compiles; all four exact expanded statements and axiom reports were read in full. Strict v7 checks and source/object hash binding pass. Independent worker read all source statements and proof bodies and found no defect.",
+  "environment": {
+    "lean": "4.34.0-rc2",
+    "lean_commit": "6a10ac8c22beadecabdbb0919c2b50214762f91d",
+    "mathlib_commit": "d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9"
+  },
+  "cache_disclosure": "Pinned development dependency objects reused. This module is outside the completed isolated source rebuild v20. No source rebuild or remote computation was run for this task.",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "historical_target_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "historical_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "policy": "All prior PASS mathematical sources and receipts preserved; only new continuation source and audit records created."
+  },
+  "next": "Instantiate the fixed-box actual factorial theorem using the transported physical H12 data, transported actual scalar Coulomb weak equation and coefficient/source factorial budgets."
+}

@@ -1,0 +1,93 @@
+{
+  "timestamp_utc": "20260910T052111_903562Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T052111_903562Z/ExpandedStatements_v3.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T052111_903562Z/ExpandedStatements_v3.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 22.416593834,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "ea429295dfc6426ec04b4b3b30eee85e6623ca560d7ab5c1b21be00d12e80a15",
+  "audit_log_sha256": "ca2360394d3a53688fb72aa22e8c7d058b759e8237edc9dcc166554e304cdab7",
+  "module_records": [
+    {
+      "module": "TwoElectronEigenSinglet_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronEigenSinglet_v1.lean",
+      "source_sha256": "a82aa29779b644fcb7386e5e4498795507e65b7a6069ec28201e190566253f1c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronEigenSinglet_v1.olean",
+      "object_sha256": "bdbc9b5e58df2b9aca1887bd99259a4a38d5b21c8c6080ae0f0242a1aeed9746",
+      "declarations": [
+        "spinSingletLift_hydrogen_inner",
+        "twoElectron_low_eigen_zero_of_overlap_zero",
+        "twoElectron_low_eigen_singlet"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "TwoElectronGroundSpatial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronGroundSpatial_v1.lean",
+      "source_sha256": "fb5614c2d2e1f69fdca48ce1632b9e55bb1a2afd94c41e22eab3814d0f075fa8",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronGroundSpatial_v1.olean",
+      "object_sha256": "1e3f7adafabdce26bf2281b97d95b90bededb6f107da87bacff9c821cab64f70",
+      "declarations": [
+        "twoElectron_low_eigen_spatial_amplitude",
+        "twoElectron_ground_spatial_eigenfunction"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "TwoElectronUniformGap_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronUniformGap_v1.lean",
+      "source_sha256": "d099578553529af3ac86aceb489815a17d2917f3926b84a9dee4f7e8bc517cf3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronUniformGap_v1.olean",
+      "object_sha256": "dbac193f1fae6d48739208bb72344e4a3e688ad112931861cb216544a3f28381",
+      "declarations": [
+        "hydrogenProductRepulsion_le_five_sevenths",
+        "twoElectron_ground_energy_upper",
+        "twoElectron_ground_energy_uniform_upper",
+        "twoElectron_ground_separator_gap",
+        "twoElectron_ground_uniform_spectral_gap",
+        "helium_ground_uniform_spectral_gap"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.spinSingletLift_hydrogen_inner: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_low_eigen_zero_of_overlap_zero: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_low_eigen_singlet: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_low_eigen_spatial_amplitude: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_ground_spatial_eigenfunction: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.hydrogenProductRepulsion_le_five_sevenths: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_ground_energy_upper: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_ground_energy_uniform_upper: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_ground_separator_gap: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.twoElectron_ground_uniform_spectral_gap: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.helium_ground_uniform_spectral_gap: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.spinSingletLift_hydrogen_inner",
+    "TheoremT.Continuum.twoElectron_low_eigen_zero_of_overlap_zero",
+    "TheoremT.Continuum.twoElectron_low_eigen_singlet",
+    "TheoremT.Continuum.twoElectron_low_eigen_spatial_amplitude",
+    "TheoremT.Continuum.twoElectron_ground_spatial_eigenfunction",
+    "TheoremT.Continuum.hydrogenProductRepulsion_le_five_sevenths",
+    "TheoremT.Continuum.twoElectron_ground_energy_upper",
+    "TheoremT.Continuum.twoElectron_ground_energy_uniform_upper",
+    "TheoremT.Continuum.twoElectron_ground_separator_gap",
+    "TheoremT.Continuum.twoElectron_ground_uniform_spectral_gap",
+    "TheoremT.Continuum.helium_ground_uniform_spectral_gap"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0
+}

@@ -1,0 +1,65 @@
+{
+  "timestamp_utc": "2026-09-10T21:31:07.071949+00:00",
+  "status": "FORMAL_ACTUAL_FIVE_Y_STAGE_FULL_MIXED_ORDER12_RESERVE",
+  "modules": 4,
+  "declarations": 12,
+  "sources": {
+    "MixedYIterationBudgetSequence_v1.lean": "46d66c5c1a5d83ea153f520c3bcf6e6be9eac395304b8f4eec9c06f3c3e89518",
+    "MixedYFiniteIteration_v1.lean": "d5a7d10013f0e1d6a067d18863417194f2022d233a3a5172a9c94de3a0428203",
+    "MixedYFiveStepReserve_v1.lean": "91fbfb082db781bc5d979e56d63a0ac0eff8cdd0776b054b685ad8d610f27c57",
+    "MixedYIterationBudgetScale_v1.lean": "047226802f31d936524b5953c359ea7ffce79a5f9377d8f5c7243fa45a17c0cc"
+  },
+  "objects": {
+    "MixedYIterationBudgetSequence_v1.olean": "e8e832f49da24c2bce1e728205cf9a10cdb13d4039ca787d724c94631dc7d64d",
+    "MixedYFiniteIteration_v1.olean": "76050b8a533ac8cfb491f68e4ffbac2c780cc195daa0d6d22289d3b33ca28144",
+    "MixedYFiveStepReserve_v1.olean": "b0e896b15b59081b433cdf3304b957aa55b0659829d0abdbd6575203b303ae6a",
+    "MixedYIterationBudgetScale_v1.olean": "c5dc588c5b96b287708c61480cd292841f875636fb32354409ee1c676a07dd0f"
+  },
+  "receipt": {
+    "path": "audits/formal_semantics/20260910T212841_339355Z/receipt.json",
+    "sha256": "31476c3c82b52c7e934421cd65b95ee0d2a4c22fb36f209366f93168e14d3858"
+  },
+  "review": {
+    "path": "audits/MIXED_Y_FINITE_ITERATION_REVIEW_v1.md",
+    "sha256": "e2cde5f4949ae4cb959c73d2b4ece4c7ecacea94119572e30a8295b635a10e51"
+  },
+  "manuscript": {
+    "path": "paper/MIXED_Y_FINITE_ITERATION_FORMAL_v1.md",
+    "sha256": "12fc978a302c883e48d2d5afb518c7a082b9cb00a0ff3acddc0774cd2136e929"
+  },
+  "potential_step_checkpoint": {
+    "path": "audits/MIXED_TRIANGULAR_POTENTIAL_STEP_CHECKPOINT_v1.json",
+    "sha256": "af4d5f206e089045e89dc01c2e66766254596e470837f1341d7891a520181a0a"
+  },
+  "exact_result": "Actual n-stage Y iteration from original weak potential equation and initial genuine triangular reserve; five stages turn SpectatorFiniteState12 into full MixedTriangularState12,12 with explicit squared budget, consuming source/coefficient total orders\u226410.",
+  "recurrence": "R0=W0; U(W)=3H0+3(2^m)^2K0^2W+3c^2(2^m)^2d^2Q0^2W; R(k+1)=max(Rk,1.5*((4Ak^2+16Lk(Dk/2+Qk))*Rk+(2Mk^2+8LkDk)*U(Rk))).",
+  "discharged": [
+    "finite Y iteration from original PDE without future gain hypotheses",
+    "five-stage exact r2\u2192r12 reserve with fixed m12",
+    "genuine source/coefficient restriction across stage domains",
+    "nonnegative common-reference scaling of explicit Y budgets"
+  ],
+  "not_claimed": [
+    "physical scheduled box and eigenfunction composition complete",
+    "aggregate multiindex H12 norm identified",
+    "factorial estimates",
+    "analyticity",
+    "executable derivative algorithm or bit complexity",
+    "fullTheoremT",
+    "novelty"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "environment": "Lean4.34.0-rc2; existing pinned dependency objects reused; final exact module builds and joint strict audit PASS; no new isolated source rebuild.",
+  "next": "Root combines physical source/coefficient jets, normalized-difference PDE, raw amplitude and scheduled physical geometry. Finite multiindex assembly remains independently assigned.",
+  "frozen": {
+    "path": "RWA_REPORT.md",
+    "sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "snapshot": "THEOREM_T_FREEZE_2026-09-09_212604/"
+  }
+}

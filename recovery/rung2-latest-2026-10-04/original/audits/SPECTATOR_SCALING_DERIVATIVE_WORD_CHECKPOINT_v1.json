@@ -1,0 +1,98 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "created_utc": "2026-09-11T02:52:39.073471+00:00",
+  "module_records": [
+    {
+      "module": "SpectatorScalingContinuousLinearMap_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorScalingContinuousLinearMap_v1.lean",
+      "source_sha256": "4154c305c54d4bd933cec79ed6ff057ee3d8ad81bf8d8be3d1cd561fcc78aba2",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SpectatorScalingContinuousLinearMap_v1.olean",
+      "object_sha256": "fdfaae5838b9e7aa14013db663f6eb7537d9866bde53a1881ce35cd7ab6a471b",
+      "declarations": [
+        "spectatorScalingCoefficient",
+        "spectatorScalingContinuousLinearMap",
+        "spectatorScalingContinuousLinearMap_coe",
+        "spectatorScalingContinuousLinearMap_single",
+        "spectatorScalingContinuousLinearMap_norm_single",
+        "spectatorScalingContinuousLinearMap_norm_single_inl",
+        "spectatorScalingContinuousLinearMap_norm_single_inr"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/SpectatorScalingContinuousLinearMap_v1-20260911T024829_627719Z.json",
+      "compiler_receipt_sha256": "1de84baa29a6548afdf71977be528ae289dd7db299521f26600d2c185d1bb8c1"
+    },
+    {
+      "module": "IteratedFDerivLinearCompositionAt_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IteratedFDerivLinearCompositionAt_v1.lean",
+      "source_sha256": "0097702226baaa28b168e7fe7adef7cfe7bdc6d84ca569d21b2f4e920e59852c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IteratedFDerivLinearCompositionAt_v1.olean",
+      "object_sha256": "dd7917b72e94a8ff922aa80cedcf7b249eb2ca3c28810aea7dd3578bb47d3d23",
+      "declarations": [
+        "iteratedFDeriv_comp_right_of_contDiffAt"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/IteratedFDerivLinearCompositionAt_v1-20260911T024951_530670Z.json",
+      "compiler_receipt_sha256": "3d7b20253313231200350bb148730b26d3769fa2f451b879444a37110c1b4771"
+    },
+    {
+      "module": "SpectatorScalingIteratedDerivativeWord_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorScalingIteratedDerivativeWord_v1.lean",
+      "source_sha256": "7c1f07d7d57efddfc57d270d3b5e6ade0447b0a14d51b1287e0c0b6f9cf4a071",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SpectatorScalingIteratedDerivativeWord_v1.olean",
+      "object_sha256": "5be085d093f80d35cfc5897b51e781a90e2cd0d76f11ea6da3cefc2450dc1df1",
+      "declarations": [
+        "spectatorScaling_iteratedFDeriv_word",
+        "spectatorScaling_iteratedFDeriv_word_norm_le"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/SpectatorScalingIteratedDerivativeWord_v1-20260911T025103_720478Z.json",
+      "compiler_receipt_sha256": "45639dc87829bed5d53a7a92ae38df9d081655bc8395c0f6738c15d33d004f64"
+    }
+  ],
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025129_218651Z/receipt.json",
+  "strict_receipt_sha256": "7a7ab9c6961d3c776c89b2420f63164e054f26283289bbddc57adaf65ebac82a",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T025129_218651Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "e421c0762033c5cda291f8b9527a262731420a8240ccde38d2c9bc8098d7f316",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "The existing literal spectatorScalingMap a b is the coercion of a complex continuous linear map on (Fin 3 + Fin d -> Complex).",
+    "Its action on the actual coordinate unit vector Pi.single i 1 is scalar multiplication by the corresponding block coefficient. Exact unit-direction norms are abs(a) for inl and abs(b) for inr.",
+    "For complex normed spaces, a continuous linear map g, and ContDiffAt of order n for f at the actual point g(x), the actual iterated derivative of f composed with g equals the iterated derivative of f composed in each direction with g.",
+    "On a coordinate word w : Fin n -> Fin 3 + Fin d, the actual iterated derivative after spectator scaling equals product_j(block coefficient at w_j) times the unscaled derivative on that same word at the scaled point.",
+    "The corresponding norm is bounded by the derivative operator norm at the scaled point times product_j norm(block coefficient at w_j), preserving separate spatial and spectator scale factors."
+  ],
+  "semantic_checks": [
+    "The linear-map coercion is proved equal to the pre-existing scaling function, so no replacement map or coordinate interpretation is introduced.",
+    "The local chain rule uses only ContDiffAt at g(x). A smaller open neighborhood supplies the within-set theorem, then within derivatives agree with actual iterated derivatives. Global ContDiff is not assumed.",
+    "The coordinate vectors are actual Pi.single unit vectors and have norm one in the actual finite Pi norm.",
+    "No positivity, nonzero, invertibility or nondegeneracy hypotheses are imposed on a or b. Zero and negative scales are covered; norm conclusions use absolute values.",
+    "Derivative order zero uses the empty product one and zero-arity iterated derivative. Spectator dimension zero is included.",
+    "The product of directional factors is not replaced by max(abs(a),abs(b))^n."
+  ],
+  "review_disclosure": "The author read all three complete final sources, the entire 210-line expanded log covering all ten declarations and all axiom reports, and the complete receipt. Independent review is not asserted.",
+  "development": "Scaling and coordinate-word modules passed first compilation. The local chain module initially needed explicit Complex import and ContDiff notation scope; these were fixed before final PASS. One harmless unused simp argument warning remains in the immutable scaling source. All compiler/auditor jobs are terminal.",
+  "limits": [
+    "This is a local chain-rule and direction-scaling prerequisite. The actual normalized homogeneous spectator derivative bound remains a separate consumer.",
+    "No reordering invariance of coordinate words or identification with a physical KS wavefunction is asserted here.",
+    "This does not establish the exact original D6 derivative estimate, physical approximation rate, spectral theorem, executable solver, or bit complexity.",
+    "Pinned dependency and continuation caches were reused. No isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New sources and checkpoint only; final PASS and historical artifacts preserved."
+  }
+}

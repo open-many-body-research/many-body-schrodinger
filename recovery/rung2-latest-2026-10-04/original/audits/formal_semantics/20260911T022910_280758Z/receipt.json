@@ -1,0 +1,103 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T022910_280758Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022910_280758Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022910_280758Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 16.705041167,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "a210a8a73492cfd830342c57e32e6e80dfd103c2f8efb1ca3c13587aa3724f63",
+  "audit_log_sha256": "32e38649fd2c32a3cb93563102272b3edc0e3d596d812f087e9c2e8a662fc924",
+  "module_records": [
+    {
+      "module": "KSSpectatorCoefficientPolynomial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpectatorCoefficientPolynomial_v1.lean",
+      "source_sha256": "98d5a9912b114a40cf747db0390d44831c05ccc534d70fd8fea2592a7b23bcda",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSSpectatorCoefficientPolynomial_v1.olean",
+      "object_sha256": "8e11a191a5ef1d4d44769e37b7497e719bebe8492ff41d09579e8e9732f00d54",
+      "declarations": [
+        "ksSpectatorPolynomial",
+        "ksSpectatorCoefficientPolynomial",
+        "ksSpectatorCoefficientPolynomial_coeff",
+        "ksSpectatorPolynomial_eval",
+        "ksSpectatorCoefficientPolynomial_eval_reconstruct",
+        "ksJointMultiindex_degree",
+        "ksSpectatorCoefficientPolynomial_homogeneous",
+        "ksSpectatorCoefficientPolynomial_eq_zero_of_degree_lt",
+        "polynomialCoeffL1_ksSpectatorCoefficientPolynomial",
+        "ksSpectatorCoefficientPolynomial_coefficient_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSSpectatorCoefficientInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSSpectatorCoefficientInvariance_v1.lean",
+      "source_sha256": "155b6ab192d6bb426a447bbbcd487440d86f2d9475a84eba525d9837e73287c7",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSSpectatorCoefficientInvariance_v1.olean",
+      "object_sha256": "206e7113378ce3f88b88f95ad766580c310ccebd7c58a3a3e0ba792dd9600f84",
+      "declarations": [
+        "ksSpectatorEvaluationPolynomial",
+        "ksSpectatorEvaluationPolynomial_coeff",
+        "ksSpectatorEvaluationPolynomial_eval",
+        "ksSpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq",
+        "ksJointPolynomial_product_coordinate_eval",
+        "ksSpectatorCoefficientPolynomial_circle_invariant",
+        "ksSpectatorCoefficientPolynomial_balanced_support"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.ksSpectatorPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coeff: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorPolynomial_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_reconstruct: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksJointMultiindex_degree: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_homogeneous: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eq_zero_of_degree_lt: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.polynomialCoeffL1_ksSpectatorCoefficientPolynomial: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coefficient_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorEvaluationPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorEvaluationPolynomial_coeff: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorEvaluationPolynomial_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksJointPolynomial_product_coordinate_eval: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_circle_invariant: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_balanced_support: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.ksSpectatorPolynomial",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coeff",
+    "TheoremT.Continuum.ksSpectatorPolynomial_eval",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_reconstruct",
+    "TheoremT.Continuum.ksJointMultiindex_degree",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_homogeneous",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eq_zero_of_degree_lt",
+    "TheoremT.Continuum.polynomialCoeffL1_ksSpectatorCoefficientPolynomial",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_coefficient_bound",
+    "TheoremT.Continuum.ksSpectatorEvaluationPolynomial",
+    "TheoremT.Continuum.ksSpectatorEvaluationPolynomial_coeff",
+    "TheoremT.Continuum.ksSpectatorEvaluationPolynomial_eval",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq",
+    "TheoremT.Continuum.ksJointPolynomial_product_coordinate_eval",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_circle_invariant",
+    "TheoremT.Continuum.ksSpectatorCoefficientPolynomial_balanced_support"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

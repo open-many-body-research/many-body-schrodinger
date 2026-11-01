@@ -1,0 +1,199 @@
+@TheoremT.Continuum.WeakGrushin.local_y_to_grushin_potential_equation : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (c : Real) {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB : @ContinuousOn.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ B Ω)
+  (f H : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (d e : κ → @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hf :
+    @TheoremT.Continuum.ProductLocallyL2On.{0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _
+      _ _ _ _ f Ω)
+  (hH :
+    @TheoremT.Continuum.ProductLocallyL2On.{0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _
+      _ _ _ _ H Ω)
+  (hd :
+    ∀ (j : κ),
+      @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ Ω f (d j) (@TheoremT.Continuum.WeakGrushin.tDir κ _ _ j))
+  (he :
+    ∀ (j : κ),
+      @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _
+        _ _ _ _ _ Ω (d j) (e j) (@TheoremT.Continuum.WeakGrushin.tDir κ _ _ j))
+  (hP0 :
+    ∀ (φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real),
+      @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+        @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ →
+          @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+              (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ) Ω →
+            @Eq.{1} Complex
+              (@MeasureTheory.integral.{0, 0} (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ))
+                Complex _ _
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+                fun (p : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                  (@TheoremT.Continuum.splitGrushin.{0, 0} (EuclideanSpace.{0, 0} Real κ) _ _ κ _
+                    (@OfNat.ofNat.{0} Real (nat_lit 0) _) (@TheoremT.Continuum.oscillatorBasis.{0} κ _)
+                    (fun (x : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                      @OfNat.ofNat.{0} Real (nat_lit 0) _)
+                    φ p)
+                  (f p))
+              (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+                @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p) (H p))),
+  And
+    (@TheoremT.Continuum.ProductLocallyL2On.{0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _
+      _ _ _ _
+      (fun
+          (p :
+            Prod.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+              (EuclideanSpace.{0, 0} Real κ)) =>
+        @HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+          (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ (H p)
+            (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ c
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                  (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+                    (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                      (EuclideanSpace.{0, 0} Real κ) p))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (@Finset.sum.{0, 0} κ Complex _ (@Finset.univ.{0} κ _) fun (j : κ) => e j p)))
+          (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (B p) (f p)))
+      Ω)
+    (∀ (φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real),
+      @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+          (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ →
+        @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ →
+          @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+              (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ) Ω →
+            And
+              (@MeasureTheory.Integrable.{0, 0} Complex _ _
+                (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ))
+                (@Prod.instMeasurableSpace.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ) _ _)
+                (fun (p : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                  @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                    (@TheoremT.Continuum.splitGrushin.{0, 0} (EuclideanSpace.{0, 0} Real κ) _ _ κ _ c
+                      (@TheoremT.Continuum.oscillatorBasis.{0} κ _) B φ p)
+                    (f p))
+                (@MeasureTheory.MeasureSpace.volume.{0}
+                  (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _))
+              (And
+                (@MeasureTheory.Integrable.{0, 0} Complex _ _ (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                  (@Prod.instMeasurableSpace.{0, 0}
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                    (EuclideanSpace.{0, 0} Real κ) _ _)
+                  (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+                    @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p)
+                      (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+                        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ (H p)
+                          (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _ c
+                              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                                (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                  _
+                                  (@Prod.fst.{0, 0}
+                                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                    (EuclideanSpace.{0, 0} Real κ) p))
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@Finset.sum.{0, 0} κ Complex _ (@Finset.univ.{0} κ _) fun (j : κ) => e j p)))
+                        (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (B p) (f p))))
+                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+                (@Eq.{1} Complex
+                  (@MeasureTheory.integral.{0, 0}
+                    (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) Complex _ _
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+                      (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0}
+                      (Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) _)
+                    fun (p : Prod.{0, 0} TheoremT.Continuum.KSSpace (EuclideanSpace.{0, 0} Real κ)) =>
+                    @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                      (@TheoremT.Continuum.splitGrushin.{0, 0} (EuclideanSpace.{0, 0} Real κ) _ _ κ _ c
+                        (@TheoremT.Continuum.oscillatorBasis.{0} κ _) B φ p)
+                      (f p))
+                  (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+                    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                    (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+                    fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+                    @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p)
+                      (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+                        (@HSub.hSub.{0, 0, 0} Complex Complex Complex _ (H p)
+                          (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _ c
+                              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                                (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                  _
+                                  (@Prod.fst.{0, 0}
+                                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                    (EuclideanSpace.{0, 0} Real κ) p))
+                                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@Finset.sum.{0, 0} κ Complex _ (@Finset.univ.{0} κ _) fun (j : κ) => e j p)))
+                        (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (B p) (f p)))))))
+@TheoremT.Continuum.directionalWordCommutator.{u_1,
+    u_2} : {Y : Type u_1} →
+  {T : Type u_2} →
+    [inst : NormedAddCommGroup.{u_1} Y] →
+      [@InnerProductSpace.{0, u_1} Real Y _ _] →
+        [inst : NormedAddCommGroup.{u_2} T] →
+          [@InnerProductSpace.{0, u_2} Real T _ _] →
+            {ι : Type} →
+              (dirs : ι → Prod.{u_1, u_2} Y T) →
+                (B : Prod.{u_1, u_2} Y T → Real) →
+                  (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) →
+                    (w : List.{0} ι) → (p : Prod.{u_1, u_2} Y T) → Complex
+@TheoremT.Continuum.directionalWordProduct_eq_commutator_add.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (B : Prod.{u_1, u_2} Y T → Real) (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex) (w : List.{0} ι)
+  (p : Prod.{u_1, u_2} Y T),
+  @Eq.{1} Complex (@TheoremT.Continuum.directionalWordProduct.{u_1, u_2} Y T _ _ _ _ ι dirs B G w p)
+    (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+      (@TheoremT.Continuum.directionalWordCommutator.{u_1, u_2} Y T _ _ _ _ ι dirs B G w p)
+      (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (B p) (G w p)))
+@TheoremT.Continuum.directionalWordCommutator_nil.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [@FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [@BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [@FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [@BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (B : Prod.{u_1, u_2} Y T → Real) (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex),
+  @Eq.{max (u_1 + 1) (u_2 + 1)} ((p : Prod.{u_1, u_2} Y T) → Complex)
+    (@TheoremT.Continuum.directionalWordCommutator.{u_1, u_2} Y T _ _ _ _ ι dirs B G (@List.nil.{0} ι))
+    (@OfNat.ofNat.{max u_1 u_2} ((p : Prod.{u_1, u_2} Y T) → Complex) (nat_lit 0) _)
+@TheoremT.Continuum.directionalWordCommutator_locallyL2.{u_1,
+    u_2} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type} (dirs : ι → Prod.{u_1, u_2} Y T)
+  {Ω : Set.{max u_2 u_1} (Prod.{u_1, u_2} Y T)} (hΩ : @IsOpen.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _ Ω)
+  {B : Prod.{u_1, u_2} Y T → Real}
+  (hB :
+    @ContDiffOn.{0, max u_1 u_2, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {m : Nat} (G : List.{0} ι → Prod.{u_1, u_2} Y T → Complex)
+  (hG :
+    ∀ (w : List.{0} ι),
+      @LE.le.{0} Nat _ (@List.length.{0} ι w) m →
+        @TheoremT.Continuum.ProductLocallyL2On.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ (G w) Ω)
+  (w : List.{0} ι) (hw : @LE.le.{0} Nat _ (@List.length.{0} ι w) m),
+  @TheoremT.Continuum.ProductLocallyL2On.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _
+    (@TheoremT.Continuum.directionalWordCommutator.{u_1, u_2} Y T _ _ _ _ ι dirs B G w) Ω
+'TheoremT.Continuum.WeakGrushin.local_y_to_grushin_potential_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.directionalWordCommutator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordProduct_eq_commutator_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordCommutator_nil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.directionalWordCommutator_locallyL2' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,194 @@
+@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_eq_iteratedFDeriv : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] {ι : Type} (dirs : ι → @TheoremT.Continuum.WeakGrushin.Space κ _)
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hs :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) s Ω)
+  (w : List.{0} ι) {p : @TheoremT.Continuum.WeakGrushin.Space κ _}
+  (hp :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ Ω p),
+  @Eq.{1} Complex (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs s w p)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin (@List.length.{0} ι w))
+        (fun (_i : Fin (@List.length.{0} ι w)) => @TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _ _ _ _ _ _)
+      ((i : Fin (@List.length.{0} ι w)) → @TheoremT.Continuum.WeakGrushin.Space κ _)
+      (fun (x : (i : Fin (@List.length.{0} ι w)) → @TheoremT.Continuum.WeakGrushin.Space κ _) => Complex) _
+      (@iteratedFDeriv.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+        (@List.length.{0} ι w) s p)
+      (@TheoremT.Continuum.WeakGrushin.directionalWordDirections κ _ ι dirs w))
+@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_norm_le_iteratedFDeriv : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] {ι : Type} (dirs : ι → @TheoremT.Continuum.WeakGrushin.Space κ _)
+  (hdirs :
+    ∀ (i : ι),
+      @LE.le.{0} Real _ (@Norm.norm.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ (dirs i))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hs :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) s Ω)
+  (w : List.{0} ι) {p : @TheoremT.Continuum.WeakGrushin.Space κ _}
+  (hp :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ Ω p),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs s w p))
+    (@Norm.norm.{0}
+      (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin (@List.length.{0} ι w))
+        (fun (_i : Fin (@List.length.{0} ι w)) => @TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _ _ _ _ _ _)
+      _
+      (@iteratedFDeriv.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+        (@List.length.{0} ι w) s p))
+@TheoremT.Continuum.WeakGrushin.complexCoordinateWordDeriv_of_tWord : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex) (tb : List.{0} κ),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+      (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection κ _ _) s
+      (@List.map.{0, 0} κ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+        (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) tb))
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ κ (@TheoremT.Continuum.WeakGrushin.tDir κ _ _) s
+      tb)
+@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_eq_coordinateWord : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+    (@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord κ _ _ s ya tb)
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+      (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection κ _ _) s
+      (@HAppend.hAppend.{0, 0, 0} (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+        (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+        (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)) _
+        (@List.map.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+          (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) ya)
+        (@List.map.{0, 0} κ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+          (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) tb)))
+@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_norm_le_iteratedFDeriv : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hs :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) s Ω)
+  (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ)
+  {p : @TheoremT.Continuum.WeakGrushin.Space κ _}
+  (hp :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ Ω p),
+  @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord κ _ _ s ya tb p))
+    (@Norm.norm.{0}
+      (@ContinuousMultilinearMap.{0, 0, 0, 0} Real
+        (Fin
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+            (@List.length.{0} κ tb)))
+        (fun
+            (_i :
+              Fin
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+                  (@List.length.{0} κ tb))) =>
+          @TheoremT.Continuum.WeakGrushin.Space κ _)
+        Complex _ _ _ _ _ _ _)
+      _
+      (@iteratedFDeriv.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+          (@List.length.{0} κ tb))
+        s p))
+@TheoremT.Continuum.WeakGrushin.mixedWordDeriv_compact_finite_bound : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {B : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hB :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) B Ω)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hKΩ : @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K Ω) (m : Nat),
+  @Exists.{1} Real fun (M : Real) =>
+    And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+      (∀ (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ),
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+              (@List.length.{0} κ tb))
+            m →
+          ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+            @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K p →
+              @LE.le.{0} Real _
+                (@abs.{0} Real _ _
+                  (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                    (EuclideanSpace.{0, 0} Real κ) _ _ _ _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                    (@TheoremT.Continuum.WeakGrushin.yDir κ _)
+                    (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv κ _ _ B tb) ya p))
+                M)
+@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_compact_finite_bound : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hs :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) s Ω)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hKΩ : @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K Ω) (m : Nat),
+  @Exists.{1} Real fun (M : Real) =>
+    And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+      (∀ (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ),
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+              (@List.length.{0} κ tb))
+            m →
+          ∀ (p : @TheoremT.Continuum.WeakGrushin.Space κ _),
+            @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+                (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K p →
+              @LE.le.{0} Real _
+                (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord κ _ _ s ya tb p)) M)
+@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_compact_region_budgets : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω)
+  {s : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hs :
+    @ContDiffOn.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) s Ω)
+  {K : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ K)
+  (hKΩ : @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ K Ω) (m : Nat),
+  @Exists.{1} Real fun (W : Real) =>
+    And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) W)
+      (∀ (ya : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (tb : List.{0} κ),
+        @LE.le.{0} Nat _
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) ya)
+              (@List.length.{0} κ tb))
+            m →
+          @TheoremT.Continuum.WeakGrushin.RegionL2Budget κ _
+            (@TheoremT.Continuum.WeakGrushin.complexMixedSourceWord κ _ _ s ya tb) K W)
+'TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_eq_iteratedFDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_norm_le_iteratedFDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexCoordinateWordDeriv_of_tWord' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_eq_coordinateWord' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_norm_le_iteratedFDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedWordDeriv_compact_finite_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_compact_finite_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexMixedSourceWord_compact_region_budgets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

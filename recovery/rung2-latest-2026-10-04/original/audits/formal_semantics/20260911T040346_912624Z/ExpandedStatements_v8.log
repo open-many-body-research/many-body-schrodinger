@@ -1,0 +1,76 @@
+@TheoremT.Continuum.nuclearDistanceRealSpatial_transverse_square : ∀ {r s u : Real}
+  (hw : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u)),
+  @Eq.{1} Real
+    (@HAdd.hAdd.{0, 0, 0}
+      ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+      ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+      Real _
+      (@HPow.hPow.{0, 0, 0}
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+        Nat
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+        _
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HPow.hPow.{0, 0, 0}
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+        Nat
+        ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+        _
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (TheoremT.Continuum.nuclearDistanceRealW r s u)
+@TheoremT.Continuum.nuclearDistanceRealRepresentative_complex_axis : ∀ {r s u : Real}
+  (hw : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u)),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+    (TheoremT.Continuum.nuclearDistanceAxisMap
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (Complex.ofReal r)
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (Complex.ofReal s)
+          (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _) (Complex.ofReal u)
+            (@Matrix.vecEmpty.{0} Complex)))))
+    (@Matrix.vecCons.{0} Complex (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+      (Complex.ofReal
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 2) _)))
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+        (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+            (Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 0) _)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+            (Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@Matrix.vecEmpty.{0} Complex)))
+'TheoremT.Continuum.nuclearDistanceRealSpatial_transverse_square' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealRepresentative_complex_axis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

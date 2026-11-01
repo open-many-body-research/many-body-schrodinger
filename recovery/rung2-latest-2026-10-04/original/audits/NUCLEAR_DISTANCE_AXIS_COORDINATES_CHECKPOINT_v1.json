@@ -1,0 +1,144 @@
+{
+  "status": "PASS_NUCLEAR_COMPLEX_DISTANCE_AXIS_COORDINATES",
+  "utc": "2026-09-11T04:00:54.666275+00:00",
+  "evidence_category": "Fully formalized complex rational-coordinate geometry, analytic domain and quantitative norm bounds.",
+  "exact_results": [
+    "For q=(r,s,u) in complex three-space, literal Z=(r^2+s^2-u^2)/(2s), W=r^2-Z^2, and the vector map ordered (Z,W) are complex analytic wherever s is nonzero. The vector map is zero at (0,sigma,sigma).",
+    "For real sigma>0 and 0<=delta<=sigma/4, all three closed-polydisc bounds ||r||,||s-sigma||,||u-sigma||<=delta imply s!=0, ||Z||<=4delta and ||W||<=17delta^2. A strict-polydisc corollary and the explicit nonzero actual denominator 2s are supplied. The extra paper restriction delta<=1 is unnecessary.",
+    "For h>0 and delta<=h/16, the strict polydisc maps into ||Z||<=h/4, ||W||<h^2/2, ||s-sigma||<h/16. Neighborhood analyticity is explicitly restricted to the literal polydisc.",
+    "For arbitrary complex q with s!=0, 2sZ=r^2+s^2-u^2 and W+(Z-s)^2=u^2. W+Z^2=r^2 holds unconditionally. These are complex polynomial squares, not Hermitian norm squares."
+  ],
+  "modules": [
+    {
+      "module": {
+        "module": "NuclearDistanceAxisMap_v1",
+        "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearDistanceAxisMap_v1.lean",
+        "source_sha256": "11bac8906f5651c5242771ba838238e279da6a2e907dd294d96dfd9d86cc4eb3",
+        "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NuclearDistanceAxisMap_v1.olean",
+        "object_sha256": "4781bb4fd59862235463e580ad072a4655b84de9811b9d9484b8f37cd5edede7",
+        "declarations": [
+          "nuclearDistanceAxisZ",
+          "nuclearDistanceAxisW",
+          "nuclearDistanceAxisMap",
+          "nuclearDistanceAxisZ_analyticAt",
+          "nuclearDistanceAxisW_analyticAt",
+          "nuclearDistanceAxisMap_analyticOnNhd",
+          "nuclearDistanceAxisMap_center",
+          "nuclearDistanceAxis_bounds_closed",
+          "nuclearDistanceAxis_bounds"
+        ],
+        "forbidden_source_tokens": [],
+        "source_unchanged_during_audit": true,
+        "object_unchanged_during_audit": true
+      },
+      "build": {
+        "path": "logs/development/NuclearDistanceAxisMap_v1-20260911T035408_112465Z.json",
+        "sha256": "08627c85e1f34956d58d4a90c1159334b7cd88c71f3d12e4804b985d560d6fbb"
+      },
+      "strict": {
+        "path": "audits/formal_semantics/20260911T035442_490014Z/receipt.json",
+        "sha256": "b5354b81ee13f508c85346db06e58c0cca32c4f6f8ed11d04af0a1517d1108ee"
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260911T035442_490014Z/ExpandedStatements_v8.log",
+        "sha256": "c437af065ec9b0de90d434ca4fcce2e4cc15b195f2cc49113ce10d575f92cf57"
+      }
+    },
+    {
+      "module": {
+        "module": "NuclearDistanceAxisNeighborhood_v1",
+        "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearDistanceAxisNeighborhood_v1.lean",
+        "source_sha256": "4fdbde854f6abdba2dd8abc115f56fe344a5631043b9fb03105200a7acddd8fe",
+        "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NuclearDistanceAxisNeighborhood_v1.olean",
+        "object_sha256": "0ceee428a2aca25fdf82936355dd43d74d0a055ad3776c67825fc4870f8a31fc",
+        "declarations": [
+          "nuclearDistancePolydisc",
+          "nuclearDistanceAxis_denominator_ne_zero",
+          "nuclearDistanceAxisMap_analyticOnNhd_polydisc",
+          "nuclearDistanceAxis_half_polyradii"
+        ],
+        "forbidden_source_tokens": [],
+        "source_unchanged_during_audit": true,
+        "object_unchanged_during_audit": true
+      },
+      "build": {
+        "path": "logs/development/NuclearDistanceAxisNeighborhood_v1-20260911T035537_680427Z.json",
+        "sha256": "9e1e15f7693f754af322fbff0c0823fd917cb94533e1043b55b8974adbfb2527"
+      },
+      "strict": {
+        "path": "audits/formal_semantics/20260911T035604_779740Z/receipt.json",
+        "sha256": "65c22c7d49926072e8eaa4877b9f9ee3d8e16f2e639f0bc3886981934e1ab2b9"
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260911T035604_779740Z/ExpandedStatements_v8.log",
+        "sha256": "4bbcc2530340c1c1545e81f87e0314bef13ac44522d98fe543b36478964d9512"
+      }
+    },
+    {
+      "module": {
+        "module": "NuclearDistanceAxisAlgebra_v1",
+        "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NuclearDistanceAxisAlgebra_v1.lean",
+        "source_sha256": "b251a35a253f84eec059dda88a745abd01aad1750133f1faedb2bef05518ded2",
+        "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NuclearDistanceAxisAlgebra_v1.olean",
+        "object_sha256": "cb0054c28a058e904e0215d52ddc40e44c81557eeb4db880781e3a7ae2f79abf",
+        "declarations": [
+          "nuclearDistanceAxisZ_mul",
+          "nuclearDistanceAxisW_add_Z_sq",
+          "nuclearDistanceAxisW_add_shifted_Z_sq"
+        ],
+        "forbidden_source_tokens": [],
+        "source_unchanged_during_audit": true,
+        "object_unchanged_during_audit": true
+      },
+      "build": {
+        "path": "logs/development/NuclearDistanceAxisAlgebra_v1-20260911T035704_376084Z.json",
+        "sha256": "c06baa771b1af93e1ac696cb3b93fa18dd7761589f4e761af08e0207b633c5e4"
+      },
+      "strict": {
+        "path": "audits/formal_semantics/20260911T035726_324292Z/receipt.json",
+        "sha256": "79dea712a72c39f6d342e4313a1cbe1f5524906a2fe58a7769ea64451f517628"
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260911T035726_324292Z/ExpandedStatements_v8.log",
+        "sha256": "d7fb03d8a23eac1bc4c7cb4fe04e8693b554a008be8c25c5dcef963ceb38d35d"
+      }
+    }
+  ],
+  "declarations": 16,
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "independent_reviews": [
+    {
+      "path": "audits/NUCLEAR_DISTANCE_AXIS_MAP_NEIGHBORHOOD_REVIEW_v1_20260911T035814Z.json",
+      "sha256": "b511993a70259e4e5832b0a5a8589e3f6256611dd348861e0132f308700c33f8"
+    },
+    {
+      "path": "audits/NUCLEAR_DISTANCE_AXIS_ALGEBRA_REVIEW_ADDENDUM_v1_20260911T035929Z.json",
+      "sha256": "688577c325ecb65e78f61f120a77afb17e68c6d7ed972d58eb7660424f40c385"
+    }
+  ],
+  "paper_dependency": {
+    "path": "audits/DISTANCE_BOUNDARY_GERMS_v1.md",
+    "sha256": "b956af4f732085ae83eb9ace3a965a59ca18bd85e922178f3453f58748c86991"
+  },
+  "review": "Author read every final source/proof/definition body, every final expanded statement and actual axiom footer, all strict receipts and both complete independent reviews. All current source/object hashes were checked against strict before this seal. All three first compilations passed without source correction.",
+  "cache_disclosure": "Pinned Mathlib/prior-audit and continuation object caches reused. No new isolated transitive source rebuild or numerical computation is claimed.",
+  "limits": [
+    "No SO(2) analytic factors, actual physical function identity, global distance germ gluing or full Theorem T are established by this coordinate checkpoint.",
+    "The map output order is (Z,W); a series consumer expecting (W,Z,s-sigma) must explicitly reorder and append the spectator increment.",
+    "No analytic square root, area division, chosen real planar representative, or algorithmic implementation theorem is introduced."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "protocol": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "operation": "New three-module nuclear map sources, compiler/strict evidence, focused reviews, checkpoint and digest; all prior successful and frozen bytes preserved."
+  },
+  "next": "NuclearDistanceRealRepresentative_v1 is drafted and its first compile25660 is running. Prove Heron positivity and exact Euclidean distance realization including collinear/nuclear-collision cases; root owns the distance-orbit theorem and weak agent owns the axis series."
+}

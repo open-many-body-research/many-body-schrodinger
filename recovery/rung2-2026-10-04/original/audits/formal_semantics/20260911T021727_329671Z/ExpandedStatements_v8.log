@@ -1,0 +1,212 @@
+@TheoremT.Continuum.homogeneousSpectatorTerm : {d : Nat} →
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) →
+    (k : Prod.{0, 0} Nat (Fin d → Nat)) →
+      (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex)) → Complex
+@TheoremT.Continuum.homogeneousSpectatorMajorant : {d : Nat} →
+  (M D r S h : Real) → (k : Prod.{0, 0} Nat (Fin d → Nat)) → Real
+@TheoremT.Continuum.spectator_monomial_norm_bound : ∀ {d : Nat} (s : Fin d → Complex) (γ : Fin d → Nat) {h : Real}
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hs :
+    @Membership.mem.{0, 0} (Fin d → Complex) (Set.{0} (Fin d → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h) s),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+        @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (γ i)))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ h
+      (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))
+@TheoremT.Continuum.homogeneous_spectator_term_norm_bound : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D r S h : Real} (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (k : Prod.{0, 0} Nat (Fin d → Nat))
+  (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))
+  (hz :
+    @Membership.mem.{0, 0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))
+      (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+      (@SProd.sprod.{0, 0, 0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) (Set.{0} (Fin d → Complex))
+        (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+        (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r)
+        (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h))
+      z),
+  @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.homogeneousSpectatorTerm d A k z))
+    (@TheoremT.Continuum.homogeneousSpectatorMajorant d M D r S h k)
+TheoremT.Continuum.homogeneous_spectator_majorant_hasSum : ∀ (d : Nat) {M D r S h : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hSh : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S h) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @HasSum.{0, 0} Real (Prod.{0, 0} Nat (Fin d → Nat)) _ _ (@TheoremT.Continuum.homogeneousSpectatorMajorant d M D r S h)
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ M
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ D r))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ S h))
+          d)))
+    (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))
+@TheoremT.Continuum.homogeneous_spectator_majorant_summable : ∀ {d : Nat} {M D r S h : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hSh : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S h) (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+    (@TheoremT.Continuum.homogeneousSpectatorMajorant d M D r S h)
+    (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))
+@TheoremT.Continuum.homogeneous_spectator_series_closed_polydiscs : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D r S h : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hSh : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S h) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))),
+  And
+    (∀ (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex)),
+      @Membership.mem.{0, 0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))
+          (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+          (@SProd.sprod.{0, 0, 0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex))
+            (Set.{0} (Fin d → Complex))
+            (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+            (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r)
+            (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h))
+          z →
+        And
+          (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+            (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) =>
+              @Norm.norm.{0} Complex _ (@TheoremT.Continuum.homogeneousSpectatorTerm d A k z))
+            (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+          (And
+            (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+              (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.homogeneousSpectatorTerm d A k z)
+              (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+            (@LE.le.{0} Real _
+              (@Norm.norm.{0} Complex _
+                (@tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+                  (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.homogeneousSpectatorTerm d A k z)
+                  (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))))
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ M
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ D r))
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                    (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _ S h))
+                    d))))))
+    (@HasSumUniformlyOn.{0, 0, 0} Complex
+      (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))
+      (Prod.{0, 0} Nat (Fin d → Nat)) _ (@TheoremT.Continuum.homogeneousSpectatorTerm d A)
+      (fun (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex)) =>
+        @tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+          (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.homogeneousSpectatorTerm d A k z)
+          (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+      (@SProd.sprod.{0, 0, 0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) (Set.{0} (Fin d → Complex))
+        (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+        (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r)
+        (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h))
+      _)
+@TheoremT.Continuum.shifted_homogeneous_spectator_series_closed_polydiscs : ∀ {d : Nat}
+  (Q : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hQ :
+    ∀ (n : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (Q n γ) n)
+  {M D r S h : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hh : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hSh : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ S h) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Q n γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ D
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))),
+  And
+    (∀ (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex)),
+      @Membership.mem.{0, 0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))
+          (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+          (@SProd.sprod.{0, 0, 0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex))
+            (Set.{0} (Fin d → Complex))
+            (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+            (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r)
+            (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h))
+          z →
+        And
+          (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+            (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) =>
+              @Norm.norm.{0} Complex _ (@TheoremT.Continuum.homogeneousSpectatorTerm d Q k z))
+            (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+          (And
+            (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+              (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.homogeneousSpectatorTerm d Q k z)
+              (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+            (@LE.le.{0} Real _
+              (@Norm.norm.{0} Complex _
+                (@tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+                  (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.homogeneousSpectatorTerm d Q k z)
+                  (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))))
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ M D)
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ D r))
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                    (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _ S h))
+                    d))))))
+    (@HasSumUniformlyOn.{0, 0, 0} Complex
+      (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))
+      (Prod.{0, 0} Nat (Fin d → Nat)) _ (@TheoremT.Continuum.homogeneousSpectatorTerm d Q)
+      (fun (z : Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex)) =>
+        @tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+          (fun (k : Prod.{0, 0} Nat (Fin d → Nat)) => @TheoremT.Continuum.homogeneousSpectatorTerm d Q k z)
+          (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+      (@SProd.sprod.{0, 0, 0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) (Set.{0} (Fin d → Complex))
+        (Set.{0} (Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) (Fin d → Complex))) _
+        (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r)
+        (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin d) h))
+      _)
+'TheoremT.Continuum.homogeneousSpectatorTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneousSpectatorMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_monomial_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_term_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_majorant_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_majorant_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_series_closed_polydiscs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.shifted_homogeneous_spectator_series_closed_polydiscs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

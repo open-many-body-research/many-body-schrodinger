@@ -1,0 +1,53 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/polynomial_norm_review",
+  "created_utc": "2026-09-11T02:19:57.891168+00:00",
+  "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorPolynomial_v1.lean",
+  "source_sha256": "66b0b1bef26379f29b553e87a587f9392724a072a04900b5e4cba1a60b62ce48",
+  "object_sha256": "7d4e9275ef706db55f7d580f09ad69f0833bbd25754f0feaaab8e786d5ac7845",
+  "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/HomogeneousSpectatorPolynomial_v1-20260911T021835_309637Z.json",
+  "compiler_receipt_sha256": "84a08e331143b85a9435bf4b7a7b00f34f530ca28560e026135523621d53c003",
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021900_535830Z/receipt.json",
+  "strict_receipt_sha256": "3b04e48dd16663d0d6283524689eb4eb19bd43a2d3a4e6f964ff48ba7960a4d8",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021900_535830Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "d1aa6d66e5d559cb3d08358d7df2e9f9afe63a0229cff2ac46ff0f8ac7d46be9",
+  "declarations": [
+    "polynomialCoeffL1_rename_le",
+    "homogeneousSpectatorPolynomial",
+    "homogeneousSpectatorPolynomial_eval",
+    "homogeneousSpectatorPolynomial_isHomogeneous",
+    "polynomialCoeffL1_homogeneousSpectatorPolynomial"
+  ],
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "construction": "homogeneousSpectatorPolynomial P gamma = rename Sum.inl P * rename Sum.inr (monomial (Finsupp.equivFunOnFinite.symm gamma) 1), over variable type sigma + Fin d. Sigma may be Fin 3 for the KS consumer; no finiteness hypothesis on sigma is needed for this finite polynomial lemma.",
+  "exact_results": [
+    "Evaluation at Sum.elim X s equals eval X P times product_i s_i^(gamma_i).",
+    "If P is homogeneous of degree m, the output is homogeneous of degree m + sum_i gamma_i.",
+    "The actual coefficient L1 norm of the output is at most the actual coefficient L1 norm of P.",
+    "The supporting generic lemma proves arbitrary renaming is nonexpansive for the actual coefficient L1 norm, using the previously proved substitution theorem and literal unit-norm polynomial variables."
+  ],
+  "semantic_checks": [
+    "The finite spectator function gamma is converted by the actual Finsupp.equivFunOnFinite inverse, so its monomial has exactly those exponents.",
+    "Sum.inl and Sum.inr represent independent physical and spectator coordinate blocks. The exact evaluation formula reads those blocks through Sum.elim.",
+    "Homogeneity uses the actual Finsupp degree, and that degree is the sum of the specified spectator exponents.",
+    "The norm bound uses actual multiplication submultiplicativity and the actual monomial coefficient 1, whose coefficient norm is one. No unspecified polynomial norm is introduced.",
+    "Zero dimension is included: the empty spectator monomial is the constant one and its exponent sum is zero. Zero P and degree zero are included."
+  ],
+  "review_disclosure": "The author read the complete final source, all five exact expanded declarations and all axiom reports. This checkpoint is not an independent review.",
+  "limits": [
+    "This embeds one finite term. It does not group terms by total degree, prove any joint-series convergence, identify a physical Taylor family or establish joint analytic descent.",
+    "Mathematical polynomial construction is noncomputable in this environment; no executable certificate procedure or cost bound is claimed.",
+    "Pinned dependency caches were reused; no isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New continuation source and checkpoint only; final source and prior artifacts preserved."
+  }
+}

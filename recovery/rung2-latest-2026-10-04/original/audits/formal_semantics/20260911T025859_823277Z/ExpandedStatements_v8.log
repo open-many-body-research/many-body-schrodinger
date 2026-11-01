@@ -1,0 +1,335 @@
+@TheoremT.Continuum.homogeneous_spectator_coordinate_word_factorial_bound : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+  (hX :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+        (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (hs :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+          z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (k : Nat) (w : Fin k → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin k)
+          (fun (_i : Fin k) => Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) Complex _ _ _ _
+          _ _ _)
+        ((i : Fin k) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+        (fun (x : (i : Fin k) → Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) => Complex) _
+        (@iteratedFDeriv.{0, 0, 0} Complex _ (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex) _
+          _ Complex _ _ k (@TheoremT.Continuum.homogeneousSpectatorSum d A) z)
+        fun (j : Fin k) =>
+        @Pi.single.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          (fun (a : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => Complex) _ _ (w j)
+          (@OfNat.ofNat.{0} Complex (nat_lit 1) _)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) d)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) k))
+        (@Nat.cast.{0} Real _ (Nat.factorial k)))
+      (@Finset.prod.{0, 0} (Fin k) Real _ (@Finset.univ.{0} (Fin k) _) fun (j : Fin k) =>
+        @Norm.norm.{0} Complex _ (@TheoremT.Continuum.spectatorScalingCoefficient d D S (w j))))
+@TheoremT.Continuum.complexMultiindexDeriv.{u_1} : {ι : Type u_1} →
+  [Fintype.{u_1} ι] →
+    [DecidableEq.{u_1 + 1} ι] → (f : (ι → Complex) → Complex) → (α : ι → Nat) → (z : ι → Complex) → Complex
+@TheoremT.Continuum.homogeneous_spectator_multiindex_factorial_bound : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+  (hX :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+        (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (hs :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+          z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (α : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@TheoremT.Continuum.complexMultiindexDeriv.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) _
+        _ (@TheoremT.Continuum.homogeneousSpectatorSum d A) α z))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) d)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@Nat.cast.{0} Real _ d)))
+            (@Finset.sum.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) Nat _
+              (@Finset.univ.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) _)
+              fun (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) => α i)))
+        (@Finset.prod.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) Real _
+          (@Finset.univ.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) _)
+          fun (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) =>
+          @Nat.cast.{0} Real _ (Nat.factorial (α i))))
+      (@Finset.prod.{0, 0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) Real _
+        (@Finset.univ.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) _)
+        fun (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _ (@TheoremT.Continuum.spectatorScalingCoefficient d D S i)) (α i)))
+@TheoremT.Continuum.homogeneous_spectator_mixed_multiindex_factorial_bound : ∀ {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+  (hA :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _ (A m γ) m)
+  {M D S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hS : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hL :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (A m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+  (hX :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ D
+        (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (hs :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+          z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (β : Fin d → Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@TheoremT.Continuum.complexMultiindexDeriv.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d)) _
+        _ (@TheoremT.Continuum.homogeneousSpectatorSum d A)
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Nat α β) z))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) d)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                  (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                    (@Nat.cast.{0} Real _ d)))
+                D)
+              (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+                (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => α i)))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@Nat.cast.{0} Real _ d)))
+              S)
+            (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => β i)))
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Real _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @Nat.cast.{0} Real _ (Nat.factorial (α i))))
+      (@Finset.prod.{0, 0} (Fin d) Real _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+        @Nat.cast.{0} Real _ (Nat.factorial (β i))))
+@TheoremT.Continuum.ks_real_spectator_series_mixed_factorial_bounds : ∀ {d : Nat}
+  (P : Nat → (Fin d → Nat) → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m γ)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (γ : Fin d → Nat) (e : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m γ)))
+          e →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ e
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ e
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ e
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ e
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b S : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hS : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S)
+  (hc :
+    ∀ (m : Nat) (γ : Fin d → Nat) (e : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m γ)) e →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m γ))
+              e))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+                (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ S
+              (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) → Complex)
+  (hX :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@Norm.norm.{0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) _
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          z (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (hs :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@Norm.norm.{0} ((i : Fin d) → Complex) _ fun (i : Fin d) =>
+          z (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) i)))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (β : Fin d → Nat),
+  And
+    (@LE.le.{0} Real _
+      (@Norm.norm.{0} Complex _
+        (@TheoremT.Continuum.complexMultiindexDeriv.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          _ _ (@TheoremT.Continuum.homogeneousSpectatorSum d (@TheoremT.Continuum.ksRealSpectatorFamilyA d P))
+          (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Nat α β) z))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) d)))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                      (@Nat.cast.{0} Real _ d)))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+                  (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => α i)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                  (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                    (@Nat.cast.{0} Real _ d)))
+                S)
+              (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => β i)))
+          (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Real _
+            (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @Nat.cast.{0} Real _ (Nat.factorial (α i))))
+        (@Finset.prod.{0, 0} (Fin d) Real _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+          @Nat.cast.{0} Real _ (Nat.factorial (β i)))))
+    (@LE.le.{0} Real _
+      (@Norm.norm.{0} Complex _
+        (@TheoremT.Continuum.complexMultiindexDeriv.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d))
+          _ _ (@TheoremT.Continuum.homogeneousSpectatorSum d (@TheoremT.Continuum.ksRealSpectatorFamilyB d P))
+          (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin d) Nat α β) z))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                      (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) d)))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                      (@Nat.cast.{0} Real _ d)))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+                  (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => α i)))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+                  (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                    (@Nat.cast.{0} Real _ d)))
+                S)
+              (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => β i)))
+          (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Real _
+            (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @Nat.cast.{0} Real _ (Nat.factorial (α i))))
+        (@Finset.prod.{0, 0} (Fin d) Real _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+          @Nat.cast.{0} Real _ (Nat.factorial (β i)))))
+'TheoremT.Continuum.homogeneous_spectator_coordinate_word_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.complexMultiindexDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_multiindex_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_spectator_mixed_multiindex_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.ks_real_spectator_series_mixed_factorial_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,91 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T021343_001621Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021343_001621Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T021343_001621Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 11.418765375,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "9ab6865196b9f68a4e842a1cf1f1cb1e539a52fea5ffea98de7c085d87193f5e",
+  "audit_log_sha256": "ed6a08ce3f0e07e5435a2b9849b0c270c349a1361ea1f94350fab6605fb693a5",
+  "module_records": [
+    {
+      "module": "KSCircleContinuousLinear_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSCircleContinuousLinear_v1.lean",
+      "source_sha256": "f091aa5d6f0dbe7508af4f9467c5fbe7c704c82c683819bf7b4af853222c5e6b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSCircleContinuousLinear_v1.olean",
+      "object_sha256": "693e1f343f93208d8afe0d1a18ed8f62e805078fc893a62d6e531a47588afd38",
+      "declarations": [
+        "ksCircleActionCLM",
+        "ksCircleActionCLM_apply",
+        "ksCircleAction_norm",
+        "ksCircleActionCLM_norm",
+        "ksCircleProductCLM",
+        "ksCircleProductCLM_apply",
+        "ksCircleProductCLM_fixed",
+        "ksCircleProductCLM_norm",
+        "ksCircleProductCLM_pullback_invariant"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSPhysicalCircleInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSPhysicalCircleInvariance_v1.lean",
+      "source_sha256": "e7905f6875aa351f5505c254cee52fdcd7e371201c3fa5746c110de0ee05e86e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSPhysicalCircleInvariance_v1.olean",
+      "object_sha256": "5d37d5e9bd4c4a0f2a814d66cce5c1eafac3bd28222d82230094760d8a08e642",
+      "declarations": [
+        "nuclearKSLift_physical_circle_invariant",
+        "pairKSLift_physical_circle_invariant",
+        "nuclearKSPhysicalPullback_circle_invariant",
+        "pairKSPhysicalPullback_circle_invariant"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.ksCircleActionCLM: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleActionCLM_apply: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleAction_norm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleActionCLM_norm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleProductCLM: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleProductCLM_apply: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleProductCLM_fixed: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleProductCLM_norm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCircleProductCLM_pullback_invariant: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.nuclearKSLift_physical_circle_invariant: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.pairKSLift_physical_circle_invariant: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.nuclearKSPhysicalPullback_circle_invariant: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.pairKSPhysicalPullback_circle_invariant: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.ksCircleActionCLM",
+    "TheoremT.Continuum.ksCircleActionCLM_apply",
+    "TheoremT.Continuum.ksCircleAction_norm",
+    "TheoremT.Continuum.ksCircleActionCLM_norm",
+    "TheoremT.Continuum.ksCircleProductCLM",
+    "TheoremT.Continuum.ksCircleProductCLM_apply",
+    "TheoremT.Continuum.ksCircleProductCLM_fixed",
+    "TheoremT.Continuum.ksCircleProductCLM_norm",
+    "TheoremT.Continuum.ksCircleProductCLM_pullback_invariant",
+    "TheoremT.Continuum.nuclearKSLift_physical_circle_invariant",
+    "TheoremT.Continuum.pairKSLift_physical_circle_invariant",
+    "TheoremT.Continuum.nuclearKSPhysicalPullback_circle_invariant",
+    "TheoremT.Continuum.pairKSPhysicalPullback_circle_invariant"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

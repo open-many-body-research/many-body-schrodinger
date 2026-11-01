@@ -1,0 +1,32 @@
+@TheoremT.Continuum.boxEvaluationConstant.{u_1} : {ι : Type u_1} → [Fintype.{u_1} ι] → (a b : ι → Real) → Real
+@TheoremT.Continuum.boxEvaluationConstant_pos.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real}
+  (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i)),
+  @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (@TheoremT.Continuum.boxEvaluationConstant.{u_1} ι _ a b)
+@TheoremT.Continuum.boxEvaluationConstant_eq_product.{u_1} : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] {a b : ι → Real}
+  (hab : ∀ (i : ι), @LT.lt.{0} Real _ (a i) (b i)),
+  @Eq.{1} Real (@TheoremT.Continuum.boxEvaluationConstant.{u_1} ι _ a b)
+    (@Finset.prod.{u_1, 0} ι Real _ (@Finset.univ.{u_1} ι _) fun (i : ι) =>
+      @HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@Inv.inv.{0} Real _ (Real.sqrt (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i))))
+        (Real.sqrt (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i))))
+@TheoremT.Continuum.boxEvaluationConstant_four_three : ∀ {a b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real}
+  {Ly Lt : Real} (hLy : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Ly)
+  (hLt : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Lt)
+  (hlen :
+    ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+      @Eq.{1} Real (@HSub.hSub.{0, 0, 0} Real Real Real _ (b i) (a i))
+        (@ite.{1} Real
+          (@LT.lt.{0} Nat _ (@Fin.val (@OfNat.ofNat.{0} Nat (nat_lit 7) _) i) (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ Ly
+          Lt)),
+  @Eq.{1} Real (@TheoremT.Continuum.boxEvaluationConstant.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) _ a b)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Inv.inv.{0} Real _ (Real.sqrt Ly)) (Real.sqrt Ly))
+        (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Inv.inv.{0} Real _ (Real.sqrt Lt)) (Real.sqrt Lt))
+        (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+'TheoremT.Continuum.boxEvaluationConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.boxEvaluationConstant_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.boxEvaluationConstant_eq_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.boxEvaluationConstant_four_three' depends on axioms: [propext, Classical.choice, Quot.sound]

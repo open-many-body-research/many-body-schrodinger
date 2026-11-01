@@ -1,0 +1,28 @@
+@TheoremT.Continuum.NuclearKSSpace : {N : Nat} → (i : Fin N) → Type
+@TheoremT.Continuum.nuclearKSLift : {N : Nat} →
+  (i : Fin N) → (q : @TheoremT.Continuum.NuclearKSSpace N i) → TheoremT.Continuum.Configuration N
+@TheoremT.Continuum.nuclearKSLift_contDiff : ∀ {N : Nat} (i : Fin N),
+  @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ (TheoremT.Continuum.Configuration N) _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (@TheoremT.Continuum.nuclearKSLift N i)
+@TheoremT.Continuum.nuclearKSLift_locallyLipschitz : ∀ {N : Nat} (i : Fin N),
+  @LocallyLipschitz.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i) (TheoremT.Continuum.Configuration N) _ _
+    (@TheoremT.Continuum.nuclearKSLift N i)
+@TheoremT.Continuum.nuclearKSLift_selected_position : ∀ {N : Nat} (i : Fin N)
+  (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @Eq.{1} TheoremT.Continuum.Position (@TheoremT.Continuum.position N (@TheoremT.Continuum.nuclearKSLift N i q) i)
+    (TheoremT.Continuum.ksMap
+      (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q))
+@TheoremT.Continuum.nuclearKSLift_nuclear_radius : ∀ {N : Nat} (i : Fin N) (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @Eq.{1} Real
+    (@Norm.norm.{0} TheoremT.Continuum.Position _
+      (@TheoremT.Continuum.position N (@TheoremT.Continuum.nuclearKSLift N i q) i))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+        (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) q))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+'TheoremT.Continuum.NuclearKSSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSLift_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSLift_locallyLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSLift_selected_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKSLift_nuclear_radius' depends on axioms: [propext, Classical.choice, Quot.sound]

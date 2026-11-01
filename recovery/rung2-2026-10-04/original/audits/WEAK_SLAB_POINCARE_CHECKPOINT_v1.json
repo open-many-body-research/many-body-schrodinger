@@ -1,0 +1,32 @@
+{
+  "utc": "2026-09-10T23:30:52.015048+00:00",
+  "status": "FORMAL_ACTUAL_COMPACT_WEAK_H2_SLAB_POINCARE_SEALED",
+  "modules": [
+    {
+      "module": "WeakSlabPoincare_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakSlabPoincare_v1.lean",
+      "source_sha256": "6f3b5319a1f9f5ed4734c8c8039cd99bf259282ce90c0172c0dcc75e788fa04b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakSlabPoincare_v1.olean",
+      "object_sha256": "264959853b4c09fbba848786eb73498e57b91629a3cc5766464c67cf9aaae878",
+      "declarations": [
+        "compact_weakH2_oscillator_bound",
+        "compact_l2_slab_weight_integral_bound",
+        "compact_weakH2_slab_poincare_integral",
+        "compact_weakH2_y_slab_poincare_integral",
+        "compact_weakH2_y_slab_poincare_on_compact"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "receipt": "audits/formal_semantics/20260910T233014_793108Z/receipt.json",
+  "receipt_sha256": "c5be49ed2b2189bb61695226e41ee1df10a70fa649de55de631c59d2fc615a0f",
+  "declarations": 5,
+  "exact_result": "For genuine global weak H2 L2 jets d,e of f on WeakGrushin.Space kappa, with f supported almost everywhere on a compact K and |p.1 i|<=R there, R>0, the actual integral of |f|^2 is at most 4 R^2 times the actual integral of |d(yDir i)|^2. A stronger API needs the coordinate bound only almost everywhere where f is nonzero. A general continuous linear coordinate L and direction v with L(v)=1 are also handled.",
+  "proof": "The radius-free oscillator inequality is transferred using the proved compact weak H2 approximation and continuous weighted L2 convergence on the common larger compact support. The slab weight bound is then applied only to the actual limiting f, so no unsupported slab-radius claim is made about its approximants. Scalar absorption uses a=(2 R^2)^(-1).",
+  "evidence": "Pinned-cache compilation PASS in 4.259401 seconds; all five exact statements and axiom dependencies pass v7 audit, with zero printer diagnostics and only standard foundational axioms.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "scope": "This supplies an actual weak Poincare estimate conditional on the explicitly represented global weak H2 jets, compact support, and slab geometry. It does not obtain those jets from a merely weak PDE or establish an operator domain.",
+  "next": "Combine with the independently transferred weak Grushin energy identity and existing second-order estimates in the compact weak graph bound."
+}

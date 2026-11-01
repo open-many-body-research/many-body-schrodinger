@@ -1,0 +1,36 @@
+{
+  "status": "PASS_EXACT_FOUR_VARIABLE_MONOMIAL_COUNT",
+  "created_utc": "2026-09-11T01:36:57.182528+00:00",
+  "evidence_category": "Fully formalized finite combinatorics in the pinned Lean environment",
+  "statement": "The literal Finset.finsuppAntidiag Finset.univ k of d:Fin4\u2192\u2080Nat with total sum k has cardinality (k+3).choose k, at most 4^k, for every natural k including zero. At zero the cardinality is exactly one.",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FiniteHomogeneousMonomialCount_v1.lean",
+    "sha256": "4b0742e6a3884be75ca960a845b443637b6c0428fb8112cbeaa5e14eadff9e6d"
+  },
+  "compiler_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FiniteHomogeneousMonomialCount_v1-20260911T013530_325499Z.json",
+    "sha256": "80bb2efb495c92c4147cb96af180e60a727c0e8a4de9cced05d87dd8baef4f76"
+  },
+  "strict_v8_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013608_356491Z/receipt.json",
+    "sha256": "94b78c55fbe8886105d142806269a55e393f32a8c12b929da80de093f82f1c93"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T013608_356491Z/ExpandedStatements_v8.log",
+    "sha256": "fb0404cf8265028e1cf6bb9a5fe828cede8d4093149cf7957a37da8ab71ebba6"
+  },
+  "declarations_audited": 6,
+  "manual_review": "Full final source body, all six expanded statement entries, all six axiom dependencies and complete strict receipt read directly. Pinned antidiagonal membership/cardinality proof source and Nat.choose_add_le_add_one_pow were inspected.",
+  "trust": "Only propext, Classical.choice, Quot.sound; no unexpected axioms, missing reports, ellipses, printer failures or forbidden source tokens.",
+  "environment": "Lean 4.34.0-rc2; pinned project object caches reused; no source dependency rebuild claimed.",
+  "errors": "First development compile had an unresolved simplifier normalization goal for the equivalent support-sum membership form. Replacing simp by explicit rewriting with the primed membership theorem resolved it. Final compiler and strict audit both pass; no successful source bytes were edited.",
+  "limits": "This counts actual finite exponent vectors. It does not alone supply the homogeneous-polynomial coefficient bound, invariant decomposition, analytic descent or full Theorem T.",
+  "next_active_obligation": "Parent composes actual homogeneous polynomial support membership with this cardinal bound and its coefficient estimates.",
+  "process_state": "All owned compiler/auditor sessions terminal.",
+  "frozen_reference": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

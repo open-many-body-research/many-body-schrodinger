@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-09-11T00:08:43.963263+00:00",
+  "evidence": "Lean kernel-checked actual mixed weak cutoff equation and restricted norm transfer",
+  "result": "Every available natural mixed derivative of the original weak Pc+B solution admits an actual compact global H2 cutoff. Its genuine principal output equals chi*(actual differentiated source-B*Falpha_beta)-the raw signed cutoff error. Restricted L2 source norms bound that global output by the ordinary triangle inequality and bounded multiplication.",
+  "semantic_review": "Read all 1184 lines of expanded final types and all standard axiom reports. The mixed equation assumes only the zero-order PDE and genuine finite weak chains/budgets. Local H2 and positive-order PDE premises are discharged. Restricted output norm helper explicitly consumes an AE output formula, which the mixed equation proves.",
+  "limitations": "The exact R13/source norm composition is the next unit. No factorial recurrence is claimed by this checkpoint.",
+  "audit_receipt": "audits/formal_semantics/20260911T000709_878774Z/receipt.json",
+  "audit_receipt_sha256": "28e21d2d2497fd82fd6cfd7cb8316e2144295ad2118ca32c1959dd066f74a667",
+  "modules": [
+    {
+      "module": "WeakGrushinMixedCutoffEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinMixedCutoffEquation_v1.lean",
+      "source_sha256": "6ff2a06b18fa61d9b982c7e6178dcba7e6b70d598535d22ed78052a8b60a3d41",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakGrushinMixedCutoffEquation_v1.olean",
+      "object_sha256": "b7ac1fea05637fa6d110c939ed2a5f293ef9a5473662c2b3b4543760426922bd",
+      "declarations": [
+        "mixed_family_local_weakH2",
+        "weak_grushin_mixed_cutoff_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RestrictedL2OutputNorm_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RestrictedL2OutputNorm_v1.lean",
+      "source_sha256": "e6351267648cd7e4d179ca9d3ad8ec340e2be47c8b87b740d98d4c6cb2975231",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RestrictedL2OutputNorm_v1.olean",
+      "object_sha256": "04c3c449e11bc550fe771a4636c36460f5ec6ca23aeb0aab6517598698057357",
+      "declarations": [
+        "restrictedL2Extension_norm",
+        "supported_output_norm_le_restricted",
+        "restricted_cutoff_output_norm"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.WeakGrushin.mixed_family_local_weakH2: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weak_grushin_mixed_cutoff_equation: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.restrictedL2Extension_norm: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.supported_output_norm_le_restricted: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.restricted_cutoff_output_norm: [propext, Classical.choice, Quot.sound]"
+  ],
+  "cache": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "preservation": "All PASS bytes and failed logs preserved; outside isolated v20 and no new source rebuild."
+}

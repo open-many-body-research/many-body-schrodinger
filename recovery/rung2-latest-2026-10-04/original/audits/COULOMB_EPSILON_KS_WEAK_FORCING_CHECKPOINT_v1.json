@@ -1,0 +1,357 @@
+{
+  "utc": "2026-09-10T20:57:02.444703+00:00",
+  "status": "FORMAL_ACTUAL_SCALED_COULOMB_KS_WEAK_EQUATIONS_AND_ORIGIN_DIFFERENCE_FORCING",
+  "evidence_category": "Formal physical implications from the actual scalar/full-spin weak H2 Coulomb eigen-graph.",
+  "modules": [
+    {
+      "module": "CoulombOriginScaling_v1",
+      "source": {
+        "path": "lean/CoulombOriginScaling_v1.lean",
+        "sha256": "4b073ae5053eccc968cce59dfe27e1267e90597359e9b1f3fdf461a33169f86d",
+        "bytes": 3272
+      },
+      "object": {
+        "path": "lean/build/CoulombOriginScaling_v1.olean",
+        "sha256": "e9a87272611b289ec4fee5b4d14d308c9026857eeb8a4c7a983e3b94c9730c29",
+        "bytes": 263232
+      },
+      "development_receipt": {
+        "path": "logs/development/CoulombOriginScaling_v1-20260910T204550_368067Z.json",
+        "sha256": "c1fa1f00de5f00bc550c7e7fff362a2d2c2cb7cef81fae65bc70c0c650dd26d5",
+        "bytes": 1753
+      },
+      "declarations": [
+        "collisionFree_real_smul",
+        "smoothLaplacian_comp_real_smul_at",
+        "scalar_coulomb_origin_scaled_classical_equation"
+      ]
+    },
+    {
+      "module": "EpsilonNuclearKSPotential_v1",
+      "source": {
+        "path": "lean/EpsilonNuclearKSPotential_v1.lean",
+        "sha256": "396a944df796333081d80593910c20d4fa623cf374f0a835810aca5809a1540b",
+        "bytes": 2015
+      },
+      "object": {
+        "path": "lean/build/EpsilonNuclearKSPotential_v1.olean",
+        "sha256": "e655c75a4455b47b9b406fd5df34f8800e0b94468b81b7dc74c7400a51dff319",
+        "bytes": 138064
+      },
+      "development_receipt": {
+        "path": "logs/development/EpsilonNuclearKSPotential_v1-20260910T204711_077663Z.json",
+        "sha256": "1e13361796c0ea951913718f29f420e77a77aab3dd4d1270fb95c85585581e9c",
+        "bytes": 1775
+      },
+      "declarations": [
+        "epsilonNuclearKSPotential",
+        "nuclearKSPotential_energy_affine",
+        "epsilonNuclearKSPotential_energy_affine",
+        "epsilonNuclearKSPotential_eq_coulomb_scaled",
+        "epsilonNuclearKSPotential_on_zero",
+        "epsilonNuclearKSPotential_contDiffAt"
+      ]
+    },
+    {
+      "module": "EpsilonPairKSPotential_v1",
+      "source": {
+        "path": "lean/EpsilonPairKSPotential_v1.lean",
+        "sha256": "8d8bdd3685045ea2a0ecb038cc3dfdc37b0ccb673c0b95d00e5f965a45314a6c",
+        "bytes": 1666
+      },
+      "object": {
+        "path": "lean/build/EpsilonPairKSPotential_v1.olean",
+        "sha256": "53311cef09c9b6ebe1b19e530d433e34427515b151ab7240422b818de847c202",
+        "bytes": 146104
+      },
+      "development_receipt": {
+        "path": "logs/development/EpsilonPairKSPotential_v1-20260910T204724_520145Z.json",
+        "sha256": "45b092b83b78d6d41996d4fd17f8254ad2395dd7b3fd8940f91f021b8f6c8aaf",
+        "bytes": 1766
+      },
+      "declarations": [
+        "epsilonPairKSPotential",
+        "pairKSPotential_energy_affine",
+        "epsilonPairKSPotential_energy_affine",
+        "epsilonPairKSPotential_eq_coulomb_scaled",
+        "epsilonPairKSPotential_on_zero",
+        "epsilonPairKSPotential_contDiffAt"
+      ]
+    },
+    {
+      "module": "KSScaledAffineWeakForcing_v1",
+      "source": {
+        "path": "lean/KSScaledAffineWeakForcing_v1.lean",
+        "sha256": "193187672823e0ebd3444a093a6b2c1d02c30b3a27cc23162b61dd6e7068e8d4",
+        "bytes": 4051
+      },
+      "object": {
+        "path": "lean/build/KSScaledAffineWeakForcing_v1.olean",
+        "sha256": "13ffc096ad56ad43493ab22f6fb73742a53430ef51736b39657cd9ee905cf1d5",
+        "bytes": 321680
+      },
+      "development_receipt": {
+        "path": "logs/development/KSScaledAffineWeakForcing_v1-20260910T205018_293276Z.json",
+        "sha256": "6a7d5afacee9300ab5f2afd6201a95703de43de8c5415cb4bed97ed4ea75ea18",
+        "bytes": 1768
+      },
+      "declarations": [
+        "ksScaledPrincipal_const",
+        "ks_scaled_constant_weak_pairing",
+        "ks_scaled_affine_weak_forcing"
+      ]
+    },
+    {
+      "module": "CoulombEpsilonKSClassical_v1",
+      "source": {
+        "path": "lean/CoulombEpsilonKSClassical_v1.lean",
+        "sha256": "6874608a99b5d9929f2f22dac22e6f1f0d3504ee6fb2692832474663ef979574",
+        "bytes": 2902
+      },
+      "object": {
+        "path": "lean/build/CoulombEpsilonKSClassical_v1.olean",
+        "sha256": "86406ff01d4c22b91b9b1458bb522983134e5383048fdec6440ce5733d5e5737",
+        "bytes": 218984
+      },
+      "development_receipt": {
+        "path": "logs/development/CoulombEpsilonKSClassical_v1-20260910T204819_937580Z.json",
+        "sha256": "44b4a2c25448b53b9ef052cf2a5cab193c9b73292fdde09047a0c5cd4098b5eb",
+        "bytes": 1768
+      },
+      "declarations": [
+        "scalar_coulomb_epsilon_nuclear_KS_classical_equation",
+        "scalar_coulomb_epsilon_pair_KS_classical_equation"
+      ]
+    },
+    {
+      "module": "CoulombEpsilonKSWeak_v1",
+      "source": {
+        "path": "lean/CoulombEpsilonKSWeak_v1.lean",
+        "sha256": "0f36975ec01137b162aa875cea474411cc64f98edb97112a2eee785e9924efd8",
+        "bytes": 6181
+      },
+      "object": {
+        "path": "lean/build/CoulombEpsilonKSWeak_v1.olean",
+        "sha256": "ed12e1e70a82b43026068ffc47d8af93680f4e52fa042e42813c24b1c33a05fd",
+        "bytes": 216680
+      },
+      "development_receipt": {
+        "path": "logs/development/CoulombEpsilonKSWeak_v1-20260910T204935_332600Z.json",
+        "sha256": "e99e08ddf4f4b0db7d5b56b190342753d02ceb32747c59ead1a899475d211c08",
+        "bytes": 1760
+      },
+      "declarations": [
+        "scalar_coulomb_epsilon_nuclear_KS_off_zero_weak",
+        "scalar_coulomb_epsilon_nuclear_KS_weak",
+        "scalar_coulomb_epsilon_pair_KS_off_zero_weak",
+        "scalar_coulomb_epsilon_pair_KS_weak"
+      ]
+    },
+    {
+      "module": "CoulombSpinEpsilonKSWeak_v1",
+      "source": {
+        "path": "lean/CoulombSpinEpsilonKSWeak_v1.lean",
+        "sha256": "31b92e87aecd24bb378b2ddd9d4a66c9f91ff9fe50cdb30b5462bea7cf30b7e0",
+        "bytes": 2573
+      },
+      "object": {
+        "path": "lean/build/CoulombSpinEpsilonKSWeak_v1.olean",
+        "sha256": "92a4d94f3f29ca49e0997b5f493636afcdc0e4c04d5e314ac979858516b612e6",
+        "bytes": 136104
+      },
+      "development_receipt": {
+        "path": "logs/development/CoulombSpinEpsilonKSWeak_v1-20260910T205030_192642Z.json",
+        "sha256": "35c918350f46ce22a2e393f0537823386fbcb1ba1232127db87ed019809de7b7",
+        "bytes": 1772
+      },
+      "declarations": [
+        "coulomb_spin_epsilon_KS_weak_representative"
+      ]
+    },
+    {
+      "module": "CoulombEpsilonKSDifference_v1",
+      "source": {
+        "path": "lean/CoulombEpsilonKSDifference_v1.lean",
+        "sha256": "f9a921596eebaef2ee8f21b49bdb60f54b76c99d36a356f7e1b6301f08b2494a",
+        "bytes": 2904
+      },
+      "object": {
+        "path": "lean/build/CoulombEpsilonKSDifference_v1.olean",
+        "sha256": "f6387247d2e45b3a38d87d431262cdad27666ffdf0992a6421befb3a778f5c51",
+        "bytes": 158704
+      },
+      "development_receipt": {
+        "path": "logs/development/CoulombEpsilonKSDifference_v1-20260910T205241_715466Z.json",
+        "sha256": "5d2305686dd7d1c6f40e6bb3d94e092fa3fd4d6122676da880ce9ba542a03992",
+        "bytes": 1771
+      },
+      "declarations": [
+        "scalar_coulomb_epsilon_nuclear_KS_difference_weak",
+        "scalar_coulomb_epsilon_pair_KS_difference_weak"
+      ]
+    },
+    {
+      "module": "CoulombSpinEpsilonKSDifference_v1",
+      "source": {
+        "path": "lean/CoulombSpinEpsilonKSDifference_v1.lean",
+        "sha256": "a157f0295542d25265c69853ae39d72bf2797313b064c9ac72fb3892c5459332",
+        "bytes": 3049
+      },
+      "object": {
+        "path": "lean/build/CoulombSpinEpsilonKSDifference_v1.olean",
+        "sha256": "5a29fef541f023b202efcb996b10d5d2f72b2949ce50c70cc9ad6818922a26bc",
+        "bytes": 147336
+      },
+      "development_receipt": {
+        "path": "logs/development/CoulombSpinEpsilonKSDifference_v1-20260910T205316_117214Z.json",
+        "sha256": "8f5fd1f60680facb2c15f8f9f0fb66388b45886527c70fa835d29bfeaa3ed5ad",
+        "bytes": 1783
+      },
+      "declarations": [
+        "coulomb_spin_epsilon_KS_difference_representative"
+      ]
+    }
+  ],
+  "module_count": 9,
+  "declaration_count": 28,
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T204618_210855Z/receipt.json",
+        "sha256": "1a0cd6ab4eebbf4fadda1c3f19012b1f800cc499fd36bfe9f8ab74617e1980d1",
+        "bytes": 3793
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T204618_210855Z/ExpandedStatements_v5.lean",
+        "sha256": "a32440480e03784180b19b7006cd8ebfa7bbbab0ea5c3a5f7c59df8f26883706",
+        "bytes": 892
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T204618_210855Z/ExpandedStatements_v5.log",
+        "sha256": "1393e805a535db54f27224cee909872db214086a14471ddadcff38fea0bb35b3",
+        "bytes": 8077
+      },
+      "declarations": 3
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T204804_855669Z/receipt.json",
+        "sha256": "7b541c30f37eceb962a5c3bdc7f47ebf934731cb0177ab4bb0b2b7009a034a78",
+        "bytes": 6375
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T204804_855669Z/ExpandedStatements_v5.lean",
+        "sha256": "934a062b8fca2b5344de6962221ba6a197db0bebc11514291fe5d0908ae92779",
+        "bytes": 2078
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T204804_855669Z/ExpandedStatements_v5.log",
+        "sha256": "f2a2e4a2fab3773132d730b602dd469d65b8b80b705e460ffba9642b97267ca2",
+        "bytes": 10093
+      },
+      "declarations": 12
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T205046_907734Z/receipt.json",
+        "sha256": "45cf3b576ff173f10e0690a58b321c8042de0f5ed065e2d694d5d6a8a4d36953",
+        "bytes": 3746
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T205046_907734Z/ExpandedStatements_v5.lean",
+        "sha256": "0a8f4da866993be026f5b7a430186982c6331762ee7f99fb0f7a21bc15d88d16",
+        "bytes": 857
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T205046_907734Z/ExpandedStatements_v5.log",
+        "sha256": "027537ac5429e42d123b35789c2128aa957006fd1c2535c5091a413b7a19b53b",
+        "bytes": 10938
+      },
+      "declarations": 3
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T205342_989794Z/receipt.json",
+        "sha256": "815ddf86e45e3d9008deb96db8490c5111a9526bac56fc77c3f51a9787e5b1ec",
+        "bytes": 8537
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T205342_989794Z/ExpandedStatements_v5.lean",
+        "sha256": "f9da0566c0ce7cdd96ce884786ce3bc36a61b000ae398957fe2396862869dd33",
+        "bytes": 2173
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T205342_989794Z/ExpandedStatements_v5.log",
+        "sha256": "a23203175c68452baea3a766ab6b1154f93585fb0eccfc11cb20609367dfbd6b",
+        "bytes": 131718
+      },
+      "declarations": 10
+    }
+  ],
+  "focused_review": {
+    "path": "audits/COULOMB_EPSILON_KS_FOCUSED_REVIEW_v1.json",
+    "sha256": "3a22eec6ce2ab8519c803e273a11d2d50e53bae534470b6c0e6aa8970d27aa47",
+    "bytes": 18499
+  },
+  "manuscript": {
+    "path": "paper/COULOMB_EPSILON_KS_WEAK_AND_FORCING_v1.md",
+    "sha256": "1a0f75faef80e173c8b9bb06e455f4ef4be0e1653384fca412685e5ca70e1124",
+    "bytes": 5512
+  },
+  "direct_origin_difference_definition": {
+    "path": "lean/LocallyLipschitzScaledDifference_v1.lean",
+    "sha256": "417be3fd0fb8c594a54635a74f1b1d7a42f9be44630d1c8701bc70128af76c9f",
+    "bytes": 2947
+  },
+  "direct_support_checkpoints": [
+    {
+      "path": "audits/EPSILON_KS_COEFFICIENT_CHECKPOINT_v1.json",
+      "sha256": "d88c21514b5e103574923013facce62918412427df819b004163d416db7e0b36",
+      "bytes": 6423
+    },
+    {
+      "path": "audits/KS_SCALED_AFFINE_WEAK_FORCING_CHECKPOINT_v1.json",
+      "sha256": "933fef5674d5e78379093549ca3c3fb9a9784aad5a76222b3350c99b7a9fe2d2",
+      "bytes": 5292
+    },
+    {
+      "path": "audits/COULOMB_PAIR_KS_WEAK_CHECKPOINT_v1.json",
+      "sha256": "b58569ab29b51cb4433980455f6d1b8552f7d11bda5de5b6e7739034a091bcc4",
+      "bytes": 11280
+    },
+    {
+      "path": "audits/COULOMB_PAIR_KS_REVIEW_LINK_v1.json",
+      "sha256": "dbc47e1ad488b86a729daef5ae057dfc5c0af7abb5ae84ba87dca135fd12fbfd",
+      "bytes": 783
+    }
+  ],
+  "exact_results": {
+    "dilation": "g_epsilon(x)=g(epsilon*x), epsilon>0, Delta g_epsilon=2(epsilon*V_Z-epsilon^2*E)g_epsilon off physical collisions. Whole potential, including repulsion, is scaled.",
+    "coefficient": "B_epsilon=epsilon*B(Z,epsilon*E); fixed nuclear c4/pair c1 chart patches; smooth through selected fiber; constants -8epsilon Z and +4epsilon.",
+    "weak": "Actual integrability and compact-test homogeneous weak equation across selected collision fiber.",
+    "difference": "originScaledDifference g epsilon composed with chart satisfies source -B(Z,epsilon*E)*g(0), with both pairings integrable and no inverse epsilon in source.",
+    "full_spin": "One representative family precedes all component/positive-scale/chart/test quantifiers in each final theorem; common ae identity, simultaneous fermionic permutation and spin square-sum bound.",
+    "scope": "Nuclear scalar dilation/chart results for arbitrary finite N with selected electron; pair and simultaneous full-spin wrappers N=2.",
+    "not_assumed": "No scaled-family eigen-graph, derivative at collision, weak KS equation, uniform derivative estimate, eigenvector existence, ground-state uniqueness, gap or binding."
+  },
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned library/prior-audit and continuation dependency objects reused; no source dependency rebuild or alternative evaluator.",
+  "preservation": "All prior frozen/PASS/sealed artifacts preserved; new files only.",
+  "limitations": [
+    "No simultaneous nuclear/pair origin chart.",
+    "No uniform finite or all-order derivative constants in this unit.",
+    "No global dictionary approximation or implementation theorem.",
+    "Full Theorem T remains separate and unverified."
+  ],
+  "next": "Transport scheduled cutoff geometry from Fin3 spectator coordinates to the actual physical spectator index via id_Y times pairCenterEquiv, preserving direction sums and constants. Root owns uniform finite coefficient/source bounds and Grushin iteration integration.",
+  "frozen_provenance": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/UNIFORM_ANALYTIC_AUDIT.md",
+    "sha256": "5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c"
+  }
+}

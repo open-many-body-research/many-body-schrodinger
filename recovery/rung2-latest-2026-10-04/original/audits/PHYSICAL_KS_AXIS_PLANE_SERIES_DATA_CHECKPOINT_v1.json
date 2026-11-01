@@ -1,0 +1,119 @@
+{
+  "status": "PASS_ACTUAL_PHYSICAL_KS_AXIS_PLANE_SERIES_INPUT",
+  "created_utc": "2026-09-11T04:00:02.076002+00:00",
+  "evidence_category": "Fully formalized actual physical-chart component from explicit pointwise data",
+  "strongest_exact_result": "The actual nuclear/pair KS pointwise data yield the actual plane/spectator homogeneous polynomial series for physical A/B on every positive h <= min((4D)^-1,(4S)^-1). Every original Cartesian coefficient satisfies 16P h^-(j+|gamma|), respectively 16PD h^-(j+|gamma|); the Cartesian HasSum and function bounds are derived. D=32S^2, S=7 physicalKSPointwiseRate. The grouped rate 2max(D,S) times the maximal retained h is <=1/2.",
+  "modules": [
+    {
+      "module": "SO2SpectatorRetainedRadius_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SO2SpectatorRetainedRadius_v1.lean",
+      "source_sha256": "a4e5078f2299d9aadf0dcfc83ad06f31f64a84d0f4b8b4db3db534250e5dfd20",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SO2SpectatorRetainedRadius_v1.olean",
+      "object_sha256": "1aef501b0253188673db385a959fcf9d6b70c794940e7dab2106fd34d753760b",
+      "declarations": [
+        "so2SpectatorFamily_retained_coefficient_bound",
+        "geometric_rate_lt_one_of_lt_retained_radius",
+        "so2SpectatorFamily_hasSum_on_retained_polydisc"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSAxisRetainedRadius_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSAxisRetainedRadius_v1.lean",
+      "source_sha256": "8106767b445f54e536d0b18ea39ea892dafe3695b1b41d247174c2b0a8d4a6dd",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSAxisRetainedRadius_v1.olean",
+      "object_sha256": "fd7741cd35be5f695bb87e79e2c9d53e5457ac9c1a4128def09d5fc0274c15b3",
+      "declarations": [
+        "physicalKSAxisSeriesRate_pos",
+        "physicalKSAxisSeriesRate_mul_analyticAxisRadius_le_half",
+        "physicalKSAxisSeriesRate_mul_retainedRadius_le_one"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SO2PolynomialSeriesInput_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SO2PolynomialSeriesInput_v1.lean",
+      "source_sha256": "947179f1cfc7c8a12b15f2a054ef14435fd84ec4957547770c032f2838bf5b6f",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SO2PolynomialSeriesInput_v1.olean",
+      "object_sha256": "d286b8a83be95e141ee70780abac28cfec58eb82d11a5351fcbe8e48ceb20093",
+      "declarations": [
+        "SO2PolynomialSeriesInput",
+        "so2PolynomialSeriesInput_of_joint_polynomials"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSAxisPlaneSeriesData_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSAxisPlaneSeriesData_v1.lean",
+      "source_sha256": "a614f4e86ba20b423a643540f42ee011165b576b625606e2812277d586d227ce",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSAxisPlaneSeriesData_v1.olean",
+      "object_sha256": "7d6faba1a776e3c4c93f40d0445edaeaf5ddc0e63d8752ee5d47ee9d0ce0d6ca",
+      "declarations": [
+        "physicalKSAxisPlanePolynomialA",
+        "physicalKSAxisPlanePolynomialB",
+        "physicalKSAxisPlaneSeries_data",
+        "nuclearKSPhysicalAxisPlaneSeries_data",
+        "pairKSPhysicalAxisPlaneSeries_data"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T034632_583270Z/receipt.json",
+      "receipt_sha256": "c59771c11a7ceb5cc4bb95d0045f3cee64b55ddf1c648bfa3d1ff70ab637b996",
+      "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T034632_583270Z/ExpandedStatements_v8.log",
+      "expanded_log_sha256": "38d4238610dbee51056b358d7c50ee0a9c6a646c6352c5bb07304a768813f5df"
+    },
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035716_317525Z/receipt.json",
+      "receipt_sha256": "858474a62f5c8c6aeac839182b615baf8dff1c538c2a3f0d200660b9caff94cc",
+      "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035716_317525Z/ExpandedStatements_v8.log",
+      "expanded_log_sha256": "ecf5b46b81081396dcdb0652022c4698eac3b613943a16674a86fe814261b2fc"
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.so2SpectatorFamily_retained_coefficient_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.geometric_rate_lt_one_of_lt_retained_radius: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorFamily_hasSum_on_retained_polydisc: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSAxisSeriesRate_pos: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSAxisSeriesRate_mul_analyticAxisRadius_le_half: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSAxisSeriesRate_mul_retainedRadius_le_one: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.SO2PolynomialSeriesInput: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.so2PolynomialSeriesInput_of_joint_polynomials: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSAxisPlanePolynomialA: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSAxisPlanePolynomialB: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSAxisPlaneSeries_data: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.nuclearKSPhysicalAxisPlaneSeries_data: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.pairKSPhysicalAxisPlaneSeries_data: [propext, Classical.choice, Quot.sound]"
+  ],
+  "declaration_count": 13,
+  "independent_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_AXIS_PLANE_SERIES_DATA_FOCUSED_REVIEW_v1.json",
+    "sha256": "818f50fafab219f3722de3161a2105bd7bd15201c5699572bafb080f210aaab7"
+  },
+  "review": "Author and independent reviewer read all final source bodies, complete expanded statements, axiom reports and receipts. Only propext, Classical.choice and Quot.sound. Definition bodies are actual prescribed finite polynomial extraction and literal series, not unproved analytic norms.",
+  "mathematical_change": "Actual SO2 series input obligations now follow from the already proved physical polynomial family, coefficient L1 bounds, geometric convergence and zero-order derivative bounds. No new Cauchy hypothesis is required.",
+  "limits": [
+    "Spatial SO2 symmetry and descended function conclusion are deliberately not premises or conclusions of SO2PolynomialSeriesInput; their composition is the next active obligation.",
+    "The component input PhysicalKSBoxPointwiseData remains explicit, with separate raw PDE and physical ground consumers.",
+    "Mathlib polynomial operations and infinite sums here are noncomputable mathematical definitions; no executable numerical method or operational complexity is claimed.",
+    "Full Theorem T remains outside this checkpoint."
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "next_active": "Compose actual local real rotation invariance with series uniqueness and plane coefficient extraction; derive actual bounded analytic SO2 descended A/B functions, then distance-coordinate germs.",
+  "preservation": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da"
+  }
+}

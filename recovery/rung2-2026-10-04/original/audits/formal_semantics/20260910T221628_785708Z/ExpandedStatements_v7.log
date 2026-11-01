@@ -1,0 +1,335 @@
+@TheoremT.Continuum.powerSeriesTranslationMajorant.{u_1,
+    u_2} : {E : Type u_1} →
+  {F : Type u_2} →
+    [inst : NormedAddCommGroup.{u_1} E] →
+      [inst_1 : @NormedSpace.{0, u_1} Real E _ _] →
+        [inst_2 : NormedAddCommGroup.{u_2} F] →
+          [inst_3 : @NormedSpace.{0, u_2} Real F _ _] →
+            (p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _) → (r s : NNReal) → NNReal
+@TheoremT.Continuum.powerSeries_changeOrigin_uniform_nnnorm.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _) {r s : NNReal}
+  (hrs :
+    @LT.lt.{0} ENNReal _ (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (ENNReal.ofNNReal r) (ENNReal.ofNNReal s))
+      (@FormalMultilinearSeries.radius.{0, u_1, u_2} Real E F _ _ _ _ _ p))
+  {x : E} (hx : @LE.le.{0} NNReal _ (@NNNorm.nnnorm.{u_1} E _ x) r) (k : Nat),
+  @LE.le.{0} NNReal _
+    (@HMul.hMul.{0, 0, 0} NNReal NNReal NNReal _
+      (@NNNorm.nnnorm.{max u_1 u_2}
+        (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _
+        (@FormalMultilinearSeries.changeOrigin.{0, u_1, u_2} Real E F _ _ _ _ _ p x k))
+      (@HPow.hPow.{0, 0, 0} NNReal Nat NNReal _ s k))
+    (@TheoremT.Continuum.powerSeriesTranslationMajorant.{u_1, u_2} E F _ _ _ _ p r s)
+@TheoremT.Continuum.powerSeries_changeOrigin_uniform_norm.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _) {r s : NNReal}
+  (hrs :
+    @LT.lt.{0} ENNReal _ (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (ENNReal.ofNNReal r) (ENNReal.ofNNReal s))
+      (@FormalMultilinearSeries.radius.{0, u_1, u_2} Real E F _ _ _ _ _ p))
+  {x : E} (hx : @LE.le.{0} NNReal _ (@NNNorm.nnnorm.{u_1} E _ x) r) (k : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@Norm.norm.{max u_1 u_2}
+        (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _
+        (@FormalMultilinearSeries.changeOrigin.{0, u_1, u_2} Real E F _ _ _ _ _ p x k))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (NNReal.toReal s) k))
+    (NNReal.toReal (@TheoremT.Continuum.powerSeriesTranslationMajorant.{u_1, u_2} E F _ _ _ _ p r s))
+@TheoremT.Continuum.powerSeries_changeOrigin_uniform_geometric_bound.{u_1,
+    u_2} : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 : @NormedSpace.{0, u_1} Real E _ _] [inst_2 : NormedAddCommGroup.{u_2} F]
+  [inst_3 : @NormedSpace.{0, u_2} Real F _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, u_2} Real E F _ _ _ _ _ _ _ _ _ _ _) {r s : NNReal}
+  (hs : @LT.lt.{0} NNReal _ (@OfNat.ofNat.{0} NNReal (nat_lit 0) _) s)
+  (hrs :
+    @LT.lt.{0} ENNReal _ (@HAdd.hAdd.{0, 0, 0} ENNReal ENNReal ENNReal _ (ENNReal.ofNNReal r) (ENNReal.ofNNReal s))
+      (@FormalMultilinearSeries.radius.{0, u_1, u_2} Real E F _ _ _ _ _ p)),
+  @Exists.{1} Real fun (C : Real) =>
+    And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+      (∀ (x : E),
+        @LE.le.{0} NNReal _ (@NNNorm.nnnorm.{u_1} E _ x) r →
+          ∀ (k : Nat),
+            @LE.le.{0} Real _
+              (@Norm.norm.{max u_1 u_2}
+                (@ContinuousMultilinearMap.{0, 0, u_1, u_2} Real (Fin k) (fun (_i : Fin k) => E) F _ _ _ _ _ _ _) _
+                (@FormalMultilinearSeries.changeOrigin.{0, u_1, u_2} Real E F _ _ _ _ _ p x k))
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ (NNReal.toReal s) k)))
+@TheoremT.Continuum.nuclearKS_uniform_factorial_word_bounds : ∀ {N : Nat} (i : Fin N) (Z E : Real)
+  {K : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _ K)
+  (hKpatch :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _ K
+      (@TheoremT.Continuum.nuclearKSCoefficientPatch N i)),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (ε : Real),
+            @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ε →
+              @LE.le.{0} Real _ ε (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+                ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                  (t : List.{0} (@TheoremT.Continuum.SpectatorCoordinate N i)),
+                  And
+                    (∀ (q : @TheoremT.Continuum.NuclearKSSpace N i),
+                      @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i)
+                          (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _ K q →
+                        And
+                          (@LE.le.{0} Real _
+                            (@abs.{0} Real _ _
+                              (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                (EuclideanSpace.{0, 0} Real (@TheoremT.Continuum.SpectatorCoordinate N i)) _ _ _ _
+                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                (@TheoremT.Continuum.WeakGrushin.yDir (@TheoremT.Continuum.SpectatorCoordinate N i) _)
+                                (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv
+                                  (@TheoremT.Continuum.SpectatorCoordinate N i) _ _
+                                  (@TheoremT.Continuum.nuclearKSPotential N i Z
+                                    (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E))
+                                  t)
+                                a q))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+                                (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                    (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                    (@List.length.{0} (@TheoremT.Continuum.SpectatorCoordinate N i) t))))
+                              (@Nat.cast.{0} Real _
+                                (Nat.factorial
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                    (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                    (@List.length.{0} (@TheoremT.Continuum.SpectatorCoordinate N i) t))))))
+                          (@LE.le.{0} Real _
+                            (@abs.{0} Real _ _
+                              (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                (EuclideanSpace.{0, 0} Real (@TheoremT.Continuum.SpectatorCoordinate N i)) _ _ _ _
+                                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                (@TheoremT.Continuum.WeakGrushin.yDir (@TheoremT.Continuum.SpectatorCoordinate N i) _)
+                                (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv
+                                  (@TheoremT.Continuum.SpectatorCoordinate N i) _ _
+                                  (@TheoremT.Continuum.epsilonNuclearKSPotential N i ε Z E) t)
+                                a q))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+                                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                      (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                      (@List.length.{0} (@TheoremT.Continuum.SpectatorCoordinate N i) t))))
+                                (@Nat.cast.{0} Real _
+                                  (Nat.factorial
+                                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                      (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                      (@List.length.{0} (@TheoremT.Continuum.SpectatorCoordinate N i) t))))))))
+                    (∀ (a0 : Complex) (S : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)),
+                      @MeasurableSet.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _ S →
+                        @LE.le.{0} (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _ S K →
+                          @TheoremT.Continuum.WeakGrushin.RegionL2Budget (@TheoremT.Continuum.SpectatorCoordinate N i) _
+                            (fun
+                                (p :
+                                  @TheoremT.Continuum.WeakGrushin.Space (@TheoremT.Continuum.SpectatorCoordinate N i)
+                                    _) =>
+                              @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                                (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                  (EuclideanSpace.{0, 0} Real (@TheoremT.Continuum.SpectatorCoordinate N i)) _ _ _ _
+                                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                  (@TheoremT.Continuum.WeakGrushin.yDir (@TheoremT.Continuum.SpectatorCoordinate N i) _)
+                                  (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv
+                                    (@TheoremT.Continuum.SpectatorCoordinate N i) _ _
+                                    (@TheoremT.Continuum.nuclearKSPotential N i Z
+                                      (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E))
+                                    t)
+                                  a p)
+                                (@Neg.neg.{0} Complex _ a0))
+                            S
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                                  (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                    (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+                                      (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                          (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                          (@List.length.{0} (@TheoremT.Continuum.SpectatorCoordinate N i) t))))
+                                    (@Nat.cast.{0} Real _
+                                      (Nat.factorial
+                                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                          (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                          (@List.length.{0} (@TheoremT.Continuum.SpectatorCoordinate N i) t)))))
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ a0)
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                              (ENNReal.toReal
+                                (@DFunLike.coe.{1, 1, 1}
+                                  (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+                                  (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i))
+                                  (fun (x : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) => ENNReal) _
+                                  (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _)
+                                  S))))))
+TheoremT.Continuum.pairKS_uniform_factorial_word_bounds : ∀ (Z E : Real) {K : Set.{0} TheoremT.Continuum.PairKSSpace}
+  (hK : @IsCompact.{0} TheoremT.Continuum.PairKSSpace _ K)
+  (hKpatch : @LE.le.{0} (Set.{0} TheoremT.Continuum.PairKSSpace) _ K TheoremT.Continuum.pairKSCoefficientPatch),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (ε : Real),
+            @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ε →
+              @LE.le.{0} Real _ ε (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+                ∀ (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                  (t :
+                    List.{0}
+                      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))),
+                  And
+                    (∀ (q : TheoremT.Continuum.PairKSSpace),
+                      @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _ K
+                          q →
+                        And
+                          (@LE.le.{0} Real _
+                            (@abs.{0} Real _ _
+                              (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                (EuclideanSpace.{0, 0} Real
+                                  (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+                                _ _ _ _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                (@TheoremT.Continuum.WeakGrushin.yDir
+                                  (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                  _)
+                                (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv
+                                  (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                  _ _ (TheoremT.Continuum.pairKSPotential Z (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E))
+                                  t)
+                                a q))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+                                (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                    (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                    (@List.length.{0}
+                                      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                      t))))
+                              (@Nat.cast.{0} Real _
+                                (Nat.factorial
+                                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                    (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                    (@List.length.{0}
+                                      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                      t))))))
+                          (@LE.le.{0} Real _
+                            (@abs.{0} Real _ _
+                              (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                                (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                (EuclideanSpace.{0, 0} Real
+                                  (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+                                _ _ _ _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                (@TheoremT.Continuum.WeakGrushin.yDir
+                                  (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                  _)
+                                (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv
+                                  (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                  _ _ (TheoremT.Continuum.epsilonPairKSPotential ε Z E) t)
+                                a q))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+                                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                      (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                      (@List.length.{0}
+                                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                        t))))
+                                (@Nat.cast.{0} Real _
+                                  (Nat.factorial
+                                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                      (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                      (@List.length.{0}
+                                        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                        t))))))))
+                    (∀ (a0 : Complex) (S : Set.{0} TheoremT.Continuum.PairKSSpace),
+                      @MeasurableSet.{0} TheoremT.Continuum.PairKSSpace _ S →
+                        @LE.le.{0} (Set.{0} TheoremT.Continuum.PairKSSpace) _ S K →
+                          @TheoremT.Continuum.WeakGrushin.RegionL2Budget
+                            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                            _
+                            (fun
+                                (p :
+                                  @TheoremT.Continuum.WeakGrushin.Space
+                                    (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                    _) =>
+                              @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                                (@TheoremT.Continuum.directionalWordDeriv.{0, 0}
+                                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                                  (EuclideanSpace.{0, 0} Real
+                                    (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+                                  _ _ _ _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                                  (@TheoremT.Continuum.WeakGrushin.yDir
+                                    (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                    _)
+                                  (@TheoremT.Continuum.WeakGrushin.spectatorWordDeriv
+                                    (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+                                    _ _
+                                    (TheoremT.Continuum.pairKSPotential Z (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E))
+                                    t)
+                                  a p)
+                                (@Neg.neg.{0} Complex _ a0))
+                            S
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                                  (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                    (@HMul.hMul.{0, 0, 0} Real Real Real _ C
+                                      (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                          (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                          (@List.length.{0}
+                                            (@TheoremT.Continuum.SpectatorCoordinate
+                                              (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0)
+                                                _))
+                                            t))))
+                                    (@Nat.cast.{0} Real _
+                                      (Nat.factorial
+                                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+                                          (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) a)
+                                          (@List.length.{0}
+                                            (@TheoremT.Continuum.SpectatorCoordinate
+                                              (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0)
+                                                _))
+                                            t)))))
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ a0)
+                                  (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                              (ENNReal.toReal
+                                (@DFunLike.coe.{1, 1, 1} (@MeasureTheory.Measure.{0} TheoremT.Continuum.PairKSSpace _)
+                                  (Set.{0} TheoremT.Continuum.PairKSSpace)
+                                  (fun (x : Set.{0} TheoremT.Continuum.PairKSSpace) => ENNReal) _
+                                  (@MeasureTheory.MeasureSpace.volume.{0} TheoremT.Continuum.PairKSSpace _) S))))))
+'TheoremT.Continuum.powerSeriesTranslationMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.powerSeries_changeOrigin_uniform_nnnorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.powerSeries_changeOrigin_uniform_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.powerSeries_changeOrigin_uniform_geometric_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearKS_uniform_factorial_word_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKS_uniform_factorial_word_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

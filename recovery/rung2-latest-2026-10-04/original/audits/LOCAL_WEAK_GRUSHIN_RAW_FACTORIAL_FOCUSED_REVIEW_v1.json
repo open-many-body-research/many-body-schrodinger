@@ -1,0 +1,81 @@
+{
+  "timestamp_utc": "2026-09-11T00:31:14.398779+00:00",
+  "status": "FOCUSED_REVIEW_NO_DEFECT_FOUND",
+  "reviewer": "/root/local_elliptic_gain",
+  "category": "Read-only source, expanded endpoint statement, and existing strict-receipt verification",
+  "independence_scope": "Reviewer did not author the root raw wrappers, successor-power conversion, or coherent all-order selection. Reviewer authored the R23 integration dependency, whose independent review is separately sealed. This is not an independently reconstructed full analytic proof.",
+  "target": "LocalWeakGrushinRawFactorialBound_v1",
+  "evidence_records": [
+    {
+      "module": "LocalWeakGrushinRawFactorialBound_v1",
+      "source_sha256": "c3da0e64c31a877288cf9c4c162b39043fe78bfde1850079c9224deb59372a59",
+      "object_sha256": "8b2f160b5d2d16599afca58640130202e893bdf8b048fd0e1ce4b933ca8706ae",
+      "declarations": [
+        "local_weak_grushin_raw_factorial_bound"
+      ],
+      "receipt": "audits/formal_semantics/20260911T002923_856302Z/receipt.json",
+      "receipt_sha256": "748d6abe099596b07b3e2f1cc4273d69fb152fa73e52e33dde5f29b015798a0f"
+    },
+    {
+      "module": "LocalWeakGrushinRawProfileBound_v1",
+      "source_sha256": "caf9204af808d9daa36381ad73d26294353bffd59a0ff1774da9228a455c4691",
+      "object_sha256": "c9c1316c7377347c07555efbbb3d82c0d1af799541f3dfdaf293f3b698c57100",
+      "declarations": [
+        "local_weak_grushin_raw_profile_bound"
+      ],
+      "receipt": "audits/formal_semantics/20260911T002727_778375Z/receipt.json",
+      "receipt_sha256": "3644cf5f0daed033ba7c3e43366774cacc25912c570548999c5913391d27bdcb"
+    },
+    {
+      "module": "GrushinActualProfileBound_v1",
+      "source_sha256": "fc2e4fb27c92c70af0f9a8e3b8c9c90758be52a0681f8f9b05caa5bc5f88bf6b",
+      "object_sha256": "c30ac10336cf23f33e0aa7ea308269f3bcc551dbe526ab6ca9752403a924650d",
+      "declarations": [
+        "factorial_actual_profile_R23_bound",
+        "factorial_actual_profile_R23_representatives"
+      ],
+      "receipt": "audits/formal_semantics/20260911T002541_942984Z/receipt.json",
+      "receipt_sha256": "d9416aee1dd58d3e6be3ab7db9a236eea4650a8131778816726bea6e190edaef"
+    },
+    {
+      "module": "GrushinSuccessorPowerFactorial_v1",
+      "source_sha256": "10ba293684864775b3ec9448aaede5f22f75ad6f9530a2da4c722a2f7fac4284",
+      "object_sha256": "9387d1a709d2a271124ab2ff4308842c0f2b2c83fde19ed34d11df7e94b5b39f",
+      "declarations": [
+        "grushin_successor_core_power_factorial_bound",
+        "grushin_r23_factorial_bound"
+      ],
+      "receipt": "audits/formal_semantics/20260911T002804_398347Z/receipt.json",
+      "receipt_sha256": "ef7204589ade6bfe73927ef02e2b8480c40ddec1ce9e58c379f3b938b0fa4ece"
+    },
+    {
+      "module": "ProductMixedAllOrderWeakFamily_v1",
+      "source_sha256": "bdf748915caec078bebcb38ca9da682f29b3ac16135aa4c1b6b4170d063dcc2c",
+      "object_sha256": "e1fc8371ea328b6a49e07d700bfb276c997e82dab136f4d526eba91216bf9bbf",
+      "declarations": [
+        "product_mixed_allOrder_weak_family",
+        "local_smooth_weak_grushin_allOrder_family"
+      ],
+      "receipt": "audits/formal_semantics/20260910T235714_696365Z/receipt.json",
+      "receipt_sha256": "04481defdd6e31b61e3784e53e00119ac5256a23ec33c0756ad65bc4e6bdeb85"
+    }
+  ],
+  "checks": {
+    "original_equation": "Raw f is locally L2 on open Omega; actual compact-test equation uses P_c+potential and src. No all-order solution regularity premise appears in the endpoint.",
+    "nested_geometry": "rho<bY,bT and bY<aY,bT<aT give positive inner widths and strict margins. The larger closed rectangle lies in Omega. The PDE and smooth data restrict to the actual inner rectangle.",
+    "fixed_family": "One F is obtained before all m and r. Diagonal finite choices are matched through genuine local weak uniqueness; F00=f exactly. Quantitative H12 witnesses transfer to that same F.",
+    "finite_membership": "FactorialLocalMemLp is a conclusion for every r, before use of real-valued weighted profile norms; no infinity-toReal shortcut is used.",
+    "constants": "C depends only c,bY,rho,C1,C2,M; H0=498*(max1(2*bY))^2*sqrtW; B=2*C*A; all fixed before r. The larger-box margins are used for qualitative regularity, not hidden in the displayed quantitative constant.",
+    "factorial_conversion": "The exponential-series term gives (r+1)^r<=exp(r+1)*r!<=3^(r+1)*r!, using positive r! and exp(1)<3. Multiplication by the nonnegative scale yields precisely 6*B*(F0+H0)*(6*B/rho)^r*r!.",
+    "order_zero": "The inequalities include r=0 directly, with 0!=1 and zeroth powers equal to one. No positive-order restriction is introduced.",
+    "zero_amplitude": "The proof does not divide by F0+H0. If it is zero, the displayed upper bound is zero for every r, and profile nonnegativity forces the inner profile to vanish. This is only an inner-region conclusion.",
+    "trust": "All five exact reviewed module source/object pairs match successful approved v7 receipts; complete axiom reports contain only propext, Classical.choice, Quot.sound, with no printer failures or ellipses."
+  },
+  "remaining_scope": [
+    "One actual finite H12 budget is still supplied; the physical application must discharge it.",
+    "Known potential and source carry actual factorial derivative bounds.",
+    "The conclusion concerns genuine weak derivatives and weighted local L2 norms. It does not by itself assert a classical C-infinity or analytic representative, KS descent, a spectral theorem, or an executable solver.",
+    "Classical choice constructs mathematical representatives, not an algorithm."
+  ],
+  "actions": "Read-only review. No source edits, compiler invocations, dependency rebuilds, or repeated audits."
+}

@@ -1,0 +1,76 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260910T234726_481883Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T234726_481883Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T234726_481883Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 13.131732667,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "b33399c28f9cafccc07faac37dd43277cb51d25a2374be5a80520aa45210c82c",
+  "audit_log_sha256": "af7971131f43182c7e951ac8900d684103c5ba8534694f73d25a049cf2a5887f",
+  "module_records": [
+    {
+      "module": "WeakFactorialJetTests_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakFactorialJetTests_v1.lean",
+      "source_sha256": "47db2588d016073ccaa5759c1a7b14b42dba9fa8b5cca4778bcf4ef0acff7acd",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakFactorialJetTests_v1.olean",
+      "object_sha256": "b86473f460658ea4346e4bee24c4a5c1f789c9142391e2950b19828f76cf5d7c",
+      "declarations": [
+        "weakCoordinateJet_directional",
+        "weakCoordinateJet_test_identity",
+        "weakCoordinateJet_tests_integrable",
+        "weakFactorialJet_tests",
+        "weakFactorialJet_ae_eq_local_of_tests"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "WeakFactorialJetSupport_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakFactorialJetSupport_v1.lean",
+      "source_sha256": "528445dd85a9ff94ec84ea9bdd22f35788c61097bafc48092d995bb756de8bdc",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakFactorialJetSupport_v1.olean",
+      "object_sha256": "79e02a4bc0ca0e92de812ab2d617fbec7bf438185a8ebefe90df7a5b37b3a8bb",
+      "declarations": [
+        "weakCoordinateJet_closed_support",
+        "weakFactorialJet_closed_support",
+        "weakFactorialJet_ae_eq_of_local_tests_support"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_directional: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_test_identity: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_tests_integrable: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_tests: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_ae_eq_local_of_tests: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_closed_support: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_closed_support: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_ae_eq_of_local_tests_support: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_directional",
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_test_identity",
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_tests_integrable",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_tests",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_ae_eq_local_of_tests",
+    "TheoremT.Continuum.WeakGrushin.weakCoordinateJet_closed_support",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_closed_support",
+    "TheoremT.Continuum.WeakGrushin.weakFactorialJet_ae_eq_of_local_tests_support"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

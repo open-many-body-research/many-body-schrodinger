@@ -1,0 +1,452 @@
+TheoremT.Continuum.ksRealPolynomialSeriesA : (P :
+    Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) →
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) → Complex
+TheoremT.Continuum.ksRealPolynomialSeriesB : (P :
+    Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) →
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) → Complex
+TheoremT.Continuum.ks_real_polynomial_series_data : ∀
+  (P : Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m)))
+          d →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hc :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m)) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m))
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)))),
+  And
+    (∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+        (TheoremT.Continuum.ksRealPolynomialDescentA (P m)) m)
+    (And
+      (∀ (n : Nat),
+        @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+          (TheoremT.Continuum.ksRealPolynomialDescentB
+            (P (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          n)
+      (And
+        (@Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+          (TheoremT.Continuum.ksRealPolynomialDescentB (P (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+          (@OfNat.ofNat.{0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) (nat_lit 0) _))
+        (And
+          (∀ (m : Nat),
+            @LE.le.{0} Real _
+              (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (TheoremT.Continuum.ksRealPolynomialDescentA (P m)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                  m)))
+          (∀ (m : Nat),
+            @LE.le.{0} Real _
+              (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (TheoremT.Continuum.ksRealPolynomialDescentB (P m)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                    (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                  m))))))
+TheoremT.Continuum.ks_real_polynomial_series_analytic : ∀
+  (P : Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m)))
+          d →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hc :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m)) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m))
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)))),
+  And
+    (@AnalyticOnNhd.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Complex _ _ _ _ _
+      (TheoremT.Continuum.ksRealPolynomialSeriesA P)
+      (@Set.ofPred.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+        fun (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) =>
+        @LT.lt.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) _ X))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (@AnalyticOnNhd.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Complex _ _ _ _ _
+      (TheoremT.Continuum.ksRealPolynomialSeriesB P)
+      (@Set.ofPred.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+        fun (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) =>
+        @LT.lt.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) _ X))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+TheoremT.Continuum.ks_real_polynomial_series_norm_bounds : ∀
+  (P : Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m)))
+          d →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b r : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        r)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hc :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m)) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m))
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hX :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r) X),
+  And
+    (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.ksRealPolynomialSeriesA P X))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ M
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            r))))
+    (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.ksRealPolynomialSeriesB P X))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            r))))
+TheoremT.Continuum.ks_real_polynomial_series_uniform_convergence : ∀
+  (P : Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m)))
+          d →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b r : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        r)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hc :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m)) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m))
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)))),
+  And
+    (@HasSumUniformlyOn.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Nat _
+      (fun (m : Nat) (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) =>
+        @DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ X)
+          (TheoremT.Continuum.ksRealPolynomialDescentA (P m)))
+      (TheoremT.Continuum.ksRealPolynomialSeriesA P)
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r) _)
+    (@HasSumUniformlyOn.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Nat _
+      (fun (n : Nat) (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) =>
+        @DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ X)
+          (TheoremT.Continuum.ksRealPolynomialDescentB
+            (P (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+      (TheoremT.Continuum.ksRealPolynomialSeriesB P)
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r) _)
+TheoremT.Continuum.ks_real_polynomial_series_physical_descent : ∀
+  (P : Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m)))
+          d →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b r : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        r)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hc :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m)) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m))
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+  (y : TheoremT.Continuum.KSSpace)
+  (hy :
+    @Membership.mem.{0, 0} ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) r)
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      Complex.ofReal
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (TheoremT.Continuum.ksMap y) i)),
+  And
+    (@Summable.{0, 0} Real Nat _ _
+      (fun (m : Nat) =>
+        @Norm.norm.{0} Complex _
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Complex _ _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+            (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+              Complex.ofReal
+                (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+                  y i))
+            (P m)))
+      (SummationFilter.unconditional.{0} Nat))
+    (And
+      (@Summable.{0, 0} Complex Nat _ _
+        (fun (m : Nat) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Complex _ _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+            (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+              fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+              Complex.ofReal
+                (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+                  y i))
+            (P m))
+        (SummationFilter.unconditional.{0} Nat))
+      (@Eq.{1} Complex
+        (@tsum.{0, 0} Complex Nat _ _
+          (fun (m : Nat) =>
+            @DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) =>
+                Complex.ofReal
+                  (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                    ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+                      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+                    y i))
+              (P m))
+          (SummationFilter.unconditional.{0} Nat))
+        (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+          (TheoremT.Continuum.ksRealPolynomialSeriesA P fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+            Complex.ofReal
+              (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                (TheoremT.Continuum.ksMap y) i))
+          (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+            (Complex.ofReal
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (TheoremT.Continuum.ksRealPolynomialSeriesB P fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+              Complex.ofReal
+                (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                  ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+                    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+                  (TheoremT.Continuum.ksMap y) i))))))
+'TheoremT.Continuum.ksRealPolynomialSeriesA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRealPolynomialSeriesB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_real_polynomial_series_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_real_polynomial_series_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_real_polynomial_series_norm_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_real_polynomial_series_uniform_convergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.ks_real_polynomial_series_physical_descent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

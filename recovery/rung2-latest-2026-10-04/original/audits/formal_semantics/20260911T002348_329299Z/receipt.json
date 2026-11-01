@@ -1,0 +1,70 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260911T002348_329299Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T002348_329299Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T002348_329299Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.7279108340000002,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "9aa015997609b6f7c148cb04f720a6dcb052b0d01387e4f9123fe3268e7b574a",
+  "audit_log_sha256": "740f0c44f158d2340e787ee9423358f5f0bae7d0abc3dbfcdbbb2f77531ee3c7",
+  "module_records": [
+    {
+      "module": "GrushinActualProfileLocalizedBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinActualProfileLocalizedBound_v1.lean",
+      "source_sha256": "2af40a93cccc8b8fb30071e58501e87f4bc543a876f601d02d0f8b27656256c5",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinActualProfileLocalizedBound_v1.olean",
+      "object_sha256": "72142d784cfac1309d32e7f98a6979074f2cf1bf044e7a957e46eea9200f33db",
+      "declarations": [
+        "factorialProfileGraphConstant",
+        "factorialProfileCutoffFirst",
+        "factorialProfileCutoffSecond",
+        "factorial_actual_profile_localized_bound"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinActualProfileRecurrence_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinActualProfileRecurrence_v1.lean",
+      "source_sha256": "4862a8fdef80bb80ecf8cdce50eaaba3d549f7f3ea32ac17694555fbb95a77fc",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinActualProfileRecurrence_v1.olean",
+      "object_sha256": "401420e7da171d31679721f582d0eb8f8ec9eaf94c07891de1ebd41dfe046e16",
+      "declarations": [
+        "factorialProfileRecurrenceConstant",
+        "factorial_actual_profile_recurrence"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.factorialProfileGraphConstant: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialProfileCutoffFirst: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialProfileCutoffSecond: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_actual_profile_localized_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorialProfileRecurrenceConstant: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.factorial_actual_profile_recurrence: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.factorialProfileGraphConstant",
+    "TheoremT.Continuum.WeakGrushin.factorialProfileCutoffFirst",
+    "TheoremT.Continuum.WeakGrushin.factorialProfileCutoffSecond",
+    "TheoremT.Continuum.WeakGrushin.factorial_actual_profile_localized_bound",
+    "TheoremT.Continuum.WeakGrushin.factorialProfileRecurrenceConstant",
+    "TheoremT.Continuum.WeakGrushin.factorial_actual_profile_recurrence"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

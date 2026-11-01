@@ -1,0 +1,493 @@
+TheoremT.Continuum.so2PolynomialCircleAction : (u : Complex) →
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) →
+    @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2PolynomialCircleAction_coeff : ∀ (u : Complex)
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+      (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+        (TheoremT.Continuum.so2PolynomialCircleAction u P))
+      d)
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@DFunLike.coe.{1, 1, 1}
+          (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+          (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+            P)
+          d)
+        (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ u
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _ (@Star.star.{0} Complex _ u)
+        (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+TheoremT.Continuum.so2PolynomialCircleInvariant_balanced_support : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (hi :
+    ∀ (u : Complex),
+      @Eq.{1} Real (@Norm.norm.{0} Complex _ u) (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (TheoremT.Continuum.so2PolynomialCircleAction u P) P)
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+      (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ P) d →
+    @Eq.{1} Nat
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+TheoremT.Continuum.so2RealRotation : (a b : Real) →
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) → Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real
+TheoremT.Continuum.so2RealComplexCoordinates : (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real) →
+  Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex
+TheoremT.Continuum.so2PolynomialToCartesian_real_eval : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+      (TheoremT.Continuum.so2PolynomialToCartesian P))
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.so2RealComplexCoordinates x))
+      P)
+TheoremT.Continuum.so2PolynomialToBalanced_real_eval : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.so2RealComplexCoordinates x))
+      (TheoremT.Continuum.so2PolynomialToBalanced P))
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+      P)
+TheoremT.Continuum.so2PolynomialCircleAction_real_eval : ∀ (u : Complex)
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.so2RealComplexCoordinates x))
+      (TheoremT.Continuum.so2PolynomialCircleAction u P))
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.so2RealComplexCoordinates
+          (TheoremT.Continuum.so2RealRotation (Complex.re u) (Complex.im u) x)))
+      P)
+TheoremT.Continuum.so2Polynomial_eq_of_real_complex_eval_eq : ∀
+  (P Q : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (h :
+    ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+      @Eq.{1} Complex
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2RealComplexCoordinates x))
+          P)
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2RealComplexCoordinates x))
+          Q)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P Q
+TheoremT.Continuum.so2Polynomial_eq_of_real_complex_openBox_eval_eq : ∀
+  (P Q : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) {r : Real}
+  (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (h :
+    ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+      (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)), @LT.lt.{0} Real _ (@abs.{0} Real _ _ (x i)) r) →
+        @Eq.{1} Complex
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+            (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+              (TheoremT.Continuum.so2RealComplexCoordinates x))
+            P)
+          (@DFunLike.coe.{1, 1, 1}
+            (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+            (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+              (TheoremT.Continuum.so2RealComplexCoordinates x))
+            Q)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P Q
+TheoremT.Continuum.so2PolynomialToBalanced_circle_invariant_of_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          @Eq.{1} Complex
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+              P)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+              P))
+  (u : Complex),
+  @Eq.{1} Real (@Norm.norm.{0} Complex _ u) (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+    @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (TheoremT.Continuum.so2PolynomialCircleAction u (TheoremT.Continuum.so2PolynomialToBalanced P))
+      (TheoremT.Continuum.so2PolynomialToBalanced P)
+TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          @Eq.{1} Complex
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+              P)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+              P))
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+      (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.so2PolynomialToBalanced P))
+      d →
+    @Eq.{1} Nat
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_local_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) {r : Real}
+  (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)), @LT.lt.{0} Real _ (@abs.{0} Real _ _ (x i)) r) →
+            @Eq.{1} Complex
+              (@DFunLike.coe.{1, 1, 1}
+                (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _
+                  _)
+                (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+                (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                  fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+                P)
+              (@DFunLike.coe.{1, 1, 1}
+                (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _
+                  _)
+                (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+                (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                  fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+                P))
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+  @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+      (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+        (TheoremT.Continuum.so2PolynomialToBalanced P))
+      d →
+    @Eq.{1} Nat
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+TheoremT.Continuum.so2_finite_radial_descent_of_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          @Eq.{1} Complex
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+              P)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+              P)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@Finset.sum.{0, 0} Nat (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+      (@Finset.image.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _
+        (fun (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) =>
+          @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+          (TheoremT.Continuum.so2PolynomialToBalanced P)))
+      fun (m : Nat) =>
+      @HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+          Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+          (@DFunLike.coe.{1, 1, 1}
+            (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+            (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+              P)
+            (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+        (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          TheoremT.Continuum.so2RadialSquare m))
+TheoremT.Continuum.so2_homogeneous_even_radial_descent_of_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (m : Nat)
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P
+      (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          @Eq.{1} Complex
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+              P)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+              P)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+        Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+        (@DFunLike.coe.{1, 1, 1}
+          (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+          (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+            P)
+          (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+            (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+      (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ TheoremT.Continuum.so2RadialSquare
+        m))
+TheoremT.Continuum.so2_homogeneous_odd_eq_zero_of_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (m : Nat)
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+        (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          @Eq.{1} Complex
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+              P)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _ _)
+              (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+              (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+              P)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@OfNat.ofNat.{0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (nat_lit 0) _)
+TheoremT.Continuum.so2_finite_radial_descent_of_local_real_rotation : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) {r : Real}
+  (hr : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hrot :
+    ∀ (a b : Real),
+      @Eq.{1} Real
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ a (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+        ∀ (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Real),
+          (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)), @LT.lt.{0} Real _ (@abs.{0} Real _ _ (x i)) r) →
+            @Eq.{1} Complex
+              (@DFunLike.coe.{1, 1, 1}
+                (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _
+                  _)
+                (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+                (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                  fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                  Complex.ofReal (TheoremT.Continuum.so2RealRotation a b x i))
+                P)
+              (@DFunLike.coe.{1, 1, 1}
+                (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Complex _
+                  _)
+                (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+                (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+                  fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Complex.ofReal (x i))
+                P)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@Finset.sum.{0, 0} Nat (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+      (@Finset.image.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Nat _
+        (fun (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) =>
+          @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+          (TheoremT.Continuum.so2PolynomialToBalanced P)))
+      fun (m : Nat) =>
+      @HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+          Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+          (@DFunLike.coe.{1, 1, 1}
+            (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+            (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+              P)
+            (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+        (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          TheoremT.Continuum.so2RadialSquare m))
+'TheoremT.Continuum.so2PolynomialCircleAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialCircleAction_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialCircleInvariant_balanced_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2RealRotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2RealComplexCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToCartesian_real_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced_real_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialCircleAction_real_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2Polynomial_eq_of_real_complex_eval_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2Polynomial_eq_of_real_complex_openBox_eval_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced_circle_invariant_of_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_local_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2_finite_radial_descent_of_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2_homogeneous_even_radial_descent_of_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2_homogeneous_odd_eq_zero_of_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.so2_finite_radial_descent_of_local_real_rotation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

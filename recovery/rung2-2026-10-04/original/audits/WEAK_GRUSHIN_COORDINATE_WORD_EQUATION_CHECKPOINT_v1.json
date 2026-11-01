@@ -1,0 +1,57 @@
+{
+  "timestamp_utc": "2026-09-10T23:32:37.337735+00:00",
+  "evidence": "Lean kernel-checked finite conditional weak PDE calculus",
+  "statement": "On an open product domain, given actual coordinate jets D through m+2 and source jets S through m, only the original (Pc+B)D[]=S[] equation is assumed. Every word w of length at most m satisfies the actual weak (Pc+B) equation with source S_w minus the proper ordered potential Leibniz term plus c times the proper ordered quadratic/spectator-trace term. Source local L2 and both test integrabilities are proved.",
+  "semantic_review": "Full expanded types read. ProductCoordinateWordSpectatorTrace derives appended T-second jets via proved weak permutation and open-domain uniqueness; no mixed compatibility or positive-order equation is a hypothesis. Zero-order cancellation is explicit; all split multiplicities remain in the list.",
+  "limitations": "Input solution jets are explicit in this finite calculus lemma. The raw-data corollary is pending in a new module. Closed natural-index quadratic formula and factorial norm recurrence remain separate obligations.",
+  "audit_receipt": "audits/formal_semantics/20260910T233051_871777Z/receipt.json",
+  "audit_receipt_sha256": "4c7e4e0793bb284d2c726c6dd88d54ab338acf5209d7f64a2257379a9c5be6da",
+  "modules": [
+    {
+      "module": "ProductCoordinateWordSpectatorTrace_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWordSpectatorTrace_v1.lean",
+      "source_sha256": "8d46428c5d40728b38c853b74012fb9032b21093b1c473ab27750ce54a9ed362",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCoordinateWordSpectatorTrace_v1.olean",
+      "object_sha256": "88cf8bcd770134dca35d1dc40a63338fd5772c1aa42352b551bdb2132c41d70d",
+      "declarations": [
+        "coordinateWordSpectatorTrace",
+        "coordinateWordSpectatorTrace_locallyL2",
+        "coordinateWordSpectatorTrace_localD",
+        "coordinate_word_appended_second_spectator"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "WeakGrushinCoordinateWordEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/WeakGrushinCoordinateWordEquation_v1.lean",
+      "source_sha256": "4c76d45de3d929f69eb8e773ab974d7b352e3ac0b05071cf4683938826ce1aed",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/WeakGrushinCoordinateWordEquation_v1.olean",
+      "object_sha256": "26ea819c88f9c0a4743042e1f11ff81bc76ab1f40d64d0dfa0bf231d457ab447",
+      "declarations": [
+        "coordinateWordYSource",
+        "coordinateWordGrushinSource",
+        "coordinateWordGrushinSource_eq",
+        "weak_grushin_coordinate_word_equations"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axioms": [
+    "TheoremT.Continuum.WeakGrushin.coordinateWordSpectatorTrace: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateWordSpectatorTrace_locallyL2: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateWordSpectatorTrace_localD: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinate_word_appended_second_spectator: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateWordYSource: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateWordGrushinSource: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.coordinateWordGrushinSource_eq: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.weak_grushin_coordinate_word_equations: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "cache": "Pinned dependency object cache reused; outside prior isolated v20, no new dependency source rebuild.",
+  "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+  "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+  "preservation": "All prior PASS sources and failed draft logs preserved."
+}

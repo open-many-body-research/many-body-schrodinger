@@ -1,0 +1,58 @@
+@TheoremT.Continuum.coordinateWordMultilinear.{u_1} : {σ : Type u_1} →
+  {n : Nat} →
+    (w : Fin n → σ) →
+      @ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _
+@TheoremT.Continuum.coordinateWordMultilinear_apply.{u_1} : ∀ {σ : Type u_1} [Fintype.{u_1} σ] {n : Nat} (w : Fin n → σ)
+  (x : Fin n → σ → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _)
+      ((i : Fin n) → σ → Complex) (fun (x : (i : Fin n) → σ → Complex) => Complex) _
+      (@TheoremT.Continuum.coordinateWordMultilinear.{u_1} σ n w) x)
+    (@Finset.prod.{0, 0} (Fin n) Complex _ (@Finset.univ.{0} (Fin n) _) fun (j : Fin n) => x j (w j))
+@TheoremT.Continuum.coordinateWordMultilinear_norm_le.{u_1} : ∀ {σ : Type u_1} [inst : Fintype.{u_1} σ] {n : Nat}
+  (w : Fin n → σ),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _)
+      _ (@TheoremT.Continuum.coordinateWordMultilinear.{u_1} σ n w))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.coordinateWordMultilinear_diagonal.{u_1} : ∀ {σ : Type u_1} [Fintype.{u_1} σ] {n : Nat}
+  (w : Fin n → σ) (z : σ → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _)
+      ((i : Fin n) → σ → Complex) (fun (x : (i : Fin n) → σ → Complex) => Complex) _
+      (@TheoremT.Continuum.coordinateWordMultilinear.{u_1} σ n w) fun (x : Fin n) => z)
+    (@Finset.prod.{0, 0} (Fin n) Complex _ (@Finset.univ.{0} (Fin n) _) fun (j : Fin n) => z (w j))
+@TheoremT.Continuum.homogeneous_polynomial_multilinear_exists.{u_1} : ∀ {σ : Type u_1} [inst : Fintype.{u_1} σ]
+  (P : @MvPolynomial.{u_1, 0} σ Complex _) {n : Nat} (hP : @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ P n),
+  @Exists.{u_1 + 1}
+    (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _ _)
+    fun
+      (L :
+        @ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _
+          _) =>
+    And
+      (∀ (z : σ → Complex),
+        @Eq.{1} Complex
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+            (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _
+              _ _)
+            ((i : Fin n) → σ → Complex) (fun (x : (i : Fin n) → σ → Complex) => Complex) _ L fun (x : Fin n) => z)
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ z) P))
+      (@LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (x : Fin n) => σ → Complex) Complex _ _ _ _ _ _
+            _)
+          _ L)
+        (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ P))
+'TheoremT.Continuum.coordinateWordMultilinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateWordMultilinear_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateWordMultilinear_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateWordMultilinear_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_multilinear_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

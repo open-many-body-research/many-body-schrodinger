@@ -1,0 +1,7 @@
+# Focused source and statement review
+
+Independent finite_affine_jets agent read CoulombKSPhysicalH12Data_v1 and CoulombKSPhysicalH12_v1 and found no quantifier, region, amplitude, or derivative-meaning error. KT, KY and QY are selected on the fixed compact annulus before the center, solution, representative, scale, and Lipschitz bound. The exact T12/Y5 join and terminal physical 1/128 box are preserved. The source is bare coefficient times minus g(0), with energy epsilon E. This was a read-only source review, not a source dependency rebuild.
+
+Local check of the numerical extraction: cutoff premises are discharged by the actual smoothTransition derivative bounds 96 and 14016. Physical extraction acts only on coordinate labels and uses the actual physical product test integrals; it retains the original coordinate weak-jet result. The sum has exactly 50388 multiindices. No choice of unknown solution derivatives appears in the hypotheses, but the original scalar graph, continuous AE representative, and local Lipschitz hypotheses remain explicit. Coefficient bounds are existential finite constants, so no executable numerical evaluation is established.
+
+Strict v6 audit of all three new modules passed 17 declarations with complete standard-axiom-only reports, no forbidden tokens, no ellipses, no printer failure, and unchanged sources and objects.

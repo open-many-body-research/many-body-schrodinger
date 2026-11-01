@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "evidence_category": "Kernel-checked compact weak H2 graph estimate with actual principal output",
+  "strongest_theorem": "TheoremT.Continuum.WeakGrushin.compact_weak_factorial_outer_graph_bound",
+  "exact_result": "For c>0, actual global L2 f,h, genuine weak first jets d(v) and ordered second jets e(v,w), f supported AE in compact K, and actual compact-test equation Pc f=h, assume R>0 bounds one selected Y coordinate on K and S>=1 bounds Euclidean |y| on K. Then construct all 498 actual L2 representatives y^gamma D_Y^alpha D_T^beta f of the exact M index set and bound their sum of norms by498*S^2*(4*R^2+2*R+2+2/c)*||h||.",
+  "domain": "Actual ordinary Euclidean R4 x R3 with its product measure; Pc=-DeltaY-c|y|^2DeltaT.",
+  "assumptions": [
+    "Global actual weak first and ordered second L2 derivatives in every direction",
+    "Compact original support K and actual weak principal output Pc f=h",
+    "c>0,R>0,S>=1 and explicit original-K slab/radial geometry"
+  ],
+  "discharged": [
+    "C-infinity input premise removed by already-proved actual weak component transfer",
+    "Canonical weak derivative representatives identify with the six true coordinate components",
+    "All monomial L2 membership is proved before norm/integral conversion",
+    "The original support K supplies geometry; enlarged approximation support does not alter final radii",
+    "No component norm, full outer norm or intended conclusion remains as a canonical theorem premise"
+  ],
+  "evidence": {
+    "modules": [
+      {
+        "module": "WeakFactorialOuterCompatible_v1",
+        "source_sha256": "647abf31db340400c5e5a1c0c7dd341361f6a158309fc6cdd01f6510ee07cc19",
+        "object_sha256": "f6b370a5776f86afe39946c6cb04a51f695fdba0a269535fc86497da2eed77f0"
+      },
+      {
+        "module": "CompactWeakFactorialOuterBound_v1",
+        "source_sha256": "7005c4483cbe0470a2a135f10101da816331c68be0976fc18951d65da3bd5df7",
+        "object_sha256": "b69cac234bf68a9a057e37b3dd89e2de10301ae2ee1842b0f781a17bcad2e62c"
+      },
+      {
+        "module": "WeakFactorialJet_v1",
+        "source_sha256": "26915609b3b0f8c40bdd705fa60f35975116be7f8a73480b01db8d5ccf653c87",
+        "object_sha256": "ea98526097db31259a541ab442fd06c37ee0d799a1770d4de71407288bb88140"
+      },
+      {
+        "module": "WeakFactorialJetIdentifications_v2",
+        "source_sha256": "07100bfe4ccc5aa5055fc33cba0ce3e611e5c4deb147e46ac40f3f49c6a403b8",
+        "object_sha256": "706df1462e499af60b2596779a82f96824587a8f509b8331095ffe1f356171e8"
+      },
+      {
+        "module": "WeakFactorialJetTests_v1",
+        "source_sha256": "47db2588d016073ccaa5759c1a7b14b42dba9fa8b5cca4778bcf4ef0acff7acd",
+        "object_sha256": "b86473f460658ea4346e4bee24c4a5c1f789c9142391e2950b19828f76cf5d7c"
+      },
+      {
+        "module": "WeakFactorialJetSupport_v1",
+        "source_sha256": "528445dd85a9ff94ec84ea9bdd22f35788c61097bafc48092d995bb756de8bdc",
+        "object_sha256": "79e02a4bc0ca0e92de812ab2d617fbec7bf438185a8ebefe90df7a5b37b3a8bb"
+      },
+      {
+        "module": "WeakGrushinCommonRadialBound_v1",
+        "source_sha256": "d9b3d11e18a1be7f80008b9021f974643944488015df042e9a37487576eeace9",
+        "object_sha256": "f1547440b448082ad564a857da9261b57088dba400754f0cbe1078437cdefcef"
+      }
+    ],
+    "strict_audits": [
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T234702_622611Z/receipt.json",
+        "sha256": "c2904c9e26df7f401296582adf376d02939f91106036ef818cedfaba1bcad52e",
+        "declarations": 3
+      },
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235007_507186Z/receipt.json",
+        "sha256": "112fc110089fef4e5cda5e457eea1adf1a8db9e20f4e6bbfb17e86a0c525373f",
+        "declarations": 1
+      },
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T234638_958011Z/receipt.json",
+        "sha256": "a709ba3c177b65e252e43ac2ae9a8e6ab5f633360de2260c2a90f7ad1cd96d15",
+        "declarations": 5
+      },
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T234913_746556Z/receipt.json",
+        "sha256": "4381a4f06a6920463fd30ea2886e1fa01da94218b703eaa43af86096307492e9",
+        "declarations": 7
+      },
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T234726_481883Z/receipt.json",
+        "sha256": "a60453b2189799f14abcc6a0112fbcf6ded4aa40a81fc41c8d953c631fc9b77c",
+        "declarations": 8
+      },
+      {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T233904_240091Z/receipt.json",
+        "sha256": "e2cb70758a5bca477f295a65bc8632e2839a426010a0cb75e1b1da5349d67a2c",
+        "declarations": 1
+      }
+    ],
+    "declarations": 25,
+    "axioms": "Only propext, Classical.choice, Quot.sound; full expanded statements and no printer diagnostics."
+  },
+  "dependency_checkpoints": [
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/COMPACT_SMOOTH_FACTORIAL_OUTER_GRAPH_CHECKPOINT_v1.json",
+      "sha256": "def9b56675b310933c39ec5017a977f22b7ea2a0718cab3ed4102d8ec941f9ac"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/WEAK_GRUSHIN_COMMON_RADIAL_BOUND_CHECKPOINT_v1.json",
+      "sha256": "35f550ab133663c78cbf860d7f58669a18b18933d8badf6abbe6686d620f5137"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/WEAK_GRUSHIN_RADIAL_OUTPUT_CHECKPOINT_v1.json",
+      "sha256": "60554bfef10151cbbd46b5212ec92eb7ecd78efc06560ea4ea0340089587fdd8"
+    },
+    {
+      "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/WEAK_FACTORIAL_JET_IDENTIFICATIONS_CHECKPOINT_v1.json",
+      "sha256": "bd416e31c73e3107a2ed0011ea48c5821e07a36a873e30926f4cc27d68c5e23b"
+    }
+  ],
+  "derivative_semantics": "Canonical weakFactorialJet is used only for |alpha|+|beta|<=2, exactly the scope of M. Its total definition has a default for longer words, which is not interpreted as a higher derivative. WeakFactorialJetTests_v1 proves literal compact-test/sign identities and both integrabilities. The final norm module jointly imports tests, canonical support, and identificationv2.",
+  "integration_correction": "WeakFactorialJetIdentifications_v1 is preserved but integration-superseded because it duplicates a closed-support declaration in the canonical support module. Only identificationv2 is used here.",
+  "review": {
+    "reviewer": "/root/compact_h2_density/outer_cardinality",
+    "result": "Read exact compatible, canonical and common sources; no false claim or missing premise found. Checked six-case coverage, original-K AE support, radial integrability at zero, lack of norm premises, and exclusion of higher-order default semantics."
+  },
+  "limits": [
+    "Mathematical existence of L2 representatives uses noncomputable quotient/choice constructions; no executable numerical procedure is claimed.",
+    "This is not a theorem obtaining H2 regularity from an arbitrary weak PDE input; actual H2 jets are explicit.",
+    "No factorial recurrence, quantitative eigenfunction analyticity, approximation rate, full Theorem T or complexity bound is discharged by this checkpoint."
+  ],
+  "next_active": "Combine with actual differentiated weak PDE, coefficient bounds, R13/R15/R16 norm estimates and the factorial recurrence. Parentlocal owns the final bundled norm-plus-test-identity synthesis.",
+  "cache_disclosure": "Pinned Lean v4.34.0-rc2 and pinned Mathlib/continuation caches reused; no isolated source rebuild for this unit.",
+  "preservation": "New continuation files only; all prior PASS bytes preserved."
+}

@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-09-11T00:20:46.446942+00:00",
+  "status": "FORMAL_EXACT_FINITE_PROFILE_UPPER_BOUND_SEALED",
+  "exact_result": "If every localOuterNorm for exact base derivative cost<=r is bounded by one Q, then the actual factorialLocalProfile at r is bounded by Q. The finite nonempty index set and membership-cost equivalence are proved dependencies; no extra maximum-attainment or index-count assumption is used.",
+  "module_records": [
+    {
+      "module": "GrushinFactorialProfileUpperBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialProfileUpperBound_v1.lean",
+      "source_sha256": "39fad486c803f6d579482ba86b6d87c9c0f691afb0c44696efeafd68f13c9427",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialProfileUpperBound_v1.olean",
+      "object_sha256": "269cb912f9e293053d439143f4bb30171e53574d31ab64d08ba6af36d0b42889",
+      "declarations": [
+        "factorialLocalProfile_le_of_outerNorm_le"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "declarations": 1,
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T001905_234943Z/receipt.json",
+    "sha256": "7a758b9460cdad99bd2484bba1abadb8436b659a44899ec6a2a43cc13b45dc5e"
+  },
+  "audit_source_sha256": "4c505f9e5dac44432344fde0c93b32d9e0e1cb5b6f97397c9c9ce77b25f51df6",
+  "audit_log_sha256": "543b6ce9a90ceb09b62e51e4dfa678a1540765d8c78648cedc9a6a7e6bc76e8a",
+  "related_focused_review": {
+    "path": "audits/GRUSHIN_ACTUAL_PROFILE_R18_INPUT_REVIEW_v1.json",
+    "sha256": "7eedfefd4126b807cebe3d84977c390584396a387dbe6d661d9d7bbccdf84e5b"
+  },
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "scope": "Pure finite-maximum implication. Actual finite L2 semantics are supplied by the already proved membership/profile theorems and the compact plateau estimate. No PDE or recurrence conclusion is assumed or newly claimed.",
+  "preservation": "New files only; all prior PASS source and audit bytes preserved.",
+  "next": "Parent composes the actual cutoff output, plateau maximal estimate, support geometry and this exact finite maximum into literal R18."
+}

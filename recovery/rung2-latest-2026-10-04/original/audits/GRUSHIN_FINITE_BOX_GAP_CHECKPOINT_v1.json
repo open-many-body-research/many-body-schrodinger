@@ -1,0 +1,82 @@
+{
+  "schema": "formal-unit-checkpoint-v1",
+  "created_utc": "2026-09-10T21:44:24.659666+00:00",
+  "status": "PASS",
+  "module_records": [
+    {
+      "module": "GrushinFiniteBoxGap_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFiniteBoxGap_v1.lean",
+      "source_sha256": "b39c588888eb36dff9f0e2bb5d782d68441cffc6507196f302bb73df18e9bfad",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFiniteBoxGap_v1.olean",
+      "object_sha256": "6df0470a193d158d85bbe28942f25e988da8d8aa5e65bdec46030eaba53a883f",
+      "declarations": [
+        "finiteGrushinGap",
+        "finiteGrushinGap_pos",
+        "finiteGrushinGap_scaled",
+        "finiteGrushinGap_y_margin",
+        "finiteGrushinGap_t_margin",
+        "finiteGrushinGap_y_strict",
+        "finiteGrushinGap_t_strict",
+        "finiteGrushinGap_consumed_nonneg",
+        "finiteGrushinGap_y_consumed_le",
+        "finiteGrushinGap_t_consumed_le",
+        "finiteGrushinGap_consumed_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compile_receipt": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/GrushinFiniteBoxGap_v1-20260910T214313_909309Z.json",
+    "sha256": "895075a2aa89af6c424564609e4f00d8f82d35bb8322929d33ad4375c2223c58"
+  },
+  "compile_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/GrushinFiniteBoxGap_v1-20260910T214313_909309Z.log",
+    "sha256": "4436c283c7b2cafbfac3baf8ac06627d075b45d80fb46178e82a068750297df6"
+  },
+  "strict_receipt": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214337_920082Z/receipt.json",
+    "sha256": "895223cb9a62b3c08a40be937e8a9911910b884fcfa2d06f6a740f334bf7a679"
+  },
+  "audit_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214337_920082Z/ExpandedStatements_v5.lean",
+    "sha256": "434ee5b464abd7aca4af57eb7f9518dadcb85eef54cca695ec25c080bb4336e0"
+  },
+  "audit_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214337_920082Z/ExpandedStatements_v5.log",
+    "sha256": "17d346ee9f94ddc5f52934812d51be46ebb2a49527e00d07abb306747b5c8de7"
+  },
+  "audit_object": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214337_920082Z/ExpandedStatements_v5.olean",
+    "sha256": "34f46d46b4730f155667ab0b21b32c7fcc10e276f73073de8ba690a807092f44"
+  },
+  "declarations": [
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_pos",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_scaled",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_margin",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_margin",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_strict",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_strict",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_consumed_nonneg",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_y_consumed_le",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_t_consumed_le",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinGap_consumed_bounds"
+  ],
+  "trusted_axioms_allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "extra_printer_failure_guard": "Independently checked zero occurrences of failed to pretty print and exact ordered names/types, plus all eleven standard-only or empty axiom reports.",
+  "exact_results": [
+    "delta=min(aY-bY,aT-bT)/(2*(n+1)), for natural n and real widths, with exact scaled-min identity.",
+    "delta>0 for strictly nested widths. The total reserve 2*(n+1)*delta is bounded by each outer-minus-inner margin.",
+    "bY<aY-2*n*delta and bT<aT-2*n*delta; the denominator leaves strict reserve after n stages.",
+    "The consumed width 2*n*delta is nonnegative. For positive inner widths it is bounded by the corresponding outer width, separately and jointly."
+  ],
+  "scope": "Scalar arithmetic only, independent of any solution. No box, derivative, differential-equation, regularity or computation-complexity conclusion is claimed.",
+  "preservation": "All prior frozen and successful files remain unchanged. The successful source retains a harmless deprecated Real.Basic compatibility-import warning."
+}

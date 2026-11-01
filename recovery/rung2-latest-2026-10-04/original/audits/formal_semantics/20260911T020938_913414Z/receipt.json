@@ -1,0 +1,67 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T020938_913414Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020938_913414Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020938_913414Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 13.389735083,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "fb92ae9b328e2777e89f60e1efc3db630806f305ac82d0556b3f142fc2373d8b",
+  "audit_log_sha256": "ccbbca2ba7dee7973ba52745773662a0e56c04e886c0598353797ee50605dd5f",
+  "module_records": [
+    {
+      "module": "PhysicalKSTaylorCoordinatePolynomials_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorCoordinatePolynomials_v1.lean",
+      "source_sha256": "d40efd52eb0d6a19919cf8908d0f6158a5c312c46dc2e7d92a1729b6a31bb258",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorCoordinatePolynomials_v1.olean",
+      "object_sha256": "5f050b6d05af841519887e2a471d478a285fb4ec98a0786c716470bdbd52d2f2",
+      "declarations": [
+        "physicalKSTaylorPolynomial",
+        "physicalKSTaylorPolynomial_homogeneous",
+        "physicalKSTaylorPolynomial_coefficientL1",
+        "physicalKSTaylorPolynomial_common_radius"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSLocalInvariantPolynomialDescent_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSLocalInvariantPolynomialDescent_v1.lean",
+      "source_sha256": "e85deaef07058620913f989eb379c9cdd24a57ee34b4bada9945fd59496bf312",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSLocalInvariantPolynomialDescent_v1.olean",
+      "object_sha256": "dd59373a461521d12494ebdb928d40624fca7a89d727aacda133ddd50200edcb",
+      "declarations": [
+        "ks_local_invariant_polynomial_quantitative_descent"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.physicalKSTaylorPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorPolynomial_homogeneous: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorPolynomial_coefficientL1: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorPolynomial_common_radius: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ks_local_invariant_polynomial_quantitative_descent: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.physicalKSTaylorPolynomial",
+    "TheoremT.Continuum.physicalKSTaylorPolynomial_homogeneous",
+    "TheoremT.Continuum.physicalKSTaylorPolynomial_coefficientL1",
+    "TheoremT.Continuum.physicalKSTaylorPolynomial_common_radius",
+    "TheoremT.Continuum.ks_local_invariant_polynomial_quantitative_descent"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

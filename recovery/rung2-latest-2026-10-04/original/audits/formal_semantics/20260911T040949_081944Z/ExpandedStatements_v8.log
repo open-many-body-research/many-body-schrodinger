@@ -1,0 +1,151 @@
+TheoremT.Continuum.nuclearDistanceRealAxisInput : (σ r s u : Real) →
+  Prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+TheoremT.Continuum.nuclearDistanceRealSpectator_sub : ∀ (s σ : Real),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+      (TheoremT.Continuum.nuclearDistanceRealSpectator s) (TheoremT.Continuum.nuclearDistanceRealSpectator σ))
+    (TheoremT.Continuum.nuclearDistanceRealSpectator (@HSub.hSub.{0, 0, 0} Real Real Real _ s σ))
+TheoremT.Continuum.nuclearDistanceRealSpectator_sub_norm : ∀ (s σ : Real),
+  @Eq.{1} Real
+    (@Norm.norm.{0} TheoremT.Continuum.Position _
+      (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+        (TheoremT.Continuum.nuclearDistanceRealSpectator s) (TheoremT.Continuum.nuclearDistanceRealSpectator σ)))
+    (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ s σ))
+TheoremT.Continuum.nuclearDistanceRealSpectator_add_increment : ∀ (s σ : Real),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@HAdd.hAdd.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+      (TheoremT.Continuum.nuclearDistanceRealSpectator σ)
+      (TheoremT.Continuum.nuclearDistanceRealSpectator (@HSub.hSub.{0, 0, 0} Real Real Real _ s σ)))
+    (TheoremT.Continuum.nuclearDistanceRealSpectator s)
+TheoremT.Continuum.nuclearDistanceRealAxisInput_complex_map : ∀ (σ r s u : Real),
+  @Eq.{1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+    (TheoremT.Continuum.physicalKSComplexAxisMap (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u))
+    (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex
+      (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+        Complex.ofReal
+          (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+              (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+            (TheoremT.Continuum.nuclearDistanceRealSpatial r s u) i))
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      Complex.ofReal
+        (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) →
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+          (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+            (TheoremT.Continuum.nuclearDistanceRealSpectator s) (TheoremT.Continuum.nuclearDistanceRealSpectator σ))
+          i))
+TheoremT.Continuum.nuclearDistanceRealAxisInput_spectator : ∀ (σ r s u : Real),
+  @Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+    (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u))
+    (@Matrix.vecCons.{0} Complex (Nat.succ (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+      (Complex.ofReal (TheoremT.Continuum.nuclearDistanceRealZ r s u))
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _)
+        (Complex.ofReal (@HSub.hSub.{0, 0, 0} Real Real Real _ s σ)) (@Matrix.vecEmpty.{0} Complex)))
+@TheoremT.Continuum.nuclearDistanceRealAxisInput_transverse_square : ∀ {σ r s u : Real}
+  (hw : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u)),
+  @Eq.{1} Complex
+    (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+        (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+        (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (Complex.ofReal (TheoremT.Continuum.nuclearDistanceRealW r s u))
+@TheoremT.Continuum.nuclearDistanceRealAxisInput_domain : ∀ {σ r s u h : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hw : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u))
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h) (hrh : @LT.lt.{0} Real _ r h)
+  (hsh : @LT.lt.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ s σ)) h),
+  And
+    (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+      @LT.lt.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u) i))
+        h)
+    (And
+      (@LT.lt.{0} Real _
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _
+          (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)))
+        h)
+      (@LT.lt.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+              (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+              (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.nuclearDistanceRealAxisInput_domain_of_triangle : ∀ {σ r s u δ h : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hs : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s)
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hlo : @LE.le.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)) u)
+  (hhi : @LE.le.{0} Real _ u (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s))
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h) (hrδ : @LT.lt.{0} Real _ r δ)
+  (hsδ : @LT.lt.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ s σ)) δ)
+  (hδh : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ h (@OfNat.ofNat.{0} Real (nat_lit 16) _))),
+  And
+    (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+      @LT.lt.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u) i))
+        h)
+    (And
+      (@LT.lt.{0} Real _
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _
+          (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+            (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)))
+        h)
+      (@LT.lt.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@HAdd.hAdd.{0, 0, 0} Complex Complex Complex _
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+              (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@HPow.hPow.{0, 0, 0} Complex Nat Complex _
+              (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+                (TheoremT.Continuum.nuclearDistanceRealAxisInput σ r s u)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))
+              (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+'TheoremT.Continuum.nuclearDistanceRealAxisInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpectator_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpectator_sub_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpectator_add_increment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealAxisInput_complex_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealAxisInput_spectator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealAxisInput_transverse_square' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealAxisInput_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealAxisInput_domain_of_triangle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

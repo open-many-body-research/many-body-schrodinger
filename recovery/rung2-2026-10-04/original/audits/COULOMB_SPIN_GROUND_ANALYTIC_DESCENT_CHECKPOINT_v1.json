@@ -1,0 +1,169 @@
+{
+  "status": "PASS_ACTUAL_FULL_SPIN_AND_GROUND_STATE_PHYSICAL_ANALYTIC_DESCENT",
+  "utc": "2026-09-11T03:04:52.013888+00:00",
+  "evidence_category": "Fully formalized full-spin Coulomb graph implication and an actual normalized two-electron ground-state theorem under the stated charge hypotheses.",
+  "exact_results": [
+    "For fixed real Z,E, common C_H,M,A>=1 precede every actual full-spin Coulomb graph eigenfunction. The same representative, Lipschitz data, common spin budgets, a.e. equality, fermionic symmetry and Moser bound are preserved. Every spin, permitted positive scale epsilon<=min(1,R/4), unit spectator center and nuclear/pair chart gains the literal analytic A/B decomposition of originScaledDifference(u_sigma,epsilon).",
+    "For Z>0 and 32<9*Z^2, the existing actual norm-one fermionic ground vector on the Coulomb operator domain is retained, including its eigenvalue equation, actual spectral-bottom identification and lower bound on all spectral points, normalized weak-H2 symmetric spatial singlet amplitude and all representative properties. Its final physical chart clauses are strengthened without assuming a ground state, spectral identification, analytic estimate or descent identity.",
+    "PhysicalKSBoxAnalyticDescentData retains the original exact pointwise data and conjoins analyticity of the literal A and B series on D*norm(X_complex)_sup<1 and S*norm(T_complex)_sup<1, plus the proved physical-coordinate identity v(X,t0+T)=A(X,T)+norm(X)*B(X,T). Here S=7*physicalKSPointwiseRate(M,A), D=32*S^2, r=min(1/1024,S inverse), and the physical neighborhood is norm(X)<min(r^2,D inverse), norm(T)<r."
+  ],
+  "modules": [
+    {
+      "module": "PhysicalKSBoxAnalyticDescentData_v1",
+      "source": {
+        "path": "lean/PhysicalKSBoxAnalyticDescentData_v1.lean",
+        "sha256": "d7e3c268a6ef289c0a27e9ea90990e141c15bc3fca2826b32b5b77efd8310cb3"
+      },
+      "object": {
+        "path": "lean/build/PhysicalKSBoxAnalyticDescentData_v1.olean",
+        "sha256": "8e643c6026f3c1a6a67bcd8291cfd8900bf257e32436d4a9ccd4648e6f63752c"
+      },
+      "declarations": [
+        "PhysicalKSBoxAnalyticDescentData",
+        "nuclearKSPhysicalAnalyticDescent_data",
+        "pairKSPhysicalAnalyticDescent_data"
+      ]
+    },
+    {
+      "module": "CoulombSpinPhysicalAnalyticDescent_v1",
+      "source": {
+        "path": "lean/CoulombSpinPhysicalAnalyticDescent_v1.lean",
+        "sha256": "bd1bad6a2239f20113a29b86787a3b13ddea8f4880b374e1d5f1911d9b21d3ef"
+      },
+      "object": {
+        "path": "lean/build/CoulombSpinPhysicalAnalyticDescent_v1.olean",
+        "sha256": "2bdbac4c14571c44cfa877ea27c7681a383d17d599ccea1f806f82d0d670deb0"
+      },
+      "declarations": [
+        "coulomb_spin_physical_analytic_descent_representative"
+      ]
+    },
+    {
+      "module": "TwoElectronGroundPhysicalAnalyticDescent_v1",
+      "source": {
+        "path": "lean/TwoElectronGroundPhysicalAnalyticDescent_v1.lean",
+        "sha256": "758226f21a3770995db47df166aea329a9c1deac40ad90057c5cd639fa12f399"
+      },
+      "object": {
+        "path": "lean/build/TwoElectronGroundPhysicalAnalyticDescent_v1.olean",
+        "sha256": "a21dde3065889c95a502299e98a82b1d26d0eab7b39b51f1caf897f830be1e0f"
+      },
+      "declarations": [
+        "twoElectron_physical_ground_analytic_descent"
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "path": "logs/development/PhysicalKSBoxAnalyticDescentData_v1-20260911T025811_027110Z.json",
+      "sha256": "29e54a2ca03bb61a60f8da2cb0d3f9304ae809bdd7e71860531429d58300207f"
+    },
+    {
+      "path": "logs/development/CoulombSpinPhysicalAnalyticDescent_v1-20260911T025909_241870Z.json",
+      "sha256": "d9ca6dabb142d2cee3838f479cdf58f470f3a9cc74820d44859403f14c8bd602"
+    },
+    {
+      "path": "logs/development/TwoElectronGroundPhysicalAnalyticDescent_v1-20260911T025937_086485Z.json",
+      "sha256": "881a885150cb773d42c2accb95fbc858c8d0351559ff76944432ec5d08d88c27"
+    }
+  ],
+  "strict": {
+    "path": "audits/formal_semantics/20260911T030034_338568Z/receipt.json",
+    "sha256": "5126378701c9853f946cca8532ebcc1afd22291eb262b933feefb5c0f4591cb1"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T030034_338568Z/ExpandedStatements_v8.log",
+    "sha256": "a2997b54d24b2abc791da59b78dd62d340b951ef240b4a4e2c1c7e414b15c2b4"
+  },
+  "independent_root_review": {
+    "path": "audits/COULOMB_SPIN_GROUND_ANALYTIC_DESCENT_ROOT_REVIEW_v1.json",
+    "sha256": "c9fdecbfa3de6fcc216de35cb1e9b2efb2fef2c648ceb4ec9297016cb3891fc9"
+  },
+  "independent_statement_preservation_review": {
+    "path": "audits/PHYSICAL_SPIN_GROUND_DESCENT_STATEMENT_PRESERVATION_REVIEW_v1_20260911T030305Z.json",
+    "sha256": "91b9fc97d4f92b1cec118616d9bcb14a471e5e2045a635f2495948ed775948e9"
+  },
+  "independent_surjectivity_review_consumed": {
+    "path": "audits/PHYSICAL_KS_ANALYTIC_DESCENT_SURJECTIVITY_FOCUSED_REVIEW_v1.json",
+    "sha256": "2b9ce77b331e400122716bcf8aa608de3d7fe539af048b5ed2e16ca1a45e1329"
+  },
+  "expanded_delta_reviewed_by_root": {
+    "path": "audits/COULOMB_SPIN_GROUND_ANALYTIC_DESCENT_EXPANDED_DELTA_v1.diff",
+    "sha256": "c07b130cb0e47734182daf2658ac02db6a29605f27a09e1c34446de63ae657b5"
+  },
+  "statement_preservation": [
+    {
+      "predecessor": {
+        "path": "lean/CoulombSpinPhysicalPointwise_v1.lean",
+        "sha256": "46bdf11391006f58c6f8c1c492756ff7109af1cb958193743f1f48b83101d33d"
+      },
+      "new": {
+        "path": "lean/CoulombSpinPhysicalAnalyticDescent_v1.lean",
+        "sha256": "bd1bad6a2239f20113a29b86787a3b13ddea8f4880b374e1d5f1911d9b21d3ef"
+      },
+      "old_theorem": "coulomb_spin_physical_pointwise_representative",
+      "new_theorem": "coulomb_spin_physical_analytic_descent_representative",
+      "comparison": "Exact character-for-character equality of the complete theorem statement after only the three listed transformations; whitespace and every other token retained.",
+      "transformations": [
+        "Replace the new theorem name by the predecessor theorem name.",
+        "Replace PhysicalKSBoxAnalyticDescentData by PhysicalKSBoxPointwiseData.",
+        "Remove exactly the following two newly added physical-coordinate function argument lines."
+      ],
+      "removed_argument_lines": [
+        "              (fun X T => originScaledDifference (u \u03c3) \u03b5 (nuclearKSPhysicalCoordinates i X T))",
+        "              (fun X T => originScaledDifference (u \u03c3) \u03b5 (pairKSPhysicalCoordinates X T))"
+      ],
+      "statements_match": true,
+      "matched_statement_sha256": "7c07ad13968dbd3a9166f3cbdb5db7bfb1f31c9293792d6b934928e9e79ad422"
+    },
+    {
+      "predecessor": {
+        "path": "lean/TwoElectronGroundPhysicalPointwise_v1.lean",
+        "sha256": "cc6311767aef8b45b2bbb07c46adb749a340da0ef7ea3563346fb898bc69782d"
+      },
+      "new": {
+        "path": "lean/TwoElectronGroundPhysicalAnalyticDescent_v1.lean",
+        "sha256": "758226f21a3770995db47df166aea329a9c1deac40ad90057c5cd639fa12f399"
+      },
+      "old_theorem": "twoElectron_physical_ground_pointwise",
+      "new_theorem": "twoElectron_physical_ground_analytic_descent",
+      "comparison": "Exact character-for-character equality of the complete theorem statement after only the three listed transformations; whitespace and every other token retained.",
+      "transformations": [
+        "Replace the new theorem name by the predecessor theorem name.",
+        "Replace PhysicalKSBoxAnalyticDescentData by PhysicalKSBoxPointwiseData.",
+        "Remove exactly the following two newly added physical-coordinate function argument lines."
+      ],
+      "removed_argument_lines": [
+        "              (fun X T => originScaledDifference (u \u03c3) \u03b5 (nuclearKSPhysicalCoordinates i X T))",
+        "              (fun X T => originScaledDifference (u \u03c3) \u03b5 (pairKSPhysicalCoordinates X T))"
+      ],
+      "statements_match": true,
+      "matched_statement_sha256": "4330e3ea4e19c9c9e68bc05927599b3a9b2bf6296d25f4f8b7ac89345d3e8ee9"
+    }
+  ],
+  "manual_reading": "Author read complete final source/proof bodies and literal shared predicate, all 2094 final expanded-log lines, all five axiom reports, full strict receipt and the complete independent root/supporting/surjectivity reviews. A single tool-output truncation was recovered by a targeted reread. Root independently read the new expanded predicate/constructors and complete expanded consumer differences against previously validated pointwise types, reusing unchanged prior expanded material rather than duplicating its broad audit.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build_environment": "All three first proof compilations succeeded with /usr/bin/python3 and login:false. Pinned Lean 4.34.0-rc2/Mathlib library and prior continuation object caches reused. This is not a new isolated dependency-source rebuild.",
+  "mathematical_changes": "Only the final two chart conclusions of each existing theorem were strengthened. The same prior constants and witnesses are reassembled; nuclear and pair analytic/physical-identity constructors discharge the new clauses from existing actual pointwise data.",
+  "limitations": [
+    "The physical identity concerns the normalized origin-scaled difference, exactly as the final source states. No unannounced unscaled-eigenfunction identity.",
+    "The two-electron ground result retains Z>0 and32<9*Z^2; no enlargement of the charge or electron-count range.",
+    "No mixed derivative estimates for the descended series, global chart compatibility, complete triple-collision germ, exterior estimates, global H2 approximation, dictionary tails, solver correctness, operational bit complexity or full Theorem T is claimed by these modules.",
+    "The analytic series and derivative-polynomial objects are noncomputable mathematical constructions. Constants are not numerically evaluated and no certified numerical output is produced.",
+    "R04 and rung2 remain open."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New supporting review and sidecar only; all prior sources and evidence preserved."
+  },
+  "next": "Root continues germ compatibility; the independent derivative stream continues literal mixed derivative estimates. These final strengthened physical theorems are ready to consume further verified local conclusions."
+}

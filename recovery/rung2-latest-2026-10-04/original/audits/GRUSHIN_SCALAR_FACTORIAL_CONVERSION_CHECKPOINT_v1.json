@@ -1,0 +1,217 @@
+{
+  "status": "PASS_R25_AND_CONDITIONAL_ORDER_UNIFORM_FACTORIAL_BOUND",
+  "created_utc": "2026-09-10T23:56:52.230819+00:00",
+  "evidence_categories": {
+    "numeric": "Fully formal all-natural-order real inequality with no hypotheses.",
+    "composition": "Fully formal conditional implication retaining explicit raw fixed-gap recurrence and, for scalar/norm-family comparison, the explicit R24 order-shift comparison."
+  },
+  "module_count": 2,
+  "declaration_count": 6,
+  "module_records": [
+    {
+      "module": "GrushinShiftedPowerFactorial_v1",
+      "source": {
+        "path": "lean/GrushinShiftedPowerFactorial_v1.lean",
+        "sha256": "4914aa85058575d960c0d34b4537a246b67b49c9fabdd51eb02c040e420c3c9e",
+        "bytes": 2322
+      },
+      "object": {
+        "path": "lean/build/GrushinShiftedPowerFactorial_v1.olean",
+        "sha256": "86c76741d7b2411b594de71de66058725571aad697fa8727cee71d761446d469",
+        "bytes": 170808
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinShiftedPowerFactorial_v1-20260910T234952_677893Z.json",
+        "sha256": "a6e3eb393ce6ab69977b44c50ca63a24b797219bcef044bce67166bb2e65d96e",
+        "bytes": 1777
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinShiftedPowerFactorial_v1-20260910T234952_677893Z.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "declarations": [
+        "grushin_successor_le_two_pow",
+        "grushin_shifted_core_power_factorial_bound",
+        "grushin_shifted_power_factorial_bound"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T235335_444709Z/receipt.json",
+        "sha256": "6fcf962f57fd0f41cef3e522d38e4bd63709f4a64ebf041a38d9f3bab60f2ad5",
+        "bytes": 3873
+      }
+    },
+    {
+      "module": "GrushinScalarFactorialBound_v1",
+      "source": {
+        "path": "lean/GrushinScalarFactorialBound_v1.lean",
+        "sha256": "c7f1c6d7fa42229f689a6db690fe376e79b41f6ca6eb4a15f6285030eb3114e3",
+        "bytes": 4290
+      },
+      "object": {
+        "path": "lean/build/GrushinScalarFactorialBound_v1.olean",
+        "sha256": "f3f250f88336d38ca11d94ff4cdd228435f4df0b1feaf2b6a822345686dc0d2c",
+        "bytes": 614264
+      },
+      "compile_receipt": {
+        "path": "logs/development/GrushinScalarFactorialBound_v1-20260910T235246_577428Z.json",
+        "sha256": "9c76a4e8ad9359343281c9697b5d17d76a3b220dae123583ecf8519d617b5b7a",
+        "bytes": 1774
+      },
+      "compile_log": {
+        "path": "logs/development/GrushinScalarFactorialBound_v1-20260910T235246_577428Z.log",
+        "sha256": "cb5685a7059a6596c9eb6fb02288fb1f131afd44faf1100cc26a73685b1692da",
+        "bytes": 657
+      },
+      "declarations": [
+        "grushin_scalar_shifted_factorial_bound",
+        "grushin_scalar_embedding_factorial_bound",
+        "grushin_norm_family_factorial_bound"
+      ],
+      "strict_receipt": {
+        "path": "audits/formal_semantics/20260910T235308_412734Z/receipt.json",
+        "sha256": "715f83161b3e76f4dff69fb914938cc919fcf6aa758a8110819d697b5ac46640",
+        "bytes": 3879
+      }
+    }
+  ],
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T235335_444709Z/receipt.json",
+        "sha256": "6fcf962f57fd0f41cef3e522d38e4bd63709f4a64ebf041a38d9f3bab60f2ad5",
+        "bytes": 3873
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T235335_444709Z/ExpandedStatements_v7.lean",
+        "sha256": "dc20e94c6666f7f899aafe2c41206973302f072ca2719912f370f821f6da2e09",
+        "bytes": 967
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T235335_444709Z/ExpandedStatements_v7.log",
+        "sha256": "9531137766244cd600133b6dce9a19a65d99f2a69efbec043ebad24438b3b042",
+        "bytes": 2020
+      },
+      "object": {
+        "path": "audits/formal_semantics/20260910T235335_444709Z/ExpandedStatements_v7.olean",
+        "sha256": "5696daa00fcc65aa167dbbcbbf196267637b6f71d3d48c903ae9e078ee3fdd27",
+        "bytes": 1416
+      },
+      "declaration_count": 3
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T235308_412734Z/receipt.json",
+        "sha256": "715f83161b3e76f4dff69fb914938cc919fcf6aa758a8110819d697b5ac46640",
+        "bytes": 3879
+      },
+      "source": {
+        "path": "audits/formal_semantics/20260910T235308_412734Z/ExpandedStatements_v7.lean",
+        "sha256": "8fc8b4d6e932f2c9dac7e71c6f9fd2dc0eafe4749df834829780c978e135a0be",
+        "bytes": 978
+      },
+      "log": {
+        "path": "audits/formal_semantics/20260910T235308_412734Z/ExpandedStatements_v7.log",
+        "sha256": "4f84a690c30836f1d8d4704744bfd64f33b7697ed7c6674cddea3b72928cfd3a",
+        "bytes": 9642
+      },
+      "object": {
+        "path": "audits/formal_semantics/20260910T235308_412734Z/ExpandedStatements_v7.olean",
+        "sha256": "f77c35edfb2e18aade79c910205e908dab82612b6ebe63523e631e095864cba5",
+        "bytes": 1416
+      },
+      "declaration_count": 3
+    }
+  ],
+  "exact_numeric_statement": "For every natural k: ((k:Real)+12)^(k+11)<=3^12*12^11*6144^k*(k.factorial:Real).",
+  "exact_composition_statement": "Under the sealed fixed-gap scalar hypotheses, let B=2*C*A, S=F+H0, D=2*B/rho. Then N(k+11,rho)<=(2*B*D^11*3^12*12^11)*S*(D*6144)^k*k! for every k. If Ebox>=0 and W(k)<=Ebox*N(k+11,rho) for every k, then W(k)<=Cstar*S*Astar^k*k!, with Cstar=2*B*Ebox*D^11*3^12*12^11 and Astar=D*6144. A pointwise norm-family version retains the same comparison for all x in a specified set.",
+  "exact_scalar_hypotheses": [
+    "0<rho<=1.",
+    "C,A>=1; F,H0>=0.",
+    "N_q(s)>=0 for every q and s in [0,rho].",
+    "N_q(t)<=N_q(s) whenever 0<=s<=t<=rho.",
+    "N_q(s)<=H0 for every q<=8 and s in [0,rho].",
+    "The explicit unnormalized GrushinScalarFixedGapRecurrence N rho C A F."
+  ],
+  "numeric_proof": [
+    "A single nonnegative term of the exponential series gives (k+12)^k/k!<=exp(k+12).",
+    "The positive factorial denominator and exp(1)<3 imply (k+12)^k<=3^(k+12)*k!.",
+    "The elementary induction k+1<=2^k gives k+12<=12*2^k.",
+    "Split exponent k+11 and use (2^11)^k=2048^k and 3*2048=6144. No Stirling approximation or division by k is needed; k=0 is included."
+  ],
+  "composition_proof": [
+    "Apply the exact sealed scalar fixed-gap result at r=k+11.",
+    "Rewrite 2B*(r+1)/rho as D*(k+12). All multiplicative comparison coefficients are nonnegative.",
+    "Apply the unconditional numeric theorem, then split D^(k+11) to obtain exactly the stated Cstar and Astar.",
+    "Multiply by nonnegative Ebox only when a separate R24 comparison is explicitly supplied. No division by S or Ebox occurs."
+  ],
+  "author_review": "Read every numeric proof, the exact Mathlib exponential-series inequality, every final expanded composition statement, and the complete independent peer review. No defect found. This is source/statement review in addition to the kernel proof and axiom reports.",
+  "independent_peer_review": {
+    "path": "audits/GRUSHIN_SCALAR_FACTORIAL_BOUND_FOCUSED_REVIEW_v1.json",
+    "sha256": "2b0493de85a3ebd58054d84a175ee69c96f74bc039a463f1d92df092bea2e650",
+    "bytes": 5241
+  },
+  "numeric_checkpoint": {
+    "path": "audits/GRUSHIN_SHIFTED_POWER_FACTORIAL_CHECKPOINT_v1.json",
+    "sha256": "1196fe0c2eb4e0da9bf1490f0076fa15837eb23652a30acbe92e81aebc32d4f6",
+    "bytes": 5312
+  },
+  "prior_scalar_checkpoint": {
+    "path": "audits/GRUSHIN_SCALAR_FIXED_GAP_NORMALIZATION_CHECKPOINT_v1.json",
+    "sha256": "152d44198dd1ae88d3644c62c26e7f2b621fcfb3d8fa90fc546b44f3d1886f9a",
+    "bytes": 16549
+  },
+  "paper": {
+    "path": "paper/GRUSHIN_SCALAR_FACTORIAL_CONVERSION_v1.md",
+    "sha256": "c35f65ed5514d8c04fca5954220e3193f133941376545b7838079d006089f010",
+    "bytes": 3292
+  },
+  "paper_recurrence_reference": {
+    "path": "audits/GRUSHIN_FACTORIAL_RECURRENCE_v1.md",
+    "sha256": "5aac0a379715bda90c7eb12ff2c8af2b5c6aba2434828735a96c608c45668594",
+    "bytes": 21220
+  },
+  "root_declarations": [
+    "TheoremT.Continuum.grushin_shifted_power_factorial_bound",
+    "TheoremT.Continuum.grushin_scalar_shifted_factorial_bound",
+    "TheoremT.Continuum.grushin_scalar_embedding_factorial_bound",
+    "TheoremT.Continuum.grushin_norm_family_factorial_bound"
+  ],
+  "trusted_foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auditor": {
+    "path": "audits/audit_final_statements_v7.py",
+    "sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+    "bytes": 7896
+  },
+  "discovery_helper": {
+    "path": "audits/lean_declaration_discovery_v2.py",
+    "sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+    "bytes": 7741
+  },
+  "auditor_approval": {
+    "path": "audits/AUDIT_FINAL_STATEMENTS_V7_ROOT_REVIEW_v1.json",
+    "sha256": "681bfa9eaec81ec3db015e1e23a4e73618893d59b5fe65c2f185e5efefba0fb1",
+    "bytes": 2401
+  },
+  "limits": [
+    "The actual weighted Grushin recurrence remains explicit hrec; this unit does not derive it.",
+    "The R24 embedding/order comparison remains explicit hshift. No actual derivative identification or Sobolev embedding is asserted.",
+    "The base coefficient H0 remains an input. Its physical identification with 498*W*H requires a separate proof.",
+    "No physical analytic approximation, energy solver, numerical certificate, termination or bit complexity is proved.",
+    "No novelty or sharp-constant claim."
+  ],
+  "cache_disclosure": "Official pinned Lean 4.34.0-rc2 with existing pinned dependency and prior continuation object caches. No isolated source rebuild for this unit.",
+  "preservation": "All frozen and previous PASS/sealed bytes preserved. New final sources unchanged since PASS. One harmless unnecessarySeqFocus warning retained in successful composition compiler log; failed draft logs preserved separately.",
+  "frozen_provenance": {
+    "path": "THEOREM_T_FREEZE_2026-09-09_212604/rwa_proof/UNIFORM_ANALYTIC_AUDIT.md",
+    "sha256": "5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Root review and composition with actual weighted localization, recurrence, and order-shift embedding obligations as those are independently discharged.",
+  "process_state": "Both new mathematical module compilers and both strict audits completed and consumed. Child separately continues the root-requested read-only forcing/localized absorption review; it is not required for this checkpoint."
+}

@@ -1,0 +1,67 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T024310_036611Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024310_036611Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024310_036611Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 15.713807167,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "ae5292a0bb315abe7295c2f8d558a09dd08515165e2685db8c9a24c073731f3b",
+  "audit_log_sha256": "0d37dfbb76b82eb443001490514375d58088a87dad6872459e5d75ef31fb8f2b",
+  "module_records": [
+    {
+      "module": "KSBalancedOddPolynomial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSBalancedOddPolynomial_v1.lean",
+      "source_sha256": "40edeab26b5e760fa6f1b293da62ecefb3614139246622f946d72d27daf8cbb9",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSBalancedOddPolynomial_v1.olean",
+      "object_sha256": "ab4646e76045ebd6d0946e3910ced39e66e082b76f52f1bfde9a4212fcaea1f2",
+      "declarations": [
+        "ksBalancedPolynomial_odd_eq_zero",
+        "ksRealPolynomialToSpinor_injective",
+        "ksRealPolynomial_odd_eq_zero_of_balanced"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSTaylorOddSpectator_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorOddSpectator_v1.lean",
+      "source_sha256": "977b1facd26315f61fa4c39609bb21fbc29cc6a17b188fd912473a1b35619951",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorOddSpectator_v1.olean",
+      "object_sha256": "5dbecff6cb4cbca492eaf55c01ddd8dc17981381d6efec4c3903722c7fd4fe38",
+      "declarations": [
+        "nuclearKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero",
+        "pairKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.ksBalancedPolynomial_odd_eq_zero: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksRealPolynomialToSpinor_injective: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksRealPolynomial_odd_eq_zero_of_balanced: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.nuclearKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.pairKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.ksBalancedPolynomial_odd_eq_zero",
+    "TheoremT.Continuum.ksRealPolynomialToSpinor_injective",
+    "TheoremT.Continuum.ksRealPolynomial_odd_eq_zero_of_balanced",
+    "TheoremT.Continuum.nuclearKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero",
+    "TheoremT.Continuum.pairKSPhysicalTaylorSpectatorCoefficient_odd_eq_zero"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

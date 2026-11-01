@@ -1,0 +1,86 @@
+@TheoremT.Continuum.finiteFactorialC.{u_1} : {ι : Type u_1} → (s : Finset.{u_1} ι) → (C : ι → Real) → Real
+@TheoremT.Continuum.finiteFactorialA.{u_1} : {ι : Type u_1} → (s : Finset.{u_1} ι) → (A : ι → Real) → Real
+@TheoremT.Continuum.finiteFactorialC_empty.{u_1} : ∀ {ι : Type u_1} (C : ι → Real),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.finiteFactorialC.{u_1} ι (@EmptyCollection.emptyCollection.{u_1} (Finset.{u_1} ι) _) C)
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.finiteFactorialA_empty.{u_1} : ∀ {ι : Type u_1} (A : ι → Real),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.finiteFactorialA.{u_1} ι (@EmptyCollection.emptyCollection.{u_1} (Finset.{u_1} ι) _) A)
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.finiteFactorialC_ge_one.{u_1} : ∀ {ι : Type u_1} (s : Finset.{u_1} ι) (C : ι → Real)
+  (hC :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (C i)),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@TheoremT.Continuum.finiteFactorialC.{u_1} ι s C)
+@TheoremT.Continuum.finiteFactorialA_ge_one.{u_1} : ∀ {ι : Type u_1} (s : Finset.{u_1} ι) (A : ι → Real)
+  (hA :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (A i)),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@TheoremT.Continuum.finiteFactorialA.{u_1} ι s A)
+@TheoremT.Continuum.le_finiteFactorialC.{u_1} : ∀ {ι : Type u_1} (s : Finset.{u_1} ι) (C : ι → Real)
+  (hC :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (C i))
+  (i : ι) (hi : @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i),
+  @LE.le.{0} Real _ (C i) (@TheoremT.Continuum.finiteFactorialC.{u_1} ι s C)
+@TheoremT.Continuum.le_finiteFactorialA.{u_1} : ∀ {ι : Type u_1} (s : Finset.{u_1} ι) (A : ι → Real)
+  (hA :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (A i))
+  (i : ι) (hi : @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i),
+  @LE.le.{0} Real _ (A i) (@TheoremT.Continuum.finiteFactorialA.{u_1} ι s A)
+@TheoremT.Continuum.finite_factorial_majorant.{u_1} : ∀ {ι : Type u_1} (s : Finset.{u_1} ι) (C A : ι → Real)
+  (hC :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (C i))
+  (hA :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (A i))
+  (i : ι) (hi : @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i) (k : Nat),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (C i) (@HPow.hPow.{0, 0, 0} Real Nat Real _ (A i) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.finiteFactorialC.{u_1} ι s C)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@TheoremT.Continuum.finiteFactorialA.{u_1} ι s A) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+@TheoremT.Continuum.finite_factorial_common_bound.{u_1} : ∀ {ι : Type u_1} (s : Finset.{u_1} ι) (C A : ι → Real)
+  (hC :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (C i))
+  (hA :
+    ∀ (i : ι),
+      @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+        @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (A i)),
+  And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@TheoremT.Continuum.finiteFactorialC.{u_1} ι s C))
+    (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@TheoremT.Continuum.finiteFactorialA.{u_1} ι s A))
+      (∀ (i : ι),
+        @Membership.mem.{u_1, u_1} ι (Finset.{u_1} ι) _ s i →
+          ∀ (k : Nat),
+            @LE.le.{0} Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (C i) (@HPow.hPow.{0, 0, 0} Real Nat Real _ (A i) k))
+                (@Nat.cast.{0} Real _ (Nat.factorial k)))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.finiteFactorialC.{u_1} ι s C)
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@TheoremT.Continuum.finiteFactorialA.{u_1} ι s A) k))
+                (@Nat.cast.{0} Real _ (Nat.factorial k)))))
+'TheoremT.Continuum.finiteFactorialC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finiteFactorialA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finiteFactorialC_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finiteFactorialA_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finiteFactorialC_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finiteFactorialA_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.le_finiteFactorialC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.le_finiteFactorialA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finite_factorial_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.finite_factorial_common_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

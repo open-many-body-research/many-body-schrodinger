@@ -1,0 +1,88 @@
+{
+  "reviewer": "/root/ks_coefficient_transport/transport_review",
+  "utc": "2026-09-11T02:47:47.072043+00:00",
+  "verdict": "NO_INVALIDATING_DEFECT_FOUND_IN_UNCONDITIONAL_EVEN_FIRST_COORDINATE_REINDEXING",
+  "scope": "Independent full-source and pinned immediate-library derivation review of EvenFirstCoordinateHasSum_v1. No source edits, compilers or broad audits run.",
+  "target": {
+    "source": {
+      "path": "lean/EvenFirstCoordinateHasSum_v1.lean",
+      "sha256": "0d1dc10ee29695cfe83934a4bf8b926d5d41b8b17ed2ae97948fcbd2f45218f5"
+    },
+    "object": {
+      "path": "lean/build/EvenFirstCoordinateHasSum_v1.olean",
+      "sha256": "ce2341d06249f585f105e1dd78e5e75012edf30870072278a6a2608e06637076"
+    },
+    "declarations": [
+      "hasSum_even_first_coordinate_iff",
+      "hasSum_even_first_coordinate"
+    ]
+  },
+  "build_receipt": {
+    "path": "logs/development/EvenFirstCoordinateHasSum_v1-20260911T024525_216822Z.json",
+    "sha256": "c0b70ae969cf4172c266d0b578724cc61677c71b8e384039bc5b6a680486c2b1"
+  },
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T024556_803494Z/receipt.json",
+    "sha256": "1c3c8e52353ee3e4c252b952d16b02bb870c5a4294a5305db1e0a67511131540"
+  },
+  "expanded_source": {
+    "path": "audits/formal_semantics/20260911T024556_803494Z/ExpandedStatements_v8.lean",
+    "sha256": "22bac2039b7c68851f6bf20db1b071746e97b47264fb7cdb4b5e9635334f488f"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T024556_803494Z/ExpandedStatements_v8.log",
+    "sha256": "ed1031458a672ef0613d89a79d46a96951439bfbc77a86614cfcab16c8cd0000"
+  },
+  "inspection": {
+    "complete_final_source_read": true,
+    "complete_receipts_read": true,
+    "complete_expanded_statements_and_axiom_reports_read": true,
+    "declaration_count": 2,
+    "current_source_and_object_hashes_match": true,
+    "autoImplicit": false,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "printer_omissions": 0,
+    "expanded_summation_filters": "SummationFilter.unconditional on both sides"
+  },
+  "checks": [
+    "The literal embedding e(n,gamma)=(2*n,gamma) is injective by Nat cancellation and exact equality of the second coordinate; no spectator index is dropped or duplicated.",
+    "For a pair outside the range, Nat.mod_lt bounds the remainder below 2. Remainder zero would construct the preimage (n/2,gamma), contradiction. Thus the remainder is one and n=2*(n/2)+1; hodd makes exactly every excluded term zero.",
+    "The consumed Function.Injective.hasSum_iff is the additive generated version of the inspected pinned hasProd_iff. Its proof uses finite preimages and equality of finite sums after omission of zero complement terms, then comap_unconditional. It preserves the same target a, without requiring continuity of addition, Hausdorffness, countability, completeness, a group, or normed structure.",
+    "Both expanded declarations quantify arbitrary independent types kappa,E with only AddCommMonoid E and TopologicalSpace E. The exact filters are unconditional finite-subset atTop filters. There is no hidden ordered-series or conditional-summation filter argument.",
+    "The second theorem uses the reverse direction of the displayed iff to turn HasSum f a into HasSum of the even embedding, with the same hodd. It assumes actual HasSum, not merely a formal tsum expression.",
+    "Empty kappa, n=0, zero terms, and non-Hausdorff topologies are compatible. The result compares existence of convergence to the same a and does not claim uniqueness of the sum in a general topology."
+  ],
+  "pinned_library_derivation": [
+    {
+      "path": "formal/.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean",
+      "sha256": "cc1db462f485d0013f9ef8d5149fd14ba207c1bedda8eaf5112eccfe1ec808ae",
+      "read_scope": "HasSum definition (generated from HasProd), Function.Injective.hasProd_comap_iff and hasProd_iff bodies with to_additive, producing the exact consumed hasSum_iff."
+    },
+    {
+      "path": "formal/.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/SummationFilter.lean",
+      "sha256": "64d408fcad46342a6db935ec23714443d1a9f1b10bccde5ba7207f4cb0f4789c",
+      "read_scope": "comap and unconditional definitions and complete comap_unconditional proof."
+    }
+  ],
+  "invalidating_findings": [],
+  "limitations": [
+    "This generic zero-term reindexing theorem does not prove summability or absolute convergence of any physical coefficient series.",
+    "It does not itself instantiate the odd-Y physical polynomial vanishing theorem; that composition remains a separate consumer.",
+    "No ordered conditionally convergent series rearrangement is claimed.",
+    "Existing pinned dependency objects were reused by the consumed compiler and strict audit; no isolated dependency-source rebuild was performed."
+  ],
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "protocol_path": "THEOREM_T_FREEZE_2026-09-09_212604/CORRECTION_PROTOCOL.md",
+    "protocol_sha256": "1bdb5c1b27de5eaf21b635b08581131c84f4436cff342b45f67fae8f82db2bb3",
+    "frozen_target_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_target_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "changes": "New review and sidecar only; prior source and evidence bytes preserved."
+  }
+}

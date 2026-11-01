@@ -1,0 +1,151 @@
+@TheoremT.Continuum.WeakGrushin.coordinateYWord : {κ : Type} →
+  List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) →
+    List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+@TheoremT.Continuum.WeakGrushin.coordinateTWord : {κ : Type} →
+  List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) → List.{0} κ
+@TheoremT.Continuum.WeakGrushin.productCoordinateDirection : {κ : Type} →
+  [inst : Fintype.{0} κ] →
+    [DecidableEq.{1} κ] →
+      Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ → @TheoremT.Continuum.WeakGrushin.Space κ _
+@TheoremT.Continuum.WeakGrushin.coordinateWord_length : ∀ {κ : Type} [Fintype.{0} κ] [DecidableEq.{1} κ]
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)),
+  @Eq.{1} Nat
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@List.length.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+        (@TheoremT.Continuum.WeakGrushin.coordinateYWord κ w))
+      (@List.length.{0} κ (@TheoremT.Continuum.WeakGrushin.coordinateTWord κ w)))
+    (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w)
+@TheoremT.Continuum.WeakGrushin.ProductCoordinateWeakHk : {κ : Type} →
+  [inst : Fintype.{0} κ] →
+    [DecidableEq.{1} κ] →
+      (Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) →
+        (f : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex) → (m : Nat) → (W : Real) → Prop
+@TheoremT.Continuum.WeakGrushin.mixedTriangularState_coordinateWeakHk : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  {f : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex} {m : Nat} {W : Real}
+  (hf : @TheoremT.Continuum.WeakGrushin.MixedTriangularState κ _ _ Ω f m m W),
+  @TheoremT.Continuum.WeakGrushin.ProductCoordinateWeakHk κ _ _ Ω f m W
+@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord : {κ : Type} →
+  [inst : Fintype.{0} κ] →
+    [DecidableEq.{1} κ] →
+      List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) →
+        (@TheoremT.Continuum.WeakGrushin.Space κ _ → Real) → @TheoremT.Continuum.WeakGrushin.Space κ _ → Real
+@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_contDiff : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+  {φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hφ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ),
+  @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ w φ)
+@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_compact : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+  {φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hφ : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ),
+  @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+    (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ w φ)
+@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_support : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+  (φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+    (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _
+      (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ w φ))
+    (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ)
+@TheoremT.Continuum.WeakGrushin.product_coordinate_family_test_identity : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)} {m : Nat}
+  {f : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (D :
+    List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) →
+      @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (h0 :
+    @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+      (D (@List.nil.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))) f)
+  (hD :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+      (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ),
+      @LT.lt.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _
+          _ _ _ _ _ _ Ω (D w) (D (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) i w))
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection κ _ _ i))
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+  (hw : @LE.le.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m)
+  {φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hφ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ)
+  (hc : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ)
+  (hs :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+      (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ) Ω),
+  @Eq.{1} Complex
+    (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+      fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+      @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p) (D w p))
+    (@HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Neg.neg.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+        (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w))
+      (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+        fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ w φ p) (f p)))
+@TheoremT.Continuum.WeakGrushin.product_coordinate_family_tests_integrable : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)} {m : Nat} {W : Real}
+  (D :
+    List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) →
+      @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hD :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)),
+      @LE.le.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m →
+        @TheoremT.Continuum.WeakGrushin.RegionL2Budget κ _ (D w) Ω W)
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+  (hw : @LE.le.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m)
+  {φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hφ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ)
+  (hc : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ)
+  (hs :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+      (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Real _ _ φ) Ω),
+  And
+    (@MeasureTheory.Integrable.{0, 0} Complex _ _ (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HSMul.hSMul.{0, 0, 0} Real Complex Complex _ (φ p) (D w p))
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+    (@MeasureTheory.Integrable.{0, 0} Complex _ _ (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _)
+      (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+        @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ w φ p)
+          (D (@List.nil.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)) p))
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+'TheoremT.Continuum.WeakGrushin.coordinateYWord' does not depend on any axioms
+'TheoremT.Continuum.WeakGrushin.coordinateTWord' does not depend on any axioms
+'TheoremT.Continuum.WeakGrushin.productCoordinateDirection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.coordinateWord_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.ProductCoordinateWeakHk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.mixedTriangularState_coordinateWeakHk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.productCoordinateTestWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_contDiff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.product_coordinate_family_test_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.product_coordinate_family_tests_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

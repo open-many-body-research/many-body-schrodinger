@@ -1,0 +1,433 @@
+{
+  "review_scope": "Python lexical discovery only; synthetic inputs are not asserted Lean-valid",
+  "test_script_sha256": "3fb89df352f6ebb7c69be7bf175dd966f5bdf1ac59e48094dfc388c1ab57b98f",
+  "helper_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "helper_unchanged": true,
+  "auditor_sha256": "ca3fa65e7331f8b46f82edbee9091a6f8c442c03321052a43ab1923d96b414d6",
+  "cases": [
+    {
+      "case": "plain",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "nested_doc",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "line_comment",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "ordinary_literal",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "multiline_literal",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "raw_zero",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "raw_hash",
+      "expected_names_or_reject": [
+        "s",
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "s",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "char_slash",
+      "expected_names_or_reject": [
+        "c",
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "char_quote",
+      "expected_names_or_reject": [
+        "c",
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "c",
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "prime_identifier",
+      "expected_names_or_reject": [
+        "t'"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t'"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "same_line_attribute",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "nested_multiline_attribute",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "comment_attribute",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "noncomputable",
+      "expected_names_or_reject": [
+        "t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "qualified",
+      "expected_names_or_reject": [
+        "A.t"
+      ],
+      "actual": {
+        "namespace": "N",
+        "names": [
+          "A.t"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "unterminated_comment",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unterminated Lean block comment"
+      },
+      "pass": true
+    },
+    {
+      "case": "unterminated_raw",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unterminated Lean raw string"
+      },
+      "pass": true
+    },
+    {
+      "case": "unterminated_ordinary",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unterminated Lean string"
+      },
+      "pass": true
+    },
+    {
+      "case": "unterminated_attribute",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unterminated Lean attribute"
+      },
+      "pass": true
+    },
+    {
+      "case": "private",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "pass": true
+    },
+    {
+      "case": "unsafe",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "pass": true
+    },
+    {
+      "case": "unicode_name",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [2]"
+      },
+      "pass": true
+    },
+    {
+      "case": "quoted_name",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "case": "interpolated_string",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "interpolated/custom string syntax is unsupported"
+      },
+      "pass": true
+    },
+    {
+      "case": "syntax_quote",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "case": "universe_suffix",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "absolute/invalid declaration names are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "case": "extra_namespace_unicode",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported namespace name"
+      },
+      "pass": true
+    },
+    {
+      "case": "declaration_after_namespace",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "declaration outside the supported namespace scope"
+      },
+      "pass": true
+    },
+    {
+      "case": "unused_axiom",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "case": "opaque_declaration",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "case": "structure_declaration",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "case": "inductive_declaration",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "case": "instance_declaration",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "case": "syntax_declaration",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    },
+    {
+      "case": "run_elab_command",
+      "expected_names_or_reject": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 2"
+      },
+      "pass": true
+    }
+  ],
+  "actual_modules": {
+    "PairKSLift_v1": {
+      "source_sha256": "52456ae6e1072cae6c5cf3bfc5269b2bb0e177994c50818be6cdd1cb661751c7",
+      "namespace": "TheoremT.Continuum",
+      "names": [
+        "PairKSSpace",
+        "pairSpectatorCoordinateEquiv",
+        "pairCenterEquiv",
+        "pairCenterEquiv_apply",
+        "pairCenterEquiv_basis",
+        "pairCenterEquiv_measurePreserving",
+        "pairCoordinatesLinear",
+        "pairCoordinates",
+        "pairCoordinates_first",
+        "pairCoordinates_second",
+        "pairCoordinates_first_basis",
+        "pairCoordinates_spectator_basis",
+        "pairKSLift",
+        "pairKSLift_contDiff",
+        "pairKSLift_locallyLipschitz",
+        "pairKSLift_first",
+        "pairKSLift_second",
+        "pairKSLift_difference",
+        "pairKSLift_pair_radius"
+      ]
+    },
+    "LocalWeakGrushinSecondGainQuantitative_v1": {
+      "source_sha256": "76930ce274111a32390c786c7a1013d65b7ae02a3a6a7a5ba668de37c7b7e41a",
+      "namespace": "TheoremT.Continuum.WeakGrushin",
+      "names": [
+        "local_weak_grushin_second_gain_quantitative"
+      ]
+    },
+    "LocalWeakGrushinHomogeneousH2Quantitative_v1": {
+      "source_sha256": "50f136db6008ec8ab172457f23a5354c1e3a143e631a23cbdaa858b904f70b88",
+      "namespace": "TheoremT.Continuum.WeakGrushin",
+      "names": [
+        "local_weak_grushin_homogeneous_h2_quantitative"
+      ]
+    },
+    "GrushinNestedH2Coefficient_v1": {
+      "source_sha256": "7c25fd8abd3cca579664ec5114100eca10a5f1b6291753e9db8ced0567b56ec7",
+      "namespace": "TheoremT.Continuum.WeakGrushin",
+      "names": [
+        "nestedH2Coefficient",
+        "nestedH2Coefficient_nonneg",
+        "nestedH2_bound_of_tangential_forcing"
+      ]
+    },
+    "ProductCompactFiniteJetBounds_v1": {
+      "source_sha256": "0e55a7abf81db0f7a479247cba44b35b83f96d872185a5c4ca2f9a6df7fa5739",
+      "namespace": "TheoremT.Continuum",
+      "names": [
+        "product_compact_finite_jet_bounds"
+      ]
+    }
+  }
+}

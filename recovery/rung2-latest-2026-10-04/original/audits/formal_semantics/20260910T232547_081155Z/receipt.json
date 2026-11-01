@@ -1,0 +1,67 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260910T232547_081155Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232547_081155Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232547_081155Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.2761999580000003,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "8ca478417253635ec760c8dea105e5f0d6031d41bad8d0a6f4070baf57f5acde",
+  "audit_log_sha256": "d4d3390ce26cb6ebccfc3360694bbdf019b182e8ca82e1b81cb14351c01a3343",
+  "module_records": [
+    {
+      "module": "LocalWeakYToGrushinEquation_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakYToGrushinEquation_v1.lean",
+      "source_sha256": "27e89e99712118e5375ed3cb3990b1ab64a03b3e45ca8dbf2770e254c26c8b7c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakYToGrushinEquation_v1.olean",
+      "object_sha256": "2a05093c2c8e637fce483e49c54497f24cf61a7fff1742683221b41cb5d504a7",
+      "declarations": [
+        "local_y_to_grushin_potential_equation"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "ProductDirectionalWordCommutator_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductDirectionalWordCommutator_v1.lean",
+      "source_sha256": "8e472e15904ba287b4f8d65749926ff9b7688e0ac2726c8c86bf9078eb3c20ed",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductDirectionalWordCommutator_v1.olean",
+      "object_sha256": "fddf2a0b409d23be31f5bd02e2a01582c7214317f7351695e4637d2bb4df75b2",
+      "declarations": [
+        "directionalWordCommutator",
+        "directionalWordProduct_eq_commutator_add",
+        "directionalWordCommutator_nil",
+        "directionalWordCommutator_locallyL2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.local_y_to_grushin_potential_equation: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.directionalWordCommutator: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.directionalWordProduct_eq_commutator_add: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.directionalWordCommutator_nil: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.directionalWordCommutator_locallyL2: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.local_y_to_grushin_potential_equation",
+    "TheoremT.Continuum.directionalWordCommutator",
+    "TheoremT.Continuum.directionalWordProduct_eq_commutator_add",
+    "TheoremT.Continuum.directionalWordCommutator_nil",
+    "TheoremT.Continuum.directionalWordCommutator_locallyL2"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

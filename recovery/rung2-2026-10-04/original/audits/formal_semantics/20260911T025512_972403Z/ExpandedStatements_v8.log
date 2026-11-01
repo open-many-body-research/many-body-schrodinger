@@ -1,0 +1,157 @@
+TheoremT.Continuum.nuclearKSPhysicalCoordinates : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  (X T : TheoremT.Continuum.Position) → TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+TheoremT.Continuum.pairKSPhysicalCoordinates : (X T : TheoremT.Continuum.Position) →
+  TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+TheoremT.Continuum.PhysicalKSAnalyticDescentOnPhysicalNeighborhood : (f :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex) →
+  (g : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex) →
+    (t0 : TheoremT.Continuum.Position) → (M A : Real) → Prop
+@TheoremT.Continuum.physicalKSAnalyticDescent_descend_surjective : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {g : TheoremT.Continuum.Position → TheoremT.Continuum.Position → Complex} {t0 : TheoremT.Continuum.Position}
+  {M A : Real} (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hid : TheoremT.Continuum.PhysicalKSAnalyticDescentIdentityOnTaylorBall f t0 M A)
+  (hlift :
+    ∀ (Y : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (T : EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))),
+      @Eq.{1} Complex
+        (f
+          (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+            (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Y T))
+        (g (TheoremT.Continuum.ksMap Y) T)),
+  TheoremT.Continuum.PhysicalKSAnalyticDescentOnPhysicalNeighborhood f g t0 M A
+TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_physical_neighborhood : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxPointwiseData
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+        (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+          (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+            _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _
+          (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+            (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+            (TheoremT.Continuum.physicalSpectatorReindexAt i))))
+      t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0),
+  TheoremT.Continuum.PhysicalKSAnalyticDescentOnPhysicalNeighborhood
+    (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) Complex
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.NuclearKSSpace (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+        (@TheoremT.Continuum.nuclearKSLift (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt i))))
+    (fun (X T : TheoremT.Continuum.Position) => g (TheoremT.Continuum.nuclearKSPhysicalCoordinates i X T)) t0 M A
+TheoremT.Continuum.pairKSPhysicalAnalyticDescent_physical_neighborhood : ∀
+  (g : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)
+  {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata :
+    TheoremT.Continuum.PhysicalKSBoxPointwiseData
+      (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        TheoremT.Continuum.PairKSSpace Complex
+        (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+          (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g
+          TheoremT.Continuum.pairKSLift)
+        (@DFunLike.coe.{1, 1, 1}
+          (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              _)
+            _ _ _ _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              _)
+          _
+          (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+            (@TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              _)
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+            (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+            (TheoremT.Continuum.physicalSpectatorReindexAt
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))))
+      t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0),
+  TheoremT.Continuum.PhysicalKSAnalyticDescentOnPhysicalNeighborhood
+    (@Function.comp.{1, 1, 1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      TheoremT.Continuum.PairKSSpace Complex
+      (@Function.comp.{1, 1, 1} TheoremT.Continuum.PairKSSpace
+        (TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex g TheoremT.Continuum.pairKSLift)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          _ _ _ _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+          @TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.WeakGrushin.Space
+            (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            _)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+          (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.physicalSpectatorReindexAt
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))))
+    (fun (X T : TheoremT.Continuum.Position) => g (TheoremT.Continuum.pairKSPhysicalCoordinates X T)) t0 M A
+'TheoremT.Continuum.nuclearKSPhysicalCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPhysicalCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.PhysicalKSAnalyticDescentOnPhysicalNeighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSAnalyticDescent_descend_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearKSPhysicalAnalyticDescent_physical_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.pairKSPhysicalAnalyticDescent_physical_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

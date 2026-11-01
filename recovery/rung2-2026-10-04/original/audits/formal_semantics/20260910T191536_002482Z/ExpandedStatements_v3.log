@@ -1,0 +1,63 @@
+TheoremT.Continuum.pairKSPotential : (Z E : Real) → (q : TheoremT.Continuum.PairKSSpace) → Real
+TheoremT.Continuum.pairKSCoefficientPatch : Set.{0} TheoremT.Continuum.PairKSSpace
+TheoremT.Continuum.pairKSPotential_eq_coulomb_scaled : ∀ (Z E : Real) (q : TheoremT.Continuum.PairKSSpace)
+  (hq :
+    @Ne.{1} TheoremT.Continuum.KSSpace
+      (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        q)
+      (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)),
+  @Eq.{1} Real (TheoremT.Continuum.pairKSPotential Z E q)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+              (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              q))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (TheoremT.Continuum.coulombPotential (@OfNat.ofNat.{0} Nat (nat_lit 2) _) Z (TheoremT.Continuum.pairKSLift q))
+        E))
+TheoremT.Continuum.pairKSPotential_on_zero : ∀ (Z E : Real)
+  (s :
+    @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)),
+  @Eq.{1} Real
+    (TheoremT.Continuum.pairKSPotential Z E
+      (@Prod.mk.{0, 0} TheoremT.Continuum.KSSpace
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _) s))
+    (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+@TheoremT.Continuum.pairKSCoefficientPatch_off_zero_collisionFree : ∀ {q : TheoremT.Continuum.PairKSSpace}
+  (hq :
+    @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _
+      TheoremT.Continuum.pairKSCoefficientPatch q)
+  (hy :
+    @Ne.{1} TheoremT.Continuum.KSSpace
+      (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+        q)
+      (@OfNat.ofNat.{0} TheoremT.Continuum.KSSpace (nat_lit 0) _)),
+  @TheoremT.Continuum.collisionFree (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (TheoremT.Continuum.pairKSLift q)
+TheoremT.Continuum.pairKSPotential_contDiffAt : ∀ (Z E : Real) {q : TheoremT.Continuum.PairKSSpace}
+  (hq :
+    @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _
+      TheoremT.Continuum.pairKSCoefficientPatch q),
+  @ContDiffAt.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _ Real _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (TheoremT.Continuum.pairKSPotential Z E) q
+TheoremT.Continuum.pairKSCoefficientPatch_isOpen : @IsOpen.{0} TheoremT.Continuum.PairKSSpace _
+  TheoremT.Continuum.pairKSCoefficientPatch
+'TheoremT.Continuum.pairKSPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSCoefficientPatch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPotential_eq_coulomb_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSPotential_on_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSCoefficientPatch_off_zero_collisionFree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.pairKSPotential_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKSCoefficientPatch_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]

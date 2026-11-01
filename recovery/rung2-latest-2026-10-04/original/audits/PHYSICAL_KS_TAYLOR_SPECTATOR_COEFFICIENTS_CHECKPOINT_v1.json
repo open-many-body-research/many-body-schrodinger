@@ -1,0 +1,52 @@
+{
+  "status": "PASS_ACTUAL_PHYSICAL_TAYLOR_SPECTATOR_COEFFICIENTS",
+  "utc": "2026-09-11T02:40:51.164678+00:00",
+  "evidence_category": "Fully formalized finite Taylor polynomial extraction; quantitative and physical claims retain exact PhysicalKSBoxPointwiseData hypotheses.",
+  "exact_results": [
+    "The actual joint factorial Frechet Taylor polynomial at total order j+gamma.degree has a genuine extracted four-variable coefficient polynomial with the identical original coefficient at sumElim alpha gamma.",
+    "The extracted polynomial is homogeneous of Y degree j, and its entire coefficient L1 inherits amplitude*(7*rate)^(j+gamma.degree).",
+    "At the actual fixed center (0,t0), each nuclear chart and the actual pair chart have extracted polynomial circle invariance and balanced support after the literal spinor substitution. No separate polynomial invariance premise is assumed."
+  ],
+  "source": {
+    "path": "lean/PhysicalKSTaylorSpectatorCoefficients_v1.lean",
+    "sha256": "415aa78c8ed9da8229366e9fba21d65aaff2c9a0017017fdd277f5934e873b56"
+  },
+  "object": {
+    "path": "lean/build/PhysicalKSTaylorSpectatorCoefficients_v1.olean",
+    "sha256": "617be28c371ca1e58d0e36567b2a6247d695fcc258dc7cde4447c2b6bdbd0bff"
+  },
+  "build": {
+    "path": "logs/development/PhysicalKSTaylorSpectatorCoefficients_v1-20260911T023122_116684Z.json",
+    "sha256": "6bbbc00ec01d3075f7cb8b65dfacafba271b6d939544fab3c5f5e1009d795525"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T023200_098930Z/receipt.json",
+    "sha256": "980d811eb64a1d3932df41a00968e73cd776f262dd631f5a1b1ddec1e6cf5930"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T023200_098930Z/ExpandedStatements_v8.log",
+    "sha256": "23252f43c8ac1d1ea1bfa58d907a99ccf1da915128da6acaf105549fea57dbb0"
+  },
+  "independent_review": {
+    "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_COEFFICIENTS_REVIEW_v1_20260911T023541Z.json",
+    "sha256": "2f8c30bf7db1703f9ec0e14d352777fd8958c657bb20aaa0f4cb41784c3da9c7"
+  },
+  "finite_extraction_checkpoint": {
+    "path": "audits/KS_SPECTATOR_COEFFICIENT_EXTRACTION_INVARIANCE_CHECKPOINT_v1.json",
+    "sha256": "9578a05f53d3e97324460799c96c72dbd166bb0b77526c08c9968ed392e92a54"
+  },
+  "manual_check": "Complete final source, all 532 expanded-log lines for eight declarations, complete receipt and independent review read. Only propext, Classical.choice and Quot.sound; no printer omissions or extra mathematical hypotheses.",
+  "preservation": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "limitations": [
+    "No odd total Taylor degree conclusion; the relevant degree is Y degree j.",
+    "Finite polynomial construction only; infinite-series regrouping and equality to the actual physical function remain separate.",
+    "Pinned Lean and Mathlib dependency object caches reused; no new isolated source rebuild.",
+    "No full R04, rung 2, global approximation or certified rational algorithm claim."
+  ],
+  "next": "Prove odd Y coefficient vanishing; root owns actual joint Taylor sum identification and physical series composition."
+}

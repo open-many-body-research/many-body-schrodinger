@@ -1,0 +1,49 @@
+import PhysicalSpectatorFactorialWords_v1
+import ComplexWordRealAmplitude_v1
+import ComplexWordRealAmplitudeBudget_v1
+import PhysicalSpectatorL2BudgetTransport_v1
+import PhysicalKSUniformSourceVolume_v1
+import PhysicalKSFactorialBudgetPullback_v1
+import KSCommonPhysicalFactorialBudgets_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.physicalSpectatorReindexAt_symm_coordinate
+#check @TheoremT.Continuum.physicalSpectatorReindexAt_symm_word
+#check @TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_real_smul_const
+#check @TheoremT.Continuum.WeakGrushin.complex_word_real_amplitude_region_budget
+#check @TheoremT.Continuum.physicalSpectatorReindexAt_symm_measurePreserving
+#check @TheoremT.Continuum.physicalSpectatorReindexAt_regionL2Budget
+#check @TheoremT.Continuum.physicalSpectatorReindexAt_locallyL2
+#check @TheoremT.Continuum.physicalKSUniformSourceVolume
+#check @TheoremT.Continuum.physicalKSUniformSourceVolume_nonneg
+#check @TheoremT.Continuum.physicalKS_box_subset_fixed_ball
+#check @TheoremT.Continuum.physicalKS_box_volume_bound
+#check @TheoremT.Continuum.physicalKS_factorial_budget_pullback
+#check @TheoremT.Continuum.ksCommon_physical_factorial_budgets
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.physicalSpectatorReindexAt_symm_coordinate
+#print axioms TheoremT.Continuum.physicalSpectatorReindexAt_symm_word
+#print axioms TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_real_smul_const
+#print axioms TheoremT.Continuum.WeakGrushin.complex_word_real_amplitude_region_budget
+#print axioms TheoremT.Continuum.physicalSpectatorReindexAt_symm_measurePreserving
+#print axioms TheoremT.Continuum.physicalSpectatorReindexAt_regionL2Budget
+#print axioms TheoremT.Continuum.physicalSpectatorReindexAt_locallyL2
+#print axioms TheoremT.Continuum.physicalKSUniformSourceVolume
+#print axioms TheoremT.Continuum.physicalKSUniformSourceVolume_nonneg
+#print axioms TheoremT.Continuum.physicalKS_box_subset_fixed_ball
+#print axioms TheoremT.Continuum.physicalKS_box_volume_bound
+#print axioms TheoremT.Continuum.physicalKS_factorial_budget_pullback
+#print axioms TheoremT.Continuum.ksCommon_physical_factorial_budgets

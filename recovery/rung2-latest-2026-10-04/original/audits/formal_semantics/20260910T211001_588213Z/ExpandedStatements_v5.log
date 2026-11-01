@@ -1,0 +1,1310 @@
+TheoremT.Continuum.twoElectronSpectatorCoordinateEquiv : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  Equiv.{1, 1} (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+TheoremT.Continuum.twoElectronSpectatorPositionEquiv : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+    (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) TheoremT.Continuum.Position _ _
+    _ _
+TheoremT.Continuum.twoElectronSpectatorPositionEquiv_apply : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (s : @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+  (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) k)
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          TheoremT.Continuum.Position _ _ _ _)
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        (fun (a : @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) =>
+          TheoremT.Continuum.Position)
+        _ (TheoremT.Continuum.twoElectronSpectatorPositionEquiv i) s)
+      k)
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i_1 : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) →
+        (fun (x : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) => Real) i_1)
+      s
+      (@Subtype.mk.{1} (TheoremT.Continuum.Coordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (fun (k : TheoremT.Continuum.Coordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+          @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) k)
+            i)
+        (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) k)
+        (@id.{0}
+          (@Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+              (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+                (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) k))
+            i)
+          (@List.Mem.casesOn.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+            (fun (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                (x : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i a) =>
+              ∀
+                (h :
+                  @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                    (List.finRange (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) a)
+                (h :
+                  @HEq.{0}
+                    (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                      (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                    (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+                    (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i a) x),
+                @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+            (List.finRange (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+            (fun (as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                (h :
+                  @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                    (List.finRange (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)) =>
+              @List.cons.noConfusion.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (∀
+                  (h :
+                    @HEq.{0}
+                      (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                        (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                      (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+                      (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                        (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as))
+                      (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)),
+                  @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+                    i)
+                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                    @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                  (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                i as h
+                fun
+                  (head_eq :
+                    @HEq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                          (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i) =>
+                @Eq.ndrec.{0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                  (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    ∀ (s : @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+                      (this :
+                        @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                          (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                      (tail_eq :
+                        @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                          (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as)
+                      (h :
+                        @HEq.{0}
+                          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                            (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                          this
+                          (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                            (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as))
+                          (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)),
+                      @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                        (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                  (fun
+                      (s :
+                        @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                              (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                      (this :
+                        @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                          (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                          (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+                          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                              (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                      (tail_eq :
+                        @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                          (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as) =>
+                    @Eq.ndrec.{0, 1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                      ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                          @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                      (fun (as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                        ∀
+                          (h :
+                            @HEq.{0}
+                              (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                                (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                              this
+                              (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                  as))
+                              (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                as)),
+                          @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                  (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                              (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                      (fun
+                          (h :
+                            @HEq.{0}
+                              (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                                (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                              this
+                              (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                  ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                      @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                              (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                      (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                    @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                      ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                  (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))) =>
+                        @of_decide_eq_true
+                          (@Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                  (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                              (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                          _
+                          (@id.{0}
+                            (@Eq.{1} Bool
+                              (@Decidable.decide
+                                (@Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                        (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                                _)
+                              Bool.true)
+                            (@Eq.refl.{1} Bool Bool.true)))
+                      as
+                      (@eq_of_heq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                        ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                            @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                          (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                        as tail_eq))
+                  i
+                  (@eq_of_heq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                        (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                    i head_eq)
+                  s (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i))
+            (fun (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                {as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))}
+                (a : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)
+                (h :
+                  @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                    (List.finRange (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as)) =>
+              @List.cons.noConfusion.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (∀
+                  (h :
+                    @HEq.{0}
+                      (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                        (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                        (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                      (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+                      (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                        (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as))
+                      (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i b as a)),
+                  @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+                    i)
+                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                    @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                  (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                b as h
+                fun
+                  (head_eq :
+                    @HEq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                      ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                          (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b) =>
+                @Eq.ndrec.{0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                  (fun (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                    ∀
+                      (tail_eq :
+                        @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                          (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as)
+                      (h :
+                        @HEq.{0}
+                          (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                            (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                          (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+                          (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                            (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as))
+                          (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i b as a)),
+                      @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                        (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                  (fun
+                      (tail_eq :
+                        @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                          (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as) =>
+                    @Eq.ndrec.{0, 1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                      ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                          @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                      (fun {as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))} =>
+                        ∀ (a : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)
+                          (h :
+                            @HEq.{0}
+                              (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                                (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                              (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+                              (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                  as))
+                              (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                as a)),
+                          @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                            (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                      (fun
+                          (a :
+                            @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                              ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                    (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                  @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                          (h :
+                            @HEq.{0}
+                              (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                                (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+                              (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+                              (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                      (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                  ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                      @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+                              (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                                    (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                      (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                    @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                      ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                  (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                a)) =>
+                        @List.Mem.casesOn.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                          (fun (a_1 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                              (x : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i a_1) =>
+                            ∀
+                              (h :
+                                @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                  ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                      @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                  a_1)
+                              (h :
+                                @HEq.{0}
+                                  (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                    ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                          (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                        @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                      (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                  a (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i a_1) x),
+                              @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                          a
+                          (fun (as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                              (h :
+                                @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                  ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                      @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                  (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)) =>
+                            @List.cons.noConfusion.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              (∀
+                                (h :
+                                  @HEq.{0}
+                                    (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                      ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                            (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                          @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                    a
+                                    (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                      (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as))
+                                    (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)),
+                                @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) i as h
+                              fun
+                                (head_eq :
+                                  @HEq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i) =>
+                              @Eq.ndrec.{0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                (fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                                  ∀
+                                    (s :
+                                      @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+                                    (a :
+                                      @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                        ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                            @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                          (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                    (tail_eq :
+                                      @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as)
+                                    (h :
+                                      @HEq.{0}
+                                        (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                        a
+                                        (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                          (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as))
+                                        (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)),
+                                    @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                      (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                                (fun
+                                    (s :
+                                      @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                    (a :
+                                      @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                        ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                            @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                          (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                    (tail_eq :
+                                      @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as) =>
+                                  @Eq.ndrec.{0, 1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (fun (as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                      ∀
+                                        (h :
+                                          @HEq.{0}
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                                  @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                            a
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                as))
+                                            (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              as)),
+                                        @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                          (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                              (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                    (fun
+                                        (h :
+                                          @HEq.{0}
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                                  @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                            a
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                            (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))) =>
+                                      @of_decide_eq_true
+                                        (@Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                          (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                              (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                          ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                        _
+                                        (@id.{0}
+                                          (@Eq.{1} Bool
+                                            (@Decidable.decide
+                                              (@Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                              _)
+                                            Bool.true)
+                                          (@Eq.refl.{1} Bool Bool.true)))
+                                    as
+                                    (@eq_of_heq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                      (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as tail_eq))
+                                i
+                                (@eq_of_heq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                  i head_eq)
+                                s a)
+                          (fun (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              {as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))}
+                              (a_1 : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)
+                              (h :
+                                @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                  ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                      @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                        ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                  (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as)) =>
+                            @List.cons.noConfusion.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              (∀
+                                (h :
+                                  @HEq.{0}
+                                    (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                      ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                            (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                          @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                            ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                        (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                    a
+                                    (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                      (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as))
+                                    (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i b as a_1)),
+                                @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) b as h
+                              fun
+                                (head_eq :
+                                  @HEq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                        (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b) =>
+                              @Eq.ndrec.{0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                (fun (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+                                  ∀
+                                    (tail_eq :
+                                      @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as)
+                                    (h :
+                                      @HEq.{0}
+                                        (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                          ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                              @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                            (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                              (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                        a
+                                        (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                          (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as))
+                                        (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i b as a_1)),
+                                    @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                      (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                                (fun
+                                    (tail_eq :
+                                      @HEq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                        (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as) =>
+                                  @Eq.ndrec.{0, 1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                    (fun {as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))} =>
+                                      ∀ (a_2 : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)
+                                        (h :
+                                          @HEq.{0}
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                              ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                                  @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                            a
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                              (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                as))
+                                            (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              as a_2)),
+                                        @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                          (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                                    (fun
+                                        (a_2 :
+                                          @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                        (h :
+                                          @HEq.{0}
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                              ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                                  @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                            a
+                                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                              (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                  (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                    (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                                            (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) a_2)) =>
+                                      @List.Mem.casesOn.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                        (fun (a : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                            (x : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i a) =>
+                                          ∀
+                                            (h :
+                                              @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) a)
+                                            (h :
+                                              @HEq.{0}
+                                                (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                                  (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                a_2 (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i a) x),
+                                            @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                              (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                                        (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) a_2
+                                        (fun (as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                            (h :
+                                              @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)) =>
+                                          @False.elim.{0}
+                                            (∀
+                                              (h :
+                                                @HEq.{0}
+                                                  (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                  a_2
+                                                  (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                                    (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as))
+                                                  (@List.Mem.head.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)),
+                                              @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                                            (@noConfusion_of_Nat.{1}
+                                              (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                              (@List.ctorIdx.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                              (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as) h))
+                                        (fun (b : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                            {as : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))}
+                                            (a : @List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i as)
+                                            (h :
+                                              @Eq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                                (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as)) =>
+                                          @False.elim.{0}
+                                            (∀
+                                              (h :
+                                                @HEq.{0}
+                                                  (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                                    (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                                  a_2
+                                                  (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                                    (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as))
+                                                  (@List.Mem.tail.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i b as
+                                                    a)),
+                                              @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                                (@Fin.rev (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) i)
+                                            (@noConfusion_of_Nat.{1}
+                                              (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                              (@List.ctorIdx.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                              (@List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) b as) h))
+                                        (@Eq.refl.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                          (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                        (@HEq.refl.{0}
+                                          (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                                            (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                          a_2))
+                                    as
+                                    (@eq_of_heq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                      (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) as tail_eq)
+                                    a_1)
+                                b
+                                (@eq_of_heq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                                    (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                      (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                                  b head_eq))
+                          (@Eq.refl.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                            ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                  ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                              (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                              (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                          (@HEq.refl.{0}
+                            (@List.Mem.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) i
+                              ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                    (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                                  @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                                (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                                  (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                                (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                            a))
+                      as
+                      (@eq_of_heq.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                        ((fun (x1 : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              (x2 : List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) =>
+                            @List.cons.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                              ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i) x1) x2)
+                          (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 1)
+                            (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                          (@List.nil.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+                        as tail_eq)
+                      a)
+                  b
+                  (@eq_of_heq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                    ((fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => i)
+                      (@Fin.mk (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (nat_lit 0)
+                        (@Nat.le_of_lt (nat_lit 1) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                          (Nat.le_refl (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+                    b head_eq))
+            (@Eq.refl.{1} (List.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+              (List.finRange (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+            (@HEq.refl.{0}
+              (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                (Finset.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) _
+                (@Fintype.elems.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) i)
+              (@Fintype.complete.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i))))))
+TheoremT.Continuum.twoElectronSpectatorPositionEquiv_symm_apply : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (t : TheoremT.Continuum.Position)
+  (k : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i),
+  @Eq.{1} ((fun (x : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) => Real) k)
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i_1 : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) →
+        (fun (x : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) => Real) i_1)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position
+          (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _ _ _)
+        TheoremT.Continuum.Position
+        (fun (a : TheoremT.Continuum.Position) =>
+          @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          TheoremT.Continuum.Position _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.twoElectronSpectatorPositionEquiv i))
+        t)
+      k)
+    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Real) i)
+      t
+      (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@Subtype.val.{1} (TheoremT.Continuum.Coordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (fun (k : TheoremT.Continuum.Coordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) k)
+              i)
+          k)))
+TheoremT.Continuum.twoElectronSpectatorPositionEquiv_basis : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (k : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i),
+  @Eq.{1} TheoremT.Continuum.Position
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) TheoremT.Continuum.Position
+        _ _ _ _)
+      (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+      (fun (a : @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) =>
+        TheoremT.Continuum.Position)
+      _ (TheoremT.Continuum.twoElectronSpectatorPositionEquiv i)
+      (@TheoremT.Continuum.spectatorBasis (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i k))
+    (TheoremT.Continuum.ksTargetBasis
+      (@Prod.snd.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (@Subtype.val.{1} (TheoremT.Continuum.Coordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (fun (k : TheoremT.Continuum.Coordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) =>
+            @Ne.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@Prod.fst.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) k)
+              i)
+          k)))
+TheoremT.Continuum.twoElectronSpectatorCoordinate_card : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Eq.{1} Nat (@Fintype.card.{0} (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+TheoremT.Continuum.physicalSpectatorReindexAt : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  @LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _
+TheoremT.Continuum.physicalSpectatorReindexAt_apply : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (q :
+    @TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (fun
+          (a :
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.physicalSpectatorReindexAt i) q)
+    (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) TheoremT.Continuum.Position
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)) q)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          TheoremT.Continuum.Position _ _ _ _)
+        (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        (fun (a : @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) =>
+          TheoremT.Continuum.Position)
+        _ (TheoremT.Continuum.twoElectronSpectatorPositionEquiv i)
+        (@Prod.snd.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+          q)))
+TheoremT.Continuum.physicalSpectatorReindexAt_symm_apply : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      _
+      (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      q)
+    (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) q)
+      (@DFunLike.coe.{1, 1, 1}
+        (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          TheoremT.Continuum.Position
+          (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _ _ _)
+        TheoremT.Continuum.Position
+        (fun (a : TheoremT.Continuum.Position) =>
+          @TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        _
+        (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+          (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          TheoremT.Continuum.Position _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+          (TheoremT.Continuum.twoElectronSpectatorPositionEquiv i))
+        (@Prod.snd.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) q)))
+TheoremT.Continuum.physicalSpectatorReindexAt_yDir : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (fun
+          (a :
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.physicalSpectatorReindexAt i)
+      (@TheoremT.Continuum.WeakGrushin.yDir
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ j))
+    (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ j)
+TheoremT.Continuum.physicalSpectatorReindexAt_tDir : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (j : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (fun
+          (a :
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.physicalSpectatorReindexAt i)
+      (@TheoremT.Continuum.WeakGrushin.tDir
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _ j))
+    (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _
+      (@DFunLike.coe.{1, 1, 1}
+        (Equiv.{1, 1} (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        (fun (x : @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) =>
+          Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        _ (TheoremT.Continuum.twoElectronSpectatorCoordinateEquiv i) j))
+TheoremT.Continuum.physicalSpectatorReindexAt_symm_yDir : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      _
+      (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      (@TheoremT.Continuum.WeakGrushin.yDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ j))
+    (@TheoremT.Continuum.WeakGrushin.yDir
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ j)
+TheoremT.Continuum.physicalSpectatorReindexAt_symm_tDir : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      _
+      (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      (@TheoremT.Continuum.WeakGrushin.tDir (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ _ j))
+    (@TheoremT.Continuum.WeakGrushin.tDir
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _ _
+      (@DFunLike.coe.{1, 1, 1}
+        (Equiv.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i))
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          @TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+        _
+        (@Equiv.symm.{1, 1} (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (TheoremT.Continuum.twoElectronSpectatorCoordinateEquiv i))
+        j))
+TheoremT.Continuum.physicalSpectatorReindexAt_contDiff : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @ContDiff.{0, 0, 0} Real _
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    _ _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (fun
+          (a :
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+TheoremT.Continuum.physicalSpectatorReindexAt_symm_contDiff : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      _
+      (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _
+        (TheoremT.Continuum.physicalSpectatorReindexAt i)))
+TheoremT.Continuum.physicalSpectatorHomeomorphAt : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) →
+  @Homeomorph.{0, 0}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+TheoremT.Continuum.physicalSpectatorHomeomorphAt_apply : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (q :
+    @TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@Homeomorph.{0, 0}
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (fun
+          (x :
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.physicalSpectatorHomeomorphAt i) q)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space
+        (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      (fun
+          (a :
+            @TheoremT.Continuum.WeakGrushin.Space
+              (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ (TheoremT.Continuum.physicalSpectatorReindexAt i) q)
+TheoremT.Continuum.physicalSpectatorHomeomorphAt_symm_apply : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+  (q : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1}
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@Homeomorph.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      _
+      (@Homeomorph.symm.{0, 0}
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (TheoremT.Continuum.physicalSpectatorHomeomorphAt i))
+      q)
+    (@DFunLike.coe.{1, 1, 1}
+      (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        @TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+      _
+      (@LinearIsometryEquiv.symm.{0, 0, 0, 0} Real Real
+        (@TheoremT.Continuum.WeakGrushin.Space
+          (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _) i) _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _ _ _ _ _ (TheoremT.Continuum.physicalSpectatorReindexAt i))
+      q)
+TheoremT.Continuum.twoElectronSpectatorPositionEquiv_zero : @Eq.{1}
+  (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+    (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+    TheoremT.Continuum.Position _ _ _ _)
+  (TheoremT.Continuum.twoElectronSpectatorPositionEquiv
+    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+  TheoremT.Continuum.pairCenterEquiv
+TheoremT.Continuum.physicalSpectatorReindexAt_zero : @Eq.{1}
+  (@LinearIsometryEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+    (@TheoremT.Continuum.WeakGrushin.Space
+      (@TheoremT.Continuum.SpectatorCoordinate (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      _)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+  (TheoremT.Continuum.physicalSpectatorReindexAt
+    (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+  TheoremT.Continuum.physicalSpectatorReindex
+'TheoremT.Continuum.twoElectronSpectatorCoordinateEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectronSpectatorPositionEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectronSpectatorPositionEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectronSpectatorPositionEquiv_symm_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.twoElectronSpectatorPositionEquiv_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectronSpectatorCoordinate_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_yDir' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_tDir' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_symm_yDir' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_symm_tDir' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_symm_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorHomeomorphAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorHomeomorphAt_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorHomeomorphAt_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.twoElectronSpectatorPositionEquiv_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalSpectatorReindexAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

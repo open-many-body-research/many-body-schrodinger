@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "utc": "2026-09-11T00:01:37.336899+00:00",
+  "exact_result": "# Actual interval point evaluation via FTC and L2\n\nFor real a<b, a normed real codomain F, g,dg continuous on [a,b], and genuine HasDerivAt g (dg t) t at every t in [a,b], the modules prove at every x in [a,b]:\n\nnorm(g x) <= (b-a)^(-1) integral_[a,b] norm(g) + integral_[a,b] norm(dg),\n\nand\n\nnorm(g x) <= (sqrt(b-a))^(-1) sqrt(integral_[a,b] norm(g)^2) + sqrt(b-a) sqrt(integral_[a,b] norm(dg)^2).\n\nThe first follows from the actual two-point FTC norm bound and integration in the second point. The second follows from actual L2 Cauchy-Schwarz with the constant-one field. There is no derivative order or function-dependent constant. The same first inequality is expressed using the normalized interval measure mu=(ofReal(b-a))^(-1) smul volume.restrict(Icc a b): enorm(g x) <= integral enorm(g) dmu + ofReal(b-a)*integral enorm(dg) dmu. The normalized measure has mass one. No interval pointwise bound is assumed.\n\nThe derivative field is actual by HasDerivAt, not an arbitrary list of budgets. Both endpoints are included; a=b is only permitted in the preceding undivided two-point/length-multiplied statements. The code does not assume a complete codomain for the norm bounds. Continuity supplies the actual restricted integrability needed for Cauchy-Schwarz.\n\nAll 9 declarations in IntervalPointwiseFTC_v1, IntervalPointwiseL2_v1 and IntervalPointwiseAverage_v1 compiled and passed approved v7 exact-statement/axiom audit formal_semantics/20260910T235558_526378Z. Expanded types and full axiom reports were read. Only propext, Classical.choice, Quot.sound occur; no forbidden source tokens, printer ellipses, failure or omission diagnostics. Source and objects remained unchanged.\n\nIndependent read-only reviewer /root/finite_affine_jets/physical_direction_norm matched all three exact source hashes and found no hypothesis, endpoint, scaling or square-root defect. The reviewer read the actual FTC restriction and norm symmetry, integrated length factor, constant-one L2 Cauchy estimate, positive-length square-root cancellation and normalized-measure ENNReal cancellation. No compiler/auditor was run by the reviewer.\n\nThese are the one-dimensional mathematical prerequisites for R24, not the full seven-dimensional embedding or its weak representative extension. Tensor integration, rectangular geometric normalization and weak density remain separately stated work. No solution regularity, evaluated all-order PDE constant or original T02 verification is claimed. Pinned cached dependency objects were reused; no source rebuild or broad audit was performed. All prior PASS/frozen artifacts and shared ledgers were preserved.\n\nHistorical context: rwa_proof/THEOREM_T_COMPOSITION.md, SHA-256 1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da, frozen commit 166f43f2f0178f92d8c4d1dde209ef0eeaefa660, tag theorem-t-proof-freeze-2026-09-09, inventory THEOREM_T_FREEZE_2026-09-09_212604/FREEZE_MANIFEST.json.\n",
+  "modules": [
+    {
+      "module": "IntervalPointwiseFTC_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IntervalPointwiseFTC_v1.lean",
+      "source_sha256": "a71a56a6503fe8fa74a437e4ee6b55e99fb530ba6a1364b578fc455e96f6967d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IntervalPointwiseFTC_v1.olean",
+      "object_sha256": "83bfb47ef1c93b407bc113e6d94c7d718119aabfcaf0c3c966bb286854b12b0f",
+      "declarations": [
+        "interval_norm_sub_le_derivative_integral",
+        "interval_pointwise_norm_mul_length_le",
+        "interval_pointwise_norm_le_average_derivative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/IntervalPointwiseFTC_v1-20260910T235313_654673Z.json",
+          "sha256": "35096acddfcc2252f161b00b04c31fa9e910375fa7503cea01c058b5eafc928f"
+        }
+      ]
+    },
+    {
+      "module": "IntervalPointwiseL2_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IntervalPointwiseL2_v1.lean",
+      "source_sha256": "558303ab714c4d6ed61a1caaa283c7711a56af03e9199081760db49c1f913493",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IntervalPointwiseL2_v1.olean",
+      "object_sha256": "82791ee6e7cc26683444851c83820b4291425a7f02079afebd66c72278d23ba8",
+      "declarations": [
+        "finite_measure_integral_norm_le_sqrt",
+        "interval_integral_norm_le_sqrt",
+        "interval_pointwise_norm_le_L2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/IntervalPointwiseL2_v1-20260910T235401_977689Z.json",
+          "sha256": "a3377ae2e1af1aef067a3efdd67c4d5ea246f3155bb619aa052bb585b8bac955"
+        }
+      ]
+    },
+    {
+      "module": "IntervalPointwiseAverage_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/IntervalPointwiseAverage_v1.lean",
+      "source_sha256": "5d4d76f69fe26cc8ad0e9c936ea4ac909278eb6ca96eee92a80e0f962897a6f3",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/IntervalPointwiseAverage_v1.olean",
+      "object_sha256": "910c887cc5f14796813fda1a95a841f5b3bcf31f1e91177bab6e5f5e313b73fd",
+      "declarations": [
+        "intervalAverageMeasure",
+        "intervalAverageMeasure_univ",
+        "interval_pointwise_enorm_le_average_derivative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true,
+      "matching_pass_compile_receipts": [
+        {
+          "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/IntervalPointwiseAverage_v1-20260910T235534_703274Z.json",
+          "sha256": "ab0683a941291cf042de7dd484af67cb92fa96c1ed6073fbc9b59216de7e8895"
+        }
+      ]
+    }
+  ],
+  "strict_audit": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T235558_526378Z/receipt.json",
+    "sha256": "2f89625a3078fae87a31d259b792a1899c9ff8aeee9e4b547bd0b8dfc1344e09",
+    "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+    "axiom_lines": [
+      "TheoremT.Continuum.interval_norm_sub_le_derivative_integral: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.interval_pointwise_norm_mul_length_le: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.interval_pointwise_norm_le_average_derivative: [propext,, Classical.choice,, Quot.sound]",
+      "TheoremT.Continuum.finite_measure_integral_norm_le_sqrt: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.interval_integral_norm_le_sqrt: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.interval_pointwise_norm_le_L2: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.intervalAverageMeasure: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.intervalAverageMeasure_univ: [propext, Classical.choice, Quot.sound]",
+      "TheoremT.Continuum.interval_pointwise_enorm_le_average_derivative: [propext,, Classical.choice,, Quot.sound]"
+    ]
+  },
+  "focused_review": "Independent exact-source review by /root/finite_affine_jets/physical_direction_norm found no defect.",
+  "note": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/INTERVAL_POINTWISE_FTC_L2_v1.md",
+    "sha256": "c452f6bc258cdbfcbf178cc2afc57d08554498090d24a72be2a43b1b33bbcee9"
+  }
+}

@@ -1,0 +1,149 @@
+TheoremT.Continuum.physicalKSComplexTaylorExtension : (f :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex) →
+  (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+    (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) →
+      Complex
+@TheoremT.Continuum.physicalKSComplexTaylorExtension_analytic : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata : TheoremT.Continuum.PhysicalKSBoxPointwiseData f t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  {x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _}
+  (hx :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t0)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _)))
+      x),
+  @AnalyticOnNhd.{0, 0, 0} Complex
+    (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) Complex
+    _ _ _ _ _ (TheoremT.Continuum.physicalKSComplexTaylorExtension f x)
+    (@Set.ofPred.{0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+      fun
+        (z :
+          Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex) =>
+      @LT.lt.{0} Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+            (TheoremT.Continuum.physicalKSPointwiseRate M A))
+          (@Norm.norm.{0}
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+            _ z))
+        (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.physicalKSComplexTaylorExtension_norm_bound : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata : TheoremT.Continuum.PhysicalKSBoxPointwiseData f t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0)
+  {x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _}
+  (hx :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+      (TheoremT.Continuum.WeakGrushin.rectangularOpenBox
+        (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _) t0)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _)))
+      x)
+  {r : Real} (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hsmall :
+    @LT.lt.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+          (TheoremT.Continuum.physicalKSPointwiseRate M A))
+        r)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (z : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+  (hz :
+    @Membership.mem.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex)
+      (Set.{0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Complex))
+      _
+      (TheoremT.Continuum.complexClosedPolydisc.{0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) r)
+      z),
+  @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.physicalKSComplexTaylorExtension f x z))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.physicalKSPointwiseAmplitude M A F0 W)
+      (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+            (TheoremT.Continuum.physicalKSPointwiseRate M A))
+          r)))
+@TheoremT.Continuum.physicalKSComplexTaylorExtension_agrees_on_real_ball : ∀
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  {t0 : TheoremT.Continuum.Position} {M A F0 W : Real}
+  (hdata : TheoremT.Continuum.PhysicalKSBoxPointwiseData f t0 M A F0 W)
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hF0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F0),
+  @Exists.{1} NNReal fun (r : NNReal) =>
+    And (@LT.lt.{0} NNReal _ (@OfNat.ofNat.{0} NNReal (nat_lit 0) _) r)
+      (And
+        (@Eq.{1} Real (NNReal.toReal r)
+          (@Min.min.{0} Real _
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+              (@OfNat.ofNat.{0} Real (nat_lit 1024) _))
+            (@Inv.inv.{0} Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 7) _)
+                (TheoremT.Continuum.physicalKSPointwiseRate M A)))))
+        (∀ (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+          @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (TheoremT.Continuum.WeakGrushin.rectangularClosedBox
+                (@Prod.mk.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                  (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+                  (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0)
+                    _)
+                  t0)
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                  (@OfNat.ofNat.{0} Real (nat_lit 1024) _))
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                  (@OfNat.ofNat.{0} Real (nat_lit 1024) _)))
+              x →
+            ∀ (y : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+              @Membership.mem.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+                  (@Metric.eball.{0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+                    (@OfNat.ofNat.{0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (nat_lit 0)
+                      _)
+                    (ENNReal.ofNNReal r))
+                  y →
+                @Eq.{1} Complex
+                  (TheoremT.Continuum.physicalKSComplexTaylorExtension f x
+                    fun
+                      (j :
+                        Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+                          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) =>
+                    Complex.ofReal
+                      (@TheoremT.Continuum.WeakGrushin.productCoordinateComponent
+                        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ y j))
+                  (f
+                    (@HAdd.hAdd.{0, 0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ x y))))
+'TheoremT.Continuum.physicalKSComplexTaylorExtension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.physicalKSComplexTaylorExtension_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSComplexTaylorExtension_norm_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.physicalKSComplexTaylorExtension_agrees_on_real_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,201 @@
+@TheoremT.Continuum.homogeneous_polynomial_series_summable_norm.{u_1} : ∀ {σ : Type u_1}
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (X : σ → Complex)
+  (hX :
+    @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) X),
+  @Summable.{0, 0} Real Nat _ _
+    (fun (n : Nat) =>
+      @Norm.norm.{0} Complex _
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+          (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n)))
+    (SummationFilter.unconditional.{0} Nat)
+@TheoremT.Continuum.homogeneous_polynomial_series_summable.{u_1} : ∀ {σ : Type u_1}
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (X : σ → Complex)
+  (hX :
+    @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) X),
+  @Summable.{0, 0} Complex Nat _ _
+    (fun (n : Nat) =>
+      @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+    (SummationFilter.unconditional.{0} Nat)
+@TheoremT.Continuum.homogeneous_polynomial_series_hasSumUniformlyOn.{u_1} : ∀ {σ : Type u_1}
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @HasSumUniformlyOn.{0, u_1, 0} Complex (σ → Complex) Nat _
+    (fun (n : Nat) (X : σ → Complex) =>
+      @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+    (fun (X : σ → Complex) =>
+      @tsum.{0, 0} Complex Nat _ _
+        (fun (n : Nat) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+        (SummationFilter.unconditional.{0} Nat))
+    (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) _
+@TheoremT.Continuum.homogeneous_polynomial_series_tendstoUniformlyOn_range.{u_1} : ∀ {σ : Type u_1}
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n))),
+  @TendstoUniformlyOn.{u_1, 0, 0} (σ → Complex) Complex Nat _
+    (fun (N : Nat) (X : σ → Complex) =>
+      @Finset.sum.{0, 0} Nat Complex _ (Finset.range N) fun (n : Nat) =>
+        @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+          (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+    (fun (X : σ → Complex) =>
+      @tsum.{0, 0} Complex Nat _ _
+        (fun (n : Nat) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+        (SummationFilter.unconditional.{0} Nat))
+    (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r)
+@TheoremT.Continuum.homogeneous_polynomial_series_norm_tsum_le.{u_1} : ∀ {σ : Type u_1}
+  (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (X : σ → Complex)
+  (hX :
+    @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) X),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@tsum.{0, 0} Complex Nat _ _
+        (fun (n : Nat) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (A n))
+        (SummationFilter.unconditional.{0} Nat)))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ M
+      (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ D r)))
+@TheoremT.Continuum.shifted_homogeneous_polynomial_series_closed_polydisc.{u_1} : ∀ {σ : Type u_1}
+  (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) {M D r : Real}
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hDr : @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ D
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))),
+  And
+    (∀ (X : σ → Complex),
+      @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+          (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) X →
+        And
+          (@Summable.{0, 0} Real Nat _ _
+            (fun (n : Nat) =>
+              @Norm.norm.{0} Complex _
+                (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+                  (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                  (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                  (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n)))
+            (SummationFilter.unconditional.{0} Nat))
+          (And
+            (@Summable.{0, 0} Complex Nat _ _
+              (fun (n : Nat) =>
+                @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                  (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                  (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+              (SummationFilter.unconditional.{0} Nat))
+            (@LE.le.{0} Real _
+              (@Norm.norm.{0} Complex _
+                (@tsum.{0, 0} Complex Nat _ _
+                  (fun (n : Nat) =>
+                    @DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+                      (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                      (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+                  (SummationFilter.unconditional.{0} Nat)))
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ M D)
+                (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ D r))))))
+    (And
+      (@HasSumUniformlyOn.{0, u_1, 0} Complex (σ → Complex) Nat _
+        (fun (n : Nat) (X : σ → Complex) =>
+          @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+        (fun (X : σ → Complex) =>
+          @tsum.{0, 0} Complex Nat _ _
+            (fun (n : Nat) =>
+              @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+            (SummationFilter.unconditional.{0} Nat))
+        (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) _)
+      (@TendstoUniformlyOn.{u_1, 0, 0} (σ → Complex) Complex Nat _
+        (fun (N : Nat) (X : σ → Complex) =>
+          @Finset.sum.{0, 0} Nat Complex _ (Finset.range N) fun (n : Nat) =>
+            @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+              (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+        (fun (X : σ → Complex) =>
+          @tsum.{0, 0} Complex Nat _ _
+            (fun (n : Nat) =>
+              @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, u_1} Complex σ _ X) (Q n))
+            (SummationFilter.unconditional.{0} Nat))
+        (@Filter.atTop.{0} Nat _) (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r)))
+'TheoremT.Continuum.homogeneous_polynomial_series_summable_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_hasSumUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_tendstoUniformlyOn_range' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_norm_tsum_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.shifted_homogeneous_polynomial_series_closed_polydisc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

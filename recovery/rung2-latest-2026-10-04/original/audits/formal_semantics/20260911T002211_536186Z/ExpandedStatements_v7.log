@@ -1,0 +1,72 @@
+TheoremT.Continuum.WeakGrushin.factorialRectCutoff_maximal_geometry : ∀
+  (a : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (ha :
+    @Eq.{1} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) a)
+      (@OfNat.ofNat.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (nat_lit 0) _))
+  {aY aT ρ t e : Real} (ht : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) t)
+  (he : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e)
+  (hte : @LE.le.{0} Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ t e) ρ) (hρy : @LT.lt.{0} Real _ ρ aY)
+  (hρt : @LT.lt.{0} Real _ ρ aT),
+  And (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) aY)
+    (And
+      (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@Max.max.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) aY)))
+      (And
+        (@IsCompact.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+          (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _
+            _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT t e)))
+        (And
+          (@LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+            (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real
+              _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT t e))
+            (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a (@HSub.hSub.{0, 0, 0} Real Real Real _ aY t)
+              (@HSub.hSub.{0, 0, 0} Real Real Real _ aT t)))
+          (And
+            (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+              (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+              @Membership.mem.{0, 0}
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+                  (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    Real _ _ (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT t e))
+                  p →
+                @LE.le.{0} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i) _
+                  (@abs.{0} ((fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i) _ _
+                    (@WithLp.ofLp.{0} (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                      ((i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+                        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Real) i)
+                      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) p)
+                      i))
+                  aY)
+            (And
+              (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+                @Membership.mem.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+                    (@tsupport.{0, 0}
+                      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _ _
+                      (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT t e))
+                    p →
+                  @LE.le.{0} Real _
+                    (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+                      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+                        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) p))
+                    (@Max.max.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) aY)))
+              (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+                @Membership.mem.{0, 0}
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                    (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+                    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox a
+                      (@HSub.hSub.{0, 0, 0} Real Real Real _ aY (@HAdd.hAdd.{0, 0, 0} Real Real Real _ t e))
+                      (@HSub.hSub.{0, 0, 0} Real Real Real _ aT (@HAdd.hAdd.{0, 0, 0} Real Real Real _ t e)))
+                    p →
+                  @Eq.{1} Real (TheoremT.Continuum.WeakGrushin.factorialRectCutoff a aY aT t e p)
+                    (@OfNat.ofNat.{0} Real (nat_lit 1) _)))))))
+'TheoremT.Continuum.WeakGrushin.factorialRectCutoff_maximal_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,191 @@
+{
+  "created_utc": "2026-09-11T00:12:59.411297+00:00",
+  "status": "FORMAL_ACTUAL_FINITE_WEIGHTED_LOCAL_PROFILES_SEALED",
+  "exact_result": "For the raw local smooth-coefficient weak Grushin PDE with c>0 and strict interior rectangular boxes, one actual mixed weak derivative family F is chosen before all finite orders and radii. For every r and nonnegative s, the profile N_r(s) is the finite maximum over exact derivative cost at most r of the sum of 498 actual weighted restricted L2 norms on the shrinking box. Each weighted field is proved MemLp; N is nonnegative, increases with r, and decreases as the box shrinks. On a fixed box and maximum r, one L2 representative family realizes the exact outer norms and satisfies every lower q<=r profile bound. Unweighted shifted derivatives are also represented, including the exact lower-profile domination used by R17.",
+  "mathematical_change": "Previously supplied scalar profiles and shifted representative budgets now have an explicit construction from actual local weak derivatives; bounded polynomial weights and the exact r+2 total-order bound discharge all finiteness premises.",
+  "module_records": [
+    {
+      "module": "GrushinFactorialBaseIndices_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialBaseIndices_v1.lean",
+      "source_sha256": "79c12c8ac7c84926044a4973ad576a0673d879f1cdf97422c6234762f7df47fe",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialBaseIndices_v1.olean",
+      "object_sha256": "34f89a2078f3934d24352f712ef3e22f57be60dba606f68af221a7a20cdc75fd",
+      "declarations": [
+        "FactorialBaseIndex",
+        "factorialBaseIndices",
+        "factorialBaseIndex_coordinate_le_of_cost",
+        "factorialBaseIndices_mem",
+        "factorialBaseIndices_zero_mem",
+        "factorialBaseIndices_nonempty",
+        "factorialBaseIndices_mono",
+        "factorialBaseIndices_coordinate_le"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFactorialLocalProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialLocalProfile_v1.lean",
+      "source_sha256": "dd7e9f8b641959d8063ebde2b0c797897681f5b645f0b725b80f538836cb95a7",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialLocalProfile_v1.olean",
+      "object_sha256": "59c38022545f936a39cefd58536cc7259c17e03641e12be6cd26e71d232ca671",
+      "declarations": [
+        "factorialShiftedWeightedField",
+        "factorialLocalOuterNorm",
+        "FactorialLocalMemLp",
+        "factorialLocalProfile",
+        "factorialLocalOuterNorm_nonneg",
+        "factorialLocalOuterNorm_le_profile",
+        "factorialLocalProfile_nonneg",
+        "factorialLocalProfile_mono_order",
+        "FactorialLocalMemLp.mono_order",
+        "FactorialLocalMemLp.restrict",
+        "factorialLocalOuterNorm_mono_domain",
+        "factorialLocalProfile_mono_domain"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFactorialLocalRepresentatives_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialLocalRepresentatives_v1.lean",
+      "source_sha256": "d77e1b9a2a6921e8b6a5f80ab39b210138a2c86d7f8f31500aac9356643913ae",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialLocalRepresentatives_v1.olean",
+      "object_sha256": "253e8eaa2a98bf708b8637777e8e9fc5bbc19bf095d5f0df4acfa1c8cfaceb0e",
+      "declarations": [
+        "factorial_shifted_outer_norm_eq_local",
+        "factorialLocalProfile_representatives",
+        "factorialLocalProfile_unweighted_L2",
+        "factorialLocalProfile_lower_unweighted_L2"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RestrictedCompactWeightMemLp_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RestrictedCompactWeightMemLp_v1.lean",
+      "source_sha256": "c592a3bef5f5b7714777c7df47c4751864bb8ef2e00533dcfe32be72cc960497",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RestrictedCompactWeightMemLp_v1.olean",
+      "object_sha256": "37961319d7ff3dbf87c8f2974d69d969068a7cd6a30fd37595ad9046e36a081b",
+      "declarations": [
+        "restricted_compact_weight_memLp",
+        "rectangular_continuous_weight_memLp",
+        "rectangular_factorial_monomial_memLp",
+        "regionL2Budget_rectangular_factorial_monomial_memLp"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFactorialBoxProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialBoxProfile_v1.lean",
+      "source_sha256": "c7662b48be9f1c640c1c692e53063e87e67ba51093ba9de4494081292242de5e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialBoxProfile_v1.olean",
+      "object_sha256": "ed16c042974ca01bfc01105e1873d5e0d5f0ced273eedea152ef163e7b2728ad",
+      "declarations": [
+        "factorialProfileBox",
+        "factorialBoxProfile",
+        "factorialProfileBox_antitone",
+        "factorial_shifted_total_le",
+        "factorialLocalMemLp_rectangular",
+        "factorialProfileBox_memLp_of_all_finite_budgets",
+        "factorialBoxProfile_nonneg",
+        "factorialBoxProfile_antitone_of_all_finite_budgets"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "LocalWeakGrushinActualProfile_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/LocalWeakGrushinActualProfile_v1.lean",
+      "source_sha256": "fa776f260c26534f2babfe1e59a4f17aa61467092b710c708a54b29ced578284",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/LocalWeakGrushinActualProfile_v1.olean",
+      "object_sha256": "aa94c453006979faa4c03d8ff45bd17c1c7f2edafa4d1ca9aec70cc7d5f08bac",
+      "declarations": [
+        "local_smooth_weak_grushin_actual_box_profile"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFactorialProfileLowerBudgets_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialProfileLowerBudgets_v1.lean",
+      "source_sha256": "20925034300fcbfaecc393022b7a03eff80a98f27755368c3009e4e950945045",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialProfileLowerBudgets_v1.olean",
+      "object_sha256": "198e068ca75d9e89a6d8891fec9f5d4b59f589c8c187306b2f1b9e0e7752641a",
+      "declarations": [
+        "factorialLocalProfile_coherent_lower_representatives"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "declarations": 38,
+  "strict_receipts": [
+    {
+      "path": "audits/formal_semantics/20260910T235438_059038Z/receipt.json",
+      "sha256": "5e8c793babbf65a8aa3a2cb0ea54543590495c83b790f86a789b8ad815a88bad",
+      "audit_source_sha256": "e6009d3d5521ff3c95029243f4ff4253d24bcc0c340d0db7bbfe0c87dbd84242",
+      "audit_log_sha256": "4905f657a6a503f142b202da04fface60a3495dfee89e079e5fc5a9182385876"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T000107_853648Z/receipt.json",
+      "sha256": "5bf3e9b29c9b141cffb02a77ff60bf49f4ae65acb27e5e3c07273a30168601f6",
+      "audit_source_sha256": "807443478d0387a15ccfacad1c326f29bf00417ddf42e18394ea0399e5312040",
+      "audit_log_sha256": "379f1bb1fe2689b42b2e0482b9f8abd6957ffa4e4d07856b628529c1e5db5827"
+    },
+    {
+      "path": "audits/formal_semantics/20260910T235827_184742Z/receipt.json",
+      "sha256": "1f4f48ebad0e602d7a874f15560afc54b6494e09a0321ef994c88744c65560cd",
+      "audit_source_sha256": "4297787a2897d91c6654f10c29d3b49b383c7be9de84441dfc991daf727a353c",
+      "audit_log_sha256": "da9f2353833bdb787d64a905344cba5663110a60743f2234f38093d00bc742eb"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T000817_775649Z/receipt.json",
+      "sha256": "b085e94ea576d08030bd434c3022e3658868a2b07ba50ca12e90906510c23334",
+      "audit_source_sha256": "0cc401ea59640e271c9cb28e640560b5bbb0246f29c3c41bcfb8ccf7ddfa00c5",
+      "audit_log_sha256": "1689b25fade640850b7683b43073eb16d2460d27b33aabef7ef2131a2b19c94d"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T000412_213013Z/receipt.json",
+      "sha256": "423459718cf5e6d43107680043b42f6a904d307f9a91b4aee8808f1c8d555b9e",
+      "audit_source_sha256": "4182c1d3b57d4fc32b012687f462aece1e925952a4158819746feb6127554c82",
+      "audit_log_sha256": "dbe2fbd619d738b6c74a94aabf5edd4ebd1df376f660f5a82947f112e539b2cf"
+    }
+  ],
+  "independent_review": {
+    "path": "audits/GRUSHIN_FACTORIAL_ACTUAL_PROFILE_REVIEW_v1.json",
+    "sha256": "e19819543645e9404e108cd2d5eb095e12d10f9664c156d25875a45ceddd0b42"
+  },
+  "dependency_checkpoint": {
+    "path": "audits/LOCAL_WEAK_GRUSHIN_ALL_ORDER_EQUATIONS_CHECKPOINT_v1.json",
+    "sha256": "d8b27d63c9044892484b1a9b92c6c6e9e2925641062286232e6e89c3a8659cf5"
+  },
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned Lean v4.34.0-rc2 with existing Mathlib and continuation object caches reused. These current sources were compiled directly, but dependencies were not source-rebuilt in this unit.",
+  "limitations": [
+    "The norm definition uses eLpNorm.toReal; its advertised L2 meaning is asserted only after the proved finite-membership predicate.",
+    "One fixed-region Lp family works for all lower orders; no single Lp object across different restricted measures is asserted.",
+    "Finite raw budgets may depend arbitrarily on derivative order. No factorial bound, recurrence closure, analyticity, approximation rate, full Theorem T or executable energy solver is claimed.",
+    "Classical choice constructs mathematical representatives and is not an algorithm."
+  ],
+  "preservation": "New files only. Frozen artifacts and earlier successful sources/audits preserved.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Apply these literal profiles to the actual cutoff PDE/output estimate, then compose plateau maximal comparison and R9 base control with the scalar factorial recurrence."
+}

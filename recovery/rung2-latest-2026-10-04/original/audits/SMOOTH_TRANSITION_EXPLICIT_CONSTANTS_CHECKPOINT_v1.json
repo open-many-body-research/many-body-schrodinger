@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "utc": "2026-09-10T21:51:08.780682+00:00",
+  "evidence_category": "Lean verified evaluated mathematical constants",
+  "exact_result": "For every real x, the unchanged C-infinity Real.smoothTransition satisfies |Tprime(x)|<=96 and |Tsecond(x)|<=14016. All glue and quotient identities are proved globally, including x=0 and x=1.",
+  "source_records": [
+    {
+      "module": "ExpNegInvGlueExplicitBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ExpNegInvGlueExplicitBounds_v1.lean",
+      "source_sha256": "71109d87434c7e08d1fdc880e685a4e39a72fda264a29e23057034be79094ec4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ExpNegInvGlueExplicitBounds_v1.olean",
+      "object_sha256": "0d8789a24918b7186b40051d5f586c98e5dfcc2cf29e1550e24a46f4d5fbe2f2",
+      "declarations": [
+        "nonnegative_monomial_exp_neg_bound",
+        "expNegInvGlue_polynomial_bound",
+        "expNegInvGlue_deriv_formula",
+        "expNegInvGlue_second_deriv_formula",
+        "expNegInvGlue_deriv_abs_le_two",
+        "expNegInvGlue_second_deriv_abs_le_thirty_six",
+        "smoothTransition_denom_lower"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SmoothTransitionExplicitBounds_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SmoothTransitionExplicitBounds_v1.lean",
+      "source_sha256": "1dfd38139daa37936b41001bdca945b1c7bb6f94bb9be9c7bd42dfd85b52bbd4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SmoothTransitionExplicitBounds_v1.olean",
+      "object_sha256": "b896899cde4a526a7520deb26f6dd0576e4b9f11a4a04d59a021ba7ce9575d96",
+      "declarations": [
+        "smoothTransitionDenominator",
+        "smoothTransitionDenominator_contDiff",
+        "smoothTransitionDenominator_deriv",
+        "smoothTransitionDenominator_second_deriv",
+        "smoothTransitionDenominator_deriv_bounds",
+        "smoothTransition_denominator_product",
+        "smoothTransition_product_first",
+        "smoothTransition_product_second",
+        "smoothTransition_deriv_abs_le_ninety_six",
+        "smoothTransition_second_deriv_abs_le_fourteen_thousand_sixteen"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audit": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214746_392372Z/receipt.json",
+    "sha256": "716ec3082045452a99973e262a784f27b865607d404415aa06a763a7041b68ef",
+    "declarations": 17,
+    "printer_failures": [],
+    "axioms": "standard three only"
+  },
+  "manuscript": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/SMOOTH_TRANSITION_EXPLICIT_CONSTANTS_v1.md",
+    "sha256": "ab40f1d3d7747999f6e39efd9642cd86ddcdbf379c8b931c30f1d50bb0ea3535"
+  },
+  "preservation": "All PASS source and prior receipt bytes preserved. The second source has two nonfatal tactic-style linter warnings; no post-PASS cleanup performed.",
+  "limits": [
+    "Conservative C-infinity cutoff variant; does not claim paper quintic constants.",
+    "No all-order derivative bound for this nonanalytic cutoff is claimed. Only first and second derivatives are needed by the cutoff estimates.",
+    "Pinned dependency objects reused; no isolated rebuild of this unit."
+  ],
+  "next": "Instantiate actual H12 and factorial cutoff estimates; physical finite H12 composition remains active."
+}

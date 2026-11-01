@@ -1,0 +1,82 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T020231_374827Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020231_374827Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T020231_374827Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 4.6365581250000005,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "767319a11cad4cfbf802f4f426cc63bc8227d3a4e7a4782202c54489c3ff844e",
+  "audit_log_sha256": "7975259e50a232463d800ba88c4c08521822bb05f2d8260bae14e4dc4a3408b0",
+  "module_records": [
+    {
+      "module": "FormalMultilinearGeometricAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FormalMultilinearGeometricAnalytic_v1.lean",
+      "source_sha256": "10562f5b2a4cdfd79869eb51065b2797b6ea7130d9bb2e9d0f5d27af10be8b05",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FormalMultilinearGeometricAnalytic_v1.olean",
+      "object_sha256": "102d4b2523088a1174343968fee1715c304bf7893c89984096fb5c5d325f279d",
+      "declarations": [
+        "formalMultilinearSeries_radius_geometric",
+        "formalMultilinearSeries_analyticAt_geometric",
+        "formalMultilinearSeries_analyticOnNhd_geometric"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousPolynomialSeriesAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousPolynomialSeriesAnalytic_v1.lean",
+      "source_sha256": "e751c24891ff365eb5df6217e5cf986d5d0e17f7051a1d2937813af575a2e255",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousPolynomialSeriesAnalytic_v1.olean",
+      "object_sha256": "ee038b2161e70f36182ceb7968ed9e1c40a7aac72c9a09e67468c47148669dd5",
+      "declarations": [
+        "homogeneousPolynomialMultilinearSeries",
+        "homogeneousPolynomialMultilinearSeries_diagonal",
+        "homogeneousPolynomialMultilinearSeries_norm",
+        "homogeneousPolynomialMultilinearSeries_sum",
+        "homogeneous_polynomial_series_analyticOnNhd",
+        "homogeneous_polynomial_series_analyticOnNhd_closed_polydisc",
+        "shifted_homogeneous_polynomial_series_analyticOnNhd"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.formalMultilinearSeries_radius_geometric: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.formalMultilinearSeries_analyticAt_geometric: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.formalMultilinearSeries_analyticOnNhd_geometric: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_diagonal: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_norm: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_sum: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd_closed_polydisc: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.shifted_homogeneous_polynomial_series_analyticOnNhd: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.formalMultilinearSeries_radius_geometric",
+    "TheoremT.Continuum.formalMultilinearSeries_analyticAt_geometric",
+    "TheoremT.Continuum.formalMultilinearSeries_analyticOnNhd_geometric",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_diagonal",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_norm",
+    "TheoremT.Continuum.homogeneousPolynomialMultilinearSeries_sum",
+    "TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd",
+    "TheoremT.Continuum.homogeneous_polynomial_series_analyticOnNhd_closed_polydisc",
+    "TheoremT.Continuum.shifted_homogeneous_polynomial_series_analyticOnNhd"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

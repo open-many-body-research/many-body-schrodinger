@@ -1,0 +1,149 @@
+TheoremT.Continuum.ksSpectatorTailIndex : (w : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) →
+  @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+TheoremT.Continuum.ksSpectatorDegreeIndices : (n : Nat) →
+  Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+TheoremT.Continuum.ksSpectatorTailIndex_degree : ∀
+  (w : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+  @Eq.{1} Nat
+    (@DFunLike.coe.{1, 1, 1}
+      (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) Nat _ _)
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+      (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) => Nat) _
+      (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+      (TheoremT.Continuum.ksSpectatorTailIndex w))
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+      @DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ w
+        (@Fin.succ (@OfNat.ofNat.{0} Nat (nat_lit 3) _) i))
+TheoremT.Continuum.ksSpectatorTailIndex_injective_on_degree : ∀ (n : Nat)
+  {w v : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _}
+  (hw :
+    @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (Finset.{0}
+        (@Finsupp.{0, 0}
+          (Fin
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          Nat _))
+      _ (TheoremT.Continuum.spectatorTotalDegreeIndices (@OfNat.ofNat.{0} Nat (nat_lit 3) _) n) w)
+  (hv :
+    @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (Finset.{0}
+        (@Finsupp.{0, 0}
+          (Fin
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          Nat _))
+      _ (TheoremT.Continuum.spectatorTotalDegreeIndices (@OfNat.ofNat.{0} Nat (nat_lit 3) _) n) v)
+  (h :
+    @Eq.{1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+      (TheoremT.Continuum.ksSpectatorTailIndex w) (TheoremT.Continuum.ksSpectatorTailIndex v)),
+  @Eq.{1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) w v
+TheoremT.Continuum.mem_ksSpectatorDegreeIndices_iff : ∀ (n : Nat)
+  (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _),
+  Iff
+    (@Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)) _
+      (TheoremT.Continuum.ksSpectatorDegreeIndices n) γ)
+    (@LE.le.{0} Nat _
+      (@DFunLike.coe.{1, 1, 1}
+        (@AddMonoidHom.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) Nat _ _)
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+        (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) => Nat) _
+        (@Finsupp.degree.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) γ)
+      n)
+@TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_reconstruct_degree : ∀
+  {P :
+    @MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _}
+  {n : Nat}
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ P n)
+  (y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Complex) (t : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{1, 1, 1}
+      (@RingHom.{0, 0}
+        (@MvPolynomial.{0, 0}
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _)
+        Complex _ _)
+      (@MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _)
+      (fun
+          (x :
+            @MvPolynomial.{0, 0}
+              (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex
+              _) =>
+        Complex)
+      _
+      (@MvPolynomial.eval.{0, 0} Complex
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) _
+        (@Sum.elim.{0, 0, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          Complex y t))
+      P)
+    (@Finset.sum.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) Complex _
+      (TheoremT.Continuum.ksSpectatorDegreeIndices n)
+      fun (γ : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _) =>
+      @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) Complex _ _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+          (fun (x : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ y)
+          (TheoremT.Continuum.ksSpectatorCoefficientPolynomial P γ))
+        (@Finset.prod.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Complex _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (t i)
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ γ
+              i)))
+TheoremT.Continuum.ksSpectatorCoefficientPolynomial_grouped_reconstruct : ∀
+  (P :
+    Nat →
+      @MvPolynomial.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _)
+  (hP :
+    ∀ (n : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0}
+        (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _
+        (P n) n)
+  (n : Nat),
+  @Eq.{1}
+    (@MvPolynomial.{0, 0}
+      (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _)
+    (@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+      (fun (j : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) =>
+        TheoremT.Continuum.ksSpectatorCoefficientPolynomial
+          (P
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j
+              (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+                (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => γ i)))
+          (@DFunLike.coe.{1, 1, 1}
+            (Equiv.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _))
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) =>
+              @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+            _
+            (@Equiv.symm.{1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+              (@Finsupp.equivFunOnFinite.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _ _))
+            γ))
+      n)
+    (P n)
+'TheoremT.Continuum.ksSpectatorTailIndex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksSpectatorDegreeIndices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksSpectatorTailIndex_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksSpectatorTailIndex_injective_on_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mem_ksSpectatorDegreeIndices_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksSpectatorCoefficientPolynomial_eval_reconstruct_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.ksSpectatorCoefficientPolynomial_grouped_reconstruct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

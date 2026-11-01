@@ -1,0 +1,93 @@
+TheoremT.Continuum.ksBasePartial : (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) →
+  (x : TheoremT.Continuum.KSSpace) → Real
+TheoremT.Continuum.ksBasePartial_contDiff : ∀ (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @ContDiff.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (TheoremT.Continuum.ksBasePartial k)
+TheoremT.Continuum.ksBasePartial_compact : ∀ (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @HasCompactSupport.{0, 0} TheoremT.Continuum.KSSpace Real _ _ (TheoremT.Continuum.ksBasePartial k)
+TheoremT.Continuum.ksHole_partial : ∀ (δ : Real) (x : TheoremT.Continuum.KSSpace)
+  (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} Real
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _ Real _ _
+        _ _)
+      TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+      (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _ (TheoremT.Continuum.ksHole δ) x)
+      (TheoremT.Continuum.ksBasis k))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Neg.neg.{0} Real _ (@Inv.inv.{0} Real _ δ))
+      (TheoremT.Continuum.ksBasePartial k
+        (@HSMul.hSMul.{0, 0, 0} Real TheoremT.Continuum.KSSpace TheoremT.Continuum.KSSpace _ (@Inv.inv.{0} Real _ δ)
+          x)))
+TheoremT.Continuum.ksHole_secondPartial : ∀ (δ : Real) (x : TheoremT.Continuum.KSSpace)
+  (k l : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} Real
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _ Real _ _
+        _ _)
+      TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+      (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _
+        (fun (y : TheoremT.Continuum.KSSpace) =>
+          @DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+              Real _ _ _ _)
+            TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+            (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _ (TheoremT.Continuum.ksHole δ) y)
+            (TheoremT.Continuum.ksBasis k))
+        x)
+      (TheoremT.Continuum.ksBasis l))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@Neg.neg.{0} Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ δ) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _ Real _
+          _ _ _)
+        TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+        (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _ (TheoremT.Continuum.ksBasePartial k)
+          (@HSMul.hSMul.{0, 0, 0} Real TheoremT.Continuum.KSSpace TheoremT.Continuum.KSSpace _ (@Inv.inv.{0} Real _ δ)
+            x))
+        (TheoremT.Continuum.ksBasis l)))
+TheoremT.Continuum.ksHole_derivative_bound : @Exists.{1} Real fun (C : Real) =>
+  And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+    (∀ (δ : Real),
+      @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ →
+        ∀ (x : TheoremT.Continuum.KSSpace) (k : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+          @LE.le.{0} Real _
+            (@Norm.norm.{0} Real _
+              (@DFunLike.coe.{1, 1, 1}
+                (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+                  Real _ _ _ _)
+                TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+                (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _ (TheoremT.Continuum.ksHole δ) x)
+                (TheoremT.Continuum.ksBasis k)))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ C δ))
+TheoremT.Continuum.ksHole_secondDerivative_bound : @Exists.{1} Real fun (C : Real) =>
+  And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+    (∀ (δ : Real),
+      @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) δ →
+        ∀ (x : TheoremT.Continuum.KSSpace) (k l : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+          @LE.le.{0} Real _
+            (@Norm.norm.{0} Real _
+              (@DFunLike.coe.{1, 1, 1}
+                (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) TheoremT.Continuum.KSSpace _ _
+                  Real _ _ _ _)
+                TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+                (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _
+                  (fun (y : TheoremT.Continuum.KSSpace) =>
+                    @DFunLike.coe.{1, 1, 1}
+                      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+                        TheoremT.Continuum.KSSpace _ _ Real _ _ _ _)
+                      TheoremT.Continuum.KSSpace (fun (x : TheoremT.Continuum.KSSpace) => Real) _
+                      (@fderiv.{0, 0, 0} Real _ TheoremT.Continuum.KSSpace _ _ _ Real _ _ _
+                        (TheoremT.Continuum.ksHole δ) y)
+                      (TheoremT.Continuum.ksBasis k))
+                  x)
+                (TheoremT.Continuum.ksBasis l)))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ C
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ δ (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+'TheoremT.Continuum.ksBasePartial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBasePartial_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksBasePartial_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_partial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_secondPartial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_derivative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksHole_secondDerivative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

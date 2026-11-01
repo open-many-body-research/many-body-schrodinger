@@ -1,0 +1,118 @@
+@TheoremT.Continuum.ksRadialSquare.{u_1} : {R : Type u_1} →
+  [inst : CommSemiring.{u_1} R] → @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+@TheoremT.Continuum.ksRadialMonomialCore.{u_1} : {R : Type u_1} →
+  [inst : CommSemiring.{u_1} R] →
+    (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) →
+      @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+@TheoremT.Continuum.ksRadialEven.{u_1} : {R : Type u_1} →
+  [inst : CommSemiring.{u_1} R] →
+    (P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _) →
+      @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+@TheoremT.Continuum.ksRadialOdd.{u_1} : {R : Type u_1} →
+  [inst : CommSemiring.{u_1} R] →
+    (P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _) →
+      @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+@TheoremT.Continuum.ks_radial_power_reduction.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R] (r q : R)
+  (h : @Eq.{u_1 + 1} R (@HPow.hPow.{u_1, 0, u_1} R Nat R _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) q) (k : Nat),
+  @Eq.{u_1 + 1} R (@HPow.hPow.{u_1, 0, u_1} R Nat R _ r k)
+    (@HMul.hMul.{u_1, u_1, u_1} R R R _
+      (@HPow.hPow.{u_1, 0, u_1} R Nat R _ q (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@ite.{u_1 + 1} R
+        (@Eq.{1} Nat (@HMod.hMod.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@OfNat.ofNat.{0} Nat (nat_lit 0) _))
+        _ (@OfNat.ofNat.{u_1} R (nat_lit 1) _) r))
+@TheoremT.Continuum.ksRadialMonomialCore_eval.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → R)
+  (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+  @Eq.{u_1 + 1} R
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+      (@RingHom.{u_1, u_1} (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) R _ _)
+      (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _)
+      (fun (x : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) => R) _
+      (@MvPolynomial.eval.{u_1, 0} R (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ X)
+      (@TheoremT.Continuum.ksRadialMonomialCore.{u_1} R _ d))
+    (@HMul.hMul.{u_1, u_1, u_1} R R R _
+      (@Finset.prod.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+        @HPow.hPow.{u_1, 0, u_1} R Nat R _ (X i)
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+            (@Fin.castSucc (@OfNat.ofNat.{0} Nat (nat_lit 3) _) i)))
+      (@HPow.hPow.{u_1, 0, u_1} R Nat R _
+        (@Finset.sum.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+          (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+          @HPow.hPow.{u_1, 0, u_1} R Nat R _ (X i) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HDiv.hDiv.{0, 0, 0} Nat Nat Nat _
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+            (Fin.last (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.ks_radial_polynomial_reduction.{u_1} : ∀ {R : Type u_1} [inst : CommSemiring.{u_1} R]
+  (P : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) R _)
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → R) (r : R)
+  (h :
+    @Eq.{u_1 + 1} R (@HPow.hPow.{u_1, 0, u_1} R Nat R _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@Finset.sum.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) =>
+        @HPow.hPow.{u_1, 0, u_1} R Nat R _ (X i) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))),
+  @Eq.{u_1 + 1} R
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+      (@RingHom.{u_1, u_1}
+        (@MvPolynomial.{0, u_1}
+          (Fin
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+          R _)
+        R _ _)
+      (@MvPolynomial.{0, u_1}
+        (Fin
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+            (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        R _)
+      (fun
+          (x :
+            @MvPolynomial.{0, u_1}
+              (Fin
+                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+                  (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+              R _) =>
+        R)
+      _
+      (@MvPolynomial.eval.{u_1, 0} R
+        (Fin
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+            (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        _
+        (@Fin.snoc.{u_1 + 1} (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+          (fun
+              (a :
+                Fin
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 3) _)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) =>
+            R)
+          X r))
+      P)
+    (@HAdd.hAdd.{u_1, u_1, u_1} R R R _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+        (@RingHom.{u_1, u_1} (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) R _ _)
+        (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _)
+        (fun (x : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) => R) _
+        (@MvPolynomial.eval.{u_1, 0} R (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ X)
+        (@TheoremT.Continuum.ksRadialEven.{u_1} R _ P))
+      (@HMul.hMul.{u_1, u_1, u_1} R R R _ r
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+          (@RingHom.{u_1, u_1} (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) R _ _)
+          (@MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _)
+          (fun (x : @MvPolynomial.{0, u_1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) R _) => R) _
+          (@MvPolynomial.eval.{u_1, 0} R (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ X)
+          (@TheoremT.Continuum.ksRadialOdd.{u_1} R _ P))))
+'TheoremT.Continuum.ksRadialSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialMonomialCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialEven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksRadialOdd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_radial_power_reduction' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.ksRadialMonomialCore_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ks_radial_polynomial_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]

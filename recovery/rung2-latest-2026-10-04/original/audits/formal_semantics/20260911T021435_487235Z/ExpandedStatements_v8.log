@@ -1,0 +1,351 @@
+@TheoremT.Continuum.formalMultilinearSeries_changeOrigin_term_norm.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) (x : E) (k l : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _) _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+        (@ContinuousMultilinearMap.{0, 0, u_1, u_1} Complex (Fin l) (fun (_i : Fin l) => E)
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _) _ _ _
+          _ _ _ _)
+        ((i : Fin l) → E)
+        (fun (x : (i : Fin l) → E) =>
+          @ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _)
+        _ (@FormalMultilinearSeries.changeOriginSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ p k l)
+        fun (x_1 : Fin l) => x))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Nat.cast.{0} Real _ (Nat.choose (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ l k) k))
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k l))
+            (fun (_i : Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k l)) => E) Complex _ _ _ _ _ _ _)
+          _ (p (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k l))))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{u_1} E _ x) l))
+@TheoremT.Continuum.formalMultilinearSeries_changeOrigin_geometric_bound.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (x : E)
+  (hx :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _) _
+      (@FormalMultilinearSeries.changeOrigin.{0, u_1, 0} Complex E Complex _ _ _ _ _ p x k))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D k))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x)))
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+@TheoremT.Continuum.formalMultilinearSeries_enorm_lt_radius_geometric.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (x : E)
+  (hx :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _)),
+  @LT.lt.{0} ENNReal _ (@ENorm.enorm.{u_1} E _ x)
+    (@FormalMultilinearSeries.radius.{0, u_1, 0} Complex E Complex _ _ _ _ _ p)
+@TheoremT.Continuum.formalMultilinearSeries_sum_geometric_derivative_bound.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (x : E)
+  (hx :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _) _
+      (@iteratedFDeriv.{0, u_1, 0} Complex _ E _ _ Complex _ _ k
+        (@FormalMultilinearSeries.sum.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _ p) x))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial k))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D k))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+@TheoremT.Continuum.formalMultilinearSeries_sum_half_domain_factorial_bound.{u_1} : ∀ {E : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} E] [inst_1 : @NormedSpace.{0, u_1} Complex E _ _]
+  (p : @FormalMultilinearSeries.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hp :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _
+        (@Norm.norm.{u_1}
+          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin n) (fun (_i : Fin n) => E) Complex _ _ _ _ _ _ _) _
+          (p n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (x : E)
+  (hx :
+    @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} E _ x))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+  (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => E) Complex _ _ _ _ _ _ _) _
+      (@iteratedFDeriv.{0, u_1, 0} Complex _ E _ _ Complex _ _ k
+        (@FormalMultilinearSeries.sum.{0, u_1, 0} Complex E Complex _ _ _ _ _ _ _ _ _ _ _ p) x))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) M)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) D) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+@TheoremT.Continuum.homogeneous_polynomial_series_geometric_derivative_bound.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (X : σ → Complex)
+  (hX :
+    @LT.lt.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} (σ → Complex) _ X))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => σ → Complex) Complex _ _ _ _ _ _ _)
+      _
+      (@iteratedFDeriv.{0, u_1, 0} Complex _ (σ → Complex) _ _ Complex _ _ k
+        (fun (z : σ → Complex) =>
+          @tsum.{0, 0} Complex Nat _ _
+            (fun (n : Nat) =>
+              @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, u_1} Complex σ _ z) (A n))
+            (SummationFilter.unconditional.{0} Nat))
+        X))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial k))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D k))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HSub.hSub.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} (σ → Complex) _ X)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+@TheoremT.Continuum.homogeneous_polynomial_series_half_domain_factorial_bound.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (A : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hA : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (A n) n) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (A n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D n)))
+  (X : σ → Complex)
+  (hX :
+    @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} (σ → Complex) _ X))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+  (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => σ → Complex) Complex _ _ _ _ _ _ _)
+      _
+      (@iteratedFDeriv.{0, u_1, 0} Complex _ (σ → Complex) _ _ Complex _ _ k
+        (fun (z : σ → Complex) =>
+          @tsum.{0, 0} Complex Nat _ _
+            (fun (n : Nat) =>
+              @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, u_1} Complex σ _ z) (A n))
+            (SummationFilter.unconditional.{0} Nat))
+        X))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) M)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) D) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+@TheoremT.Continuum.shifted_homogeneous_polynomial_series_half_domain_factorial_bound.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) {M D : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ D
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ n (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+  (X : σ → Complex)
+  (hX :
+    @LE.le.{0} Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D (@Norm.norm.{u_1} (σ → Complex) _ X))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+  (k : Nat),
+  @LE.le.{0} Real _
+    (@Norm.norm.{u_1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Complex (Fin k) (fun (_i : Fin k) => σ → Complex) Complex _ _ _ _ _ _ _)
+      _
+      (@iteratedFDeriv.{0, u_1, 0} Complex _ (σ → Complex) _ _ Complex _ _ k
+        (fun (z : σ → Complex) =>
+          @tsum.{0, 0} Complex Nat _ _
+            (fun (n : Nat) =>
+              @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+                (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+                (@MvPolynomial.eval.{0, u_1} Complex σ _ z) (Q n))
+            (SummationFilter.unconditional.{0} Nat))
+        X))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) M) D)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) D) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+TheoremT.Continuum.ks_real_polynomial_series_half_domain_factorial_bounds : ∀
+  (P : Nat → @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _)
+  (hP :
+    ∀ (m : Nat),
+      @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ (P m)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hbal :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _
+            (TheoremT.Continuum.ksRealPolynomialToSpinor (P m)))
+          d →
+        @Eq.{1} Nat
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 0) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 1) _)))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 2) _))
+            (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ d
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (nat_lit 3) _))))
+  {M b : Real} (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hb : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) b)
+  (hc :
+    ∀ (m : Nat) (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ (P m)) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ (P m))
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ b
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+  (X : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+  (hX :
+    @LE.le.{0} Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@Norm.norm.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) _ X))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+  (k : Nat),
+  And
+    (@LE.le.{0} Real _
+      (@Norm.norm.{0}
+        (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin k)
+          (fun (_i : Fin k) => Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Complex _ _ _ _ _ _ _)
+        _
+        (@iteratedFDeriv.{0, 0, 0} Complex _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) _ _ Complex _ _ k
+          (TheoremT.Continuum.ksRealPolynomialSeriesA P) X))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) M)
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+            k))
+        (@Nat.cast.{0} Real _ (Nat.factorial k))))
+    (@LE.le.{0} Real _
+      (@Norm.norm.{0}
+        (@ContinuousMultilinearMap.{0, 0, 0, 0} Complex (Fin k)
+          (fun (_i : Fin k) => Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) Complex _ _ _ _ _ _ _)
+        _
+        (@iteratedFDeriv.{0, 0, 0} Complex _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex) _ _ Complex _ _ k
+          (TheoremT.Continuum.ksRealPolynomialSeriesB P) X))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) M)
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 32) _)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ b (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+            k))
+        (@Nat.cast.{0} Real _ (Nat.factorial k))))
+'TheoremT.Continuum.formalMultilinearSeries_changeOrigin_term_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_changeOrigin_geometric_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_enorm_lt_radius_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_sum_geometric_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.formalMultilinearSeries_sum_half_domain_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_geometric_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_half_domain_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.shifted_homogeneous_polynomial_series_half_domain_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.ks_real_polynomial_series_half_domain_factorial_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

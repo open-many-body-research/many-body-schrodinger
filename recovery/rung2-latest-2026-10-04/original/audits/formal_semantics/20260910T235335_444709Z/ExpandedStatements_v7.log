@@ -1,0 +1,31 @@
+TheoremT.Continuum.grushin_successor_le_two_pow : ∀ (k : Nat),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ k) (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) k)
+TheoremT.Continuum.grushin_shifted_core_power_factorial_bound : ∀ (k : Nat),
+  @LE.le.{0} Real _
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ k) (@OfNat.ofNat.{0} Real (nat_lit 12) _)) k)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 12) _)))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+TheoremT.Continuum.grushin_shifted_power_factorial_bound : ∀ (k : Nat),
+  @LE.le.{0} Real _
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ k) (@OfNat.ofNat.{0} Real (nat_lit 12) _))
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ k (@OfNat.ofNat.{0} Nat (nat_lit 11) _)))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+            (@OfNat.ofNat.{0} Nat (nat_lit 12) _))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 12) _)
+            (@OfNat.ofNat.{0} Nat (nat_lit 11) _)))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 6144) _) k))
+      (@Nat.cast.{0} Real _ (Nat.factorial k)))
+'TheoremT.Continuum.grushin_successor_le_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_shifted_core_power_factorial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.grushin_shifted_power_factorial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

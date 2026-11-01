@@ -1,0 +1,38 @@
+import FormalMultilinearGeometricTranslation_v1
+import FormalMultilinearGeometricDerivative_v1
+import HomogeneousPolynomialSeriesDerivative_v1
+import KSRealPolynomialSeriesDerivative_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.formalMultilinearSeries_changeOrigin_term_norm
+#check @TheoremT.Continuum.formalMultilinearSeries_changeOrigin_geometric_bound
+#check @TheoremT.Continuum.formalMultilinearSeries_enorm_lt_radius_geometric
+#check @TheoremT.Continuum.formalMultilinearSeries_sum_geometric_derivative_bound
+#check @TheoremT.Continuum.formalMultilinearSeries_sum_half_domain_factorial_bound
+#check @TheoremT.Continuum.homogeneous_polynomial_series_geometric_derivative_bound
+#check @TheoremT.Continuum.homogeneous_polynomial_series_half_domain_factorial_bound
+#check @TheoremT.Continuum.shifted_homogeneous_polynomial_series_half_domain_factorial_bound
+#check @TheoremT.Continuum.ks_real_polynomial_series_half_domain_factorial_bounds
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.formalMultilinearSeries_changeOrigin_term_norm
+#print axioms TheoremT.Continuum.formalMultilinearSeries_changeOrigin_geometric_bound
+#print axioms TheoremT.Continuum.formalMultilinearSeries_enorm_lt_radius_geometric
+#print axioms TheoremT.Continuum.formalMultilinearSeries_sum_geometric_derivative_bound
+#print axioms TheoremT.Continuum.formalMultilinearSeries_sum_half_domain_factorial_bound
+#print axioms TheoremT.Continuum.homogeneous_polynomial_series_geometric_derivative_bound
+#print axioms TheoremT.Continuum.homogeneous_polynomial_series_half_domain_factorial_bound
+#print axioms TheoremT.Continuum.shifted_homogeneous_polynomial_series_half_domain_factorial_bound
+#print axioms TheoremT.Continuum.ks_real_polynomial_series_half_domain_factorial_bounds

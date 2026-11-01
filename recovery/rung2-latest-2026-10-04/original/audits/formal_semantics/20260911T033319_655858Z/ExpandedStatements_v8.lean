@@ -1,0 +1,53 @@
+import SO2PolynomialCircleInvariant_v1
+import SO2PolynomialRealRotation_v1
+import SO2RealRotationRadialDescent_v1
+
+-- Human-readable physical definitions.
+
+-- Expanded types expose mathematical implicit arguments; declaration bodies stay in source.
+-- Instance implementations are suppressed; proof arguments in types are printed.
+set_option pp.all true
+set_option pp.universes true
+set_option pp.instances false
+set_option pp.proofs true
+set_option pp.maxSteps 2000000
+set_option maxRecDepth 16384
+set_option pp.rawOnError true
+#check @TheoremT.Continuum.so2PolynomialCircleAction
+#check @TheoremT.Continuum.so2PolynomialCircleAction_coeff
+#check @TheoremT.Continuum.so2PolynomialCircleInvariant_balanced_support
+#check @TheoremT.Continuum.so2RealRotation
+#check @TheoremT.Continuum.so2RealComplexCoordinates
+#check @TheoremT.Continuum.so2PolynomialToCartesian_real_eval
+#check @TheoremT.Continuum.so2PolynomialToBalanced_real_eval
+#check @TheoremT.Continuum.so2PolynomialCircleAction_real_eval
+#check @TheoremT.Continuum.so2Polynomial_eq_of_real_complex_eval_eq
+#check @TheoremT.Continuum.so2Polynomial_eq_of_real_complex_openBox_eval_eq
+#check @TheoremT.Continuum.so2PolynomialToBalanced_circle_invariant_of_real_rotation
+#check @TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_real_rotation
+#check @TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_local_real_rotation
+#check @TheoremT.Continuum.so2_finite_radial_descent_of_real_rotation
+#check @TheoremT.Continuum.so2_homogeneous_even_radial_descent_of_real_rotation
+#check @TheoremT.Continuum.so2_homogeneous_odd_eq_zero_of_real_rotation
+#check @TheoremT.Continuum.so2_finite_radial_descent_of_local_real_rotation
+
+set_option pp.all false
+set_option pp.universes false
+-- Kernel axiom dependencies for every local declaration.
+#print axioms TheoremT.Continuum.so2PolynomialCircleAction
+#print axioms TheoremT.Continuum.so2PolynomialCircleAction_coeff
+#print axioms TheoremT.Continuum.so2PolynomialCircleInvariant_balanced_support
+#print axioms TheoremT.Continuum.so2RealRotation
+#print axioms TheoremT.Continuum.so2RealComplexCoordinates
+#print axioms TheoremT.Continuum.so2PolynomialToCartesian_real_eval
+#print axioms TheoremT.Continuum.so2PolynomialToBalanced_real_eval
+#print axioms TheoremT.Continuum.so2PolynomialCircleAction_real_eval
+#print axioms TheoremT.Continuum.so2Polynomial_eq_of_real_complex_eval_eq
+#print axioms TheoremT.Continuum.so2Polynomial_eq_of_real_complex_openBox_eval_eq
+#print axioms TheoremT.Continuum.so2PolynomialToBalanced_circle_invariant_of_real_rotation
+#print axioms TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_real_rotation
+#print axioms TheoremT.Continuum.so2PolynomialToBalanced_balanced_support_of_local_real_rotation
+#print axioms TheoremT.Continuum.so2_finite_radial_descent_of_real_rotation
+#print axioms TheoremT.Continuum.so2_homogeneous_even_radial_descent_of_real_rotation
+#print axioms TheoremT.Continuum.so2_homogeneous_odd_eq_zero_of_real_rotation
+#print axioms TheoremT.Continuum.so2_finite_radial_descent_of_local_real_rotation

@@ -1,0 +1,342 @@
+TheoremT.Continuum.seven_coordinate_restricted_volume : ∀
+  (K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)),
+  @MeasureTheory.MeasurePreserving.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ TheoremT.Continuum.sevenToProduct)
+    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+    (@MeasureTheory.Measure.restrict.{0}
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@MeasureTheory.MeasureSpace.volume.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@Set.image.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+            @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          _ TheoremT.Continuum.sevenToProduct)
+        K))
+TheoremT.Continuum.seven_coordinate_integral_image : ∀ (K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real))
+  (f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real),
+  @Eq.{1} Real
+    (@MeasureTheory.integral.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Real _ _
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+      fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+      f
+        (@DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+            @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          _ TheoremT.Continuum.sevenToProduct x))
+    (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Real _ _
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@Set.image.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@DFunLike.coe.{1, 1, 1}
+            (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+              (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+              @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+            _ TheoremT.Continuum.sevenToProduct)
+          K))
+      fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => f p)
+@TheoremT.Continuum.seven_coordinate_pullback_memLp : ∀ {K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hK :
+    @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct)
+      K Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hf :
+    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      _ _ f (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        Ω)),
+  @MeasureTheory.MemLp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+    (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+    (@Function.comp.{1, 1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex f
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct))
+    (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+    (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+      (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+@TheoremT.Continuum.seven_coordinate_integral_sq_le : ∀ {K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hK :
+    @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct)
+      K Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hf :
+    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      _ _ f (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        Ω)),
+  @LE.le.{0} Real _
+    (@MeasureTheory.integral.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Real _ _
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+      fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+      @HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@Norm.norm.{0} Complex _
+          (f
+            (@DFunLike.coe.{1, 1, 1}
+              (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+                (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+              (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+              (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+                @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              _ TheoremT.Continuum.sevenToProduct x)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+    (@MeasureTheory.integral.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Real _ _
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        Ω)
+      fun (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+      @HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} Complex _ (f p)) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+@TheoremT.Continuum.seven_coordinate_sqrt_integral_le_eLpNorm : ∀
+  {K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hK :
+    @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct)
+      K Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hf :
+    @MeasureTheory.MemLp.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+      _ _ f (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        (@MeasureTheory.MeasureSpace.volume.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        Ω)),
+  @LE.le.{0} Real _
+    (Real.sqrt
+      (@MeasureTheory.integral.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+        fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _
+            (f
+              (@DFunLike.coe.{1, 1, 1}
+                (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+                  @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                _ TheoremT.Continuum.sevenToProduct x)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (ENNReal.toReal
+      (@MeasureTheory.eLpNorm.{0, 0}
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+        f (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+        (@MeasureTheory.Measure.restrict.{0}
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          (@MeasureTheory.MeasureSpace.volume.{0}
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _)
+          Ω)))
+@TheoremT.Continuum.seven_coordinate_regionL2Budget : ∀ {K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hK :
+    @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct)
+      K Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex} {W : Real}
+  (hf : @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ f Ω W),
+  And
+    (@MeasureTheory.MemLp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Complex
+      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) _ _
+      (@Function.comp.{1, 1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex f
+        (@DFunLike.coe.{1, 1, 1}
+          (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+            (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+            @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+          _ TheoremT.Continuum.sevenToProduct))
+      (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+      (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K))
+    (@LE.le.{0} Real _
+      (Real.sqrt
+        (@MeasureTheory.integral.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Real _ _
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+          (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+            (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+          fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @HPow.hPow.{0, 0, 0} Real Nat Real _
+            (@Norm.norm.{0} Complex _
+              (f
+                (@DFunLike.coe.{1, 1, 1}
+                  (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _
+                    _ (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+                    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                  (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+                    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                  _ TheoremT.Continuum.sevenToProduct x)))
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (Real.sqrt W))
+@TheoremT.Continuum.seven_coordinate_regionL2Budget_sq : ∀
+  {K : Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)}
+  {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)}
+  (hK :
+    @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct)
+      K Ω)
+  {f : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex} {M : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hf :
+    @TheoremT.Continuum.WeakGrushin.RegionL2Budget (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ f Ω
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ M (@OfNat.ofNat.{0} Nat (nat_lit 2) _))),
+  @LE.le.{0} Real _
+    (Real.sqrt
+      (@MeasureTheory.integral.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) Real _ _
+        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+        (@MeasureTheory.Measure.restrict.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _)
+          (@MeasureTheory.MeasureSpace.volume.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _) K)
+        fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+        @HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} Complex _
+            (f
+              (@DFunLike.coe.{1, 1, 1}
+                (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+                  (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+                  (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+                (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+                (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+                  @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+                _ TheoremT.Continuum.sevenToProduct x)))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    M
+'TheoremT.Continuum.seven_coordinate_restricted_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.seven_coordinate_integral_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.seven_coordinate_pullback_memLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.seven_coordinate_integral_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.seven_coordinate_sqrt_integral_le_eLpNorm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.seven_coordinate_regionL2Budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.seven_coordinate_regionL2Budget_sq' depends on axioms: [propext, Classical.choice, Quot.sound]

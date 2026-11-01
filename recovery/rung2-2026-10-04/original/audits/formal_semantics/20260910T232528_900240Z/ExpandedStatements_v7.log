@@ -1,0 +1,234 @@
+@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_contDiff : ∀ {κ ι : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] (dirs : ι → @TheoremT.Continuum.WeakGrushin.Space κ _)
+  {G : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (w : List.{0} ι),
+  @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs G w)
+@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_tsupport_subset : ∀ {κ ι : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] (dirs : ι → @TheoremT.Continuum.WeakGrushin.Space κ _)
+  (G : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex) (w : List.{0} ι),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _
+    (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+      (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs G w))
+    (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _ G)
+@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_hasCompactSupport : ∀ {κ ι : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] (dirs : ι → @TheoremT.Continuum.WeakGrushin.Space κ _)
+  {G : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hc : @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _ G) (w : List.{0} ι),
+  @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _) Complex _ _
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs G w)
+@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_perm : ∀ {κ ι : Type} [inst : Fintype.{0} κ]
+  [DecidableEq.{1} κ] (dirs : ι → @TheoremT.Continuum.WeakGrushin.Space κ _)
+  {G : @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Complex _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  {u v : List.{0} ι} (huv : @List.Perm.{0} ι u v),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs G u)
+    (@TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv κ _ ι dirs G v)
+TheoremT.Continuum.WeakGrushin.smoothFactorialJet : (G :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex) →
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+    (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+      @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_contDiff : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+    Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G α β)
+TheoremT.Continuum.WeakGrushin.smoothFactorialJet_tsupport_subset : ∀
+  (G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+      (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G α β))
+    (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex _ _
+      G)
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_hasCompactSupport : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hc :
+    @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      Complex _ _ G)
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Complex
+    _ _ (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G α β)
+TheoremT.Continuum.WeakGrushin.smoothFactorialJet_zero : ∀
+  (G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+    G
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_add_single_y : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _ α
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      β)
+    (@TheoremT.Continuum.partialYDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _
+      (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G α β)
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ i))
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_add_single_t : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G α
+      (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _ β
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+    (@TheoremT.Continuum.partialTDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _
+      (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G α β)
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ j))
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_single_y : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+    (@TheoremT.Continuum.partialYDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _ G
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ i))
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_single_t : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+    (@TheoremT.Continuum.partialTDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _ G
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ j))
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_double_y : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@HAdd.hAdd.{0, 0, 0} ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (nat_lit 0) _))
+    (@TheoremT.Continuum.partialYDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _
+      (@TheoremT.Continuum.partialYDirectional.{0, 0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _ G
+        (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ i))
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ j))
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_mixed : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+      (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+        (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+    (@TheoremT.Continuum.partialTDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _
+      (@TheoremT.Continuum.partialYDirectional.{0, 0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _ G
+        (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ i))
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ j))
+@TheoremT.Continuum.WeakGrushin.smoothFactorialJet_double_t : ∀
+  {G : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex}
+  (hG :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Complex _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) G)
+  (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Complex)
+    (TheoremT.Continuum.WeakGrushin.smoothFactorialJet G
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) (nat_lit 0) _)
+      (@HAdd.hAdd.{0, 0, 0} ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _))
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (fun (a : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+    (@TheoremT.Continuum.partialTDirectional.{0, 0, 0}
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+      (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _
+      (@TheoremT.Continuum.partialTDirectional.{0, 0, 0}
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) Complex _ _ _ _ _ _ G
+        (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ i))
+      (@TheoremT.Continuum.oscillatorBasis.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ j))
+'TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_contDiff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_tsupport_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_hasCompactSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.complexDirectionalWordDeriv_perm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_tsupport_subset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_hasCompactSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_add_single_y' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_add_single_t' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_single_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_single_t' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_double_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.smoothFactorialJet_double_t' depends on axioms: [propext, Classical.choice, Quot.sound]

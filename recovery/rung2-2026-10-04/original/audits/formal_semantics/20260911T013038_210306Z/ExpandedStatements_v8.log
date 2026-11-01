@@ -1,0 +1,25 @@
+@TheoremT.Continuum.polynomialCoeffL1_C_mul.{u_1} : ∀ {σ : Type u_1} (c : Complex)
+  (p : @MvPolynomial.{u_1, 0} σ Complex _),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@HMul.hMul.{u_1, u_1, u_1} (@MvPolynomial.{u_1, 0} σ Complex _) (@MvPolynomial.{u_1, 0} σ Complex _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) _
+        (@DFunLike.coe.{u_1 + 1, 1, u_1 + 1} (@RingHom.{0, u_1} Complex (@MvPolynomial.{u_1, 0} σ Complex _) _ _)
+          Complex (fun (x : Complex) => @MvPolynomial.{u_1, 0} σ Complex _) _ (@MvPolynomial.C.{0, u_1} Complex σ _) c)
+        p))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Norm.norm.{0} Complex _ c)
+      (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p))
+@TheoremT.Continuum.polynomialCoeffL1_smul.{u_1} : ∀ {σ : Type u_1} (c : Complex)
+  (p : @MvPolynomial.{u_1, 0} σ Complex _),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@HSMul.hSMul.{0, u_1, u_1} Complex (@MvPolynomial.{u_1, 0} σ Complex _) (@MvPolynomial.{u_1, 0} σ Complex _) _ c
+        p))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Norm.norm.{0} Complex _ c)
+      (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p))
+@TheoremT.Continuum.polynomialCoeffL1_neg.{u_1} : ∀ {σ : Type u_1} (p : @MvPolynomial.{u_1, 0} σ Complex _),
+  @Eq.{1} Real (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (@Neg.neg.{u_1} (@MvPolynomial.{u_1, 0} σ Complex _) _ p))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ p)
+'TheoremT.Continuum.polynomialCoeffL1_C_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_neg' depends on axioms: [propext, Classical.choice, Quot.sound]

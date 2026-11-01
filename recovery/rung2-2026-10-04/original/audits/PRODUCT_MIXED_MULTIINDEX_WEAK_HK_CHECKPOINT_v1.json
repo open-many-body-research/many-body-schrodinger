@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "timestamp_utc": "2026-09-10T22:07:25.631374+00:00",
+  "evidence_category": "fully formal finite weak derivative indexing and raw local PDE corollary",
+  "declarations": 17,
+  "audits": [
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T215313_027304Z/receipt.json",
+      "receipt_sha256": "c62235687b9ef3faed34f72a98c034bf9b687588cc550bcdf18787d8a2455975",
+      "modules": [
+        {
+          "module": "ProductCoordinateWeakWordPermutation_v1",
+          "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductCoordinateWeakWordPermutation_v1.lean",
+          "source_sha256": "dd70c19bf37a4ed0606ca58f7d7ea6a0f880ab0563fbe531c1ac5d85287cf55a",
+          "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductCoordinateWeakWordPermutation_v1.olean",
+          "object_sha256": "d09175d23f3fee669dbf546d97a89d130d5c55ea2aa5267779507cb0bbef0327",
+          "declarations": [
+            "productCoordinateTestWord_perm",
+            "product_coordinate_family_word_perm_ae",
+            "product_coordinate_family_derivative_of_perm"
+          ],
+          "forbidden_source_tokens": [],
+          "source_unchanged_during_audit": true,
+          "object_unchanged_during_audit": true
+        }
+      ]
+    },
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220346_563352Z/receipt.json",
+      "receipt_sha256": "c7e5ccaf7e7bbc817985718a3d4a4aedf8d90e7640b4733c7642c14f26a2c412",
+      "modules": [
+        {
+          "module": "MixedMultiIndexWord_v1",
+          "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MixedMultiIndexWord_v1.lean",
+          "source_sha256": "474a6da893d9e945858a456d43edf0f8d1e57c3d6f3ec4e38a7ce523559ecc7d",
+          "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MixedMultiIndexWord_v1.olean",
+          "object_sha256": "796b0d7427db29104614fb46ef8611c35dcbeb039e6b100c422fc73acbcc7e3e",
+          "declarations": [
+            "mixedMultiIndex",
+            "mixedMultiIndexWord",
+            "mixedMultiIndex_sum",
+            "mixedMultiIndexWord_length",
+            "mixedMultiIndexWord_count_y",
+            "mixedMultiIndexWord_count_t",
+            "coordinateWordCount_cons",
+            "coordinateMultiIndexWord_add_single_perm",
+            "mixedMultiIndexWord_add_single_y_perm",
+            "mixedMultiIndexWord_add_single_t_perm",
+            "mixedMultiIndexWord_zero"
+          ],
+          "forbidden_source_tokens": [],
+          "source_unchanged_during_audit": true,
+          "object_unchanged_during_audit": true
+        }
+      ]
+    },
+    {
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T220448_670891Z/receipt.json",
+      "receipt_sha256": "6e9b7f4ba412697ae01ccea595df19b969ca137ac53981b2141cce4c1749b669",
+      "modules": [
+        {
+          "module": "ProductMixedMultiIndexWeakHk_v1",
+          "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductMixedMultiIndexWeakHk_v1.lean",
+          "source_sha256": "eb93f618aa70a6f8e7219a894867a63ee3c82a8115ffbb652bdcdc0d32c9251d",
+          "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductMixedMultiIndexWeakHk_v1.olean",
+          "object_sha256": "ae3d80ff77eba84c1e3a75b4e4670123b8a170f1a452c8c38cbc3a97dcb38c49",
+          "declarations": [
+            "ProductMixedMultiIndexWeakHk",
+            "coordinateWeakHk_mixed_multiIndex",
+            "local_smooth_weak_grushin_mixed_multiIndex_regularity"
+          ],
+          "forbidden_source_tokens": [],
+          "source_unchanged_during_audit": true,
+          "object_unchanged_during_audit": true
+        }
+      ]
+    }
+  ],
+  "exact_result": "Actual finite coordinate weak jets on open R4 x R3 yield genuine natural multiindex jets F(alpha,beta), F(0,0)=f, ordinary Y/T single-index weak derivative shifts and unchanged per-member squared L2 budget. Composing the sealed raw smooth Grushin theorem constructs such a family for every finite order on inner boxes with no solution derivatives assumed.",
+  "focused_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PRODUCT_MIXED_MULTIINDEX_WEAK_HK_ADVERSARIAL_REVIEW_v1.json",
+    "sha256": "5ca9eb043bbefd03675da92d3101e2e7077837245dcdb99c67b44f86e276aa49"
+  },
+  "manuscript": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/paper/PRODUCT_MIXED_MULTIINDEX_WEAK_HK_FORMAL_v1.md",
+    "sha256": "8325125d8e8fb37ac495c2420cf9278cbe13b925bfae8dc0e9d31fb4793f789c"
+  },
+  "raw_regularity_dependency_checkpoint": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/LOCAL_SMOOTH_WEAK_GRUSHIN_FINITE_REGULARITY_CHECKPOINT_v1.json",
+    "sha256": "82422983dfa22bbacb6c9143f20131ad5bf6b83571059eecf05dd801e0e2c173"
+  },
+  "frozen_provenance": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "report": "THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md",
+    "report_sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066"
+  },
+  "limitations": [
+    "Per-order family and per-member norm only; no common all-order witnesses or factorial rate.",
+    "Weak representative permutation is local AE, not pointwise.",
+    "No library Sobolev equivalence, smooth embedding or algorithmic selection.",
+    "Pinned caches reused; not included in earlier 671-target source rebuild.",
+    "No approximation, spectral or full Theorem T conclusion."
+  ],
+  "next": "Compose actual finite natural-index families with factorial commutator norm and coefficient estimates owned by root/compact agents."
+}

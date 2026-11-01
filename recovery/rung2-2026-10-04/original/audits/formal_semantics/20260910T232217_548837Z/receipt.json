@@ -1,0 +1,85 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v2.py",
+  "declaration_discovery_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "auditor_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "timestamp_utc": "20260910T232217_548837Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232217_548837Z/ExpandedStatements_v7.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T232217_548837Z/ExpandedStatements_v7.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 10.323097833,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "619fc523adbf6a3c7370ac27a996b807aac186e4cd3f118f4d3eabf1ad578d84",
+  "audit_log_sha256": "657fd6d0aa038a0aa3182fe5b4979bb03a2d8e3fd18c2e8e3fe35a2b33358065",
+  "module_records": [
+    {
+      "module": "KSCommonAnnulusFactorialJets_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSCommonAnnulusFactorialJets_v1.lean",
+      "source_sha256": "81305f672f2532b21526960737c48572e8579546c5cf5dca619165e33c61bdc4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSCommonAnnulusFactorialJets_v1.olean",
+      "object_sha256": "cc8e9c1690b4235d3523ee5ced6a7329413972100902192a08f093847c97dc39",
+      "declarations": [
+        "KSScaledFactorialJetControl",
+        "ksScaledFactorialJetControl_mono",
+        "ksScaledFactorialJetControl_subset",
+        "ksCommonAnnulus_uniform_factorial_jets",
+        "ksCommonAnnulus_uniform_factorial_physical_boxes"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "KSCommonAnnulusFactorialWords_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSCommonAnnulusFactorialWords_v1.lean",
+      "source_sha256": "0ffc53a4ff74aa7b99da8dbd27337e8ccc379fd7bc6150471e120417d16bd6cb",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSCommonAnnulusFactorialWords_v1.olean",
+      "object_sha256": "c683dd9f9640bd8e499a451dccb37b2ee83ec9867cac595cd2e46f134a0b6037",
+      "declarations": [
+        "KSScaledFactorialWordControl",
+        "ksScaledFactorialWordControl_of_jets",
+        "ksScaledFactorialWordControl_subset",
+        "ksScaledFactorialWordControl_physical_word",
+        "ksCommonAnnulus_uniform_factorial_jet_word_control",
+        "ksCommonAnnulus_uniform_factorial_physical_box_data"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.KSScaledFactorialJetControl: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksScaledFactorialJetControl_mono: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksScaledFactorialJetControl_subset: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_jets: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_physical_boxes: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.KSScaledFactorialWordControl: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksScaledFactorialWordControl_of_jets: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksScaledFactorialWordControl_subset: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.ksScaledFactorialWordControl_physical_word: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_jet_word_control: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_physical_box_data: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.KSScaledFactorialJetControl",
+    "TheoremT.Continuum.ksScaledFactorialJetControl_mono",
+    "TheoremT.Continuum.ksScaledFactorialJetControl_subset",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_jets",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_physical_boxes",
+    "TheoremT.Continuum.KSScaledFactorialWordControl",
+    "TheoremT.Continuum.ksScaledFactorialWordControl_of_jets",
+    "TheoremT.Continuum.ksScaledFactorialWordControl_subset",
+    "TheoremT.Continuum.ksScaledFactorialWordControl_physical_word",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_jet_word_control",
+    "TheoremT.Continuum.ksCommonAnnulus_uniform_factorial_physical_box_data"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

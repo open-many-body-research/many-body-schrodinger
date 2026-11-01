@@ -1,0 +1,246 @@
+TheoremT.Continuum.grushinFactorialLossSum : (A : Real) → (r : Nat) → (N : Nat → Real) → Real
+TheoremT.Continuum.grushin_choose_factorial_eq_ratio : ∀ (r j : Nat) (hj : @LE.le.{0} Nat _ j r),
+  @Eq.{1} Real
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.choose r j))
+      (@Nat.cast.{0} Real _ (Nat.factorial j)))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial r))
+      (@Nat.cast.{0} Real _ (Nat.factorial (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))))
+TheoremT.Continuum.grushin_choose_loss_sum_eq : ∀ (A : Real) (r : Nat) (N : Nat → Real),
+  @Eq.{1} Real
+    (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@Nat.cast.{0} Real _
+              (Nat.choose r (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+          (@Nat.cast.{0} Real _
+            (Nat.factorial (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+        (N
+          (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+    (TheoremT.Continuum.grushinFactorialLossSum A r N)
+@TheoremT.Continuum.grushin_factorial_loss_sum_nonneg : ∀ {A : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) A) (r : Nat) (N : Nat → Real)
+  (hN : ∀ (k : Nat), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N k)),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.grushinFactorialLossSum A r N)
+@TheoremT.Continuum.grushin_first_two_factorial_losses_le : ∀ {A : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A) (r : Nat)
+  (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) r) (N : Nat → Real)
+  (hN : ∀ (k : Nat), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N k)),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ r)
+        (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@Nat.cast.{0} Real _
+          (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ r
+            (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+        (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+    (TheoremT.Continuum.grushinFactorialLossSum A r N)
+@TheoremT.Continuum.grushin_principal_potential_absorption : ∀ {A M : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M) (c : Real) (r : Nat)
+  (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) r) (N : Nat → Real)
+  (hN : ∀ (k : Nat), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N k)),
+  @LE.le.{0} Real _
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+            @HMul.hMul.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@Nat.cast.{0} Real _
+                    (Nat.choose r (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                (@Nat.cast.{0} Real _
+                  (Nat.factorial (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+              (N
+                (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) (@abs.{0} Real _ _ c))
+            (@Nat.cast.{0} Real _ r))
+          (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@abs.{0} Real _ _ c))
+          (@Nat.cast.{0} Real _
+            (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ r
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+        (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ M
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) (@abs.{0} Real _ _ c)))
+      (TheoremT.Continuum.grushinFactorialLossSum A r N))
+TheoremT.Continuum.grushinLocalizedCoefficient : (C0 M c K1 K2 : Real) → Real
+@TheoremT.Continuum.grushin_localized_scalar_absorption : ∀ {A C0 M K1 K2 e Q : Real}
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hC0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C0)
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hK1 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) K1)
+  (hK2 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) K2)
+  (he : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e)
+  (he1 : @LE.le.{0} Real _ e (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hQ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) Q) (c : Real) (r : Nat)
+  (hr : @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) r) (N : Nat → Real)
+  (hN : ∀ (k : Nat), @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N k)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ C0
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+              (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                (@HAdd.hAdd.{0, 0, 0} Real Real Real _ Q
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                    (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+                      @HMul.hMul.{0, 0, 0} Real Real Real _
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _
+                            (@Nat.cast.{0} Real _
+                              (Nat.choose r
+                                (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                            (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                          (@Nat.cast.{0} Real _
+                            (Nat.factorial
+                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+                        (N
+                          (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))))
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _
+                    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _) (@abs.{0} Real _ _ c))
+                    (@Nat.cast.{0} Real _ r))
+                  (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _) (@abs.{0} Real _ _ c))
+                  (@Nat.cast.{0} Real _
+                    (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ r
+                      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+                (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+              (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ K1 (@Inv.inv.{0} Real _ e))
+            (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ K2
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ e) (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+          (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.grushinLocalizedCoefficient C0 M c K1 K2)
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+          (@HAdd.hAdd.{0, 0, 0} Real Real Real _ Q
+            (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Inv.inv.{0} Real _ e)
+              (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _
+            (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ e) (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+            (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))))
+        (TheoremT.Continuum.grushinFactorialLossSum A r N)))
+TheoremT.Continuum.grushin_fixed_gap_recurrence_of_localized_bounds : ∀ (N : Nat → Real → Real)
+  {ρ A C0 M K1 K2 F : Real} (c : Real) (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hA : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+  (hC0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C0)
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hK1 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) K1)
+  (hK2 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) K2)
+  (hF : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) F)
+  (hN :
+    ∀ (q : Nat) (s : Real),
+      @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+        @LE.le.{0} Real _ s ρ → @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (N q s))
+  (hloc :
+    ∀ (r : Nat),
+      @LE.le.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 9) _) r →
+        ∀ (s e : Real),
+          @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s →
+            @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) e →
+              @LE.le.{0} Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e) ρ →
+                @LE.le.{0} Real _ (N r (@HAdd.hAdd.{0, 0, 0} Real Real Real _ s e))
+                  (@HMul.hMul.{0, 0, 0} Real Real Real _ C0
+                    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                      (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                        (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                          (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                              (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                  (@HMul.hMul.{0, 0, 0} Real Real Real _ F (@HPow.hPow.{0, 0, 0} Real Nat Real _ A r))
+                                  (@Nat.cast.{0} Real _ (Nat.factorial r)))
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                                  (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+                                    @HMul.hMul.{0, 0, 0} Real Real Real _
+                                      (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                          (@Nat.cast.{0} Real _
+                                            (Nat.choose r
+                                              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j
+                                                (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                                          (@HPow.hPow.{0, 0, 0} Real Nat Real _ A
+                                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j
+                                              (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+                                        (@Nat.cast.{0} Real _
+                                          (Nat.factorial
+                                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j
+                                              (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+                                      (N
+                                        (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r
+                                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+                                        s))))
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                  (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 6) _)
+                                    (@abs.{0} Real _ _ c))
+                                  (@Nat.cast.{0} Real _ r))
+                                (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) s)))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                                  (@abs.{0} Real _ _ c))
+                                (@Nat.cast.{0} Real _
+                                  (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ r
+                                    (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))))
+                              (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) s)))
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+                            (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) s)))
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ K1 (@Inv.inv.{0} Real _ e))
+                          (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) s)))
+                      (@HMul.hMul.{0, 0, 0} Real Real Real _
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _ K2
+                          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ e)
+                            (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+                        (N (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) s))))),
+  TheoremT.Continuum.GrushinScalarFixedGapRecurrence N ρ (TheoremT.Continuum.grushinLocalizedCoefficient C0 M c K1 K2) A
+    F
+TheoremT.Continuum.nonnegative_energy_slab_bounds : ∀ (I D P K : Real)
+  (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hP : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) P)
+  (hK : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) K)
+  (hslab : @LE.le.{0} Real _ I (@HMul.hMul.{0, 0, 0} Real Real Real _ K D))
+  (hcs :
+    @LE.le.{0} Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ D (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ I P)),
+  And
+    (@LE.le.{0} Real _ I
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ K (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) P))
+    (@LE.le.{0} Real _ D (@HMul.hMul.{0, 0, 0} Real Real Real _ K P))
+'TheoremT.Continuum.grushinFactorialLossSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_choose_factorial_eq_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_choose_loss_sum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_factorial_loss_sum_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_first_two_factorial_losses_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_principal_potential_absorption' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushinLocalizedCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_localized_scalar_absorption' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_fixed_gap_recurrence_of_localized_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nonnegative_energy_slab_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

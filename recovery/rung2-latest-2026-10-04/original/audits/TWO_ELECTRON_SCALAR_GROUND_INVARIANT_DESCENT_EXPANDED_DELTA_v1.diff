@@ -1,0 +1,26 @@
+--- scalar-ground-analytic-descent-expanded
++++ scalar-ground-invariant-analytic-descent-expanded
+@@ -1,4 +1,4 @@
+-TheoremT.Continuum.twoElectron_scalar_ground_analytic_descent_with_H2_decay : ∀ (Z : Real)
++TheoremT.Continuum.twoElectron_scalar_ground_invariant_analytic_descent_with_H2_decay : ∀ (Z : Real)
+   (hZ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) Z),
+   @Exists.{1} Real fun (C_H : Real) =>
+     @Exists.{1} Real fun (M : Real) =>
+@@ -624,7 +624,7 @@
+                                                                         (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                           t0)
+                                                                         (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                      TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
++                                                                      TheoremT.Continuum.PhysicalKSBoxInvariantAnalyticDescentDerivativeData
+                                                                         (@Function.comp.{1, 1, 1}
+                                                                           (@TheoremT.Continuum.WeakGrushin.Space
+                                                                             (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+@@ -736,7 +736,7 @@
+                                                                         (@Norm.norm.{0} TheoremT.Continuum.Position _
+                                                                           t0)
+                                                                         (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+-                                                                      TheoremT.Continuum.PhysicalKSBoxAnalyticDescentDerivativeData
++                                                                      TheoremT.Continuum.PhysicalKSBoxInvariantAnalyticDescentDerivativeData
+                                                                         (@Function.comp.{1, 1, 1}
+                                                                           (@TheoremT.Continuum.WeakGrushin.Space
+                                                                             (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))

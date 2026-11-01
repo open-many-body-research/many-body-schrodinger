@@ -1,0 +1,93 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "ca3fa65e7331f8b46f82edbee9091a6f8c442c03321052a43ab1923d96b414d6",
+  "timestamp_utc": "20260910T214430_510275Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214430_510275Z/ExpandedStatements_v5.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T214430_510275Z/ExpandedStatements_v5.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.1609177080000004,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "d42665bce3d287617a84a89dced13615cba713347662f673afca17bbf1c3ec0d",
+  "audit_log_sha256": "7916ef6ffa77263db9a73660576c6da0d36aecfc90865c065ac949cd2d753b4b",
+  "module_records": [
+    {
+      "module": "GrushinFiniteStepGeometry_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFiniteStepGeometry_v1.lean",
+      "source_sha256": "7fb86985a690a8c54616a41c2db5f592bf06cd02b4b6cdbe2417ed73090bebdb",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFiniteStepGeometry_v1.olean",
+      "object_sha256": "7b1f53c6d09d3fda375f57439e12140776f92523dc758be9e02581520d8eafaa",
+      "declarations": [
+        "finiteGrushinRegion",
+        "finiteGrushinMiddle",
+        "finiteGrushinInnerCutoff",
+        "finiteGrushinEnergyCutoff",
+        "finiteGrushinRegion_isOpen",
+        "finiteGrushinRegion_measurableSet",
+        "finiteGrushinRegion_zero",
+        "finiteGrushinRegion_antitone",
+        "finiteGrushinRegion_subset_initial",
+        "finiteGrushinRegion_contains_closed",
+        "finite_grushin_step_geometry"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinFiniteNestedGeometry_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFiniteNestedGeometry_v1.lean",
+      "source_sha256": "666f8a270e3272fbef9a3b003d0f5f9274b333758803d55fa7f0644c993a794c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFiniteNestedGeometry_v1.olean",
+      "object_sha256": "9f51c7f644143eab97c50c0244b3644ce5e1e2b628c203fde1e2d49b191ea3c1",
+      "declarations": [
+        "finite_grushin_nested_geometry",
+        "finite_grushin_nested_final_contains",
+        "finite_grushin_nested_domains"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinMiddle: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinInnerCutoff: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinEnergyCutoff: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_isOpen: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_measurableSet: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_zero: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_antitone: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_subset_initial: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_contains_closed: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_step_geometry: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_nested_geometry: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_nested_final_contains: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_nested_domains: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinMiddle",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinInnerCutoff",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinEnergyCutoff",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_isOpen",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_measurableSet",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_zero",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_antitone",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_subset_initial",
+    "TheoremT.Continuum.WeakGrushin.finiteGrushinRegion_contains_closed",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_step_geometry",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_nested_geometry",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_nested_final_contains",
+    "TheoremT.Continuum.WeakGrushin.finite_grushin_nested_domains"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0
+}

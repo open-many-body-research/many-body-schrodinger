@@ -1,0 +1,104 @@
+@TheoremT.Continuum.so2_descended_coefficient_rate : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex) {M h : Real}
+  (hc :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (c m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ h)
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+              (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))))
+  (m : Nat) (γ : Fin d → Nat),
+  @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (c m γ))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Inv.inv.{0} Real _ (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _))) m))
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ h)
+        (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i)))
+@TheoremT.Continuum.so2_descended_series_analytic : ∀ {d : Nat} (c : Nat → (Fin d → Nat) → Complex) {M h : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hc :
+    ∀ (m : Nat) (γ : Fin d → Nat),
+      @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (c m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ h)
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+              (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))))),
+  @AnalyticOnNhd.{0, 0, 0} Complex (Prod.{0, 0} Complex (Fin d → Complex)) Complex _ _ _ _ _
+    (@TheoremT.Continuum.scalarSpectatorSum d c)
+    (@Set.ofPred.{0} (Prod.{0, 0} Complex (Fin d → Complex)) fun (z : Prod.{0, 0} Complex (Fin d → Complex)) =>
+      And
+        (@LT.lt.{0} Real _ (@Norm.norm.{0} Complex _ (@Prod.fst.{0, 0} Complex (Fin d → Complex) z))
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+        (@LT.lt.{0} Real _ (@Norm.norm.{0} (Fin d → Complex) _ (@Prod.snd.{0, 0} Complex (Fin d → Complex) z)) h))
+TheoremT.Continuum.so2_descended_series_half_polyradii : ∀
+  (c : Nat → (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat) → Complex) {M h : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hc :
+    ∀ (m : Nat) (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat),
+      @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (c m γ))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Inv.inv.{0} Real _ h)
+            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+              (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+              (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+                (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+                fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => γ i))))),
+  And
+    (∀ (z : Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)),
+      @Membership.mem.{0, 0} (Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))
+          (Set.{0} (Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))) _
+          (@Set.ofPred.{0} (Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))
+            fun (z : Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)) =>
+            And
+              (@LE.le.{0} Real _
+                (@Norm.norm.{0} Complex _
+                  (@Prod.fst.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) z))
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+                  (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+              (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+                @LE.le.{0} Real _
+                  (@Norm.norm.{0} Complex _
+                    (@Prod.snd.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) z i))
+                  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ h (@OfNat.ofNat.{0} Real (nat_lit 2) _))))
+          z →
+        And
+          (@Summable.{0, 0} Real (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) _ _
+            (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) =>
+              @Norm.norm.{0} Complex _
+                (@TheoremT.Continuum.scalarSpectatorTerm (@OfNat.ofNat.{0} Nat (nat_lit 2) _) c k z))
+            (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat))))
+          (And
+            (@Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) _ _
+              (fun (k : Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) =>
+                @TheoremT.Continuum.scalarSpectatorTerm (@OfNat.ofNat.{0} Nat (nat_lit 2) _) c k z)
+              (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat))))
+            (@LE.le.{0} Real _
+              (@Norm.norm.{0} Complex _
+                (@TheoremT.Continuum.scalarSpectatorSum (@OfNat.ofNat.{0} Nat (nat_lit 2) _) c z))
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _) M))))
+    (@HasSumUniformlyOn.{0, 0, 0} Complex (Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))
+      (Prod.{0, 0} Nat (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Nat)) _
+      (@TheoremT.Continuum.scalarSpectatorTerm (@OfNat.ofNat.{0} Nat (nat_lit 2) _) c)
+      (@TheoremT.Continuum.scalarSpectatorSum (@OfNat.ofNat.{0} Nat (nat_lit 2) _) c)
+      (@Set.ofPred.{0} (Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex))
+        fun (z : Prod.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex)) =>
+        And
+          (@LE.le.{0} Real _
+            (@Norm.norm.{0} Complex _ (@Prod.fst.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) z))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+              (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+              (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+          (∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+            @LE.le.{0} Real _
+              (@Norm.norm.{0} Complex _
+                (@Prod.snd.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) z i))
+              (@HDiv.hDiv.{0, 0, 0} Real Real Real _ h (@OfNat.ofNat.{0} Real (nat_lit 2) _))))
+      _)
+'TheoremT.Continuum.so2_descended_coefficient_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_descended_series_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_descended_series_half_polyradii' depends on axioms: [propext, Classical.choice, Quot.sound]

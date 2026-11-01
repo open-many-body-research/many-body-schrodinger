@@ -1,0 +1,59 @@
+{
+  "status": "PASS_FINITE_POLYNOMIAL_DESCENT_UNDER_EXPLICIT_BALANCED_SUPPORT",
+  "utc": "2026-09-11T01:44:13.921443+00:00",
+  "evidence_category": "Fully formalized finite algebra with explicit support hypotheses.",
+  "exact_result": "The literal sum over the original complex polynomial support of C(coeff d) times ksBalancedDescentPolynomial(d0,d1,d2,d3) evaluates on the actual KS image to the original polynomial at (z1,z2,conj z1,conj z2), provided every supported exponent is balanced. If every supported row degree is m, the output is IsHomogeneous m.",
+  "source": {
+    "path": "lean/KSBalancedPolynomialDescent_v1.lean",
+    "sha256": "e2d397416acbb9acbe2f6906413a7d31083ca045eab9c29fcd431c198a338bfd"
+  },
+  "build": {
+    "path": "logs/development/KSBalancedPolynomialDescent_v1-20260911T013723_924631Z.json",
+    "sha256": "f07946cd87c1ec6c4ba57e992abe2af80b77c5ca0178f741d9fcd4e03aacf237"
+  },
+  "strict": {
+    "path": "audits/formal_semantics/20260911T013756_060666Z/receipt.json",
+    "sha256": "27dcdd17db8f5cfa4bc849421896d380e25571150854493919e0a6fbf9673ec6"
+  },
+  "expanded_log": {
+    "path": "audits/formal_semantics/20260911T013756_060666Z/ExpandedStatements_v8.log",
+    "sha256": "79743e87ede1921c4b6d542c22ef5943ad64c48fcb4764f51065982cecc8c81e"
+  },
+  "review": {
+    "path": "audits/KS_BALANCED_FINITE_POLYNOMIAL_DESCENT_REVIEW_v1_20260911T014323Z.json",
+    "sha256": "3552b034e08e286ecac78018d35be664933cc1f878759302fdf3529c628b3edf"
+  },
+  "prior_literal_monomial_checkpoint": {
+    "path": "audits/KS_BALANCED_DESCENT_POLYNOMIAL_CHECKPOINT_v1.json",
+    "sha256": "5bb5498d514565ab5c9b4ef65250f361a606a1083e4f414ee1d676399af22ef6"
+  },
+  "manual_check": "Complete source/definition and proof bodies, full strict receipt and expanded statement/axiom output, and full focused independent review read. All three declarations use exactly the standard three foundational axioms.",
+  "foundations": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "premises": [
+    "For every d in the original P.support, d0+d1=d2+d3.",
+    "The homogeneity theorem additionally requires d0+d1=m for every supported d. Physical evaluation does not require uniform degree."
+  ],
+  "mathematical_detail": [
+    "Every original complex coefficient is retained without taking its norm or conjugate. Output collisions/cancellations are actual polynomial arithmetic.",
+    "Input Fin 4 means z1,z2,w1,w2; output Fin 4 means X0,X1,X2,r.",
+    "Physical evaluation uses the same actual y on both sides, with r=the real Euclidean norm squared of y cast into complex numbers."
+  ],
+  "limitations": [
+    "The balanced-support premise has not been inferred from circle invariance by this module.",
+    "IsHomogeneous permits zero; neither nonzero nor exact totalDegree equality is separately asserted.",
+    "The finite complex-polynomial transform is a noncomputable mathematical definition, not a certified executable implementation for arbitrary complex inputs.",
+    "No coefficient-norm bound, radial reduction or series convergence is claimed here.",
+    "Pinned dependency objects reused; no new isolated source rebuild."
+  ],
+  "frozen_target": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "This stream now proves complex polynomial circle invariance implies balanced support, with the real-slice extension kept as a separate obligation. Parent owns radial degree and physical composition; another stream owns the quantitative coefficient bound."
+}

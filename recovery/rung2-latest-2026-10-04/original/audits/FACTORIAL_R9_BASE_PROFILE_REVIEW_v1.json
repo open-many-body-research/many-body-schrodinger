@@ -1,0 +1,21 @@
+{
+  "reviewer": "/root/compact_h2_density/outer_cardinality",
+  "mode": "Independent read-only exact-source adversarial review",
+  "sources": {
+    "FactorialMonomialBudgetBound_v1.lean": "ca7ad583eac24c0fbeea760e0251c0e91a61629bbe69d94a04bfed304221b703",
+    "FactorialProfileFiniteBudgetBound_v1.lean": "01c51fba09195228df06c0bd96000481bdfc581d356ce4bd879c331cd6a82a3c",
+    "FactorialR9BaseProfile_v1.lean": "4cb896f7f80e12364d46b62b2d2e3199aeec30d04bdb02686a5826e5ee1a218d"
+  },
+  "finding": "No mathematical defect found",
+  "checks": [
+    "W>=0 follows from actual nonnegative squared integral and its budget.",
+    "Monomial degrees<=2 are bounded by S\u00b2 for S>=1; weighted MemLp precedes eLpNorm.toReal.",
+    "Exact cost |a|+|b|+min(|a|,4) dominates total order, so shifted degree<=r+2.",
+    "The 498 outer terms are summed; the finite base-index maximum adds no cardinality factor.",
+    "Weak-chain uniqueness transfers the actual H12 budget to one fixed rawF before allr and allsubregions."
+  ],
+  "scope": [
+    "Weighted representative family V may depend on r and subregion; rawF is fixed.",
+    "This is the finite R9 base estimate, not a factorial recurrence or a uniform all-order estimate."
+  ]
+}

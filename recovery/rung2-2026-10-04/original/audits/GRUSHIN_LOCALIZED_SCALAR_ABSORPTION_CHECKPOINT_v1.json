@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-09-10T23:59:46.216771+00:00",
+  "status": "PASS_CONDITIONAL_LOCALIZED_SCALAR_BRIDGE",
+  "evidence_category": "Kernel-checked scalar inequalities and explicitly conditional recurrence implication",
+  "exact_result": "For A>=1, r>=2 and N>=0, the binomial-factorial loss sum equals the exact factorial-ratio sum. Its distinct first two terms dominate r*N(r-1)+r*(r-1)*N(r-2). The actual principal and potential coefficient expressions are bounded by (M+6*abs(c))*lossSum. For 0<e<=1, the decomposed localized graph bound implies the literal R18 recurrence with C=max(1,C0*(1+2*M+6*abs(c)+K1+K2)), independent of r,s,e.",
+  "unresolved_hypothesis": "The final hloc is the exact decomposed local graph estimate. This scalar implication does not supply its actual PDE derivation, norm definitions, weak cutoff identities or initial H12 profile bound.",
+  "auxiliary_result": "The same strict run audits nonnegative_energy_slab_bounds: I<=K*D and D^2<=I*P, D,P,K>=0 imply I<=K^2*P and D<=K*P, including D=0. Actual smooth/weak graph applications are separately sealed.",
+  "module_records": [
+    {
+      "module": "GrushinRecurrenceForcingAbsorption_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinRecurrenceForcingAbsorption_v1.lean",
+      "source_sha256": "71e4a080ae9c075ab8a260565983ccb91dc01b5a658d2c60fa2bad3ab6caaa01",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinRecurrenceForcingAbsorption_v1.olean",
+      "object_sha256": "c86f694b5b53c43343cd7d289878a5ea5355032b557a982d012c252acdd91f22",
+      "declarations": [
+        "grushinFactorialLossSum",
+        "grushin_choose_factorial_eq_ratio",
+        "grushin_choose_loss_sum_eq",
+        "grushin_factorial_loss_sum_nonneg",
+        "grushin_first_two_factorial_losses_le",
+        "grushin_principal_potential_absorption"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "GrushinLocalizedScalarAbsorption_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinLocalizedScalarAbsorption_v1.lean",
+      "source_sha256": "9f8df157683a38b8bf3ccfec93e29cad44d5aaa5c09c1e8126fd214170aaf166",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinLocalizedScalarAbsorption_v1.olean",
+      "object_sha256": "354c8667007c193575c2b631b46705dd3f80eafd055626761aa393152ea9ce4e",
+      "declarations": [
+        "grushinLocalizedCoefficient",
+        "grushin_localized_scalar_absorption",
+        "grushin_fixed_gap_recurrence_of_localized_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "NonnegativeEnergySlabBound_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/NonnegativeEnergySlabBound_v1.lean",
+      "source_sha256": "1ae88419067a8e39d47f1a19ccaf8791bd44852381aac235e92b52913506844e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/NonnegativeEnergySlabBound_v1.olean",
+      "object_sha256": "fdfc5436e03df894542ac7f9708d1b454332ccd184a2836a8a67dac6e7290706",
+      "declarations": [
+        "nonnegative_energy_slab_bounds"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260910T235232_385997Z/receipt.json",
+    "sha256": "33969f488c84d8e7d22dc91041e204db5f584e860b43586aad65b3de3b8a37e1"
+  },
+  "strict_log": {
+    "path": "audits/formal_semantics/20260910T235232_385997Z/ExpandedStatements_v7.log",
+    "sha256": "ff22e77a1e103fa324d8dafe14bb34ff78bb98b59c04d2791c8f47ed14148650"
+  },
+  "declarations": 10,
+  "root_review": "Root read complete source and all expanded statements/axioms in the final joint log; no omitted or assumed arithmetic step found. One harmless unused M nonnegativity binder remains in the principal absorption theorem.",
+  "independent_review": {
+    "path": "audits/GRUSHIN_LOCALIZED_SCALAR_ABSORPTION_FOCUSED_REVIEW_v1.json",
+    "sha256": "cde3b83e41f1a4bad776e13a4c490538f1c894e5b34c08138ae5577860f7a648"
+  },
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  },
+  "next": "Actual coherent all-order derivative family, actual local profile and cutoff PDE bound, then use this bridge with the already sealed scalar factorial conversion."
+}

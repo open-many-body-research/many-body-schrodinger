@@ -1,0 +1,62 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/polynomial_norm_review",
+  "created_utc": "2026-09-11T02:23:50.517020+00:00",
+  "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorPolynomialSeriesReindex_v1.lean",
+  "source_sha256": "8b90fd749f39e46c0b6de4e618bcf9c806437f739cbdd370c1e62e1fa79b52f4",
+  "object_sha256": "2c7d564ec656aed6db6d5077e05ec9b0b9eae1689881c358b8786cec432cd755",
+  "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/SpectatorPolynomialSeriesReindex_v1-20260911T022223_061678Z.json",
+  "compiler_receipt_sha256": "567fb66b3d1e6d41cb2e8ebc10bb8542c3bf2ddbb334eed9503f43dea86a7eca",
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022245_481596Z/receipt.json",
+  "strict_receipt_sha256": "93edab87bdf326481e33b53bfe726d9c8f1fca07c9eb06fa4d3395881d89b8a8",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T022245_481596Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "b35b6c0353263dc9dc6020ccbad458988af0ce6b721835a1850e3756dd25f88c",
+  "declarations": [
+    "spectatorDegreeIndexEquiv",
+    "spectatorDegreeIndexEquiv_apply",
+    "spectator_total_degree_grouping_hasSum",
+    "groupedHomogeneousSpectatorPolynomial_hasSum",
+    "groupedHomogeneousSpectatorPolynomial_tsum_eq"
+  ],
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "dependencies_source_read": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SpectatorTotalDegreeIndices_v1.lean",
+      "sha256": "27876efb2be54dc93f1e9e840f00aa5f7fcdc02ce770eedd13421d0527b7bb59"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GroupedHomogeneousSpectatorPolynomial_v1.lean",
+      "sha256": "5fd380ae50e4f70a04d8b55abdab26bf647e6356fc4c3e3cbb73c4a6063a7b90"
+    }
+  ],
+  "exact_results": [
+    "An explicit equivalence identifies actual Fin(d+1) finitely supported exponents w with (w_0, tail(w)) in Nat times (Fin d -> Nat).",
+    "For any summable complex family f indexed by (m,gamma), the finite sums over actual spectatorTotalDegreeIndices d n have HasSum equal to the original product-index tsum.",
+    "For actual polynomial families A_m,gamma, summability of eval(X,A_m,gamma) times the spectator monomial implies HasSum and exact equality for the literal grouped polynomial evaluation series."
+  ],
+  "semantic_checks": [
+    "The equivalence is composed from actual Finsupp.equivFunOnFinite and Fin.consEquiv, with its explicit action proved by reflexivity.",
+    "The total-degree map is w_0 plus the sum of tail exponents. Its fiber at n is proved equal to the actual finite index set using the existing membership theorem.",
+    "The original HasSum is transported through the equivalence, then HasSum.tsum_fiberwise is applied with established summability. Each finite fiber tsum equals its finite sum by Finset.tsum_subtype.",
+    "The final polynomial identity follows by applying actual evaluation to the literal finite sum and using the already proved exact single-term evaluation formula.",
+    "Summability is a premise on the original product-index term family. The grouping equality, grouping convergence and output sum are conclusions, not assumed premises.",
+    "No homogeneity hypothesis is needed merely to regroup; grouping remains valid in degree zero, zero spectator dimension and zero-coefficient cases."
+  ],
+  "review_disclosure": "The author read the full final source and all five expanded declarations and axiom reports. This is not labeled an independent review.",
+  "limits": [
+    "This theorem does not itself derive summability from analytic or coefficient assumptions; consumers must supply the stated original-family Summable hypothesis.",
+    "The result proves product-index reindexing and grouped convergence, not a physical Taylor expansion, joint analyticity or mixed derivative estimate.",
+    "Pinned caches were reused; no isolated source rebuild, executable certificate algorithm or bit complexity is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New source and checkpoint; final sources and prior artifacts unchanged."
+  }
+}

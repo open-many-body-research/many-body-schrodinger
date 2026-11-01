@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-09-11T01:46:29.466472+00:00",
+  "reviewer": "/root/fixed_box_review",
+  "status": "MANUSCRIPT_FAITHFUL_NO_MATHEMATICAL_DEFECT_FOUND",
+  "manuscript": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/paper/PHYSICAL_GROUND_KS_ANALYTICITY_FORMAL_v1.md",
+    "sha256": "e8d0ee470b752f8c3432813c2896c9315cc09ef98d921bce2f54013bd08fee79"
+  },
+  "pointwise_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/COULOMB_SPIN_GROUND_PHYSICAL_POINTWISE_FOCUSED_REVIEW_v1.json",
+    "sha256": "e8a838f4a702e6d5dc9ac86ed617cdfd44a52534695d73427fa3e792afdc3230"
+  },
+  "radius_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011939_422759Z/receipt.json",
+    "sha256": "af0f6f252ce3ca422bd770beb6f253857655b385de29c99e1e57e6dc8c75b447"
+  },
+  "radius_source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxAnalyticRadius_v1.lean",
+    "sha256": "c6b0ce006f72bddb92fbec7e54387c451dba0e613d7eb334a3d5f6bc4bc1cb8a"
+  },
+  "radius_expanded_types": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011939_422759Z/ExpandedStatements_v8.log",
+    "sha256": "1dd8608ef4d099a9fccf8d9419efeee5ec0dc08f64f237270bb23849ecf5bca2",
+    "all_three_complete_types_and_axiom_reports_read": true
+  },
+  "checks": {
+    "physical_ground_scope": "The stated real charge condition, continuum Hamiltonian/domain, normalized full-spin actual ground vector, spectral infimum and symmetric spatial singlet link agree with the sealed ground endpoint.",
+    "factorial_constants": "Q=6144*C*A and P=(257/16)^7*12*C*A*(F0+498*sqrt(W))*Q^11*11! agree exactly with the definitions. F0 and W use the same finite-spin amplitude sums and common Lipschitz constant.",
+    "uniformity": "The generic constants depend on fixed Z,E and precede the input eigenvector; representative/L/R and amplitude budgets precede all spin, scale, chart, unit-center and derivative-word parameters. The displayed common radius depends on M,A through Q and is independent of the amplitude, derivative order and center.",
+    "radius_geometry": "For every point in the closed coordinate box of halfwidth 1/1024, the actual norm ball of radius 1/1024 lies inside the open box of halfwidth 1/512 by coordinate absolute value <= the product norm and the triangle inequality. The proof does not identify coordinate rectangles with norm balls.",
+    "radius_series": "The exact positive common radius is min(1/1024,(7*Q)^(-1)). HasFPowerSeriesOnBall is over the real scalar field and uses the literal derivative Taylor coefficients factorialFrechetSeries f x. No complex-polydisc or physical-distance descent is claimed.",
+    "volume_constant": "V is the actual finite product-volume measure of the closed radius-2 ball centered at zero in the 4+3 physical coordinate space; it is used as a uniform upper bound for the small source-box volumes. The manuscript does not equate V with a source-box volume.",
+    "evidence_and_limits": "The manuscript discloses pinned cache use, modules outside isolated rebuild v20, standard-three axioms and unresolved descent/global approximation/solver/complexity/full-T obligations. The quoted pointwise checkpoint hash matches the current immutable file."
+  },
+  "actions": "Read-only mathematical-source/statement/manuscript review and hash verification, then creation of this new review record. No source edit, compiler invocation or audit rerun.",
+  "additional_source_read": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSUniformSourceVolume_v1.lean",
+    "sha256": "7799797f266f3fdc4215a7d41e129a874a73a4b67a93bb0ac9d4978865c5354a"
+  }
+}

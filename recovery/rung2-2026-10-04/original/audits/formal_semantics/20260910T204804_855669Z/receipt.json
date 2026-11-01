@@ -1,0 +1,87 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v1.py",
+  "declaration_discovery_sha256": "a48b56bfec450f43f92d9b4d29aca6973d795edaad247287ea934c7369aac290",
+  "auditor_sha256": "ca3fa65e7331f8b46f82edbee9091a6f8c442c03321052a43ab1923d96b414d6",
+  "timestamp_utc": "20260910T204804_855669Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T204804_855669Z/ExpandedStatements_v5.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T204804_855669Z/ExpandedStatements_v5.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.292200416,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "934a062b8fca2b5344de6962221ba6a197db0bebc11514291fe5d0908ae92779",
+  "audit_log_sha256": "f2a2e4a2fab3773132d730b602dd469d65b8b80b705e460ffba9642b97267ca2",
+  "module_records": [
+    {
+      "module": "EpsilonNuclearKSPotential_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/EpsilonNuclearKSPotential_v1.lean",
+      "source_sha256": "396a944df796333081d80593910c20d4fa623cf374f0a835810aca5809a1540b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/EpsilonNuclearKSPotential_v1.olean",
+      "object_sha256": "e655c75a4455b47b9b406fd5df34f8800e0b94468b81b7dc74c7400a51dff319",
+      "declarations": [
+        "epsilonNuclearKSPotential",
+        "nuclearKSPotential_energy_affine",
+        "epsilonNuclearKSPotential_energy_affine",
+        "epsilonNuclearKSPotential_eq_coulomb_scaled",
+        "epsilonNuclearKSPotential_on_zero",
+        "epsilonNuclearKSPotential_contDiffAt"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "EpsilonPairKSPotential_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/EpsilonPairKSPotential_v1.lean",
+      "source_sha256": "8d8bdd3685045ea2a0ecb038cc3dfdc37b0ccb673c0b95d00e5f965a45314a6c",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/EpsilonPairKSPotential_v1.olean",
+      "object_sha256": "53311cef09c9b6ebe1b19e530d433e34427515b151ab7240422b818de847c202",
+      "declarations": [
+        "epsilonPairKSPotential",
+        "pairKSPotential_energy_affine",
+        "epsilonPairKSPotential_energy_affine",
+        "epsilonPairKSPotential_eq_coulomb_scaled",
+        "epsilonPairKSPotential_on_zero",
+        "epsilonPairKSPotential_contDiffAt"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.epsilonNuclearKSPotential: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.nuclearKSPotential_energy_affine: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_energy_affine: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_eq_coulomb_scaled: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_on_zero: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_contDiffAt: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonPairKSPotential: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.pairKSPotential_energy_affine: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonPairKSPotential_energy_affine: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonPairKSPotential_eq_coulomb_scaled: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonPairKSPotential_on_zero: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.epsilonPairKSPotential_contDiffAt: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.epsilonNuclearKSPotential",
+    "TheoremT.Continuum.nuclearKSPotential_energy_affine",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_energy_affine",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_eq_coulomb_scaled",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_on_zero",
+    "TheoremT.Continuum.epsilonNuclearKSPotential_contDiffAt",
+    "TheoremT.Continuum.epsilonPairKSPotential",
+    "TheoremT.Continuum.pairKSPotential_energy_affine",
+    "TheoremT.Continuum.epsilonPairKSPotential_energy_affine",
+    "TheoremT.Continuum.epsilonPairKSPotential_eq_coulomb_scaled",
+    "TheoremT.Continuum.epsilonPairKSPotential_on_zero",
+    "TheoremT.Continuum.epsilonPairKSPotential_contDiffAt"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0
+}

@@ -1,0 +1,388 @@
+@TheoremT.Continuum.productMollifiedWord.{u_1, u_2,
+    u_3} : {Y : Type u_1} →
+  {T : Type u_2} →
+    [inst : NormedAddCommGroup.{u_1} Y] →
+      [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] →
+        [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _] →
+          [inst_3 : MeasurableSpace.{u_1} Y] →
+            [inst_4 : @BorelSpace.{u_1} Y _ _] →
+              [inst_5 : NormedAddCommGroup.{u_2} T] →
+                [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] →
+                  [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _] →
+                    [inst_8 : MeasurableSpace.{u_2} T] →
+                      [inst_9 : @BorelSpace.{u_2} T _ _] →
+                        {ι : Type u_3} →
+                          (dirs : ι → Prod.{u_1, u_2} Y T) →
+                            (D :
+                                List.{u_3} ι →
+                                  @Subtype.{(max u_1 u_2) + 1}
+                                    (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                    fun
+                                      (x :
+                                        @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+                                    @Membership.mem.{max u_1 u_2, max u_1 u_2}
+                                      (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                      (@AddSubgroup.{max u_1 u_2}
+                                        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                        _)
+                                      _
+                                      (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+                                        (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2}
+                                          (Prod.{u_1, u_2} Y T) _)
+                                        _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                                        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                      x) →
+                              (n : Nat) → (w : List.{u_3} ι) → Prod.{u_1, u_2} Y T → Complex
+@TheoremT.Continuum.productMollifiedWordLp.{u_1, u_2,
+    u_3} : {Y : Type u_1} →
+  {T : Type u_2} →
+    [inst : NormedAddCommGroup.{u_1} Y] →
+      [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] →
+        [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _] →
+          [inst_3 : MeasurableSpace.{u_1} Y] →
+            [inst_4 : @BorelSpace.{u_1} Y _ _] →
+              [inst_5 : NormedAddCommGroup.{u_2} T] →
+                [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] →
+                  [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _] →
+                    [inst_8 : MeasurableSpace.{u_2} T] →
+                      [inst_9 : @BorelSpace.{u_2} T _ _] →
+                        {ι : Type u_3} →
+                          (D :
+                              List.{u_3} ι →
+                                @Subtype.{(max u_1 u_2) + 1}
+                                  (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                    (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                  fun
+                                    (x :
+                                      @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+                                  @Membership.mem.{max u_1 u_2, max u_1 u_2}
+                                    (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                    (@AddSubgroup.{max u_1 u_2}
+                                      (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                      _)
+                                    _
+                                    (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+                                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+                                        _)
+                                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                                      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                    x) →
+                            (n : Nat) →
+                              (w : List.{u_3} ι) →
+                                @Subtype.{(max u_1 u_2) + 1}
+                                  (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                    (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                  fun
+                                    (x :
+                                      @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+                                  @Membership.mem.{max u_1 u_2, max u_1 u_2}
+                                    (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                    (@AddSubgroup.{max u_1 u_2}
+                                      (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                                        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                      _)
+                                    _
+                                    (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+                                      (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T)
+                                        _)
+                                      _ (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+                                      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+                                    x
+@TheoremT.Continuum.productMollifiedWord_contDiff.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (D :
+    List.{u_3} ι →
+      @Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+  (n : Nat) (w : List.{u_3} ι),
+  @ContDiff.{0, max u_2 u_1, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ Complex _ _
+    (@WithTop.some.{0} ENat (@Top.top.{0} ENat _))
+    (@TheoremT.Continuum.productMollifiedWord.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι dirs D n w)
+@TheoremT.Continuum.productMollifiedWord_directional.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (D :
+    List.{u_3} ι →
+      @Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+  (n : Nat) (w : List.{u_3} ι) (i : ι) (p : Prod.{u_1, u_2} Y T),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{max (u_1 + 1) (u_2 + 1), max (u_1 + 1) (u_2 + 1), 1}
+      (@ContinuousLinearMap.{0, 0, max u_2 u_1, 0} Real Real _ _ (@RingHom.id.{0} Real _) (Prod.{u_1, u_2} Y T) _ _
+        Complex _ _ _ _)
+      (Prod.{u_1, u_2} Y T) (fun (x : Prod.{u_1, u_2} Y T) => Complex) _
+      (@fderiv.{0, max u_2 u_1, 0} Real _ (Prod.{u_1, u_2} Y T) _ _ _ Complex _ _ _
+        (@TheoremT.Continuum.productMollifiedWord.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι dirs D n w) p)
+      (dirs i))
+    (@TheoremT.Continuum.productMollifiedWord.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι dirs D n
+      (@List.cons.{u_3} ι i w) p)
+@TheoremT.Continuum.productMollifiedWordLp_ae.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3} (dirs : ι → Prod.{u_1, u_2} Y T)
+  (D :
+    List.{u_3} ι →
+      @Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+  {m : Nat}
+  (hD :
+    ∀ (w : List.{u_3} ι) (i : ι),
+      @LT.lt.{0} Nat _ (@List.length.{u_3} ι w) m →
+        @TheoremT.Continuum.WeakProductL2Directional.{u_1, u_2} Y T _ _ _ _ _ _ _ _ _ _ (D w)
+          (D (@List.cons.{u_3} ι i w)) (dirs i))
+  (n : Nat) (w : List.{u_3} ι) (hw : @LE.le.{0} Nat _ (@List.length.{u_3} ι w) m),
+  @Filter.EventuallyEq.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex
+    (@MeasureTheory.ae.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} Y T)
+      (@MeasureTheory.Measure.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _ _
+      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+    (@MeasureTheory.AEEqFun.cast.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _
+      (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+      (@Subtype.val.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        (fun
+            (x :
+              @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+          @Membership.mem.{max u_1 u_2, max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            (@AddSubgroup.{max u_1 u_2}
+              (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+                (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+              _)
+            _
+            (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+              (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+              (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            x)
+        (@TheoremT.Continuum.productMollifiedWordLp.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι D n w)))
+    (@TheoremT.Continuum.productMollifiedWord.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι dirs D n w)
+@TheoremT.Continuum.productMollifiedWordLp_tendsto.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3}
+  (D :
+    List.{u_3} ι →
+      @Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+  (w : List.{u_3} ι),
+  @Filter.Tendsto.{0, max u_2 u_1} Nat
+    (@Subtype.{(max u_1 u_2) + 1}
+      (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+        (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+      fun
+        (x :
+          @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+      @Membership.mem.{max u_1 u_2, max u_1 u_2}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        (@AddSubgroup.{max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          _)
+        _
+        (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+          (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+          (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        x)
+    (fun (n : Nat) => @TheoremT.Continuum.productMollifiedWordLp.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι D n w)
+    (@Filter.atTop.{0} Nat _)
+    (@nhds.{max u_1 u_2}
+      (@Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+      _ (D w))
+@TheoremT.Continuum.productMollifiedWordLp_norm_le.{u_1, u_2,
+    u_3} : ∀ {Y : Type u_1} {T : Type u_2} [inst : NormedAddCommGroup.{u_1} Y]
+  [inst_1 : @InnerProductSpace.{0, u_1} Real Y _ _] [inst_2 : @FiniteDimensional.{0, u_1} Real Y _ _ _]
+  [inst_3 : MeasurableSpace.{u_1} Y] [inst_4 : @BorelSpace.{u_1} Y _ _] [inst_5 : NormedAddCommGroup.{u_2} T]
+  [inst_6 : @InnerProductSpace.{0, u_2} Real T _ _] [inst_7 : @FiniteDimensional.{0, u_2} Real T _ _ _]
+  [inst_8 : MeasurableSpace.{u_2} T] [inst_9 : @BorelSpace.{u_2} T _ _] {ι : Type u_3}
+  (D :
+    List.{u_3} ι →
+      @Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+  (n : Nat) (w : List.{u_3} ι),
+  @LE.le.{0} Real _
+    (@Norm.norm.{max u_2 u_1}
+      (@Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+      _ (@TheoremT.Continuum.productMollifiedWordLp.{u_1, u_2, u_3} Y T _ _ _ _ _ _ _ _ _ _ ι D n w))
+    (@Norm.norm.{max u_1 u_2}
+      (@Subtype.{(max u_1 u_2) + 1}
+        (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+          (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+        fun
+          (x :
+            @MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _)) =>
+        @Membership.mem.{max u_1 u_2, max u_1 u_2}
+          (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          (@AddSubgroup.{max u_1 u_2}
+            (@MeasureTheory.AEEqFun.{max u_1 u_2, 0} (Prod.{u_1, u_2} Y T) Complex _ _
+              (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+            _)
+          _
+          (@MeasureTheory.Lp.{0, max u_1 u_2} (Prod.{u_1, u_2} Y T) Complex
+            (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _) _
+            (@OfNat.ofNat.{0} ENNReal (nat_lit 2) _)
+            (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} Y T) _))
+          x)
+      _ (D w))
+'TheoremT.Continuum.productMollifiedWord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productMollifiedWordLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productMollifiedWord_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productMollifiedWord_directional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productMollifiedWordLp_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productMollifiedWordLp_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.productMollifiedWordLp_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]

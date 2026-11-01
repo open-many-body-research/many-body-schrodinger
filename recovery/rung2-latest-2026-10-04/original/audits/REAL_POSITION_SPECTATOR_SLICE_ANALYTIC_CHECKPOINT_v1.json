@@ -1,0 +1,107 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "created_utc": "2026-09-11T03:20:43.526244+00:00",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "module_records": [
+    {
+      "module": "RealFixedSpectatorSliceAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealFixedSpectatorSliceAnalytic_v1.lean",
+      "source_sha256": "bfd54862de4b2afa0131c4db06413e05b3c2b84bdb4fcfca803c548f358fafbe",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RealFixedSpectatorSliceAnalytic_v1.olean",
+      "object_sha256": "69af5320931f24016a31149e6fe04a1bbb3208c6e8a9c72e9609f5e41e07b95f",
+      "declarations": [
+        "real_fixed_spectator_slice_analyticAt",
+        "real_fixed_spectator_slice_analyticOnNhd"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "RealPositionSpectatorSliceAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/RealPositionSpectatorSliceAnalytic_v1.lean",
+      "source_sha256": "51aa95726d6e855c3191c3529778423603fb4c9c38ae971806c19018a7c1fddf",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/RealPositionSpectatorSliceAnalytic_v1.olean",
+      "object_sha256": "ac93d582ca9da4f70f30855511aec5ef666659d03a190be5717912f6612ea9fb",
+      "declarations": [
+        "complex_coordinates_norm_le_euclidean",
+        "real_position_fixed_spectator_slice_analyticAt",
+        "real_position_fixed_spectator_slice_analyticOnNhd",
+        "real_position_fixed_spectator_slice_analyticOnNhd_ball"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "HomogeneousSpectatorRealSliceAnalytic_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorRealSliceAnalytic_v1.lean",
+      "source_sha256": "294b9476bd516ea66273e663f1b2cdab78ec14b58d321599abe0f7b3156e7606",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorRealSliceAnalytic_v1.olean",
+      "object_sha256": "8091d2a1684e303b87c272d72676eae83613ee7a5e562bd4ea1e5b4bd4331f67",
+      "declarations": [
+        "homogeneous_spectator_real_slice_analyticOnNhd",
+        "homogeneous_spectator_real_position_slice_analyticOnNhd",
+        "homogeneous_spectator_real_position_slice_analyticOnNhd_ball"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compiler_receipts": [
+    {
+      "module": "RealFixedSpectatorSliceAnalytic_v1",
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/RealFixedSpectatorSliceAnalytic_v1-20260911T031218_317884Z.json",
+      "receipt_sha256": "315ded52d94f66ed5c80948352498b08e819c66d38937ce478b37bfbaee611e2"
+    },
+    {
+      "module": "RealPositionSpectatorSliceAnalytic_v1",
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/RealPositionSpectatorSliceAnalytic_v1-20260911T031318_978049Z.json",
+      "receipt_sha256": "227aea5bac48a1789498b74265510fdbb6ee693987fe794aba82640738a9cc17"
+    },
+    {
+      "module": "HomogeneousSpectatorRealSliceAnalytic_v1",
+      "receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/HomogeneousSpectatorRealSliceAnalytic_v1-20260911T031341_610644Z.json",
+      "receipt_sha256": "358b914e1c3301b533d91fa708888bee5bb14023061478adf6a8e12bfd1e3d88"
+    }
+  ],
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T031356_024109Z/receipt.json",
+  "strict_receipt_sha256": "74fa057b4d50148d53f2749506e0e3a9d2a4094c94a63b09db336c202e304f67",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T031356_024109Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "f59999634d06740ec3d4beb22b6eee95b8f0525269083a543d0e8f4e191986e1",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "A jointly complex-analytic finite-coordinate function yields a real-analytic literal coordinatewise-real fixed-spectator slice; the generic pointwise theorem needs only analyticity at the actual slice image.",
+    "The actual complex coordinate Pi norm of a Euclidean vector is bounded above by its Euclidean norm. Equality between the different norms is not assumed.",
+    "For D,S>=0 and a fixed actual Euclidean spectator T satisfying S*norm(T)<1, joint complex analyticity on D*norm(spatial Pi block)<1 and S*norm(spectator Pi block)<1 implies real analyticity of the literal slice on the actual Position domain D*norm(X)<1.",
+    "For D>0 the slice is real analytic on the actual Euclidean Position ball with center zero and radius inverse D. No dimension-dependent radius loss is introduced.",
+    "For A(m,gamma) homogeneous of degree m with actual coefficient L1 <= M*D^m*S^(sum gamma), M,D,S>=0, the actual homogeneousSpectatorSum has these real-slice conclusions with the joint analyticity premise discharged."
+  ],
+  "semantic_checks": [
+    "Position is the existing EuclideanSpace Real (Fin 3) alias. Fixed spectators are actual EuclideanSpace Real (Fin d); d=3 specializes to Position.",
+    "The generic finite Pi coordinate slice is also provided but does not replace the Euclidean Position theorem.",
+    "The coordinate maps are actual continuous linear coordinate projections composed with Complex.ofRealCLM. The complex-to-real step uses analytic scalar restriction and composition, not an assumed slice-analyticity hypothesis.",
+    "For Euclidean inputs, coordinate supremum norms are controlled by Euclidean norms with explicit D,S nonnegativity.",
+    "The domain conclusions include D=0 and S=0; the inverse-radius ball theorem explicitly requires D>0. Spectator dimension zero is included.",
+    "The direct series consumers use the already proved literal pair-index series and anisotropic analyticity theorem. They do not assume reindexing or the desired real conclusion."
+  ],
+  "review_disclosure": "Read all three complete final source files, all nine exact expanded declarations, every axiom report and the full strict receipt. This is author verification; an independent review of the complete dependency chain is not claimed.",
+  "development": "The first Pi-slice draft required explicit composition-map matching and set-membership reduction before compilation passed. The Euclidean and direct-series modules passed their first compiler runs. Failed and successful logs are retained. All compiler and auditor jobs terminal.",
+  "limits": [
+    "This discharges the real-analytic slicing prerequisite for collision-centered compatibility; it does not itself prove collision decomposition uniqueness, overlap compatibility or instantiate a physical eigenfunction family.",
+    "No full Rung 2, physical spectral theorem, executable solver or complexity claim is made.",
+    "Pinned Lean 4.34.0-rc2 and Mathlib d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9 caches were reused; no isolated source dependency rebuild is claimed."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "Only new continuation sources and evidence records written; previously PASS and historical artifacts preserved."
+  }
+}

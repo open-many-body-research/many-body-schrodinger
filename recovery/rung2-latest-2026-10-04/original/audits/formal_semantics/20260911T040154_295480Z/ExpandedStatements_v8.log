@@ -1,0 +1,132 @@
+TheoremT.Continuum.nuclearDistanceRealZ : (r s u : Real) → Real
+TheoremT.Continuum.nuclearDistanceRealW : (r s u : Real) → Real
+TheoremT.Continuum.nuclearDistanceRealSpatial : (r s u : Real) → TheoremT.Continuum.Position
+TheoremT.Continuum.nuclearDistanceRealSpectator : (s : Real) → TheoremT.Continuum.Position
+TheoremT.Continuum.nuclearDistanceRealZ_complexification : ∀ (r s u : Real),
+  @Eq.{1} Complex
+    (TheoremT.Continuum.nuclearDistanceAxisZ
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (Complex.ofReal r)
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (Complex.ofReal s)
+          (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _) (Complex.ofReal u)
+            (@Matrix.vecEmpty.{0} Complex)))))
+    (Complex.ofReal (TheoremT.Continuum.nuclearDistanceRealZ r s u))
+TheoremT.Continuum.nuclearDistanceRealW_complexification : ∀ (r s u : Real),
+  @Eq.{1} Complex
+    (TheoremT.Continuum.nuclearDistanceAxisW
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 2) _) (Complex.ofReal r)
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (Complex.ofReal s)
+          (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) _) (Complex.ofReal u)
+            (@Matrix.vecEmpty.{0} Complex)))))
+    (Complex.ofReal (TheoremT.Continuum.nuclearDistanceRealW r s u))
+TheoremT.Continuum.nuclearDistanceReal_heron : ∀ (r s u : Real)
+  (hs : @Ne.{1} Real s (@OfNat.ofNat.{0} Real (nat_lit 0) _)),
+  @Eq.{1} Real
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ s (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (TheoremT.Continuum.nuclearDistanceRealW r s u))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+      (@HSub.hSub.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))))
+@TheoremT.Continuum.nuclearDistanceRealW_nonneg : ∀ {r s u : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hs : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s)
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hlo : @LE.le.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)) u)
+  (hhi : @LE.le.{0} Real _ u (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s)),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u)
+TheoremT.Continuum.nuclearDistanceReal_shifted_square : ∀ (r s u : Real)
+  (hs : @Ne.{1} Real s (@OfNat.ofNat.{0} Real (nat_lit 0) _)),
+  @Eq.{1} Real
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.nuclearDistanceRealW r s u)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HSub.hSub.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.nuclearDistanceRealZ r s u) s)
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ u (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+@TheoremT.Continuum.nuclearDistanceRealSpatial_norm : ∀ {r s u : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hw : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u)),
+  @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)) r
+@TheoremT.Continuum.nuclearDistanceRealSpectator_norm : ∀ {s : Real}
+  (hs : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s),
+  @Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ (TheoremT.Continuum.nuclearDistanceRealSpectator s)) s
+@TheoremT.Continuum.nuclearDistanceReal_separation_norm : ∀ {r s u : Real}
+  (hs : @Ne.{1} Real s (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hw : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u)),
+  @Eq.{1} Real
+    (@Norm.norm.{0} TheoremT.Continuum.Position _
+      (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+        (TheoremT.Continuum.nuclearDistanceRealSpatial r s u) (TheoremT.Continuum.nuclearDistanceRealSpectator s)))
+    u
+@TheoremT.Continuum.nuclearDistanceRealRepresentative_norms : ∀ {r s u : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hs : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s)
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hlo : @LE.le.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)) u)
+  (hhi : @LE.le.{0} Real _ u (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s)),
+  And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.nuclearDistanceRealW r s u))
+    (And
+      (@Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ (TheoremT.Continuum.nuclearDistanceRealSpatial r s u))
+        r)
+      (And
+        (@Eq.{1} Real (@Norm.norm.{0} TheoremT.Continuum.Position _ (TheoremT.Continuum.nuclearDistanceRealSpectator s))
+          s)
+        (@Eq.{1} Real
+          (@Norm.norm.{0} TheoremT.Continuum.Position _
+            (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+              (TheoremT.Continuum.nuclearDistanceRealSpatial r s u)
+              (TheoremT.Continuum.nuclearDistanceRealSpectator s)))
+          u)))
+@TheoremT.Continuum.nuclearDistanceRealRepresentative_configuration_norms : ∀ {r s u : Real}
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hs : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) s)
+  (hu : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) u)
+  (hlo : @LE.le.{0} Real _ (@abs.{0} Real _ _ (@HSub.hSub.{0, 0, 0} Real Real Real _ r s)) u)
+  (hhi : @LE.le.{0} Real _ u (@HAdd.hAdd.{0, 0, 0} Real Real Real _ r s)),
+  have q : TheoremT.Continuum.Configuration (@OfNat.ofNat.{0} Nat (nat_lit 2) _) :=
+    TheoremT.Continuum.nuclearKSPhysicalCoordinates
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+      (TheoremT.Continuum.nuclearDistanceRealSpatial r s u) (TheoremT.Continuum.nuclearDistanceRealSpectator s);
+  And
+    (@Eq.{1} Real
+      (@Norm.norm.{0} TheoremT.Continuum.Position _
+        (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _) q
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)))
+      r)
+    (And
+      (@Eq.{1} Real
+        (@Norm.norm.{0} TheoremT.Continuum.Position _
+          (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _) q
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+        s)
+      (@Eq.{1} Real
+        (@Norm.norm.{0} TheoremT.Continuum.Position _
+          (@HSub.hSub.{0, 0, 0} TheoremT.Continuum.Position TheoremT.Continuum.Position TheoremT.Continuum.Position _
+            (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _) q
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            (@TheoremT.Continuum.position (@OfNat.ofNat.{0} Nat (nat_lit 2) _) q
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))))
+        u))
+'TheoremT.Continuum.nuclearDistanceRealZ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealW' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpatial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpectator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealZ_complexification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealW_complexification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceReal_heron' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealW_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceReal_shifted_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpatial_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealSpectator_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceReal_separation_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealRepresentative_norms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceRealRepresentative_configuration_norms' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

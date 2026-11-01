@@ -1,0 +1,143 @@
+@TheoremT.Continuum.formalMultilinear_diagonal_eq_of_eventually.{u_1, u_2,
+    u_3} : ∀ {𝕜 : Type u_1} {E : Type u_2} {F : Type u_3} [inst : NontriviallyNormedField.{u_1} 𝕜]
+  [inst_1 : NormedAddCommGroup.{u_2} E] [inst_2 : @NormedSpace.{u_1, u_2} 𝕜 E _ _] [inst_3 : NormedAddCommGroup.{u_3} F]
+  [inst_4 : @NormedSpace.{u_1, u_3} 𝕜 F _ _] {f g : E → F}
+  {p q : @FormalMultilinearSeries.{u_1, u_2, u_3} 𝕜 E F _ _ _ _ _ _ _ _ _ _ _} {x : E}
+  (hp : @HasFPowerSeriesAt.{u_1, u_2, u_3} 𝕜 E F _ _ _ _ _ f p x)
+  (hq : @HasFPowerSeriesAt.{u_1, u_2, u_3} 𝕜 E F _ _ _ _ _ g q x)
+  (heq : @Filter.EventuallyEq.{u_2, u_3} E F (@nhds.{u_2} E _ x) f g) (n : Nat) (y : E),
+  @Eq.{u_3 + 1} F
+    (@DFunLike.coe.{max (u_2 + 1) (u_3 + 1), u_2 + 1, u_3 + 1}
+      (@ContinuousMultilinearMap.{u_1, 0, u_2, u_3} 𝕜 (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _) ((i : Fin n) → E)
+      (fun (x : (i : Fin n) → E) => F) _ (p n) fun (x : Fin n) => y)
+    (@DFunLike.coe.{max (u_2 + 1) (u_3 + 1), u_2 + 1, u_3 + 1}
+      (@ContinuousMultilinearMap.{u_1, 0, u_2, u_3} 𝕜 (Fin n) (fun (_i : Fin n) => E) F _ _ _ _ _ _ _) ((i : Fin n) → E)
+      (fun (x : (i : Fin n) → E) => F) _ (q n) fun (x : Fin n) => y)
+@TheoremT.Continuum.realHomogeneousPolynomialSeriesSum.{u_1} : {σ : Type u_1} →
+  (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _) → (x : σ → Real) → Complex
+@TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries.{u_1} : {σ : Type u_1} →
+  [Fintype.{u_1} σ] →
+    (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _) →
+      (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) →
+        @FormalMultilinearSeries.{0, u_1, 0} Real (σ → Real) Complex _ _ _ _ _ _ _ _ _ _ _
+@TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_diagonal.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) (n : Nat) (x : σ → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_1, 0} Real (Fin n) (fun (_i : Fin n) => σ → Real) Complex _ _ _ _ _ _ _)
+      ((i : Fin n) → σ → Real) (fun (x : (i : Fin n) → σ → Real) => Complex) _
+      (@TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries.{u_1} σ _ Q hQ n) fun (x_1 : Fin n) => x)
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => Complex.ofReal (x i)) (Q n))
+@TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_hasFPowerSeriesAt.{u_1} : ∀ {σ : Type u_1}
+  [inst : Fintype.{u_1} σ] (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) {C B : Real}
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n))),
+  @HasFPowerSeriesAt.{0, u_1, 0} Real (σ → Real) Complex _ _ _ _ _
+    (@TheoremT.Continuum.realHomogeneousPolynomialSeriesSum.{u_1} σ Q)
+    (@TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries.{u_1} σ _ Q hQ)
+    (@OfNat.ofNat.{u_1} (σ → Real) (nat_lit 0) _)
+@TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_eventually.{u_1} : ∀ {σ : Type u_1}
+  [Fintype.{u_1} σ] (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) {C B : Real}
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n)))
+  (L : @ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (σ → Real) _ _ (σ → Real) _ _ _ _)
+  (hi :
+    @Filter.EventuallyEq.{u_1, 0} (σ → Real) Complex
+      (@nhds.{u_1} (σ → Real) _ (@OfNat.ofNat.{u_1} (σ → Real) (nat_lit 0) _))
+      (@Function.comp.{u_1 + 1, u_1 + 1, 1} (σ → Real) (σ → Real) Complex
+        (@TheoremT.Continuum.realHomogeneousPolynomialSeriesSum.{u_1} σ Q)
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (σ → Real) _ _ (σ → Real) _ _ _
+            _)
+          (σ → Real) (fun (x : σ → Real) => σ → Real) _ L))
+      (@TheoremT.Continuum.realHomogeneousPolynomialSeriesSum.{u_1} σ Q))
+  (n : Nat) (x : σ → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) =>
+        Complex.ofReal
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+            (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (σ → Real) _ _ (σ → Real) _ _
+              _ _)
+            (σ → Real) (fun (x : σ → Real) => σ → Real) _ L x i))
+      (Q n))
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => Complex.ofReal (x i)) (Q n))
+@TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_hasSum.{u_1} : ∀ {σ : Type u_1}
+  [Fintype.{u_1} σ] (Q : Nat → @MvPolynomial.{u_1, 0} σ Complex _)
+  (hQ : ∀ (n : Nat), @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ (Q n) n) {C B : Real}
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hL :
+    ∀ (n : Nat),
+      @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ (Q n))
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ B n)))
+  (F : (σ → Real) → Complex)
+  (L : @ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (σ → Real) _ _ (σ → Real) _ _ _ _)
+  (hsum :
+    @Filter.Eventually.{u_1} (σ → Real)
+      (fun (x : σ → Real) =>
+        @HasSum.{0, 0} Complex Nat _ _
+          (fun (n : Nat) =>
+            @DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+              (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+              (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => Complex.ofReal (x i)) (Q n))
+          (F x) (SummationFilter.unconditional.{0} Nat))
+      (@nhds.{u_1} (σ → Real) _ (@OfNat.ofNat.{u_1} (σ → Real) (nat_lit 0) _)))
+  (hi :
+    @Filter.EventuallyEq.{u_1, 0} (σ → Real) Complex
+      (@nhds.{u_1} (σ → Real) _ (@OfNat.ofNat.{u_1} (σ → Real) (nat_lit 0) _))
+      (@Function.comp.{u_1 + 1, u_1 + 1, 1} (σ → Real) (σ → Real) Complex F
+        (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+          (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (σ → Real) _ _ (σ → Real) _ _ _
+            _)
+          (σ → Real) (fun (x : σ → Real) => σ → Real) _ L))
+      F)
+  (n : Nat) (x : σ → Real),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) =>
+        Complex.ofReal
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1}
+            (@ContinuousLinearMap.{0, 0, u_1, u_1} Real Real _ _ (@RingHom.id.{0} Real _) (σ → Real) _ _ (σ → Real) _ _
+              _ _)
+            (σ → Real) (fun (x : σ → Real) => σ → Real) _ L x i))
+      (Q n))
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (i : σ) => Complex.ofReal (x i)) (Q n))
+'TheoremT.Continuum.formalMultilinear_diagonal_eq_of_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realHomogeneousPolynomialSeriesSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realHomogeneousPolynomialMultilinearSeries_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_series_real_linear_invariant_of_hasSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

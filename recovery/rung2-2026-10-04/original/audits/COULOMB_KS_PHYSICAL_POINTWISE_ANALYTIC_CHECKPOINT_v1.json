@@ -1,0 +1,215 @@
+{
+  "schema": "theorem-t-continuation-checkpoint-v1",
+  "timestamp_utc": "2026-09-11T01:22:48.032954+00:00",
+  "status": "PASS_ACTUAL_SCALAR_COULOMB_KS_POINTWISE_ANALYTIC",
+  "evidence_category": "Fully formalized local lifted analytic theorem for actual scalar continuum graph eigenfunctions with explicitly supplied continuous locally Lipschitz representative data.",
+  "exact_result": "For each real Z,E there exist C_H,M,A>=1 before the scalar Coulomb graph eigenfunction, representative g, Lipschitz constant L, scale epsilon, all two nuclear/pair charts and unit spectator center. The actual normalized physical KS pullback is C-infinity and real analytic on the coordinate rectangle half-width1/512 and every physical word of length k is bounded by P*Q^k*k!, with Q=6144*C*A and P=Ebox*12*C*A*(F0+498*sqrt(W))*Q^11*11!, C=commonKSBoxFactorialConstant M and Ebox=(257/16)^7. F0=M*norm(g(0))*sqrt(sourceVolume), W=(L^2+norm(g(0))^2)*C_H. The literal derivative Taylor series has common radius min(1/1024,(7*Q)^(-1)) at every point of the smaller closed rectangle.",
+  "primary_endpoints": [
+    "TheoremT.Continuum.physicalKSBoxFactorialData_smooth_pointwise",
+    "TheoremT.Continuum.physicalKSBoxFactorialData_analytic",
+    "TheoremT.Continuum.scalar_coulomb_all_physical_box_pointwise",
+    "TheoremT.Continuum.physicalKSBoxPointwiseData_common_radius"
+  ],
+  "obligations_discharged": [
+    "Concrete physical box/cutoff instantiation of the actual R24 weak-profile embedding",
+    "True same-base C-infinity regularity and pointwise word estimates from actual weak jets",
+    "Exact derivative reserve11 and binomial factorial absorption",
+    "Uniformity of rate and box constant across scale, chart, unit center and solution",
+    "Actual scalar Coulomb graph coupling in all three physical charts",
+    "Literal Frechet derivative power-series convergence with explicit common interior radius"
+  ],
+  "mathematical_changes": [
+    "Recovered smoothness of the actual continuous base from the previously established coherent weak jet family; no continuous higher weak representatives are assumed.",
+    "Used exact physical seven-coordinate rectangle, not an incorrectly identified norm ball.",
+    "Derived rational Ebox=(257/16)^7 and Q=6144CA, preserving amplitude dependence on physical solution data.",
+    "Consumed the proved actual-coordinate-to-Frechet operator estimate and Taylor convergence, discharging their smoothness antecedent."
+  ],
+  "module_records": [
+    {
+      "module": "FactorialReserveAbsorption_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FactorialReserveAbsorption_v1.lean",
+      "source_sha256": "d0a2159b9f7f621838362e7ed72523809aad7e69debb642a6602015870a6a5bd",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FactorialReserveAbsorption_v1.olean",
+      "object_sha256": "38500cef8268169f34d9f8f2ea9de4180ad730805ac785fefe90c6c79d0587ac",
+      "declarations": [
+        "factorial_add_le_two_pow",
+        "factorial_reserve_absorption"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "FixedBoxSevenGeometry_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FixedBoxSevenGeometry_v1.lean",
+      "source_sha256": "52190186c2c03b41db6b4922fab14fec4b47796e8beafde7050115dd0067e09e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/FixedBoxSevenGeometry_v1.olean",
+      "object_sha256": "190489663d059f54742688f6328fef21a52536066de53d248915b11ff7236284",
+      "declarations": [
+        "seven_symm_coordinate",
+        "fixedSevenLower",
+        "fixedSevenUpper",
+        "fixedSevenOpen",
+        "fixedSeven_lower_lt_upper",
+        "fixedSeven_closed_iff",
+        "fixedSeven_open_isOpen",
+        "fixedSeven_open_subset_closed",
+        "fixedSeven_open_image",
+        "fixedSeven_maps_plateau",
+        "fixedSeven_maps_norm_region",
+        "fixedSevenCutoff",
+        "fixedSevenCutoff_data",
+        "fixedSevenEvaluationConstant",
+        "fixedSevenEvaluationConstant_pos",
+        "fixedSeven_evaluation_constant"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSBoxPointwiseFactorial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxPointwiseFactorial_v1.lean",
+      "source_sha256": "ab9611be060253c3582b2936613ac082c8dfa9d8ddc9c4c4e739d9bc96806ba9",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSBoxPointwiseFactorial_v1.olean",
+      "object_sha256": "82f6d290de4e89c681d1e1c855a181b253140cd5780f2b5f2a7773e666e8071f",
+      "declarations": [
+        "physicalKSPointwiseRate",
+        "physicalKSPointwiseAmplitude",
+        "physicalKSPointwiseRate_pos",
+        "physicalKSPointwiseAmplitude_nonneg",
+        "physicalKSBoxFactorialData_smooth_pointwise",
+        "physicalKSBoxFactorialData_analytic"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "CoulombKSPhysicalPointwise_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombKSPhysicalPointwise_v1.lean",
+      "source_sha256": "b448386dab201911bd2b87dd9ff6af2247c8ba36910a56196fbe33da46a79534",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoulombKSPhysicalPointwise_v1.olean",
+      "object_sha256": "e02779ee7d6e666571e16c8065379e3431c34e87c4ca34d09ddddf41a58b7ab5",
+      "declarations": [
+        "PhysicalKSBoxPointwiseData",
+        "physicalKSBoxFactorialData_to_pointwise",
+        "scalar_coulomb_all_physical_box_pointwise"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSBoxAnalyticRadius_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSBoxAnalyticRadius_v1.lean",
+      "source_sha256": "c6b0ce006f72bddb92fbec7e54387c451dba0e613d7eb334a3d5f6bc4bc1cb8a",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSBoxAnalyticRadius_v1.olean",
+      "object_sha256": "4ce1328051ec1bf5fa6add642e8e3a841cdcc9073347e9334eb2ea4bc2f775b3",
+      "declarations": [
+        "physical_boxCoordinate_abs_le_norm",
+        "physical_fixed_box_ball_room",
+        "physicalKSBoxPointwiseData_common_radius"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_audit_receipts": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011541_954025Z/receipt.json",
+      "sha256": "b06711f1c9774ff1853aea9edaf94e714712d9bebb43d1667e5c14429f23bdd2"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011521_802496Z/receipt.json",
+      "sha256": "d44e067f702560cdb410156a622195601d22c928b5a453009c869c73b276c353"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011745_657701Z/receipt.json",
+      "sha256": "0168946019c5531c9320605242c0bb909c408c6c904d7653b8ceea00b8d2895f"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011939_422759Z/receipt.json",
+      "sha256": "af0f6f252ce3ca422bd770beb6f253857655b385de29c99e1e57e6dc8c75b447"
+    }
+  ],
+  "total_declarations": 30,
+  "source_and_expanded_review": {
+    "agent": "/root/weak_pointwise_limit",
+    "all_owned_final_source_bodies_read": true,
+    "all_owned_expanded_statement_and_axiom_log_lines_read": true,
+    "geometry_source_read": true,
+    "geometry_all_expanded_lines_read_by_child": true,
+    "geometry_focused_independent_review_read": true,
+    "owned_log_lines": {
+      "20260911T011541_954025Z": 28,
+      "20260911T011745_657701Z": 422,
+      "20260911T011939_422759Z": 71
+    },
+    "standard_axioms_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": []
+  },
+  "focused_reviews": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/FIXED_BOX_SEVEN_GEOMETRY_FOCUSED_REVIEW_v1.json",
+      "sha256": "51e54c4fffae8986da495cdcc21d2ca4de6681e25bd07bab149ba351ff4a0213"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_POINTWISE_FACTORIAL_FOCUSED_REVIEW_v1.json",
+      "sha256": "45acf4d2180852d63b1149bc8cd92a8519f31458b6e64cbb403e16fc4ab1a5c6"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/PHYSICAL_KS_ANALYTIC_RADIUS_FOCUSED_REVIEW_v1.json",
+      "sha256": "29bb4f4f30feffe57abe043997f5bfcd2c3520e1eda614dd5327c82601f84aab"
+    }
+  ],
+  "prior_checkpoints": [
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/GRUSHIN_ACTUAL_PROFILE_POINTWISE_EMBEDDING_CHECKPOINT_v1.json",
+      "sha256": "06b7eee49a8a68746e14700fdcecfad71415066630ed7ac72f7674df595e4ea7"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/FIXED_BOX_SEVEN_GEOMETRY_CHECKPOINT_v1.json",
+      "sha256": "93174a482f7eb3131e5267ec5d32dbc9a63922ceb16563d765ea6a1bccded410"
+    },
+    {
+      "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/COULOMB_KS_PHYSICAL_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "6e3d16e6c823f420c644eecffade7f5fc9763eef447812d0cc111095875e02a7"
+    }
+  ],
+  "manuscript": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/R24_PHYSICAL_KS_POINTWISE_ANALYTIC_v1.md",
+    "sha256": "13ca3b5332b2483adac7ee74aebe0df70be009b9d309b22710565f8821683fad"
+  },
+  "scope_limits": [
+    "The final local scalar graph theorem assumes the actual input eigenfunction and stated continuous/Lipschitz representative; it neither assumes lifted analytic regularity nor proves eigenfunction existence by itself.",
+    "Amplitude P depends on L and norm(g(0)); only C_H,M,A and rate Q are chosen independently of those solution data.",
+    "The common-radius helper accepts the derived pointwise package; no analyticity or common-radius premise is used in its proof.",
+    "Full-spin/ground coupling is owned by root and not claimed by these sources.",
+    "No quantitative KS descent, global H2 approximation, exact dictionary theorem, continuum certificate algorithm, complexity result or full Theorem T is claimed."
+  ],
+  "errors_and_consequences": [
+    "An uncompiled draft used numeral projection syntax 11.factorial; the parser rejected it. Corrected to (11 : Nat).factorial before any PASS. No mathematical statement was weakened.",
+    "Two unnecessarySeqFocus linter warnings remain in the successful pointwise source; they are stylistic and do not indicate incomplete proofs."
+  ],
+  "environment": {
+    "lean": "4.34.0-rc2",
+    "mathlib": "d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9",
+    "cache_disclosure": "Existing pinned dependency and continuation object caches reused; no isolated dependency source rebuild performed for this checkpoint.",
+    "auditor": "Approved version8, restricted Set.image token repair; mathematical audit guards retained."
+  },
+  "preservation": {
+    "frozen_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "all_changes_new_continuation_files": true
+  },
+  "next_active_obligation": "Root integrates full-spin/ground data; subsequent analytic frontier is actual invariant-power-series quantitative KS descent and physical compatibility, followed by global approximation.",
+  "process_state": "All owned compiler/auditor handles terminal; geometry and independent endpoint reviews complete."
+}

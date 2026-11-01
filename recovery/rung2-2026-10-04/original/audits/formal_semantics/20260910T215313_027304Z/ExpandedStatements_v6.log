@@ -1,0 +1,75 @@
+@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_perm : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {u v : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)}
+  (huv : @List.Perm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) u v)
+  {φ : @TheoremT.Continuum.WeakGrushin.Space κ _ → Real}
+  (hφ :
+    @ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space κ _) _ _ Real _ _
+      (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) φ),
+  @Eq.{1} (@TheoremT.Continuum.WeakGrushin.Space κ _ → Real)
+    (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ u φ)
+    (@TheoremT.Continuum.WeakGrushin.productCoordinateTestWord κ _ _ v φ)
+@TheoremT.Continuum.WeakGrushin.product_coordinate_family_word_perm_ae : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω) {m : Nat} {W : Real}
+  (D :
+    List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) →
+      @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hBudget :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)),
+      @LE.le.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m →
+        @TheoremT.Continuum.WeakGrushin.RegionL2Budget κ _ (D w) Ω W)
+  (hChain :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+      (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ),
+      @LT.lt.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _
+          _ _ _ _ _ _ Ω (D w) (D (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) i w))
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection κ _ _ i))
+  {u v : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)}
+  (huv : @List.Perm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) u v)
+  (hu : @LE.le.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) u) m),
+  @Filter.Eventually.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+    (fun (p : @TheoremT.Continuum.WeakGrushin.Space κ _) =>
+      @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+          (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)) _ Ω p →
+        @Eq.{1} Complex (D u p) (D v p))
+    (@MeasureTheory.ae.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space κ _)
+      (@MeasureTheory.Measure.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _) _ _
+      (@MeasureTheory.MeasureSpace.volume.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _))
+@TheoremT.Continuum.WeakGrushin.product_coordinate_family_derivative_of_perm : ∀ {κ : Type} [inst : Fintype.{0} κ]
+  [inst_1 : DecidableEq.{1} κ] {Ω : Set.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _)}
+  (hΩ : @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space κ _) _ Ω) {m : Nat} {W : Real}
+  (D :
+    List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) →
+      @TheoremT.Continuum.WeakGrushin.Space κ _ → Complex)
+  (hBudget :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)),
+      @LE.le.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m →
+        @TheoremT.Continuum.WeakGrushin.RegionL2Budget κ _ (D w) Ω W)
+  (hChain :
+    ∀ (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ))
+      (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ),
+      @LT.lt.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) w) m →
+        @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _
+          _ _ _ _ _ _ Ω (D w) (D (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) i w))
+          (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection κ _ _ i))
+  {u v : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)}
+  (i : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+  (huv :
+    @List.Perm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ)
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) i u) v)
+  (hu : @LT.lt.{0} Nat _ (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) κ) u) m),
+  @TheoremT.Continuum.ProductLocalWeakDirectional.{0, 0}
+    (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) (EuclideanSpace.{0, 0} Real κ) _ _ _ _ _ _ _
+    _ _ _ Ω (D u) (D v) (@TheoremT.Continuum.WeakGrushin.productCoordinateDirection κ _ _ i)
+'TheoremT.Continuum.WeakGrushin.productCoordinateTestWord_perm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.product_coordinate_family_word_perm_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.product_coordinate_family_derivative_of_perm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

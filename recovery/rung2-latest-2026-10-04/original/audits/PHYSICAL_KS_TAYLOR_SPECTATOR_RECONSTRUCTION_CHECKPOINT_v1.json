@@ -1,0 +1,117 @@
+{
+  "created_utc": "2026-09-11T02:50:59.194405+00:00",
+  "status": "PASS_ACTUAL_PHYSICAL_TAYLOR_DOUBLE_SERIES_RECONSTRUCTION",
+  "evidence_category": "Kernel-checked actual coefficient extraction, absolute convergence and reconstruction from the established physical pointwise data",
+  "exact_result": "The literal family obtained by extracting spectator gamma from actual total Taylor degree j+sum(gamma) has Y degree j and L1 at most amplitude*S^j*S^sum(gamma), S=7*rate. Its double series is absolutely summable when S*norm(y_sup)<1 and S*norm(t_sup)<1, equals the original complex Taylor extension, and has sum f(x+q) on the original real product ball of radius min(1/1024,S^-1) at all centers in the closed rectangle of halfwidth 1/1024.",
+  "mathematical_change": "Established rather than assumed the actual physical sum identification needed for KS descent. Regrouping uses unconditional summability and exact finite total-degree reconstruction.",
+  "modules": [
+    {
+      "module": "HomogeneousSpectatorFiniteVariables_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorFiniteVariables_v1.lean",
+      "source_sha256": "6b4ad4b30f03dc0541f71a557b44a18296cd09fd90bca07b1e7b9a088e2f063e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorFiniteVariables_v1.olean",
+      "object_sha256": "7a4c2372c22de783d0ab2f27150b45c1ef4bfc02e879bda569db86806df29d2c",
+      "declarations": [
+        "homogeneous_spectator_finite_variables_norm_bound",
+        "homogeneous_spectator_finite_variables_summable"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSTaylorSpectatorSeries_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorSpectatorSeries_v1.lean",
+      "source_sha256": "995fbf6613e7bca80e5cb292cf099f79e02e291849445c2623589b067a86f7be",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorSpectatorSeries_v1.olean",
+      "object_sha256": "e79fb863dc378cfc53f4ed8ed282144e3002e650ecee37a9ef3aafe5e08bcbd6",
+      "declarations": [
+        "physicalKSTaylorSpectatorFamily",
+        "physicalKSTaylorSpectatorFamily_homogeneous",
+        "physicalKSTaylorSpectatorFamily_coefficientL1",
+        "physicalKSTaylorSpectatorFamily_summable"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSTaylorSpectatorReconstruction_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorSpectatorReconstruction_v1.lean",
+      "source_sha256": "c42a1e136d814cd8b2eb6303ca368969e462f92dbd2548954c7360f9f5a087b6",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorSpectatorReconstruction_v1.olean",
+      "object_sha256": "aea56d1c35ac5408bf15699002fa32fcb8c8e055e7442b397661df53f73f14de",
+      "declarations": [
+        "physicalKSTaylorSpectatorFamily_grouped",
+        "physicalKSTaylorSpectatorFamily_hasSum_complex",
+        "physicalKSTaylorSpectatorFamily_hasSum_real_ball"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipts": [
+    {
+      "path": "audits/formal_semantics/20260911T023911_145829Z/receipt.json",
+      "sha256": "e54fc6a571eac92cf3eaee4c28ec5e4c89aab8c1782fdaba200702cbea7121bd"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T024411_144660Z/receipt.json",
+      "sha256": "7af6da38ddd0e3a735913105a14a6c122b658b90dd1f36bf81d2498f007ca067"
+    }
+  ],
+  "expanded": [
+    {
+      "path": "audits/formal_semantics/20260911T023911_145829Z/ExpandedStatements_v8.log",
+      "sha256": "fdabb4c55b271c8786717c8cd6af90a5fada1c30acddde02634f14b0e0dc66a5"
+    },
+    {
+      "path": "audits/formal_semantics/20260911T024411_144660Z/ExpandedStatements_v8.log",
+      "sha256": "8e56272404c8b47fe31705b845e5e8e965cda623e492993b0c3ff5533d803769"
+    }
+  ],
+  "root_review": "Complete final sources, all nine expanded declaration types and axiom blocks, and both full independent reviews read. Exact domain and coefficient definitions inspected.",
+  "independent_reviews": [
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_SERIES_FOCUSED_REVIEW_v1.json",
+      "sha256": "7ac1e5f62fcfe977b4bf4e119c56032c5e2e66c48efbd00c4d9d310361d8498a"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_RECONSTRUCTION_FOCUSED_REVIEW_v1.json",
+      "sha256": "31885aa41c415120378554c9c68ada873670247660964cdf6507e49f512eb4c8"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "audits/PHYSICAL_KS_TAYLOR_SPECTATOR_COEFFICIENTS_CHECKPOINT_v1.json",
+      "sha256": "fdc37334a50483f3c703be8b736cf8fe35cdc99cde151c3032912172ac82bcea"
+    },
+    {
+      "path": "audits/KS_SPECTATOR_HOMOGENEOUS_RECONSTRUCTION_CHECKPOINT_v1.json",
+      "sha256": "ca24a9d84a1012013a98906996eeae6f88f88520428811707c6eea11a30c1341"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_COMPLEX_TAYLOR_EXTENSION_CHECKPOINT_v1.json",
+      "sha256": "38806064de86e5cdadd4d05946fb567df02500851031123384e37b7b61191cf7"
+    }
+  ],
+  "limitations": [
+    "Explicit PhysicalKSBoxPointwiseData is supplied upstream by actual Coulomb eigenfunction theorems; this consumer does not reprove it.",
+    "Complex coordinate sup norms and real product of Euclidean block norms remain distinct; only proved coordinate inequalities connect them.",
+    "This checkpoint does not yet assert the descended A/B identity, physical surjectivity, compatible germs, global H2 approximation, solver or bit complexity.",
+    "The construction is noncomputable mathematics, not a rational executable coefficient algorithm."
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development objects reused; all new targets outside isolated source rebuild v20.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

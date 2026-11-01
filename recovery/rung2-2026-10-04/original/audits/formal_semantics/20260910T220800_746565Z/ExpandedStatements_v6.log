@@ -1,0 +1,203 @@
+@TheoremT.Continuum.analytic_affine_compact_factorial_source_bound.{u_1} : ∀ {X : Type u_1}
+  [inst : NormedAddCommGroup.{u_1} X] [inst_1 : @NormedSpace.{0, u_1} Real X _ _] {f0 f1 : X → Real} {K : Set.{u_1} X}
+  (hK : @IsCompact.{u_1} X _ K) (hf0 : @AnalyticOnNhd.{0, u_1, 0} Real X Real _ _ _ _ _ f0 K)
+  (hf1 : @AnalyticOnNhd.{0, u_1, 0} Real X Real _ _ _ _ _ f1 K),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (eps : Real),
+            @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) eps →
+              @LE.le.{0} Real _ eps (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+                ∀ (k : Nat) (x : X),
+                  @Membership.mem.{u_1, u_1} X (Set.{u_1} X) _ K x →
+                    And
+                      (@LE.le.{0} Real _
+                        (@Norm.norm.{u_1}
+                          (@ContinuousMultilinearMap.{0, 0, u_1, 0} Real (Fin k) (fun (_i : Fin k) => X) Real _ _ _ _ _
+                            _ _)
+                          _
+                          (@iteratedFDeriv.{0, u_1, 0} Real _ X _ _ Real _ _ k
+                            (fun (q : X) =>
+                              @HAdd.hAdd.{0, 0, 0} Real Real Real _ (f0 q)
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ eps (f1 q)))
+                            x))
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                          (@Nat.cast.{0} Real _ (Nat.factorial k))))
+                      (And
+                        (@LE.le.{0} Real _
+                          (@Norm.norm.{u_1}
+                            (@ContinuousMultilinearMap.{0, 0, u_1, 0} Real (Fin k) (fun (_i : Fin k) => X) Real _ _ _ _
+                              _ _ _)
+                            _
+                            (@iteratedFDeriv.{0, u_1, 0} Real _ X _ _ Real _ _ k
+                              (fun (q : X) =>
+                                @HMul.hMul.{0, 0, 0} Real Real Real _ eps
+                                  (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (f0 q)
+                                    (@HMul.hMul.{0, 0, 0} Real Real Real _ eps (f1 q))))
+                              x))
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ eps
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                              (@Nat.cast.{0} Real _ (Nat.factorial k)))))
+                        (∀ (a0 : Complex),
+                          @LE.le.{0} Real _
+                            (@Norm.norm.{u_1}
+                              (@ContinuousMultilinearMap.{0, 0, u_1, 0} Real (Fin k) (fun (_i : Fin k) => X) Complex _ _
+                                _ _ _ _ _)
+                              _
+                              (@iteratedFDeriv.{0, u_1, 0} Real _ X _ _ Complex _ _ k
+                                (fun (q : X) =>
+                                  @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                                    (@HAdd.hAdd.{0, 0, 0} Real Real Real _ (f0 q)
+                                      (@HMul.hMul.{0, 0, 0} Real Real Real _ eps (f1 q)))
+                                    a0)
+                                x))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                                (@Nat.cast.{0} Real _ (Nat.factorial k)))
+                              (@Norm.norm.{0} Complex _ a0))))))
+@TheoremT.Continuum.nuclearKS_energy_coefficient_analyticAt : ∀ {N : Nat} (i : Fin N) (E : Real)
+  (q : @TheoremT.Continuum.NuclearKSSpace N i),
+  @AnalyticAt.{0, 0, 0} Real (@TheoremT.Continuum.NuclearKSSpace N i) Real _ _ _ _ _
+    (fun (p : @TheoremT.Continuum.NuclearKSSpace N i) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Neg.neg.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 8) _)) E)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace (@TheoremT.Continuum.SpectatorConfiguration N i) p))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    q
+TheoremT.Continuum.pairKS_energy_coefficient_analyticAt : ∀ (E : Real) (q : TheoremT.Continuum.PairKSSpace),
+  @AnalyticAt.{0, 0, 0} Real TheoremT.Continuum.PairKSSpace Real _ _ _ _ _
+    (fun (p : TheoremT.Continuum.PairKSSpace) =>
+      @HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@Neg.neg.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _)) E)
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@Norm.norm.{0} TheoremT.Continuum.KSSpace _
+            (@Prod.fst.{0, 0} TheoremT.Continuum.KSSpace
+              (@TheoremT.Continuum.SpectatorConfiguration (@OfNat.ofNat.{0} Nat (nat_lit 2) _)
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+              p))
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _)))
+    q
+@TheoremT.Continuum.nuclearKS_uniform_factorial_scaled_jets : ∀ {N : Nat} (i : Fin N) (Z E : Real)
+  {K : Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)}
+  (hK : @IsCompact.{0} (@TheoremT.Continuum.NuclearKSSpace N i) _ K)
+  (hKpatch :
+    @LE.le.{0} (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _ K
+      (@TheoremT.Continuum.nuclearKSCoefficientPatch N i)),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (ε : Real),
+            @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ε →
+              @LE.le.{0} Real _ ε (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+                ∀ (k : Nat) (q : @TheoremT.Continuum.NuclearKSSpace N i),
+                  @Membership.mem.{0, 0} (@TheoremT.Continuum.NuclearKSSpace N i)
+                      (Set.{0} (@TheoremT.Continuum.NuclearKSSpace N i)) _ K q →
+                    And
+                      (@LE.le.{0} Real _
+                        (@Norm.norm.{0}
+                          (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin k)
+                            (fun (_i : Fin k) => @TheoremT.Continuum.NuclearKSSpace N i) Real _ _ _ _ _ _ _)
+                          _
+                          (@iteratedFDeriv.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Real _ _ k
+                            (@TheoremT.Continuum.nuclearKSPotential N i Z (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E))
+                            q))
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                          (@Nat.cast.{0} Real _ (Nat.factorial k))))
+                      (And
+                        (@LE.le.{0} Real _
+                          (@Norm.norm.{0}
+                            (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin k)
+                              (fun (_i : Fin k) => @TheoremT.Continuum.NuclearKSSpace N i) Real _ _ _ _ _ _ _)
+                            _
+                            (@iteratedFDeriv.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Real _ _ k
+                              (@TheoremT.Continuum.epsilonNuclearKSPotential N i ε Z E) q))
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                              (@Nat.cast.{0} Real _ (Nat.factorial k)))))
+                        (∀ (a0 : Complex),
+                          @LE.le.{0} Real _
+                            (@Norm.norm.{0}
+                              (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin k)
+                                (fun (_i : Fin k) => @TheoremT.Continuum.NuclearKSSpace N i) Complex _ _ _ _ _ _ _)
+                              _
+                              (@iteratedFDeriv.{0, 0, 0} Real _ (@TheoremT.Continuum.NuclearKSSpace N i) _ _ Complex _ _
+                                k
+                                (fun (p : @TheoremT.Continuum.NuclearKSSpace N i) =>
+                                  @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                                    (@TheoremT.Continuum.nuclearKSPotential N i Z
+                                      (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E) p)
+                                    (@Neg.neg.{0} Complex _ a0))
+                                q))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                                (@Nat.cast.{0} Real _ (Nat.factorial k)))
+                              (@Norm.norm.{0} Complex _ a0))))))
+TheoremT.Continuum.pairKS_uniform_factorial_scaled_jets : ∀ (Z E : Real) {K : Set.{0} TheoremT.Continuum.PairKSSpace}
+  (hK : @IsCompact.{0} TheoremT.Continuum.PairKSSpace _ K)
+  (hKpatch : @LE.le.{0} (Set.{0} TheoremT.Continuum.PairKSSpace) _ K TheoremT.Continuum.pairKSCoefficientPatch),
+  @Exists.{1} Real fun (C : Real) =>
+    @Exists.{1} Real fun (A : Real) =>
+      And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) C)
+        (And (@LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) A)
+          (∀ (ε : Real),
+            @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ε →
+              @LE.le.{0} Real _ ε (@OfNat.ofNat.{0} Real (nat_lit 1) _) →
+                ∀ (k : Nat) (q : TheoremT.Continuum.PairKSSpace),
+                  @Membership.mem.{0, 0} TheoremT.Continuum.PairKSSpace (Set.{0} TheoremT.Continuum.PairKSSpace) _ K q →
+                    And
+                      (@LE.le.{0} Real _
+                        (@Norm.norm.{0}
+                          (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin k)
+                            (fun (_i : Fin k) => TheoremT.Continuum.PairKSSpace) Real _ _ _ _ _ _ _)
+                          _
+                          (@iteratedFDeriv.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _ Real _ _ k
+                            (TheoremT.Continuum.pairKSPotential Z (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E)) q))
+                        (@HMul.hMul.{0, 0, 0} Real Real Real _
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                          (@Nat.cast.{0} Real _ (Nat.factorial k))))
+                      (And
+                        (@LE.le.{0} Real _
+                          (@Norm.norm.{0}
+                            (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin k)
+                              (fun (_i : Fin k) => TheoremT.Continuum.PairKSSpace) Real _ _ _ _ _ _ _)
+                            _
+                            (@iteratedFDeriv.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _ Real _ _ k
+                              (TheoremT.Continuum.epsilonPairKSPotential ε Z E) q))
+                          (@HMul.hMul.{0, 0, 0} Real Real Real _ ε
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                              (@Nat.cast.{0} Real _ (Nat.factorial k)))))
+                        (∀ (a0 : Complex),
+                          @LE.le.{0} Real _
+                            (@Norm.norm.{0}
+                              (@ContinuousMultilinearMap.{0, 0, 0, 0} Real (Fin k)
+                                (fun (_i : Fin k) => TheoremT.Continuum.PairKSSpace) Complex _ _ _ _ _ _ _)
+                              _
+                              (@iteratedFDeriv.{0, 0, 0} Real _ TheoremT.Continuum.PairKSSpace _ _ Complex _ _ k
+                                (fun (p : TheoremT.Continuum.PairKSSpace) =>
+                                  @HSMul.hSMul.{0, 0, 0} Real Complex Complex _
+                                    (TheoremT.Continuum.pairKSPotential Z (@HMul.hMul.{0, 0, 0} Real Real Real _ ε E) p)
+                                    (@Neg.neg.{0} Complex _ a0))
+                                q))
+                            (@HMul.hMul.{0, 0, 0} Real Real Real _
+                              (@HMul.hMul.{0, 0, 0} Real Real Real _
+                                (@HMul.hMul.{0, 0, 0} Real Real Real _ C (@HPow.hPow.{0, 0, 0} Real Nat Real _ A k))
+                                (@Nat.cast.{0} Real _ (Nat.factorial k)))
+                              (@Norm.norm.{0} Complex _ a0))))))
+'TheoremT.Continuum.analytic_affine_compact_factorial_source_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearKS_energy_coefficient_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKS_energy_coefficient_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearKS_uniform_factorial_scaled_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.pairKS_uniform_factorial_scaled_jets' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,79 @@
+{
+  "schema": "formal-unit-checkpoint-v1",
+  "created_utc": "2026-09-10T20:51:35.466712+00:00",
+  "status": "PASS",
+  "module_records": [
+    {
+      "module": "KSScaledAffineWeakForcing_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/KSScaledAffineWeakForcing_v1.lean",
+      "source_sha256": "193187672823e0ebd3444a093a6b2c1d02c30b3a27cc23162b61dd6e7068e8d4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/KSScaledAffineWeakForcing_v1.olean",
+      "object_sha256": "13ffc096ad56ad43493ab22f6fb73742a53430ef51736b39657cd9ee905cf1d5",
+      "declarations": [
+        "ksScaledPrincipal_const",
+        "ks_scaled_constant_weak_pairing",
+        "ks_scaled_affine_weak_forcing"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "compile_records": [
+    {
+      "receipt": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSScaledAffineWeakForcing_v1-20260910T205018_293276Z.json",
+        "sha256": "6a7d5afacee9300ab5f2afd6201a95703de43de8c5415cb4bed97ed4ea75ea18"
+      },
+      "log": {
+        "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/KSScaledAffineWeakForcing_v1-20260910T205018_293276Z.log",
+        "sha256": "03543caac842826cbfaccfe247a8933c0f44ca26410d4d60afa010cd75b97b55"
+      }
+    }
+  ],
+  "strict_receipt": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T205046_907734Z/receipt.json",
+    "sha256": "45cf3b576ff173f10e0690a58b321c8042de0f5ed065e2d694d5d6a8a4d36953"
+  },
+  "audit_source": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T205046_907734Z/ExpandedStatements_v5.lean",
+    "sha256": "0a8f4da866993be026f5b7a430186982c6331762ee7f99fb0f7a21bc15d88d16"
+  },
+  "audit_log": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T205046_907734Z/ExpandedStatements_v5.log",
+    "sha256": "027537ac5429e42d123b35789c2128aa957006fd1c2535c5091a413b7a19b53b"
+  },
+  "audit_object": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260910T205046_907734Z/ExpandedStatements_v5.olean",
+    "sha256": "a16ed9aa5287313eb9db72e51062f39c48769dbf46f998e3ddbd1a756dae071d"
+  },
+  "declarations": [
+    "TheoremT.Continuum.ksScaledPrincipal_const",
+    "TheoremT.Continuum.ks_scaled_constant_weak_pairing",
+    "TheoremT.Continuum.ks_scaled_affine_weak_forcing"
+  ],
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "evidence_category": "Formal conditional compact-test implication",
+  "exact_result": "For any real c, nonzero real epsilon, complex constant a and real smooth compact test phi on NuclearKSSpace i, if b is smooth at every point of tsupport phi and the actual splitGrushin c spectatorBasis (epsilon*b) pairing against u is integrable with integral zero, then its pairing against epsilon^(-1)*(u-a) is integrable, the source pairing phi*(-b*a) is integrable, and their integrals agree.",
+  "semantic_review": [
+    "The principal part annihilates constants, established by actual Frechet derivative formulas. Integration by parts against constant a proves the constant pairing identity with both integrabilities.",
+    "Subtraction and scalar multiplication of integrable pairings derive the new weak forcing. Cancellation of epsilon uses the explicit nonzero hypothesis.",
+    "No derivatives, continuity, global L2 membership or pointwise PDE are assumed of u. The input is exactly a genuine weak kernel pairing for the selected test.",
+    "Coefficient smoothness is only on the compact test support; no extension to a globally smooth coefficient is assumed.",
+    "This algebraic weak implication requires no positivity of c. Physical elliptic or gain arguments impose their own c>0 condition."
+  ],
+  "limitations": [
+    "The input weak kernel equation remains an explicit hypothesis; physical scaled Coulomb wrappers must supply it.",
+    "No uniform estimate, analytic rate, physical eigenvector existence or Theorem T is established by this unit."
+  ],
+  "direct_support_checkpoint": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/KS_SCALED_PRINCIPAL_CHECKPOINT_v1.json",
+    "sha256": "d6ee269d13744f2807284a962ddd25d8ec65cada3a7bfbf7b23692bd2087dc9a"
+  },
+  "preservation": "All previous PASS and frozen bytes unchanged. One unused simp-argument warning remains in the successful source; it has no mathematical effect and was not edited after PASS."
+}

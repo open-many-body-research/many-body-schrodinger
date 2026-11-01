@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-09-11T00:47:52.665852+00:00",
+  "status": "FOCUSED_TOOL_REVIEW_NO_DEFECT_FOUND",
+  "reviewer": "/root/fixed_box_review",
+  "recommendation": "Approve this exact v8 auditor/helper-v3 pair for the narrow Set.image lexical extension, subject to root approval. No mathematical result was audited with v8 during this review.",
+  "scope": "Delta review of exact Set.image token recognition, conservative declaration discovery and inherited audit guards. Not a general Lean parser verification or a new mathematical trust mechanism.",
+  "source_records": [
+    {
+      "path": "audits/lean_declaration_discovery_v2.py",
+      "sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb"
+    },
+    {
+      "path": "audits/audit_final_statements_v7.py",
+      "sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1"
+    },
+    {
+      "path": "audits/lean_declaration_discovery_v3.py",
+      "sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722"
+    },
+    {
+      "path": "audits/audit_final_statements_v8.py",
+      "sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340"
+    }
+  ],
+  "root_regression": {
+    "path": "audits/AUDIT_FINAL_STATEMENTS_V8_REGRESSION_v1_20260911T004256_541970Z.json",
+    "sha256": "4d17288a8d97eca725466d946e76ebcaaae47a2c6d1df18dde07cce7bc2ef890"
+  },
+  "root_strengthened_test": {
+    "path": "audits/test_lean_declaration_discovery_v3_target_v1.py",
+    "sha256": "1495c698e237f8432bf09a29db93f6ada878a12365ef17a11593e224e4e94b0e"
+  },
+  "independent_test": {
+    "path": "audits/test_image_token_independent_review_v1.py",
+    "sha256": "a79487b3479550ccbeceb9e2dac14e2bf6c29499f4a2a5abe0b688b7f0810406"
+  },
+  "independent_regression": {
+    "path": "audits/IMAGE_TOKEN_INDEPENDENT_REGRESSION_v1_20260911T004659_032683Z.json",
+    "sha256": "c6a604a0a0d4e0c95d67abeb618efbd16768a2379ef5d3ca0b06864564032a1f"
+  },
+  "actual_target": {
+    "path": "lean/PhysicalSpectatorL2BudgetTransport_v1.lean",
+    "sha256": "ee56f1b9e6ffa5fb1ca5443970ac62c2e483906438d3001a68b4895b56b3276c"
+  },
+  "checks": {
+    "exact_delta": "Helper v3 adds one branch matching exactly two consecutive ASCII primes when the previous source character is not alphanumeric, underscore or prime. It preserves both characters, advances by two, and rejects an immediate third prime. Primed ASCII and Unicode identifiers remain handled as before.",
+    "literal_priority": "Nested block comments, line comments, standard strings, raw strings and valid escaped character literals are processed before the new branch. Their interiors remain masked without changing source length or newline offsets. Escaped quote, hex quote and Unicode quote character literals were tested independently.",
+    "no_declaration_hiding": "The new branch does not blank text, does not skip a following declaration or delimiter, and does not alter the existing namespace/declaration recognizer. Independent examples with comments adjoining the token, nested images, no-space parentheses, newlines, tabs, primed identifiers and mixed preimages retain the sentinel theorem. Axioms, unsafe/private/opaque/instance declarations, macros, notation, quoted names and unsupported inline declarations after an image are rejected.",
+    "prime_runs": "Standalone runs of three through eight primes reject in the independent corpus; identifier-attached primes are preserved. Exactly two standalone primes are recognized as notation, not treated as a zero-length character literal. Scanner acceptance does not claim syntactic or type correctness; the declared Lean source build remains authoritative.",
+    "pinned_notation": "The pinned Mathlib/Data/Set/Operations.lean line144 literally declares infixr:80 double-prime notation for Set.image. Existing preimage notation at line138 is unchanged.",
+    "auditor_guards": "Independent AST comparison shows the executable auditor body is identical to v7 after normalizing the helper import/version strings and generated artifact basename. Expanded pp.all/proofs settings, high printer bounds, diagnostic rejection, exact axiom-name coverage, unexpected-axiom rejection, forbidden source token scan, source/object immutability checks, ellipsis rejection and nonzero exit propagation are unchanged.",
+    "actual_target": "The full target source was independently read during the preceding physical transport review. Helper v3 returns exactly physicalSpectatorReindexAt_symm_measurePreserving, physicalSpectatorReindexAt_regionL2Budget and physicalSpectatorReindexAt_locallyL2 in namespace TheoremT.Continuum; helper v2 rejects its Set.image token. The strengthened root test asserts those names explicitly, correcting the earlier test script omission without changing prior artifacts.",
+    "regressions": "The strengthened root receipt records 60 unchanged baseline cases plus21 image cases and7 masking checks, all passing. The independent pure-Python corpus adds39 adjacency, literal, declaration-hiding and malformed-prime cases, all passing. No Lean, proof audit, rebuild or network job was run.",
+    "preservation": "Current old helper-v2 and auditor-v7 hashes still match their approved historical bytes. New helper/auditor and strengthened target-test hashes match the reviewed regression receipt."
+  },
+  "limitations": [
+    "The helper remains deliberately restricted and is not a complete Lean lexer or command parser. The narrow extension does not enlarge the supported declaration forms.",
+    "A successful source compilation, strict expanded statement/axiom audit and semantic review remain separate requirements; scanner success alone proves none of them.",
+    "The initial regression script lacked an exact target-name assertion; only the separately created strengthened target test is used for that assertion here.",
+    "This review is an independent code review and concrete regression result, not a formal verification of the auditor."
+  ],
+  "actions": "Read existing sources, diffs, pinned notation and receipts; independently checked normalized AST equality and exact target declarations; added one new pure-Python test script, its timestamped output, and this review. No mathematical source edits or proof compilation."
+}

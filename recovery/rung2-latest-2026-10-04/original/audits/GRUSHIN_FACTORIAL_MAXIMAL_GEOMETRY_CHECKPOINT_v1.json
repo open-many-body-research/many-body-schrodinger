@@ -1,0 +1,53 @@
+{
+  "timestamp_utc": "2026-09-11T00:23:11.068827+00:00",
+  "evidence": "Lean kernel-checked actual cutoff support geometry",
+  "strongest_theorem": "TheoremT.Continuum.WeakGrushin.factorialRectCutoff_maximal_geometry",
+  "scope": "Centered actual factorial cutoff with nonnegative shrink; compact support, outer containment, every Y slab R=aY, radial S=max(1,2*aY), and inner plateau.",
+  "semantic_review": "Complete expanded statement read; centeredness and t>=0 explicit; support, slab and radius are conclusions, not hypotheses. Standard foundational axioms only.",
+  "module_records": [
+    {
+      "module": "GrushinFactorialMaximalGeometry_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/GrushinFactorialMaximalGeometry_v1.lean",
+      "source_sha256": "d12dbcefe288932801e56f6655855abd32fb528278ddeb8f0ee22178b6867e6b",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/GrushinFactorialMaximalGeometry_v1.olean",
+      "object_sha256": "678f2a50955da6416a060f3f64d6c2421a8e465dcc9ce521c1f7110ba7c23fa5",
+      "declarations": [
+        "factorialRectCutoff_maximal_geometry"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "audit_receipt": {
+    "path": "audits/formal_semantics/20260911T002211_536186Z/receipt.json",
+    "sha256": "0df60151c4740c2238e851bf30deba6bb493ae305a68f8320360660585489272"
+  },
+  "dependencies": [
+    {
+      "path": "audits/GRUSHIN_FACTORIAL_CUTOFF_DATA_CHECKPOINT_v1.json",
+      "sha256": "3884ba19530e888e68c28242b2be18450ca2decf5462378bfd6c19d982b3c629"
+    },
+    {
+      "path": "lean/GrushinFactorialCutoffData_v1.lean",
+      "sha256": "92dfd7ac3f4a470f7dcbbbaf5bd2bffd6fb45eaaf4358aa5523e7a8637012f03"
+    },
+    {
+      "path": "lean/GrushinRectangularBoxGeometry_v1.lean",
+      "sha256": "51d0296868dab7672caf3f74f33a654b7c6b3f56fae65af22ef251363524b915"
+    }
+  ],
+  "manuscript": {
+    "path": "paper/GRUSHIN_FACTORIAL_MAXIMAL_GEOMETRY_FORMAL_v1.md",
+    "sha256": "0aed579ed12d57358a5ed9c2b90eea6364ec5b6e6946f210c29ef811221c5b8b"
+  },
+  "remaining": "Root composes actual profile R18 using the independently owned plateau norm bridge. No recurrence or factorial regularity conclusion in this unit.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "preservation": {
+    "frozen_commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "frozen_tag": "theorem-t-proof-freeze-2026-09-09",
+    "frozen_report": "THEOREM_T_FREEZE_2026-09-09_212604/RWA_REPORT.md",
+    "frozen_report_sha256": "2545ac53ff24f8bebd0c25b1f09f6ced6b4d8b7bb49eef99cbc44eb9e2862066",
+    "prior_and_passed_bytes_preserved": true
+  }
+}

@@ -1,0 +1,60 @@
+@TheoremT.Continuum.realMultilinearCoordinatePolynomial.{u_1,
+    u_2} : {σ : Type u_1} →
+  {E : Type u_2} →
+    [Fintype.{u_1} σ] →
+      [inst : NormedAddCommGroup.{u_2} E] →
+        [inst_1 : @NormedSpace.{0, u_2} Real E _ _] →
+          {k : Nat} →
+            (dirs : σ → E) →
+              (T : @ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (x : Fin k) => E) Complex _ _ _ _ _ _ _) →
+                @MvPolynomial.{u_1, 0} σ Complex _
+@TheoremT.Continuum.realMultilinearCoordinatePolynomial_homogeneous.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] {k : Nat} (dirs : σ → E)
+  (T : @ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (x : Fin k) => E) Complex _ _ _ _ _ _ _),
+  @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _
+    (@TheoremT.Continuum.realMultilinearCoordinatePolynomial.{u_1, u_2} σ E _ _ _ k dirs T) k
+@TheoremT.Continuum.realMultilinearCoordinatePolynomial_eval.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] {k : Nat} (dirs : σ → E) (coord : E → σ → Real)
+  (hreconstruct :
+    ∀ (x : E),
+      @Eq.{u_2 + 1} E
+        (@Finset.sum.{u_1, u_2} σ E _ (@Finset.univ.{u_1} σ _) fun (j : σ) =>
+          @HSMul.hSMul.{0, u_2, u_2} Real E E _ (coord x j) (dirs j))
+        x)
+  (T : @ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (x : Fin k) => E) Complex _ _ _ _ _ _ _) (x : E),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex σ _ fun (j : σ) => Complex.ofReal (coord x j))
+      (@TheoremT.Continuum.realMultilinearCoordinatePolynomial.{u_1, u_2} σ E _ _ _ k dirs T))
+    (@DFunLike.coe.{u_2 + 1, u_2 + 1, 1}
+      (@ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (x : Fin k) => E) Complex _ _ _ _ _ _ _)
+      ((i : Fin k) → E) (fun (x : (i : Fin k) → E) => Complex) _ T fun (x_1 : Fin k) => x)
+@TheoremT.Continuum.polynomialCoeffL1_realMultilinearCoordinatePolynomial.{u_1,
+    u_2} : ∀ {σ : Type u_1} {E : Type u_2} [inst : Fintype.{u_1} σ] [inst_1 : NormedAddCommGroup.{u_2} E]
+  [inst_2 : @NormedSpace.{0, u_2} Real E _ _] {k : Nat} (dirs : σ → E)
+  (T : @ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (x : Fin k) => E) Complex _ _ _ _ _ _ _) {M : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hT :
+    ∀ (w : Fin k → σ),
+      @LE.le.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@DFunLike.coe.{u_2 + 1, u_2 + 1, 1}
+            (@ContinuousMultilinearMap.{0, 0, u_2, 0} Real (Fin k) (fun (x : Fin k) => E) Complex _ _ _ _ _ _ _)
+            ((i : Fin k) → E) (fun (x : (i : Fin k) → E) => Complex) _ T fun (i : Fin k) => dirs (w i)))
+        M),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ
+      (@TheoremT.Continuum.realMultilinearCoordinatePolynomial.{u_1, u_2} σ E _ _ _ k dirs T))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Nat.cast.{0} Real _ (@Fintype.card.{u_1} σ _)) k) M)
+'TheoremT.Continuum.realMultilinearCoordinatePolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.realMultilinearCoordinatePolynomial_homogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.realMultilinearCoordinatePolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_realMultilinearCoordinatePolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,150 @@
+TheoremT.Continuum.WeakGrushin.h12ConcreteDelta : Real
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius : (j : Real) → Real
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox : (center :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  (j : Real) → Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+TheoremT.Continuum.WeakGrushin.h12ConcreteDelta_pos : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+  TheoremT.Continuum.WeakGrushin.h12ConcreteDelta
+TheoremT.Continuum.WeakGrushin.h12ConcreteDelta_eq_boxGap : @Eq.{1} Real TheoremT.Continuum.WeakGrushin.h12ConcreteDelta
+  (TheoremT.Continuum.WeakGrushin.h12BoxGap
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (@OfNat.ofNat.{0} Real (nat_lit 128) _)))
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_eq : ∀ (j : Real),
+  @Eq.{1} Real (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+    (@HSub.hSub.{0, 0, 0} Real Real Real _
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ j TheoremT.Continuum.WeakGrushin.h12ConcreteDelta))
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_zero : @Eq.{1} Real
+  (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_34 : @Eq.{1} Real
+  (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius (@OfNat.ofNat.{0} Real (nat_lit 34) _))
+  (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_add_one : ∀ (j : Real),
+  @Eq.{1} Real
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ j (@OfNat.ofNat.{0} Real (nat_lit 1) _)))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+      TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_add_two : ∀ (j : Real),
+  @Eq.{1} Real
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius
+      (@HAdd.hAdd.{0, 0, 0} Real Real Real _ j (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+    (@HSub.hSub.{0, 0, 0} Real Real Real _ (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+        TheoremT.Continuum.WeakGrushin.h12ConcreteDelta))
+TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_antitone : @Antitone.{0, 0} Real Real _ _
+  TheoremT.Continuum.WeakGrushin.h12ConcreteRadius
+@TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_two_gap : ∀ {j : Real}
+  (hj : @LE.le.{0} Real _ j (@OfNat.ofNat.{0} Real (nat_lit 32) _)),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _)
+      TheoremT.Continuum.WeakGrushin.h12ConcreteDelta)
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+@TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_le_outer : ∀ {j : Real}
+  (hj : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) j),
+  @LE.le.{0} Real _ (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+@TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_ge_inner : ∀ {j : Real}
+  (hj : @LE.le.{0} Real _ j (@OfNat.ofNat.{0} Real (nat_lit 34) _)),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+      (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+@TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_pos : ∀ {j : Real}
+  (hj : @LE.le.{0} Real _ j (@OfNat.ofNat.{0} Real (nat_lit 34) _)),
+  @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_eq_rectangularOpenBox : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (j : Real),
+  @Eq.{1} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center j)
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox center (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j)
+      (TheoremT.Continuum.WeakGrushin.h12ConcreteRadius j))
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_zero : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center (@OfNat.ofNat.{0} Real (nat_lit 0) _))
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox center
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 64) _)))
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_34 : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center (@OfNat.ofNat.{0} Real (nat_lit 34) _))
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox center
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 128) _)))
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_isOpen : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (j : Real),
+  @IsOpen.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center j)
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_measurableSet : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) (j : Real),
+  @MeasurableSet.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center j)
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_antitone : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Antitone.{0, 0} Real (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    _ (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center)
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_subset_outer : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {j : Real}
+  (hj : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) j),
+  @LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+    (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center j)
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox center
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 64) _))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 64) _)))
+TheoremT.Continuum.WeakGrushin.h12ConcreteBox_y_radius : ∀
+  (center : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) {j : Real}
+  (hj : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) j)
+  {p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _}
+  (hp :
+    @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+      (TheoremT.Continuum.WeakGrushin.h12ConcreteBox center j) p),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+      (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+        (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) p))
+    (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+      (@Norm.norm.{0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))) _
+        (@Prod.fst.{0, 0} (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)))
+          (EuclideanSpace.{0, 0} Real (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) center))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 32) _)))
+'TheoremT.Continuum.WeakGrushin.h12ConcreteDelta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteDelta_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteDelta_eq_boxGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_34' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_add_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_two_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_le_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_ge_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteRadius_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_eq_rectangularOpenBox' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_34' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_measurableSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_subset_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.h12ConcreteBox_y_radius' depends on axioms: [propext, Classical.choice, Quot.sound]

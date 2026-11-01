@@ -1,0 +1,182 @@
+{
+  "utc": "2026-09-10T21:13:08.546196+00:00",
+  "status": "FORMAL_EXACT_SPECTATOR_CUTOFF_GEOMETRY_FOR_BOTH_SELECTED_ELECTRONS",
+  "scope": "N=2, every i:Fin2, actual SpectatorCoordinate i. Both i=0 and i=1 supplied.",
+  "modules": [
+    {
+      "module": "PhysicalSpectatorReindexAll_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorReindexAll_v1.lean",
+        "sha256": "f3ab3ed8b2f75b10692c4db3596ae55293836484c2e4f51160c8fe9c40e0c83c",
+        "bytes": 5516
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorReindexAll_v1.olean",
+        "sha256": "0893bdf4bb886e9b2227b72fb11f14caacefb43c549410373f6eb7f1ffcb40a9",
+        "bytes": 417312
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorReindexAll_v1-20260910T210933_331406Z.json",
+        "sha256": "69f8d10ba4badb1344bcb89381ec5e9eadb274b2e248b4781f24ceafd14e3a6e",
+        "bytes": 1781
+      },
+      "declarations": [
+        "twoElectronSpectatorCoordinateEquiv",
+        "twoElectronSpectatorPositionEquiv",
+        "twoElectronSpectatorPositionEquiv_apply",
+        "twoElectronSpectatorPositionEquiv_symm_apply",
+        "twoElectronSpectatorPositionEquiv_basis",
+        "twoElectronSpectatorCoordinate_card",
+        "physicalSpectatorReindexAt",
+        "physicalSpectatorReindexAt_apply",
+        "physicalSpectatorReindexAt_symm_apply",
+        "physicalSpectatorReindexAt_yDir",
+        "physicalSpectatorReindexAt_tDir",
+        "physicalSpectatorReindexAt_symm_yDir",
+        "physicalSpectatorReindexAt_symm_tDir",
+        "physicalSpectatorReindexAt_contDiff",
+        "physicalSpectatorReindexAt_symm_contDiff",
+        "physicalSpectatorHomeomorphAt",
+        "physicalSpectatorHomeomorphAt_apply",
+        "physicalSpectatorHomeomorphAt_symm_apply",
+        "twoElectronSpectatorPositionEquiv_zero",
+        "physicalSpectatorReindexAt_zero"
+      ]
+    },
+    {
+      "module": "PhysicalSpectatorCutoffTransportAll_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorCutoffTransportAll_v1.lean",
+        "sha256": "ec76c24dbfb8979d141ca1d13da07e89c2fd21504635a55f0dc24eb1c8821107",
+        "bytes": 4216
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorCutoffTransportAll_v1.olean",
+        "sha256": "edab5aabb2431f113ccbd23302f441a135f6107044c2e33e005cbf101cf0f807",
+        "bytes": 158960
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorCutoffTransportAll_v1-20260910T211013_542312Z.json",
+        "sha256": "92db16e4ad272bbe7ec2f6246ce154f10adc773060ac608d4a73e7678238bb55",
+        "bytes": 1805
+      },
+      "declarations": [
+        "physicalSpectatorReindexAt_cutoff_test",
+        "physicalSpectatorReindexAt_cutoff_first",
+        "physicalSpectatorReindexAt_cutoff_second",
+        "physicalSpectatorReindexAt_combinedCutoffScalar",
+        "physicalSpectatorReindexAt_cutoffGradientWeight",
+        "physicalSpectatorReindexAt_grushinCutoffWeight"
+      ]
+    },
+    {
+      "module": "PhysicalSpectatorStepGeometryAll_v1",
+      "source": {
+        "path": "lean/PhysicalSpectatorStepGeometryAll_v1.lean",
+        "sha256": "31579fa594b41a28d6cbf0de7c25df71ed0114a02383aa20fae30633f7109726",
+        "bytes": 3098
+      },
+      "object": {
+        "path": "lean/build/PhysicalSpectatorStepGeometryAll_v1.olean",
+        "sha256": "f34925c16bb0945c0074ab6f26144a7b87ad96669305bdb0e515cdec05e3229f",
+        "bytes": 255904
+      },
+      "development_receipt": {
+        "path": "logs/development/PhysicalSpectatorStepGeometryAll_v1-20260910T211030_625110Z.json",
+        "sha256": "91ca9478327e11cfee8747d087036905d286936b33c3c4c82a760ad589a11fee",
+        "bytes": 1789
+      },
+      "declarations": [
+        "SpectatorStepGeometry.pullback_physicalSpectatorReindexAt",
+        "physical_h12_spectatorStepGeometryAt"
+      ]
+    }
+  ],
+  "module_count": 3,
+  "declaration_count": 28,
+  "strict_audits": [
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T211001_588213Z/receipt.json",
+        "sha256": "be6d925b49f94e4deeb3ca3b925d620bbb5c9dade20d0d511da4045e528a3af7",
+        "bytes": 7430
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T211001_588213Z/ExpandedStatements_v5.lean",
+        "sha256": "8cee10ea5753bc66b8fb992432854bc5bf9ef3fd88958c7b65d701c4fd8b0e27",
+        "bytes": 3151
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T211001_588213Z/ExpandedStatements_v5.log",
+        "sha256": "984f6bf690c04762b9f02def50713df794aa6e00eb7bb97bde503b9f53d2cc4f",
+        "bytes": 104833
+      },
+      "declarations": 20
+    },
+    {
+      "receipt": {
+        "path": "audits/formal_semantics/20260910T211054_697360Z/receipt.json",
+        "sha256": "a9b03c3ccc5a57d8381273fc2da67dead47df977a4b172a303396133bc3286ef",
+        "bytes": 6069
+      },
+      "expanded_source": {
+        "path": "audits/formal_semantics/20260910T211054_697360Z/ExpandedStatements_v5.lean",
+        "sha256": "5c021f7183ebdbaaa1fe4f994f5927fc4aa3bb4daf38b2e70da835b67d2fe903",
+        "bytes": 1946
+      },
+      "expanded_log": {
+        "path": "audits/formal_semantics/20260910T211054_697360Z/ExpandedStatements_v5.log",
+        "sha256": "e40052994b4f9d648e97b4f5be60b6063f08994bc3a4339545085a4609a8784e",
+        "bytes": 43676
+      },
+      "declarations": 8
+    }
+  ],
+  "focused_review": {
+    "path": "audits/PHYSICAL_SPECTATOR_GEOMETRY_ALL_FOCUSED_REVIEW_v1.json",
+    "sha256": "b27f2cf2877b59b28cda0e21a8ecf628f690ee7c9907eada62b217f78e1eff48",
+    "bytes": 10201
+  },
+  "manuscript": {
+    "path": "paper/PHYSICAL_SPECTATOR_CUTOFF_GEOMETRY_ALL_v1.md",
+    "sha256": "2022847a41b098bf21d53c2fd78444afda6cc2852cd4e6eb3a616fab7f458e5d",
+    "bytes": 2680
+  },
+  "reindex_checkpoint": {
+    "path": "audits/PHYSICAL_SPECTATOR_REINDEX_ALL_CHECKPOINT_v1.json",
+    "sha256": "13fd9ed30b58eaa073ada26638f0ff3280423dabf9cccad035bd1c5c5badecac",
+    "bytes": 7214
+  },
+  "prior_zero_geometry_checkpoint": {
+    "path": "audits/PHYSICAL_SPECTATOR_CUTOFF_GEOMETRY_CHECKPOINT_v1.json",
+    "sha256": "28ac798e7e8b7e44ed3579c28368347ce7366b5490245086ec28fd0e82b81477",
+    "bytes": 8488
+  },
+  "exact_results": [
+    "Projection (j,k) to k, inverse (i.rev,k), with explicitly proved finite coordinate inverse laws.",
+    "Induced exact product LIE/homeomorphism, forward and inverse y/t direction identities, and exact i0 equality to the sealed old map.",
+    "Parameterized smooth/compact/tsupport pullback and first/ordered-second derivative identities.",
+    "Explicit equivalence reindexing of full spectator sums preserves actual scalar and gradient cutoff weights.",
+    "SpectatorStepGeometry and H12 physical preimage corollary for every i, preserving M,A,B,D,Q exactly."
+  ],
+  "hypotheses": "Existing H12 c>=0, positive delta, two-gap width and y-radius inequalities, actual smoothTransition first/second derivative bounds C1/C2. No weak equation or regularity is hidden in geometry.",
+  "trusted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development dependency objects reused; no isolated source rebuild.",
+  "preservation": "All older i0, physical PDE, frozen and successful artifacts remain unchanged. This generic-i result is in new files.",
+  "limitations": [
+    "N=2 only; no arbitrary-N three-coordinate identification.",
+    "No PDE or integral transport, box-in-physical-patch theorem, or local regularity estimate is established in this unit.",
+    "Transition derivative constants remain explicit bounded inputs; no new numerical values."
+  ],
+  "next": "Compose actual chart/box inclusion, coefficient and source budgets, physical weak equations, and finite spectator iteration. Root owns physical region inclusion and the current R01 integration.",
+  "frozen_provenance": {
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "path": "rwa_proof/UNIFORM_ANALYTIC_AUDIT.md",
+    "sha256": "5d83e7f2efe9a479f4cf53debc5c94d4653d87505489876151294487d93efe1c"
+  }
+}

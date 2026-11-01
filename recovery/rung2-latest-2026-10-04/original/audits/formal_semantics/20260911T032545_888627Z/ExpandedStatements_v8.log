@@ -1,0 +1,239 @@
+TheoremT.Continuum.so2ForwardPolynomial : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+  @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2InversePolynomial : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) →
+  @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2PolynomialToBalanced : (P :
+    @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) →
+  @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2PolynomialToCartesian : (P :
+    @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) →
+  @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+TheoremT.Continuum.so2InversePolynomial_forward : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (@MvPolynomial.eval₂.{0, 0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+      (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+      TheoremT.Continuum.so2ForwardPolynomial (TheoremT.Continuum.so2InversePolynomial i))
+    (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+TheoremT.Continuum.so2ForwardPolynomial_inverse : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (@MvPolynomial.eval₂.{0, 0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ _
+      (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+      TheoremT.Continuum.so2InversePolynomial (TheoremT.Continuum.so2ForwardPolynomial i))
+    (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ i)
+TheoremT.Continuum.so2PolynomialToCartesian_toBalanced : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (TheoremT.Continuum.so2PolynomialToCartesian (TheoremT.Continuum.so2PolynomialToBalanced P)) P
+TheoremT.Continuum.so2PolynomialToBalanced_toCartesian : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (TheoremT.Continuum.so2PolynomialToBalanced (TheoremT.Continuum.so2PolynomialToCartesian P)) P
+TheoremT.Continuum.so2InversePolynomial_homogeneous : ∀ (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)),
+  @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+    (TheoremT.Continuum.so2InversePolynomial i) (@OfNat.ofNat.{0} Nat (nat_lit 1) _)
+@TheoremT.Continuum.so2PolynomialToBalanced_homogeneous : ∀
+  {P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _} {k : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P k),
+  @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _
+    (TheoremT.Continuum.so2PolynomialToBalanced P) k
+TheoremT.Continuum.so2BalancedExponent : (m : Nat) → @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+@TheoremT.Continuum.so2_homogeneous_support_degree : ∀
+  {P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _} {k : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P k)
+  {d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _}
+  (hd :
+    @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+      (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+      (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ P) d),
+  @Eq.{1} Nat
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+      (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+    k
+TheoremT.Continuum.so2_balanced_homogeneous_even : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (m : Nat)
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P
+      (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hb :
+    ∀ (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ P) d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+        Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+        (@DFunLike.coe.{1, 1, 1}
+          (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+          (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+            P)
+          (TheoremT.Continuum.so2BalancedExponent m)))
+      (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+        m))
+TheoremT.Continuum.so2_balanced_homogeneous_odd : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (m : Nat)
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+        (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+  (hb :
+    ∀ (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _ P) d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@OfNat.ofNat.{0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (nat_lit 0) _)
+TheoremT.Continuum.so2ForwardPolynomial_mul : @Eq.{1}
+  (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+  (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+    (TheoremT.Continuum.so2ForwardPolynomial
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+    (TheoremT.Continuum.so2ForwardPolynomial
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+  TheoremT.Continuum.so2RadialSquare
+TheoremT.Continuum.so2PolynomialToCartesian_balanced_power : ∀ (c : Complex) (m : Nat),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+    (TheoremT.Continuum.so2PolynomialToCartesian
+      (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@DFunLike.coe.{1, 1, 1}
+          (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+          Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) c)
+        (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+          (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+          (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+            (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+            (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+            (@MvPolynomial.X.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _)))
+          m)))
+    (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+        Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _) c)
+      (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ TheoremT.Continuum.so2RadialSquare
+        m))
+TheoremT.Continuum.so2_homogeneous_even_radial_descent : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (m : Nat)
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P
+      (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))
+  (hb :
+    ∀ (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced P))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@HMul.hMul.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _)
+      (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+      (@DFunLike.coe.{1, 1, 1}
+        (@RingHom.{0, 0} Complex (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ _)
+        Complex (fun (x : Complex) => @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _
+        (@MvPolynomial.C.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _)
+        (@DFunLike.coe.{1, 1, 1}
+          (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) Complex _)
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) => Complex) _
+          (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _) _
+            P)
+          (@Finsupp.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _)
+            (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m))))
+      (@HPow.hPow.{0, 0, 0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) Nat
+        (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) _ TheoremT.Continuum.so2RadialSquare
+        m))
+TheoremT.Continuum.so2_homogeneous_odd_eq_zero : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (m : Nat)
+  (hP :
+    @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _ P
+      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (@HMul.hMul.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 2) _) m)
+        (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+  (hb :
+    ∀ (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) _
+            (TheoremT.Continuum.so2PolynomialToBalanced P))
+          d →
+        @Eq.{1} Nat
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 0) _))
+          (@DFunLike.coe.{1, 1, 1} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Nat _)
+            (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) => Nat) _ d
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) (nat_lit 1) _))),
+  @Eq.{1} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) P
+    (@OfNat.ofNat.{0} (@MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _)) Complex _) (nat_lit 0) _)
+'TheoremT.Continuum.so2ForwardPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2InversePolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToCartesian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2InversePolynomial_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2ForwardPolynomial_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToCartesian_toBalanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced_toCartesian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2InversePolynomial_homogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToBalanced_homogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2BalancedExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_homogeneous_support_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_balanced_homogeneous_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_balanced_homogeneous_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2ForwardPolynomial_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2PolynomialToCartesian_balanced_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_homogeneous_even_radial_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.so2_homogeneous_odd_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

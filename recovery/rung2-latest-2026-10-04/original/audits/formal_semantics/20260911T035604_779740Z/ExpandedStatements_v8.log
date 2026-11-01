@@ -1,0 +1,48 @@
+TheoremT.Continuum.nuclearDistancePolydisc : (σ δ : Real) → Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+@TheoremT.Continuum.nuclearDistanceAxis_denominator_ne_zero : ∀ {σ δ : Real}
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hδσ : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ σ (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  {q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex}
+  (hq :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) _ (TheoremT.Continuum.nuclearDistancePolydisc σ δ)
+      q),
+  @Ne.{1} Complex
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _ (@OfNat.ofNat.{0} Complex (nat_lit 2) _)
+      (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)))
+    (@OfNat.ofNat.{0} Complex (nat_lit 0) _)
+@TheoremT.Continuum.nuclearDistanceAxisMap_analyticOnNhd_polydisc : ∀ {σ δ : Real}
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hδσ : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ σ (@OfNat.ofNat.{0} Real (nat_lit 4) _))),
+  @AnalyticOnNhd.{0, 0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+    (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) _) → Complex) _ _ _ _ _ TheoremT.Continuum.nuclearDistanceAxisMap
+    (TheoremT.Continuum.nuclearDistancePolydisc σ δ)
+@TheoremT.Continuum.nuclearDistanceAxis_half_polyradii : ∀ {σ δ h : Real}
+  (hσ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) σ)
+  (hh : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) h)
+  (hδσ : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ σ (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+  (hδh : @LE.le.{0} Real _ δ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ h (@OfNat.ofNat.{0} Real (nat_lit 16) _)))
+  {q : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex}
+  (hq :
+    @Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Complex)) _ (TheoremT.Continuum.nuclearDistancePolydisc σ δ)
+      q),
+  And
+    (@LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.nuclearDistanceAxisZ q))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ h (@OfNat.ofNat.{0} Real (nat_lit 4) _)))
+    (And
+      (@LT.lt.{0} Real _ (@Norm.norm.{0} Complex _ (TheoremT.Continuum.nuclearDistanceAxisW q))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+          (@HPow.hPow.{0, 0, 0} Real Nat Real _ h (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+          (@OfNat.ofNat.{0} Real (nat_lit 2) _)))
+      (@LT.lt.{0} Real _
+        (@Norm.norm.{0} Complex _
+          (@HSub.hSub.{0, 0, 0} Complex Complex Complex _
+            (q (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) (nat_lit 1) _)) (Complex.ofReal σ)))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ h (@OfNat.ofNat.{0} Real (nat_lit 16) _))))
+'TheoremT.Continuum.nuclearDistancePolydisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxis_denominator_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxisMap_analyticOnNhd_polydisc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.nuclearDistanceAxis_half_polyradii' depends on axioms: [propext, Classical.choice, Quot.sound]

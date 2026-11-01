@@ -1,0 +1,196 @@
+TheoremT.Continuum.WeakGrushin.seven_symm_coordinate : ∀
+  (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+  @Eq.{1} Real
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) =>
+        Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      _
+      (@ContinuousLinearEquiv.symm.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _
+        TheoremT.Continuum.sevenToProduct)
+      p i)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearMap.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _)
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ Real _ _ _ _)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (fun (x : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) => Real) _
+      (TheoremT.Continuum.WeakGrushin.boxCoordinate
+        (@DFunLike.coe.{1, 1, 1}
+          (Equiv.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+            (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+            Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+          _ TheoremT.Continuum.sevenCoordinateEquiv i))
+      p)
+TheoremT.Continuum.WeakGrushin.fixedSevenLower : (z :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real
+TheoremT.Continuum.WeakGrushin.fixedSevenUpper : (z :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real
+TheoremT.Continuum.WeakGrushin.fixedSevenOpen : (z :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+TheoremT.Continuum.WeakGrushin.fixedSeven_lower_lt_upper : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+  @LT.lt.{0} Real _ (TheoremT.Continuum.WeakGrushin.fixedSevenLower z i)
+    (TheoremT.Continuum.WeakGrushin.fixedSevenUpper z i)
+TheoremT.Continuum.WeakGrushin.fixedSeven_closed_iff : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+  (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real),
+  Iff
+    (@Membership.mem.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _
+      (TheoremT.Continuum.tensorClosedBox7 (TheoremT.Continuum.WeakGrushin.fixedSevenLower z)
+        (TheoremT.Continuum.WeakGrushin.fixedSevenUpper z))
+      x)
+    (@Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+      (TheoremT.Continuum.WeakGrushin.rectangularClosedBox z
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _))
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+          (@OfNat.ofNat.{0} Real (nat_lit 512) _)))
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct x))
+TheoremT.Continuum.WeakGrushin.fixedSeven_open_isOpen : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @IsOpen.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ (TheoremT.Continuum.WeakGrushin.fixedSevenOpen z)
+TheoremT.Continuum.WeakGrushin.fixedSeven_open_subset_closed : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @LE.le.{0} (Set.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)) _
+    (TheoremT.Continuum.WeakGrushin.fixedSevenOpen z)
+    (TheoremT.Continuum.tensorClosedBox7 (TheoremT.Continuum.WeakGrushin.fixedSevenLower z)
+      (TheoremT.Continuum.WeakGrushin.fixedSevenUpper z))
+TheoremT.Continuum.WeakGrushin.fixedSeven_open_image : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _))
+    (@Set.image.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      (@DFunLike.coe.{1, 1, 1}
+        (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+          (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+          (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+          @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        _ TheoremT.Continuum.sevenToProduct)
+      (TheoremT.Continuum.WeakGrushin.fixedSevenOpen z))
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox z
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 512) _))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 512) _)))
+TheoremT.Continuum.WeakGrushin.fixedSeven_maps_plateau : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ TheoremT.Continuum.sevenToProduct)
+    (TheoremT.Continuum.tensorClosedBox7 (TheoremT.Continuum.WeakGrushin.fixedSevenLower z)
+      (TheoremT.Continuum.WeakGrushin.fixedSevenUpper z))
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox z
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 1024) _))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 1024) _)))
+TheoremT.Continuum.WeakGrushin.fixedSeven_maps_norm_region : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Set.MapsTo.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+    (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+    (@DFunLike.coe.{1, 1, 1}
+      (@ContinuousLinearEquiv.{0, 0, 0, 0} Real Real _ _ (@RingHom.id.{0} Real _) (@RingHom.id.{0} Real _) _ _
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) _ _
+        (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _ _ _)
+      (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real)
+      (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Real) =>
+        @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+      _ TheoremT.Continuum.sevenToProduct)
+    (TheoremT.Continuum.tensorClosedBox7 (TheoremT.Continuum.WeakGrushin.fixedSevenLower z)
+      (TheoremT.Continuum.WeakGrushin.fixedSevenUpper z))
+    (TheoremT.Continuum.WeakGrushin.rectangularOpenBox z
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 256) _))
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+        (@OfNat.ofNat.{0} Real (nat_lit 256) _)))
+TheoremT.Continuum.WeakGrushin.fixedSevenCutoff : (z :
+    @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) →
+  @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _ → Real
+TheoremT.Continuum.WeakGrushin.fixedSevenCutoff_data : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  And
+    (@ContDiff.{0, 0, 0} Real _ (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) _ _
+      Real _ _ (@WithTop.some.{0} ENat (@Top.top.{0} ENat _)) (TheoremT.Continuum.WeakGrushin.fixedSevenCutoff z))
+    (And
+      (@HasCompactSupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        Real _ _ (TheoremT.Continuum.WeakGrushin.fixedSevenCutoff z))
+      (And
+        (@LE.le.{0} (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+          (@tsupport.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _) Real _
+            _ (TheoremT.Continuum.WeakGrushin.fixedSevenCutoff z))
+          (TheoremT.Continuum.WeakGrushin.rectangularOpenBox z
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+              (@OfNat.ofNat.{0} Real (nat_lit 128) _))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+              (@OfNat.ofNat.{0} Real (nat_lit 128) _))))
+        (∀ (p : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+          @Membership.mem.{0, 0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+              (Set.{0} (@TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)) _
+              (TheoremT.Continuum.WeakGrushin.rectangularOpenBox z
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                  (@OfNat.ofNat.{0} Real (nat_lit 1024) _))
+                (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 3) _)
+                  (@OfNat.ofNat.{0} Real (nat_lit 1024) _)))
+              p →
+            @Eq.{1} Real (TheoremT.Continuum.WeakGrushin.fixedSevenCutoff z p) (@OfNat.ofNat.{0} Real (nat_lit 1) _))))
+TheoremT.Continuum.WeakGrushin.fixedSevenEvaluationConstant : Real
+TheoremT.Continuum.WeakGrushin.fixedSevenEvaluationConstant_pos : @LT.lt.{0} Real _
+  (@OfNat.ofNat.{0} Real (nat_lit 0) _) TheoremT.Continuum.WeakGrushin.fixedSevenEvaluationConstant
+TheoremT.Continuum.WeakGrushin.fixedSeven_evaluation_constant : ∀
+  (z : @TheoremT.Continuum.WeakGrushin.Space (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _),
+  @Eq.{1} Real
+    (@TheoremT.Continuum.boxEvaluationConstant.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) _
+      (TheoremT.Continuum.WeakGrushin.fixedSevenLower z) (TheoremT.Continuum.WeakGrushin.fixedSevenUpper z))
+    TheoremT.Continuum.WeakGrushin.fixedSevenEvaluationConstant
+'TheoremT.Continuum.WeakGrushin.seven_symm_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenLower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenUpper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_lower_lt_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_closed_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_open_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_open_subset_closed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_open_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_maps_plateau' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_maps_norm_region' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenCutoff_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenEvaluationConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSevenEvaluationConstant_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.WeakGrushin.fixedSeven_evaluation_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,67 @@
+TheoremT.Continuum.grushin_factorial_ratio_eq_descFactorial : ∀ (r j : Nat) (hj : @LE.le.{0} Nat _ j r),
+  @Eq.{1} Real
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ (@Nat.cast.{0} Real _ (Nat.factorial r))
+      (@Nat.cast.{0} Real _ (Nat.factorial (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))))
+    (@Nat.cast.{0} Real _ (Nat.descFactorial r j))
+@TheoremT.Continuum.grushin_normalization_scale_nonneg : ∀ {ρ : Real}
+  (hρ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ) (ell : Nat),
+  @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))
+@TheoremT.Continuum.grushin_normalization_scale_pos : ∀ {ρ : Real} {ell : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hell : @LT.lt.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 0) _) ell),
+  @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))
+@TheoremT.Continuum.grushin_normalization_scale_le_one : ∀ {ρ : Real} {ell : Nat}
+  (hρ : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hell : @LT.lt.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 0) _) ell),
+  @LE.le.{0} Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.grushin_normalization_scale_bounds : ∀ {ρ : Real} {ell : Nat}
+  (hρ : @LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+  (hell : @LT.lt.{0} Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 0) _) ell),
+  And
+    (@LT.lt.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _)
+      (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)))
+    (@LE.le.{0} Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell))
+      (@OfNat.ofNat.{0} Real (nat_lit 1) _))
+@TheoremT.Continuum.grushin_scaled_falling_factorial_le_rho_pow : ∀ {ρ : Real} {ell r j : Nat}
+  (hρ : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ) (hr : @LT.lt.{0} Nat _ r ell)
+  (hj : @LE.le.{0} Nat _ j r),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) j)
+        (@Nat.cast.{0} Real _ (Nat.factorial r)))
+      (@Nat.cast.{0} Real _ (Nat.factorial (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))))
+    (@HPow.hPow.{0, 0, 0} Real Nat Real _ ρ j)
+@TheoremT.Continuum.grushin_scaled_falling_factorial_le_one : ∀ {ρ : Real} {ell r j : Nat}
+  (hρ0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _)) (hr : @LT.lt.{0} Nat _ r ell)
+  (hj : @LE.le.{0} Nat _ j r),
+  @LE.le.{0} Real _
+    (@HDiv.hDiv.{0, 0, 0} Real Real Real _
+      (@HMul.hMul.{0, 0, 0} Real Real Real _
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) j)
+        (@Nat.cast.{0} Real _ (Nat.factorial r)))
+      (@Nat.cast.{0} Real _ (Nat.factorial (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r j))))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+@TheoremT.Continuum.grushin_scaled_factorial_le_one : ∀ {ρ : Real} {ell r : Nat}
+  (hρ0 : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) ρ)
+  (hρ1 : @LE.le.{0} Real _ ρ (@OfNat.ofNat.{0} Real (nat_lit 1) _)) (hr : @LT.lt.{0} Nat _ r ell),
+  @LE.le.{0} Real _
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HDiv.hDiv.{0, 0, 0} Real Real Real _ ρ (@Nat.cast.{0} Real _ ell)) r)
+      (@Nat.cast.{0} Real _ (Nat.factorial r)))
+    (@OfNat.ofNat.{0} Real (nat_lit 1) _)
+'TheoremT.Continuum.grushin_factorial_ratio_eq_descFactorial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_normalization_scale_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_normalization_scale_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_normalization_scale_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_normalization_scale_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scaled_falling_factorial_le_rho_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.grushin_scaled_falling_factorial_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.grushin_scaled_factorial_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]

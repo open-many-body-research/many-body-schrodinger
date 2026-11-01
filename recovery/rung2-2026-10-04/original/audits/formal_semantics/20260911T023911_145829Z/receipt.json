@@ -1,0 +1,70 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T023911_145829Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023911_145829Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T023911_145829Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 17.418819,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "23a8d1757065195a070d856868b7174e8ea030672a53d15f9c7d0b8c1e2edf24",
+  "audit_log_sha256": "fdabb4c55b271c8786717c8cd6af90a5fada1c30acddde02634f14b0e0dc66a5",
+  "module_records": [
+    {
+      "module": "HomogeneousSpectatorFiniteVariables_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/HomogeneousSpectatorFiniteVariables_v1.lean",
+      "source_sha256": "6b4ad4b30f03dc0541f71a557b44a18296cd09fd90bca07b1e7b9a088e2f063e",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/HomogeneousSpectatorFiniteVariables_v1.olean",
+      "object_sha256": "7a4c2372c22de783d0ab2f27150b45c1ef4bfc02e879bda569db86806df29d2c",
+      "declarations": [
+        "homogeneous_spectator_finite_variables_norm_bound",
+        "homogeneous_spectator_finite_variables_summable"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "PhysicalKSTaylorSpectatorSeries_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalKSTaylorSpectatorSeries_v1.lean",
+      "source_sha256": "995fbf6613e7bca80e5cb292cf099f79e02e291849445c2623589b067a86f7be",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/PhysicalKSTaylorSpectatorSeries_v1.olean",
+      "object_sha256": "e79fb863dc378cfc53f4ed8ed282144e3002e650ecee37a9ef3aafe5e08bcbd6",
+      "declarations": [
+        "physicalKSTaylorSpectatorFamily",
+        "physicalKSTaylorSpectatorFamily_homogeneous",
+        "physicalKSTaylorSpectatorFamily_coefficientL1",
+        "physicalKSTaylorSpectatorFamily_summable"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.homogeneous_spectator_finite_variables_norm_bound: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.homogeneous_spectator_finite_variables_summable: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily_homogeneous: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily_coefficientL1: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily_summable: [propext, Classical.choice, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.homogeneous_spectator_finite_variables_norm_bound",
+    "TheoremT.Continuum.homogeneous_spectator_finite_variables_summable",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily_homogeneous",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily_coefficientL1",
+    "TheoremT.Continuum.physicalKSTaylorSpectatorFamily_summable"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

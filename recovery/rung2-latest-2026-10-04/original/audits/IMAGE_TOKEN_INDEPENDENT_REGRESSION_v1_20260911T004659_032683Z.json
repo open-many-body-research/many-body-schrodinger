@@ -1,0 +1,541 @@
+{
+  "created_utc": "2026-09-11T00:46:59.032341+00:00",
+  "script_sha256": "a79487b3479550ccbeceb9e2dac14e2bf6c29499f4a2a5abe0b688b7f0810406",
+  "helper_v2_sha256": "7c6d90118ba03ea74d2bc4dbe5ddeb0938bb8485b68c4a03b827ae37776fdfeb",
+  "helper_v3_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_v7_sha256": "473c8adfebd3c2ff78325f8d6c10a66ded375fdf8a8f32ad6ab9e6aaef564fb1",
+  "auditor_v8_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "auditor_ast_unchanged_after_version_normalization": true,
+  "actual_target": {
+    "path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/PhysicalSpectatorL2BudgetTransport_v1.lean",
+    "sha256": "ee56f1b9e6ffa5fb1ca5443970ac62c2e483906438d3001a68b4895b56b3276c",
+    "expected": [
+      "TheoremT.Continuum",
+      [
+        "physicalSpectatorReindexAt_symm_measurePreserving",
+        "physicalSpectatorReindexAt_regionL2Budget",
+        "physicalSpectatorReindexAt_locallyL2"
+      ]
+    ]
+  },
+  "cases": [
+    {
+      "name": "comment_before",
+      "source": "namespace Review\ndef image := f /- comment -/'' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "comment_after",
+      "source": "namespace Review\ndef image := f ''/- comment -/ A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "line_comment_after",
+      "source": "namespace Review\ndef image := f ''-- comment\n  A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "paren_adjacency",
+      "source": "namespace Review\ndef image := (f)''(A)\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "nested_no_spaces",
+      "source": "namespace Review\ndef image := (f)''((g)''(A))\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "unicode_identifier",
+      "source": "namespace Review\ndef image := \u03c6 '' \u03a9\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "primed_unicode_identifier",
+      "source": "namespace Review\ndef image := \u03c6'' '' \u03a9'\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "primed_ascii_identifier",
+      "source": "namespace Review\ndef image := f''' '' A''\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "mixed_preimage_image",
+      "source": "namespace Review\ndef image := f '' (g \u207b\u00b9' A)\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "tabs",
+      "source": "namespace Review\ndef image := f\t''\tA\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "newlines",
+      "source": "namespace Review\ndef image := f\n  ''\n  A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "shield_'\"f \\'\\' A\\ntheorem fake : False := by sorry\"'",
+      "source": "namespace Review\ndef literal := \"f '' A\ntheorem fake : False := by sorry\"\ndef image := f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "literal",
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "literal",
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "shield_'r#\"f \\'\\' A\\ntheorem fake : False := by sorry\"#'",
+      "source": "namespace Review\ndef literal := r#\"f '' A\ntheorem fake : False := by sorry\"#\ndef image := f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "literal",
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "literal",
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "shield_'r###\"f \\'\\' A\\n\"#\\ntheorem fake : False := by sorry\"###'",
+      "source": "namespace Review\ndef literal := r###\"f '' A\n\"#\ntheorem fake : False := by sorry\"###\ndef image := f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "literal",
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "literal",
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "shield_\"'\\\\''\"",
+      "source": "namespace Review\ndef literal := '\\''\ndef image := f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "literal",
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "literal",
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "shield_\"'\\\\x27'\"",
+      "source": "namespace Review\ndef literal := '\\x27'\ndef image := f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "literal",
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "literal",
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "shield_\"'\\\\u0027'\"",
+      "source": "namespace Review\ndef literal := '\\u0027'\ndef image := f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": [
+        "literal",
+        "image",
+        "sentinel"
+      ],
+      "actual": {
+        "result": [
+          "Review",
+          [
+            "literal",
+            "image",
+            "sentinel"
+          ]
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_axiom hidden : False",
+      "source": "namespace Review\ndef image := f '' A\naxiom hidden : False\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_opaque hidden : Nat",
+      "source": "namespace Review\ndef image := f '' A\nopaque hidden : Nat\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_private theorem hidden : True := by trivial",
+      "source": "namespace Review\ndef image := f '' A\nprivate theorem hidden : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [3]"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_unsafe def hidden := 0",
+      "source": "namespace Review\ndef image := f '' A\nunsafe def hidden := 0\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [3]"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_instance hidden : Inhabited Nat := inferInstance",
+      "source": "namespace Review\ndef image := f '' A\ninstance hidden : Inhabited Nat := inferInstance\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_macro \"hidden\" : command => pure default",
+      "source": "namespace Review\ndef image := f '' A\nmacro \"hidden\" : command => pure default\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_notation \"hidden\" => True",
+      "source": "namespace Review\ndef image := f '' A\nnotation \"hidden\" => True\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration-bearing command at source line 3"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_theorem \u00abhidden\u00bb : True := by trivial",
+      "source": "namespace Review\ndef image := f '' A\ntheorem \u00abhidden\u00bb : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "quoted identifiers or syntax/name quotations are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_theorem hidden. : True := by trivial",
+      "source": "namespace Review\ndef image := f '' A\ntheorem hidden. : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "absolute/invalid declaration names are unsupported"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_theorem _root_.hidden : True := by trivial",
+      "source": "namespace Review\ndef image := f '' A\ntheorem _root_.hidden : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [3]"
+      },
+      "pass": true
+    },
+    {
+      "name": "reject_def image := f '' A; theorem hidden : True := by trivial",
+      "source": "namespace Review\ndef image := f '' A\ndef image := f '' A; theorem hidden : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported declaration context/name at source lines [3]"
+      },
+      "pass": true
+    },
+    {
+      "name": "standalone_primes_3",
+      "source": "namespace Review\ndef image := f ''' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported repeated prime after set image token"
+      },
+      "pass": true
+    },
+    {
+      "name": "standalone_primes_4",
+      "source": "namespace Review\ndef image := f '''' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported repeated prime after set image token"
+      },
+      "pass": true
+    },
+    {
+      "name": "standalone_primes_5",
+      "source": "namespace Review\ndef image := f ''''' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported repeated prime after set image token"
+      },
+      "pass": true
+    },
+    {
+      "name": "standalone_primes_6",
+      "source": "namespace Review\ndef image := f '''''' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported repeated prime after set image token"
+      },
+      "pass": true
+    },
+    {
+      "name": "standalone_primes_7",
+      "source": "namespace Review\ndef image := f ''''''' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported repeated prime after set image token"
+      },
+      "pass": true
+    },
+    {
+      "name": "standalone_primes_8",
+      "source": "namespace Review\ndef image := f '''''''' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported repeated prime after set image token"
+      },
+      "pass": true
+    },
+    {
+      "name": "malformed_'\"f \\'\\' A'",
+      "source": "namespace Review\ndef bad := \"f '' A\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unterminated Lean string"
+      },
+      "pass": true
+    },
+    {
+      "name": "malformed_'r#\"f \\'\\' A\"'",
+      "source": "namespace Review\ndef bad := r#\"f '' A\"\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unterminated Lean raw string"
+      },
+      "pass": true
+    },
+    {
+      "name": "malformed_\"'\"",
+      "source": "namespace Review\ndef bad := '\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "name": "malformed_\"'\\\\x2'\"",
+      "source": "namespace Review\ndef bad := '\\x2'\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    },
+    {
+      "name": "malformed_\"'\\\\u027'\"",
+      "source": "namespace Review\ndef bad := '\\u027'\ntheorem sentinel : True := by trivial\nend Review\n",
+      "expected": null,
+      "actual": {
+        "rejected": "unsupported apostrophe/character-literal syntax"
+      },
+      "pass": true
+    }
+  ],
+  "all_pass": true,
+  "limits": "Scanner test strings do not claim Lean validity. The source compiler remains responsible for validity. No Lean or proof audit was launched."
+}

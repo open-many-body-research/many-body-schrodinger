@@ -1,0 +1,11 @@
+TheoremT.Continuum.ksMap_surjective : @Function.Surjective.{1, 1} TheoremT.Continuum.KSSpace TheoremT.Continuum.Position
+  TheoremT.Continuum.ksMap
+TheoremT.Continuum.ksMap_exists_preimage_with_norm : ∀ (x : TheoremT.Continuum.Position),
+  @Exists.{1} TheoremT.Continuum.KSSpace fun (y : TheoremT.Continuum.KSSpace) =>
+    And (@Eq.{1} TheoremT.Continuum.Position (TheoremT.Continuum.ksMap y) x)
+      (@Eq.{1} Real
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@Norm.norm.{0} TheoremT.Continuum.KSSpace _ y)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) _))
+        (@Norm.norm.{0} TheoremT.Continuum.Position _ x))
+'TheoremT.Continuum.ksMap_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.ksMap_exists_preimage_with_norm' depends on axioms: [propext, Classical.choice, Quot.sound]

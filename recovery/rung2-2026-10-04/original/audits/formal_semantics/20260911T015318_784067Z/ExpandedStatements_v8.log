@@ -1,0 +1,37 @@
+TheoremT.Continuum.complexClosedPolydisc.{u_1} : (σ : Type u_1) → (r : Real) → Set.{u_1} (σ → Complex)
+TheoremT.Continuum.complexOpenPolydisc.{u_1} : (σ : Type u_1) → (r : Real) → Set.{u_1} (σ → Complex)
+@TheoremT.Continuum.homogeneous_polynomial_eval_norm_bound.{u_1} : ∀ {σ : Type u_1}
+  (P : @MvPolynomial.{u_1, 0} σ Complex _) {m : Nat} (hP : @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ P m)
+  (X : σ → Complex) {r : Real} (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hX : ∀ (i : σ), @LE.le.{0} Real _ (@Norm.norm.{0} Complex _ (X i)) r),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X) P))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ P)
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ r m))
+@TheoremT.Continuum.homogeneous_polynomial_eval_norm_geometric.{u_1} : ∀ {σ : Type u_1}
+  (P : @MvPolynomial.{u_1, 0} σ Complex _) {m : Nat} (hP : @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ P m)
+  {M D r : Real} (hD : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) D)
+  (hr : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) r)
+  (hL :
+    @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ P)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ D m)))
+  (X : σ → Complex)
+  (hX :
+    @Membership.mem.{u_1, u_1} (σ → Complex) (Set.{u_1} (σ → Complex)) _
+      (TheoremT.Continuum.complexClosedPolydisc.{u_1} σ r) X),
+  @LE.le.{0} Real _
+    (@Norm.norm.{0} Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X) P))
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@HMul.hMul.{0, 0, 0} Real Real Real _ D r) m))
+'TheoremT.Continuum.complexClosedPolydisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.complexOpenPolydisc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_eval_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomial_eval_norm_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

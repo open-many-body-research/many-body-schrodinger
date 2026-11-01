@@ -1,0 +1,112 @@
+TheoremT.Continuum.mixedMultiIndex : (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) → (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Nat
+TheoremT.Continuum.mixedMultiIndexWord : (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) →
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) →
+    List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+TheoremT.Continuum.mixedMultiIndex_sum : ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @Eq.{1} Nat
+    (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) Nat _
+      (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) _)
+      fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => TheoremT.Continuum.mixedMultiIndex α β j)
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+TheoremT.Continuum.mixedMultiIndexWord_length : ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat),
+  @Eq.{1} Nat
+    (@List.length.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (TheoremT.Continuum.mixedMultiIndexWord α β))
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _)
+        fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => α i)
+      (@Finset.sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) Nat _
+        (@Finset.univ.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) _)
+        fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => β j))
+TheoremT.Continuum.mixedMultiIndexWord_count_y : ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @Eq.{1} Nat
+    (TheoremT.Continuum.coordinateWordCount
+      (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i)
+      (TheoremT.Continuum.mixedMultiIndexWord α β))
+    (α i)
+TheoremT.Continuum.mixedMultiIndexWord_count_t : ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @Eq.{1} Nat
+    (TheoremT.Continuum.coordinateWordCount
+      (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) j)
+      (TheoremT.Continuum.mixedMultiIndexWord α β))
+    (β j)
+TheoremT.Continuum.coordinateWordCount_cons : ∀
+  (x y : Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+  (w : List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))),
+  @Eq.{1} Nat
+    (TheoremT.Continuum.coordinateWordCount x
+      (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        y w))
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ (TheoremT.Continuum.coordinateWordCount x w)
+      (@ite.{1} Nat
+        (@Eq.{1} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))) y x)
+        _ (@OfNat.ofNat.{0} Nat (nat_lit 1) _) (@OfNat.ofNat.{0} Nat (nat_lit 0) _)))
+TheoremT.Continuum.coordinateMultiIndexWord_add_single_perm : ∀ (γ : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Nat)
+  (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)),
+  @List.Perm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+    (TheoremT.Continuum.coordinateMultiIndexWord
+      (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _) → Nat) _ γ
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+    (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (@DFunLike.coe.{1, 1, 1}
+        (Equiv.{1, 1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+          (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _))
+        (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) _)) =>
+          Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+        _ TheoremT.Continuum.sevenCoordinateEquiv j)
+      (TheoremT.Continuum.coordinateMultiIndexWord γ))
+TheoremT.Continuum.mixedMultiIndexWord_add_single_y_perm : ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)),
+  @List.Perm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+    (TheoremT.Continuum.mixedMultiIndexWord
+      (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat) _ α
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _))
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => Nat) _ _ i (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+      β)
+    (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (@Sum.inl.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) i)
+      (TheoremT.Continuum.mixedMultiIndexWord α β))
+TheoremT.Continuum.mixedMultiIndexWord_add_single_t_perm : ∀ (α : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _) → Nat)
+  (β : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)),
+  @List.Perm.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+    (TheoremT.Continuum.mixedMultiIndexWord α
+      (@HAdd.hAdd.{0, 0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat)
+        ((j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) → Nat) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _) → Nat) _ β
+        (@Pi.single.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))
+          (fun (j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => Nat) _ _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+    (@List.cons.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)))
+      (@Sum.inr.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) j)
+      (TheoremT.Continuum.mixedMultiIndexWord α β))
+TheoremT.Continuum.mixedMultiIndexWord_zero : @Eq.{1}
+  (List.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+  (TheoremT.Continuum.mixedMultiIndexWord
+    (fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) => @OfNat.ofNat.{0} Nat (nat_lit 0) _)
+    fun (x : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _)) => @OfNat.ofNat.{0} Nat (nat_lit 0) _)
+  (@List.nil.{0} (Sum.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) _))))
+'TheoremT.Continuum.mixedMultiIndex' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord' depends on axioms: [propext, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndex_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord_count_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord_count_t' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.coordinateWordCount_cons' depends on axioms: [propext]
+'TheoremT.Continuum.coordinateMultiIndexWord_add_single_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord_add_single_y_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord_add_single_t_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.mixedMultiIndexWord_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

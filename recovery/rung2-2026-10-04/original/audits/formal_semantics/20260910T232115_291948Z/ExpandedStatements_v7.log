@@ -1,0 +1,28 @@
+TheoremT.Continuum.factorial_majorant_amplitude_bound : ∀ (B S : Real)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 1) _) B)
+  (hS : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) S) (n0 ell : Nat) (d : Nat → Real)
+  (hinit : ∀ (r : Nat), @LT.lt.{0} Nat _ r ell → @LT.lt.{0} Nat _ r n0 → @LE.le.{0} Real _ (d r) S)
+  (hstep :
+    ∀ (r : Nat),
+      @LT.lt.{0} Nat _ r ell →
+        @LE.le.{0} Nat _ n0 r →
+          @LE.le.{0} Real _ (d r)
+            (@HAdd.hAdd.{0, 0, 0} Real Real Real _
+              (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+                (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+              (@Finset.sum.{0, 0} Nat Real _ (Finset.range r) fun (j : Nat) =>
+                @HMul.hMul.{0, 0, 0} Real Real Real _
+                  (@HPow.hPow.{0, 0, 0} Real Nat Real _ B
+                    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ j (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+                  (d
+                    (@HSub.hSub.{0, 0, 0} Nat Nat Nat _
+                      (@HSub.hSub.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _)) j)))))
+  (r : Nat),
+  @LT.lt.{0} Nat _ r ell →
+    @LE.le.{0} Real _ (d r)
+      (@HMul.hMul.{0, 0, 0} Real Real Real _ S
+        (@HPow.hPow.{0, 0, 0} Real Nat Real _
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 2) _) B)
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ r (@OfNat.ofNat.{0} Nat (nat_lit 1) _))))
+'TheoremT.Continuum.factorial_majorant_amplitude_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

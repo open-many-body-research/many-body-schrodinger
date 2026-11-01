@@ -1,0 +1,69 @@
+TheoremT.Continuum.homogeneous_support_subset_degree_exponents : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) {k : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ P k),
+  @LE.le.{0} (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+    (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P)
+    (TheoremT.Continuum.degreeMonomialExponents4 k)
+TheoremT.Continuum.homogeneous_support_card_le_four_pow : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) {k : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ P k),
+  @LE.le.{0} Nat _
+    (@Finset.card.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+      (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P))
+    (@HPow.hPow.{0, 0, 0} Nat Nat Nat _ (@OfNat.ofNat.{0} Nat (nat_lit 4) _) k)
+TheoremT.Continuum.homogeneous_polynomialCoeffL1_coefficient_bound : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) {k : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ P k) {C : Real}
+  (hC : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) C)
+  (hc :
+    ∀ (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ P)
+              d))
+          C),
+  @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) P)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) k) C)
+TheoremT.Continuum.homogeneous_polynomialCoeffL1_geometric_bound : ∀
+  (P : @MvPolynomial.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _) {k : Nat}
+  (hP : @MvPolynomial.IsHomogeneous.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Complex _ P k) {M B : Real}
+  (hM : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) M)
+  (hB : @LE.le.{0} Real _ (@OfNat.ofNat.{0} Real (nat_lit 0) _) B)
+  (hc :
+    ∀ (d : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _),
+      @Membership.mem.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+          (Finset.{0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)) _
+          (@MvPolynomial.support.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) _ P) d →
+        @LE.le.{0} Real _
+          (@Norm.norm.{0} Complex _
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) Complex _)
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+              (fun (x : @Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _) => Complex) _
+              (@AddMonoidAlgebra.coeff.{0, 0} Complex (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) Nat _)
+                _ P)
+              d))
+          (@HMul.hMul.{0, 0, 0} Real Real Real _ M (@HPow.hPow.{0, 0, 0} Real Nat Real _ B k))),
+  @LE.le.{0} Real _ (@TheoremT.Continuum.polynomialCoeffL1.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 4) _)) P)
+    (@HMul.hMul.{0, 0, 0} Real Real Real _ M
+      (@HPow.hPow.{0, 0, 0} Real Nat Real _
+        (@HMul.hMul.{0, 0, 0} Real Real Real _ (@OfNat.ofNat.{0} Real (nat_lit 4) _) B) k))
+'TheoremT.Continuum.homogeneous_support_subset_degree_exponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_support_card_le_four_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomialCoeffL1_coefficient_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.homogeneous_polynomialCoeffL1_geometric_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,82 @@
+{
+  "declaration_discovery": "lean_declaration_discovery_v3.py",
+  "declaration_discovery_sha256": "d29a8290ccc84fbc28f8b674abb6c9b6a6a121cbf43491990f787474847cc722",
+  "auditor_sha256": "c6d2d78fb4da5772f6c84c3d60cef81a95f22d8555688279e17ce6aa1259c340",
+  "timestamp_utc": "20260911T035403_847919Z",
+  "command": [
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/tooling/elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean",
+    "-o",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035403_847919Z/ExpandedStatements_v8.olean",
+    "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T035403_847919Z/ExpandedStatements_v8.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.744143125,
+  "lean_path": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/AUDIT_2026-09-09_v1/lean/build:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/Qq/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/aesop/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/batteries/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/importGraph/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/mathlib/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/plausible/.lake/build/lib/lean:/Users/devonchase/Documents/ChatGPT/MATHEMATICS/formal/.lake/packages/proofwidgets/.lake/build/lib/lean",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "audit_source_sha256": "da2f9ea1172a75d0f7ae62805de342bd7fbde84cec1698a6b1a603a5ad69d21b",
+  "audit_log_sha256": "ff9b9afb09007fef8d22c82b3e0718566aff3f97fa065104ab48a9f1e83751d8",
+  "module_records": [
+    {
+      "module": "SO2SpectatorCoefficientInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SO2SpectatorCoefficientInvariance_v1.lean",
+      "source_sha256": "df062fea097b8d733e391a63e01ba41c5aec605c9d9899f5162152a83f0315a4",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SO2SpectatorCoefficientInvariance_v1.olean",
+      "object_sha256": "a5b7f75758a9d47b2812e83d5ce13122bef8f3d3a15bd99cd03fa548d10d5a95",
+      "declarations": [
+        "so2JointRealRotationCLM",
+        "so2JointRealRotationCLM_apply",
+        "so2SpectatorEvaluationPolynomial",
+        "so2SpectatorEvaluationPolynomial_coeff",
+        "so2SpectatorEvaluationPolynomial_eval",
+        "so2SpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq",
+        "so2SpectatorCoefficientPolynomial_rotation_invariant",
+        "so2SpectatorCoefficientPolynomial_balanced_support"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "SO2SpectatorSeriesInvariance_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/SO2SpectatorSeriesInvariance_v1.lean",
+      "source_sha256": "fedb36dd12e145e72f6b76146d9f95030db7b89d3924eecd33f814b73ca3e754",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/SO2SpectatorSeriesInvariance_v1.olean",
+      "object_sha256": "06350f37ced61e13a024a816a55c477b4b39ab14b9725fefa77a35523fbde559",
+      "declarations": [
+        "so2SpectatorFamily_rotation_invariant_of_hasSum",
+        "so2SpectatorFamily_balanced_support_of_hasSum"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "axiom_lines": [
+    "TheoremT.Continuum.so2JointRealRotationCLM: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.so2JointRealRotationCLM_apply: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorEvaluationPolynomial: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorEvaluationPolynomial_coeff: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorEvaluationPolynomial_eval: [propext, Classical.choice, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorCoefficientPolynomial_rotation_invariant: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorCoefficientPolynomial_balanced_support: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorFamily_rotation_invariant_of_hasSum: [propext,, Classical.choice,, Quot.sound]",
+    "TheoremT.Continuum.so2SpectatorFamily_balanced_support_of_hasSum: [propext,, Classical.choice,, Quot.sound]"
+  ],
+  "unexpected_axioms": [],
+  "expected_declarations": [
+    "TheoremT.Continuum.so2JointRealRotationCLM",
+    "TheoremT.Continuum.so2JointRealRotationCLM_apply",
+    "TheoremT.Continuum.so2SpectatorEvaluationPolynomial",
+    "TheoremT.Continuum.so2SpectatorEvaluationPolynomial_coeff",
+    "TheoremT.Continuum.so2SpectatorEvaluationPolynomial_eval",
+    "TheoremT.Continuum.so2SpectatorCoefficientPolynomial_eval_eq_of_real_spectator_eq",
+    "TheoremT.Continuum.so2SpectatorCoefficientPolynomial_rotation_invariant",
+    "TheoremT.Continuum.so2SpectatorCoefficientPolynomial_balanced_support",
+    "TheoremT.Continuum.so2SpectatorFamily_rotation_invariant_of_hasSum",
+    "TheoremT.Continuum.so2SpectatorFamily_balanced_support_of_hasSum"
+  ],
+  "axiom_report_complete": true,
+  "printer_ellipsis_count": 0,
+  "printer_failure_diagnostics": []
+}

@@ -1,0 +1,361 @@
+@TheoremT.Continuum.tensor_box_sqrt_integral_eq_Lp_norm : ∀ {μ : Measure (Fin 7 → ℝ)} (u : ↥(Lp ℂ 2 μ))
+  {g : (Fin 7 → ℝ) → ℂ}, ↑↑u =ᵐ[μ] g → √(∫ (x : Fin 7 → ℝ), ‖g x‖ ^ 2 ∂μ) = ‖u‖
+@TheoremT.Continuum.tensor_box7_uniformCauchy_of_L2_Cauchy : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ (D : ℕ → Finset (Fin 7) → (Fin 7 → ℝ) → ℂ),
+      (∀ (n : ℕ) (s : Finset (Fin 7)), ContinuousOn (D n s) (TheoremT.Continuum.tensorClosedBox7 a b)) →
+        (∀ (n : ℕ) (s : Finset (Fin 7)),
+            ∀ i ∉ s,
+              ∀ x ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+                HasDerivAt (fun r => D n s (Function.update x i r)) (D n (insert i s) x) (x i)) →
+          ∀ (V : ℕ → Finset (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+            (∀ (n : ℕ) (s : Finset (Fin 7)),
+                ↑↑(V n s) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] D n s) →
+              (∀ (s : Finset (Fin 7)), CauchySeq fun n => V n s) →
+                UniformCauchySeqOn (fun n => D n ∅) atTop (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_continuous_uniform_limit_of_L2_Cauchy : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ (D : ℕ → Finset (Fin 7) → (Fin 7 → ℝ) → ℂ),
+      (∀ (n : ℕ) (s : Finset (Fin 7)), ContinuousOn (D n s) (TheoremT.Continuum.tensorClosedBox7 a b)) →
+        (∀ (n : ℕ) (s : Finset (Fin 7)),
+            ∀ i ∉ s,
+              ∀ x ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+                HasDerivAt (fun r => D n s (Function.update x i r)) (D n (insert i s) x) (x i)) →
+          ∀ (V : ℕ → Finset (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+            (∀ (n : ℕ) (s : Finset (Fin 7)),
+                ↑↑(V n s) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] D n s) →
+              (∀ (s : Finset (Fin 7)), CauchySeq fun n => V n s) →
+                ∃ g,
+                  ContinuousOn g (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                    TendstoUniformlyOn (fun n => D n ∅) g atTop (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_uniform_limit_ae_Lp_limit : ∀ {a b : Fin 7 → ℝ} (f : ℕ → (Fin 7 → ℝ) → ℂ)
+  {g : (Fin 7 → ℝ) → ℂ},
+  TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+    ∀ (V : ℕ → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+      (∀ (n : ℕ), ↑↑(V n) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] f n) →
+        ∀ {W : ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))},
+          Tendsto V atTop (𝓝 W) → ↑↑W =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] g
+@TheoremT.Continuum.tensor_box7_continuous_representative_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ (D : ℕ → Finset (Fin 7) → (Fin 7 → ℝ) → ℂ),
+      (∀ (n : ℕ) (s : Finset (Fin 7)), ContinuousOn (D n s) (TheoremT.Continuum.tensorClosedBox7 a b)) →
+        (∀ (n : ℕ) (s : Finset (Fin 7)),
+            ∀ i ∉ s,
+              ∀ x ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+                HasDerivAt (fun r => D n s (Function.update x i r)) (D n (insert i s) x) (x i)) →
+          ∀ (V : ℕ → Finset (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+            (∀ (n : ℕ) (s : Finset (Fin 7)),
+                ↑↑(V n s) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] D n s) →
+              ∀ (W : Finset (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                (∀ (s : Finset (Fin 7)), Tendsto (fun n => V n s) atTop (𝓝 (W s))) →
+                  ∃ g,
+                    ContinuousOn g (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                      TendstoUniformlyOn (fun n => D n ∅) g atTop (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                        ↑↑(W ∅) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] g
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv : {E : Type u_1} →
+  [inst : NormedAddCommGroup E] → [NormedSpace ℝ E] → {ι : Type u_2} → (ι → E) → (E → ℂ) → List ι → E → ℂ
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv_contDiff : ∀ {E : Type u_1} [inst : NormedAddCommGroup E]
+  [inst_1 : NormedSpace ℝ E] {ι : Type u_2} (dirs : ι → E) {f : E → ℂ},
+  ContDiff ℝ ∞ f → ∀ (w : List ι), ContDiff ℝ ∞ (TheoremT.Continuum.normedComplexDirectionalWordDeriv dirs f w)
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv_append : ∀ {E : Type u_1} [inst : NormedAddCommGroup E]
+  [inst_1 : NormedSpace ℝ E] {ι : Type u_2} (dirs : ι → E) (f : E → ℂ) (u v : List ι),
+  TheoremT.Continuum.normedComplexDirectionalWordDeriv dirs f (u ++ v) =
+    TheoremT.Continuum.normedComplexDirectionalWordDeriv dirs
+      (TheoremT.Continuum.normedComplexDirectionalWordDeriv dirs f v) u
+@TheoremT.Continuum.normedComplexDirectionalWordDeriv_perm : ∀ {E : Type u_1} [inst : NormedAddCommGroup E]
+  [inst_1 : NormedSpace ℝ E] {ι : Type u_2} (dirs : ι → E) {f : E → ℂ},
+  ContDiff ℝ ∞ f →
+    ∀ {u v : List ι},
+      u.Perm v →
+        TheoremT.Continuum.normedComplexDirectionalWordDeriv dirs f u =
+          TheoremT.Continuum.normedComplexDirectionalWordDeriv dirs f v
+TheoremT.Continuum.coordinateWordDeriv7 : ((Fin 7 → ℝ) → ℂ) → List (Fin 7) → (Fin 7 → ℝ) → ℂ
+TheoremT.Continuum.canonicalSubsetWord7 : Finset (Fin 7) → List (Fin 7)
+TheoremT.Continuum.canonicalSubsetWord7_nodup : ∀ (s : Finset (Fin 7)),
+  (TheoremT.Continuum.canonicalSubsetWord7 s).Nodup
+TheoremT.Continuum.canonicalSubsetWord7_insert_perm : ∀ (s : Finset (Fin 7)),
+  ∀ i ∉ s, (TheoremT.Continuum.canonicalSubsetWord7 (insert i s)).Perm (i :: TheoremT.Continuum.canonicalSubsetWord7 s)
+TheoremT.Continuum.canonicalSubsetWord7_append_length : ∀ (s : Finset (Fin 7)) (w : List (Fin 7)),
+  (TheoremT.Continuum.canonicalSubsetWord7 s ++ w).length ≤ w.length + 7
+TheoremT.Continuum.smoothSubsetField7 : ((Fin 7 → ℝ) → ℂ) → Finset (Fin 7) → (Fin 7 → ℝ) → ℂ
+TheoremT.Continuum.smoothSubsetField7_empty : ∀ (f : (Fin 7 → ℝ) → ℂ), TheoremT.Continuum.smoothSubsetField7 f ∅ = f
+@TheoremT.Continuum.smoothSubsetField7_contDiff : ∀ {f : (Fin 7 → ℝ) → ℂ},
+  ContDiff ℝ ∞ f → ∀ (s : Finset (Fin 7)), ContDiff ℝ ∞ (TheoremT.Continuum.smoothSubsetField7 f s)
+TheoremT.Continuum.smoothSubsetField7_word_base : ∀ (f : (Fin 7 → ℝ) → ℂ) (w : List (Fin 7)) (s : Finset (Fin 7)),
+  TheoremT.Continuum.smoothSubsetField7 (TheoremT.Continuum.coordinateWordDeriv7 f w) s =
+    TheoremT.Continuum.coordinateWordDeriv7 f (TheoremT.Continuum.canonicalSubsetWord7 s ++ w)
+@TheoremT.Continuum.smoothSubsetField7_directional : ∀ {f : (Fin 7 → ℝ) → ℂ},
+  ContDiff ℝ ∞ f →
+    ∀ (s : Finset (Fin 7)),
+      ∀ i ∉ s,
+        ∀ (x : Fin 7 → ℝ),
+          (fderiv ℝ (TheoremT.Continuum.smoothSubsetField7 f s) x) (Pi.single i 1) =
+            TheoremT.Continuum.smoothSubsetField7 f (insert i s) x
+@TheoremT.Continuum.smoothSubsetField7_coordinate_hasDerivAt : ∀ {f : (Fin 7 → ℝ) → ℂ},
+  ContDiff ℝ ∞ f →
+    ∀ (s : Finset (Fin 7)),
+      ∀ i ∉ s,
+        ∀ (x : Fin 7 → ℝ),
+          HasDerivAt (fun r => TheoremT.Continuum.smoothSubsetField7 f s (Function.update x i r))
+            (TheoremT.Continuum.smoothSubsetField7 f (insert i s) x) (x i)
+@TheoremT.Continuum.smooth_word7_continuous_representative_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ (u : ℕ → (Fin 7 → ℝ) → ℂ),
+      (∀ (n : ℕ), ContDiff ℝ ∞ (u n)) →
+        ∀ {m : ℕ} (V : ℕ → List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+          (∀ (n : ℕ) (w : List (Fin 7)),
+              w.length ≤ m + 7 →
+                ↑↑(V n w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)]
+                  TheoremT.Continuum.coordinateWordDeriv7 (u n) w) →
+            ∀ (W : List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+              (∀ (w : List (Fin 7)), w.length ≤ m + 7 → Tendsto (fun n => V n w) atTop (𝓝 (W w))) →
+                ∀ (w : List (Fin 7)),
+                  w.length ≤ m →
+                    ∃ g,
+                      ContinuousOn g (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                        TendstoUniformlyOn (fun n => TheoremT.Continuum.coordinateWordDeriv7 (u n) w) g atTop
+                            (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                          ↑↑(W w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] g
+@TheoremT.Continuum.smooth_words7_continuous_representatives_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ (u : ℕ → (Fin 7 → ℝ) → ℂ),
+      (∀ (n : ℕ), ContDiff ℝ ∞ (u n)) →
+        ∀ {m : ℕ} (V : ℕ → List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+          (∀ (n : ℕ) (w : List (Fin 7)),
+              w.length ≤ m + 7 →
+                ↑↑(V n w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)]
+                  TheoremT.Continuum.coordinateWordDeriv7 (u n) w) →
+            ∀ (W : List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+              (∀ (w : List (Fin 7)), w.length ≤ m + 7 → Tendsto (fun n => V n w) atTop (𝓝 (W w))) →
+                ∃ G,
+                  ∀ (w : List (Fin 7)),
+                    w.length ≤ m →
+                      ContinuousOn (G w) (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                        TendstoUniformlyOn (fun n => TheoremT.Continuum.coordinateWordDeriv7 (u n) w) (G w) atTop
+                            (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                          ↑↑(W w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] G w
+@TheoremT.Continuum.tensor_box7_uniform_coordinate_slice : ∀ {a b : Fin 7 → ℝ} {f : ℕ → (Fin 7 → ℝ) → ℂ}
+  {g : (Fin 7 → ℝ) → ℂ},
+  TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+    ∀ {x : Fin 7 → ℝ},
+      x ∈ TheoremT.Continuum.tensorClosedBox7 a b →
+        ∀ (i : Fin 7),
+          TendstoUniformlyOn (fun n r => f n (Function.update x i r)) (fun r => g (Function.update x i r)) atTop
+            (Ioo (a i) (b i))
+@TheoremT.Continuum.tensor_box7_coordinate_hasDerivAt_of_uniform_limits : ∀ {a b : Fin 7 → ℝ} (i : Fin 7)
+  (f df : ℕ → (Fin 7 → ℝ) → ℂ) {g h : (Fin 7 → ℝ) → ℂ},
+  TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+    TendstoUniformlyOn df h atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+      (∀ (n : ℕ),
+          ∀ y ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+            HasDerivAt (fun r => f n (Function.update y i r)) (df n y) (y i)) →
+        ∀ {x : Fin 7 → ℝ},
+          x ∈ TheoremT.Continuum.tensorClosedBox7 a b →
+            x i ∈ Ioo (a i) (b i) → HasDerivAt (fun r => g (Function.update x i r)) (h x) (x i)
+@TheoremT.Continuum.tensor_box7_partial_derivative_eq_of_uniform_limits : ∀ {a b : Fin 7 → ℝ} (i : Fin 7)
+  (f df : ℕ → (Fin 7 → ℝ) → ℂ) {g h : (Fin 7 → ℝ) → ℂ},
+  TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+    TendstoUniformlyOn df h atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+      (∀ (n : ℕ),
+          ∀ y ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+            HasDerivAt (fun r => f n (Function.update y i r)) (df n y) (y i)) →
+        ∀ {x : Fin 7 → ℝ},
+          x ∈ TheoremT.Continuum.tensorClosedBox7 a b →
+            x i ∈ Ioo (a i) (b i) → deriv (fun r => g (Function.update x i r)) (x i) = h x
+@TheoremT.Continuum.tensor_box7_coordinate_limit_inside : ∀ {a b : Fin 7 → ℝ} (f : ℕ → (Fin 7 → ℝ) → ℂ)
+  (df : ℕ → Fin 7 → (Fin 7 → ℝ) → ℂ) {g : (Fin 7 → ℝ) → ℂ} {h : Fin 7 → (Fin 7 → ℝ) → ℂ},
+  TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+    (∀ (i : Fin 7), TendstoUniformlyOn (fun n => df n i) (h i) atTop (TheoremT.Continuum.tensorClosedBox7 a b)) →
+      (∀ (n : ℕ) (i : Fin 7),
+          ∀ y ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+            HasDerivAt (fun r => f n (Function.update y i r)) (df n i y) (y i)) →
+        ∀ {x : Fin 7 → ℝ},
+          (∀ (i : Fin 7), x i ∈ Ioo (a i) (b i)) →
+            ∀ (i : Fin 7), HasDerivAt (fun r => g (Function.update x i r)) (h i x) (x i)
+TheoremT.Continuum.coordinateDerivativeMap7 : (Fin 7 → ℂ) → (Fin 7 → ℝ) →L[ℝ] ℂ
+TheoremT.Continuum.coordinateDerivativeMap7_fderiv : ∀ (f : (Fin 7 → ℝ) → ℂ) (x : Fin 7 → ℝ),
+  (TheoremT.Continuum.coordinateDerivativeMap7 fun i => (fderiv ℝ f x) (Pi.single i 1)) = fderiv ℝ f x
+@TheoremT.Continuum.tensor_box7_uniformly_pi : ∀ {a b : Fin 7 → ℝ} {f : ℕ → (Fin 7 → ℝ) → Fin 7 → ℂ}
+  {g : (Fin 7 → ℝ) → Fin 7 → ℂ},
+  (∀ (i : Fin 7),
+      TendstoUniformlyOn (fun n x => f n x i) (fun x => g x i) atTop (TheoremT.Continuum.tensorClosedBox7 a b)) →
+    TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_fderiv_uniform_limit : ∀ {a b : Fin 7 → ℝ} (f : ℕ → (Fin 7 → ℝ) → ℂ)
+  {h : (Fin 7 → ℝ) → Fin 7 → ℂ},
+  (∀ (i : Fin 7),
+      TendstoUniformlyOn (fun n x => (fderiv ℝ (f n) x) (Pi.single i 1)) (fun x => h x i) atTop
+        (TheoremT.Continuum.tensorClosedBox7 a b)) →
+    TendstoUniformlyOn (fun n => fderiv ℝ (f n)) (fun x => TheoremT.Continuum.coordinateDerivativeMap7 (h x)) atTop
+      (TheoremT.Continuum.tensorClosedBox7 a b)
+@TheoremT.Continuum.tensor_box7_limit_hasFDerivAt : ∀ {a b : Fin 7 → ℝ} {U : Set (Fin 7 → ℝ)},
+  IsOpen U →
+    U ⊆ TheoremT.Continuum.tensorClosedBox7 a b →
+      ∀ (f : ℕ → (Fin 7 → ℝ) → ℂ),
+        (∀ (n : ℕ), ∀ x ∈ U, DifferentiableAt ℝ (f n) x) →
+          ∀ {g : (Fin 7 → ℝ) → ℂ},
+            TendstoUniformlyOn f g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+              ∀ {h : (Fin 7 → ℝ) → Fin 7 → ℂ},
+                (∀ (i : Fin 7),
+                    TendstoUniformlyOn (fun n x => (fderiv ℝ (f n) x) (Pi.single i 1)) (fun x => h x i) atTop
+                      (TheoremT.Continuum.tensorClosedBox7 a b)) →
+                  ∀ {x : Fin 7 → ℝ}, x ∈ U → HasFDerivAt g (TheoremT.Continuum.coordinateDerivativeMap7 (h x)) x
+@TheoremT.Continuum.finite_coordinate_jet_contDiffOn : ∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι]
+  {U : Set (ι → ℝ)},
+  IsOpen U →
+    ∀ {m : ℕ} (G : List ι → (ι → ℝ) → ℂ),
+      (∀ (w : List ι), w.length ≤ m → ContinuousOn (G w) U) →
+        (∀ (w : List ι),
+            w.length < m → ∀ x ∈ U, HasFDerivAt (G w) ((ContinuousLinearEquiv.piRing ι).symm fun i => G (i :: w) x) x) →
+          ∀ (k : ℕ) (w : List ι), w.length + k ≤ m → ContDiffOn ℝ (↑k) (G w) U
+@TheoremT.Continuum.finite_coordinate_jet_base_contDiffOn : ∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι]
+  {U : Set (ι → ℝ)},
+  IsOpen U →
+    ∀ (m : ℕ) (G : List ι → (ι → ℝ) → ℂ),
+      (∀ (w : List ι), w.length ≤ m → ContinuousOn (G w) U) →
+        (∀ (w : List ι),
+            w.length < m → ∀ x ∈ U, HasFDerivAt (G w) ((ContinuousLinearEquiv.piRing ι).symm fun i => G (i :: w) x) x) →
+          ContDiffOn ℝ (↑m) (G []) U
+@TheoremT.Continuum.smooth_words7_finite_representatives_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ {U : Set (Fin 7 → ℝ)},
+      IsOpen U →
+        U ⊆ TheoremT.Continuum.tensorClosedBox7 a b →
+          ∀ (u : ℕ → (Fin 7 → ℝ) → ℂ),
+            (∀ (n : ℕ), ContDiff ℝ ∞ (u n)) →
+              ∀ {m : ℕ} (V : ℕ → List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                (∀ (n : ℕ) (w : List (Fin 7)),
+                    w.length ≤ m + 7 →
+                      ↑↑(V n w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)]
+                        TheoremT.Continuum.coordinateWordDeriv7 (u n) w) →
+                  ∀ (W : List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                    (∀ (w : List (Fin 7)), w.length ≤ m + 7 → Tendsto (fun n => V n w) atTop (𝓝 (W w))) →
+                      ∃ G,
+                        (∀ (w : List (Fin 7)),
+                            w.length ≤ m →
+                              ContinuousOn (G w) (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                                TendstoUniformlyOn (fun n => TheoremT.Continuum.coordinateWordDeriv7 (u n) w) (G w)
+                                    atTop (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                                  ↑↑(W w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] G w) ∧
+                          (∀ (w : List (Fin 7)),
+                              w.length < m →
+                                ∀ x ∈ U,
+                                  HasFDerivAt (G w) (TheoremT.Continuum.coordinateDerivativeMap7 fun i => G (i :: w) x)
+                                    x) ∧
+                            ∀ (k : ℕ) (w : List (Fin 7)), w.length + k ≤ m → ContDiffOn ℝ (↑k) (G w) U
+@TheoremT.Continuum.compatible_coordinate_words7_eq : ∀ {U : Set (Fin 7 → ℝ)},
+  IsOpen U →
+    ∀ (G : List (Fin 7) → (Fin 7 → ℝ) → ℂ),
+      (∀ (w : List (Fin 7)),
+          ∀ x ∈ U, HasFDerivAt (G w) (TheoremT.Continuum.coordinateDerivativeMap7 fun i => G (i :: w) x) x) →
+        ∀ (w : List (Fin 7)), EqOn (TheoremT.Continuum.coordinateWordDeriv7 (G []) w) (G w) U
+@TheoremT.Continuum.smooth_words7_allOrder_representative_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ {U : Set (Fin 7 → ℝ)},
+      IsOpen U →
+        U ⊆ TheoremT.Continuum.tensorClosedBox7 a b →
+          ∀ (u : ℕ → (Fin 7 → ℝ) → ℂ),
+            (∀ (n : ℕ), ContDiff ℝ ∞ (u n)) →
+              ∀ (V : ℕ → List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                (∀ (n : ℕ) (w : List (Fin 7)),
+                    ↑↑(V n w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)]
+                      TheoremT.Continuum.coordinateWordDeriv7 (u n) w) →
+                  ∀ (W : List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                    (∀ (w : List (Fin 7)), Tendsto (fun n => V n w) atTop (𝓝 (W w))) →
+                      ∃ G,
+                        (∀ (w : List (Fin 7)),
+                            ContinuousOn (G w) (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                              TendstoUniformlyOn (fun n => TheoremT.Continuum.coordinateWordDeriv7 (u n) w) (G w) atTop
+                                  (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                                ↑↑(W w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] G w) ∧
+                          (∀ (w : List (Fin 7)),
+                              ∀ x ∈ U,
+                                HasFDerivAt (G w) (TheoremT.Continuum.coordinateDerivativeMap7 fun i => G (i :: w) x)
+                                  x) ∧
+                            (∀ (w : List (Fin 7)), ContDiffOn ℝ ∞ (G w) U) ∧
+                              ∀ (w : List (Fin 7)), EqOn (TheoremT.Continuum.coordinateWordDeriv7 (G []) w) (G w) U
+@TheoremT.Continuum.tensor_box7_pointwise_bound_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ (D : ℕ → Finset (Fin 7) → (Fin 7 → ℝ) → ℂ),
+      (∀ (n : ℕ) (s : Finset (Fin 7)), ContinuousOn (D n s) (TheoremT.Continuum.tensorClosedBox7 a b)) →
+        (∀ (n : ℕ) (s : Finset (Fin 7)),
+            ∀ i ∉ s,
+              ∀ x ∈ TheoremT.Continuum.tensorClosedBox7 a b,
+                HasDerivAt (fun r => D n s (Function.update x i r)) (D n (insert i s) x) (x i)) →
+          ∀ (V : ℕ → Finset (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+            (∀ (n : ℕ) (s : Finset (Fin 7)),
+                ↑↑(V n s) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] D n s) →
+              ∀ (W : Finset (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                (∀ (s : Finset (Fin 7)), Tendsto (fun n => V n s) atTop (𝓝 (W s))) →
+                  ∀ {g : (Fin 7 → ℝ) → ℂ},
+                    TendstoUniformlyOn (fun n => D n ∅) g atTop (TheoremT.Continuum.tensorClosedBox7 a b) →
+                      ∀ {M : ℝ},
+                        0 ≤ M →
+                          (∀ (s : Finset (Fin 7)), ‖W s‖ ≤ M) →
+                            ∀ {x : Fin 7 → ℝ},
+                              x ∈ TheoremT.Continuum.tensorClosedBox7 a b →
+                                ‖g x‖ ≤ TheoremT.Continuum.boxEvaluationConstant a b * M
+@TheoremT.Continuum.smooth_words7_quantitative_representative_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ {U : Set (Fin 7 → ℝ)},
+      IsOpen U →
+        U ⊆ TheoremT.Continuum.tensorClosedBox7 a b →
+          ∀ (u : ℕ → (Fin 7 → ℝ) → ℂ),
+            (∀ (n : ℕ), ContDiff ℝ ∞ (u n)) →
+              ∀ (V : ℕ → List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                (∀ (n : ℕ) (w : List (Fin 7)),
+                    ↑↑(V n w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)]
+                      TheoremT.Continuum.coordinateWordDeriv7 (u n) w) →
+                  ∀ (W : List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                    (∀ (w : List (Fin 7)), Tendsto (fun n => V n w) atTop (𝓝 (W w))) →
+                      ∀ (M : List (Fin 7) → ℝ),
+                        (∀ (w : List (Fin 7)), 0 ≤ M w) →
+                          (∀ (w : List (Fin 7)) (s : Finset (Fin 7)),
+                              ‖W (TheoremT.Continuum.canonicalSubsetWord7 s ++ w)‖ ≤ M w) →
+                            ∃ g,
+                              ContinuousOn g (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                                ContDiffOn ℝ ∞ g U ∧
+                                  ↑↑(W []) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] g ∧
+                                    (∀ (w : List (Fin 7)),
+                                        ↑↑(W w) =ᵐ[volume.restrict U] TheoremT.Continuum.coordinateWordDeriv7 g w) ∧
+                                      ∀ (w : List (Fin 7)),
+                                        ∀ x ∈ U,
+                                          ‖TheoremT.Continuum.coordinateWordDeriv7 g w x‖ ≤
+                                            TheoremT.Continuum.boxEvaluationConstant a b * M w
+@TheoremT.Continuum.compatible_finite_coordinate_words7_eq : ∀ {U : Set (Fin 7 → ℝ)},
+  IsOpen U →
+    ∀ {m : ℕ} (G : List (Fin 7) → (Fin 7 → ℝ) → ℂ),
+      (∀ (w : List (Fin 7)),
+          w.length < m →
+            ∀ x ∈ U, HasFDerivAt (G w) (TheoremT.Continuum.coordinateDerivativeMap7 fun i => G (i :: w) x) x) →
+        ∀ (w : List (Fin 7)), w.length ≤ m → EqOn (TheoremT.Continuum.coordinateWordDeriv7 (G []) w) (G w) U
+@TheoremT.Continuum.smooth_words7_finite_quantitative_representative_of_L2_limits : ∀ {a b : Fin 7 → ℝ},
+  (∀ (i : Fin 7), a i < b i) →
+    ∀ {U : Set (Fin 7 → ℝ)},
+      IsOpen U →
+        U ⊆ TheoremT.Continuum.tensorClosedBox7 a b →
+          ∀ (u : ℕ → (Fin 7 → ℝ) → ℂ),
+            (∀ (n : ℕ), ContDiff ℝ ∞ (u n)) →
+              ∀ {m : ℕ} (V : ℕ → List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                (∀ (n : ℕ) (w : List (Fin 7)),
+                    w.length ≤ m + 7 →
+                      ↑↑(V n w) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)]
+                        TheoremT.Continuum.coordinateWordDeriv7 (u n) w) →
+                  ∀ (W : List (Fin 7) → ↥(Lp ℂ 2 (volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)))),
+                    (∀ (w : List (Fin 7)), w.length ≤ m + 7 → Tendsto (fun n => V n w) atTop (𝓝 (W w))) →
+                      ∀ (M : List (Fin 7) → ℝ),
+                        (∀ (w : List (Fin 7)), w.length ≤ m → 0 ≤ M w) →
+                          (∀ (w : List (Fin 7)),
+                              w.length ≤ m →
+                                ∀ (s : Finset (Fin 7)), ‖W (TheoremT.Continuum.canonicalSubsetWord7 s ++ w)‖ ≤ M w) →
+                            ∃ g,
+                              ContinuousOn g (TheoremT.Continuum.tensorClosedBox7 a b) ∧
+                                ContDiffOn ℝ (↑m) g U ∧
+                                  ↑↑(W []) =ᵐ[volume.restrict (TheoremT.Continuum.tensorClosedBox7 a b)] g ∧
+                                    (∀ (w : List (Fin 7)),
+                                        w.length ≤ m →
+                                          ↑↑(W w) =ᵐ[volume.restrict U] TheoremT.Continuum.coordinateWordDeriv7 g w) ∧
+                                      ∀ (w : List (Fin 7)),
+                                        w.length ≤ m →
+                                          ∀ x ∈ U,
+                                            ‖TheoremT.Continuum.coordinateWordDeriv7 g w x‖ ≤
+                                              TheoremT.Continuum.boxEvaluationConstant a b * M w

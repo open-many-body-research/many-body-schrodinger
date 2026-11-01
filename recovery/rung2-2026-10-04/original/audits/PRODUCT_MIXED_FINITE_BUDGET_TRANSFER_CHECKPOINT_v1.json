@@ -1,0 +1,29 @@
+{
+  "utc": "2026-09-11T00:01:23.093722+00:00",
+  "status": "FORMAL_FINITE_BUDGET_TRANSFER_TO_GENUINE_SELECTED_FAMILY_SEALED",
+  "modules": [
+    {
+      "module": "ProductMixedFiniteBudgetTransfer_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/ProductMixedFiniteBudgetTransfer_v1.lean",
+      "source_sha256": "1fc0301804833ec1485adeb2727d6edb8a40e15171a777703eaaba943bab8ef9",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/ProductMixedFiniteBudgetTransfer_v1.olean",
+      "object_sha256": "98c103a6dd8df7ea3e48568ea2d9970f2117aa1e36ce3d4cdc870fa761f23e43",
+      "declarations": [
+        "product_mixed_finite_budget_transfer_of_local_ae",
+        "product_mixed_finite_budget_transfer"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "receipt": "audits/formal_semantics/20260911T000040_815186Z/receipt.json",
+  "receipt_sha256": "5b483449cb3b49239c41df84f0cd58ba9ce28fecbea16d97bc39b63ee9f0bb11",
+  "declarations": 2,
+  "exact_result": "On an open product region, an existing ProductMixedMultiIndexWeakHk budget W through arbitrary finite order m transfers with the same W to every entry of any separately selected raw multiindex family F having the same zero-order field locally almost everywhere and genuine Y/T local weak chains below m. An exact F00=f wrapper is included.",
+  "proof": "Unpack the existing budgeted family G. Local weak finite-family uniqueness proves G_alpha_beta=F_alpha_beta almost everywhere on the open region. RegionL2Budget.congr_ae transfers both actual restricted MemLp and its integral squared-norm bound. No norm bound on the selected family is assumed.",
+  "evidence": "Pinned-cache compilation PASS in 5.973415166 seconds. Strict v7 expanded-statement and axiom audit PASS for both declarations, with standard foundational axioms only and zero printer diagnostics.",
+  "cache_disclosure": "Existing pinned library/prior-audit object cache and newly compiled continuation objects reused; this is not a source dependency rebuild.",
+  "scope": "This reuses an established finite budget; it does not create the original regularity, improve W, prove a factorial rate, or identify fields outside the region. Local weak chain hypotheses include the actual derivative meaning.",
+  "next": "Apply the transferred finite budgets to the selected physical derivative family and derive the initial weighted profile bound."
+}

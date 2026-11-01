@@ -1,0 +1,98 @@
+{
+  "created_utc": "2026-09-11T01:23:15.585534+00:00",
+  "status": "PASS_ACTUAL_FULL_SPIN_AND_PHYSICAL_GROUND_KS_WEIGHTED_FACTORIAL",
+  "evidence_category": "Kernel-checked actual continuum ground-state regularity theorem",
+  "exact_result": "For fixed real Z,E, one C_H,M,A>=1 precedes every actual full-spin Coulomb eigenvector. There exists one genuine locally Lipschitz representative u with simultaneous fermionic permutation identity and common L,R>0. For every spin, scale0<eps<=min(1,R/4), all nuclear indices and unit physical spectator centers and the pair chart, its literal normalized KS pullback has a coherent genuine weak derivative family with actual weighted L2 factorial profile bounds. For Z>0 and32<9Z^2 the normalized actual fermionic ground vector is constructed, in the exact Coulomb weakH2 domain, with eigenvalue equal to the bottom of the actual continuum spectrum and with normalized symmetric spatial H2 singlet link.",
+  "shared_budgets": {
+    "source": "M*sqrt(sum_sigma norm(u_sigma(0))^2)*sqrt(physicalKSUniformSourceVolume)",
+    "H12": "(L^2+sum_sigma norm(u_sigma(0))^2)*C_H",
+    "profile": "N_r <=12*C*A*(source+498*sqrt(H12))*(3072*C*A)^r*r!, C=commonKSBoxFactorialConstant M"
+  },
+  "mathematical_change": "Discharged input eigenfunction/representative/component-H12 hypotheses for the actual ground state and made amplitude budgets common across all spin components without changing the derivative families.",
+  "hypothesis_review": "Generic result assumes only the actual Hamiltonian eigen-graph. Ground result assumes only Z>0 and32<9Z^2; these hold in particular for real Z>=2. Spectrum membership, lower bound, energy equality, actual domain, normalization and singlet identity are conclusions. No unique-vector, PDE regularity, recurrence, source budget or analytic conclusion is assumed.",
+  "module_records": [
+    {
+      "module": "CoulombSpinPhysicalFactorial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombSpinPhysicalFactorial_v1.lean",
+      "source_sha256": "01098d1e614659c827ac544ee9ae734986eb5c44f963dee8ef414161692985d6",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoulombSpinPhysicalFactorial_v1.olean",
+      "object_sha256": "9cb85b132536d9b38ab3210b3feec4cdbbd6dcdd88944fa3caab52231af02e14",
+      "declarations": [
+        "coulomb_spin_physical_factorial_representative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "TwoElectronGroundPhysicalFactorial_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronGroundPhysicalFactorial_v1.lean",
+      "source_sha256": "58d18fb0ec1b8d6e06a7f160c4b0077ee5ae0dd94c1e56920f952f7b08e73dc7",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronGroundPhysicalFactorial_v1.olean",
+      "object_sha256": "ca4547fe77bdccfd9cc4daea010ba25acb832c7d30ceb543f34ec500943269fb",
+      "declarations": [
+        "twoElectron_physical_ground_factorial"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T011606_894610Z/receipt.json",
+    "sha256": "32f4cd39930560b473c5f3a720b4260669797e663ecc830c5ea2ec44caaea70d"
+  },
+  "expanded_statement_and_axioms": {
+    "path": "audits/formal_semantics/20260911T011606_894610Z/ExpandedStatements_v8.log",
+    "sha256": "9058e1531b5730be967dae68830505bcee40ed978e4979efdf3ec9ef2352c853"
+  },
+  "root_review": "Root read both complete source files, the scalar endpoint full expanded statement and literal data definition, and selected expanded full-spin/ground quantifier, domain and physical-output blocks. Independent reviewer read every1938line of the final expanded output and both axiom reports. Automated strict audit confirmed exact declaration coverage, no omissions/errors and immutable source/object hashes.",
+  "independent_reviews": [
+    {
+      "path": "audits/COULOMB_SPIN_GROUND_PHYSICAL_FACTORIAL_FOCUSED_REVIEW_v1.json",
+      "sha256": "fe19bed31c34bb79430126aba26fb3e171e6b86e1ec1d738c757216aa7b59d66"
+    }
+  ],
+  "dependency_checkpoints": [
+    {
+      "path": "audits/COULOMB_KS_PHYSICAL_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "6e3d16e6c823f420c644eecffade7f5fc9763eef447812d0cc111095875e02a7"
+    },
+    {
+      "path": "audits/PHYSICAL_KS_FACTORIAL_SPIN_BUDGETS_CHECKPOINT_v1.json",
+      "sha256": "940fd5c2b14ab4c3b59e1f978e0baf92c3ce809731db26ed7198867558ee8000"
+    },
+    {
+      "path": "audits/LOCAL_WEAK_GRUSHIN_FIXED_COMMON_BOX_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "bd6c2ecd0a75155f31177d8c026c1392d827d91a3ffc4ec7e1ba9ac4961b9d95"
+    },
+    {
+      "path": "audits/PHYSICAL_GROUND_BRANCH_CHECKPOINT_v1.json",
+      "sha256": "6308dff543b48303ef542244a31b5f1e477dfdcc6414edfda78a119c51401d6b"
+    },
+    {
+      "path": "audits/PHYSICAL_GROUND_STRUCTURE_CHECKPOINT_v1.json",
+      "sha256": "5d259f2891b5e0aa5f9cbb2ea1fa511e6a82d819e9c64acf0240cd2c8b6b52d5"
+    }
+  ],
+  "not_claimed": [
+    "pointwise/analytic conclusion by these two modules",
+    "KS descent",
+    "global exact-dictionary H2 approximation",
+    "executable energy algorithm",
+    "termination or bit complexity",
+    "full Theorem T"
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development objects reused. Current source modules outside isolated source rebuildv20; no isolated reproduction or alternative trust mechanism claimed.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

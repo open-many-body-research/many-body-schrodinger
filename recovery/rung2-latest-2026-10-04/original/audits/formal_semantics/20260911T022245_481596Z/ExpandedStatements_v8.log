@@ -1,0 +1,132 @@
+TheoremT.Continuum.spectatorDegreeIndexEquiv : (d : Nat) →
+  Equiv.{1, 1} (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+    (Prod.{0, 0} Nat (Fin d → Nat))
+@TheoremT.Continuum.spectatorDegreeIndexEquiv_apply : ∀ {d : Nat}
+  (w : @Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _),
+  @Eq.{1} (Prod.{0, 0} Nat (Fin d → Nat))
+    (@DFunLike.coe.{1, 1, 1}
+      (Equiv.{1, 1}
+        (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+        (Prod.{0, 0} Nat (Fin d → Nat)))
+      (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+      (fun
+          (x :
+            @Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _) =>
+        Prod.{0, 0} Nat (Fin d → Nat))
+      _ (TheoremT.Continuum.spectatorDegreeIndexEquiv d) w)
+    (@Prod.mk.{0, 0} Nat ((i : Fin d) → Nat)
+      (@DFunLike.coe.{1, 1, 1}
+        (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+        (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        (fun (x : Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) => Nat) _ w
+        (@OfNat.ofNat.{0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) (nat_lit 0)
+          _))
+      fun (i : Fin d) =>
+      @DFunLike.coe.{1, 1, 1}
+        (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+        (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+        (fun (x : Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) => Nat) _ w
+        (@Fin.succ d i))
+@TheoremT.Continuum.spectator_total_degree_grouping_hasSum : ∀ {d : Nat} (f : Prod.{0, 0} Nat (Fin d → Nat) → Complex)
+  (hf :
+    @Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _ f
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))),
+  @HasSum.{0, 0} Complex Nat _ _
+    (fun (n : Nat) =>
+      @Finset.sum.{0, 0}
+        (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+        Complex _ (TheoremT.Continuum.spectatorTotalDegreeIndices d n)
+        fun
+          (w :
+            @Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _) =>
+        f
+          (@Prod.mk.{0, 0} Nat (Fin d → Nat)
+            (@DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+              (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+              (fun (x : Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) => Nat) _ w
+              (@OfNat.ofNat.{0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+                (nat_lit 0) _))
+            fun (i : Fin d) =>
+            @DFunLike.coe.{1, 1, 1}
+              (@Finsupp.{0, 0} (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) Nat _)
+              (Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _)))
+              (fun (x : Fin (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ d (@OfNat.ofNat.{0} Nat (nat_lit 1) _))) => Nat) _ w
+              (@Fin.succ d i)))
+    (@tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _ (fun (z : Prod.{0, 0} Nat (Fin d → Nat)) => f z)
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+    (SummationFilter.unconditional.{0} Nat)
+@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial_hasSum.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _) (X : σ → Complex) (s : Fin d → Complex)
+  (h :
+    @Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+      (fun (z : Prod.{0, 0} Nat (Fin d → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X)
+            (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) z) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z)))
+          (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))),
+  @HasSum.{0, 0} Complex Nat _ _
+    (fun (n : Nat) =>
+      @DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+        (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _)
+        (fun (x : @MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex (Sum.{u_1, 0} σ (Fin d)) _ (@Sum.elim.{u_1, 0, 1} σ (Fin d) Complex X s))
+        (@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial.{u_1} σ d A n))
+    (@tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+      (fun (z : Prod.{0, 0} Nat (Fin d → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X)
+            (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) z) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z)))
+          (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+    (SummationFilter.unconditional.{0} Nat)
+@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial_tsum_eq.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (A : Nat → (Fin d → Nat) → @MvPolynomial.{u_1, 0} σ Complex _) (X : σ → Complex) (s : Fin d → Complex)
+  (h :
+    @Summable.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+      (fun (z : Prod.{0, 0} Nat (Fin d → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X)
+            (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) z) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z)))
+          (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat)))),
+  @Eq.{1} Complex
+    (@tsum.{0, 0} Complex Nat _ _
+      (fun (n : Nat) =>
+        @DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+          (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _) Complex _ _)
+          (@MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _)
+          (fun (x : @MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _) => Complex) _
+          (@MvPolynomial.eval.{0, u_1} Complex (Sum.{u_1, 0} σ (Fin d)) _ (@Sum.elim.{u_1, 0, 1} σ (Fin d) Complex X s))
+          (@TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial.{u_1} σ d A n))
+      (SummationFilter.unconditional.{0} Nat))
+    (@tsum.{0, 0} Complex (Prod.{0, 0} Nat (Fin d → Nat)) _ _
+      (fun (z : Prod.{0, 0} Nat (Fin d → Nat)) =>
+        @HMul.hMul.{0, 0, 0} Complex Complex Complex _
+          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+            (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+            (@MvPolynomial.eval.{0, u_1} Complex σ _ X)
+            (A (@Prod.fst.{0, 0} Nat (Fin d → Nat) z) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z)))
+          (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+            @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (@Prod.snd.{0, 0} Nat (Fin d → Nat) z i)))
+      (SummationFilter.unconditional.{0} (Prod.{0, 0} Nat (Fin d → Nat))))
+'TheoremT.Continuum.spectatorDegreeIndexEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectatorDegreeIndexEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.spectator_total_degree_grouping_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial_hasSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.groupedHomogeneousSpectatorPolynomial_tsum_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

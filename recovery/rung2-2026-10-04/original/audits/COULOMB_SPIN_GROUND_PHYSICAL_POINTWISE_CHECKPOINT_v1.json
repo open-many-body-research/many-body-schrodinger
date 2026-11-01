@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-09-11T01:27:40.374572+00:00",
+  "status": "PASS_ACTUAL_FULL_SPIN_AND_PHYSICAL_GROUND_KS_POINTWISE_ANALYTICITY",
+  "evidence_category": "Kernel-checked local lifted analytic regularity of an actual continuum ground state",
+  "exact_result": "For Z>0 and32<9Z^2, construct an actual normalized fermionic ground vector in the exact weakH2 Coulomb operator domain, with energy equal to the actual continuum spectral bottom and a normalized symmetric spatial H2 singlet link. One genuine full-spin representative u, local Lipschitz constant L, radius R>0 and constants C_H,M,A>=1 work for every spin, every0<eps<=min(1,R/4), both nuclear KS charts and the pair chart, and every unit physical spectator center. The literal normalized KS pullback is C-infinity and real analytic on the coordinate box of half-width1/512. Every physical coordinate derivative word of length k obeys the actual pointwise bound P*Q^k*k!.",
+  "constants": {
+    "C": "commonKSBoxFactorialConstant M",
+    "Q": "6144*C*A",
+    "P": "(257/16)^7 *12*C*A*(F0+498*sqrt(W))*Q^11*11!",
+    "F0": "M*sqrt(sum_sigma norm(u_sigma(0))^2)*sqrt(physicalKSUniformSourceVolume)",
+    "W": "(L^2+sum_sigma norm(u_sigma(0))^2)*C_H"
+  },
+  "uniformity": "Generic full-spin theorem fixes Z,E and chooses C_H,M,A before the input eigenvector. The representative, L,R and finite amplitude budgets precede spin, scale, chart, unit center and order. Ground application takes E to be the established spectral infimum. Constants are finite existential quantities, not evaluated numerical inputs.",
+  "mathematical_change": "Composed genuine weak-PDE factorial profiles, compatible smooth representatives, the exact seven-coordinate tensor estimate, derivative reserve11 absorption, and derivative Taylor criterion. No solution smoothness/analyticity/factorial hypothesis remains beyond the actual graph in the generic theorem; the ground theorem only assumes its charge conditions.",
+  "module_records": [
+    {
+      "module": "CoulombSpinPhysicalPointwise_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/CoulombSpinPhysicalPointwise_v1.lean",
+      "source_sha256": "46bdf11391006f58c6f8c1c492756ff7109af1cb958193743f1f48b83101d33d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/CoulombSpinPhysicalPointwise_v1.olean",
+      "object_sha256": "5a2c40647bc89ed4b61b62dbcdb3eba044c5466832c27940ad6ae83cf6334688",
+      "declarations": [
+        "coulomb_spin_physical_pointwise_representative"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    },
+    {
+      "module": "TwoElectronGroundPhysicalPointwise_v1",
+      "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/TwoElectronGroundPhysicalPointwise_v1.lean",
+      "source_sha256": "cc6311767aef8b45b2bbb07c46adb749a340da0ef7ea3563346fb898bc69782d",
+      "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/TwoElectronGroundPhysicalPointwise_v1.olean",
+      "object_sha256": "8807b213fb892286e85933261fb4769f93fe1cc379a3c3f2727041e06ef2702d",
+      "declarations": [
+        "twoElectron_physical_ground_pointwise"
+      ],
+      "forbidden_source_tokens": [],
+      "source_unchanged_during_audit": true,
+      "object_unchanged_during_audit": true
+    }
+  ],
+  "strict_receipt": {
+    "path": "audits/formal_semantics/20260911T012232_239943Z/receipt.json",
+    "sha256": "800a84d168cf14151a4c8f26fefdd83608b9b340847434282963bb5864be4102"
+  },
+  "expanded_statement_and_axioms": {
+    "path": "audits/formal_semantics/20260911T012232_239943Z/ExpandedStatements_v8.log",
+    "sha256": "d1101e29d33fc8248e6b110b94b912e8612decad176956ecb3959e83e756ef29"
+  },
+  "root_review": "Root read both complete new proofs and literal pointwise predicate/bridge, and the complete exact diff from the earlier weighted full-spin/ground expanded statements. Only theorem names and four conclusion-predicate names change. The prior weighted statement full1938lines were independently read; both final proof closures pass strict foundation audit.",
+  "independent_review": {
+    "path": "audits/COULOMB_SPIN_GROUND_PHYSICAL_POINTWISE_FOCUSED_REVIEW_v1.json",
+    "sha256": "e8a838f4a702e6d5dc9ac86ed617cdfd44a52534695d73427fa3e792afdc3230"
+  },
+  "dependency_checkpoints": [
+    {
+      "path": "audits/COULOMB_SPIN_GROUND_PHYSICAL_FACTORIAL_CHECKPOINT_v1.json",
+      "sha256": "e3e7e3bd695fd02afa93fc2b1c67ae8ffd3ef72f57744a7cab1a10c4b9537290"
+    },
+    {
+      "path": "audits/COULOMB_KS_PHYSICAL_POINTWISE_ANALYTIC_CHECKPOINT_v1.json",
+      "sha256": "b9fcba707378f3084359eb69f7e4431944e3bf5e92af62151f536119582ef941"
+    },
+    {
+      "path": "audits/GRUSHIN_ACTUAL_PROFILE_POINTWISE_EMBEDDING_CHECKPOINT_v1.json",
+      "sha256": "06b7eee49a8a68746e14700fdcecfad71415066630ed7ac72f7674df595e4ea7"
+    }
+  ],
+  "next_active_obligation": "Quantitative invariant-series KS descent, including corrected degree of the radial coefficient, common complex radii and physical boundary compatibility.",
+  "not_claimed": [
+    "complex KS descent or physical-distance analyticity",
+    "full-shell G1/exterior G2 estimates",
+    "global exact-dictionary H2 approximation",
+    "executed certified continuum energy interval",
+    "verified solver, termination or operational bit complexity",
+    "full Theorem T"
+  ],
+  "foundation": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "cache_disclosure": "Pinned development objects reused; current source modules outside isolated source rebuildv20. No fresh isolated source reproduction claimed.",
+  "frozen_provenance": {
+    "path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09"
+  }
+}

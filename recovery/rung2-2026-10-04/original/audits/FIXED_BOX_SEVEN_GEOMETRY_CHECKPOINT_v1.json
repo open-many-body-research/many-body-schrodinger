@@ -1,0 +1,65 @@
+{
+  "schema": "theorem-t-continuation-checkpoint-v1",
+  "timestamp_utc": "2026-09-11T01:19:26.628776+00:00",
+  "status": "PASS_FIXED_PHYSICAL_BOX_GEOMETRY",
+  "evidence_category": "Fully formalized geometric facts about actual physical and seven-coordinate boxes; no analytic premise required.",
+  "source": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/FixedBoxSevenGeometry_v1.lean",
+    "sha256": "52190186c2c03b41db6b4922fab14fec4b47796e8beafde7050115dd0067e09e"
+  },
+  "compiler_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/FixedBoxSevenGeometry_v1-20260911T011455_691827Z.json",
+    "sha256": "a509d5fa9367da2fe2bb5a95a60af84ec23797743f56f7013756bfbee15602d7"
+  },
+  "strict_audit_receipt": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011521_802496Z/receipt.json",
+    "sha256": "d44e067f702560cdb410156a622195601d22c928b5a453009c869c73b276c353"
+  },
+  "expanded_log": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T011521_802496Z/ExpandedStatements_v8.log",
+    "sha256": "dd062e6444a8eb7f87620adf627be2fb8aabe6f9c67d48c3b48aa478435c136d"
+  },
+  "focused_independent_review": {
+    "path": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/FIXED_BOX_SEVEN_GEOMETRY_FOCUSED_REVIEW_v1.json",
+    "sha256": "51e54c4fffae8986da495cdcc21d2ca4de6681e25bd07bab149ba351ff4a0213"
+  },
+  "final_source_and_expanded_statements_review": {
+    "reviewer": "/root/weak_pointwise_limit/fixed_box_geometry",
+    "entire_final_source_read": true,
+    "expanded_log_lines_read": "all 196 lines",
+    "all_16_declarations_and_axiom_reports_read": true,
+    "unexpected_axioms": [],
+    "printer_errors_or_ellipses": 0,
+    "foundational_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "exact_result": [
+    "For every physical center z in R^4 times R^3, literal sevenToProduct maps the seven-coordinate closed intervals centered at sevenToProduct.symm z with half-width 1/512 to the physical coordinate closed rectangle of that half-width.",
+    "The pullback of the physical open rectangle of half-width 1/512 is open, lies in the closed tensor box and has exactly that physical rectangle as its image.",
+    "The closed tensor box maps into both the open physical plateau rectangle of half-width 3/1024 and the open norm rectangle of half-width 1/256.",
+    "The explicit fixedSevenCutoff z is grushinRectCutoff z (3/1024) (3/1024) (1/1024), smooth and compactly supported inside the open physical rectangle of half-width 1/128, and equal to one on the open plateau.",
+    "The actual tensor evaluation constant is exactly the strictly positive rational scalar (257/16)^7, independent of z."
+  ],
+  "scope_limits": [
+    "The cutoff support is contained in the CLOSED half-width 1/256 rectangle; no inclusion of that support into the OPEN norm rectangle is needed or asserted.",
+    "No PDE solution, weak jet growth, KS descent or full Theorem T conclusion is asserted by this geometry module.",
+    "Geometry supplies concrete inputs to grushin_actual_profile_continuous_base; the consuming parent establishes actual physical analytic consequences."
+  ],
+  "environment": {
+    "lean": "4.34.0-rc2",
+    "mathlib": "d9ed2b07e3d851ae48dbfe62550f6da9a1c128c9",
+    "cache_use": "Existing pinned library, prior-audit and continuation object caches reused. No source dependency rebuild performed by this task."
+  },
+  "preservation": {
+    "frozen_original_relative_path": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_original_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "new_files_only": true
+  },
+  "next_active_obligation": "Compose actual scalar-Coulomb factorial jets with this geometry and the proved weak-to-continuous-base embedding, then continue KS descent; parent owns the composition.",
+  "process_state": "All geometry compiler/auditor handles and focused reviewer are terminal."
+}

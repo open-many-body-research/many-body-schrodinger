@@ -1,0 +1,56 @@
+{
+  "status": "PASS_COMPILED_STRICT_AUDITED_SOURCE_AND_EXPANDED_STATEMENTS_READ",
+  "author": "/root/weak_pointwise_limit/radial_coefficient_bound",
+  "created_utc": "2026-09-11T02:46:05.380671+00:00",
+  "module_record": {
+    "module": "MultiindexFactorialDimensionBound_v1",
+    "source": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/MultiindexFactorialDimensionBound_v1.lean",
+    "source_sha256": "8e1bb38caae91531d386b85c4335a48adb1cfea5001ecce721765354f7f27eba",
+    "object": "/Users/devonchase/Documents/ChatGPT/MATHEMATICS/THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/lean/build/MultiindexFactorialDimensionBound_v1.olean",
+    "object_sha256": "1553d5d2f6a3bcb26069fce6c9f45dca9c4a8cebb2db075fff05bfdc84db0ca0",
+    "declarations": [
+      "multinomial_univ_le_card_pow_sum",
+      "factorial_sum_le_card_pow_mul_prod_factorial",
+      "factorial_sum_le_card_pow_mul_prod_factorial_real"
+    ],
+    "forbidden_source_tokens": [],
+    "source_unchanged_during_audit": true,
+    "object_unchanged_during_audit": true
+  },
+  "compiler_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/logs/development/MultiindexFactorialDimensionBound_v1-20260911T024453_808363Z.json",
+  "compiler_receipt_sha256": "377eb9c51ea5ad3401696d338fce8ab8eb278c51cfe815f18c6bff4b09eb6b5e",
+  "strict_receipt": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024506_388509Z/receipt.json",
+  "strict_receipt_sha256": "f1bb340030ba76e34861b2af952c991f5f889605865f99520f8341226e1bda89",
+  "expanded_log": "THEOREM_T_POST_FREEZE_WORK/CONTINUATION_2026-09-09_v2/audits/formal_semantics/20260911T024506_388509Z/ExpandedStatements_v8.log",
+  "expanded_log_sha256": "a1e67b90750680a324af57a45472f9125cb34f51c6de957d7fe6d0b77bff789e",
+  "accepted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "exact_results": [
+    "For every finite coordinate type iota and actual exponent function alpha : iota -> Nat, Nat.multinomial univ alpha <= card(iota)^(sum alpha).",
+    "Consequently (sum alpha)! <= card(iota)^(sum alpha) * product_i alpha_i!, with both Nat and exact real-cast versions."
+  ],
+  "proof": "Apply the pinned finite multinomial theorem at coordinate values one. The actual alpha belongs to the finite antidiagonal at sum alpha, so its nonnegative multinomial coefficient is at most the whole sum card(iota)^(sum alpha). Nat.multinomial_spec supplies the exact factorial identity; no combinatorial count is assumed.",
+  "semantic_checks": [
+    "No positivity or nonemptiness premise is imposed on the coordinate type. For empty coordinates the total degree is zero and the bound reads 1<=0^0*1=1.",
+    "Zero entries and total degree zero are included using ordinary natural factorial and natural powers.",
+    "The real result casts the exact natural inequality and finite product, with no approximation or rounding.",
+    "The factor card(iota)^(sum alpha) is explicit and remains part of any derivative-bound consumer."
+  ],
+  "review_disclosure": "The author read the complete final source, all three full expanded declarations and axiom reports, and the complete strict receipt. This checkpoint does not assert independent review.",
+  "development": "First compilation failed only due to an underdetermined type in the finite multinomial expansion; adding explicit Finset iota annotations fixed it. All logs retained and all owned jobs terminal.",
+  "limits": [
+    "This is the factorial comparison prerequisite for a corrected derivative-rate route; it is not the exact original D6 Cauchy estimate.",
+    "No actual coordinate-derivative identity or derivative bound is proved in this module. Its application to a Frechet derivative estimate is a separate obligation.",
+    "Pinned dependency caches reused. No isolated source dependency rebuild or computational complexity claim is made."
+  ],
+  "preservation": {
+    "frozen_reference": "rwa_proof/THEOREM_T_COMPOSITION.md",
+    "frozen_reference_sha256": "1f60593d0d241738171c395e83d22fd439836b7e9cd3a685f97e16e632cb82da",
+    "commit": "166f43f2f0178f92d8c4d1dde209ef0eeaefa660",
+    "tag": "theorem-t-proof-freeze-2026-09-09",
+    "action": "New source and checkpoint only; PASS and historical artifact bytes preserved."
+  }
+}

@@ -1,0 +1,52 @@
+@TheoremT.Continuum.polynomialCoeffL1_rename_le.{u_1,
+    u_2} : ∀ {σ : Type u_1} {τ : Type u_2} (P : @MvPolynomial.{u_1, 0} σ Complex _) (f : σ → τ),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_2} τ
+      (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) 1, u_1 + 1, u_2 + 1}
+        (@AlgHom.{0, u_1, u_2} Complex (@MvPolynomial.{u_1, 0} σ Complex _) (@MvPolynomial.{u_2, 0} τ Complex _) _ _ _ _
+          _)
+        (@MvPolynomial.{u_1, 0} σ Complex _)
+        (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => @MvPolynomial.{u_2, 0} τ Complex _) _
+        (@MvPolynomial.rename.{u_1, u_2, 0} σ τ Complex _ f) P))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ P)
+@TheoremT.Continuum.homogeneousSpectatorPolynomial.{u_1} : {σ : Type u_1} →
+  {d : Nat} →
+    (P : @MvPolynomial.{u_1, 0} σ Complex _) →
+      (γ : Fin d → Nat) → @MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _
+@TheoremT.Continuum.homogeneousSpectatorPolynomial_eval.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (P : @MvPolynomial.{u_1, 0} σ Complex _) (γ : Fin d → Nat) (X : σ → Complex) (s : Fin d → Complex),
+  @Eq.{1} Complex
+    (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+      (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _) Complex _ _)
+      (@MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _)
+      (fun (x : @MvPolynomial.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _) => Complex) _
+      (@MvPolynomial.eval.{0, u_1} Complex (Sum.{u_1, 0} σ (Fin d)) _ (@Sum.elim.{u_1, 0, 1} σ (Fin d) Complex X s))
+      (@TheoremT.Continuum.homogeneousSpectatorPolynomial.{u_1} σ d P γ))
+    (@HMul.hMul.{0, 0, 0} Complex Complex Complex _
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex _) Complex _ _)
+        (@MvPolynomial.{u_1, 0} σ Complex _) (fun (x : @MvPolynomial.{u_1, 0} σ Complex _) => Complex) _
+        (@MvPolynomial.eval.{0, u_1} Complex σ _ X) P)
+      (@Finset.prod.{0, 0} (Fin d) Complex _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) =>
+        @HPow.hPow.{0, 0, 0} Complex Nat Complex _ (s i) (γ i)))
+@TheoremT.Continuum.homogeneousSpectatorPolynomial_isHomogeneous.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  {P : @MvPolynomial.{u_1, 0} σ Complex _} {m : Nat} (hP : @MvPolynomial.IsHomogeneous.{u_1, 0} σ Complex _ P m)
+  (γ : Fin d → Nat),
+  @MvPolynomial.IsHomogeneous.{u_1, 0} (Sum.{u_1, 0} σ (Fin d)) Complex _
+    (@TheoremT.Continuum.homogeneousSpectatorPolynomial.{u_1} σ d P γ)
+    (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat _ m
+      (@Finset.sum.{0, 0} (Fin d) Nat _ (@Finset.univ.{0} (Fin d) _) fun (i : Fin d) => γ i))
+@TheoremT.Continuum.polynomialCoeffL1_homogeneousSpectatorPolynomial.{u_1} : ∀ {σ : Type u_1} {d : Nat}
+  (P : @MvPolynomial.{u_1, 0} σ Complex _) (γ : Fin d → Nat),
+  @LE.le.{0} Real _
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} (Sum.{u_1, 0} σ (Fin d))
+      (@TheoremT.Continuum.homogeneousSpectatorPolynomial.{u_1} σ d P γ))
+    (@TheoremT.Continuum.polynomialCoeffL1.{u_1} σ P)
+'TheoremT.Continuum.polynomialCoeffL1_rename_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneousSpectatorPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneousSpectatorPolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TheoremT.Continuum.homogeneousSpectatorPolynomial_isHomogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TheoremT.Continuum.polynomialCoeffL1_homogeneousSpectatorPolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
