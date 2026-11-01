@@ -10,6 +10,7 @@ Each edition explains research progress, notable merged and open PRs, relevant c
 - [2026-09-20 — Readable equations and first newsletter publication](2026-09-20.md)
 - [2026-09-27 — A quiet week in the public record](2026-09-27.md)
 - [2026-10-04 — Sharper ground bounds and physical collision estimates](2026-10-04.md)
+- [2026-10-18 — Quiet research and newsletter archive progress](2026-10-18.md)
 
 ## Editorial and publication rules
 
