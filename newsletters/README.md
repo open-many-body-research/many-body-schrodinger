@@ -11,6 +11,7 @@ Each edition explains research progress, notable merged and open PRs, relevant c
 - [2026-09-27 — A quiet week in the public record](2026-09-27.md)
 - [2026-10-04 — Sharper ground bounds and physical collision estimates](2026-10-04.md)
 - [2026-10-11 — Newsletter publication and a quiet research week](2026-10-11.md)
+- [2026-11-08 — October newsletter publication and pending reviews](2026-11-08.md)
 
 ## Editorial and publication rules
 
